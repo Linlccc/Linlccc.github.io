@@ -7,7 +7,7 @@
 ### 自动部署
 
 - 推送 [src](src) 目录的更新
-- 推送 [deploy-blog-to-github-pages](.github/workflows/deploy-blog-to-github-pages.yml) 文件
+- 推送 [deploy-blog-to-github-pages](.github/workflows/deploy-blog-to-github-pages.yml) 文件的更新
 
 ## 拉取
 
