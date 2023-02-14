@@ -1,0 +1,41 @@
+# 发布博客到github pages
+name: deploy-blog-to-github-pages
+
+on:
+  push:
+    branches:
+      - master      # 当推送到 master 分支时
+    paths:
+      - 'src/**'   # 当推送 src 下的任意文件时
+      - '.github/workflows/deploy-blog-to-github-pages.yml' # 推送当前工作流时
+  pull_request:
+
+defaults:
+  run:
+    working-directory: ./src   # 设置默认工作目录
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true  # 获取子模块(true OR recursive)，获取hugo主题
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/master'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src/public     # 要发布 ./src/public 目录中的文件
+          publish_branch: gh-pages      # 发布到 gh-pages 分支
