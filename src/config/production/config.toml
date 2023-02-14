@@ -1,0 +1,5 @@
+##########################
+# 使用 hugo 指令构建发布版 #
+##########################
+baseURL = 'https://linlccc.com/'
+title = "linlccc's blog"

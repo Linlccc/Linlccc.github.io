@@ -1,0 +1,9 @@
+# 网站语言
+languageCode = 'zh-CN'
+theme = 'paper'
+
+# paper 主题变量
+[params]
+  # (白天模式的颜色)linen, wheat, gray, light
+  color = 'light'
+  github = 'Linlccc'
