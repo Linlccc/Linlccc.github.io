@@ -10,23 +10,3 @@ buildDrafts = 'true'
 buildExpired = 'true'
 # 构建未来
 buildFuture = 'true'
-
-# 网站声明
-copyright = "@Linlccc"
-# 内容默认语言(内容没有指定语言时使用该语言)
-defaultContentLanguage = 'zh-cn'
-# 包含 中/日/韩 语言
-hasCJKLanguage = 'true'
-# 启动Emoji表情支持
-enableEmoji = 'true'
-# 将页面的 Lastmod 参数设置为最后 git 提交日期
-enableGitInfo ='true'
-
-# 控制每页的文章数量
-paginate = 10
-
-# 参数
-[params]
-  AuthorName = 'Linlccc'
-  GitHubUser = 'Linlccc'
-  Subtitle = 'Subtitle!!!!'
