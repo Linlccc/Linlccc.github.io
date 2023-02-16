@@ -37,5 +37,6 @@ jobs:
         if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          cname: linlccc.com            # github pages的自定义域名
           publish_dir: ./src/public     # 要发布 ./src/public 目录中的文件
           publish_branch: gh-pages      # 发布到 gh-pages 分支
