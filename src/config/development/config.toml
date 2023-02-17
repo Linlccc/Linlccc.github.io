@@ -5,8 +5,8 @@ baseURL = 'http://127.0.0.1:5500/'
 title = "开发"
 
 # 构建草稿
-buildDrafts = 'true'
+buildDrafts = true
 # 构建过期
-buildExpired = 'true'
+buildExpired = true
 # 构建未来
-buildFuture = 'true'
+buildFuture = true

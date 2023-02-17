@@ -1,0 +1,89 @@
+###########################################################
+# 标记配置                                                 #
+# https://gohugo.io/getting-started/configuration-markup/ #
+###########################################################
+
+# 默认 Markdown 处理程序
+defaultMarkdownHandler = 'goldmark'
+
+
+# goldmark 配置
+[goldmark.extensions]
+  # 是否启用定义列表扩展
+  definitionList = true
+  # 是否启用脚注扩展
+  footnote = true
+  # 是否自动将 URL 转换为链接
+  linkify = true
+  # 自动链接时使用的默认协议，如果链接没有指定协议
+  linkifyProtocol = 'https'
+  # 是否启用删除线扩展
+  strikethrough = true
+  # 是否启用表格扩展
+  table = true
+  # 是否启用任务列表扩展
+  taskList = true
+  # 是否启用智能标点扩展
+  typographer = true
+
+[goldmark.parser]
+  # 是否自动生成标题 ID
+  autoHeadingID = true
+  # 自动生成的标题 ID 格式
+  autoHeadingIDType = 'github'
+  # 是否在段落中包装独立的图片
+  wrapStandAloneImageWithinParagraph = true
+
+# 控制是否启用 Markdown 属性语法
+[goldmark.parser.attribute]
+  # 是否启用块级元素的属性语法
+  block = false
+  # 是否启用标题的属性语法
+  title = true
+
+[goldmark.renderer]
+  # 是否启用硬换行
+  hardWraps = false
+  # 是否允许渲染器使用不安全的 HTML 标签和属性
+  unsafe = false
+  # 是否使用 XHTML 格式输出
+  xhtml = false
+
+
+# 代码高亮配置
+[highlight]
+  # 行锚点
+  anchorLineNos = true
+  # 突出显示代码块
+  codeFences = true
+  # 猜测代码块的语法
+  guessSyntax = true
+  # 高亮代码块的行号（用了这个会有问题）
+  hl_Lines = ''
+  # 将代码处理成一行
+  hl_inline = false
+  # 使用指定的前缀生成行号的锚点
+  lineAnchors = ''
+  # 行号从几开始
+  lineNoStart = 1
+  # 显示行号
+  lineNos = true
+  # 表格中使用行号(没用)
+  lineNumbersInTable = true
+  # 不使用 CSS 类名
+  noClasses = true
+  # 不对代码进行高亮处理
+  noHl = false
+  # 高亮主题 emacs/friendly/github/monokai/native/vs/vs2015
+  style = 'monokai'
+  # 制表符的宽度
+  tabWidth = 4
+
+
+# 目录配置
+[tableOfContents]
+  # 开始的标题级别
+  startLevel = 2
+  # 结束的标题级别
+  endLevel = 6
+  ordered = false

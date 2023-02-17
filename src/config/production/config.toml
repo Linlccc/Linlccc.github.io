@@ -4,3 +4,6 @@
 ##########################
 baseURL = 'https://linlccc.com/'
 title = "linlccc's blog"
+
+
+googleAnalytics = 'UA-123-45'

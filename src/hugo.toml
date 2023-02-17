@@ -1,10 +1,179 @@
 ############################
 # 该配置文件主要用于配置主题 #
 ############################
-theme = 'paper'
+theme = 'PaperMod'
 
-# paper 主题变量
+
+# 参数
 [params]
-  # (白天模式的颜色)linen, wheat, gray, light
-  color = 'light'
-  github = 'Linlccc'
+  # 站点配置
+  # 默认主题  [auto, dark, light]
+  defaultTheme = 'auto'
+  # 禁用主题切换
+  disableThemeToggle = false
+  # 禁用特殊的第一个帖子(不禁用第一个帖子在主页样式就不一样)
+  disableSpecial1stPost = true
+
+  # 文章配置
+  # 显示面包屑
+  ShowBreadCrumbs = true
+
+  # 隐藏元
+  hidemeta = false
+  # 日期格式
+  DateFormat = "2006-01-02"
+  # 显示阅读时间
+  ShowReadingTime = true
+  # 显示字数
+  ShowWordCount = true
+  # 作者
+  author = 'Linlccc'
+
+  # 显示目录
+  showtoc = true
+  # 目录打开
+  tocopen = false
+  # 使用Hugo目录(使用hugo目录就可以使用 tableOfContents 配置)
+  UseHugoToc = true
+
+  # 显示代码复制按钮
+  ShowCodeCopyButtons = true
+  # 显示帖子导航链接
+  ShowPostNavLinks = true
+  # 显示分享按钮
+  ShowShareButtons = true
+  # 禁用滚动到顶部
+  disableScrollToTop = false
+
+
+
+
+
+
+  # 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
+  env = 'production'
+  # 标题
+  title = 'ExampleSite'
+  # 描述
+  description = "ExampleSite description"
+  # 关键词
+  keywords = ['Blog', 'Portfolio', 'PaperMod']
+  # 图像
+  images = ['/images/image_12.png']
+  # 在部分术语列表中显示 Rss 按钮
+  ShowRssButtonInSectionTermList = true
+  # 评论
+  comments = true
+  # 隐藏总结
+  hideSummary = false
+
+
+#   # 资产
+#   [params.assets]
+#     # 禁用 highlight.js(高亮js)
+#     disableHLJS = true
+#     # 禁用指纹识别
+#     disableFingerprinting = true
+#     # 图标
+#     favicon = "<link / abs url>"
+#     favicon16x16 = "<link / abs url>"
+#     favicon32x32 = "<link / abs url>"
+#     # 苹果触摸图标
+#     apple_touch_icon = "<link / abs url>"
+#     # safari 固定标签
+#     safari_pinned_tab = "<link / abs url>"
+
+#   # 标签
+#   [params.label]
+#     # 文本
+#     text = "Home"
+#     # 图标
+#     icon = '/apple-touch-icon.png'
+#     # 图标高度
+#     iconHeight = 35
+
+#   # 配置文件模式
+#   [params.profileMode]
+#     # 启用
+#     enabled = false
+#     # 标题
+#     title = 'ExampleSite'
+#     # 字幕
+#     subtitle = "This is subtitle"
+#     # 图像
+#     imageUrl = "<img location>"
+#     # 图像宽高
+#     imageWidth = 120
+#     imageHeight = 120
+#     # 图片标题
+#     imageTitle = 'my image'
+
+#     # 按钮
+#     [[params.profileMode.buttons]]
+#       name = 'Posts'
+#       url = 'posts'
+#     [[params.profileMode.buttons]]
+#       name = 'Tags'
+#       url = 'tags'
+
+#   # 家庭信息模式
+#   [params.homeInfoParams]
+#     # 标题
+#     Title = "Hi there \U0001F44B"
+#     # 内容
+#     Content = 'Welcome to my blog'
+
+#   # 社交图标
+#   [[params.socialIcons]]
+#     name = 'twitter'
+#     url = 'https://twitter.com/'
+#   [[params.socialIcons]]
+#     name = 'stackoverflow'
+#     url = 'https://stackoverflow.com/'
+#   [[params.socialIcons]]
+#     name = 'github'
+#     url = 'https://github.com/'
+
+#   # 分析
+#   [[params.analytics.google]]
+#     # 网站验证标签
+#     SiteVerificationTag = "XYZabc"
+#   [[params.analytics.bing]]
+#     SiteVerificationTag = "XYZabc"
+#   [[params.analytics.yandex]]
+#     SiteVerificationTag = "XYZabc"
+
+#   # 文章封面
+#   [params.cover]
+#     # 无处不在但不隐藏在结构化数据中
+#     hidden = true
+#     # 隐藏在列表页面和主页
+#     hiddenInList = true
+#     # 隐藏在单个页面上
+#     hiddenInSingle = true
+
+#   # 编辑帖子
+#   [params.editPost]
+#     # 链接
+#     URL = "https://github.com/<path_to_repo>/content"
+#     # 编辑文本
+#     Text = "Suggest Changes"
+#     # 将文件路径附加到编辑链接
+#     appendFilePath = true
+
+#   # 搜索 https://fusejs.io/api/options.html
+#   [params.fuseOpts]
+#     # 区分大小写
+#     isCaseSensitive = false
+#     # 排序
+#     shouldSort = true
+#     # 位置
+#     location = 0
+#     # 距离
+#     distance = 1000
+#     # 阈值
+#     threshold = 0.4
+#     # 最小匹配字符长度
+#     minMatchCharLength = 0
+#     # 匹配键
+#     keys = ["title", "permalink", "summary", "content"]
