@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://linlccc.com/sitemap.xml
