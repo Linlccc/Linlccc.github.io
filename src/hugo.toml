@@ -17,7 +17,7 @@ theme = 'PaperMod'
   # 文章配置
   # 显示面包屑
   ShowBreadCrumbs = true
-
+  # 元信息
   # 隐藏元
   hidemeta = false
   # 日期格式
@@ -28,14 +28,14 @@ theme = 'PaperMod'
   ShowWordCount = true
   # 作者
   author = 'Linlccc'
-
+  # 目录
   # 显示目录
   showtoc = true
   # 目录打开
   tocopen = false
   # 使用Hugo目录(使用hugo目录就可以使用 tableOfContents 配置)
   UseHugoToc = true
-
+  # 内容
   # 显示代码复制按钮
   ShowCodeCopyButtons = true
   # 显示帖子导航链接
@@ -44,12 +44,11 @@ theme = 'PaperMod'
   ShowShareButtons = true
   # 禁用滚动到顶部
   disableScrollToTop = false
-
-
-
-
-
-
+  # 下面没发现作用
+  # 评论
+  comments = true
+  # 隐藏总结
+  hideSummary = false
   # 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
   env = 'production'
   # 标题
@@ -62,118 +61,113 @@ theme = 'PaperMod'
   images = ['/images/image_12.png']
   # 在部分术语列表中显示 Rss 按钮
   ShowRssButtonInSectionTermList = true
-  # 评论
-  comments = true
-  # 隐藏总结
-  hideSummary = false
 
+  # 资产
+  [params.assets]
+    # 禁用代码高亮
+    disableHLJS = false
+    # 禁用指纹识别
+    disableFingerprinting = true
+    # 图标
+    favicon = '/images/image_12.png'
+    favicon16x16 = "<link / abs url>"
+    favicon32x32 = "<link / abs url>"
+    # 苹果触摸图标
+    apple_touch_icon = "/images/image_12.png"
+    # safari 固定标签
+    safari_pinned_tab = "/images/image_12.png"
 
-#   # 资产
-#   [params.assets]
-#     # 禁用 highlight.js(高亮js)
-#     disableHLJS = true
-#     # 禁用指纹识别
-#     disableFingerprinting = true
-#     # 图标
-#     favicon = "<link / abs url>"
-#     favicon16x16 = "<link / abs url>"
-#     favicon32x32 = "<link / abs url>"
-#     # 苹果触摸图标
-#     apple_touch_icon = "<link / abs url>"
-#     # safari 固定标签
-#     safari_pinned_tab = "<link / abs url>"
+  # 标签，进入主页的title设置
+  [params.label]
+    # 文本
+    text = "Home"
+    # 图标
+    icon = '/images/image_12.png'
+    # 图标高度
+    iconHeight = 35
 
-#   # 标签
-#   [params.label]
-#     # 文本
-#     text = "Home"
-#     # 图标
-#     icon = '/apple-touch-icon.png'
-#     # 图标高度
-#     iconHeight = 35
+  # 主页是个人页面
+  [params.profileMode]
+    # 启用
+    enabled = false
+    # 标题
+    title = 'Linlccc'
+    # 字幕
+    subtitle = "Hello World!!!!!"
+    # 图像
+    imageUrl = "/images/image_12.png"
+    # 图像宽高
+    imageWidth = 120
+    imageHeight = 120
+    # 图片标题
+    imageTitle = 'my image'
 
-#   # 配置文件模式
-#   [params.profileMode]
-#     # 启用
-#     enabled = false
-#     # 标题
-#     title = 'ExampleSite'
-#     # 字幕
-#     subtitle = "This is subtitle"
-#     # 图像
-#     imageUrl = "<img location>"
-#     # 图像宽高
-#     imageWidth = 120
-#     imageHeight = 120
-#     # 图片标题
-#     imageTitle = 'my image'
+    # 个人页面按钮
+    [[params.profileMode.buttons]]
+      name = 'Posts'
+      url = 'posts'
+    [[params.profileMode.buttons]]
+      name = 'Tags'
+      url = 'tags'
 
-#     # 按钮
-#     [[params.profileMode.buttons]]
-#       name = 'Posts'
-#       url = 'posts'
-#     [[params.profileMode.buttons]]
-#       name = 'Tags'
-#       url = 'tags'
+  # 普通主页个人信息
+  [params.homeInfoParams]
+    # 标题
+    Title = "Hi there \U0001F44B"
+    # 内容
+    Content = "Welcome to demo of hugo’s theme PaperMod.PaperMod is a simple but fast and responsive theme with useful feature-set that enhances UX.Do give a 🌟 on Github !PaperMod is based on theme Paper.Welcome to demo of hugo’s theme Paper"
 
-#   # 家庭信息模式
-#   [params.homeInfoParams]
-#     # 标题
-#     Title = "Hi there \U0001F44B"
-#     # 内容
-#     Content = 'Welcome to my blog'
+  # 社交图标
+  [[params.socialIcons]]
+    name = 'twitter'
+    url = 'https://twitter.com/'
+  [[params.socialIcons]]
+    name = 'stackoverflow'
+    url = 'https://stackoverflow.com/'
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/'
 
-#   # 社交图标
-#   [[params.socialIcons]]
-#     name = 'twitter'
-#     url = 'https://twitter.com/'
-#   [[params.socialIcons]]
-#     name = 'stackoverflow'
-#     url = 'https://stackoverflow.com/'
-#   [[params.socialIcons]]
-#     name = 'github'
-#     url = 'https://github.com/'
+  # 分析
+  # [[params.analytics.google]]
+    # 网站验证标签
+    # SiteVerificationTag = "XYZabc"
+  # [[params.analytics.bing]]
+  #   SiteVerificationTag = "XYZabc"
+  # [[params.analytics.yandex]]
+  #   SiteVerificationTag = "XYZabc"
 
-#   # 分析
-#   [[params.analytics.google]]
-#     # 网站验证标签
-#     SiteVerificationTag = "XYZabc"
-#   [[params.analytics.bing]]
-#     SiteVerificationTag = "XYZabc"
-#   [[params.analytics.yandex]]
-#     SiteVerificationTag = "XYZabc"
+  # 文章封面(这个完全没搞懂)
+  [params.cover]
+    # 隐藏封面图片
+    hidden = false
+    # 也是隐藏封面图片
+    hiddenInList = false
+    # 隐藏在单个页面上
+    hiddenInSingle = false
 
-#   # 文章封面
-#   [params.cover]
-#     # 无处不在但不隐藏在结构化数据中
-#     hidden = true
-#     # 隐藏在列表页面和主页
-#     hiddenInList = true
-#     # 隐藏在单个页面上
-#     hiddenInSingle = true
+  # 文章编辑链接信息
+  [params.editPost]
+    # 链接
+    URL = "https://github.com/Linlccc/Linlccc.github.io/content"
+    # 编辑文本
+    Text = "edit"
+    # 将文件路径附加到编辑链接
+    appendFilePath = true
 
-#   # 编辑帖子
-#   [params.editPost]
-#     # 链接
-#     URL = "https://github.com/<path_to_repo>/content"
-#     # 编辑文本
-#     Text = "Suggest Changes"
-#     # 将文件路径附加到编辑链接
-#     appendFilePath = true
-
-#   # 搜索 https://fusejs.io/api/options.html
-#   [params.fuseOpts]
-#     # 区分大小写
-#     isCaseSensitive = false
-#     # 排序
-#     shouldSort = true
-#     # 位置
-#     location = 0
-#     # 距离
-#     distance = 1000
-#     # 阈值
-#     threshold = 0.4
-#     # 最小匹配字符长度
-#     minMatchCharLength = 0
-#     # 匹配键
-#     keys = ["title", "permalink", "summary", "content"]
+  # 搜索 https://fusejs.io/api/options.html
+  [params.fuseOpts]
+    # 区分大小写
+    isCaseSensitive = false
+    # 排序
+    shouldSort = true
+    # 位置
+    location = 0
+    # 距离
+    distance = 1000
+    # 阈值
+    threshold = 0.4
+    # 最小匹配字符长度
+    minMatchCharLength = 0
+    # 匹配键
+    keys = ["title", "permalink", "summary", "content"]

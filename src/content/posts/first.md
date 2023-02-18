@@ -6,7 +6,7 @@ date: "2023-02-17 11:07:01"
 # 最后修改
 lastmod: "2023-02-17 11:07:01"
 # 草稿
-draft: true
+draft: false
 # 权重
 weight: 1
 # 别名
@@ -58,10 +58,10 @@ cover:
     caption: "ttttt"
     # 指示图片路径是否相对于当前文件
     relative: false
-    # 在文章也隐藏
+    # 在文章隐藏封面
     hidden: true
 
-# 文章编辑链接字段
+# 文章编辑链接信息
 editPost:
     # 链接地址
     URL: "https://github.com/Linlccc/Linlccc.github.io/content"
