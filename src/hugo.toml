@@ -3,6 +3,7 @@
 ############################
 theme = 'PaperMod'
 
+Summary = "bbbbbbbbbbbbbbbb"
 
 # 参数
 [params]
@@ -11,8 +12,14 @@ theme = 'PaperMod'
   defaultTheme = 'auto'
   # 禁用主题切换
   disableThemeToggle = false
-  # 禁用特殊的第一个帖子(不禁用第一个帖子在主页样式就不一样)
+  # 禁用特殊的第一个帖子(不禁用 && params.homeInfoParams 也没有数据时，会把第一个帖子当做网站介绍)
   disableSpecial1stPost = true
+  # 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
+  env = 'production'
+
+  # 文章列表配置
+  # 隐藏摘要（隐藏文章列表页面的中的文章详情）
+  hideSummary = false
 
   # 文章配置
   # 显示面包屑
@@ -44,13 +51,9 @@ theme = 'PaperMod'
   ShowShareButtons = true
   # 禁用滚动到顶部
   disableScrollToTop = false
-  # 下面没发现作用
   # 评论
   comments = true
-  # 隐藏总结
-  hideSummary = false
-  # 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
-  env = 'production'
+  # 下面没发现作用
   # 标题
   title = 'ExampleSite'
   # 描述
@@ -142,7 +145,7 @@ theme = 'PaperMod'
   # 文章编辑链接信息
   [params.editPost]
     # 链接
-    URL = "https://github.com/Linlccc/Linlccc.github.io/content"
+    URL = "https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content/"
     # 编辑文本
     Text = "edit"
     # 将文件路径附加到编辑链接

@@ -31,8 +31,11 @@ canonicalURL: "https://canonical.url/to/page"
 disableHLJS: false
 # 禁用分享功能
 disableShare: false
+# 摘要(显示列表中的文章详情)
+Summary: ""
 # 隐藏摘要
-hideSummary: false
+# hideSummary: true
+
 # 在站内搜索结果中隐藏页面
 searchHidden: false
 # 显示文章阅读时间
@@ -59,7 +62,7 @@ cover:
     # 指示图片路径是否相对于当前文件
     relative: false
     # 在文章隐藏封面
-    hidden: true
+    hidden: false
 
 # 文章编辑链接信息
 editPost:
