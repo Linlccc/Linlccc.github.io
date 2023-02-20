@@ -50,7 +50,7 @@ theme = 'PaperMod'
   # 隐藏总结
   hideSummary = false
   # 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
-  env = 'production'
+  env = 'dev'
   # 标题
   title = 'ExampleSite'
   # 描述
@@ -113,7 +113,7 @@ theme = 'PaperMod'
   # 普通主页个人信息
   [params.homeInfoParams]
     # 标题
-    Title = "Hi there \U0001F44B"
+    Title = "Hi there 👋 \U0001F44B"
     # 内容
     Content = "Welcome to demo of hugo’s theme PaperMod.PaperMod is a simple but fast and responsive theme with useful feature-set that enhances UX.Do give a 🌟 on Github !PaperMod is based on theme Paper.Welcome to demo of hugo’s theme Paper"
 
@@ -129,13 +129,12 @@ theme = 'PaperMod'
     url = 'https://github.com/'
 
   # 分析
-  # [[params.analytics.google]]
-    # 网站验证标签
-    # SiteVerificationTag = "XYZabc"
-  # [[params.analytics.bing]]
-  #   SiteVerificationTag = "XYZabc"
-  # [[params.analytics.yandex]]
-  #   SiteVerificationTag = "XYZabc"
+  # [params.analytics.google]
+  #   SiteVerificationTag = "G-TQ3ZXPKKNM"
+  # [params.analytics.bing]
+  #   SiteVerificationTag = "xxxxx"
+  # [params.analytics.yandex]
+  #   SiteVerificationTag = "xxxxx"
 
   # 文章封面(这个完全没搞懂)
   [params.cover]
