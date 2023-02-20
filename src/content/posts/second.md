@@ -22,7 +22,7 @@ TocOpen: false
 # 隐藏元数据（比如作者、发布日期、分类等）
 hidemeta: false
 # 开启评论功能
-comments: false
+comments: true
 # 页面描述
 description: ""
 
