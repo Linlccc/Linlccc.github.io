@@ -23,3 +23,15 @@
   name = '标签'
   url = '/tags/'
   weight = 2
+
+[[main]]
+  identifier = 'search'
+  name = '搜索'
+  url = '/search/'
+  weight = 1
+
+[[main]]
+  identifier = 'archives'
+  name = '档案'
+  url = '/archives/'
+  weight = 1

@@ -34,7 +34,7 @@ disableShare: false
 # 隐藏摘要
 hideSummary: false
 # 在站内搜索结果中隐藏页面
-searchHidden: true
+searchHidden: false
 # 显示文章阅读时间
 ShowReadingTime: true
 # 显示面包屑导航

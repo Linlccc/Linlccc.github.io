@@ -1,6 +1,6 @@
 ---
 # 将文件名的 '-' 替换成 ' ',并将每个单词的首字母大写
-title: "First"
+title: "测试：第一个测试文章"
 # 时间
 date: "2023-02-17 11:07:01"
 # 最后修改
@@ -34,7 +34,7 @@ disableShare: false
 # 隐藏摘要
 hideSummary: false
 # 在站内搜索结果中隐藏页面
-searchHidden: true
+searchHidden: false
 # 显示文章阅读时间
 ShowReadingTime: true
 # 显示面包屑导航
