@@ -50,7 +50,7 @@ theme = 'PaperMod'
   # 隐藏总结
   hideSummary = false
   # 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
-  env = 'dev'
+  env = 'production'
   # 标题
   title = 'ExampleSite'
   # 描述
