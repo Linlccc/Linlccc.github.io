@@ -8,7 +8,8 @@ searchHidden: true
 draft: false
 weight: 1
 
-date: "2023-02-21 10:21:18"
+# date: "2023-02-21 10:21:18"
+date: 2023-02-21 10:21:18
 
 cover:
     image: "/images/posts/test/test_post_1.png"
@@ -147,15 +148,13 @@ section 项目B
 |撤销|Ctrl+Z|
 |在笔记内搜索|Ctrl+F|
 
-## Introduction
+## Test
 
-This is **bold** text, and this is *emphasized* text.
-
-Visit the [Hugo](https://gohugo.io) website!
+TTTTTTT
 
 ### 下面是一张图片
 
-![图片](/images/image_12.png)
+![图片](/images/posts/test/test_post_1.png)
 
 ### Code 1
 
@@ -186,6 +185,8 @@ while(arr[i]){
     i = i + 1;
 }
 ```
+
+### Code 2
 
 ``` C#
 static void Web()
@@ -234,13 +235,15 @@ static void Web()
 }
 ```
 
+### Table
+
 | 账户 | 密码 | 备注 |
 | ---- | ---- | ---- |
 | asdasd | asdasd | aaa |
 | asdasd | asdasd | aaa |
 | asdasd | asdasd | aaa |
 
-### Code 2
+### Code 3
 
 ``` CSharp
 static void Web()

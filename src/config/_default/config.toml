@@ -10,6 +10,8 @@ defaultContentLanguage = 'zh'
 hasCJKLanguage = 'true'
 # 启动Emoji表情支持
 enableEmoji = 'true'
+# 设置时区 亚洲/重庆 see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone= "Asia/Chongqing"
 
 # 每页文章数量
 paginate = 5
