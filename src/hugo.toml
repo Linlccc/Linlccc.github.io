@@ -8,22 +8,32 @@ Summary = "bbbbbbbbbbbbbbbb"
 # 参数
 [params]
   # 站点配置
+  # 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
+  env = 'production'
+  # 标题
+  title = "Linlccc's Blog"
+  # 描述
+  description = "不如摸鱼！！！"
+  # 关键词
+  keywords = ['Linlccc','Blog', 'PaperMod']
+  # 图像
+  images = ['/images/image_12.png']
   # 默认主题  [auto, dark, light]
   defaultTheme = 'auto'
   # 禁用主题切换
   disableThemeToggle = false
   # 禁用特殊的第一个帖子(不禁用 && params.homeInfoParams 也没有数据时，会把第一个帖子当做网站介绍)
   disableSpecial1stPost = true
-  # 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
-  env = 'production'
 
   # 文章列表配置
   # 隐藏摘要（隐藏文章列表页面的中的文章详情）
   hideSummary = false
+  # 文章列表中显示 Rss 按钮
+  ShowRssButtonInSectionTermList = true
 
   # 文章配置
   # 显示面包屑
-  ShowBreadCrumbs = true
+  ShowBreadCrumbs = false
   # 元信息
   # 隐藏元
   hidemeta = false
@@ -53,23 +63,14 @@ Summary = "bbbbbbbbbbbbbbbb"
   disableScrollToTop = false
   # 评论
   comments = true
-  # 下面没发现作用
-  # 标题
-  title = 'ExampleSite'
-  # 描述
-  description = "ExampleSite description"
-  # 关键词
-  keywords = ['Blog', 'Portfolio', 'PaperMod']
-  # 图像
-  images = ['/images/image_12.png']
-  # 在部分术语列表中显示 Rss 按钮
-  ShowRssButtonInSectionTermList = true
+
+
 
   # 资产
   [params.assets]
     # 禁用代码高亮
     disableHLJS = false
-    # 禁用指纹识别
+    # 禁用资产的子资源完整性（不懂是什么意思）
     disableFingerprinting = true
     # 图标
     favicon = '/images/image_12.png'
@@ -147,7 +148,7 @@ Summary = "bbbbbbbbbbbbbbbb"
     # 链接
     URL = "https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content/"
     # 编辑文本
-    Text = "edit"
+    Text = "编辑"
     # 将文件路径附加到编辑链接
     appendFilePath = true
 

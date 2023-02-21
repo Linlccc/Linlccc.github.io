@@ -1,79 +1,151 @@
 ---
-# 将文件名的 '-' 替换成 ' ',并将每个单词的首字母大写
-title: "测试：第一个测试文章"
-# 时间
-date: "2023-02-17 11:07:01"
-# 最后修改
-lastmod: "2023-02-17 11:07:01"
-# 草稿
+title: "这是一篇测试文章"
+description: "测试文章描述"
+Summary: "测试文章摘要"
+tags: ["测试","文章"]
+
+searchHidden: true
 draft: false
-# 权重
 weight: 1
-# 别名
-aliases: []
-# 标签
-tags: ['ff',"pos"]
-# 作者
-author: ''
-# 显示目录
-showToc: true
-# 打开目录
-TocOpen: false
-# 隐藏元数据（比如作者、发布日期、分类等）
-hidemeta: false
-# 开启评论功能
-comments: true
-# 页面描述
-description: "aaaaaaaaaaaa"
-# 页面的规范 URL
-canonicalURL: "https://canonical.url/to/page"
-# 禁用代码高亮
-disableHLJS: false
-# 禁用分享功能
-disableShare: false
-# 摘要(显示列表中的文章详情)
-Summary: ""
-# 隐藏摘要
-# hideSummary: true
 
-# 在站内搜索结果中隐藏页面
-searchHidden: false
-# 显示文章阅读时间
-ShowReadingTime: true
-# 显示面包屑导航
-ShowBreadCrumbs: true
-# 显示文章导航链接
-ShowPostNavLinks: true
-# 显示文章字数统计
-ShowWordCount: true
-# 在文章分类页面显示 RSS 订阅按钮
-ShowRssButtonInSectionTermList: true
-# 使用 Hugo 自动生成的目录
-UseHugoToc: true
+date: "2023-02-21 10:21:18"
 
-# 文章封面
 cover:
-    # 封面图片
-    image: '/images/image_12.png'
-    # 图片的替代文本
-    alt: "aa"
-    # 在封面下方显示的文字描述
-    caption: "ttttt"
-    # 指示图片路径是否相对于当前文件
-    relative: false
-    # 在文章隐藏封面
+    image: "/images/posts/test/test_post_1.png"
+    alt: "测试文章封面图片"
+    caption: "测试文章封面描述文字"
     hidden: false
-
-# 文章编辑链接信息
-editPost:
-    # 链接地址
-    URL: "https://github.com/Linlccc/Linlccc.github.io/content"
-    # 链接文本
-    Text: "edit"
-    # 将文件路径附加到编辑链接
-    appendFilePath: true
 ---
-"{{if pipeline}} T1 {{end}}"
+
+## 二级标题
+
+### 三级标题
+
+#### 四级标题
+
+##### 五级标题
+
+###### 六级标题
+
+段落正常字体
+*段落斜体*
+**段落粗体**
+***段落粗斜体***
+***
+~~删除线~~
+<u>下划线</u>
+
+* 无序项
+
+1. 有序项1
+2. 有序项2
+3. 有序项3
+    1. 嵌套项
+    * 嵌套项
+
+>区块引用
+>>一层嵌套引用
+>>>二层嵌套引用
+>>>
+>>>>>>>>>>>十层嵌套引用.....
+
+`printf("这是一个代码片段"); //代码片段`
+
+```C
+printf("这是一个代码块");
+//代码块
+```
+
+|左对齐|居中|右对齐|
+|:-|:-:|-:|
+|这是一个单元格|这是一个单元格|这是一个单元格|
+|这是一个单元格|这是一个单元格|这是一个单元格|
+
+[内联方式超链接](/posts/test/)
+
+[引用方式超链接][引用式]
+
+[引用式]: /posts/test/
+
+|图片方式 |图片|
+|:-:|:-:|
+|图片内联|![1](https://www.runoob.com/wp-content/uploads/2019/03/iconfinder_markdown_298823.png "内联图片属性")|
+|图片引用|![1][引用图片]|
+|图片内联超链接|[![1](https://www.runoob.com/wp-content/uploads/2019/03/iconfinder_markdown_298823.png "内联图片属性")](/posts/test/)|
+|图片引用超链接|[![1][引用图片]][引用链接]|
+
+[引用图片]: https://www.runoob.com/wp-content/uploads/2019/03/iconfinder_markdown_298823.png "引用图片属性"
+
+[引用链接]: /posts/test/
+
+\*\*使用转义字符\*\*
+
+LaTeX_($LaTeX: E=mc^2$)_LaTex
+$$LaTeX: E=mc^2$$
+
+```chart
+,数值一,数值二,数值三
+类型1,5000,8000,4000
+类型2,3000,1000,4000
+类型3,5000,7000,6000
+类型4,7000,2000,3000
+
+type: column
+title: 柱状图
+x.title: 类型
+x.suffix: 单位x
+y.title: 数值
+y.suffix: 单位y
+```
+
+```math
+e^{i\pi} + 1 = 0 //(Just English Allow Here)
+```
+
+```mermaid
+graph TD
+A[开始A] --> B(过程B)
+B --> C{判断条件C}
+C -->|条件C1| D[结束D]
+C -->|条件C2| E[结束E]
+C -->|条件C3| F[结束F]
+```
+
+```mermaid
+sequenceDiagram
+A->>B: 是否已收到消息？
+B-->>A: 已收到消息
+```
+
+```mermaid
+gantt
+title 甘特图
+dateFormat  YYYY-MM-DD
+section 项目A
+任务1: duty1, 2018-01-01, 30d
+任务2: 20d
+section 项目B
+任务3: 2018-01-01, 10d
+任务4: after duty1, 20d
+```
+
+## 快捷键
+
+|功能|键位|
+|:-:|:-:|
+|新建 Markdown 笔记|Ctrl+Alt+D|
+|粗体|Ctrl+B|
+|斜体|Ctrl+I|
+|删除线|Ctrl+T|
+|下划线|Ctrl+U|
+|分隔线|Ctrl + Shift + -|
+|编号列表|Ctrl + Shift + O|
+|项目符号列表|Ctrl + Shift + W|
+|插入待办事项|Ctrl + Shift + C|
+|代码块|Ctrl+Shift+L|
+|插入日期和时间|Alt + Shift + D|
+|撤销|Ctrl+Z|
+|在笔记内搜索|Ctrl+F|
 
 ## Introduction
 
@@ -87,7 +159,35 @@ Visit the [Hugo](https://gohugo.io) website!
 
 ### Code 1
 
-~~~ C#
+``` js
+// 语法结构
+while (条件){
+    需要执行的代码
+}
+
+// 该循环永远不会结束，这可能导致浏览器崩溃。
+while(true){
+    console.log('加菲猫！')
+}
+
+const arr = ['1','2',undefined,'3','','4'];
+let i = 0;
+while(arr[i]){
+    console.log(arr[i])
+    i = i + 1;
+}
+// 输出: 1
+// 输出: 2
+
+const arr = ['1','2','3','4'];
+let i = 0;
+while(arr[i]){
+    console.log(arr[i])
+    i = i + 1;
+}
+```
+
+``` C#
 static void Web()
 {
     // 加载配置
@@ -132,7 +232,7 @@ static void Web()
     //    services.AddJsonOptions(configure => configure.JsonSerializerOptions.Converters.AddDateTimeTypeConverters("yyyy-MM-dd HH:mm:ss.fff"));
     //});
 }
-~~~
+```
 
 | 账户 | 密码 | 备注 |
 | ---- | ---- | ---- |
@@ -142,7 +242,7 @@ static void Web()
 
 ### Code 2
 
-~~~ CSharp
+``` CSharp
 static void Web()
 {
     // 加载配置
@@ -187,4 +287,4 @@ static void Web()
     //    services.AddJsonOptions(configure => configure.JsonSerializerOptions.Converters.AddDateTimeTypeConverters("yyyy-MM-dd HH:mm:ss.fff"));
     //});
 }
-~~~
+```
