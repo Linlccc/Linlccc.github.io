@@ -6,17 +6,35 @@
     <description>Recent content in Tags on linlccc&#39;s blog</description>
     <image>
       <title>linlccc&#39;s blog</title>
-      <url>https://linlccc.com/images/image_12.png</url>
-      <link>https://linlccc.com/images/image_12.png</link>
+      <url>https://linlccc.com/images/site/avatar.jpg</url>
+      <link>https://linlccc.com/images/site/avatar.jpg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>@Linlccc</copyright>
-    <lastBuildDate>Fri, 17 Feb 2023 11:07:25 +0000</lastBuildDate><atom:link href="https://linlccc.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Feb 2023 10:21:18 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试</title>
+      <link>https://linlccc.com/tags/%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 21 Feb 2023 10:21:18 +0800</pubDate>
+      
+      <guid>https://linlccc.com/tags/%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>文章</title>
+      <link>https://linlccc.com/tags/%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Tue, 21 Feb 2023 10:21:18 +0800</pubDate>
+      
+      <guid>https://linlccc.com/tags/%E6%96%87%E7%AB%A0/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>pos</title>
       <link>https://linlccc.com/tags/pos/</link>
-      <pubDate>Fri, 17 Feb 2023 11:07:25 +0000</pubDate>
+      <pubDate>Fri, 17 Feb 2023 11:07:25 +0800</pubDate>
       
       <guid>https://linlccc.com/tags/pos/</guid>
       <description></description>
@@ -25,7 +43,7 @@
     <item>
       <title>ss</title>
       <link>https://linlccc.com/tags/ss/</link>
-      <pubDate>Fri, 17 Feb 2023 11:07:25 +0000</pubDate>
+      <pubDate>Fri, 17 Feb 2023 11:07:25 +0800</pubDate>
       
       <guid>https://linlccc.com/tags/ss/</guid>
       <description></description>

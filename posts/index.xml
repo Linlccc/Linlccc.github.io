@@ -6,17 +6,26 @@
     <description>Recent content in Posts on linlccc&#39;s blog</description>
     <image>
       <title>linlccc&#39;s blog</title>
-      <url>https://linlccc.com/images/image_12.png</url>
-      <link>https://linlccc.com/images/image_12.png</link>
+      <url>https://linlccc.com/images/site/avatar.jpg</url>
+      <link>https://linlccc.com/images/site/avatar.jpg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>@Linlccc</copyright>
-    <lastBuildDate>Fri, 17 Feb 2023 11:07:25 +0000</lastBuildDate><atom:link href="https://linlccc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Feb 2023 10:21:18 +0800</lastBuildDate><atom:link href="https://linlccc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>这是一篇测试文章</title>
+      <link>https://linlccc.com/posts/test/</link>
+      <pubDate>Tue, 21 Feb 2023 10:21:18 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/test/</guid>
+      <description>测试文章描述</description>
+    </item>
+    
     <item>
       <title>Second</title>
       <link>https://linlccc.com/posts/second/</link>
-      <pubDate>Fri, 17 Feb 2023 11:07:25 +0000</pubDate>
+      <pubDate>Fri, 17 Feb 2023 11:07:25 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/second/</guid>
       <description>第二个文章</description>
