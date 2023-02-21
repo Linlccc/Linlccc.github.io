@@ -144,7 +144,7 @@ theme = 'PaperMod'
   # 文章编辑链接信息
   [params.editPost]
     # 链接
-    URL = "https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content/"
+    URL = "https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content"
     # 编辑文本
     Text = "编辑"
     # 将文件路径附加到编辑链接

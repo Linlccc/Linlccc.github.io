@@ -4,7 +4,7 @@ description: "测试文章描述"
 Summary: "测试文章摘要"
 tags: ["测试","文章"]
 
-searchHidden: true
+searchHidden: false
 draft: false
 weight: 1
 

@@ -1,14 +1,14 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "This is the second article"
 description: ""
 Summary: ""
-tags: []
+tags: ['test','2','english']
 
 searchHidden: false
-draft: true
+draft: false
 weight: 1000
 
-date: "{{ (time .Date).Format "2006-01-02 15:04:05" }}"
+date: "2023-02-21 17:28:52"
 
 cover:
     image: ""
@@ -16,3 +16,5 @@ cover:
     caption: ""
     hidden: true
 ---
+
+This is the second article
