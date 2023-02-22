@@ -1,4 +1,4 @@
-<figure{{ if or (.Get "class") (eq (.Get "align") "center") }} class="
+<figure {{ if or (.Get "class") (eq (.Get "align") "center") }} class="
            {{- if eq (.Get "align") "center" }}align-center {{ end }}
            {{- with .Get "class" }}{{ . }}{{- end }}"
 {{- end -}}>

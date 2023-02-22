@@ -5,6 +5,9 @@ Summary: "测试文章摘要"
 tags: ["测试","文章"]
 categories: ['tt','aa']
 
+ShowCanonicalLink: true
+canonicalURL: "http://linlccc.com/posts/test/"
+
 searchHidden: false
 draft: false
 weight: 1

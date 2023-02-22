@@ -5,6 +5,9 @@ Summary: ""
 tags: []
 categories: []
 
+ShowCanonicalLink: true
+canonicalURL: ""
+
 searchHidden: false
 draft: true
 weight: 1000

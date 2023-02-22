@@ -43,6 +43,8 @@ theme = 'PaperMod'
   ShowWordCount = true
   # 作者
   author = 'Linlccc'
+  # 原文章来自哪里的提示文章
+  CanonicalLinkText = '转载自'
   # 目录
   # 显示目录
   showtoc = true
