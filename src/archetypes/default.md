@@ -3,6 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 description: ""
 Summary: ""
 tags: []
+categories: []
 
 searchHidden: false
 draft: true

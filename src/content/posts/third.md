@@ -3,6 +3,7 @@ title: "这是第三个文章"
 description: ""
 Summary: ""
 tags: ['test','3']
+categories: []
 
 searchHidden: false
 draft: false

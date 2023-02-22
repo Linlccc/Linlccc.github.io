@@ -3,6 +3,7 @@ title: "This is the second article"
 description: ""
 Summary: ""
 tags: ['test','2','english']
+categories: []
 
 searchHidden: false
 draft: false

@@ -13,6 +13,8 @@ Summary: ""
 author: ""
 # 标签
 tags: []
+# 分类
+categories: []
 
 # 隐藏摘要
 hideSummary: false

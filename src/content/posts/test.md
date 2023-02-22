@@ -3,12 +3,12 @@ title: "这是一篇测试文章"
 description: "测试文章描述"
 Summary: "测试文章摘要"
 tags: ["测试","文章"]
+categories: ['tt','aa']
 
 searchHidden: false
 draft: false
 weight: 1
 
-# date: "2023-02-21 10:21:18"
 date: 2023-02-21 10:21:18
 
 cover:
