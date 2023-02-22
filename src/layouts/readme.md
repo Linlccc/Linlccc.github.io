@@ -1,25 +1,50 @@
-# 文件解释
+# 布局目录文件解释
 
-## _default
+## 标记解释
 
-- 默认布局模板目录
+``` text
+"#"   表示已修改
+"@"   完全自己写
+```
 
-### list.html
+## layouts
 
-- 用于显示列表页的模板，如：posts页面等
+``` text
+根目录
+```
 
-## partials
+- 404.html
+  - 404页面模板
+- rebots.txt[@]
+  - robots.txt 爬虫配置文件
 
-- 用于存放局部模板
+### _default
 
-### comments.html
+``` text
+布局模板目录
+```
 
-- 评论模块
+- list.html
+  - 用于显示列表页的模板，如：posts页面等
 
-### extend_head.html
+### partials
 
-- 页眉模块
+``` text
+局部模板目录
+```
 
-### extend_footer.html
+- comments.html[@]
+  - 评论模块
+- extend_head.html
+  - 页眉模块
+- extend_footer.html
+  - 页眉模块
 
-- 页脚模块
+### shortcodes
+
+``` text
+短代码目录
+```
+
+- figure.html
+  - NNNNN
