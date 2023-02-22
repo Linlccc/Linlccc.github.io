@@ -5,6 +5,19 @@
     <loc>https://linlccc.com/posts/test/</loc>
     <lastmod>2023-02-22T17:40:10+08:00</lastmod>
   </url><url>
+    <loc>https://linlccc.com/games/g1/</loc>
+    <lastmod>2023-02-22T17:52:29+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://linlccc.com/en/games/g1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://linlccc.com/games/g1/"
+                />
+  </url><url>
     <loc>https://linlccc.com/posts/second/</loc>
     <lastmod>2023-02-22T15:16:44+08:00</lastmod>
     <xhtml:link
@@ -21,6 +34,58 @@
     <loc>https://linlccc.com/posts/third/</loc>
     <lastmod>2023-02-22T15:16:44+08:00</lastmod>
   </url><url>
+    <loc>https://linlccc.com/tags/game/</loc>
+    <lastmod>2023-02-22T17:52:29+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://linlccc.com/en/tags/game/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://linlccc.com/tags/game/"
+                />
+  </url><url>
+    <loc>https://linlccc.com/games/</loc>
+    <lastmod>2023-02-22T17:52:29+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://linlccc.com/en/games/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://linlccc.com/games/"
+                />
+  </url><url>
+    <loc>https://linlccc.com/</loc>
+    <lastmod>2023-02-22T17:52:29+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://linlccc.com/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://linlccc.com/"
+                />
+  </url><url>
+    <loc>https://linlccc.com/tags/</loc>
+    <lastmod>2023-02-22T17:52:29+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://linlccc.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://linlccc.com/tags/"
+                />
+  </url><url>
     <loc>https://linlccc.com/tags/2/</loc>
     <lastmod>2023-02-22T15:16:44+08:00</lastmod>
     <xhtml:link
@@ -34,19 +99,6 @@
                 href="https://linlccc.com/tags/2/"
                 />
   </url><url>
-    <loc>https://linlccc.com/</loc>
-    <lastmod>2023-02-22T17:40:10+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://linlccc.com/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://linlccc.com/"
-                />
-  </url><url>
     <loc>https://linlccc.com/posts/</loc>
     <lastmod>2023-02-22T17:40:10+08:00</lastmod>
     <xhtml:link
@@ -58,19 +110,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://linlccc.com/posts/"
-                />
-  </url><url>
-    <loc>https://linlccc.com/tags/</loc>
-    <lastmod>2023-02-22T17:40:10+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://linlccc.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://linlccc.com/tags/"
                 />
   </url><url>
     <loc>https://linlccc.com/tags/test/</loc>
