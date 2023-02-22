@@ -15,3 +15,11 @@
 ### comments.html
 
 - 评论模块
+
+### extend_head.html
+
+- 页眉模块
+
+### extend_footer.html
+
+- 页脚模块

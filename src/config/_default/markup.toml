@@ -45,7 +45,7 @@ defaultMarkdownHandler = 'goldmark'
   # 是否启用硬换行
   hardWraps = false
   # 是否允许渲染器使用不安全的 HTML 标签和属性
-  unsafe = false
+  unsafe = true
   # 是否使用 XHTML 格式输出
   xhtml = false
 
@@ -55,7 +55,7 @@ defaultMarkdownHandler = 'goldmark'
   # 行锚点
   anchorLineNos = true
   # 突出显示代码块
-  codeFences = false
+  codeFences = true
   # 猜测代码块的语法
   guessSyntax = true
   # 高亮代码块的行号（用了这个会有问题）
