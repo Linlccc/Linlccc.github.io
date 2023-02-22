@@ -3,4 +3,4 @@
 # ###########
 
 # 设置在主页显示的文章类型
-mainSections = ['blog','posts']
+mainSections = ['blog','posts','games']
