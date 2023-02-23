@@ -180,7 +180,8 @@ with在其范围内重新绑定上下文`.`
 语法如下：`{{ partial "<PATH>/<PARTIAL>.<EXTENSION>" . }}`
 
 ``` go
-{{ partial "header.html" . }}       引用部分模板 layouts/partials/header.html
+{{ partial "header.html" . }}           引用部分模板 layouts/partials/header.html
+{{ partialCached "header.html" . }}     缓存引用部分模板 layouts/partials/header.html
 ```
 
 ### 模板

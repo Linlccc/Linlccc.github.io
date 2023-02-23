@@ -25,7 +25,7 @@ buildExpired = false
 buildFuture = false
 
 # 网站声明
-copyright = "@Linlccc"
+# copyright = "@Linlccc"
 # 启用 robots.txt （标准网络协议，用于告知网络爬虫哪些页面可以被爬取，哪些页面不能被爬取）
 enableRobotsTXT = true
 # 将页面的 Lastmod 参数设置为最后 git 提交日期

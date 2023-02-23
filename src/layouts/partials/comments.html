@@ -1,5 +1,39 @@
+<!-- 得到要使用的主题 -->
+<script>
+// 得到用户自定义主题
+let sys_theme = localStorage.getItem("pref-theme")
+// 如果没有用户自定义主题
+if(!sys_theme){
+        // 得到配置中的主题
+        sys_theme = "{{ .Site.Params.defaultTheme }}";
+        // 如果是自动,获取系统主题
+        if(sys_theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+// 动态加载giscus评论
+const script = document.createElement('script');
+script.setAttribute('src', 'https://giscus.app/client.js');
+script.setAttribute('data-repo', 'Linlccc/Linlccc.github.io');
+script.setAttribute('data-repo-id', 'R_kgDOI9kokw');
+script.setAttribute('data-category', 'Announcements');
+script.setAttribute('data-category-id', 'DIC_kwDOI9kok84CUU3Q');
+script.setAttribute('data-mapping', 'pathname');
+script.setAttribute('data-strict', '0');
+script.setAttribute('data-reactions-enabled', '1');
+script.setAttribute('data-emit-metadata', '0');
+script.setAttribute('data-input-position', 'bottom');
+script.setAttribute('data-theme', sys_theme);
+script.setAttribute('data-lang', 'zh-CN');
+// script.setAttribute('data-loading', 'lazy'); // 如果启动懒加载会导致没加载评论时修改主题评论不会跟着改变
+script.setAttribute('crossorigin', 'anonymous');
+script.async = true;
+console.log(script);
+document.getElementsByClassName("main")[0].appendChild(script);
+
+</script>
+
 <!-- 这里使用的是github的giscus评论 https://giscus.app/zh-CN -->
-<script src="https://giscus.app/client.js"
+<!-- <script src="https://giscus.app/client.js"
         data-repo="Linlccc/Linlccc.github.io"
         data-repo-id="R_kgDOI9kokw"
         data-category="Announcements"
@@ -9,8 +43,9 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
-        data-theme="preferred_color_scheme"
+        data-theme="dark"
         data-lang="zh-CN"
+        data-loading="lazy"
         crossorigin="anonymous"
         async>
-</script>
+</script> -->

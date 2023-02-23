@@ -1,18 +1,28 @@
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
+    <!-- 版权信息 -->
     {{- if site.Copyright }}
     <span>{{ site.Copyright | markdownify }}</span>
     {{- else }}
-    <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ site.Title }}</a></span>
-    {{- end }}
     <span>
-        Powered by
+        &copy;
+        <!-- 输出年限信息 -->
+        {{ if and .Site.Params.StartYear (lt .Site.Params.StartYear now.Year) }}
+            {{ .Site.Params.StartYear }}{{ print "-" -}}
+        {{ end -}}{{ now.Year }}
+        <a href="{{ "" | absLangURL }}">{{ site.Title }}</a>
+        All Rights Reserved
+    </span>
+    {{- end }}
+    <!-- 提供商 -->
+    <span>
+        | Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
 {{- end }}
-
+<!-- 滚动到顶部 -->
 {{- if (not site.Params.disableScrollToTop) }}
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
@@ -24,6 +34,7 @@
 {{- partial "extend_footer.html" . }}
 
 <script>
+    // 菜单按钮滚动位置记录与加载
     let menu = document.getElementById('menu')
     if (menu) {
         menu.scrollLeft = localStorage.getItem("menu-scroll-position");
@@ -31,7 +42,7 @@
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
     }
-
+    // a标签点击处理
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -52,7 +63,7 @@
     });
 
 </script>
-
+<!-- 滚动到顶部是否可见 -->
 {{- if (not site.Params.disableScrollToTop) }}
 <script>
     var mybutton = document.getElementById("top-link");
@@ -68,22 +79,52 @@
 
 </script>
 {{- end }}
-
+<!-- 主题切换 -->
 {{- if (not site.Params.disableThemeToggle) }}
 <script>
+    /**
+     * giscus 评论系统消息发送封装
+     * @param {object} message 消息内容
+     * message{
+     *      theme?: Theme;
+     *      repo?: string;
+     *      repoId?: string;
+     *      category?: string;
+     *      categoryId?: string;
+     *      term?: string;
+     *      description?: string;
+     *      backLink?: string;
+     *      number?: number;
+     *      strict?: boolean;
+     *      reactionsEnabled?: boolean;
+     *      emitMetadata?: boolean;
+     *      inputPosition?: InputPosition;
+     *      lang?: AvailableLanguage;
+     *  }
+     */
+    function giscusSendMessage(message) {
+        const giscusIframe = document.querySelector('iframe.giscus-frame');
+        if(!giscusIframe)return;
+        giscusIframe.contentWindow.postMessage({ giscus: {setConfig : message}}, 'https://giscus.app');
+    }
+
+    // 主题按钮点击
     document.getElementById("theme-toggle").addEventListener("click", () => {
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
+            // 设置评论出题
+            giscusSendMessage({theme: 'light'});
             localStorage.setItem("pref-theme", 'light');
         } else {
             document.body.classList.add('dark');
+            // 设置评论出题
+            giscusSendMessage({theme: 'dark'});
             localStorage.setItem("pref-theme", 'dark');
         }
     })
-
 </script>
 {{- end }}
-
+<!-- 是普通页面 && 不是文档页 && 不是搜索页 && 显示代码复制按钮 -->
 {{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
 <script>
     document.querySelectorAll('pre > code').forEach((codeblock) => {

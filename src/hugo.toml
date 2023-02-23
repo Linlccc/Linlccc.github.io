@@ -1,6 +1,6 @@
-############################
-# 该配置文件主要用于配置主题 #
-############################
+##########################################
+# 该配置文件主要用于配置主题和自己的一些配置 #
+##########################################
 theme = 'PaperMod'
 
 # 参数
@@ -22,6 +22,8 @@ theme = 'PaperMod'
   disableThemeToggle = false
   # 禁用特殊的第一个帖子(不禁用 && params.homeInfoParams 也没有数据时，会把第一个帖子当做网站介绍)
   disableSpecial1stPost = true
+  # 隐藏页脚
+  hideFooter = false
 
   # 文章列表配置
   # 隐藏摘要（隐藏文章列表页面的中的文章详情）
@@ -64,7 +66,9 @@ theme = 'PaperMod'
   # 评论
   comments = true
 
-
+  ## 自己的一些配置
+  # 网站开始使用时间
+  StartYear = 2022
 
   # 资产
   [params.assets]

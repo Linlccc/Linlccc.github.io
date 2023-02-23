@@ -70,7 +70,7 @@
   - 渲染页底的模板
 - extend_head.html
   - 渲染页头的模板
-- footer.html
+- footer.html[#]
   - 渲染页脚的模板
 - head.html
   - 设置页面head的模板

@@ -4,7 +4,8 @@
 <head>
     {{- partial "head.html" . }}
 </head>
-
+<!-- 不是普通页面 || 是文档 || 是搜索，list类样式  -->
+<!-- site.Params.defaultTheme == `dark`,主题类样式  -->
 <body class="
 {{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
 {{- print "list" -}}
