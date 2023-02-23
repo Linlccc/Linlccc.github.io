@@ -8,6 +8,7 @@ categories: ['tt','aa']
 ShowCanonicalLink: true
 canonicalURL: "http://linlccc.com/posts/test/"
 
+ShowBreadCrumbs: true
 searchHidden: false
 draft: false
 weight: 1
@@ -20,6 +21,28 @@ cover:
     caption: "测试文章封面描述文字"
     hidden: false
 ---
+<!-- 使用 collapse 简码 -->
+{{< collapse summary="使用折叠简码" openByDefault=true >}}
+
+123
+<!-- 使用 figure 简码 -->
+{{< figure align="center" src="/images/posts/test/test_post_1.png" title="csss" caption="cccs" >}}
+<!-- 使用 inTextImg 简码 -->
+{{< inTextImg url="/images/posts/test/test_post_1.png" alt="csss" height=100 >}}
+<!-- 使用 ltr 简码 -->
+{{< ltr >}}
+123456789
+{{< /ltr >}}
+<!-- 使用 rtl 简码 -->
+{{< rtl >}}
+123456789
+{{< /rtl >}}
+<!-- 使用 rawhtml 简码 -->
+{{< rawhtml >}}
+123456789
+{{< /rawhtml >}}
+
+{{< /collapse >}}
 
 ## 二级标题
 

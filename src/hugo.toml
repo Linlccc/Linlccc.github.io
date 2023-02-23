@@ -134,12 +134,13 @@ theme = 'PaperMod'
 
   # 文章封面(这个完全没搞懂)
   [params.cover]
-    # 隐藏封面图片
+    # 隐藏封面
     hidden = false
-    # 也是隐藏封面图片
-    hiddenInList = false
-    # 隐藏在单个页面上
+    # 在文章页面隐藏封面  优先级 Page.Param.cover.hidden > Site.Param.cover.hiddenInSingle > Site.Param.cover.hidden
     hiddenInSingle = false
+    # 在文章列表中隐藏封面 优先级 Site.Param.cover.hiddenInList > Site.Param.cover.hidden
+    hiddenInList = false
+    # 以下两个不知道明确的作用
     responsiveImages= false
     linkFullImages = true
 

@@ -1,6 +1,7 @@
 {{- define "main" }}
 
 <article class="post-single">
+  <!-- 标题和元信息 -->
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title">
@@ -21,12 +22,14 @@
     </div>
     {{- end }}
   </header>
+  <!-- 封面 -->
   {{- $isHidden := .Params.cover.hidden | default site.Params.cover.hiddenInSingle | default site.Params.cover.hidden }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+  <!-- 目录 -->
   {{- if (.Param "ShowToc") }}
   {{- partial "toc.html" . }}
   {{- end }}
-
+  <!-- Markdown 内容 -->
   {{- if .Content }}
   <div class="post-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
@@ -34,7 +37,7 @@
     {{- else }}{{ .Content }}{{ end }}
   </div>
   {{- end }}
-
+  <!-- tags,上/下章链接/分享 -->
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
@@ -49,7 +52,7 @@
     {{- partial "share_icons.html" . -}}
     {{- end }}
   </footer>
-
+  <!-- 评论 -->
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}

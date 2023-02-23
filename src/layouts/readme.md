@@ -28,7 +28,7 @@
   - 渲染归档页的模板，如：archives页面
 - baseof.html
   - 渲染所有页面的基础模板
-- list.html
+- list.html[#]
   - 渲染列表页的模板，如：posts页面
 - render-image.html
   - None
@@ -46,7 +46,7 @@
 ```
 
 - render-image.html
-  - 渲染图片的模板
+  - 文章内图片模板
 
 ### partials
 
@@ -55,7 +55,7 @@
 ```
 
 - anchored_heading.html
-  - 渲染标题的模板
+  - 文章内容的标题添加锚点模板
 - author.html
   - 渲染作者信息的模板
 - breadcrumb.html
@@ -113,18 +113,18 @@
 ### shortcodes
 
 ``` text
-短代码目录
+简码目录
 ```
 
 - collapse.html
-  - None
+  - 折叠内容
 - figure.html
-  - None
+  - 图片
 - inTextImg.html
-  - None
+  - 图片
 - ltr.html
-  - None
+  - 文字
 - rawhtml.html
-  - None
+  - 文字
 - rtl.html
-  - None
+  - 文字

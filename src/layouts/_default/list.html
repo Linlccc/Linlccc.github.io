@@ -62,7 +62,7 @@
 {{- end }}
 
 <article class="{{ $class }}">
-  {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
+  {{- $isHidden := (site.Params.cover.hiddenInList | default site.Params.cover.hidden) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
     <h2>
