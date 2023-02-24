@@ -160,6 +160,8 @@
 </noscript>
 
 {{- partial "extend_head.html" . -}}
+<!-- 加载全局自定义事件 -->
+{{- partial "GLOBAL_CUSTOM_EVENT.html" . -}}
 
 {{- /* Misc */}}
 {{- if hugo.IsProduction | or (eq site.Params.env "production") }}

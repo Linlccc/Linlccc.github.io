@@ -72,7 +72,9 @@
   - 渲染页头的模板
 - footer.html[#]
   - 渲染页脚的模板
-- head.html
+- GLOBAL_CUSTOM_EVENT.html
+  - 全局自定义事件/对象
+- head.html[#]
   - 设置页面head的模板
 - header.html
   - 渲染页眉的模板-

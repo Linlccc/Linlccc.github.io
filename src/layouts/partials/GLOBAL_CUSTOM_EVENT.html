@@ -1,0 +1,61 @@
+<script>
+// 可订阅的方法
+function ObservableAction() {
+  // 所有订阅者
+  let subscribers = [];
+  // 执行所有订阅者
+  let Invoke = (...args) => subscribers.forEach(subscriber => subscriber(...args));
+  // 添加订阅
+  const addSubscriber = (subscriber) => subscribers.push(subscriber);
+  // 移除订阅
+  const removeSubscriber = (subscriber) => subscribers = subscribers.filter(s => s !== subscriber);
+
+
+  // 创建代理对象
+  const proxy = new Proxy(Invoke, {
+    // 拦截对象的读取
+    get(target, key) {
+      if (key === 'subscribe') return addSubscriber;
+      else if (key === 'unsubscribe') return removeSubscriber;
+    },
+    // 拦截函数的调用
+    apply(target, thisArg, args) {
+      return target(...args);
+    }
+  });
+
+  // 返回代理对象
+  return proxy;
+}
+</script>
+<!-- ObservableAction 对象使用示例 -->
+<!-- <script>
+const myObservableAction = new ObservableAction();
+
+const subscription = (a,b,c) => {
+  console.log(`1:a:${a},b:${b},c:${c}`);
+};
+// 添加订阅
+myObservableAction.subscribe(subscription);
+myObservableAction.subscribe((a,b,c) => {
+  console.log(`2:a:${a},b:${b},c:${c}`);
+});
+
+// 移除订阅
+myObservableAction.unsubscribe(subscription);
+// 调用方法
+myObservableAction("1","2","3");
+</script> -->
+<!-- 全局自定义事件/对象 -->
+<script>
+// 全局自定义事件
+window.GLOBAL_CUSTOM_EVENT = {
+  // 主题切换事件
+  ThemeToggleEvent: new ObservableAction()
+};
+// 全局自定义对象
+window.GLOBAL_CUSTOM_OBJECT = {
+  // giscus评论框
+  GiscusiFrameIsLoad: !1
+}
+</script>

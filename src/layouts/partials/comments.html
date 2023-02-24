@@ -1,13 +1,48 @@
+<!-- 订阅评论通知方法 -->
+<script>
+/**
+ * giscus 评论系统消息发送封装
+ * @param {object} message 消息内容
+ * message{
+ *      theme?: Theme;
+ *      repo?: string;
+ *      repoId?: string;
+ *      category?: string;
+ *      categoryId?: string;
+ *      term?: string;
+ *      description?: string;
+ *      backLink?: string;
+ *      number?: number;
+ *      strict?: boolean;
+ *      reactionsEnabled?: boolean;
+ *      emitMetadata?: boolean;
+ *      inputPosition?: InputPosition;
+ *      lang?: AvailableLanguage;
+ *  }
+ */
+function giscusSendMessage(message) {
+	const giscusIframe = document.querySelector('iframe.giscus-frame');
+	if(!giscusIframe)return;
+
+  // 已加载，发送消息
+  if(window.GLOBAL_CUSTOM_OBJECT.GiscusiFrameIsLoad){
+    giscusIframe.contentWindow.postMessage({ giscus: {setConfig : message}}, 'https://giscus.app');
+  }else{ // 未加载时直接替换 giscusIframe 的链接
+    giscusIframe.src = giscusIframe.src.replace(/(?<=&theme=)\w+/, message.theme);
+  }
+}
+</script>
+
 <!-- 得到要使用的主题 -->
 <script>
 // 得到用户自定义主题
 let sys_theme = localStorage.getItem("pref-theme")
 // 如果没有用户自定义主题
 if(!sys_theme){
-        // 得到配置中的主题
-        sys_theme = "{{ .Site.Params.defaultTheme }}";
-        // 如果是自动,获取系统主题
-        if(sys_theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // 得到配置中的主题
+  sys_theme = "{{ .Site.Params.defaultTheme }}";
+  // 如果是自动,获取系统主题
+  if(sys_theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
 // 动态加载giscus评论
@@ -24,28 +59,23 @@ script.setAttribute('data-emit-metadata', '0');
 script.setAttribute('data-input-position', 'bottom');
 script.setAttribute('data-theme', sys_theme);
 script.setAttribute('data-lang', 'zh-CN');
-// script.setAttribute('data-loading', 'lazy'); // 如果启动懒加载会导致没加载评论时修改主题评论不会跟着改变
+script.setAttribute('data-loading', 'lazy'); // 如果启动懒加载会导致没加载评论时修改主题评论不会跟着改变
 script.setAttribute('crossorigin', 'anonymous');
 script.async = true;
-console.log(script);
 document.getElementsByClassName("main")[0].appendChild(script);
 
-</script>
+// 监听js加载完成,并且监听懒加载的iframe是否加载
+script.addEventListener('load', ()=>{
+  // 得到评论区的iframe
+  const giscusIframe = document.querySelector('iframe.giscus-frame');
+  giscusIframe.addEventListener('load', ()=>{
+    window.GLOBAL_CUSTOM_OBJECT.GiscusiFrameIsLoad = !0;
+  });
+}, false);
 
-<!-- 这里使用的是github的giscus评论 https://giscus.app/zh-CN -->
-<!-- <script src="https://giscus.app/client.js"
-        data-repo="Linlccc/Linlccc.github.io"
-        data-repo-id="R_kgDOI9kokw"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOI9kok84CUU3Q"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="dark"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script> -->
+// 监听主题变化
+window.GLOBAL_CUSTOM_EVENT.ThemeToggleEvent.subscribe((theme) => {
+  // 向giscus发送消息
+  giscusSendMessage({theme: theme});
+});
+</script>

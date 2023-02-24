@@ -82,45 +82,20 @@
 <!-- 主题切换 -->
 {{- if (not site.Params.disableThemeToggle) }}
 <script>
-    /**
-     * giscus 评论系统消息发送封装
-     * @param {object} message 消息内容
-     * message{
-     *      theme?: Theme;
-     *      repo?: string;
-     *      repoId?: string;
-     *      category?: string;
-     *      categoryId?: string;
-     *      term?: string;
-     *      description?: string;
-     *      backLink?: string;
-     *      number?: number;
-     *      strict?: boolean;
-     *      reactionsEnabled?: boolean;
-     *      emitMetadata?: boolean;
-     *      inputPosition?: InputPosition;
-     *      lang?: AvailableLanguage;
-     *  }
-     */
-    function giscusSendMessage(message) {
-        const giscusIframe = document.querySelector('iframe.giscus-frame');
-        if(!giscusIframe)return;
-        giscusIframe.contentWindow.postMessage({ giscus: {setConfig : message}}, 'https://giscus.app');
-    }
-
     // 主题按钮点击
     document.getElementById("theme-toggle").addEventListener("click", () => {
+        let theme = 'dark';
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
-            // 设置评论出题
-            giscusSendMessage({theme: 'light'});
             localStorage.setItem("pref-theme", 'light');
+            theme = 'light';
         } else {
             document.body.classList.add('dark');
-            // 设置评论出题
-            giscusSendMessage({theme: 'dark'});
             localStorage.setItem("pref-theme", 'dark');
+            theme = 'dark';
         }
+        // 调用主题切换事件
+        window.GLOBAL_CUSTOM_EVENT.ThemeToggleEvent(theme);
     })
 </script>
 {{- end }}
