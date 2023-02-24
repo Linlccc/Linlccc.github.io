@@ -68,7 +68,7 @@ theme = 'PaperMod'
 
   ## 自己的一些配置
   # 网站开始使用时间
-  StartYear = 2022
+  StartYear = 2023
 
   # 资产
   [params.assets]

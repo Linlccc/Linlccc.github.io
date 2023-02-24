@@ -28,12 +28,15 @@ function giscusSendMessage(message) {
   if(window.GLOBAL_CUSTOM_OBJECT.GiscusiFrameIsLoad){
     giscusIframe.contentWindow.postMessage({ giscus: {setConfig : message}}, 'https://giscus.app');
   }else{ // 未加载时直接替换 giscusIframe 的链接
-    giscusIframe.src = giscusIframe.src.replace(/(?<=&theme=)\w+/, message.theme);
+    // 在safari中不能使用向前断言`(?<=...)`正则表达式会出错
+    // giscusIframe.src = giscusIframe.src.replace(/(?<=[?|&]theme=)\w+/, message.theme);
+    // 所以使用下面的方法替换
+    giscusIframe.src = giscusIframe.src.replace(/([?|&]theme=)(\w+)/, `$1${message.theme}`);
   }
 }
 </script>
 
-<!-- 得到要使用的主题 -->
+<!-- 动态添加评论 -->
 <script>
 // 得到用户自定义主题
 let sys_theme = localStorage.getItem("pref-theme")
