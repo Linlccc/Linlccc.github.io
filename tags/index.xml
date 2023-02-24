@@ -11,7 +11,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 22 Feb 2023 17:57:49 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Feb 2023 15:21:11 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>safari</title>
+      <link>https://linlccc.com/tags/safari/</link>
+      <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
+      
+      <guid>https://linlccc.com/tags/safari/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>golang</title>
       <link>https://linlccc.com/tags/golang/</link>
