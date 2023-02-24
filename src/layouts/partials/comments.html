@@ -42,7 +42,7 @@ if(!sys_theme){
   // 得到配置中的主题
   sys_theme = "{{ .Site.Params.defaultTheme }}";
   // 如果是自动,获取系统主题
-  if(sys_theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  if(sys_theme == 'auto') sys_theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
 // 动态加载giscus评论
