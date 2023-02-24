@@ -225,7 +225,7 @@ with在其范围内重新绑定上下文`.`
 
 ``` go
 // 使用名为"main"的块，如果没有定义该块，就会使用默认的块
-{{ block "main" . }}
+{{ block "main" . }}{{ end }}
 
 // 定义一个名称为"main"的块
 {{ define "main" }}
