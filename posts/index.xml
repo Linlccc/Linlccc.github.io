@@ -27,7 +27,7 @@
       <pubDate>Wed, 22 Feb 2023 17:57:49 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
-      <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 1 2 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与</description>
+      <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与赋值</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/saferisteppingonthepit/</guid>
-      <description>正则表达式 1. Safari 处理正则表达式中的前向肯定断言时(?&amp;lt;=&amp;hellip;)，异常 1 2 3 4 // 以下代码在 Chrome 中正常，但在 Safari 中会报错 &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;#34;dark&amp;#34;); // 解决方</description>
+      <description>正则表达式 1. Safari 处理正则表达式中的前向肯定断言时(?&amp;lt;=&amp;hellip;)，异常 // 以下代码在 Chrome 中正常，但在 Safari 中会报错 &amp;quot;https://linlccc.com?theme=light&amp;quot;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;quot;dark&amp;quot;); // 解决方案，使用</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Tue, 21 Feb 2023 17:27:50 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/third/</guid>
-      <description>这是第三个文章 这是第三个文章 Introduction This is bold text, and this is emphasized text. Visit the Hugo website! 下面是一张图片 Code 1 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33</description>
+      <description>这是第三个文章 这是第三个文章 Introduction This is bold text, and this is emphasized text. Visit the Hugo website! 下面是一张图片 Code 1 static void Web() { // 加载配置 string webConfigFile = &amp;quot;WebConfig.json&amp;quot;; WebConfig webConfig; if (!File.Exists(webConfigFile)) { webConfig = new(); webConfig.Port = 8082; File.WriteAllText(webConfigFile, JsonConvert.SerializeObject(webConfig, Formatting.Indented)); } else webConfig = JsonConvert.DeserializeObject&amp;lt;WebConfig&amp;gt;(File.ReadAllText(webConfigFile))!; Serve.Run(RunOptions.Default</description>
     </item>
     
   </channel>
