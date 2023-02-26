@@ -31,3 +31,5 @@
 [zh]
 languageName = "中文"
 weight = 1
+# 语言方向
+# languagedirection = 'rtl'

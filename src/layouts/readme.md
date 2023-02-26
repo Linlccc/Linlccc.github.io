@@ -26,7 +26,7 @@
 
 - archive.html
   - 渲染归档页的模板，如：archives页面
-- baseof.html
+- baseof.html[#]
   - 渲染所有页面的基础模板
 - list.html[#]
   - 渲染列表页的模板，如：posts页面

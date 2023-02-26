@@ -1,6 +1,6 @@
 ---
 title: "这是一篇测试文章"
-description: "测试文章描述"
+Description: "测试文章描述"
 Summary: "测试文章摘要"
 tags: ["测试","文章"]
 categories: ['tt','aa']
