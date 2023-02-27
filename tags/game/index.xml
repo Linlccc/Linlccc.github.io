@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>game on linlccc&#39;s blog</title>
+    <link>https://linlccc.com/tags/game/</link>
+    <description>Recent content in game on linlccc&#39;s blog</description>
+    <image>
+      <title>linlccc&#39;s blog</title>
+      <url>https://linlccc.com/images/site/avatar.jpg</url>
+      <link>https://linlccc.com/images/site/avatar.jpg</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 22 Feb 2023 17:43:06 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>G1</title>
+      <link>https://linlccc.com/games/g1/</link>
+      <pubDate>Wed, 22 Feb 2023 17:43:06 +0800</pubDate>
+      
+      <guid>https://linlccc.com/games/g1/</guid>
+      <description>游戏1</description>
+    </item>
+    
+  </channel>
+</rss>
