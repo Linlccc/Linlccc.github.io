@@ -2,23 +2,26 @@
 <html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
 
 <head>
+    <!-- (TODO:细看) -->
     {{- partial "head.html" . }}
 </head>
 <!-- 不是普通页面 || 是文档 || 是搜索，时添加list类样式  -->
 <!-- site.Params.defaultTheme == `dark`,主题类样式  -->
 <body class="
-{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
-{{- print "list" -}}
-{{- end -}}
-{{- if eq site.Params.defaultTheme `dark` -}}
-{{- print " dark" }}
-{{- end -}}
+{{ if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) }}
+    {{ print "list" }}
+{{ end }}
+{{ if eq site.Params.defaultTheme `dark` }}
+    {{ print " dark" }}
+{{ end }}
 " id="top">
-    {{- partialCached "header.html" . .Page -}}
+    <!-- (TODO:细看) -->
+    {{ partialCached "header.html" . .Page }}
     <main class="main">
-        {{- block "main" . }}{{ end }}
+        {{ block "main" . }}{{ end }}
     </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    <!-- (TODO:细看) -->
+    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") }}
 </body>
 
 </html>

@@ -6,7 +6,7 @@
 languageCode = 'zh-CN'
 # 内容默认语言(内容没有指定语言时使用该语言)
 defaultContentLanguage = 'zh'
-defaultContentLanguageInSubdir = true
+# defaultContentLanguageInSubdir = true
 # 包含 中/日/韩 语言
 hasCJKLanguage = 'true'
 # 启动Emoji表情支持

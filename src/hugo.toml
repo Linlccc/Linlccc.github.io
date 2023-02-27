@@ -157,6 +157,9 @@ theme = 'PaperMod'
     # 将文件路径附加到编辑链接
     appendFilePath = true
 
+  [params.analytics.google]
+  SiteVerificationTag = "ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY"
+
   # 搜索配置 see:https://fusejs.io/api/options.html
   [params.fuseOpts]
     # 区分大小写
