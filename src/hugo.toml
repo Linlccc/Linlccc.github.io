@@ -74,8 +74,10 @@ theme = 'PaperMod'
   [params.assets]
     # 禁用代码高亮
     disableHLJS = false
-    # 禁用资产的子资源完整性（不懂是什么意思）
-    disableFingerprinting = true
+    # 禁用资源的完整性（用于检查资源是否被篡改）
+    disableFingerprinting = false
+    # 禁用滚动条样式
+    disableScrollBarStyle = false
     # 图标
     favicon = '/images/site/avatar.jpg'
     favicon16x16 = ""
@@ -157,8 +159,22 @@ theme = 'PaperMod'
     # 将文件路径附加到编辑链接
     appendFilePath = true
 
-  [params.analytics.google]
-  SiteVerificationTag = "ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY"
+  # Google 站点验证 meta 标签信息
+  [[params.meta]]
+    name = 'google-site-verification'
+    content = 'ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY'
+  # bing 站点验证 meta 标签信息
+  [[params.meta]]
+    name = 'msvalidate.01'
+    content = 'bing'
+  # yandex 站点验证 meta 标签信息
+  [[params.meta]]
+    name = 'yandex-verification'
+    content = 'yandex'
+# naver 站点验证 meta 标签信息
+  [[params.meta]]
+    name = 'naver-site-verification'
+    content = 'naver'
 
   # 搜索配置 see:https://fusejs.io/api/options.html
   [params.fuseOpts]

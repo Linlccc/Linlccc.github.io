@@ -169,6 +169,11 @@ with在其范围内重新绑定上下文`.`
 {{ range until 10 .Data.Pages }}                    // 遍历 Data.Pages，取第10条数据之前的数据
 ```
 
+## cond
+
+`cond CONTROL VAR1 VAR2`
+如果 `CONTROL` 为真，则返回 `VAR1`，否则返回 `VAR2`
+
 ## 模板
 
 模板位置始终从hugo目录中的layouts目录开始查找，如果没有找到，就会从主题目录中查找\
@@ -238,3 +243,13 @@ with在其范围内重新绑定上下文`.`
   {{ end }}
 {{ end }}
 ```
+
+## 资源
+
+`resources` 是一个 Hugo 内置的模块，用于处理网站资源文件，例如图片、CSS、JavaScript 等。它包含了一系列的方法，可以用来获取、操作、组合和匹配资源文件。
+
+- resources.Get: 获取指定路径的资源文件。
+- resources.Match: 根据指定的 glob 模式匹配资源文件，返回一个资源列表。
+- resources.Concat: 将多个资源文件合并为一个。
+- resources.FromString: 从字符串中创建一个资源文件。
+- resources.ExecuteAsTemplate: 将资源文件作为模板进行解析。
