@@ -139,17 +139,21 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ site.Params.assets.favicon32x32 | default "favicon-32x32.png" | absURL }}">
 <link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "apple-touch-icon.png" | absURL }}">
 <link rel="mask-icon" href="{{ site.Params.assets.safari_pinned_tab | default "safari-pinned-tab.svg" | absURL }}">
-<meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#2e2e33" }}">
-<meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#2e2e33" }}">
+<meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#ff0000" }}">
+<!-- see https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn255024(v=vs.85)#msapplication-tilecolor -->
+<meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#00ff00" }}">
 
-{{- /* RSS */}}
-{{ range .AlternativeOutputFormats -}}
-<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | safeURL }}">
-{{ end -}}
-{{- range .AllTranslations -}}
-<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
-{{ end -}}
+<!-- RSS -->
+{{ range .AlternativeOutputFormats }}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | safeURL }}">
+{{ end }}
 
+<!-- 当前页面的所有翻译（包括当前页） -->
+{{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{ end }}
+
+<!-- 禁止脚本时才会执行的 -->
 <noscript>
     <style>
         #theme-toggle,
@@ -158,7 +162,7 @@
         }
 
     </style>
-    {{- if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) }}
+    {{ if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) }}
     <style>
         @media (prefers-color-scheme: dark) {
             :root {
@@ -185,19 +189,20 @@
                 border-color: var(--theme);
             }
         }
-
     </style>
-    {{- end }}
+    {{ end }}
 </noscript>
 
-{{- partial "extend_head.html" . -}}
+<!-- (TODO:细看) -->
+{{ partial "extend_head.html" . }}
 <!-- 加载全局自定义事件 -->
-{{- partial "GLOBAL_CUSTOM_EVENT.html" . -}}
+{{ partial "GLOBAL_CUSTOM_EVENT.html" . }}
 
-{{- /* Misc */}}
-{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
-{{- template "_internal/google_analytics.html" . }}
-{{- template "partials/templates/opengraph.html" . }}
-{{- template "partials/templates/twitter_cards.html" . }}
-{{- template "partials/templates/schema_json.html" . }}
-{{- end -}}
+<!-- 杂项(TODO:细看) -->
+{{ if hugo.IsProduction | or (eq site.Params.env "production") }}
+    <!-- hugo 内置模板（google分析） -->
+    {{ template "_internal/google_analytics.html" . }}
+    {{ template "partials/templates/opengraph.html" . }}
+    {{ template "partials/templates/twitter_cards.html" . }}
+    {{ template "partials/templates/schema_json.html" . }}
+{{ end -}}
