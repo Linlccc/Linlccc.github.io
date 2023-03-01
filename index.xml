@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 24 Feb 2023 15:21:11 +0800</lastBuildDate><atom:link href="https://linlccc.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Feb 2023 23:20:19 +0800</lastBuildDate><atom:link href="https://linlccc.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>这是一篇测试文章</title>
       <link>https://linlccc.com/posts/test/</link>
@@ -28,6 +28,15 @@
       
       <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
       <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与赋值</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; 学习笔记</title>
+      <link>https://linlccc.com/posts/cppstudynotes/</link>
+      <pubDate>Tue, 28 Feb 2023 23:20:19 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/cppstudynotes/</guid>
+      <description>基础 整数类型 这些类型里面除了只有 signed 和 int 的都可以省略 signed / int 例如 short, short int, signed short, signed short int 表示一个类型 类型 占用字节数 取值范围 signed char 1 -128 到 127 unsigned char 1 0 到 255 short, short int,</description>
     </item>
     
     <item>

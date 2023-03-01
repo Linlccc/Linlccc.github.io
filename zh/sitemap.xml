@@ -8,6 +8,9 @@
     <loc>https://linlccc.com/posts/hugotemplatebasicsyntax/</loc>
     <lastmod>2023-02-27T17:55:45+08:00</lastmod>
   </url><url>
+    <loc>https://linlccc.com/posts/cppstudynotes/</loc>
+    <lastmod>2023-03-02T01:11:35+08:00</lastmod>
+  </url><url>
     <loc>https://linlccc.com/posts/saferisteppingonthepit/</loc>
     <lastmod>2023-02-24T17:12:28+08:00</lastmod>
   </url><url>
@@ -40,8 +43,11 @@
     <loc>https://linlccc.com/posts/third/</loc>
     <lastmod>2023-02-22T15:16:44+08:00</lastmod>
   </url><url>
+    <loc>https://linlccc.com/tags/c&#43;&#43;/</loc>
+    <lastmod>2023-03-02T01:11:35+08:00</lastmod>
+  </url><url>
     <loc>https://linlccc.com/</loc>
-    <lastmod>2023-02-27T17:55:45+08:00</lastmod>
+    <lastmod>2023-03-02T01:11:35+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -54,7 +60,7 @@
                 />
   </url><url>
     <loc>https://linlccc.com/posts/</loc>
-    <lastmod>2023-02-27T17:55:45+08:00</lastmod>
+    <lastmod>2023-03-02T01:11:35+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -66,11 +72,8 @@
                 href="https://linlccc.com/posts/"
                 />
   </url><url>
-    <loc>https://linlccc.com/tags/safari/</loc>
-    <lastmod>2023-02-24T17:12:28+08:00</lastmod>
-  </url><url>
     <loc>https://linlccc.com/tags/</loc>
-    <lastmod>2023-02-27T17:55:45+08:00</lastmod>
+    <lastmod>2023-03-02T01:11:35+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -81,6 +84,9 @@
                 hreflang="zh"
                 href="https://linlccc.com/tags/"
                 />
+  </url><url>
+    <loc>https://linlccc.com/tags/safari/</loc>
+    <lastmod>2023-02-24T17:12:28+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/tags/golang/</loc>
     <lastmod>2023-02-27T17:55:45+08:00</lastmod>
