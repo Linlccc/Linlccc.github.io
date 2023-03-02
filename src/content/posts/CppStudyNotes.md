@@ -116,7 +116,28 @@ void foo(Ts... args) {
   std::cout << "sizeof...(args): " << sizeof...(args) << '\n';
 }
 foo(1, 'a', 3.14);  // 输出 "sizeof...(args): 3"
+```
 
+### 数值的上下限
+
+`std::numeric_limits<T>` 类模板提供了获取数值类型 T 的上下限的方法
+
+```c++
+// 在整数类型中 min 和 lowest 都是相同的，都是最小值
+// 获取 int 类型的上限
+std::numeric_limits<int>::max();
+// 获取 int 类型的下限
+std::numeric_limits<int>::min();
+// 以下方法也可以获取下限
+std::numeric_limits<int>::lowest();
+
+// 在浮点数类型中，min 和 lowest 不同，min 得到的是最小的正整数，lowest 得到的才是最小的值
+// 获取 float 类型的上限（3.40282e+38）
+std::numeric_limits<float>::max();
+// 获取 float 类型的最小的正整数（1.17549e-38）
+std::numeric_limits<float>::min();
+// 获取 float 类型的下限（-3.40282e+38）
+std::numeric_limits<float>::lowest();
 ```
 
 ### char 、 wchar_t 、 char8_t 、 char16_t 、 char32_t
@@ -172,6 +193,66 @@ int l{};    // 这里是默认赋值为0
 | 静态/强制类型转换  | `static_cast<float>(x)`      | 建议使用               |
 | 重新解释类型的转换 | `reinterpret_cast<float>(x)` | 转换指针类型时建议使用 |
 | 旧式的类型转换     | `float(x)`                   | 不建议使用             |
+
+### 格式化字符串 `std::format`
+
+`std::format` 是 C++20 中的新特性，它提供了一种新的字符串格式化方式。该特性可以用来将多种类型的值格式化为字符串，并且支持多种格式控制符，可以更加灵活地控制输出格式。
+这里列出格式说明符的一般形式：`{[arg_id][:[[fill]align][sign]["#"]["0"][width]["." precision]["L"][type]]}`
+
+- `arg_id`：表示参数的索引, 从 0 开始
+- `fill`：指定填充字符，可以是任意字符。如果省略，则默认为空格。
+
+  ```c++
+  std::format("|{:<10}|", "hello");   // |hello     |
+  std::format("|{:*<10}|", "hello");  // |hello*****|
+  ```
+
+- `align`：指定对齐方式，可以是以下几种：
+  - `<`：左对齐。
+  - `>`: 右对齐。
+  - `^`: 居中对齐。
+
+  ```c++
+  std::format("|{:<10}|", "hello");  // |hello     |
+  std::format("|{:>10}|", "hello");  // |     hello|
+  std::format("|{:^10}|", "hello");  // |  hello   |
+
+  ```
+
+- `sign`：指定符号显示方式，可以是以下几种：
+  - `+`：显示正号和负号。
+  - `-`：只显示负号。
+  - ``（空格）：在正数前面加空格，负数前面加负号（默认）。
+
+  ```c++
+  std::format("|{:+}|", 10);    // |+10|
+  std::format("|{:+}|", -10);   // |-10|
+  std::format("|{:-}|", -10);   // |-10|
+  std::format("|{: }|", 10);    // | 10|
+  std::format("|{: }|", -10);   // |-10|
+  ```
+
+- `#`：指定转换类型，可以是以下几种：
+  - `b` 或 `B`：二进制。
+  - `o` 或 `O`：八进制。
+  - `x` 或 `X`：十六进制。
+  - `e` 或 `E`：科学计数法。
+  - `f` 或 `F`：浮点数（默认）。
+  - `g` 或 `G`：自动选择 f 或 e。
+  - `a` 或 `A`：十六进制浮点数。
+
+  ```c++
+  std::format("|{:#x}|", 255);         // |0xff|
+  std::format("|{:#X}|", 255);         // |0xFF|
+  std::format("|{:#b}|", 255);         // |0b11111111|
+  std::format("|{:#o}|", 255);         // |0377|
+  std::format("|{:.2e}|", 123.456);    // |1.23e+02|
+  std::format("|{:.2f}|", 123.456);    // |123.46|
+  std::format("|{:.2g}|", 123.456);    // |1.2e+02|
+  ```
+
+- `width`：指定输出宽度，如果输出的字符串宽度小于指定的宽度，则会在左侧或右侧填充指定字符。
+- `.precision`：指定浮点数输出的精度，即小数点后保留的位数
 
 ### 常用转义字符
 
