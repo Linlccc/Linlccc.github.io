@@ -4,7 +4,7 @@
 theme = 'PaperMod'
 
 # 参数
-[params]
+[Params]
   # 站点配置
   # 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
   env = 'production'
@@ -24,6 +24,10 @@ theme = 'PaperMod'
   disableSpecial1stPost = true
   # 隐藏页脚
   hideFooter = false
+  [Params.label]
+  text = "Linlccc's Blog"
+  icon = "/images/site/avatar.jpg"
+  # iconHeight = 145
 
   # 文章列表配置
   # 隐藏摘要（隐藏文章列表页面的中的文章详情）
