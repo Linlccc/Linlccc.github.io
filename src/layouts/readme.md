@@ -77,7 +77,7 @@
   - 全局自定义事件/对象
 - head.html[^]
   - 设置页面head的模板
-- header.html
+- header.html[^]
   - 渲染页眉的模板-
 - home_info.html
   - 设置普通页面个人信息的模板

@@ -35,3 +35,9 @@
   name = '档案'
   url = '/archives/'
   weight = 1
+
+  [[main]]
+  identifier = 'linlccc'
+  name = 'Linlccc'
+  url = 'https://linlccc.github.io/'
+  weight = 2

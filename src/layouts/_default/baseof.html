@@ -2,7 +2,6 @@
 <html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
 
 <head>
-    <!-- (TODO:细看) -->
     {{- partial "head.html" . }}
 </head>
 <!-- 不是普通页面 || 是文档 || 是搜索，时添加list类样式  -->
@@ -15,7 +14,6 @@
     {{ print " dark" }}
 {{ end }}
 " id="top">
-    <!-- (TODO:细看) -->
     {{ partialCached "header.html" . .Page }}
     <main class="main">
         {{ block "main" . }}{{ end }}
