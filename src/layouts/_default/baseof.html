@@ -18,7 +18,6 @@
     <main class="main">
         {{ block "main" . }}{{ end }}
     </main>
-    <!-- (TODO:细看) -->
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") }}
 </body>
 

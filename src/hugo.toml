@@ -24,6 +24,8 @@ theme = 'PaperMod'
   disableSpecial1stPost = true
   # 隐藏页脚
   hideFooter = false
+  # 在文档也显示所有页面
+  ShowAllPagesInArchive = true
 
   # 文章列表配置
   # 隐藏摘要（隐藏文章列表页面的中的文章详情）
@@ -44,7 +46,7 @@ theme = 'PaperMod'
   # 显示字数
   ShowWordCount = true
   # 作者
-  author = 'Linlccc'
+  author = ['Linlccc']
   # 原文章来自哪里的提示文章
   CanonicalLinkText = '转载自'
   # 目录

@@ -1,1 +1,2 @@
-<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} titled="{{ . }}" {{ end }} />
+<!-- see:https://gohugo.io/templates/render-hooks/ -->
+<img loading="lazy" src="{{ safeURL .Destination }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />

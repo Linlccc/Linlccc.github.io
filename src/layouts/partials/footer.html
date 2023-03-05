@@ -1,19 +1,24 @@
-{{- if not (.Param "hideFooter") }}
+<!-- 是否隐藏页脚 -->
+{{ $hideFooter := site.Params.hideFooter }}
+<!-- 版权信息 -->
+{{ $copyright := site.Copyright }}
+<!-- 网站运行年 -->
+{{ $rangeYear := now.Year }}
+{{ if and site.Params.StartYear (lt site.Params.StartYear $rangeYear) }}{{ $rangeYear = printf "%d - %d" site.Params.StartYear $rangeYear }}{{ end }}
+<!-- 站点title -->
+{{ $siteTitle := site.Title }}
+
+<!-- 页脚 -->
+{{ if not $hideFooter }}
 <footer class="footer">
     <!-- 版权信息 -->
-    {{- if site.Copyright }}
-    <span>{{ site.Copyright | markdownify }}</span>
-    {{- else }}
+    {{ if $copyright }}
+    <span>{{ markdownify $copyright }}</span>
+    {{ else }}
     <span>
-        &copy;
-        <!-- 输出年限信息 -->
-        {{ if and .Site.Params.StartYear (lt .Site.Params.StartYear now.Year) }}
-            {{ .Site.Params.StartYear }}{{ print "-" -}}
-        {{ end -}}{{ now.Year }}
-        <a href="{{ "" | absLangURL }}">{{ site.Title }}</a>
-        All Rights Reserved
+        &copy; {{ $rangeYear }} <a href="{{ absLangURL "" }}">{{ $siteTitle }}</a> All Rights Reserved
     </span>
-    {{- end }}
+    {{ end }}
     <!-- 提供商 -->
     <span>
         | Powered by
@@ -21,15 +26,17 @@
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-{{- end }}
-<!-- 滚动到顶部 -->
-{{- if (not site.Params.disableScrollToTop) }}
+{{ end }}
+
+<!-- 禁用滚动到顶部 -->
+{{ $disableScrollToTop := site.Params.disableScrollToTop }}
+{{ if not $disableScrollToTop }}
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-{{- end }}
+{{ end }}
 
 {{- partial "extend_footer.html" . }}
 

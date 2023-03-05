@@ -6,6 +6,7 @@
 "#"   表示已修改
 "@"   完全自己写
 "^"   已经全部自写完成
+"!"   空模板
 ```
 
 ## layouts
@@ -25,15 +26,17 @@
 布局模板目录
 ```
 
-- archive.html
+- archive.html[^]
   - 渲染归档页的模板，如：archives页面
 - baseof.html[^]
   - 渲染所有页面的基础模板
+- index.json
+  - 站点json数据模板
 - list.html[#]
   - 渲染列表页的模板，如：posts页面
-- render-image.html
-  - None
-- search.html
+- rss.xml
+  - rss 模板
+- search.html[^]
   - 搜索页面模板
 - single.html
   - 渲染单个页面的模板，如：文章页面
@@ -57,7 +60,7 @@
 
 - anchored_heading.html
   - 文章内容的标题添加锚点模板
-- author.html
+- author.html[^]
   - 渲染作者信息的模板
 - breadcrumb.html
   - 渲染面包屑导航的模板
@@ -67,11 +70,11 @@
   - 渲染封面的模板
 - edit_post.html
   - 渲染文章编辑按钮的模板
-- extend_footer.html
+- extend_footer.html[!]
   - 渲染页底的模板
-- extend_head.html
+- extend_head.html[!]
   - 渲染页头的模板
-- footer.html[#]
+- footer.html[^]
   - 渲染页脚的模板
 - GLOBAL_CUSTOM_EVENT.html
   - 全局自定义事件/对象
@@ -85,7 +88,7 @@
   - 个人主页模板
 - post_canonical.html
   - 渲染文章原链接的模板
-- post_meta.html
+- post_meta.html[^]
   - 渲染文章元信息的模板
 - post_nav_links.html
   - 渲染上一章/下一章导航的模板

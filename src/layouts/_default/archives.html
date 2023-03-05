@@ -1,49 +1,45 @@
-{{- define "main" }}
+{{ define "main" }}
+  <header>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}
+      <div class="post-description">{{ . }}</div>
+    {{ end }}
+  </header>
+  <!-- 得到所有要展示的页面 -->
+  {{ $pages := site.RegularPages }}
+  {{ if not site.Params.ShowAllPagesInArchive }}
+    {{ $pages = where $pages "Type" "in" site.Params.mainSections }}
+  {{ end }}
 
-<header class="page-header">
-  <h1>{{ .Title }}</h1>
-  {{- if .Description }}
-  <div class="post-description">
-    {{ .Description }}
-  </div>
-  {{- end }}
-</header>
-
-{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-
-{{- if site.Params.ShowAllPagesInArchive }}
-{{- $pages = site.RegularPages }}
-{{- end }}
-
-{{- range $pages.GroupByPublishDate "2006" }}
-{{- if ne .Key "0001" }}
-<div class="archive-year">
-  <h2 class="archive-year-header">
-    {{- replace .Key "0001" "" }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup>
-  </h2>
-  {{- range .Pages.GroupByDate "January" }}
-  <div class="archive-month">
-    <h3 class="archive-month-header">{{- .Key }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
-    <div class="archive-posts">
-      {{- range .Pages }}
-      {{- if eq .Kind "page" }}
-      <div class="archive-entry">
-        <h3 class="archive-entry-title">
-          {{- .Title | markdownify }}
-          {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
-        </h3>
-        <div class="archive-meta">
-          {{- partial "post_meta.html" . -}}
+  <!-- 按发布日期展示 -->
+  {{ range $pages.GroupByPublishDate "2006" }}
+    {{ if ne .Key "0001" }}
+      <div class="archive-year">
+        <h2 class="archive-year-header">
+          {{ .Key }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup>
+        </h2>
+        {{ range .Pages.GroupByDate "January" }}
+        <div class="archive-month">
+          <h3 class="archive-month-header">{{- .Key }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
+          <div class="archive-posts">
+            {{ range .Pages }}
+              {{ if eq .Kind "page" }}
+                <div class="archive-entry">
+                  <h3 class="archive-entry-title">
+                    {{ markdownify .Title }}
+                    {{ if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{ end }}
+                  </h3>
+                  <div class="archive-meta">
+                    {{ partial "post_meta.html" . }}
+                  </div>
+                  <a class="entry-link" aria-label="post link to {{ plainify .Title }}" href="{{ .Permalink }}"></a>
+                </div>
+              {{ end }}
+            {{ end }}
+          </div>
         </div>
-        <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+        {{ end }}
       </div>
-      {{- end }}
-      {{- end }}
-    </div>
-  </div>
-  {{- end }}
-</div>
-{{- end }}
-{{- end }}
-
-{{- end }}{{/* end main */}}
+    {{ end }}
+  {{ end }}
+{{ end }}
