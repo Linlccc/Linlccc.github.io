@@ -33,6 +33,11 @@ site.Params.assets.disableFingerprinting    禁用资源检查
 site.Params.label.text         站点标签
 site.Params.label.icon         站点标签图标
 
+
+site.Params.ShowRssButtonInSectionTermList      显示rss按钮
+
+
+Params.hiddenInHomeList       隐藏在首页列表中
 ```
 
 ### 问题

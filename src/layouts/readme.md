@@ -32,7 +32,7 @@
   - 渲染所有页面的基础模板
 - index.json
   - 站点json数据模板
-- list.html[#]
+- list.html[^]
   - 渲染列表页的模板，如：posts页面
 - rss.xml
   - rss 模板

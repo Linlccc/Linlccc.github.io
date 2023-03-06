@@ -72,13 +72,6 @@ theme = 'PaperMod'
   # 网站开始使用时间
   StartYear = 2023
 
-  [Params.label]
-  # text = "测试"
-  # icon = "/images/site/avatar.jpg"
-  # icon = "https://linlccc.com/images/posts/test/test_post_1.png"
-  # iconSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 25 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path style="font-variation-settings:normal"  d="M6.361 2.943 0 21.056h4.942l1.077-3.133H11.4l1.052 3.133H22.9c.71 0 1.1-.392 1.1-1.101V17.53c0-.71-.39-1.101-1.1-1.101h-6.483V4.045c0-.71-.392-1.102-1.101-1.102h-2.422c-.71 0-1.101.392-1.101 1.102v1.064l-.758-2.166zm2.324 5.948 1.688 5.018H7.144z" /></svg>'
-  # iconHeight = 145
-
   # 资产
   [Params.assets]
     # 禁用代码高亮
@@ -97,16 +90,21 @@ theme = 'PaperMod'
     safari_pinned_tab = "/images/site/avatar.jpg"
 
   # 标签，进入主页的title设置
-  [params.label]
+  [Params.label]
     # 文本
     text = ""
     # 图标
     icon = ''
     # 图标高度
     iconHeight = 35
+    # text = "测试"
+    # icon = "/images/site/avatar.jpg"
+    # icon = "https://linlccc.com/images/posts/test/test_post_1.png"
+    # iconSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 25 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path style="font-variation-settings:normal"  d="M6.361 2.943 0 21.056h4.942l1.077-3.133H11.4l1.052 3.133H22.9c.71 0 1.1-.392 1.1-1.101V17.53c0-.71-.39-1.101-1.1-1.101h-6.483V4.045c0-.71-.392-1.102-1.101-1.102h-2.422c-.71 0-1.101.392-1.101 1.102v1.064l-.758-2.166zm2.324 5.948 1.688 5.018H7.144z" /></svg>'
+    # iconHeight = 145
 
   # 主页是个人页面
-  [params.profileMode]
+  [Params.profileMode]
     # 启用
     enabled = false
     # 标题
@@ -122,15 +120,15 @@ theme = 'PaperMod'
     imageTitle = 'Linlccc'
 
     # 个人页面按钮
-    [[params.profileMode.buttons]]
+    [[Params.profileMode.buttons]]
       name = 'Posts'
       url = 'posts'
-    [[params.profileMode.buttons]]
+    [[Params.profileMode.buttons]]
       name = 'Tags'
       url = 'tags'
 
   # 普通主页个人信息
-  [params.homeInfoParams]
+  [Params.homeInfoParams]
     # 标题
     Title = "不如摸鱼！！"
     # 内容
@@ -140,15 +138,15 @@ theme = 'PaperMod'
   # [[params.socialIcons]]
   #   name = 'twitter'
   #   url = 'https://twitter.com/Linlccc'
-  [[params.socialIcons]]
+  [[Params.socialIcons]]
     name = 'github'
     url = 'https://github.com/Linlccc'
-  [[params.socialIcons]]
+  [[Params.socialIcons]]
     name = 'email'
     url = 'mailto:linlcccc@gmail.com'
 
   # 文章封面(这个完全没搞懂)
-  [params.cover]
+  [Params.cover]
     # 隐藏封面
     hidden = false
     # 在文章页面隐藏封面  优先级 Page.Param.cover.hidden > Site.Param.cover.hiddenInSingle > Site.Param.cover.hidden
@@ -160,7 +158,7 @@ theme = 'PaperMod'
     linkFullImages = true
 
   # 文章编辑链接信息
-  [params.editPost]
+  [Params.editPost]
     # 链接
     URL = "https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content"
     # 编辑文本
@@ -169,24 +167,24 @@ theme = 'PaperMod'
     appendFilePath = true
 
   # Google 站点验证 meta 标签信息
-  [[params.meta]]
+  [[Params.meta]]
     name = 'google-site-verification'
     content = 'ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY'
   # bing 站点验证 meta 标签信息
-  [[params.meta]]
+  [[Params.meta]]
     name = 'msvalidate.01'
     content = 'bing'
   # yandex 站点验证 meta 标签信息
-  [[params.meta]]
+  [[Params.meta]]
     name = 'yandex-verification'
     content = 'yandex'
 # naver 站点验证 meta 标签信息
-  [[params.meta]]
+  [[Params.meta]]
     name = 'naver-site-verification'
     content = 'naver'
 
   # 搜索配置 see:https://fusejs.io/api/options.html
-  [params.fuseOpts]
+  [Params.fuseOpts]
     # 区分大小写
     isCaseSensitive = false
     # 排序
