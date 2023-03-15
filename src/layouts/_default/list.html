@@ -41,7 +41,6 @@
       <!-- (TODO:细看) -->
       {{ partial "home_info.html" . }}
     {{ end }}
-    {{ .Data }}
     {{ $term := .Data.Term }}
     <!-- 遍历页面 -->
     {{ range $index,$page := $paginator.Pages }}

@@ -10,7 +10,7 @@ canonicalURL: "http://linlccc.com/posts/test/"
 
 ShowBreadCrumbs: true
 searchHidden: false
-draft: false
+draft: true
 weight: 1
 
 date: 2023-02-21 10:21:18

@@ -38,9 +38,9 @@
   - rss 模板
 - search.html[^]
   - 搜索页面模板
-- single.html
+- single.html[^]
   - 渲染单个页面的模板，如：文章页面
-- terms.html
+- terms.html[^]
   - 渲染分类和标签页面的模板
 
 #### _makrup
@@ -49,7 +49,7 @@
 标记模板目录
 ```
 
-- render-image.html
+- render-image.html[^]
   - 文章内图片模板
 
 ### partials
