@@ -10,25 +10,6 @@
       <link>https://linlccc.com/images/site/avatar.jpg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Tue, 21 Feb 2023 10:21:18 +0800</lastBuildDate><atom:link href="https://linlccc.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>aa</title>
-      <link>https://linlccc.com/categories/aa/</link>
-      <pubDate>Tue, 21 Feb 2023 10:21:18 +0800</pubDate>
-      
-      <guid>https://linlccc.com/categories/aa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tt</title>
-      <link>https://linlccc.com/categories/tt/</link>
-      <pubDate>Tue, 21 Feb 2023 10:21:18 +0800</pubDate>
-      
-      <guid>https://linlccc.com/categories/tt/</guid>
-      <description></description>
-    </item>
-    
+    <language>zh-CN</language><atom:link href="https://linlccc.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

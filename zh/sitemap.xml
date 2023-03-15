@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://linlccc.com/posts/test/</loc>
-    <lastmod>2023-02-26T18:45:36+08:00</lastmod>
-  </url><url>
     <loc>https://linlccc.com/posts/hugotemplatebasicsyntax/</loc>
     <lastmod>2023-02-27T17:55:45+08:00</lastmod>
   </url><url>
@@ -146,11 +143,7 @@
     <loc>https://linlccc.com/tags/3/</loc>
     <lastmod>2023-02-22T15:16:44+08:00</lastmod>
   </url><url>
-    <loc>https://linlccc.com/categories/aa/</loc>
-    <lastmod>2023-02-26T18:45:36+08:00</lastmod>
-  </url><url>
     <loc>https://linlccc.com/categories/</loc>
-    <lastmod>2023-02-26T18:45:36+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -161,15 +154,6 @@
                 hreflang="zh"
                 href="https://linlccc.com/categories/"
                 />
-  </url><url>
-    <loc>https://linlccc.com/categories/tt/</loc>
-    <lastmod>2023-02-26T18:45:36+08:00</lastmod>
-  </url><url>
-    <loc>https://linlccc.com/tags/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2023-02-26T18:45:36+08:00</lastmod>
-  </url><url>
-    <loc>https://linlccc.com/tags/%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2023-02-26T18:45:36+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/search/</loc>
     <lastmod>2023-03-05T17:36:46+08:00</lastmod>
