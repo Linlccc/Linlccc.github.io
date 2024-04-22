@@ -10,8 +10,8 @@
       <link>https://linlccc.com/images/site/avatar.jpg</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Tue, 28 Feb 2023 23:20:19 +0800</lastBuildDate><atom:link href="https://linlccc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <lastBuildDate>Mon, 22 Apr 2024 20:06:55 +0800</lastBuildDate><atom:link href="https://linlccc.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo 模板基本语法</title>
       <link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link>
@@ -19,6 +19,15 @@
       
       <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
       <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与赋值</description>
+    </item>
+    
+    <item>
+      <title>生成 SSH</title>
+      <link>https://linlccc.com/posts/generatessh/</link>
+      <pubDate>Mon, 22 Apr 2024 20:06:55 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/generatessh/</guid>
+      <description>生成新的 SSH 密钥 在终端中输入以下指令以提供的电子邮件为标签创建SSH密钥 ssh-keygen -t rsa -b 4096 -C &amp;quot;[email@example.com]&amp;quot; 根据提示输入密钥保存文件，可空保存到默认文件C:\Use</description>
     </item>
     
     <item>
