@@ -28,7 +28,7 @@ This is **bold** text, and this is *emphasized* text.
 
 Visit the [Hugo](https://gohugo.io) website!
 
-### 下面是一张图片
+### 下面是一张图片1
 
 ![图片](/images/posts/test/test_post_1.png)
 
