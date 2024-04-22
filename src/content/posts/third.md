@@ -32,7 +32,7 @@ Visit the [Hugo](https://gohugo.io) website!
 
 ![图片](/images/posts/test/test_post_1.png)
 
-### Code 001
+### Code 0001
 
 ~~~ C#
 static void Web()
