@@ -1,6 +1,6 @@
 ---
 # 标题
-title: "生成 SSH"
+title: "管理 SSH"
 # 描述
 description: ""
 # 摘要
@@ -46,7 +46,7 @@ ssh-keygen -t rsa -b 4096 -C "[email@example.com]"
 ~~~
 
 - 根据提示输入密钥保存文件，可空保存到默认文件`C:\Users\[User]\.ssh\id_rsa`
-- 根据提示输入两次密码
+- 根据提示输入两次密码（建议不设置密码，否者每次push都需要输入密码）
 
 ## 将 SSH 密钥添加到 ssh-agent
 
@@ -61,4 +61,16 @@ Start-Service ssh-agent
 
 ~~~ cmd
 ssh-add C:\Users\[User]\.ssh\id_rsa
+~~~
+
+## 移除 SSH 密钥
+
+- 删除`C:\Users\[User]\.ssh\`文件夹中的两个密钥文件
+- 从`ssh agent`中移除`ssh`密钥
+
+~~~ txt
+# 查看已加载的密钥列表
+ssh-add -l
+# 移除密钥
+ssh-add -d C:\Users\[User]\.ssh\id_rsa
 ~~~
