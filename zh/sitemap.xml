@@ -5,8 +5,8 @@
     <loc>https://linlccc.com/posts/hugotemplatebasicsyntax/</loc>
     <lastmod>2023-02-27T17:55:45+08:00</lastmod>
   </url><url>
-    <loc>https://linlccc.com/posts/generatessh/</loc>
-    <lastmod>2024-04-22T23:11:17+08:00</lastmod>
+    <loc>https://linlccc.com/posts/managessh/</loc>
+    <lastmod>2024-04-23T00:24:52+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/posts/cppstudynotes/</loc>
     <lastmod>2023-03-02T19:48:02+08:00</lastmod>
@@ -44,7 +44,7 @@
     <lastmod>2024-04-22T23:40:06+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/</loc>
-    <lastmod>2024-04-22T23:40:06+08:00</lastmod>
+    <lastmod>2024-04-23T00:24:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -57,7 +57,7 @@
                 />
   </url><url>
     <loc>https://linlccc.com/posts/</loc>
-    <lastmod>2024-04-22T23:40:06+08:00</lastmod>
+    <lastmod>2024-04-23T00:24:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -70,10 +70,10 @@
                 />
   </url><url>
     <loc>https://linlccc.com/tags/ssh/</loc>
-    <lastmod>2024-04-22T23:11:17+08:00</lastmod>
+    <lastmod>2024-04-23T00:24:52+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/tags/</loc>
-    <lastmod>2024-04-22T23:40:06+08:00</lastmod>
+    <lastmod>2024-04-23T00:24:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

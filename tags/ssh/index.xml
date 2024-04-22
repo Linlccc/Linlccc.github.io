@@ -13,11 +13,11 @@
     <language>zh</language>
     <lastBuildDate>Mon, 22 Apr 2024 20:06:55 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>生成 SSH</title>
-      <link>https://linlccc.com/posts/generatessh/</link>
+      <title>管理 SSH</title>
+      <link>https://linlccc.com/posts/managessh/</link>
       <pubDate>Mon, 22 Apr 2024 20:06:55 +0800</pubDate>
       
-      <guid>https://linlccc.com/posts/generatessh/</guid>
+      <guid>https://linlccc.com/posts/managessh/</guid>
       <description>生成新的 SSH 密钥 在终端中输入以下指令以提供的电子邮件为标签创建SSH密钥 ssh-keygen -t rsa -b 4096 -C &amp;quot;[email@example.com]&amp;quot; 根据提示输入密钥保存文件，可空保存到默认文件C:\Use</description>
     </item>
     
