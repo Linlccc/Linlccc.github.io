@@ -30,7 +30,7 @@ Visit the [Hugo](https://gohugo.io) website!
 
 ### 下面是一张图片
 
-![图片](/images/image_12.png)
+![图片](/images/posts/test/test_post_1.png)
 
 ### Code 1
 
