@@ -18,7 +18,7 @@
       <pubDate>Tue, 21 Feb 2023 17:27:50 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/third/</guid>
-      <description>这是第三个文章 这是第三个文章 Introduction This is bold text, and this is emphasized text. Visit the Hugo website! 下面是一张图片1 Code 1 static void Web() { // 加载配置 string webConfigFile = &amp;quot;WebConfig.json&amp;quot;; WebConfig webConfig; if (!File.Exists(webConfigFile)) { webConfig = new(); webConfig.Port = 8082; File.WriteAllText(webConfigFile, JsonConvert.SerializeObject(webConfig, Formatting.Indented)); } else webConfig = JsonConvert.DeserializeObject&amp;lt;WebConfig&amp;gt;(File.ReadAllText(webConfigFile))!;</description>
+      <description>这是第三个文章 这是第三个文章 Introduction This is bold text, and this is emphasized text. Visit the Hugo website! 下面是一张图片1 Code 01 static void Web() { // 加载配置 string webConfigFile = &amp;quot;WebConfig.json&amp;quot;; WebConfig webConfig; if (!File.Exists(webConfigFile)) { webConfig = new(); webConfig.Port = 8082; File.WriteAllText(webConfigFile, JsonConvert.SerializeObject(webConfig, Formatting.Indented)); } else webConfig = JsonConvert.DeserializeObject&amp;lt;WebConfig&amp;gt;(File.ReadAllText(webConfigFile))!;</description>
     </item>
     
   </channel>
