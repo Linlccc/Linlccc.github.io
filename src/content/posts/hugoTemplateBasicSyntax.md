@@ -67,6 +67,7 @@ Line two.` }}                               // 支持多行字符串
 {{ if and .IsHome .Params.show }} {{ end }}          // 判断多个条件是否同时满足
 {{ if or .IsHome .Params.show }} {{ end }}           // 判断多个条件是否有一个满足
 {{ if not .IsHome }} {{ end }}                       // 判断条件是否不满足
+{{ if strings.Contains "hugo" "go" }} {{end}}        // 判断是否包含指定字符串
 
 // 该示例和 with 的第一个示例做完全相同的事
 {{ if isset .Params "title" }}
@@ -187,9 +188,23 @@ with在其范围内重新绑定上下文`.`
 ``` go
 {{ partial "header.html" . }}           引用部分模板 layouts/partials/header.html
 {{ partialCached "header.html" . }}     缓存引用部分模板 layouts/partials/header.html
+
+
 ```
 
-### 模板
+#### 多变量部分模板示例
+
+``` go
+// 传入多个变量
+{{ partial "header.html" (dict "curremtPage" . "param1" "1" "param2" "2" ) }}
+
+// 模板中使用变量
+{{ .curremtPage }} -> .
+{{ .param1 }} -> "1"
+{{ .param2 }} -> "2"
+```
+
+### 引用模板
 
 使用 `template` 函数引用模板，`template` 函数用于在更旧的 Hugo 版本中包含部分模板。现在它只对调用内部模板有用。\
 内部模板信息参考：[内部模板](https://gohugo.io/templates/internal/)\
