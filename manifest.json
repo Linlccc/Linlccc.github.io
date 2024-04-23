@@ -1,3 +1,4 @@
+// https://web.dev/articles/add-manifest?hl=zh-cn
 {
   "name": "Linlccc's Blog",
   "short_name": "Linlccc's Blog",
@@ -7,11 +8,27 @@
   "icons": [
     {
       "src": "/images/site/icon192.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
       "src": "/images/site/icon512.png",
+      "type": "image/png",
       "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/site/screenshot540_720.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/images/screenshot720_540.png",
+      "type": "image/png",
+      "sizes": "720x540",
+      "form_factor": "wide"
     }
   ]
 }
