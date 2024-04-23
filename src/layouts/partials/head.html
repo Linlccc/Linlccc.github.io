@@ -8,6 +8,12 @@
     <meta name="robots" content="noindex, nofollow">
 {{- end }}
 
+<!-- manifest(安装到桌面) -->
+{{ with site.Params.IsEnableManifest }}
+    <link href="/manifest.webmanifest" rel="manifest" />
+{{end}}
+
+
 <!-- Title -->
 <title>
     {{ if .IsHome }}

@@ -15,7 +15,7 @@ theme = 'PaperMod'
   # 关键词
   keywords = ['Linlccc','Blog', 'PaperMod']
   # 图像
-  images = ['/images/site/avatar.jpg']
+  images = ['/images/site/icon192.jpg']
   # 默认主题  [auto, dark, light]
   defaultTheme = 'auto'
   # 禁用主题切换
@@ -26,6 +26,8 @@ theme = 'PaperMod'
   hideFooter = false
   # 在文档也显示所有页面
   ShowAllPagesInArchive = true
+  # 是否启用 manifest (安装到桌面)
+  IsEnableManifest = true
 
   # 文章列表配置
   # 隐藏摘要（隐藏文章列表页面的中的文章详情）
@@ -81,13 +83,13 @@ theme = 'PaperMod'
     # 禁用滚动条样式
     disableScrollBarStyle = false
     # 图标
-    favicon = '/images/site/avatar.jpg'
+    favicon = '/images/site/icon192.jpg'
     favicon16x16 = ""
     favicon32x32 = ""
     # 苹果触摸图标
-    apple_touch_icon = "/images/site/avatar.jpg"
+    apple_touch_icon = "/images/site/icon192.jpg"
     # safari 固定标签
-    safari_pinned_tab = "/images/site/avatar.jpg"
+    safari_pinned_tab = "/images/site/icon192.jpg"
     # 主题颜色（在手机浏览器上下空白区域颜色）var(--theme) 是使用主题变量
     theme_color = ""
 
@@ -100,7 +102,7 @@ theme = 'PaperMod'
     # 图标高度
     iconHeight = 35
     # text = "测试"
-    # icon = "/images/site/avatar.jpg"
+    # icon = "/images/site/icon192.jpg"
     # icon = "https://linlccc.com/images/posts/test/test_post_1.png"
     # iconSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 25 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path style="font-variation-settings:normal"  d="M6.361 2.943 0 21.056h4.942l1.077-3.133H11.4l1.052 3.133H22.9c.71 0 1.1-.392 1.1-1.101V17.53c0-.71-.39-1.101-1.1-1.101h-6.483V4.045c0-.71-.392-1.102-1.101-1.102h-2.422c-.71 0-1.101.392-1.101 1.102v1.064l-.758-2.166zm2.324 5.948 1.688 5.018H7.144z" /></svg>'
     # iconHeight = 145
@@ -114,7 +116,7 @@ theme = 'PaperMod'
     # 字幕
     subtitle = "😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾"
     # 图像
-    imageUrl = "/images/site/avatar.jpg"
+    imageUrl = "/images/site/icon192.jpg"
     # 图像宽高
     imageWidth = 120
     imageHeight = 120
