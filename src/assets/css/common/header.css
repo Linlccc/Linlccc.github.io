@@ -7,6 +7,31 @@
     margin-inline-end: auto;
     line-height: var(--header-height);
 }
+/* 占位导航不显示 */
+.navPlaceholder{
+    opacity: 0;
+}
+/* 展示导航绝对定位 */
+.navExhibit {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background: var(--theme);
+    width: 100%;
+
+
+}
+/* 导航显示和隐藏动画 */
+.navS{
+    transform: translate(-50%,0);
+    transition: transform .3s;
+}
+.navH{
+    transform: translate(-50%,-100%);
+    transition: transform .3s;
+}
 
 .nav a {
     display: block;

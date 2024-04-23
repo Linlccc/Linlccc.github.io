@@ -1,121 +1,17 @@
-<!-- 设置主题 -->
-<!-- 获取是否禁用主题切换 -->
-{{ $disableThemeToggle := site.Params.disableThemeToggle | default false }}
 <!-- 获取默认主题 -->
 {{ $defaultTheme := site.Params.defaultTheme | default "auto" }}
 <script>
-// 得到主题颜色
-const defaultTheme = "{{ $defaultTheme }}";
-let theme = localStorage.getItem("pref-theme") ?? defaultTheme;
-if(theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-if(theme == 'dark') document.body.classList.add('dark');
-else document.body.classList.remove('dark');
+    // 得到主题颜色
+    const defaultTheme = "{{ $defaultTheme }}";
+    let theme = localStorage.getItem("pref-theme") ?? defaultTheme;
+    if(theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if(theme == 'dark') document.body.classList.add('dark');
+    else document.body.classList.remove('dark');
 </script>
 
-<!-- 环境 -->
-{{ $env := or hugo.IsProduction (eq site.Params.env "production") }}
-<!-- 图片格式 -->
-{{ $imgFormats := slice "jpg" "jpeg" "png" "tif" "bmp" "gif" }}
-{{ if hugo.IsExtended }}{{ $imgFormats = $imgFormats | append "webp" }}{{ end }}
-<!-- 站点文字 -->
-{{ $site_text := site.Params.label.text | default site.Title }}
-<!-- 站点图片 -->
-{{ $site_img := site.Params.label.icon }}
-<!-- 图片大小 -->
-{{ $site_imgHeight := site.Params.label.iconHeight | default 30 }}
-<!-- 如果本地存在加载成资源，并设置大小 -->
-{{ $site_imgResources := resources.Match $site_img }}
-{{ with $site_imgResources }}
-    {{ $site_imgResources = .Content }}
-    {{ if or $env (in $imgFormats $site_imgResources.MediaType.SubType) }}
-        {{ $site_imgResources = $site_imgResources.Resize (printf "x%d" $site_imgHeight) }}
-    {{ end }}
-    {{ $site_img = $site_imgResources.RelPermalink }}
-{{ end }}
-<!-- 禁用切换主题 -->
-{{ $disableThemeToggle := site.Params.disableThemeToggle | default false }}
-<!-- 当前语言 -->
-{{ $lang := .Lang }}
-<!-- 标题和语言之间分割线 -->
-{{ $titleLang_separator := or $site_text (not $disableThemeToggle) }}
-<!-- 当前页面 -->
-{{ $currentPage := . }}
-
-<!-- 站点svg图标 -->
-{{ $site_svg := site.Params.label.iconSVG }}
 <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            {{ if $site_text }}
-                <a href="{{ absLangURL "" }}" accesskey="h" title="{{ $site_text}} (Alt + H)">
-                    {{- if $site_img }}
-                        <img src="{{ $site_img }}" alt="" aria-label="logo" height="{{ $site_imgHeight }}">
-                    {{- else if hasPrefix $site_svg "<svg" -}}
-                        {{ safeHTML $site_svg }}
-                    {{ end -}}
-                    {{- $site_text }}
-                </a>
-            {{ end }}
-            <div class="logo-switches">
-                <!-- 主题切换 -->
-                {{- if not $disableThemeToggle }}
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-                {{- end }}
-                <!-- 语言切换 -->
-                {{ with site.Home.AllTranslations }}
-                    <ul class="lang-switch">
-                        {{ if $titleLang_separator }}<li>|</li>{{ end }}
-                        {{ range . }}
-                            {{ if ne .Lang $lang }}
-                                <li>
-                                    <a href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Lang }}">
-                                        {{ title .Lang }}
-                                    </a>
-                                </li>
-                            {{ end }}
-                        {{ end }}
-                    </ul>
-                {{ end }}
-            </div>
-        </div>
-        <!-- 菜单 -->
-        <ul id="menu">
-            {{ range .Site.Menus.main }}
-                {{ $menu_item_url := cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) | absLangURL}}
-                {{ $menu_item_active := eq $currentPage.Permalink $menu_item_url }}
-                {{ $is_search := eq (site.GetPage .KeyName).Layout `search` }}
-                <li>
-                    <a href="{{ $menu_item_url }}" title="{{ .Title | default .Name -}} {{ safeHTMLAttr (cond $is_search " (Alt + /)" "") }}" {{ safeHTMLAttr (cond $is_search "accesskey=/" "" ) }}>
-                        <span {{ safeHTMLAttr (cond $menu_item_active "class='active'" "") }}>
-                            {{ .Pre }}{{ .Name }}{{ .Post }}
-                        </span>
-                        <!-- 外链 -->
-                        {{ if findRE "://" .URL }}&nbsp;
-                            <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                                <path d="M15 3h6v6"></path>
-                                <path d="M10 14L21 3"></path>
-                            </svg>
-                        {{ end }}
-                    </a>
-                </li>
-            {{ end }}
-        </ul>
-    </nav>
+    <!-- 占位导航 -->
+    {{ partialCached "nav.html" (dict "curremtPage" . "className" "nav navPlaceholder") }}
+    <!-- 展示导航 -->
+    {{ partial "nav.html" (dict "curremtPage" . "className" "nav navExhibit") }}
 </header>

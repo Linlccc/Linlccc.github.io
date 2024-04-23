@@ -160,3 +160,33 @@
     });
 </script>
 {{- end }}
+
+<!-- 显示隐藏导航 -->
+<script>
+    // 导航栏
+    let nav = document.getElementsByClassName("navExhibit")[0];
+    // 记录滚动条最后的位置
+    var lastScrollTop = 0;
+    // 滚动标准
+    scrollStandard = 20;
+    window.addEventListener("scroll", function() {
+        // 得到当前滚动条位置
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // 滚动距离是否达标
+        if(Math.abs(scrollTop - lastScrollTop) < scrollStandard)return;
+        // 是否向下滚动
+        let isScrollDown = scrollTop > lastScrollTop;
+        // 重置滚动位置
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+
+        if(isScrollDown){
+            nav.classList.remove('navS');
+            nav.classList.add('navH');
+        }else{
+            nav.classList.remove('navH');
+            nav.classList.add('navS');
+        }
+
+    });
+</script>
