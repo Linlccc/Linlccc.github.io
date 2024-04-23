@@ -89,15 +89,19 @@
 <!-- 主题切换 -->
 {{- if (not site.Params.disableThemeToggle) }}
 <script>
+    // 获取主题颜色的元标签(这个主要控制iphone浏览器的上下空白区域)
+    let themeColorMeta = document.querySelector("meta[name=theme-color]");
     // 主题按钮点击
     document.getElementById("theme-toggle").addEventListener("click", () => {
         let theme = 'dark';
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
+            themeColorMeta.setAttribute("content", getComputedStyle(document.body).getPropertyValue('--theme'));
             localStorage.setItem("pref-theme", 'light');
             theme = 'light';
         } else {
             document.body.classList.add('dark');
+            themeColorMeta.setAttribute("content", getComputedStyle(document.body).getPropertyValue('--theme'));
             localStorage.setItem("pref-theme", 'dark');
             theme = 'dark';
         }
