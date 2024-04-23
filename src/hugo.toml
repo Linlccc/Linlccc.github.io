@@ -137,7 +137,7 @@ theme = 'PaperMod'
     Content = "😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾"
 
   # 社交图标
-  # [[params.socialIcons]]
+  # [[Params.socialIcons]]
   #   name = 'twitter'
   #   url = 'https://twitter.com/Linlccc'
   [[Params.socialIcons]]
@@ -147,16 +147,17 @@ theme = 'PaperMod'
     name = 'email'
     url = 'mailto:linlcccc@gmail.com'
 
-  # 文章封面(这个完全没搞懂)
+  # 文章封面
   [Params.cover]
     # 隐藏封面
     hidden = false
-    # 在文章页面隐藏封面  优先级 Page.Param.cover.hidden > Site.Param.cover.hiddenInSingle > Site.Param.cover.hidden
+    # 在文章内容页面隐藏封面  优先级 Page.Param.cover.hidden > Site.Param.cover.hiddenInSingle > Site.Param.cover.hidden
     hiddenInSingle = false
     # 在文章列表中隐藏封面 优先级 Site.Param.cover.hiddenInList > Site.Param.cover.hidden
     hiddenInList = false
-    # 以下两个不知道明确的作用
-    responsiveImages= false
+    # 响应式图片
+    responsiveImages= true
+    # 图片生成链接
     linkFullImages = true
 
   # 文章编辑链接信息

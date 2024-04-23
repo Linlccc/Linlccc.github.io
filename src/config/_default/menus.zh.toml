@@ -1,5 +1,5 @@
 ###########
-# 菜单配置 #
+# 中文菜单配置 #
 ###########
 
 [[main]]
@@ -40,4 +40,4 @@
   identifier = 'linlccc'
   name = 'Linlccc'
   url = 'https://linlccc.github.io/'
-  weight = 2
+  weight = 3

@@ -79,11 +79,11 @@
 - GLOBAL_CUSTOM_EVENT.html
   - 全局自定义事件/对象
 - head.html[^]
-  - 设置页面head的模板
+  - 页面head的模板
 - header.html[^]
   - 渲染页眉的模板-
 - home_info.html
-  - 设置普通页面个人信息的模板
+  - 普通页面个人信息的模板
 - index_profile.html
   - 个人主页模板
 - post_canonical.html

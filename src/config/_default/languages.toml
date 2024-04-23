@@ -6,6 +6,7 @@
   languageName = "English"
   weight = 1
 
+# 英文单独设置profileMode
 [en.profileMode]
   enabled = true
   title = "00000000!!!"
@@ -15,10 +16,6 @@
   # imageWidth = 120
   # imageHeight = 120
 
-[[en.menu.main]]
-  name = 'Posts'
-  url = '/posts'
-  weight = 1
 
 [[en.profileMode.buttons]]
   name = 'Posts'
