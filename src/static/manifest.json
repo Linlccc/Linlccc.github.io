@@ -1,10 +1,13 @@
 // https://web.dev/articles/add-manifest?hl=zh-cn
 {
   "name": "Linlccc's Blog",
-  "short_name": "Linlccc's Blog",
+  "short_name": "Lin's Blog",
   "start_url": "/",
   "display": "standalone",
-  "prefer_related_applications": false,
+  "orientation": "portrait",
+  "background_color": "#fff",
+  "theme_color": "#293032",
+  "splash_pages":null,
   "icons": [
     {
       "src": "/images/site/icon192.png",
@@ -25,7 +28,7 @@
       "form_factor": "narrow"
     },
     {
-      "src": "/images/screenshot720_540.png",
+      "src": "/images/site/screenshot720_540.png",
       "type": "image/png",
       "sizes": "720x540",
       "form_factor": "wide"

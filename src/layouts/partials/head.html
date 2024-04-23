@@ -1,6 +1,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="application-name" content="{{ site.Title }}">
+
 <!-- robots -->
 {{- if hugo.IsProduction | or (eq site.Params.env "production") }}
     <meta name="robots" content="index, follow">
@@ -8,11 +10,10 @@
     <meta name="robots" content="noindex, nofollow">
 {{- end }}
 
-<!-- manifest(安装到桌面) -->
+<!-- manifest(安装到桌面,iphone添加到桌面时独立打开) -->
 {{ with site.Params.IsEnableManifest }}
     <link href="/manifest.json" rel="manifest" />
 {{end}}
-
 
 <!-- Title -->
 <title>
