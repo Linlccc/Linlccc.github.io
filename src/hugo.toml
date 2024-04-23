@@ -84,8 +84,8 @@ theme = 'PaperMod'
     disableScrollBarStyle = false
     # 图标
     favicon = '/images/site/icon192.png'
-    favicon16x16 = ""
-    favicon32x32 = ""
+    favicon16x16 = "/images/site/icon16.png"
+    favicon32x32 = "/images/site/icon32.png"
     # 苹果触摸图标
     apple_touch_icon = "/images/site/icon192.png"
     # safari 固定标签
