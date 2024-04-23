@@ -1,0 +1,17 @@
+{
+  "name": "Linlccc's Blog",
+  "short_name": "Linlccc's Blog",
+  "start_url": "/",
+  "display": "standalone",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/images/site/icon192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/site/icon512.png",
+      "sizes": "512x512"
+    }
+  ]
+}
