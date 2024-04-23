@@ -168,8 +168,15 @@
     // 记录滚动条最后的位置
     var lastScrollTop = 0;
     // 滚动标准
-    scrollStandard = 20;
+    let scrollStandard = 20;
+    // 是否时首次
+    var isOneLoad = true;
     window.addEventListener("scroll", function() {
+        // 如果时首次加载不做处理
+        if(isOneLoad){
+            isOneLoad = false;
+            return;
+        }
         // 得到当前滚动条位置
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         // 滚动距离是否达标
@@ -188,5 +195,5 @@
             nav.classList.add('navS');
         }
 
-    });
+    },true);
 </script>

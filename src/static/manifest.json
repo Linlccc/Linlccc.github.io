@@ -5,7 +5,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "var(--theme)",
+  "theme_color": "#fff",
   "splash_pages":null,
   "icons": [
     {

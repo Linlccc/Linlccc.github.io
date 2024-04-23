@@ -7,6 +7,8 @@
     if(theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     if(theme == 'dark') document.body.classList.add('dark');
     else document.body.classList.remove('dark');
+    // 设置系统主题颜色(iphone上下空白处颜色)
+    document.querySelector("meta[name=theme-color]").setAttribute("content", getComputedStyle(document.body).getPropertyValue('--theme'));
 </script>
 
 <header class="header">
