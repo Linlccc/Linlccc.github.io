@@ -6,4 +6,4 @@
 # 禁用xml
 disableXML = true
 # 最小化输出
-minifyOutput = false
+minifyOutput = true
