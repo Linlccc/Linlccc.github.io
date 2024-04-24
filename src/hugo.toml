@@ -182,15 +182,15 @@ theme = 'PaperMod'
   # bing 站点验证 meta 标签信息
   [[Params.meta]]
     name = 'msvalidate.01'
-    content = 'bing'
+    content = 'D46176825688FA3D0C855598CDAB325F'
   # yandex 站点验证 meta 标签信息
-  [[Params.meta]]
-    name = 'yandex-verification'
-    content = 'yandex'
-# naver 站点验证 meta 标签信息
-  [[Params.meta]]
-    name = 'naver-site-verification'
-    content = 'naver'
+  # [[Params.meta]]
+  #   name = 'yandex-verification'
+  #   content = 'yandex'
+  # naver 站点验证 meta 标签信息
+  # [[Params.meta]]
+  #   name = 'naver-site-verification'
+  #   content = 'naver'
 
   # 搜索配置 see:https://fusejs.io/api/options.html
   [Params.fuseOpts]
