@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://linlccc.com/en/</loc>
-    <lastmod>2024-04-24T23:30:18+08:00</lastmod>
+    <lastmod>2024-04-25T00:41:44+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -109,6 +109,19 @@
                 href="https://linlccc.com/en/games/"
                 />
   </url><url>
+    <loc>https://linlccc.com/en/archives/</loc>
+    <lastmod>2024-04-25T00:41:44+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://linlccc.com/archives/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://linlccc.com/en/archives/"
+                />
+  </url><url>
     <loc>https://linlccc.com/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -122,7 +135,7 @@
                 />
   </url><url>
     <loc>https://linlccc.com/en/search/</loc>
-    <lastmod>2024-04-24T23:28:47+08:00</lastmod>
+    <lastmod>2024-04-25T00:41:44+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
