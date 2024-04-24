@@ -175,6 +175,10 @@ theme = 'PaperMod'
   [[Params.meta]]
     name = 'google-site-verification'
     content = 'ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY'
+    # 百度 站点验证 meta 标签信息
+  [[Params.meta]]
+    name = 'baidu-site-verification'
+    content = 'codeva-jdQo5tjYx5'
   # bing 站点验证 meta 标签信息
   [[Params.meta]]
     name = 'msvalidate.01'
