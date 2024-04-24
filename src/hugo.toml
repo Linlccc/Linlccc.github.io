@@ -178,7 +178,7 @@ theme = 'PaperMod'
     # 百度 站点验证 meta 标签信息
   [[Params.meta]]
     name = 'baidu-site-verification'
-    content = 'codeva-JANWEcHebm'
+    content = 'codeva-3S13SuprEU'
   # bing 站点验证 meta 标签信息
   [[Params.meta]]
     name = 'msvalidate.01'
