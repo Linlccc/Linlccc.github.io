@@ -36,11 +36,11 @@
   url = '/archives/'
   weight = 7
 
-  [[main]]
-  identifier = 'linlccc'
-  name = 'Linlccc'
-  url = 'https://linlccc.github.io/'
-  weight = 9
+  # [[main]]
+  # identifier = 'linlccc'
+  # name = 'Linlccc'
+  # url = 'https://linlccc.github.io/'
+  # weight = 9
 
   # [[main]]
   # identifier = 'categories'
