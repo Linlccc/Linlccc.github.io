@@ -10,7 +10,7 @@
   # 链接
   url = '/posts/'
   # 权重
-  weight = 1
+  weight = 3
   # 在name前添加内容（允许html）
   pre = ""
   # 在name后添加内容（允许html）
@@ -19,28 +19,28 @@
   title = ''
 
 [[main]]
-  identifier = 'tags'
-  name = '标签'
-  url = '/tags/'
-  weight = 2
-
-[[main]]
   identifier = 'search'
   name = '搜索'
   url = '/search/'
   weight = 1
 
 [[main]]
+  identifier = 'tags'
+  name = '标签'
+  url = '/tags/'
+  weight = 5
+
+[[main]]
   identifier = 'archives'
   name = '档案'
   url = '/archives/'
-  weight = 1
+  weight = 7
 
   [[main]]
   identifier = 'linlccc'
   name = 'Linlccc'
   url = 'https://linlccc.github.io/'
-  weight = 3
+  weight = 9
 
   # [[main]]
   # identifier = 'categories'
