@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on linlccc&#39;s blog</title>
+    <link>https://linlccc.com/posts/</link>
+    <description>Recent content in Posts on linlccc&#39;s blog</description>
+    <image>
+      <title>linlccc&#39;s blog</title>
+      <url>https://linlccc.com/images/site/icon192.png</url>
+      <link>https://linlccc.com/images/site/icon192.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 22 Apr 2024 20:06:55 +0800</lastBuildDate><atom:link href="https://linlccc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo 模板基本语法</title>
+      <link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link>
+      <pubDate>Wed, 22 Feb 2023 17:57:49 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
+      <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与赋值</description>
+    </item>
+    
+    <item>
+      <title>管理 SSH</title>
+      <link>https://linlccc.com/posts/managessh/</link>
+      <pubDate>Mon, 22 Apr 2024 20:06:55 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/managessh/</guid>
+      <description>生成新的 SSH 密钥 在终端中输入以下指令以提供的电子邮件为标签创建SSH密钥 ssh-keygen -t rsa -b 4096 -C &amp;quot;[email@example.com]&amp;quot; 根据提示输入密钥保存文件，可空保存到默认文件C:\Use</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; 学习笔记</title>
+      <link>https://linlccc.com/posts/cppstudynotes/</link>
+      <pubDate>Tue, 28 Feb 2023 23:20:19 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/cppstudynotes/</guid>
+      <description>基础 整数类型 这些类型里面除了只有 signed 和 int 的都可以省略 signed / int 例如 short, short int, signed short, signed short int 表示一个类型 类型 占用字节数 取值范围 signed char 1 -128 到 127 unsigned char 1 0 到 255 short, short int,</description>
+    </item>
+    
+    <item>
+      <title>踩坑记--Safari之正向后行断言</title>
+      <link>https://linlccc.com/posts/saferisteppingonthepit/</link>
+      <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/saferisteppingonthepit/</guid>
+      <description>正则表达式 1. Safari 处理正则表达式中的正向后行断言时(?&amp;lt;=&amp;hellip;)，异常 // 以下代码在 Chrome 中正常，但在 Safari 中会报错 &amp;quot;https://linlccc.com?theme=light&amp;quot;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;quot;dark&amp;quot;); // 解决方案，使用</description>
+    </item>
+    
+  </channel>
+</rss>

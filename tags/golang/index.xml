@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Golang on linlccc&#39;s blog</title>
+    <link>https://linlccc.com/tags/golang/</link>
+    <description>Recent content in Golang on linlccc&#39;s blog</description>
+    <image>
+      <title>linlccc&#39;s blog</title>
+      <url>https://linlccc.com/images/site/icon192.png</url>
+      <link>https://linlccc.com/images/site/icon192.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 22 Feb 2023 17:57:49 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo 模板基本语法</title>
+      <link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link>
+      <pubDate>Wed, 22 Feb 2023 17:57:49 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
+      <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与赋值</description>
+    </item>
+    
+  </channel>
+</rss>
