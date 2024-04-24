@@ -12,6 +12,3 @@ buildDrafts = true
 buildExpired = true
 # 构建未来
 buildFuture = true
-
-
-# googleAnalytics = 'G-TQ3ZXPKKNM'

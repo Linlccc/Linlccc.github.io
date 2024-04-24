@@ -41,3 +41,9 @@
   name = 'Linlccc'
   url = 'https://linlccc.github.io/'
   weight = 3
+
+  # [[main]]
+  # identifier = 'categories'
+  # name = '分类'
+  # url = '/categories/'
+  # weight = 10

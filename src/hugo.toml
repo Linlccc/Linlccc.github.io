@@ -90,7 +90,7 @@ theme = 'PaperMod'
     apple_touch_icon = "/images/site/icon192.png"
     # safari 固定标签
     safari_pinned_tab = "/images/site/icon192.png"
-    # 主题颜色（在手机浏览器上下空白区域颜色）var(--theme) 是使用主题变量
+    # 主题颜色（在手机浏览器上下空白区域颜色）
     theme_color = ""
 
   # 标签，进入主页的title设置
