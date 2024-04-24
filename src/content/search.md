@@ -1,6 +1,6 @@
 ---
 # 标题
-title: "Search"
+title: "搜索"
 # 布局模板定位
 layout: "search"
 # 概述
