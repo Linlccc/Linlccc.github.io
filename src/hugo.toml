@@ -39,7 +39,7 @@ theme = 'PaperMod'
   # 显示面包屑
   ShowBreadCrumbs = false
   # 元信息
-  # 隐藏元
+  # 隐藏元(内容/列表等页面，用于呈现内容信息)
   hidemeta = false
   # 日期格式
   DateFormat = "2006-01-02"
