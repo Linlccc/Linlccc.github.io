@@ -78,7 +78,6 @@
 {{ range site.Params.meta }}
     <meta name="{{ .name }}" content="{{ .content }}" />
 {{ end }}
-<meta name="baidu-site-verification" content="codeva-jdQo5tjYx5" />
 
 <!-- 普通样式 -->
 {{ $commonStyle := resources.Match "css/common/*.css" | resources.Concat "assets/css/common.css" }}
