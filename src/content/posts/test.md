@@ -21,6 +21,9 @@ cover:
     caption: "测试文章封面描述文字"
     hidden: false
 ---
+
+## 二级标题
+
 <!-- 使用 collapse 简码 -->
 {{< collapse summary="使用折叠简码" openByDefault=true >}}
 
@@ -43,8 +46,6 @@ cover:
 {{< /rawhtml >}}
 
 {{< /collapse >}}
-
-## 二级标题
 
 ### 三级标题
 

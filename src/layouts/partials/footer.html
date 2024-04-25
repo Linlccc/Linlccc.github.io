@@ -171,7 +171,8 @@
     let scrollStandard = 20;
     // 是否时首次
     var isOneLoad = true;
-    window.addEventListener("scroll", function() {
+    // 显示隐藏导航方法
+    function sHNav(){
         // 如果时首次加载不做处理
         if(isOneLoad){
             isOneLoad = false;
@@ -194,6 +195,43 @@
             nav.classList.remove('navH');
             nav.classList.add('navS');
         }
+    }
+</script>
 
-    },true);
+
+<!-- 如果是文章页面 -->
+{{ if and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") }}
+<!-- 激活目录 -->
+<script>
+    // 得到目录元素
+    let tocEl = document.getElementsByClassName("toc")[0];
+    let tocLi = tocEl.getElementsByTagName("li");
+    // 得到锚点元素
+    let anchors = Array.from(document.getElementsByClassName("anchor")).map(a=>a.parentNode)
+    function activeToc(){
+        // 如果屏幕宽度不足够显示目录直接返回
+        if(document.documentElement.clientWidth<1280-19)return;
+        // 得到当前应该激活的锚点索引
+        let activeAnchor = anchors.findIndex(a=>{
+            let y = a.getBoundingClientRect().y;
+            return y>0 && y<100;
+        });
+        if(activeAnchor == -1)return;
+        // 确保目录打开
+        tocEl.getElementsByTagName("details")[0].setAttribute("open","")
+        // 修改激活状态
+        for (let i = 0; i < tocLi.length; i++) {
+            if(i== activeAnchor)tocLi[i].classList.add("active");
+            else tocLi[i].classList.remove("active");
+        }
+    }
+</script>
+{{ end }}
+
+<!-- 滚动事件 -->
+<script>
+    window.addEventListener("scroll", function() {
+        if(typeof sHNav == "function")sHNav();
+        if(typeof activeToc == "function")activeToc();
+    });
 </script>

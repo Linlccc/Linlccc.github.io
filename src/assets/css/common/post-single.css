@@ -273,6 +273,29 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+
+    /* 激活目录样式 */
+    .toc li.active>a{
+        color: var(--primary);
+    }
+    .toc li.active:before{
+        content: "";
+        position: absolute;
+        left: 8px;
+        height: 24px;
+        width: 3px;
+        background: var(--theme);
+    }
+    .toc li.active>a:before{
+        content: "";
+        position: absolute;
+        left: 8px;
+        height: 24px;
+        width: calc(100% - 8px);
+        background: var(--tertiary);
+        opacity: .7;
+        z-index: -1;
+    }
   }
 /* 目录样式 */
 .toc {
