@@ -21,7 +21,7 @@ cover:
     hidden: true
 ---
 
-## 正则表达式
+## regular expression
 
 ### 1. Safari handles positive lookbehind assertions in regular expressions, denoted by (?<=...), abnormally
 
