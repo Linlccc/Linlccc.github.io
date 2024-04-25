@@ -59,7 +59,7 @@ defaultMarkdownHandler = 'goldmark'
   # 行锚点
   anchorLineNos = true
   # 突出显示代码块
-  codeFences = false
+  codeFences = true
   # 猜测代码块的语法
   guessSyntax = true
   # 高亮代码块的行号（基本没用，用了这个每一个代码块的这个些行都会高亮）
@@ -72,7 +72,7 @@ defaultMarkdownHandler = 'goldmark'
   lineNoStart = 1
   # 显示行号
   lineNos = true
-  # 表格中使用行号(没用)
+  # 表格中使用行号(是否用表格存放行号)
   lineNumbersInTable = true
   # 不使用class来应用样式，该值为true时不会在代码块上添加class，直接使用样式
   noClasses = true

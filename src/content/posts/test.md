@@ -55,6 +55,11 @@ cover:
 
 ###### 六级标题题题题题题题题题题
 
+<h1 style="background: red;">h1html</h1>
+<script>
+    console.log("md输出");
+</script>
+
 段落正常字体
 *段落斜体*
 **段落粗体**
