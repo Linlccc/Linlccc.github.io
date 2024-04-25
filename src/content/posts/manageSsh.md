@@ -41,7 +41,7 @@ cover:
 
 - 在终端中输入以下指令以提供的电子邮件为标签创建`SSH`密钥
 
-~~~ cmd
+~~~ Bash
 ssh-keygen -t rsa -b 4096 -C "[email@example.com]"
 ~~~
 
@@ -52,14 +52,14 @@ ssh-keygen -t rsa -b 4096 -C "[email@example.com]"
 
 - 以管理员权限打开 `PowerShell` 启动 `ssh agent`:
 
-~~~ cmd
+~~~ Bash
 Get-Service -Name ssh-agent | Set-Service -StartupType Manual
 Start-Service ssh-agent
 ~~~
 
 - 将 SSH 私钥添加到 ssh-agent (无需管理员权限)
 
-~~~ cmd
+~~~ Bash
 ssh-add C:\Users\[User]\.ssh\id_rsa
 ~~~
 
@@ -68,7 +68,7 @@ ssh-add C:\Users\[User]\.ssh\id_rsa
 - 删除`C:\Users\[User]\.ssh\`文件夹中的两个密钥文件
 - 从`ssh agent`中移除`ssh`密钥
 
-~~~ txt
+~~~ Bash
 # 查看已加载的密钥列表
 ssh-add -l
 # 移除密钥
