@@ -254,12 +254,38 @@
     font-weight: normal;
 }
 
+/* 屏幕大于1280时样式 */
+@media screen and (min-width: 1280px) {
+    .toc{
+        position: fixed;
+        z-index: 990;
+        top: var(--header-height);
+        transform: translateX(calc(var(--main-width) + var(--gap)));
+        width: 240px;
+        font-size: 15px;
+        overflow: auto;
+        max-height: calc(100% - var(--header-height) * 2);
+    }
+    /* 文字超出部分不显示 */
+    .toc li a{
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+  }
+/* 目录样式 */
 .toc {
     margin: 0 2px 40px 2px;
     border: 1px solid var(--border);
     background: var(--code-bg);
     border-radius: var(--radius);
     padding: 0.4em;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .dark .toc {

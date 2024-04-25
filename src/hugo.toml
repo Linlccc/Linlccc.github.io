@@ -55,7 +55,7 @@ theme = 'PaperMod'
   # 显示目录
   showtoc = true
   # 目录打开
-  tocopen = false
+  tocopen = true
   # 使用Hugo目录(使用hugo目录就可以使用 tableOfContents 配置)
   UseHugoToc = true
   # 内容
