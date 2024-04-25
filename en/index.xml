@@ -18,7 +18,7 @@
       <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
       
       <guid>https://linlccc.com/en/posts/saferisteppingonthepit/</guid>
-      <description>正则表达式 1. Safari handles positive lookbehind assertions in regular expressions, denoted by (?&amp;lt;=&amp;hellip;), abnormally // The following code works fine in Chrome but throws an error in Safari. &amp;quot;https://linlccc.com?theme=light&amp;quot;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;quot;dark&amp;quot;); // The solution is to use capturing groups and string replacement. &amp;quot;https://linlccc.com?theme=light&amp;quot;.replace(/([?|&amp;amp;]theme=)\w+/, &amp;quot;$1dark&amp;quot;); // Both of the execution results above are &amp;quot;https://linlccc.com?theme=dark&amp;quot;</description>
+      <description>regular expression 1. Safari handles positive lookbehind assertions in regular expressions, denoted by (?&amp;lt;=&amp;hellip;), abnormally // The following code works fine in Chrome but throws an error in Safari. &amp;quot;https://linlccc.com?theme=light&amp;quot;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;quot;dark&amp;quot;); // The solution is to use capturing groups and string replacement. &amp;quot;https://linlccc.com?theme=light&amp;quot;.replace(/([?|&amp;amp;]theme=)\w+/, &amp;quot;$1dark&amp;quot;); // Both of the execution results above are &amp;quot;https://linlccc.com?theme=dark&amp;quot; </description>
     </item>
     
     <item>
