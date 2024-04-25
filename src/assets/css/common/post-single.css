@@ -179,7 +179,8 @@
 
 .post-content .highlight pre {
     margin: 0;
-    background: var(--theme) !important;
+    /* background: var(--theme) !important; */
+    background: var(--hljs-bg) !important;
     display: block !important;
 }
 
