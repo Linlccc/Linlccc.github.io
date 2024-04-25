@@ -160,6 +160,10 @@
 .post-content .highlight>div{
     background:0 0 !important;
 }
+.post-content .highlight td:last-child{
+    width:100%;
+}
+
 
 .post-content .highlight .hljs-number{
     color: var(--primary);
