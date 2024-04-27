@@ -47,6 +47,8 @@ theme = 'PaperMod'
   ShowReadingTime = true
   # 显示字数
   ShowWordCount = true
+  # 隐藏作者
+  HideAuthor = false
   # 作者
   author = ['Linlccc']
   # 原文章来自哪里的提示文章

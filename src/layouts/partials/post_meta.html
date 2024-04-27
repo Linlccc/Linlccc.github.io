@@ -15,8 +15,10 @@
 {{ end }}
 
 <!-- 作者 -->
-{{ with (partial "author.html" .) }}
-  {{ $scratch.Add "meta" (slice .) }}
+{{ if not (.Param "HideAuthor") }}
+  {{ with (partial "author.html" .) }}
+    {{ $scratch.Add "meta" (slice .) }}
+  {{ end }}
 {{ end }}
 
 <!-- 分割元数据 -->
