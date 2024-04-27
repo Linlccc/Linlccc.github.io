@@ -53,14 +53,18 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
+            // 得到滚动是否需要动画
+            const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches?"instant":"smooth";
+            // 得到要滚动到的元素
             var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
+            const el = document.querySelector(`[id='${decodeURIComponent(id)}']`);
+            // 得到元素基于main的位置（如果向上滚动就是要滚动到该位置）
+            const scrollToTop = el.offsetTop;
+            // 向上滚动(向上滚动时留出导航栏空间)
+            if(scrollToTop < document.documentElement.scrollTop)window.scrollTo({top: scrollToTop,behavior: behavior});
+            // 向下滚动（直接滚动到顶部）
+            else el.scrollIntoView({behavior: behavior});
+            // 设置历史记录
             if (id === "top") {
                 history.replaceState(null, null, " ");
             } else {
