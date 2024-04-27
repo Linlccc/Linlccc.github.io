@@ -170,6 +170,8 @@ theme = 'PaperMod'
     Text = "编辑"
     # 将文件路径附加到编辑链接
     appendFilePath = true
+    # 禁用编辑
+    disabled = false
 
   # Google 站点验证 meta 标签信息
   [[Params.meta]]

@@ -20,6 +20,9 @@ cover:
     alt: "测试文章封面图片"
     caption: "测试文章封面描述文字"
     hidden: false
+
+editPost:
+    disabled: true
 ---
 
 ## 二级标题
