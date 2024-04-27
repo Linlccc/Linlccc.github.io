@@ -83,8 +83,6 @@ pygmentsUseClasses = true
 
   # 资产
   [params.assets]
-    # 禁用 highlight.js(高亮js)
-    disableHLJS = true
     # 禁用指纹识别
     disableFingerprinting = true
     # 图标

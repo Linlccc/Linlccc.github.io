@@ -78,8 +78,6 @@ theme = 'PaperMod'
 
   # 资产
   [Params.assets]
-    # 禁用代码高亮
-    disableHLJS = false
     # 禁用资源的完整性（用于检查资源是否被篡改）
     disableFingerprinting = false
     # 禁用滚动条样式

@@ -93,8 +93,8 @@
 {{ $extendedStyle := resources.Match "css/extended/*.css" | resources.Concat "assets/css/extended.css" }}
 
 <!-- 代码高亮样式 -->
-{{ $disableHLJS := site.Params.assets.disableHLJS | default false }}
-{{ $hljsStyle := cond $disableHLJS (".chroma { background-color: unset !important;}" | resources.FromString "assets/css/hljs.css") (resources.Get "css/hljs/an-old-hope.min.css") }}
+{{ $chroma_styles := (resources.Get "css/includes/chroma-styles.css") }}
+{{ $chroma_mod := (resources.Get "css/includes/chroma-mod.css") }}
 
 <!-- 滚动条样式 -->
 {{ $disableScrollBarStyle := site.Params.assets.disableScrollBarStyle | default false }}
@@ -104,7 +104,7 @@
 {{ $disableFingerprinting := site.Params.assets.disableFingerprinting | default false }}
 
 <!-- 合并样式并引用 -->
-{{ $styles := slice $themeStyle $resetStyle $commonStyle $hljsStyle $scrollBarStyle $mediaStyle $extendedStyle | resources.Concat "assets/css/styles.css" | minify }}
+{{ $styles := slice $themeStyle $resetStyle $commonStyle $chroma_styles $chroma_mod $scrollBarStyle $mediaStyle $extendedStyle | resources.Concat "assets/css/styles.css" | minify }}
 {{ if $disableFingerprinting }}
     <link crossorigin="anonymous" href="{{ $styles.RelPermalink }}" rel="preload stylesheet" as="style">
 {{ else }}
@@ -123,20 +123,6 @@
     {{ else }}
         {{ $searchJs = $searchJs | fingerprint }}
         <script defer crossorigin="anonymous" src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}"></script>
-    {{ end }}
-{{ end }}
-
-<!-- Highlight.js -->
-<!-- 得到页面是否禁用高亮js -->
-{{ $pageDisableHLJS := .Params.disableHLJS | default false }}
-<!-- 在文章页面并且高亮js没禁用 -->
-{{ if and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (not $disableHLJS | default $pageDisableHLJS) }}
-    {{ $highlight := slice (resources.Get "js/highlight.min.js") | resources.Concat "assets/js/highlight.js" | minify }}
-    {{ if $disableFingerprinting }}
-        <script defer crossorigin="anonymous" src="{{ $highlight.RelPermalink }}" onload="hljs.initHighlightingOnLoad();"></script>
-    {{ else }}
-        {{ $highlight = $highlight | fingerprint }}
-        <script defer crossorigin="anonymous" src="{{ $highlight.RelPermalink }}" integrity="{{ $highlight.Data.Integrity }}" onload="hljs.initHighlightingOnLoad();"></script>
     {{ end }}
 {{ end }}
 

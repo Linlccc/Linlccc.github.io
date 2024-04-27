@@ -27,8 +27,6 @@ weight: 1000
 draft: true
 # 别名, 用于重定向  (比如: /post/[aliases]/ 会重定向到当前页面)
 aliases: []
-# 禁用代码高亮(用 params.assets.disableHLJS 变量来配置，使用时只要一个禁用就会禁用)
-disableHLJS: false
 # 在文章分类页面显示 RSS 订阅按钮
 ShowRssButtonInSectionTermList: true
 # 使用 Hugo 自动生成的目录

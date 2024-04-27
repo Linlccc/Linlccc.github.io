@@ -76,8 +76,6 @@ defaultMarkdownHandler = 'goldmark'
   lineNumbersInTable = true
   # 不使用class来应用样式，该值为true时不会在代码块上添加class，直接使用样式
   noClasses = false
-  # 不对代码进行高亮处理(没用)
-  noHl = false
   # 高亮主题 https://xyproto.github.io/splash/docs/all.html
   style = 'github'
   # 制表符的宽度(没用)
