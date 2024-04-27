@@ -49,6 +49,15 @@
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
     }
+    // 获取元素基于body的位置
+    function getOffsetTopByBody (el) {
+        let offsetTop = 0
+        while (el && el.tagName !== 'BODY') {
+            offsetTop += el.offsetTop
+            el = el.offsetParent
+        }
+        return offsetTop
+    }
     // a标签点击处理
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
@@ -58,18 +67,14 @@
             // 得到要滚动到的元素
             var id = this.getAttribute("href").substr(1);
             const el = document.querySelector(`[id='${decodeURIComponent(id)}']`);
-            // 得到元素基于main的位置（如果向上滚动就是要滚动到该位置）
-            const scrollToTop = el.offsetTop;
-            // 向上滚动(向上滚动时留出导航栏空间)
-            if(scrollToTop < document.documentElement.scrollTop)window.scrollTo({top: scrollToTop,behavior: behavior});
-            // 向下滚动（直接滚动到顶部）
-            else el.scrollIntoView({behavior: behavior});
+            // 得到元素基于body的位置
+            let elY = getOffsetTopByBody(el);
+            // 如果向上滚动留出导航位置
+            if(elY < document.documentElement.scrollTop)elY = elY - document.getElementsByClassName("nav")[0].getBoundingClientRect().height;
+            window.scrollTo({top: elY,behavior: behavior});
             // 设置历史记录
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
+            if (id === "top") history.replaceState(null, null, " ");
+            else history.pushState(null, null, `#${id}`);
         });
     });
 
