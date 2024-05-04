@@ -154,7 +154,7 @@
     # 隐藏封面
     hidden = false
     # 在文章内容页面隐藏封面  优先级 Page.Param.cover.hidden > Site.Param.cover.hiddenInSingle > Site.Param.cover.hidden
-    hiddenInSingle = false
+    hiddenInSingle = true
     # 在文章列表中隐藏封面 优先级 Site.Param.cover.hiddenInList > Site.Param.cover.hidden
     hiddenInList = false
     # 响应式图片
