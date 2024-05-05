@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 05 May 2024 01:46:07 +0800</lastBuildDate><atom:link href="https://linlccc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2024 07:05:18 +0800</lastBuildDate><atom:link href="https://linlccc.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo 模板基本语法</title>
       <link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link>
@@ -19,6 +19,15 @@
       
       <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
       <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 1 2 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与</description>
+    </item>
+    
+    <item>
+      <title>常用SQL</title>
+      <link>https://linlccc.com/posts/commonsql/</link>
+      <pubDate>Sun, 05 May 2024 07:05:18 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/commonsql/</guid>
+      <description>DCL(Data Control Language)数据控制语言 DCL 在 mysql 中可以正常使用其他数据库没测试 用户管理 1 2 3 4 5 6 -- 查询用户 select host,user from mysql.user; -- 添加用户 create user &amp;#39;用户名&amp;</description>
     </item>
     
     <item>

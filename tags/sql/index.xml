@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sql on linlccc&#39;s blog</title>
+    <link>https://linlccc.com/tags/sql/</link>
+    <description>Recent content in Sql on linlccc&#39;s blog</description>
+    <image>
+      <title>linlccc&#39;s blog</title>
+      <url>https://linlccc.com/images/site/icon192.png</url>
+      <link>https://linlccc.com/images/site/icon192.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 05 May 2024 07:05:18 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用SQL</title>
+      <link>https://linlccc.com/posts/commonsql/</link>
+      <pubDate>Sun, 05 May 2024 07:05:18 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/commonsql/</guid>
+      <description>DCL(Data Control Language)数据控制语言 DCL 在 mysql 中可以正常使用其他数据库没测试 用户管理 1 2 3 4 5 6 -- 查询用户 select host,user from mysql.user; -- 添加用户 create user &amp;#39;用户名&amp;</description>
+    </item>
+    
+  </channel>
+</rss>
