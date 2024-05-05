@@ -16,8 +16,11 @@ date: "2024-05-05 19:57:58"
 
 ## 具体配置可见
 
-[NGINX 配置](https://tsejx.github.io/devops-guidebook/server/nginx)
-[NGINX 备忘清单](https://wangchujiang.com/reference/docs/nginx.html)
+<a href="https://tsejx.github.io/devops-guidebook/server/nginx" target="_blank">NGINX 配置</a>
+
+<a href="https://wangchujiang.com/nginx-tutorial/index.html" target="_blank">NGINX 入门学习笔记</a>
+
+<a href="https://wangchujiang.com/reference/docs/nginx.html" target="_blank">NGINX 备忘清单</a>
 
 ## Web服务器
 
