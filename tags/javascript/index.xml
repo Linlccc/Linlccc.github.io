@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Javascript on linlccc&#39;s blog</title>
+    <link>https://linlccc.com/tags/javascript/</link>
+    <description>Recent content in Javascript on linlccc&#39;s blog</description>
+    <image>
+      <title>linlccc&#39;s blog</title>
+      <url>https://linlccc.com/images/site/icon192.png</url>
+      <link>https://linlccc.com/images/site/icon192.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 07 May 2024 03:52:05 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用js</title>
+      <link>https://linlccc.com/posts/commonlyusedjs/</link>
+      <pubDate>Tue, 07 May 2024 03:52:05 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/commonlyusedjs/</guid>
+      <description>防抖 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function debounce (fn, delay) { let timer; return function (...args) { if (timer) clearTimeout(timer); timer = setTimeout(() =&amp;gt; fn.apply(this, args), delay); }; } // 测试 function task (arg) { console.log(&amp;#39;run task&amp;#39; + arg); } const debounceTask = debounce(task, 1000); window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; debounceTask(11)); 节流 1 2 3 4 5 6 7 8</description>
+    </item>
+    
+  </channel>
+</rss>
