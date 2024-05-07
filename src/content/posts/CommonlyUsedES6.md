@@ -6,7 +6,7 @@ description: ""
 # 摘要
 Summary: ""
 # 标签
-tags: ["javasrcipt"]
+tags: ["javascript"]
 # 显示权重（越小显示越靠前）
 weight: 1000
 
