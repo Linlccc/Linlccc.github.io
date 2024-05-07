@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 07 May 2024 17:05:29 +0800</lastBuildDate><atom:link href="https://linlccc.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 May 2024 18:20:22 +0800</lastBuildDate><atom:link href="https://linlccc.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo 模板基本语法</title>
       <link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link>
@@ -19,6 +19,15 @@
       
       <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
       <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 1 2 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与</description>
+    </item>
+    
+    <item>
+      <title>在 Vue 中使用 Axios</title>
+      <link>https://linlccc.com/posts/axiosinvue/</link>
+      <pubDate>Tue, 07 May 2024 18:20:22 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/axiosinvue/</guid>
+      <description>axios.ts 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 import axios from &amp;#39;axios&amp;#39; // 文档：https://githu</description>
     </item>
     
     <item>
@@ -45,7 +54,7 @@
       <pubDate>Tue, 07 May 2024 03:52:05 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/commonlyusedjs/</guid>
-      <description>防抖 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function debounce (fn, delay) { let timer; return function (...args) { if (timer) clearTimeout(timer); timer = setTimeout(() =&amp;gt; fn.apply(this, args), delay); }; } // 测试 function task (arg) { console.log(&amp;#39;run task&amp;#39; + arg); } const debounceTask = debounce(task, 1000); window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; debounceTask(11)); 节流 1 2 3 4 5 6 7 8</description>
+      <description>防抖 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function debounce (fn, delay) { let timer; return function (...args) { timer&amp;amp;&amp;amp;clearTimeout(timer); timer = setTimeout(() =&amp;gt; fn.apply(this, args), delay); }; } // 测试 function task (arg) { console.log(&amp;#39;run task&amp;#39; + arg); } const debounceTask = debounce(task, 1000); window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; debounceTask(11)); 节流 1 2 3 4 5 6 7 8 9 10</description>
     </item>
     
     <item>

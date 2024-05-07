@@ -36,7 +36,7 @@
       <pubDate>Tue, 07 May 2024 03:52:05 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/commonlyusedjs/</guid>
-      <description>防抖 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function debounce (fn, delay) { let timer; return function (...args) { if (timer) clearTimeout(timer); timer = setTimeout(() =&amp;gt; fn.apply(this, args), delay); }; } // 测试 function task (arg) { console.log(&amp;#39;run task&amp;#39; + arg); } const debounceTask = debounce(task, 1000); window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; debounceTask(11)); 节流 1 2 3 4 5 6 7 8</description>
+      <description>防抖 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function debounce (fn, delay) { let timer; return function (...args) { timer&amp;amp;&amp;amp;clearTimeout(timer); timer = setTimeout(() =&amp;gt; fn.apply(this, args), delay); }; } // 测试 function task (arg) { console.log(&amp;#39;run task&amp;#39; + arg); } const debounceTask = debounce(task, 1000); window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; debounceTask(11)); 节流 1 2 3 4 5 6 7 8 9 10</description>
     </item>
     
   </channel>
