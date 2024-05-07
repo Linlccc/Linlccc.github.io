@@ -12,6 +12,9 @@ weight: 1000
 
 # 撰写日期
 date: "2024-05-07 17:05:29"
+
+# 原文章链接
+canonicalURL: "https://juejin.cn/post/7023906112843808804"
 ---
 
 ## 1、实现原生的AJAX请求
@@ -1481,20 +1484,19 @@ function allSettled(promises) {
 // 如果有一个Promise成功，则返回这个成功结果
 // 如果所有Promise都失败，则报错
 function any(promises) {
-        return new Promise((resolve, reject) => {
-            let count = 0
-            promises.forEach((promise) => {
-                promise.then(val => {
-                    resolve(val)
-                }, err => {
-                    count++
-                    if (count === promises.length) {
-                        reject(new AggregateError('All promises were rejected'))
-                    }
-                })
+    return new Promise((resolve, reject) => {
+        let count = 0
+        promises.forEach((promise) => {
+            promise.then(val => {
+                resolve(val)
+            }, err => {
+                count++
+                if (count === promises.length) {
+                    reject(new AggregateError('All promises were rejected'))
+                }
             })
         })
-    }
+    })
 }
 ~~~
 
