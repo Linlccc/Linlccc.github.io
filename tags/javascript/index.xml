@@ -18,7 +18,7 @@
       <pubDate>Tue, 07 May 2024 17:05:29 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/adv-js-knowledge/</guid>
-      <description>1、实现原生的AJAX请求 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 const ajax = { get(url, fn) { const xhr = new XMLHttpRequest() xhr.open(&amp;#39;GET&amp;#39;, url, true)// 第三个参数异步与否 xhr.onreadystatechange = function() { if (xhr.readyState === 4) { fn(xhr.responeText)</description>
+      <description>1、实现原生的AJAX请求 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 const ajax = { get(url, fn) { const xhr = new XMLHttpRequest() xhr.open(&amp;#39;GET&amp;#39;, url, true)// 第三个参数异步与否 xhr.onreadystatechange = function() { if (xhr.readyState === 4) { fn(xhr.responeText) } } xhr.send() }, post(url, data, fn) { const xhr = new XMLHttpRequest() xhr.open(&amp;#39;POST&amp;#39;, url, true) xhr.setRequestHeader(&amp;#39;Content-type&amp;#39;,&amp;#39;application/x-www-form-urlencoded&amp;#39;) xhr.onreadystatechange = function () { if (xhr.readyState === 4) { fn(xhr.responeText) } }</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Tue, 07 May 2024 16:28:47 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/commonlyusedes6/</guid>
-      <description>ES6 20个经常使用的技巧 打乱数组顺序 1 2 3 4 let arr = [&amp;#39;😄&amp;#39;, 67, true, false, &amp;#39;55&amp;#39;] arr = arr.sort(() =&amp;gt; 0.5 - Math.random()) console.log(arr) // [ &amp;#39;😄&amp;#39;, &amp;#39;55&amp;#39;, 67, false, true ] 删除</description>
+      <description>ES6 20个经常使用的技巧 打乱数组顺序 1 2 3 4 let arr = [&amp;#39;😄&amp;#39;, 67, true, false, &amp;#39;55&amp;#39;] arr = arr.sort(() =&amp;gt; 0.5 - Math.random()) console.log(arr) // [ &amp;#39;😄&amp;#39;, &amp;#39;55&amp;#39;, 67, false, true ] 删除数字之外的所有字符 1 2 3 4 const str = &amp;#39;xieyezi 23213 is 95994 so hansome 223333&amp;#39; const numbers = str.replace(/\D/g, &amp;#39;&amp;#39;) console.log(numbers) //</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Tue, 07 May 2024 03:52:05 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/commonlyusedjs/</guid>
-      <description>防抖 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function debounce (fn, delay) { let timer; return function (...args) { timer&amp;amp;&amp;amp;clearTimeout(timer); timer = setTimeout(() =&amp;gt; fn.apply(this, args), delay); }; } // 测试 function task (arg) { console.log(&amp;#39;run task&amp;#39; + arg); } const debounceTask = debounce(task, 1000); window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; debounceTask(11)); 节流 1 2 3 4 5 6 7 8 9 10</description>
+      <description>防抖 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function debounce (fn, delay) { let timer; return function (...args) { timer&amp;amp;&amp;amp;clearTimeout(timer); timer = setTimeout(() =&amp;gt; fn.apply(this, args), delay); }; } // 测试 function task (arg) { console.log(&amp;#39;run task&amp;#39; + arg); } const debounceTask = debounce(task, 1000); window.addEventListener(&amp;#39;scroll&amp;#39;, () =&amp;gt; debounceTask(11)); 节流 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 function throttle (fn, delay) { let last = 0; return function (...args) { const now = Date.now(); if (now - last &amp;lt; delay) return;</description>
     </item>
     
   </channel>

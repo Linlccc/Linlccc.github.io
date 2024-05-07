@@ -18,7 +18,7 @@
       <pubDate>Sun, 05 May 2024 07:05:18 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/commonsql/</guid>
-      <description>DCL(Data Control Language)数据控制语言 DCL 在 mysql 中可以正常使用其他数据库没测试 用户管理 1 2 3 4 5 6 -- 查询用户 select host,user from mysql.user; -- 添加用户 create user &amp;#39;用户名&amp;</description>
+      <description>DCL(Data Control Language)数据控制语言 DCL 在 mysql 中可以正常使用其他数据库没测试 用户管理 1 2 3 4 5 6 -- 查询用户 select host,user from mysql.user; -- 添加用户 create user &amp;#39;用户名&amp;#39;@&amp;#39;主机名&amp;#39; identified by &amp;#39;密码&amp;#3</description>
     </item>
     
   </channel>

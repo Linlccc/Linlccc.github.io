@@ -18,7 +18,7 @@
       <pubDate>Tue, 28 Feb 2023 23:20:19 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/cppstudynotes/</guid>
-      <description>基础 整数类型 这些类型里面除了只有 signed 和 int 的都可以省略 signed / int 例如 short, short int, signed short, signed short int 表示一个类型 类型 占用字节数 取值范围 signed char 1 -128 到 127 unsigned char 1 0 到 255 short, short int,</description>
+      <description>基础 整数类型 这些类型里面除了只有 signed 和 int 的都可以省略 signed / int 例如 short, short int, signed short, signed short int 表示一个类型 类型 占用字节数 取值范围 signed char 1 -128 到 127 unsigned char 1 0 到 255 short, short int, signed short, signed short int 2 -32768 到 32767 unsigned short, unsigned short int 2 0 到 65535 int, signed, signed int 4 -2147483648 到 2147483647 unsigned, unsigned int 4</description>
     </item>
     
   </channel>

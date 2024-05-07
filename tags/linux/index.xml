@@ -18,7 +18,7 @@
       <pubDate>Sun, 05 May 2024 01:46:07 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/linuxcommandlist/</guid>
-      <description>系统指令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 # 显示系统信息：内核版本、机器类型等 uname # 显示正在运行的Linux内核的发行版本 uname -r #</description>
+      <description>系统指令 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 # 显示系统信息：内核版本、机器类型等 uname # 显示正在运行的Linux内核的发行版本 uname -r # 显示当前时间、系统运行时间、用户和负载平均值 uptime # 显示系统主机</description>
     </item>
     
   </channel>

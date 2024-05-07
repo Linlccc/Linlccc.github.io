@@ -18,7 +18,7 @@
       <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/saferisteppingonthepit/</guid>
-      <description>正则表达式 1. Safari 处理正则表达式中的正向后行断言时(?&amp;lt;=&amp;hellip;)，异常 1 2 3 4 5 6 // 以下代码在 Chrome 中正常，但在 Safari 中会报错 &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;#34;dark&amp;#34;); // 解</description>
+      <description>正则表达式 1. Safari 处理正则表达式中的正向后行断言时(?&amp;lt;=&amp;hellip;)，异常 1 2 3 4 5 6 // 以下代码在 Chrome 中正常，但在 Safari 中会报错 &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;#34;dark&amp;#34;); // 解决方案，使用捕捉组+替换字符串的方式 &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/([?|&amp;amp;]theme=)\w+/, &amp;#34;$1dark&amp;#34;); // 以上两个执行结果都</description>
     </item>
     
   </channel>
