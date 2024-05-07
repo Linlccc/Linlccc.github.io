@@ -53,6 +53,8 @@
   author = ['Linlccc']
   # 原文章来自哪里的提示文章
   CanonicalLinkText = '转载自'
+  # 显示原文章链接
+  ShowCanonicalLink = true
   # 目录
   # 显示目录
   showtoc = true
