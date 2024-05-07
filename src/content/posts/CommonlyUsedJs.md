@@ -20,7 +20,7 @@ date: "2024-05-07 03:52:05"
 function debounce (fn, delay) {
   let timer;
   return function (...args) {
-    if (timer) clearTimeout(timer);
+    timer&&clearTimeout(timer);
     timer = setTimeout(() => fn.apply(this, args), delay);
   };
 }
