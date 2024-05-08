@@ -13,21 +13,12 @@
     <language>zh</language>
     <lastBuildDate>Wed, 08 May 2024 09:05:43 +0800</lastBuildDate><atom:link href="https://linlccc.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>hugo 模板基本语法</title>
-      <link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link>
-      <pubDate>Wed, 22 Feb 2023 17:57:49 +0800</pubDate>
-      
-      <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
-      <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 1 2 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与赋值 1 2 3 4 {{ $address := &amp;#34;http://www.baidu.com&amp;#34; }} // 声明自定义变量并赋值 {{ $msg := `Line one. Line two.` }}</description>
-    </item>
-    
-    <item>
       <title>VsCode 常用扩展推荐</title>
       <link>https://linlccc.com/posts/vscodeextensions/</link>
       <pubDate>Wed, 08 May 2024 09:05:43 +0800</pubDate>
       
       <guid>https://linlccc.com/posts/vscodeextensions/</guid>
-      <description>基础扩展 Chinese (Simplified) see 1 VS Code 的中文（简体）语言包 vscode-icons see 1 图标 XML，Json，TOML 扩展 XML see 1 XML 支持 JSON Crack see 1 Json 数据可视化 Even Better TOML see 1 TOML 语言支持 Markdown All in One see 1 Markdown 支持 Markdown Preview Enhanced see 1 Markdown 预览 markdownlint see 1 Markdown 语法检查 C# 扩展 .NET Install Tool see 1 此</description>
+      <description>基础扩展 Chinese (Simplified) see 1 VS Code 的中文（简体）语言包 vscode-icons see 1 图标 XML，Json，TOML 扩展 XML see 1 XML 支持 JSON Crack see 1 Json 数据可视化 Even Better TOML see 1 TOML 语言支持 Markdown All in One see 1 Markdown 快捷键等支持 Markdown Preview Enhanced see 1 Markdown 预览 markdownlint see 1 Markdown 语法检查 C# 扩展 .NET Install</description>
     </item>
     
     <item>
@@ -118,6 +109,15 @@
       
       <guid>https://linlccc.com/posts/saferisteppingonthepit/</guid>
       <description>正则表达式 1. Safari 处理正则表达式中的正向后行断言时(?&amp;lt;=&amp;hellip;)，异常 1 2 3 4 5 6 // 以下代码在 Chrome 中正常，但在 Safari 中会报错 &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;#34;dark&amp;#34;); // 解决方案，使用捕捉组+替换字符串的方式 &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/([?|&amp;amp;]theme=)\w+/, &amp;#34;$1dark&amp;#34;); // 以上两个执行结果都</description>
+    </item>
+    
+    <item>
+      <title>hugo 模板基本语法</title>
+      <link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link>
+      <pubDate>Wed, 22 Feb 2023 17:57:49 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
+      <description>概念 每一个模板都有一个名为 Page 数据对象 Page 信息参考：Page 信息参考 基础语法 访问变量 1 2 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明变量与赋值 1 2 3 4 {{ $address := &amp;#34;http://www.baidu.com&amp;#34; }} // 声明自定义变量并赋值 {{ $msg := `Line one. Line two.` }}</description>
     </item>
     
     
