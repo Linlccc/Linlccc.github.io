@@ -5,20 +5,9 @@ Summary: ""
 tags: ['golang']
 categories: []
 
-ShowCanonicalLink: true
-canonicalURL: ""
-
-searchHidden: false
-draft: false
-weight: 2
+weight: 1000
 
 date: "2023-02-22 17:57:49"
-
-cover:
-    image: ""
-    alt: ""
-    caption: ""
-    hidden: true
 ---
 
 ## 概念
