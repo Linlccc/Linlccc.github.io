@@ -2,8 +2,8 @@
 title: "这是一篇测试文章"
 Description: "测试文章描述"
 Summary: "测试文章摘要"
-tags: ["测试","文章"]
-categories: ['tt','aa']
+tags: ["测试", "文章"]
+categories: ["tt", "aa"]
 
 ShowCanonicalLink: true
 canonicalURL: "http://linlccc.com/posts/test/"
@@ -16,34 +16,45 @@ weight: 1
 date: 2023-02-21 10:21:18
 
 cover:
-    image: "/images/posts/test/test_post_1.png"
-    alt: "测试文章封面图片"
-    caption: "测试文章封面描述文字"
-    hidden: false
+  image: "/images/posts/test/test_post_1.png"
+  alt: "测试文章封面图片"
+  caption: "测试文章封面描述文字"
+  hidden: false
 
 editPost:
-    disabled: true
+  disabled: true
 ---
 
 ## 二级标题
 
 <!-- 使用 collapse 简码 -->
+
 {{< collapse summary="使用折叠简码" openByDefault=true >}}
 
 123
+
 <!-- 使用 figure 简码 -->
+
 {{< figure align="center" src="/images/posts/test/test_post_1.png" title="csss" caption="cccs" >}}
+
 <!-- 使用 inTextImg 简码 -->
+
 {{< inTextImg url="/images/posts/test/test_post_1.png" alt="csss" height=100 >}}
+
 <!-- 使用 ltr 简码 -->
+
 {{< ltr >}}
 123456789
 {{< /ltr >}}
+
 <!-- 使用 rtl 简码 -->
+
 {{< rtl >}}
 123456789
 {{< /rtl >}}
+
 <!-- 使用 rawhtml 简码 -->
+
 {{< rawhtml >}}
 123456789
 {{< /rawhtml >}}
@@ -64,26 +75,30 @@ editPost:
 </script>
 
 段落正常字体
-*段落斜体*
+_段落斜体_
 **段落粗体**
-***段落粗斜体***
-***
+**_段落粗斜体_**
+
+---
+
 ~~删除线~~
 <u>下划线</u>
 
-* 无序项
+- 无序项
 
-1. 有序项1
-2. 有序项2
-3. 有序项3
-    1. 嵌套项
-    * 嵌套项
+1. 有序项 1
+2. 有序项 2
+3. 有序项 3
+   1. 嵌套项
+   - 嵌套项
 
->区块引用
->>一层嵌套引用
->>>二层嵌套引用
->>>
->>>>>>>>>>>十层嵌套引用.....
+> 区块引用
+>
+> > 一层嵌套引用
+> >
+> > > 二层嵌套引用
+> > >
+> > > > > > > > > > > 十层嵌套引用.....
 
 `printf("这是一个代码片段"); //代码片段`
 
@@ -92,10 +107,10 @@ printf("这是一个代码块");
 //代码块
 ```
 
-|左对齐|居中|右对齐|
-|:-|:-:|-:|
-|这是一个单元格|这是一个单元格|这是一个单元格|
-|这是一个单元格|这是一个单元格|这是一个单元格|
+| 左对齐         |      居中      |         右对齐 |
+| :------------- | :------------: | -------------: |
+| 这是一个单元格 | 这是一个单元格 | 这是一个单元格 |
+| 这是一个单元格 | 这是一个单元格 | 这是一个单元格 |
 
 [内联方式超链接](/posts/test/)
 
@@ -103,20 +118,19 @@ printf("这是一个代码块");
 
 [引用式]: /posts/test/
 
-|图片方式 |图片|
-|:-:|:-:|
-|图片内联|![1](https://www.runoob.com/wp-content/uploads/2019/03/iconfinder_markdown_298823.png "内联图片属性")|
-|图片引用|![1][引用图片]|
-|图片内联超链接|[![1](https://www.runoob.com/wp-content/uploads/2019/03/iconfinder_markdown_298823.png "内联图片属性")](/posts/test/)|
-|图片引用超链接|[![1][引用图片]][引用链接]|
+|    图片方式    |                                                         图片                                                          |
+| :------------: | :-------------------------------------------------------------------------------------------------------------------: |
+|    图片内联    |         ![1](https://www.runoob.com/wp-content/uploads/2019/03/iconfinder_markdown_298823.png "内联图片属性")         |
+|    图片引用    |                                                    ![1][引用图片]                                                     |
+| 图片内联超链接 | [![1](https://www.runoob.com/wp-content/uploads/2019/03/iconfinder_markdown_298823.png "内联图片属性")](/posts/test/) |
+| 图片引用超链接 |                                              [![1][引用图片]][引用链接]                                               |
 
 [引用图片]: https://www.runoob.com/wp-content/uploads/2019/03/iconfinder_markdown_298823.png "引用图片属性"
-
 [引用链接]: /posts/test/
 
 \*\*使用转义字符\*\*
 
-LaTeX_($LaTeX: E=mc^2$)_LaTex
+LaTeX\_($LaTeX: E=mc^2$)\_LaTex
 $$LaTeX: E=mc^2$$
 
 ```chart
@@ -167,21 +181,21 @@ section 项目B
 
 ## 快捷键
 
-|功能|键位|
-|:-:|:-:|
-|新建 Markdown 笔记|Ctrl+Alt+D|
-|粗体|Ctrl+B|
-|斜体|Ctrl+I|
-|删除线|Ctrl+T|
-|下划线|Ctrl+U|
-|分隔线|Ctrl + Shift + -|
-|编号列表|Ctrl + Shift + O|
-|项目符号列表|Ctrl + Shift + W|
-|插入待办事项|Ctrl + Shift + C|
-|代码块|Ctrl+Shift+L|
-|插入日期和时间|Alt + Shift + D|
-|撤销|Ctrl+Z|
-|在笔记内搜索|Ctrl+F|
+|        功能        |       键位       |
+| :----------------: | :--------------: |
+| 新建 Markdown 笔记 |    Ctrl+Alt+D    |
+|        粗体        |      Ctrl+B      |
+|        斜体        |      Ctrl+I      |
+|       删除线       |      Ctrl+T      |
+|       下划线       |      Ctrl+U      |
+|       分隔线       | Ctrl + Shift + - |
+|      编号列表      | Ctrl + Shift + O |
+|    项目符号列表    | Ctrl + Shift + W |
+|    插入待办事项    | Ctrl + Shift + C |
+|       代码块       |   Ctrl+Shift+L   |
+|   插入日期和时间   | Alt + Shift + D  |
+|        撤销        |      Ctrl+Z      |
+|    在笔记内搜索    |      Ctrl+F      |
 
 ## Test
 
@@ -193,37 +207,37 @@ TTTTTTT
 
 ### Code 1
 
-``` js
+```js
 // 语法结构
-while (条件){
-    需要执行的代码
+while (条件) {
+  需要执行的代码;
 }
 
 // 该循环永远不会结束，这可能导致浏览器崩溃。
-while(true){
-    console.log('加菲猫！')
+while (true) {
+  console.log("加菲猫！");
 }
 
-const arr = ['1','2',undefined,'3','','4'];
+const arr = ["1", "2", undefined, "3", "", "4"];
 let i = 0;
-while(arr[i]){
-    console.log(arr[i])
-    i = i + 1;
+while (arr[i]) {
+  console.log(arr[i]);
+  i = i + 1;
 }
 // 输出: 1
 // 输出: 2
 
-const arr = ['1','2','3','4'];
+const arr = ["1", "2", "3", "4"];
 let i = 0;
-while(arr[i]){
-    console.log(arr[i])
-    i = i + 1;
+while (arr[i]) {
+  console.log(arr[i]);
+  i = i + 1;
 }
 ```
 
 ### Code 2
 
-``` C#
+```C#
 static void Web()
 {
     // 加载配置
@@ -272,15 +286,15 @@ static void Web()
 
 ### Table
 
-| 账户 | 密码 | 备注 |
-| ---- | ---- | ---- |
-| asdasd | asdasd | aaa |
-| asdasd | asdasd | aaa |
-| asdasd | asdasd | aaa |
+| 账户   | 密码   | 备注 |
+| ------ | ------ | ---- |
+| asdasd | asdasd | aaa  |
+| asdasd | asdasd | aaa  |
+| asdasd | asdasd | aaa  |
 
 ### Code 3
 
-``` CSharp
+```CSharp
 static void Web()
 {
     // 加载配置
