@@ -34,14 +34,6 @@ VS Code 的中文（简体）语言包
 
 ## XML，Json，TOML 扩展
 
-### `XML`
-
-- [see](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
-
-```txt
-XML 支持
-```
-
 ### `JSON Crack`
 
 - [see](https://marketplace.visualstudio.com/items?itemName=AykutSarac.jsoncrack-vscode)
@@ -140,14 +132,6 @@ ps: 此扩展依赖以上两个扩展，直接安装该扩展即可
 
 ```txt
 自动完成路径文件名
-```
-
-### `Vetur`
-
-- [see](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
-
-```txt
-Vue 开发工具
 ```
 
 ### `Vue - Official`
