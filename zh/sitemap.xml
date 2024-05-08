@@ -5,6 +5,9 @@
     <loc>https://linlccc.com/posts/hugotemplatebasicsyntax/</loc>
     <lastmod>2024-04-23T22:04:18+08:00</lastmod>
   </url><url>
+    <loc>https://linlccc.com/posts/vscodeextensions/</loc>
+    <lastmod>2024-05-08T10:59:44+08:00</lastmod>
+  </url><url>
     <loc>https://linlccc.com/posts/axiosinvue/</loc>
     <lastmod>2024-05-07T18:37:55+08:00</lastmod>
   </url><url>
@@ -45,8 +48,11 @@
                 href="https://linlccc.com/posts/saferisteppingonthepit/"
                 />
   </url><url>
+    <loc>https://linlccc.com/tags/extensions/</loc>
+    <lastmod>2024-05-08T10:59:44+08:00</lastmod>
+  </url><url>
     <loc>https://linlccc.com/</loc>
-    <lastmod>2024-05-07T18:37:55+08:00</lastmod>
+    <lastmod>2024-05-08T10:59:44+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -59,7 +65,7 @@
                 />
   </url><url>
     <loc>https://linlccc.com/posts/</loc>
-    <lastmod>2024-05-07T18:37:55+08:00</lastmod>
+    <lastmod>2024-05-08T10:59:44+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -71,11 +77,8 @@
                 href="https://linlccc.com/posts/"
                 />
   </url><url>
-    <loc>https://linlccc.com/tags/javascript/</loc>
-    <lastmod>2024-05-07T18:13:56+08:00</lastmod>
-  </url><url>
     <loc>https://linlccc.com/tags/</loc>
-    <lastmod>2024-05-07T18:13:56+08:00</lastmod>
+    <lastmod>2024-05-08T10:59:44+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -86,6 +89,12 @@
                 hreflang="zh"
                 href="https://linlccc.com/tags/"
                 />
+  </url><url>
+    <loc>https://linlccc.com/tags/vscode/</loc>
+    <lastmod>2024-05-08T10:59:44+08:00</lastmod>
+  </url><url>
+    <loc>https://linlccc.com/tags/javascript/</loc>
+    <lastmod>2024-05-07T18:13:56+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/tags/nginx/</loc>
     <lastmod>2024-05-05T20:36:00+08:00</lastmod>

@@ -11,7 +11,25 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 07 May 2024 17:05:29 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 May 2024 09:05:43 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extensions</title>
+      <link>https://linlccc.com/tags/extensions/</link>
+      <pubDate>Wed, 08 May 2024 09:05:43 +0800</pubDate>
+      
+      <guid>https://linlccc.com/tags/extensions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VsCode</title>
+      <link>https://linlccc.com/tags/vscode/</link>
+      <pubDate>Wed, 08 May 2024 09:05:43 +0800</pubDate>
+      
+      <guid>https://linlccc.com/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Javascript</title>
       <link>https://linlccc.com/tags/javascript/</link>
