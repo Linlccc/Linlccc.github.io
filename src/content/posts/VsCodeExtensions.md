@@ -109,6 +109,15 @@ ps: 此扩展依赖以上两个扩展，直接安装该扩展即可
 
 ## Js 扩展
 
+### `EsLint`
+
+- [see](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [see](https://eslint.org/)
+
+```txt
+JavaScript 语法检查
+```
+
 ### `Regex Previewer`
 
 - [see](https://marketplace.visualstudio.com/items?itemName=chrmarti.regex)
