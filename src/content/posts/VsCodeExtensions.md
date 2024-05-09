@@ -273,3 +273,23 @@ API 客户端
 ```txt
 AI 代码助手
 ```
+
+## Hugo 扩展
+
+### `Hugo Snippets`
+
+- [插件](https://marketplace.visualstudio.com/items?itemName=fivethree.vscode-hugo-snippets)
+
+```txt
+Hugo 代码片段
+使用时键入 h- 即可ktivai 代码片段
+```
+
+### `Hugo Themer`
+
+- [插件](https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-hugo-themer)
+
+```txt
+鼠标悬停在 partial 或 partialCached 引用上时，显示引用的部分文件的完整路径
+按 F12 跳转到引用的部分文件
+```
