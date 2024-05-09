@@ -189,7 +189,7 @@ rules:
 Vue 支持
 ```
 
-### Web
+## Web
 
 ### `Live Server`
 
