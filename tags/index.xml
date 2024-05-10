@@ -11,7 +11,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 08 May 2024 09:05:43 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 May 2024 13:59:55 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software</title>
+      <link>https://linlccc.com/tags/software/</link>
+      <pubDate>Fri, 10 May 2024 13:59:55 +0800</pubDate>
+      
+      <guid>https://linlccc.com/tags/software/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Extensions</title>
       <link>https://linlccc.com/tags/extensions/</link>

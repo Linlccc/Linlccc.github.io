@@ -11,7 +11,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 08 May 2024 09:05:43 +0800</lastBuildDate><atom:link href="https://linlccc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 May 2024 13:59:55 +0800</lastBuildDate><atom:link href="https://linlccc.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用软件</title>
+      <link>https://linlccc.com/posts/mostusedsoftwares/</link>
+      <pubDate>Fri, 10 May 2024 13:59:55 +0800</pubDate>
+      
+      <guid>https://linlccc.com/posts/mostusedsoftwares/</guid>
+      <description>基础工具 7z 压缩 TrafficMonitor 任务栏数据显示 PowerToys Windows 增强工具 ListArr 文件搜索 Foxmail 邮件管理 NeatDownloadManager 下载管理 Ditto 粘贴板 Qttabbar Windows10 文件管理器多标签 浏览器 Google Chrome 编辑器 Visual Studio VS Code Notepad++ Obsidian Markdown 编辑器 远程 1Remote 【推荐】 MobaXterm WindTerm FileZilla FTP 工具 内网穿透 Frp Natfrp 提供内网穿透服务 服务挂载 nssm</description>
+    </item>
+    
     <item>
       <title>VsCode 常用扩展推荐</title>
       <link>https://linlccc.com/posts/vscodeextensions/</link>
