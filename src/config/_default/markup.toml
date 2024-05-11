@@ -9,83 +9,83 @@ defaultMarkdownHandler = 'goldmark'
 
 # goldmark 扩展配置，markdown扩展基础配置： https://markdown.com.cn/extended-syntax/
 [goldmark.extensions]
-  # 定义列表
-  definitionList = true
-  # 脚注
-  footnote = true
-  # 自动链接
-  linkify = true
-  # 自动链接时使用的协议，如果链接没有指定协议
-  linkifyProtocol = 'https'
-  # 删除线
-  strikethrough = true
-  # 表格
-  table = true
-  # 任务列表
-  taskList = true
-  # 智能标点
-  typographer = true
+# 定义列表
+definitionList = true
+# 脚注
+footnote = true
+# 自动链接
+linkify = true
+# 自动链接时使用的协议，如果链接没有指定协议
+linkifyProtocol = 'https'
+# 删除线
+strikethrough = true
+# 表格
+table = true
+# 任务列表
+taskList = true
+# 智能标点
+typographer = true
 
 # goldmark 解析器配置
 [goldmark.parser]
-  # 自动生成标题id
-  autoHeadingID = true
-  # 生成的标题id的格式
-  autoHeadingIDType = 'github'
-  # 单独的图片是否包装在一个段落中，图片是否包装在p标签中
-  wrapStandAloneImageWithinParagraph = true
+# 自动生成标题id
+autoHeadingID = true
+# 生成的标题id的格式
+autoHeadingIDType = 'github'
+# 单独的图片是否包装在一个段落中，图片是否包装在p标签中
+wrapStandAloneImageWithinParagraph = true
 
 # 控制是否启用 Markdown 属性语法
 [goldmark.parser.attribute]
-  # 是否启用块级元素的属性语法
-  # 在 markdown 中添加 {.myclass class="class1 class2" } 可设置元素的class
-  block = true
-  # 是否启用标题的属性语法
-  title = true
+# 是否启用块级元素的属性语法
+# 在 markdown 中添加 {.myclass class="class1 class2" } 可设置元素的class
+block = true
+# 是否启用标题的属性语法
+title = true
 
 # 渲染器配置
 [goldmark.renderer]
-  # 硬换行(建议开启)
-  # 开启后，markdown文件中换行，html自动换行，不开在行尾添加'\'也可有换行的作用
-  hardWraps = false
-  # 是否启用不安全的HTML标记(并且支持script标签)
-  unsafe = true
-  # 是否使用 XHTML 格式输出
-  xhtml = false
+# 硬换行(建议开启)
+# 开启后，markdown文件中换行，html自动换行，不开在行尾添加'\'也可有换行的作用
+hardWraps = false
+# 是否启用不安全的HTML标记(并且支持script标签)
+unsafe = true
+# 是否使用 XHTML 格式输出
+xhtml = false
 
 
 # 代码高亮配置
 [highlight]
-  # 行锚点
-  anchorLineNos = true
-  # 突出显示代码块
-  codeFences = true
-  # 猜测代码块的语法
-  guessSyntax = true
-  # 高亮代码块的行号（基本没用，用了这个每一个代码块的这个些行都会高亮）
-  hl_Lines = ''
-  # 将代码处理成一行
-  hl_inline = false
-  # 使用指定的前缀生成行号的锚点
-  lineAnchors = ''
-  # 行号从几开始
-  lineNoStart = 1
-  # 显示行号
-  lineNos = true
-  # 表格中使用行号(是否用表格存放行号)
-  lineNumbersInTable = true
-  # 不使用class来应用样式，该值为true时不会在代码块上添加class，直接使用样式
-  noClasses = false
-  # 高亮主题 https://xyproto.github.io/splash/docs/all.html
-  style = 'github'
-  # 制表符的宽度(没用)
-  tabWidth = 4
+# 行锚点
+anchorLineNos = true
+# 突出显示代码块
+codeFences = true
+# 猜测代码块的语法
+guessSyntax = true
+# 高亮代码块的行号（基本没用，用了这个每一个代码块的这个些行都会高亮）
+hl_Lines = ''
+# 将代码处理成一行
+hl_inline = false
+# 使用指定的前缀生成行号的锚点
+lineAnchors = ''
+# 行号从几开始
+lineNoStart = 1
+# 显示行号
+lineNos = true
+# 表格中使用行号(是否用表格存放行号)
+lineNumbersInTable = true
+# 不使用class来应用样式，该值为true时不会在代码块上添加class，直接使用样式
+noClasses = false
+# 高亮主题 https://xyproto.github.io/splash/docs/all.html
+style = 'github'
+# 制表符的宽度(没用)
+tabWidth = 4
 
 
 # 目录配置
 [tableOfContents]
-  # 开始的标题级别
-  startLevel = 2
-  # 结束的标题级别
-  endLevel = 6
-  ordered = false
+# 开始的标题级别
+startLevel = 2
+# 结束的标题级别
+endLevel = 6
+ordered = false

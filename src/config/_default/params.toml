@@ -3,4 +3,4 @@
 # ###########
 
 # 设置在主页显示的文章类型(设置内容为content目录下的目录名)
-mainSections = ['blog','posts','games']
+mainSections = ['blog', 'posts', 'games']
