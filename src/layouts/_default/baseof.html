@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+  {{- partial "head/index.html" . -}}
+
+  {{/* 计算出body的类样式 */}}
+  {{ $bodyClass := "" }}
+  {{/* 不是普通页面 || 是文档 || 是搜索，时添加list类样式 */}}
+  {{ if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) }}
+    {{ $bodyClass = add $bodyClass "list " }}
+  {{end}}
+  {{/* 默认主题是dark */}}
+  {{ if eq site.Params.defaultTheme `dark` }}
+    {{ $bodyClass = add $bodyClass "dark " }}
+  {{ end }}
+
+<body class="{{ $bodyClass}}" id="top">
+    {{ partialCached "body/header/index.html" . }}
+
+    <main class="main">{{ block "main" . }}{{ end }}</main>
+
+    {{ partialCached "body/footer/index.html" . }}
+</body>
+</html>

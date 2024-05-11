@@ -1,0 +1,246 @@
+<!-- 是否隐藏页脚 -->
+{{ $hideFooter := site.Params.hideFooter }}
+<!-- 版权信息 -->
+{{ $copyright := site.Copyright }}
+<!-- 网站运行年 -->
+{{ $rangeYear := now.Year }}
+{{ if and site.Params.StartYear (lt site.Params.StartYear $rangeYear) }}{{ $rangeYear = printf "%d - %d" site.Params.StartYear $rangeYear }}{{ end }}
+<!-- 站点title -->
+{{ $siteTitle := site.Title }}
+
+<!-- 页脚 -->
+{{ if not $hideFooter }}
+<footer class="footer">
+    <!-- 版权信息 -->
+    {{ if $copyright }}
+    <span>{{ markdownify $copyright }}</span>
+    {{ else }}
+    <span>
+        &copy; {{ $rangeYear }} <a href="{{ absLangURL "" }}">{{ $siteTitle }}</a> All Rights Reserved
+    </span>
+    {{ end }}
+    <!-- 提供商 -->
+    <span>
+        | Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+{{ end }}
+
+<!-- 禁用滚动到顶部 -->
+{{ $disableScrollToTop := site.Params.disableScrollToTop }}
+{{ if not $disableScrollToTop }}
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+{{ end }}
+
+{{- partial "extend_footer.html" . }}
+
+<script>
+    // 菜单按钮滚动位置记录与加载
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+    // 获取元素基于body的位置
+    function getOffsetTopByBody (el) {
+        let offsetTop = 0
+        while (el && el.tagName !== 'BODY') {
+            offsetTop += el.offsetTop
+            el = el.offsetParent
+        }
+        return offsetTop
+    }
+    // a标签点击处理
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            // 得到滚动是否需要动画
+            const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches?"instant":"smooth";
+            // 得到要滚动到的元素
+            var id = this.getAttribute("href").substr(1);
+            const el = document.querySelector(`[id='${decodeURIComponent(id)}']`);
+            // 得到元素基于body的位置
+            let elY = getOffsetTopByBody(el);
+            // 如果向上滚动留出导航位置
+            if(elY < document.documentElement.scrollTop)elY = elY - document.getElementsByClassName("nav")[0].getBoundingClientRect().height;
+            window.scrollTo({top: elY,behavior: behavior});
+            // 设置历史记录
+            if (id === "top") history.replaceState(null, null, " ");
+            else history.pushState(null, null, `#${id}`);
+        });
+    });
+
+</script>
+<!-- 滚动到顶部是否可见 -->
+{{- if (not site.Params.disableScrollToTop) }}
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+{{- end }}
+<!-- 主题切换 -->
+{{- if (not site.Params.disableThemeToggle) }}
+<script>
+    // 获取主题颜色的元标签(这个主要控制iphone浏览器的上下空白区域)
+    let themeColorMeta = document.querySelector("meta[name=theme-color]");
+    // 主题按钮点击
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        let theme = 'dark';
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            themeColorMeta.setAttribute("content", getComputedStyle(document.body).getPropertyValue('--theme'));
+            localStorage.setItem("pref-theme", 'light');
+            theme = 'light';
+        } else {
+            document.body.classList.add('dark');
+            themeColorMeta.setAttribute("content", getComputedStyle(document.body).getPropertyValue('--theme'));
+            localStorage.setItem("pref-theme", 'dark');
+            theme = 'dark';
+        }
+        // 调用主题切换事件
+        window.GLOBAL_CUSTOM_EVENT.ThemeToggleEvent(theme);
+    })
+</script>
+{{- end }}
+<!-- 是普通页面 && 不是文档页 && 不是搜索页 && 显示代码复制按钮 -->
+{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
+
+        function copyingDone() {
+            copybutton.innerHTML = '{{- i18n "code_copied" | default "copied!" }}';
+            setTimeout(() => {
+                copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            // td containing LineNos
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            // table containing LineNos and code
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            // code blocks not having highlight as parent class
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+{{- end }}
+
+<!-- 显示隐藏导航 -->
+<script>
+    // 导航栏
+    let nav = document.getElementsByClassName("navExhibit")[0];
+    // 记录滚动条最后的位置
+    var lastScrollTop = 0;
+    // 滚动标准
+    let scrollStandard = 20;
+    // 是否时首次
+    var isOneLoad = true;
+    // 显示隐藏导航方法
+    function sHNav(){
+        // 如果时首次加载不做处理
+        if(isOneLoad){
+            isOneLoad = false;
+            return;
+        }
+        // 得到当前滚动条位置
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // 滚动距离是否达标
+        if(Math.abs(scrollTop - lastScrollTop) < scrollStandard)return;
+        // 是否向下滚动
+        let isScrollDown = scrollTop > lastScrollTop;
+        // 重置滚动位置
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+
+        if(isScrollDown){
+            nav.classList.remove('navS');
+            nav.classList.add('navH');
+        }else{
+            nav.classList.remove('navH');
+            nav.classList.add('navS');
+        }
+    }
+</script>
+
+
+<!-- 如果是文章页面 -->
+{{ if and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") }}
+<!-- 激活目录 -->
+<script>
+    // 得到目录元素
+    let tocEl = document.getElementsByClassName("toc")[0];
+    let tocLi = tocEl.getElementsByTagName("li");
+    // 得到锚点元素
+    let anchors = Array.from(document.getElementsByClassName("anchor")).map(a=>a.parentNode)
+    function activeToc(){
+        // 如果屏幕宽度不足够显示目录直接返回
+        if(document.documentElement.clientWidth<1280-19)return;
+        // 得到当前应该激活的锚点索引
+        let activeAnchor = anchors.findIndex(a=>{
+            let y = a.getBoundingClientRect().y;
+            return y>0 && y<100;
+        });
+        if(activeAnchor == -1)return;
+        // 确保目录打开
+        tocEl.getElementsByTagName("details")[0].setAttribute("open","")
+        // 修改激活状态
+        for (let i = 0; i < tocLi.length; i++) {
+            if(i== activeAnchor)tocLi[i].classList.add("active");
+            else tocLi[i].classList.remove("active");
+        }
+    }
+</script>
+{{ end }}
+
+<!-- 滚动事件 -->
+<script>
+    window.addEventListener("scroll", function() {
+        if(typeof sHNav == "function")sHNav();
+        if(typeof activeToc == "function")activeToc();
+    });
+</script>

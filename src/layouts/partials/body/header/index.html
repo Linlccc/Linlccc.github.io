@@ -1,0 +1,19 @@
+<!-- 获取默认主题 -->
+{{ $defaultTheme := site.Params.defaultTheme | default "auto" }}
+<script>
+    // 得到主题颜色
+    const defaultTheme = "{{ $defaultTheme }}";
+    let theme = localStorage.getItem("pref-theme") ?? defaultTheme;
+    if(theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if(theme == 'dark') document.body.classList.add('dark');
+    else document.body.classList.remove('dark');
+    // 设置系统主题颜色(iphone上下空白处颜色)
+    document.querySelector("meta[name=theme-color]").setAttribute("content", getComputedStyle(document.body).getPropertyValue('--theme'));
+</script>
+
+<header class="header">
+    <!-- 占位导航 -->
+    {{ partialCached "nav.html" (dict "curremtPage" . "className" "nav navPlaceholder") }}
+    <!-- 展示导航 -->
+    {{ partial "nav.html" (dict "curremtPage" . "className" "nav navExhibit") }}
+</header>
