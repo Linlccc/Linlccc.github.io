@@ -1,45 +1,10 @@
-# 资产目录文件介绍
+# CLLLLLL
 
-## 标记解释
+## 自定义样式
 
-``` text
-"#"   表示已修改
-"@"   完全自己写
+添加以下任意样式文件，会自动引用到项目
+
+```txt
+/src/assets/css/custom/custom.css
+/src/assets/sass/custom/custom.scss
 ```
-
-## assets
-
-``` text
-根目录
-```
-
-### css
-
-``` text
-样式目录
-```
-
-#### extended
-
-``` text
-扩展样式目录
-该目录中的样式会自动使用
-```
-
-- custom.css
-  - 自定义样式
-
-### js
-
-``` text
-脚本目录
-该目录中的脚本需要自己手动引入
-```
-
-- fastsearch.js
-  - 搜索脚本
-- fuse.basic.min.js
-  - 搜索脚本
-- highlight.pack.js
-  - 代码高亮脚本
--
