@@ -1,2 +1,3 @@
 # 忽略构建目录
 /src/public
+/src/resources

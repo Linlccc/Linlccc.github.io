@@ -80,6 +80,9 @@
       <meta name="{{ .name }}" content="{{ .content }}" />
   {{ end }}
 
+  {{/* sass资源 */}}
+  {{ $scssStyle := resources.Get "sass/main.scss" | toCSS }}
+
   <!-- 普通样式 -->
   {{ $commonStyle := resources.Match "css/common/*.css" | resources.Concat "assets/css/common.css" }}
 
@@ -105,7 +108,7 @@
   {{ $disableFingerprinting := site.Params.assets.disableFingerprinting | default false }}
 
   <!-- 合并样式并引用 -->
-  {{ $styles := slice $themeStyle $resetStyle $commonStyle $chroma_styles $chroma_mod $scrollBarStyle $mediaStyle $extendedStyle | resources.Concat "assets/css/styles.css" | minify }}
+  {{ $styles := slice $themeStyle $resetStyle $commonStyle $chroma_styles $chroma_mod $scrollBarStyle $mediaStyle $extendedStyle $scssStyle | resources.Concat "assets/css/styles.css" | minify }}
   {{ if $disableFingerprinting }}
       <link crossorigin="anonymous" href="{{ $styles.RelPermalink }}" rel="preload stylesheet" as="style">
   {{ else }}
