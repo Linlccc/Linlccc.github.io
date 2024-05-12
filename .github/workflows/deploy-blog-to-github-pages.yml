@@ -4,15 +4,15 @@ name: deploy-blog-to-github-pages
 on:
   push:
     branches:
-      - master      # 当推送到 master 分支时
+      - master # 当推送到 master 分支时
     paths:
-      - 'src/**'   # 当推送 src 下的任意文件时
-      - '.github/workflows/deploy-blog-to-github-pages.yml' # 推送当前工作流时
+      - "src/**" # 当推送 src 下的任意文件时
+      - ".github/workflows/deploy-blog-to-github-pages.yml" # 推送当前工作流时
   pull_request:
 
 defaults:
   run:
-    working-directory: ./src   # 设置默认工作目录
+    working-directory: ./src # 设置默认工作目录
 
 jobs:
   deploy:
@@ -20,23 +20,26 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: true  # 获取子模块(true OR recursive)，获取hugo主题
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
+          submodules: true # 获取子模块(true OR recursive)，获取hugo主题
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+        # 安装 hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: "latest"
           extended: true
-
+        # 安装 sass 支持
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+        # 构建
       - name: Build
         run: hugo --minify
-
+        # 部署
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          cname: linlccc.com            # github pages的自定义域名
-          publish_dir: ./src/public     # 要发布 ./src/public 目录中的文件
-          publish_branch: gh-pages      # 发布到 gh-pages 分支
+          cname: linlccc.com # github pages的自定义域名
+          publish_dir: ./src/public # 要发布 ./src/public 目录中的文件
+          publish_branch: gh-pages # 发布到 gh-pages 分支
