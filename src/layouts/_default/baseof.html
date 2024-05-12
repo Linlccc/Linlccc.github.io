@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+<html lang="{{ site.Language }}" dir="{{ default "auto" .Language.LanguageDirection }}">
   {{- partial "head/index.html" . -}}
 
   {{/* 计算出body的类样式 */}}
@@ -18,6 +18,6 @@
 
     <main class="main">{{ block "main" . }}{{ end }}</main>
 
-    {{ partialCached "body/footer/index.html" . }}
+    {{ partialCached "body/footer/index.html" . .Kind .Layout }}
 </body>
 </html>
