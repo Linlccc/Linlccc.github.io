@@ -1,0 +1,10 @@
+##########################
+# 使用 hugo 指令构建发布版 #
+# 基本不用自己构建发布版本 #
+##########################
+
+baseURL: https://linlccc.com/
+title: linlccc's blog
+
+# google analytics
+googleAnalytics: G-TQ3ZXPKKNM
