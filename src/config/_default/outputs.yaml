@@ -1,0 +1,24 @@
+# 页面输出格式，根据页面的 Kind 属性设置
+
+home:
+  - HTML
+  - RSS
+  - JSON
+
+page:
+  - html
+
+rss:
+  - rss
+
+section:
+  - html
+  - rss
+
+taxonomy:
+  - html
+  - rss
+
+term:
+  - html
+  - rss
