@@ -1,0 +1,33 @@
+###################################
+# 默认配置，Hugo通用配置基本都在这里 #
+###################################
+
+# 网站语言
+languageCode = 'zh-CN'
+# 内容默认语言(内容没有指定语言时使用该语言)
+defaultContentLanguage = 'zh'
+# 默认语言是否在子目录中
+defaultContentLanguageInSubdir = false
+# 包含 中/日/韩 语言
+hasCJKLanguage = 'true'
+# 启动Emoji表情支持
+enableEmoji = 'true'
+# 设置时区 亚洲/重庆 see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone = "Asia/Chongqing"
+
+# 每页文章数量
+paginate = 5
+
+# 构建草稿
+buildDrafts = false
+# 构建过期
+buildExpired = false
+# 构建未来
+buildFuture = false
+
+# 网站声明
+# copyright = "@Linlccc"
+# 启用 robots.txt （标准网络协议，用于告知网络爬虫哪些页面可以被爬取，哪些页面不能被爬取）
+enableRobotsTXT = true
+# 将页面的 Lastmod 参数设置为最后 git 提交日期
+enableGitInfo = 'true'

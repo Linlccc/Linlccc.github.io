@@ -1,0 +1,9 @@
+#####################################################################
+# 缩小配置                                                           #
+# https://gohugo.io/getting-started/configuration/#configure-minify #
+#####################################################################
+
+# 禁用xml
+disableXML = true
+# 最小化输出
+minifyOutput = true
