@@ -1,5 +1,4 @@
-{{- $authorInfo := .Params.author | default site.Params.author }}
-{{- $author := $authorInfo }}
-{{- $authorType := printf "%T" $authorInfo }}
-{{- if or (eq $authorType "[]string") (eq $authorType "[]interface {}")}}{{ $author = delimit $authorInfo ", " }}{{ end }}
-{{- $author -}}
+<!-- 获取作者 -->
+{{- $authors := .Params.authors | default .GitInfo.AuthorName | default site.Params.authors | default slice -}}
+{{- $authors = delimit ($authors | partial "toArray") "," -}}
+{{- return $authors -}}
