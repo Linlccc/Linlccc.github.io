@@ -190,7 +190,7 @@
 <!-- 加载全局自定义事件 -->
 {{ partial "GLOBAL_CUSTOM_EVENT.html" . }}
 
-<!-- 杂项(TODO:细看,这些web标记后面统一看) -->
+<!-- 杂项(细看,这些web标记后面统一看) -->
 {{ if hugo.IsProduction | or (eq site.Params.env "production") }}
     <!-- 使用 hugo内置模板 -->
     {{ template "_internal/opengraph.html" . }}

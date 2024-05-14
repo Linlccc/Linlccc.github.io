@@ -2,7 +2,7 @@
   <article class="post-single">
     <!-- 标题和元信息 -->
     <header class="post-header">
-      <!-- 面包屑(TODO:细看) -->
+      <!-- 面包屑(细看) -->
       {{ partial "breadcrumbs.html" . }}
       <h1 class="post-title">
         {{ .Title }}
@@ -24,11 +24,11 @@
     </header>
     <!-- 封面 -->
     {{ $isHidden := .Params.cover.hidden | default site.Params.cover.hiddenInSingle | default site.Params.cover.hidden }}
-    <!-- 封面(TODO:细看) -->
+    <!-- 封面(细看) -->
     {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
     <!-- 目录 -->
     {{ if (.Param "ShowToc") }}
-      <!-- 目录(TODO:细看) -->
+      <!-- 目录(细看) -->
       {{ partial "toc.html" . }}
     {{ end }}
     <!-- Markdown 内容 -->
@@ -46,9 +46,9 @@
       <ul class="post-tags">
         {{ range ($.GetTerms $tags) }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}
       </ul>
-      <!-- 上一页/下一页(TODO:细看) -->
+      <!-- 上一页/下一页(细看) -->
       {{ if .Param "ShowPostNavLinks" }}{{ partial "post_nav_links.html" . }}{{ end }}
-      <!-- 分享(TODO:细看) -->
+      <!-- 分享(细看) -->
       {{ if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}{{ partial "share_icons.html" . }}{{ end }}
     </footer>
     <!-- 评论 -->

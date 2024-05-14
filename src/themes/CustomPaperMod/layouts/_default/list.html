@@ -5,12 +5,12 @@
   {{ $pages := union .RegularPages .Sections }}
 
   {{ if and $isEnableProfileMode .IsHome }}
-    <!-- (TODO:细看) -->
+    <!-- (细看) -->
     {{ partial "index_profile.html" . }}
   {{ else }}
     {{ if not .IsHome }}
       <header class="page-header">
-        <!-- 面包屑(TODO:细看) -->
+        <!-- 面包屑(细看) -->
         {{ partial "breadcrumbs.html" . }}
         <h1>
           {{ .Title }}
@@ -46,7 +46,7 @@
     {{ $paginator := .Paginate $pages }}
     <!-- 首页 && 有首页信息 && 第一页 -->
     {{ if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
-      <!-- (TODO:细看) -->
+      <!-- (细看) -->
       {{ partial "home_info.html" . }}
     {{ end }}
     {{ $term := .Data.Term }}
@@ -63,7 +63,7 @@
       <!-- 文章列表 -->
       <article class="{{ $class }}">
         {{ $isHidden := default site.Params.cover.hidden site.Params.cover.hiddenInList }}
-        <!-- (TODO:细看) -->
+        <!-- (细看) -->
         {{ partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
         <header class="entry-header">
           <h2>
@@ -83,7 +83,7 @@
         {{- end }}
         {{- if not (.Param "hideMeta") }}
         <footer class="entry-footer">
-          <!-- (TODO:细看) -->
+          <!-- (细看) -->
           {{- partial "post_meta.html" . }}
         </footer>
         {{- end }}
