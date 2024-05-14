@@ -2,133 +2,54 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="index, follow">
   <meta name="application-name" content="{{ site.Title }}">
 
-  <!-- robots -->
-  {{- if hugo.IsProduction | or (eq site.Params.env "production") }}
-      <meta name="robots" content="index, follow">
-  {{- else }}
-      <meta name="robots" content="noindex, nofollow">
-  {{- end }}
-
-  <!-- manifest(安装到桌面,iphone添加到桌面时独立打开) -->
-  {{ if site.Params.IsEnableManifest }}
-      <link href="/manifest.json" rel="manifest" />
-  {{end}}
+  <!-- manifest配置(安装到桌面,iphone添加到桌面时独立打开) -->
+  {{- if site.Params.isEnableManifest -}}<link href="/manifest.json" rel="manifest" />{{- end -}}
 
   <!-- Title -->
-  <title>
-      {{ if .IsHome }}
-      {{ else }}
-          {{ if .Title }}
-              {{ .Title }} |&nbsp;
-          {{- end }}
-      {{- end }}
-      {{- site.Title }}
-  </title>
-
-  <!-- 关键字 -->
-  {{ if .IsHome }}
-      {{ with site.Params.keywords }}
-          <meta name="keywords" content="
-          {{- range $i, $e := . }}
-              {{- if $i }},{{ end }}{{ $e -}}
-          {{ end -}}
-          ">
-      {{ end }}
-  {{ else }}
-      <meta name="keywords" content="
-      {{- if .Params.keywords -}}
-          {{ range $i, $e := .Params.keywords }}
-              {{- if $i }}, {{ end }}{{ $e -}}
-          {{ end }}
-      {{- else -}}
-          {{ range $i, $e := .Params.tags }}
-              {{- if $i }}, {{ end }}{{ $e -}}
-          {{ end }}
-      {{- end -}}
-      ">
-  {{ end }}
+  {{- $title := site.Title -}}
+  {{ if not .IsHome | and .Title }}{{ $title = print .Title " | " $title }}{{ end }}
+  <title>{{ $title }}</title>
 
   <!-- 描述 -->
-  <meta name="description" content="
-  {{- with .Description }}
-      {{- . -}}
-  {{ else }}
-      {{- if or .IsPage .IsSection}}
-          {{- .Summary | default (printf "%s - %s" .Title  site.Title) -}}
-      {{ else }}
-          {{- with site.Params.description }}{{ . }}{{ end -}}
-      {{ end -}}
-  {{ end -}}
-  ">
+  {{- $description := .Description | default .Summary | default site.Params.description | default $title -}}
+  <meta name="description" content="{{ $description }}" />
 
-  <!-- 作者 -->
-  <meta name="author" content="{{ partial "author.html" . }}">
+  <!-- 关键字，页面关键字 or 页面标签 or 页面分类 or 站点关键字 -->
+  {{- $keywords := .Params.keywords | default .Params.tags | default .Params.categories | default site.Params.keywords | default slice -}}
+  {{- $keywords = delimit ($keywords | partial "toArray") "," -}}
+  <meta name="keywords" content="{{ $keywords }}" />
 
-  <!-- 原链接信息 -->
-  <link rel="canonical" href="
-  {{- if .Params.canonicalURL }}
-      {{- trim .Params.canonicalURL " " -}}
-  {{ else }}
-      {{- .Permalink -}}
-  {{ end -}}
-  ">
+  <!-- 作者，页面作者 or git作者 or 站点作者 -->
+  {{- $authors := .Params.authors | default .GitInfo.AuthorName | default site.Params.authors | default slice -}}
+  {{- $authors = delimit ($authors | partial "toArray") "," -}}
+  <meta name="author" content="{{ $authors }}" />
 
-  <!-- 自定义网站 meta 信息 -->
-  {{ range site.Params.meta }}
-      <meta name="{{ .name }}" content="{{ .content }}" />
+  <!-- 原链接 -->
+  {{- $canonicalURL := .Params.canonicalURL | default .Permalink -}}
+  <link rel="canonical" href="$canonicalURL" />
+
+  <!-- 自定义 meta -->
+  {{- range site.Params.customMetas -}}
+    <meta name="{{ .name }}" content="{{ .content }}" />
   {{ end }}
 
-  {{/* sass资源 */}}
-  {{ $scssStyle := resources.Get "sass/main.scss" | toCSS }}
+  <!-- 加载样式 -->
+  {{- $style := resources.Get "sass/main.scss" | toCSS (dict "targetPath" "assets/css/styles.css" "enableSourceMap" true) | minify | fingerprint -}}
+  <link crossorigin="anonymous" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" rel="preload stylesheet" as="style">
 
-  <!-- 普通样式 -->
-  {{ $commonStyle := resources.Match "css/common/*.css" | resources.Concat "assets/css/common.css" }}
+  <!-- 搜索,TODO:搜索js后面写js的时候再优化 -->
+  {{- if eq .Layout "search" -}}
+    {{ $fastsearchJs := resources.Get "js/fastsearch.js" | js.Build (dict "params" (dict "fuseOpts" site.Params.fuseOpts)) }}
+    {{ $fuseJs := resources.Get "js/fuse.basic.min.js" }}
+    {{ $searchJs := slice $fuseJs $fastsearchJs | resources.Concat "assets/js/search.js" | minify | fingerprint }}
+    <script defer crossorigin="anonymous" src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}"></script>
+  {{- end -}}
 
-  <!-- 主题变量样式 -->
-  {{ $themeStyle := resources.Get "css/core/theme-vars.css" }}
-  <!-- reset样式 -->
-  {{ $resetStyle := resources.Get "css/core/reset.css" }}
-  <!-- 媒体样式（针对不同设备） -->
-  {{ $mediaStyle := resources.Get "css/core/zmedia.css" }}
 
-  <!-- 扩展样式 -->
-  {{ $extendedStyle := resources.Match "css/extended/*.css" | resources.Concat "assets/css/extended.css" }}
-
-  <!-- 代码高亮样式 -->
-  {{ $chroma_styles := (resources.Get "css/includes/chroma-styles.css") }}
-  {{ $chroma_mod := (resources.Get "css/includes/chroma-mod.css") }}
-
-  <!-- 滚动条样式 -->
-  {{ $disableScrollBarStyle := site.Params.assets.disableScrollBarStyle | default false }}
-  {{ $scrollBarStyle := cond $disableScrollBarStyle (" " | resources.FromString "assets/css/scrollBar.css") (resources.Get "css/includes/scroll-bar.css") }}
-
-  <!-- 得到是否禁用资源检查 -->
-  {{ $disableFingerprinting := site.Params.assets.disableFingerprinting | default false }}
-
-  <!-- 合并样式并引用 -->
-  {{ $styles := slice $themeStyle $resetStyle $commonStyle $chroma_styles $chroma_mod $scrollBarStyle $mediaStyle $extendedStyle $scssStyle | resources.Concat "assets/css/styles.css" | minify }}
-  {{ if $disableFingerprinting }}
-      <link crossorigin="anonymous" href="{{ $styles.RelPermalink }}" rel="preload stylesheet" as="style">
-  {{ else }}
-      {{ $styles = $styles | fingerprint }}
-      <link crossorigin="anonymous" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" rel="preload stylesheet" as="style">
-  {{ end }}
-
-  <!-- 搜索 -->
-  {{ if eq .Layout "search" }}
-      <link crossorigin="anonymous" rel="preload" as="fetch" href="/index.json">
-      {{ $fastsearchJs := resources.Get "js/fastsearch.js" | js.Build (dict "params" (dict "fuseOpts" site.Params.fuseOpts)) }}
-      {{ $fuseJs := resources.Get "js/fuse.basic.min.js" }}
-      {{ $searchJs := slice $fuseJs $fastsearchJs | resources.Concat "assets/js/search.js" | minify }}
-      {{ if $disableFingerprinting }}
-          <script defer crossorigin="anonymous" src="{{ $searchJs.RelPermalink }}"></script>
-      {{ else }}
-          {{ $searchJs = $searchJs | fingerprint }}
-          <script defer crossorigin="anonymous" src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}"></script>
-      {{ end }}
-  {{ end }}
+  <!-- ########## 重写完成 ########## -->
 
   <!-- Favicons -->
   <link rel="icon" href="{{ site.Params.assets.favicon | default "favicon.ico" | absURL }}">
@@ -195,7 +116,7 @@
   <!-- 这里看一下可以考虑换成自定义事件https://developer.mozilla.org/zh-CN/docs/Web/Events/Creating_and_triggering_events -->
   {{ partial "GLOBAL_CUSTOM_EVENT.html" . }}
 
-  <!-- 杂项(TODO:细看,这些web标记后面统一看) -->
+  <!-- 杂项 -->
   {{ if hugo.IsProduction | or (eq site.Params.env "production") }}
       <!-- 使用 hugo内置模板 -->
       {{ template "_internal/opengraph.html" . }}
