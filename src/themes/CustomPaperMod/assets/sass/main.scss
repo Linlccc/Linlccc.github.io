@@ -2,5 +2,11 @@
 @import "custom/custom";
 @import "../css/custom/custom";
 
+// 导入之前的样式文件
+@import "../css/common/index";
+@import "../css/core/index";
+@import "../css/custom/index";
+@import "../css/extended/index";
+@import "../css/includes/index";
 // 测试引入文件
 @import "_partial/t";
