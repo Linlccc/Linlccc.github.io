@@ -3,7 +3,7 @@
 
 {{- $.Scratch.Set "tags" ""}}
 
-{{- with .Params.Tags }}
+{{- with (.Params.Tags | partial "toArray") }}
 {{- $hashtags := newScratch}}
 {{- range . }}{{ $hashtags.Add "tags" (slice (replaceRE "(\\s)" "" . ))}}{{end}}
 {{- $.Scratch.Set "tags" (delimit ($hashtags.Get "tags") ",") }}
