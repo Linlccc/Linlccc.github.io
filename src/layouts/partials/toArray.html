@@ -1,0 +1,7 @@
+<!-- 将数据转成数组 -->
+
+{{- $value := . -}}
+{{- if not (reflect.IsSlice $value) -}}
+  {{- $value = slice $value -}}
+{{- end -}}
+{{- return $value -}}
