@@ -6,7 +6,7 @@
   <meta name="application-name" content="{{ site.Title }}">
 
   <!-- manifest配置(安装到桌面,iphone添加到桌面时独立打开) -->
-  {{- if site.Params.isEnableManifest -}}<link href="/manifest.json" rel="manifest" />{{- end -}}
+  {{- if site.Params.isEnableManifest -}}<link rel="manifest" href="/manifest.json" />{{- end -}}
 
   <!-- Title -->
   {{- $title := site.Title -}}
@@ -29,7 +29,7 @@
 
   <!-- 原链接 -->
   {{- $canonicalURL := .Params.canonicalURL | default .Permalink -}}
-  <link rel="canonical" href="$canonicalURL" />
+  <link rel="canonical" href="{{ $canonicalURL }}" />
 
   <!-- 自定义 meta -->
   {{- range site.Params.customMetas -}}
@@ -38,7 +38,7 @@
 
   <!-- 加载样式 -->
   {{- $style := resources.Get "sass/main.scss" | toCSS (dict "targetPath" "assets/css/styles.css" "enableSourceMap" true) | minify | fingerprint -}}
-  <link crossorigin="anonymous" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" rel="preload stylesheet" as="style">
+  <link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
 
   <!-- 搜索,TODO:搜索js后面写js的时候再优化 -->
   {{- if eq .Layout "search" -}}
@@ -48,28 +48,37 @@
     <script defer crossorigin="anonymous" src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}"></script>
   {{- end -}}
 
+  <!-- 深色图标 -->
+  <link rel="icon" type="image/x-icon" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon }}" />
+  <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.icon }}" />
+  <link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_16 }}" />
+  <link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_32 }}" />
+  <link rel="icon" type="image/png" sizes="192x192" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_192 }}" />
+  <link rel="icon" type="image/png" sizes="512x512" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_512 }}" />
+  <link rel="apple-touch-icon" sizes="180x180" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_180 }}" />
+  <!-- 浅色图标 -->
+  <link rel="icon" type="image/x-icon" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon }}" />
+  <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.icon }}" />
+  <link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_16 }}" />
+  <link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_32 }}" />
+  <link rel="icon" type="image/png" sizes="192x192" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_192 }}" />
+  <link rel="icon" type="image/png" sizes="512x512" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_512 }}" />
+  <link rel="apple-touch-icon" sizes="180x180" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_180 }}" />
 
-  <!-- ########## 重写完成 ########## -->
+  <!-- iphone 手机浏览器上下空白区域颜色 -->
+  <meta name="theme-color" content="{{ site.Params.theme_color | default "var(--theme)" }}">
 
-  <!-- Favicons -->
-  <link rel="icon" href="{{ site.Params.assets.favicon | default "favicon.ico" | absURL }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.Params.assets.favicon16x16 | default "favicon-16x16.png" | absURL }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.Params.assets.favicon32x32 | default "favicon-32x32.png" | absURL }}">
-  <link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "apple-touch-icon.png" | absURL }}">
-  <link rel="mask-icon" href="{{ site.Params.assets.safari_pinned_tab | default "safari-pinned-tab.svg" | absURL }}">
-  <meta name="theme-color" content="{{ site.Params.assets.theme_color | default "var(--theme)" }}">
-  <!-- see https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/dn255024(v=vs.85)#msapplication-tilecolor -->
-  <meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#00ff00" }}">
-
-  <!-- RSS -->
-  {{ range .AlternativeOutputFormats }}
-      <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | safeURL }}">
+  <!-- SSR -->
+  {{- range .AlternativeOutputFormats -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink }}">
   {{ end }}
 
-  <!-- 当前页面的所有翻译（包括当前页） -->
-  {{ range .AllTranslations }}
+  <!-- 所有翻译 -->
+  {{- range .AllTranslations -}}
       <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
   {{ end }}
+
+  <!-- ########## 重写完成 ########## -->
 
   <!-- 禁止脚本时才会执行的 -->
   <noscript>

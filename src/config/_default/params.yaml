@@ -14,6 +14,9 @@ keywords:
 authors:
   - Linlccc
 
+# 主题颜色（在手机浏览器上下空白区域颜色）TODO：这里后面看怎么改
+theme_color:
+
 # 自定义 meta 标签
 customMetas:
   # Google 站点验证
@@ -46,6 +49,26 @@ fuseOpts:
     - permalink
     - summary
     - content
+
+# 网站图标
+favicon:
+  dark:
+    favicon: /favicon/dark/favicon.ico
+    icon: /favicon/dark/favicon.svg
+    favicon_16: /favicon/dark/favicon-16x16.png
+    favicon_32: /favicon/dark/favicon-32x32.png
+    favicon_180: /favicon/dark/favicon-180x180.png
+    favicon_192: /favicon/dark/favicon-192x192.png
+    favicon_512: /favicon/dark/favicon-512x512.png
+  light:
+    favicon: /favicon/light/favicon.ico
+    icon: /favicon/light/favicon.svg
+    favicon_16: /favicon/light/favicon-16x16.png
+    favicon_32: /favicon/light/favicon-32x32.png
+    favicon_180: /favicon/light/favicon-180x180.png
+    favicon_192: /favicon/light/favicon-192x192.png
+    favicon_512: /favicon/light/favicon-512x512.png
+
 #################################
 
 # 环境变量[development, production]
@@ -118,17 +141,16 @@ comments: true
 # 网站开始使用时间
 StartYear: 2023
 
-assets:
-  # 图标
-  favicon: /images/site/icon192.png
-  favicon16x16: /images/site/icon16.png
-  favicon32x32: /images/site/icon32.png
-  # 苹果触摸图标
-  apple_touch_icon: /images/site/icon192.png
-  # safari 固定标签
-  safari_pinned_tab: /images/site/icon192.png
-  # 主题颜色（在手机浏览器上下空白区域颜色）
-  theme_color:
+# 图标
+# assets:
+#   favicon16x16: /images/site/icon16.png
+#   favicon32x32: /images/site/icon32.png
+#   # 苹果触摸图标
+#   apple_touch_icon: /images/site/icon192.png
+#   # safari 固定标签
+#   safari_pinned_tab: /images/site/icon192.png
+#   # 主题颜色（在手机浏览器上下空白区域颜色）
+#   theme_color:
 
 # 标签，进入主页的title设置
 label:
