@@ -3,18 +3,33 @@ title: "这是一篇测试文章"
 linkTitle: "测试文章"
 Description: "测试文章描述"
 Summary: "测试文章摘要"
-tags: ["测试", "文章"]
-categories: ["tt", "aa"]
-keywords: ["测试1", "文章1"]
+
+tags:
+  - tag1
+  - tag2
+tags: tag1
+
+categories:
+  - category1
+  - category2
+categories: categories1
+
+keywords:
+  - keyword1
+  - keyword2
+keywords: keyword1
+
 aliases:
   - /posts/test1/
   - /posts/test2/
-# author:
-#   - lllll
-#   - aaaaa
+
+authors:
+  - author1
+  - author2
+authors: author1
 
 ShowCanonicalLink: true
-canonicalURL: "http://linlccc.com/posts/test/"
+canonicalURL: http://linlccc.com/posts/test/
 
 ShowBreadCrumbs: true
 searchHidden: false
