@@ -2,3 +2,13 @@
 
 # 主题
 theme: CustomPaperMod
+# 标题
+title: Linlccc's Blog
+# 发布站点的绝对 URL（协议、主机、路径和尾部斜杠）
+baseURL: https://linlccc.com/
+# 声明
+copyright:
+# 每页文章数量
+paginate: 5
+# 文章摘要长度
+summaryLength: 100

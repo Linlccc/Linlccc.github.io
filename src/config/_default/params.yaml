@@ -1,17 +1,61 @@
 # 参数配置
 
-# 站点用到的参数
-# 生产环境时启用 google analytics、opengraph、twitter-cards 和 schema。
-env: production
-# 标题
-title: Linlccc's Blog
-# 描述
-description: 不如摸鱼！！！
+# 这里是真正会用到的参数，对参数重写
+#################################
+
+# 是否启用 manifest (安装到桌面)
+isEnableManifest: true
 # 关键词
 keywords:
   - Linlccc
   - Blog
   - PaperMod
+# 作者
+authors:
+  - Linlccc
+
+# 自定义 meta 标签
+customMetas:
+  # Google 站点验证
+  - name: google-site-verification
+    content: ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY
+  # 百度 站点验证
+  - name: baidu-site-verification
+    content: codeva-3S13SuprEU
+  # bing 站点验证
+  - name: msvalidate.01
+    content: D46176825688FA3D0C855598CDAB325F
+
+# 搜索配置 see:https://fusejs.io/api/options.html
+fuseOpts:
+  # 区分大小写
+  isCaseSensitive: false
+  # 排序
+  shouldSort: true
+  # 位置
+  location: 0
+  # 距离
+  distance: 1000
+  # 阈值,匹配算法在什么时候放弃匹配,0-1之间,越小越严格
+  threshold: 0.4
+  # 最小匹配字符长度
+  minMatchCharLength: 0
+  # 匹配键
+  keys:
+    - title
+    - permalink
+    - summary
+    - content
+#################################
+
+# 环境变量[development, production]
+# 如果设置成 production， 在开发时会按照生产环境加载内容
+env: production
+# 标题
+title: Linlccc's Blog
+# 描述
+description: 不如摸鱼！！！
+
 # 图像
 images:
   - /images/site/icon192.png
@@ -25,8 +69,6 @@ disableSpecial1stPost: true
 hideFooter: false
 # 在文档也显示所有页面
 ShowAllPagesInArchive: true
-# 是否启用 manifest (安装到桌面)
-IsEnableManifest: true
 
 # 文章列表配置
 # 隐藏摘要（隐藏文章列表页面的中的文章详情）
@@ -48,9 +90,7 @@ ShowReadingTime: true
 ShowWordCount: true
 # 隐藏作者
 HideAuthor: false
-# 作者
-author:
-  - Linlccc
+
 # 原文章来自哪里的提示文章
 CanonicalLinkText: 转载自
 # 显示原文章链接
@@ -79,10 +119,6 @@ comments: true
 StartYear: 2023
 
 assets:
-  # 禁用资源的完整性（用于检查资源是否被篡改）
-  disableFingerprinting: false
-  # 禁用滚动条样式
-  disableScrollBarStyle: false
   # 图标
   favicon: /images/site/icon192.png
   favicon16x16: /images/site/icon16.png
@@ -164,38 +200,6 @@ editPost:
   appendFilePath: true
   # 禁用编辑
   disabled: false
-
-# Google 站点验证 meta 标签信息
-meta:
-  - name: google-site-verification
-    content: ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY
-  # 百度 站点验证 meta 标签信息
-  - name: baidu-site-verification
-    content: codeva-3S13SuprEU
-  # bing 站点验证 meta 标签信息
-  - name: msvalidate.01
-    content: D46176825688FA3D0C855598CDAB325F
-
-# 搜索配置 see:https://fusejs.io/api/options.html
-fuseOpts:
-  # 区分大小写
-  isCaseSensitive: false
-  # 排序
-  shouldSort: true
-  # 位置
-  location: 0
-  # 距离
-  distance: 1000
-  # 阈值,匹配算法在什么时候放弃匹配,0-1之间,越小越严格
-  threshold: 0.4
-  # 最小匹配字符长度
-  minMatchCharLength: 0
-  # 匹配键
-  keys:
-    - title
-    - permalink
-    - summary
-    - content
 
 # 设置在主页显示的文章类型(设置内容为content目录下的目录名)
 mainSections:
