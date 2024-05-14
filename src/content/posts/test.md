@@ -1,9 +1,17 @@
 ---
 title: "这是一篇测试文章"
+linkTitle: "测试文章"
 Description: "测试文章描述"
 Summary: "测试文章摘要"
 tags: ["测试", "文章"]
 categories: ["tt", "aa"]
+keywords: ["测试1", "文章1"]
+aliases:
+  - /posts/test1/
+  - /posts/test2/
+# author:
+#   - lllll
+#   - aaaaa
 
 ShowCanonicalLink: true
 canonicalURL: "http://linlccc.com/posts/test/"
@@ -14,6 +22,8 @@ draft: true
 weight: 1
 
 date: 2023-02-21 10:21:18
+expiryDate: 2024-10-01 12:00:00
+publishDate: 2025-02-21 10:21:18
 
 cover:
   image: "/images/posts/test/test_post_1.png"
