@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language }}" dir="{{ default "auto" .Language.LanguageDirection }}">
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto"  }}">
   {{- partial "head/index.html" . -}}
 
   {{/* 计算出body的类样式 */}}
