@@ -103,15 +103,16 @@
                   --code-bg: rgb(55, 56, 62);
                   --border: rgb(51, 51, 51);
               }
-
+              /* 下面三个没用，看一下可以删除 */
+              /* 主体 */
               .list {
                   background: var(--theme);
               }
-
+              /* 滚动条背景 */
               .list:not(.dark)::-webkit-scrollbar-track {
                   background: 0 0;
               }
-
+              /* 滚动条滑块 */
               .list:not(.dark)::-webkit-scrollbar-thumb {
                   border-color: var(--theme);
               }
