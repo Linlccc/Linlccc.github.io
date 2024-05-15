@@ -1,0 +1,18 @@
+# hugo 内置模板和简码的服务配置
+
+disqus:
+  shortname:
+
+# 谷歌分析
+googleAnalytics:
+  id: G-TQ3ZXPKKNM
+
+instagram:
+  accessToken: ""
+  disableInlineCSS: false
+
+rss:
+  limit: -1
+
+twitter:
+  disableInlineCSS: false
