@@ -48,6 +48,16 @@ categories:
   - category1
   - category2
 
+# hugo 内置模板 Open Graph 的配置
+# 声音文件
+audio:
+  - "default.mp3"
+# 图像文件
+images:
+  - post-cover.png
+# 视频文件
+videos:
+  - video.mp4
 #################
 # 以下是自定义配置
 #################
