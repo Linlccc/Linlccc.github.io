@@ -3,6 +3,14 @@
 # 这里是真正会用到的参数，对参数重写
 #################################
 
+# 标题
+title: Linlccc's Blog
+# 描述
+description: 不如摸鱼！！！
+# 站点图像
+images:
+  - /favicon/dark/favicon-192x192.png
+
 # 是否启用 manifest (安装到桌面)
 isEnableManifest: true
 # 关键词
@@ -50,6 +58,10 @@ fuseOpts:
     - summary
     - content
 
+# hugo 内置模板配置，用户绑定你的twirrer账户
+social:
+  twitter: Linlcccc
+
 # 网站图标
 favicon:
   dark:
@@ -73,15 +85,9 @@ favicon:
 
 # 环境变量[development, production]
 # 如果设置成 production， 在开发时会按照生产环境加载内容
-env: production
-# 标题
-title: Linlccc's Blog
-# 描述
-description: 不如摸鱼！！！
+env:
+  production
 
-# 图像
-images:
-  - /images/site/icon192.png
   # 默认主题  [auto, dark, light]
 defaultTheme: auto
 # 禁用主题切换
@@ -140,17 +146,6 @@ comments: true
 # 自己的一些配置
 # 网站开始使用时间
 StartYear: 2023
-
-# 图标
-# assets:
-#   favicon16x16: /images/site/icon16.png
-#   favicon32x32: /images/site/icon32.png
-#   # 苹果触摸图标
-#   apple_touch_icon: /images/site/icon192.png
-#   # safari 固定标签
-#   safari_pinned_tab: /images/site/icon192.png
-#   # 主题颜色（在手机浏览器上下空白区域颜色）
-#   theme_color:
 
 # 标签，进入主页的title设置
 label:
