@@ -1,138 +1,19 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="robots" content="index, follow">
-  <meta name="application-name" content="{{ site.Title }}">
+  <!-- 基础 head -->
+  {{- partial "head/baseHead.html" . -}}
 
-  <!-- manifest配置(安装到桌面,iphone添加到桌面时独立打开) -->
-  {{- if site.Params.isEnableManifest -}}<link rel="manifest" href="/manifest.json" />{{- end -}}
-
-  <!-- Title -->
-  {{- $title := site.Title -}}
-  {{ if not .IsHome | and .Title }}{{ $title = print .Title " | " $title }}{{ end }}
-  <title>{{ $title }}</title>
-
-  <!-- 描述 -->
-  {{- $description := .Description | default .Summary | default site.Params.description | default $title -}}
-  <meta name="description" content="{{ $description }}" />
-
-  <!-- 关键字，页面关键字 or 页面标签 or 页面分类 or 站点关键字 -->
-  {{- $keywords := .Params.keywords | default .Params.tags | default .Params.categories | default site.Params.keywords | default slice -}}
-  {{- $keywords = delimit ($keywords | partial "toArray") "," -}}
-  <meta name="keywords" content="{{ $keywords }}" />
-
-  <!-- 作者，页面作者 or git作者 or 站点作者 -->
-  {{- $authors := .Params.authors | default .GitInfo.AuthorName | default site.Params.authors | default slice -}}
-  {{- $authors = delimit ($authors | partial "toArray") "," -}}
-  <meta name="author" content="{{ $authors }}" />
-
-  <!-- 原链接 -->
-  {{- $canonicalURL := .Params.canonicalURL | default .Permalink -}}
-  <link rel="canonical" href="{{ $canonicalURL }}" />
-
-  <!-- 自定义 meta -->
-  {{- range site.Params.customMetas -}}
-    <meta name="{{ .name }}" content="{{ .content }}" />
-  {{ end }}
+  <!-- 加载 hugo 内置模板 -->
+  {{- partial "head/hugoInternalTemplate.html" . -}}
 
   <!-- 加载样式 -->
-  {{- $style := resources.Get "sass/main.scss" | toCSS (dict "targetPath" "assets/css/styles.css" "enableSourceMap" true) | minify | fingerprint -}}
-  <link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+  {{- partial "head/css.html" . -}}
 
-  <!-- 搜索,TODO:搜索js后面写js的时候再优化 -->
-  {{- if eq .Layout "search" -}}
-    {{ $fastsearchJs := resources.Get "js/fastsearch.js" | js.Build (dict "params" (dict "fuseOpts" site.Params.fuseOpts)) }}
-    {{ $fuseJs := resources.Get "js/fuse.basic.min.js" }}
-    {{ $searchJs := slice $fuseJs $fastsearchJs | resources.Concat "assets/js/search.js" | minify | fingerprint }}
-    <script defer crossorigin="anonymous" src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}"></script>
-  {{- end -}}
+  <!-- 不能执行js时的处理 -->
+  {{- partial "head/noscript.html" . -}}
 
-  <!-- 深色图标 -->
-  <link rel="icon" type="image/x-icon" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon }}" />
-  <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.icon }}" />
-  <link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_16 }}" />
-  <link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_32 }}" />
-  <link rel="icon" type="image/png" sizes="192x192" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_192 }}" />
-  <link rel="icon" type="image/png" sizes="512x512" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_512 }}" />
-  <link rel="apple-touch-icon" sizes="180x180" media="(prefers-color-scheme: dark)" href="{{ site.Params.favicon.dark.favicon_180 }}" />
-  <!-- 浅色图标 -->
-  <link rel="icon" type="image/x-icon" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon }}" />
-  <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.icon }}" />
-  <link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_16 }}" />
-  <link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_32 }}" />
-  <link rel="icon" type="image/png" sizes="192x192" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_192 }}" />
-  <link rel="icon" type="image/png" sizes="512x512" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_512 }}" />
-  <link rel="apple-touch-icon" sizes="180x180" media="(prefers-color-scheme: light)" href="{{ site.Params.favicon.light.favicon_180 }}" />
-
-  <!-- iphone 手机浏览器上下空白区域颜色 -->
-  <meta name="theme-color" content="{{ site.Params.theme_color | default "var(--theme)" }}">
-
-  <!-- SSR -->
-  {{- range .AlternativeOutputFormats -}}
-    <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink }}">
-  {{ end }}
-
-  <!-- 所有翻译 -->
-  {{- range .AllTranslations -}}
-      <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
-  {{ end }}
-
-  <!-- ########## 重写完成 ########## -->
-
-  <!-- 禁止脚本时才会执行的 -->
-  <noscript>
-      <style>
-          #theme-toggle,
-          .top-link {
-              display: none;
-          }
-
-      </style>
-      {{ if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark")) }}
-      <style>
-          @media (prefers-color-scheme: dark) {
-              :root {
-                  --theme: rgb(29, 30, 32);
-                  --entry: rgb(46, 46, 51);
-                  --primary: rgb(218, 218, 219);
-                  --secondary: rgb(155, 156, 157);
-                  --tertiary: rgb(65, 66, 68);
-                  --content: rgb(196, 196, 197);
-                  --hljs-bg: rgb(46, 46, 51);
-                  --code-bg: rgb(55, 56, 62);
-                  --border: rgb(51, 51, 51);
-              }
-              /* 下面三个没用，看一下可以删除 */
-              /* 主体 */
-              .list {
-                  background: var(--theme);
-              }
-              /* 滚动条背景 */
-              .list:not(.dark)::-webkit-scrollbar-track {
-                  background: 0 0;
-              }
-              /* 滚动条滑块 */
-              .list:not(.dark)::-webkit-scrollbar-thumb {
-                  border-color: var(--theme);
-              }
-          }
-      </style>
-      {{ end }}
-  </noscript>
-
-  {{ partial "extend_head.html" . }}
   <!-- 加载全局自定义事件 -->
-  <!-- 这里看一下可以考虑换成自定义事件https://developer.mozilla.org/zh-CN/docs/Web/Events/Creating_and_triggering_events -->
-  {{ partial "GLOBAL_CUSTOM_EVENT.html" . }}
-
-  <!-- 杂项 -->
-  {{ if hugo.IsProduction | or (eq site.Params.env "production") }}
-      <!-- 使用 hugo内置模板 -->
-      {{ template "_internal/opengraph.html" . }}
-      {{ template "_internal/twitter_cards.html" . }}
-      {{ template "_internal/schema.html" . }}
-      <!-- hugo 内置模板（google分析,只有在发布时才会生成） -->
-      {{ template "_internal/google_analytics.html" . }}
-  {{ end -}}
+  <!-- TODO:这里看一下可以考虑换成自定义事件https://developer.mozilla.org/zh-CN/docs/Web/Events/Creating_and_triggering_events -->
+  {{- partial "GLOBAL_CUSTOM_EVENT.html" . -}}
+  <!-- 加载搜索js -->
+  {{- partialCached "head/search.html" . .Layout -}}
 </head>
