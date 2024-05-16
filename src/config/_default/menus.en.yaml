@@ -1,37 +1,27 @@
 # 英文菜单配置
 
 main:
-  # 标识符
   - identifier: search
-    # 名称
     name: search
-    # 链接
-    url: /search/
-    # 权重
+    pageRef: /search/
     weight: 10
-    # 在name前添加内容（允许html）
-    pre:
-    # 在name后添加内容（允许html）
-    post:
-    # 鼠标悬停显示文本
-    title:
 
   - identifier: posts
     name: posts
-    url: /posts/
+    pageRef: /posts/
     weight: 20
 
   - identifier: tags
     name: tags
-    url: /tags/
+    pageRef: /tags/
     weight: 30
 
   - identifier: categories
     name: categories
-    url: /categories/
+    pageRef: /categories/
     weight: 40
 
   - identifier: archives
     name: archives
-    url: /archives/
+    pageRef: /archives/
     weight: 50
