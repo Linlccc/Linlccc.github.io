@@ -33,10 +33,15 @@ main:
     pageRef: /categories/
     weight: 40
 
+  - identifier: keywords
+    name: 关键字
+    pageRef: /keywords/
+    weight: 50
+
   - identifier: archives
     name: 档案
     pageRef: /archives/
-    weight: 50
+    weight: 60
 
   - identifier: linlccc
     name: Linlccc
