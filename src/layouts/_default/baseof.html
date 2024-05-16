@@ -5,7 +5,7 @@
   {{/* 计算出body的类样式 */}}
   {{ $bodyClass := "" }}
   {{/* 不是普通页面 || 是文档 || 是搜索，时添加list类样式 */}}
-  {{ if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) }}
+  {{ if or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`) }}
     {{ $bodyClass = add $bodyClass "list " }}
   {{end}}
   {{/* 默认主题是dark */}}
@@ -14,7 +14,7 @@
   {{ end }}
 
 <body class="{{ $bodyClass}}" id="top">
-    {{ partialCached "body/header/index.html" . }}
+    {{ partial "body/header/index.html" . }}
 
     <main class="main">{{ block "main" . }}{{ end }}</main>
 
