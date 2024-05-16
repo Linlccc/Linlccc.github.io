@@ -1,0 +1,57 @@
+<!-- 当前页面信息 -->
+{{- $currentPage := .curremtPage -}}
+
+<!-- logo 信息 -->
+{{- $logoText := or site.Params.logo.text site.Title -}}
+{{- $logoImage := site.Params.logo.image -}}
+{{- $logoImageHeight := or site.Params.logo.imageHeight 30 -}}
+
+<!-- 主题切换信息 -->
+{{- $disableThemeToggle := or site.Params.disableThemeToggle false -}}
+{{- $themeToggleAttribute := cond (strings.Contains .className "navExhibit") "id='theme-toggle' accesskey='t' title='(Alt + T)'" "" -}}
+
+<!-- 语言切换信息 -->
+<!-- 语言切换分隔符元素，（有logo || 主题切换）&& 有多语言 -->
+{{- $languageSwitchDelimiterHtml := cond (and (or $logoText (not $disableThemeToggle)) (gt (site.Home.Translations | len) 0)) "<li>|</li>" "" -}}
+
+<nav class="nav {{ .className }}">
+  <div class="logo">
+    <!-- logo -->
+      {{- with $logoText }}
+        <a href="{{ absLangURL "" }}" accesskey="h" title="{{ . }} (Alt + H)">
+          {{ with $logoImage }}<img src="{{ . }}" aria-label="logo" height="{{ $logoImageHeight }}" />{{ end }}{{- . }}
+        </a>
+      {{ end -}}
+
+      <!-- 主题切换 -->
+      {{- if not $disableThemeToggle }}
+        <button {{ $themeToggleAttribute | safeHTMLAttr }}>
+          {{ partial "body/svg.html" "sun" }}
+          {{ partial "body/svg.html" "moon" }}
+        </button>
+      {{ end -}}
+
+      <!-- 语言切换 -->
+      <ul class="lang-switch">{{ $languageSwitchDelimiterHtml | safeHTML }}
+        {{- range site.Home.Translations }}
+          <li><a href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Lang }}">{{ .Lang | title }}</a></li>
+        {{ end -}}
+      </ul>
+  </div>
+
+  <!-- 菜单 -->
+  <ul id="menu">
+    {{- range site.Menus.main }}
+      <li>
+        <!-- 计算链接属性，搜索页面绑定键盘 -->
+        {{- $attr := printf "title='%s'" (.Title | default .Name) -}}
+        {{- if and .Page (eq .Page.Layout `search`) }}{{ $attr = printf "title='%s (Alt + /)' accesskey='/'" .Title | default .Name }}{{ end -}}
+        {{- $isActive := $currentPage.IsMenuCurrent .Menu . -}}
+        <a href="{{ .URL }}" {{ $attr | safeHTMLAttr }}>
+          <span {{ cond $isActive "class='active'" ""| safeHTMLAttr }}>{{ .Pre }}{{ .Name }}{{ .Post }}</span>
+          {{- if findRE "://" .URL }}&nbsp;{{ partial "body/svg.html" "external_link" }}{{ end }}
+        </a>
+      </li>
+    {{ end -}}
+  </ul>
+</nav>

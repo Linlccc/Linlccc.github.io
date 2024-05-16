@@ -1,4 +1,5 @@
 <!-- 获取默认主题 -->
+<!-- TODO:看这段主题初始化，是否能hugo处理，不用js执行 -->
 {{ $defaultTheme := site.Params.defaultTheme | default "auto" }}
 <script>
     // 得到主题颜色
@@ -13,7 +14,7 @@
 
 <header class="header">
     <!-- 占位导航 -->
-    {{ partialCached "nav.html" (dict "curremtPage" . "className" "nav navPlaceholder") }}
-    <!-- 展示导航 -->
-    {{ partial "nav.html" (dict "curremtPage" . "className" "nav navExhibit") }}
+    {{ partialCached "body/header/nav.html" (dict "curremtPage" . "className" "navPlaceholder") }}
+    <!-- 展示导航,这里不能缓存，否者激活属性异常 -->
+    {{ partial "body/header/nav.html" (dict "curremtPage" . "className" "navExhibit") }}
 </header>
