@@ -3,10 +3,19 @@
 # 这里是真正会用到的参数，对参数重写
 #################################
 
-# 标题
-title: Linlccc's Blog
 # 描述
 description: 不如摸鱼！！！
+# 默认主题  [auto, dark, light]
+defaultTheme: auto
+# 禁用主题切换
+disableThemeToggle: false
+
+# logo 信息
+logo:
+  text: linlccc's blog
+  image: /favicon/dark/favicon-192x192.png
+  imageHeight: 30
+
 # 站点图像
 images:
   - /favicon/dark/favicon-192x192.png
@@ -85,13 +94,8 @@ favicon:
 
 # 环境变量[development, production]
 # 如果设置成 production， 在开发时会按照生产环境加载内容
-env:
-  production
+env: production
 
-  # 默认主题  [auto, dark, light]
-defaultTheme: auto
-# 禁用主题切换
-disableThemeToggle: false
 # 禁用特殊的第一个帖子(不禁用 && params.homeInfoParams 也没有数据时，会把第一个帖子当做网站介绍)
 disableSpecial1stPost: true
 # 隐藏页脚
@@ -146,15 +150,6 @@ comments: true
 # 自己的一些配置
 # 网站开始使用时间
 StartYear: 2023
-
-# 标签，进入主页的title设置
-label:
-# 文本
-text:
-# 图标
-icon:
-# 图标高度
-iconHeight: 35
 
 # 主页是个人页面
 profileMode:
