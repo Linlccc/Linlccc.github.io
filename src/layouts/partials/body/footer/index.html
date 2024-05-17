@@ -1,44 +1,30 @@
-<!-- 是否隐藏页脚 -->
-{{ $hideFooter := site.Params.hideFooter }}
-<!-- 版权信息 -->
-{{ $copyright := site.Copyright }}
-<!-- 网站运行年 -->
-{{ $rangeYear := now.Year }}
-{{ if and site.Params.StartYear (lt site.Params.StartYear $rangeYear) }}{{ $rangeYear = printf "%d - %d" site.Params.StartYear $rangeYear }}{{ end }}
-<!-- 站点title -->
-{{ $siteTitle := site.Title }}
+<!-- 得到网站运行时间段 -->
+{{ $siteStartYear := cond (eq (printf "%T" site.Params.startYear) "int") site.Params.startYear 9999 }}
+{{ $currentYear := now.Year }}
+{{ $rangeYear := cond (and $siteStartYear (gt $currentYear $siteStartYear)) (printf "%d - %d" $siteStartYear $currentYear) $currentYear }}
 
 <!-- 页脚 -->
-{{ if not $hideFooter }}
-<footer class="footer">
-    <!-- 版权信息 -->
-    {{ if $copyright }}
-    <span>{{ markdownify $copyright }}</span>
-    {{ else }}
-    <span>
-        &copy; {{ $rangeYear }} <a href="{{ absLangURL "" }}">{{ $siteTitle }}</a> All Rights Reserved
-    </span>
-    {{ end }}
+{{- if not site.Params.hideFooter }}
+  <footer class="footer">
+    <!-- 版权 -->
+    {{- with site.Copyright -}}<span>{{ . }}</span>{{ else -}}
+    <span>© {{ $rangeYear }} <a href="{{ absLangURL "" }}">{{ site.Title }}</a> All Rights Reserved</span>
+    {{- end -}}
+
     <!-- 提供商 -->
-    <span>
-        | Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-{{ end }}
+    {{- with site.Params.powereds -}}
+      {{ $pLenSub1 := sub (len .) 1 }}
+      <span>| Powered by
+        {{ range $i,$v := . }}<a href="{{ $v.url }}" rel="noopener" target="_blank">{{ $v.name }}</a>{{ if ne $i $pLenSub1 }} & {{ end }}{{ end }}
+      </span>
+    {{ end -}}
+  </footer>
+{{ end -}}
 
-<!-- 禁用滚动到顶部 -->
-{{ $disableScrollToTop := site.Params.disableScrollToTop }}
-{{ if not $disableScrollToTop }}
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-{{ end }}
+<!-- 回到顶部 -->
+{{ if not site.Params.disableGoToTop }}{{ partial "body/footer/goToTop.html" . }}{{ end }}
 
-{{- partial "extend_footer.html" . }}
+<!-- TODO:以下的js都需要统一处理 -->
 
 <script>
     // 菜单按钮滚动位置记录与加载
@@ -79,22 +65,7 @@
     });
 
 </script>
-<!-- 滚动到顶部是否可见 -->
-{{- if (not site.Params.disableScrollToTop) }}
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
 
-</script>
-{{- end }}
 <!-- 主题切换 -->
 {{- if (not site.Params.disableThemeToggle) }}
 <script>
