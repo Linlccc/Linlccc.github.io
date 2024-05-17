@@ -3,37 +3,38 @@
 # 这里是真正会用到的参数，对参数重写
 #################################
 
+### 面向整个站点的配置 ###
 # 描述
 description: 不如摸鱼！！！
 # 默认主题  [auto, dark, light]
 defaultTheme: auto
 # 禁用主题切换
 disableThemeToggle: false
-
-# logo 信息
-logo:
-  text: linlccc's blog
-  image: /favicon/dark/favicon-192x192.png
-  imageHeight: 30
-
-# 站点图像
-images:
-  - /favicon/dark/favicon-192x192.png
-
+# 禁用滚动到顶部
+disableGoToTop: false
 # 是否启用 manifest (安装到桌面)
 isEnableManifest: true
-# 关键词
-keywords:
-  - Linlccc
-  - Blog
-  - PaperMod
-# 作者
-authors:
-  - Linlccc
 
 # 主题颜色（在手机浏览器上下空白区域颜色）TODO：这里后面看怎么改
 theme_color:
-
+# 网站图标
+favicon:
+  dark:
+    favicon: /favicon/dark/favicon.ico
+    icon: /favicon/dark/favicon.svg
+    favicon_16: /favicon/dark/favicon-16x16.png
+    favicon_32: /favicon/dark/favicon-32x32.png
+    favicon_180: /favicon/dark/favicon-180x180.png
+    favicon_192: /favicon/dark/favicon-192x192.png
+    favicon_512: /favicon/dark/favicon-512x512.png
+  light:
+    favicon: /favicon/light/favicon.ico
+    icon: /favicon/light/favicon.svg
+    favicon_16: /favicon/light/favicon-16x16.png
+    favicon_32: /favicon/light/favicon-32x32.png
+    favicon_180: /favicon/light/favicon-180x180.png
+    favicon_192: /favicon/light/favicon-192x192.png
+    favicon_512: /favicon/light/favicon-512x512.png
 # 自定义 meta 标签
 customMetas:
   # Google 站点验证
@@ -45,7 +46,33 @@ customMetas:
   # bing 站点验证
   - name: msvalidate.01
     content: D46176825688FA3D0C855598CDAB325F
+# 关键词
+keywords:
+  - Linlccc
+  - Blog
+  - PaperMod
+# 站点作者
+authors:
+  - Linlccc
 
+# logo 信息
+logo:
+  text: linlccc's blog
+  image: /favicon/dark/favicon-192x192.png
+  imageHeight: 30
+
+# 隐藏页脚
+hideFooter: false
+# 网站开始使用年份
+startYear: 2023
+# 提供商信息
+powereds:
+  - name: Hugo
+    url: https://gohugo.io/
+  - name: PaperMod
+    url: https://github.com/adityatelange/hugo-PaperMod/
+
+### 搜索页面配置 ###
 # 搜索配置 see:https://fusejs.io/api/options.html
 fuseOpts:
   # 区分大小写
@@ -67,29 +94,14 @@ fuseOpts:
     - summary
     - content
 
-# hugo 内置模板配置，用户绑定你的twirrer账户
+### Hugo 内置模板配置 ###
+# 将网站和你的 Twitter 账户关联起来
 social:
   twitter: Linlcccc
 
-# 网站图标
-favicon:
-  dark:
-    favicon: /favicon/dark/favicon.ico
-    icon: /favicon/dark/favicon.svg
-    favicon_16: /favicon/dark/favicon-16x16.png
-    favicon_32: /favicon/dark/favicon-32x32.png
-    favicon_180: /favicon/dark/favicon-180x180.png
-    favicon_192: /favicon/dark/favicon-192x192.png
-    favicon_512: /favicon/dark/favicon-512x512.png
-  light:
-    favicon: /favicon/light/favicon.ico
-    icon: /favicon/light/favicon.svg
-    favicon_16: /favicon/light/favicon-16x16.png
-    favicon_32: /favicon/light/favicon-32x32.png
-    favicon_180: /favicon/light/favicon-180x180.png
-    favicon_192: /favicon/light/favicon-192x192.png
-    favicon_512: /favicon/light/favicon-512x512.png
-
+# 站点图像
+images:
+  - /favicon/dark/favicon-192x192.png
 #################################
 
 # 环境变量[development, production]
@@ -98,8 +110,7 @@ env: production
 
 # 禁用特殊的第一个帖子(不禁用 && params.homeInfoParams 也没有数据时，会把第一个帖子当做网站介绍)
 disableSpecial1stPost: true
-# 隐藏页脚
-hideFooter: false
+
 # 在文档也显示所有页面
 ShowAllPagesInArchive: true
 
@@ -142,14 +153,10 @@ ShowCodeCopyButtons: true
 ShowPostNavLinks: true
 # 显示分享按钮
 ShowShareButtons: true
-# 禁用滚动到顶部
-disableScrollToTop: false
 # 评论
 comments: true
 
 # 自己的一些配置
-# 网站开始使用时间
-StartYear: 2023
 
 # 主页是个人页面
 profileMode:
