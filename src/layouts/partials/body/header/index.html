@@ -2,19 +2,20 @@
 <!-- TODO:看这段主题初始化，是否能hugo处理，不用js执行 -->
 {{ $defaultTheme := site.Params.defaultTheme | default "auto" }}
 <script>
-    // 得到主题颜色
-    const defaultTheme = "{{ $defaultTheme }}";
-    let theme = localStorage.getItem("pref-theme") ?? defaultTheme;
-    if(theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    if(theme == 'dark') document.body.classList.add('dark');
-    else document.body.classList.remove('dark');
-    // 设置系统主题颜色(iphone上下空白处颜色)
-    document.querySelector("meta[name=theme-color]").setAttribute("content", getComputedStyle(document.body).getPropertyValue('--theme'));
+  // 得到主题颜色
+  const defaultTheme = "{{ $defaultTheme }}";
+  let theme = localStorage.getItem("pref-theme") ?? defaultTheme;
+  if(theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  if(theme == 'dark') document.body.classList.add('dark');
+  else document.body.classList.remove('dark');
+  // 设置系统主题颜色(iphone上下空白处颜色)
+  document.querySelector("meta[name=theme-color]").setAttribute("content", getComputedStyle(document.body).getPropertyValue('--theme'));
+  // 冒泡
 </script>
 
 <header class="header">
-    <!-- 占位导航 -->
-    {{ partialCached "body/header/nav.html" (dict "curremtPage" . "className" "navPlaceholder") }}
-    <!-- 展示导航,这里不能缓存，否者激活属性异常 -->
-    {{ partial "body/header/nav.html" (dict "curremtPage" . "className" "navExhibit") }}
+  <!-- 占位导航 -->
+  {{ partialCached "body/header/nav.html" (dict "curremtPage" . "className" "navPlaceholder") }}
+  <!-- 展示导航,这里不能缓存，否者激活属性异常 -->
+  {{ partial "body/header/nav.html" (dict "curremtPage" . "className" "navExhibit") }}
 </header>
