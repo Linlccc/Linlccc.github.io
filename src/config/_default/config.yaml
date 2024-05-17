@@ -23,7 +23,7 @@ defaultContentLanguage: zh
 timezone: Asia/Chongqing
 # 发布站点的绝对 URL（协议、主机、路径和尾部斜杠）
 baseURL: https://example.org/
-# 网站声明
+# 网站版权
 copyright: © 2023 example
 
 # 每页文章数量
