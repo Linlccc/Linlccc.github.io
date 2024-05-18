@@ -3,9 +3,9 @@
 # 当前文件没有任何作用，仅作为参考 #
 #################################
 
-####################
+##################
 # hugo 文章默认配置
-####################
+##################
 # 标题，将文件名的 '-' 替换成 ' ',并将每个单词的首字母大写
 title: { { replace .Name "-" " " | title } }
 # 链接标题，在标题很长时用到
@@ -58,6 +58,15 @@ images:
 # 视频文件
 videos:
   - video.mp4
+
+########################################
+# 模板查找配置,查找模板的更目录都是 layouts
+########################################
+# 布局，该设置会去找 test.html 模板
+layout: test
+# 类型，该设置会在 test 目录下去找模板
+type: test
+
 #################
 # 以下是自定义配置
 #################
@@ -70,12 +79,38 @@ authors:
 # 原文章链接
 canonicalURL: ""
 
+# 从 home 页中隐藏，值只能是true/false
+hiddenInHomeList: false
+
+# 隐藏摘要
+hideSummary: false
+
+# 隐藏元数据（比如作者、发布日期等）
+hidemeta: false
+# 显示文章阅读时间
+ShowReadingTime: true
+# 显示文章字数统计
+ShowWordCount: true
+# 显示作者
+showAuthor: true
+
+# 文章封面
+cover:
+  # 封面图片
+  image: ""
+  # 图片的替代文本
+  alt: ""
+  # 封面标题，描述
+  caption: ""
+  # 指示图片路径是否相对于当前文件(没用)TODO:这考虑移除该参数，或者自动将图片生成到对应的目录
+  relative: false
+  # 隐藏封面
+  hidden: true
 #########################################################
 # papermod 主题的文章配置
 # see https://gohugo.io/content-management/front-matter/
 #########################################################
-# 隐藏摘要
-hideSummary: false
+
 # 在站内搜索结果中隐藏页面
 searchHidden: true
 # 在文章分类页面显示 RSS 订阅按钮
@@ -85,12 +120,7 @@ UseHugoToc: true
 
 # 显示面包屑导航
 ShowBreadCrumbs: true
-# 隐藏元数据（比如作者、发布日期、分类等）
-hidemeta: false
-# 显示文章阅读时间
-ShowReadingTime: true
-# 显示文章字数统计
-ShowWordCount: true
+
 # 显示原文章信息，用于显示转载自哪里
 ShowCanonicalLink: true
 # 显示目录
@@ -104,18 +134,7 @@ disableShare: false
 # 开启评论功能
 comments: false
 
-# 文章封面
-cover:
-  # 封面图片
-  image: ""
-  # 图片的替代文本
-  alt: ""
-  # 在封面下方显示的文字描述(只有在文章内补隐藏才有用)
-  caption: ""
-  # 指示图片路径是否相对于当前文件(没用)
-  relative: false
-  # 在文章隐藏封面
-  hidden: true
+
 
 # 文章编辑链接字段
 editPost:
