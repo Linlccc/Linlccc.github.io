@@ -1,1 +1,5 @@
 goToTop: Go to Top
+
+readTime: "{{ . }} min"
+
+words: "{{ . }} words"
