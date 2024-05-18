@@ -1,0 +1,6 @@
+<!-- 社交图标 -->
+<div class="social-icons">
+  {{ range site.Params.socialIcons }}
+    <a href="{{ trim .url " " | safeURL  }}" target="_blank" rel="noopener noreferrer me" title="{{ title .name }}">{{ partial "common/svg.html" .name }}</a>
+  {{ end }}
+</div>

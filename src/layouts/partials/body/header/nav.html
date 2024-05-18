@@ -26,8 +26,8 @@
       <!-- 主题切换 -->
       {{- if not $disableThemeToggle }}
         <button {{ $themeToggleAttribute | safeHTMLAttr }}>
-          {{ partial "body/svg.html" "sun" }}
-          {{ partial "body/svg.html" "moon" }}
+          {{ partial "common/svg.html" "sun" }}
+          {{ partial "common/svg.html" "moon" }}
         </button>
       {{ end -}}
 
@@ -49,7 +49,7 @@
         {{- $isActive := $currentPage.IsMenuCurrent .Menu . -}}
         <a href="{{ .URL }}" {{ $attr | safeHTMLAttr }}>
           <span {{ cond $isActive "class='active'" ""| safeHTMLAttr }}>{{ .Pre }}{{ .Name }}{{ .Post }}</span>
-          {{- if findRE "://" .URL }}&nbsp;{{ partial "body/svg.html" "external_link" }}{{ end }}
+          {{- if findRE "://" .URL }}&nbsp;{{ partial "common/svg.html" "external_link" }}{{ end }}
         </a>
       </li>
     {{ end -}}
