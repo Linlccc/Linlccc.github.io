@@ -48,6 +48,7 @@
 
 <!-- manifest配置(安装到桌面,iphone添加到桌面时独立打开) -->
 <!-- TODO：考虑通过模板生成该文件使用 ExecuteAsTemplate 函数 -->
+<!-- https://gohugo.io/templates/output-formats/#media-types -->
 {{- if site.Params.isEnableManifest -}}<link rel="manifest" href="/manifest.json" />{{ end }}
 
 <!-- 图标 -->
