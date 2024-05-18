@@ -1,0 +1,85 @@
+<!-- 将图标名称转成小写 -->
+{{- $iconName := ( trim . " " | lower ) -}}
+<!-- 得到公共属性 -->
+{{- $commonAttr := printf "xmlns=\"http://www.w3.org/2000/svg\" class=\"%s\"" $iconName -}}
+
+{{- if eq $iconName "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" -}}
+{{- else if eq $iconName "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" -}}
+{{- else if eq $iconName "bilibili" -}}
+<svg {{ $commonAttr | safeHTMLAttr }} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" >
+  <rect x="1.3333" y="6" width="21.333" height="15.333" rx="4" ry="4" />
+  <path d="m8 12.4v1.2" />
+  <path d="m16 12.4v1.2" />
+  <path d="m5.8853 2.6667 2.6667 2.6667" />
+  <path d="m18.115 2.6667-2.6667 2.6667" />
+</svg>
+{{- else if eq $iconName "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" -}}
+{{- else if eq $iconName "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" -}}
+{{- else if eq $iconName "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE" -}}
+<!-- 外部链接 -->
+{{- else if eq $iconName "external_link" -}}
+<svg {{ $commonAttr | safeHTMLAttr }} viewBox="0 0 24 24" fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+  <path d="M15 3h6v6"></path>
+  <path d="M10 14L21 3"></path>
+</svg>
+{{- else if eq $iconName "email" -}}
+<svg {{ $commonAttr | safeHTMLAttr }} viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+{{- else if eq $iconName "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" -}}
+{{- else if eq $iconName "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG" -}}
+{{- else if eq $iconName "github" -}}
+<svg {{ $commonAttr | safeHTMLAttr }} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+</svg>
+{{- else if eq $iconName "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH" -}}
+{{- else if eq $iconName "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII" -}}
+{{- else if eq $iconName "JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ" -}}
+{{- else if eq $iconName "KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK" -}}
+{{- else if eq $iconName "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" -}}
+{{- else if eq $iconName "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" -}}
+<!-- 月亮 -->
+{{- else if eq $iconName "moon" -}}
+<svg {{ $commonAttr | safeHTMLAttr }} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+{{- else if eq $iconName "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN" -}}
+{{- else if eq $iconName "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO" -}}
+{{- else if eq $iconName "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP" -}}
+{{- else if eq $iconName "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ" -}}
+{{- else if eq $iconName "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR" -}}
+{{- else if eq $iconName "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS" -}}
+{{- else if eq $iconName "rss" -}}
+<svg {{ $commonAttr | safeHTMLAttr }} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+<!-- 太阳 -->
+{{- else if eq $iconName "sun" -}}
+<svg {{ $commonAttr | safeHTMLAttr }} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="5"></circle>
+  <line x1="12" y1="1" x2="12" y2="3"></line>
+  <line x1="12" y1="21" x2="12" y2="23"></line>
+  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+  <line x1="1" y1="12" x2="3" y2="12"></line>
+  <line x1="21" y1="12" x2="23" y2="12"></line>
+  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+</svg>
+{{- else if eq $iconName "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT" -}}
+{{- else if eq $iconName "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU" -}}
+<!-- 向上三角形 -->
+{{- else if eq $iconName "upward_triangle" -}}
+<svg {{ $commonAttr | safeHTMLAttr }} viewBox="0 0 12 6" fill="currentColor">
+  <path d="M12 6H0l6-6z" />
+</svg>
+{{- else if eq $iconName "VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" -}}
+{{- else if eq $iconName "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW" -}}
+{{- else if eq $iconName "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" -}}
+{{- else if eq $iconName "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" -}}
+{{- else if eq $iconName "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ" -}}
+{{- end -}}
