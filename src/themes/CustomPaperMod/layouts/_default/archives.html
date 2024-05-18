@@ -23,7 +23,7 @@
   <!-- 得到所有要展示的页面 -->
   {{ $pages := site.RegularPages }}
   {{ if not site.Params.ShowAllPagesInArchive }}
-    {{ $pages = where $pages "Type" "in" site.Params.mainSections }}
+    {{ $pages = where $pages "Type" "in" site.Params.homeShowTypes }}
   {{ end }}
 
   <!-- 按发布日期展示 -->

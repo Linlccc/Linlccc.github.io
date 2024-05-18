@@ -33,7 +33,7 @@
       </header>
     {{ end }}
     {{ if .IsHome }}
-      {{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+      {{ $pages = where site.RegularPages "Type" "in" site.Params.homeShowTypes }}
       {{ $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}
     {{ end }}
 
