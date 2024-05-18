@@ -72,6 +72,73 @@ powereds:
   - name: PaperMod
     url: https://github.com/adityatelange/hugo-PaperMod/
 
+### Home 页配置 ###
+# 经典模式信息
+classicInfo:
+  # 启用
+  enabled: true
+  # 标题
+  title: 不如摸鱼！！
+  # 内容
+  content: 😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾
+
+# 简介模式信息
+profileInfo:
+  # 标题
+  title: 00000000!!!
+  # 内容
+  content: 😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾
+  # 图片
+  image:
+    url: /images/site/icon192.png
+    width: 120
+    height: 120
+  # 按钮
+  buttons:
+    - name: Posts
+      url: posts
+
+# 社交图标
+socialIcons:
+  - name: github
+    url: https://github.com/Linlccc
+  - name: email
+    url: mailto:linlcccc@gmail.com
+  - name: rss
+    url: /index.xml
+
+# Home 页显示的文章类型(内容文章目录名或文章的 type 配置)
+homeShowTypes:
+  - posts
+  - games
+
+### 文章列表配置 ###
+# 隐藏摘要
+hideSummary: false
+
+# 元信息(文章列表和内容页用到)
+# 隐藏元
+hidemeta: false
+# 日期格式
+DateFormat: 2006-01-02
+# 显示阅读时间
+ShowReadingTime: true
+# 显示字数
+ShowWordCount: true
+# 显示作者
+showAuthor: true
+
+# 文章封面
+cover:
+  # 在文章内容页面隐藏封面  优先级 Page.Param.cover.hidden > Site.Param.cover.hiddenInSingle
+  hiddenInSingle: true
+  # 在文章列表中隐藏封面 优先级  Page.Param.cover.hidden > Site.Param.cover.hiddenInList
+  hiddenInList: false
+  # 图片生成链接
+  linkFullImages: true
+  # 响应式图片,TODO:看一下之前的是怎么实现的
+  responsiveImages: true
+
 ### 搜索页面配置 ###
 # 搜索配置 see:https://fusejs.io/api/options.html
 fuseOpts:
@@ -115,25 +182,13 @@ disableSpecial1stPost: true
 ShowAllPagesInArchive: true
 
 # 文章列表配置
-# 隐藏摘要（隐藏文章列表页面的中的文章详情）
-hideSummary: false
+
 # 文章列表中显示 Rss 按钮
 ShowRssButtonInSectionTermList: true
 
 # 文章配置
 # 显示面包屑
 ShowBreadCrumbs: false
-# 元信息
-# 隐藏元(内容/列表等页面，用于呈现内容信息)
-hidemeta: false
-# 日期格式
-DateFormat: 2006-01-02
-# 显示阅读时间
-ShowReadingTime: true
-# 显示字数
-ShowWordCount: true
-# 隐藏作者
-HideAuthor: false
 
 # 原文章来自哪里的提示文章
 CanonicalLinkText: 转载自
@@ -187,28 +242,6 @@ homeInfoParams:
   # 内容
   Content: 😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾
 
-# 社交图标
-socialIcons:
-  - name: github
-    url: https://github.com/Linlccc
-  - name: email
-    url: mailto:linlcccc@gmail.com
-  - name: rss
-    url: /index.xml
-
-# 文章封面
-cover:
-  # 隐藏封面
-  hidden: false
-  # 在文章内容页面隐藏封面  优先级 Page.Param.cover.hidden > Site.Param.cover.hiddenInSingle > Site.Param.cover.hidden
-  hiddenInSingle: true
-  # 在文章列表中隐藏封面 优先级 Site.Param.cover.hiddenInList > Site.Param.cover.hidden
-  hiddenInList: false
-  # 响应式图片
-  responsiveImages: true
-  # 图片生成链接
-  linkFullImages: true
-
 # 文章编辑链接信息
 editPost:
   # 链接
@@ -219,9 +252,3 @@ editPost:
   appendFilePath: true
   # 禁用编辑
   disabled: false
-
-# 设置在主页显示的文章类型(设置内容为content目录下的目录名)
-mainSections:
-  - blog
-  - posts
-  - games
