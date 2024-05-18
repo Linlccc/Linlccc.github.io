@@ -28,6 +28,8 @@ authors:
   - author2
 authors: author1
 
+hiddenInHomeList: false
+
 ShowCanonicalLink: true
 canonicalURL: http://linlccc.com/posts/test/
 
