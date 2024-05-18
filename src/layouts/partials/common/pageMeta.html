@@ -1,0 +1,28 @@
+<!-- 页面元信息
+  参数：
+  . : 要获取元信息的页面
+ -->
+
+{{ $metas := newScratch }}
+<!-- 时间 -->
+{{ if not .Date.IsZero }}
+  {{ $metas.Add "meta" (slice (printf "<span title='%s'>%s</span>" .Date (.Date | time.Format (site.Params.dateFormat | default "January 2, 2006")))) }}
+{{ end }}
+
+<!-- 阅读时间 -->
+{{ if .Param "ShowReadingTime" }}
+  {{ $metas.Add "meta" (slice ((T "readTime" .ReadingTime) | default (printf "%d min" .ReadingTime))) }}
+{{ end }}
+
+<!-- 字数 -->
+{{ if .Param "ShowWordCount" }}
+  {{ $metas.Add "meta" (slice ((i18n "words" .WordCount) | default (printf "%d words" .WordCount))) }}
+{{ end }}
+
+<!-- 作者 -->
+{{ if .Param "showAuthor" }}
+  {{ $metas.Add "meta" (slice (delimit (or .Params.authors .GitInfo.AuthorName site.Params.authors slice | partial "toArray") ",")) }}
+{{ end }}
+
+<!-- 合并元信息 -->
+{{ delimit ($metas.Get "meta") " · " | safeHTML }}

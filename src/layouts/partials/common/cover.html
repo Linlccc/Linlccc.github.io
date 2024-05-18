@@ -1,0 +1,23 @@
+<!-- 封面模板
+  参数：
+  page : 文章页
+  inList : 是否在列表中
+ -->
+ <!-- 有图片 and 不隐藏 -->
+{{ with .page }}
+  {{ if and .Params.cover.image (not .Params.cover.hidden) }}
+    <figure class="entry-cover">
+      <!-- 图片 -->
+      {{ if site.Params.cover.linkFullImages }}
+        <a href="{{ .Params.cover.image | absURL }}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="{{ .Params.cover.image | absURL }}" alt="{{ .Params.cover.alt }}"></a>
+      {{ else }}
+        <img loading="lazy" src="{{ .Params.cover.image | absURL }}" alt="{{ .Params.cover.alt }}">
+      {{ end }}
+
+      <!-- 标题 -->
+      {{ if not $.inList }}
+        {{ with .Params.cover.caption }}<p>{{ . | markdownify }}</p>{{ end }}
+      {{ end }}
+    </figure>
+  {{ end }}
+{{ end }}

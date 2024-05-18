@@ -1,0 +1,18 @@
+{{ define "main" }}
+  {{ if site.Params.classicInfo.enabled }}
+    <!-- 得到要显示的文章 -->
+    {{ $pages := where .Site.RegularPages "Type" "in" site.Params.homeShowTypes }}
+    {{ $pages = where $pages "Params.hiddenInHomeList" "ne" true }}
+    <!-- 对文章排序，先根据时间降序，再更具权重升序 -->
+    <!-- 时间越大，权重越小的显示再前面 -->
+    {{ $pages = sort $pages ".Params.date" "desc" }}
+    {{ $pages = sort $pages ".Params.weight"}}
+    <!-- 分页 -->
+    {{ $paginator := .Paginate $pages }}
+
+    {{ if eq $paginator.PageNumber 1 }}{{ partial "home/classic.html" . }}{{ end }}
+    {{ partial "common/pageList.html" (dict "page" . "paginator" $paginator) }}
+  {{ else }}
+    {{ partialCached "home/profile.html" . }}
+  {{ end }}
+{{ end }}

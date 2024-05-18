@@ -1,0 +1,55 @@
+<!-- 页面列表
+  参数：
+    page : 列表页
+    paginator ： 分页器
+ -->
+
+{{ range .paginator.Pages }}
+  <article class="post-entry {{ cond (eq $.page.Kind "term") "tag-entry" "" }}">
+    <!-- 封面 -->
+    {{ if not site.Params.cover.hiddenInList }}{{ partial "common/cover.html" (dict "page" . "inList" true) }}{{ end }}
+    <!-- 标题 -->
+    <header class="entry-header"><h2>{{ .Title }}{{ if .Draft }}<sup><span class="entry-isdraft"> [draft]</span></sup>{{ end }}</h2></header>
+    <!-- 摘要 -->
+    {{ if not (.Param "hideSummary") }}
+      <div class="entry-content">
+        <!-- 移除摘要中的代码行数 -->
+        {{ $newSummary := replaceRE "\\d+ " "" .Summary}}
+        {{ if gt (len $newSummary) 100 }}{{ $newSummary = slicestr $newSummary 0 100 }}{{ end }}
+        <p>{{ $newSummary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+      </div>
+    {{ end }}
+    <!-- 元信息 -->
+    {{ if not (.Param "hideMeta") }}
+    <footer class="entry-footer">{{ partial "common/pageMeta.html" . }}</footer>
+    {{ end }}
+    <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+  </article>
+{{ end }}
+
+<!-- 两个分页导航看使用那个 -->
+{{ if gt .paginator.TotalPages 1 }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if .paginator.HasPrev }}
+    <a class="prev" href="{{ .paginator.Prev.URL | absURL }}">
+      «&nbsp;{{ i18n "prev_page" }}&nbsp;
+      {{- if (.page.Param "ShowPageNums") }}
+      {{- sub .paginator.PageNumber 1 }}/{{ .paginator.TotalPages }}
+      {{- end }}
+    </a>
+    {{- end }}
+    {{- if .paginator.HasNext }}
+    <a class="next" href="{{ .paginator.Next.URL | absURL }}">
+      {{- i18n "next_page" }}&nbsp;
+      {{- if (.page.Param "ShowPageNums") }}
+      {{- add 1 .paginator.PageNumber }}/{{ .paginator.TotalPages }}
+      {{- end }}&nbsp;»
+    </a>
+    {{- end }}
+  </nav>
+</footer>
+{{ end }}
+
+<!-- 分页导航 -->
+{{ template "_internal/pagination.html" . }}
