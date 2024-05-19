@@ -1,0 +1,88 @@
+<!-- 分页导航
+  参数1：
+  . : 有分页的页面
+
+  参数2：
+  page : 有分页的页面
+  frontBackRange ：前后要显示页数的范围
+-->
+
+<!-- 默认值 -->
+{{ $page := . }}
+{{ $frontBackRange := 2 }}
+
+
+
+
+
+<!-- 如果使用的是参数2格式 -->
+{{ if reflect.IsMap . }}
+  {{ with .page }}
+    {{ $page = . }}
+  {{ else }}
+    {{ errorf "传递的参数必须包含“page”，并且值是有分页的页面" }}
+  {{ end }}
+
+  {{ with .frontBackRange }}
+    {{ $frontBackRange = int . }}
+  {{ end }}
+{{ end }}
+
+
+<!-- 要显示的页数 -->
+{{ $pr := $page.Paginator }}
+<!-- 前后要显示页数的范围 -->
+{{ $frontRange := $frontBackRange }}
+{{ $backRange := $frontBackRange }}
+
+<!-- 最大/最小/当前页 -->
+{{ $minPN := $pr.First.PageNumber }}
+{{ $maxPN := $pr.Last.PageNumber }}
+{{ $curPn := $pr.PageNumber }}
+
+<!-- 矫正前范围 -->
+{{ $frontMinPN := sub $curPn 1 $frontRange }}
+{{ if lt $frontMinPN 0 }}
+  {{ $frontRange = add $frontRange $frontMinPN }}
+  {{ $backRange = sub $backRange $frontMinPN }}
+{{ end }}
+<!-- 矫正后范围 -->
+{{ $backMaxPN := add $curPn $backRange }}
+{{ if gt $backMaxPN $maxPN }}
+  {{ $backRange = sub $backRange (sub $backMaxPN $maxPN) }}
+  {{ $frontRange = add $frontRange (sub $backMaxPN $maxPN) }}
+{{ end }}
+
+<!-- 计算出所有要显示的页码 -->
+{{ $pageList := slice $minPN $maxPN $curPn }}
+{{ range seq $frontRange }}
+  {{ $pN := sub $curPn . }}
+  {{ if gt $pN $minPN }}{{ $pageList = $pageList | append $pN }}{{ end }}
+{{ end }}
+{{ range seq $backRange }}
+  {{ $pN := add $curPn . }}
+  {{ if lt $pN $maxPN }}{{ $pageList = $pageList | append $pN }}{{ end }}
+{{ end }}
+{{ $pageList = $pageList | uniq | sort }}
+
+{{ $prevBumber := 0 }}
+<ul class="pagination">
+  {{ range $pageList }}
+  <!-- 如果跳页，显示省略号 -->
+  {{ if ne . (add $prevBumber 1) }}
+    <li class="page-item"><span class="page-link" >...</span></li>
+  {{ end }}
+  {{ $prevBumber = . }}
+  <!-- 得到当前 Pager -->
+  {{ $curPager := index $pr.Pagers (sub . 1) }}
+  {{ if eq $curPn . }}
+    <li class="page-item active">
+      <a aria-current="page" aria-label="Page {{ . }}" class="page-link" role="button">{{ . }}</a>
+    </li>
+  {{ else }}
+    <li class="page-item">
+      <a href="{{ $curPager.URL }}" aria-label="Page {{ . }}" class="page-link" role="button">{{ . }}</a>
+    </li>
+  {{ end }}
+{{ end }}
+</ul>

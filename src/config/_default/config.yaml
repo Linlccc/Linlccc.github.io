@@ -27,6 +27,6 @@ baseURL: https://example.org/
 copyright: © 2023 example
 
 # 每页文章数量
-paginate: 5
+paginate: 10
 # 文章摘要长度
 summaryLength: 100

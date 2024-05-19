@@ -3,7 +3,6 @@
     page : 列表页
     paginator ： 分页器
  -->
-
 {{ range .paginator.Pages }}
   <article class="post-entry {{ cond (eq $.page.Kind "term") "tag-entry" "" }}">
     <!-- 封面 -->
@@ -21,35 +20,11 @@
     {{ end }}
     <!-- 元信息 -->
     {{ if not (.Param "hideMeta") }}
-    <footer class="entry-footer">{{ partial "common/pageMeta.html" . }}</footer>
+      <footer class="entry-footer">{{ partial "common/pageMeta.html" . }}</footer>
     {{ end }}
     <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
   </article>
 {{ end }}
 
-<!-- 两个分页导航看使用那个 -->
-{{ if gt .paginator.TotalPages 1 }}
-<footer class="page-footer">
-  <nav class="pagination">
-    {{- if .paginator.HasPrev }}
-    <a class="prev" href="{{ .paginator.Prev.URL | absURL }}">
-      «&nbsp;{{ i18n "prev_page" }}&nbsp;
-      {{- if (.page.Param "ShowPageNums") }}
-      {{- sub .paginator.PageNumber 1 }}/{{ .paginator.TotalPages }}
-      {{- end }}
-    </a>
-    {{- end }}
-    {{- if .paginator.HasNext }}
-    <a class="next" href="{{ .paginator.Next.URL | absURL }}">
-      {{- i18n "next_page" }}&nbsp;
-      {{- if (.page.Param "ShowPageNums") }}
-      {{- add 1 .paginator.PageNumber }}/{{ .paginator.TotalPages }}
-      {{- end }}&nbsp;»
-    </a>
-    {{- end }}
-  </nav>
-</footer>
-{{ end }}
-
 <!-- 分页导航 -->
-{{ template "_internal/pagination.html" . }}
+{{ partial "common/pagination.html" (dict "page" .page "frontBackRange" 1) }}
