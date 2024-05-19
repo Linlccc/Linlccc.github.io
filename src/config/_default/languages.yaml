@@ -23,9 +23,9 @@ en:
   Params:
     CanonicalLinkText: Originally published at
 
-    profileMode:
-      enabled: true
-      title: 00000000!!!
+    classicInfo:
+      enabled: false
+    profileInfo:
       buttons:
         - name: Search
           url: search
@@ -35,3 +35,5 @@ en:
           url: tags
         - name: Archives
           url: archives
+        - name: Lin
+          url: https://linlccc.com
