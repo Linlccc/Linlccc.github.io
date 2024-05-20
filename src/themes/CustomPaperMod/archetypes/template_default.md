@@ -106,6 +106,9 @@ cover:
   relative: false
   # 隐藏封面
   hidden: true
+
+# 显示面包屑导航
+ShowBreadCrumbs: true
 #########################################################
 # papermod 主题的文章配置
 # see https://gohugo.io/content-management/front-matter/
@@ -117,9 +120,6 @@ searchHidden: true
 ShowRssButtonInSectionTermList: true
 # 使用 Hugo 自动生成的目录
 UseHugoToc: true
-
-# 显示面包屑导航
-ShowBreadCrumbs: true
 
 # 显示原文章信息，用于显示转载自哪里
 ShowCanonicalLink: true
