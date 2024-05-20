@@ -16,6 +16,8 @@ disableGoToTop: false
 isEnableManifest: true
 # 多语言切换显示完整语言名称
 displayFullLangName: false
+# 列表页中显示 Rss 按钮
+ShowRssButtonInSectionTermList: true
 
 # 主题颜色（在手机浏览器上下空白区域颜色）TODO：这里后面看怎么改
 theme_color:
@@ -79,6 +81,9 @@ specialPages:
   - search
   - archives
 
+# 在档案页显示所有页面
+ShowAllPagesInArchive: true
+
 ### Home 页配置 ###
 # 经典模式信息
 classicInfo:
@@ -121,8 +126,6 @@ homeShowTypes:
   - games
 
 ### 文章列表配置 ###
-# 文章列表中显示 Rss 按钮
-ShowRssButtonInSectionTermList: true
 # 文章列表和文章头部显示面包屑
 ShowBreadCrumbs: true
 # 隐藏摘要
@@ -189,9 +192,6 @@ env: production
 
 # 禁用特殊的第一个帖子(不禁用 && params.homeInfoParams 也没有数据时，会把第一个帖子当做网站介绍)
 disableSpecial1stPost: true
-
-# 在文档也显示所有页面
-ShowAllPagesInArchive: true
 
 # 文章列表配置
 
