@@ -11,10 +11,6 @@
 {{ $page := . }}
 {{ $frontBackRange := 2 }}
 
-
-
-
-
 <!-- 如果使用的是参数2格式 -->
 {{ if reflect.IsMap . }}
   {{ with .page }}
@@ -28,8 +24,6 @@
   {{ end }}
 {{ end }}
 
-
-<!-- 要显示的页数 -->
 {{ $pr := $page.Paginator }}
 <!-- 前后要显示页数的范围 -->
 {{ $frontRange := $frontBackRange }}
