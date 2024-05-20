@@ -114,6 +114,10 @@ homeShowTypes:
   - games
 
 ### 文章列表配置 ###
+# 文章列表中显示 Rss 按钮
+ShowRssButtonInSectionTermList: true
+# 文章列表和文章头部显示面包屑
+ShowBreadCrumbs: true
 # 隐藏摘要
 hideSummary: false
 
@@ -184,12 +188,7 @@ ShowAllPagesInArchive: true
 
 # 文章列表配置
 
-# 文章列表中显示 Rss 按钮
-ShowRssButtonInSectionTermList: true
-
 # 文章配置
-# 显示面包屑
-ShowBreadCrumbs: false
 
 # 原文章来自哪里的提示文章
 CanonicalLinkText: 转载自
@@ -213,35 +212,6 @@ ShowShareButtons: true
 comments: true
 
 # 自己的一些配置
-
-# 主页是个人页面
-profileMode:
-  # 启用
-  enabled: false
-  # 标题
-  title: 不如摸鱼！！
-  # 字幕
-  subtitle: 😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾
-  # 图像
-  imageUrl: /images/site/icon192.png
-  # 图像宽高
-  imageWidth: 120
-  imageHeight: 120
-  # 图片标题
-  imageTitle: Linlccc
-  buttons:
-    # 个人页面按钮
-    - name: Posts
-      url: posts
-    - name: Tags
-      url: tags
-
-# 普通主页个人信息
-homeInfoParams:
-  # 标题
-  Title: 不如摸鱼！！
-  # 内容
-  Content: 😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾
 
 # 文章编辑链接信息
 editPost:
