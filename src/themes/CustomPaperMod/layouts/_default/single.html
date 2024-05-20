@@ -3,7 +3,7 @@
     <!-- 标题和元信息 -->
     <header class="post-header">
       <!-- 面包屑(细看) -->
-      {{ partial "breadcrumbs.html" . }}
+      {{ if .Param "ShowBreadCrumbs" }}{{ partial "common/breadcrumbs.html" . }}{{ end }}
       <h1 class="post-title">
         {{ .Title }}
         {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{ end }}

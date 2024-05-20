@@ -9,6 +9,9 @@
 .page-header h1 {
   font-size: 40px;
 }
+.page-header h1 .rss {
+  height: 23px;
+}
 
 /* .pagination {
   display: flex;
