@@ -15,8 +15,7 @@
 <meta name="description" content="{{ $description }}" />
 
 <!-- 作者，页面作者 or git作者 or 站点作者 -->
-{{- $authors := or .Params.authors .GitInfo.AuthorName site.Params.authors slice -}}
-{{- $authors = delimit ($authors | partial "toArray") "," -}}
+{{- $authors := delimit (partial "common/GetAuthors.html" .) "," -}}
 <meta name="author" content="{{ $authors }}" />
 
 <!-- 关键字，页面关键字 or 页面标签 or 页面分类 or 站点关键字 -->

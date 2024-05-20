@@ -3,3 +3,5 @@ goToTop: 回到顶部
 readTime: "{{ . }} 分钟"
 
 words: "{{ . }} 字"
+
+translations: 语言

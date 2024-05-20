@@ -12,6 +12,9 @@
 .page-header h1 .rss {
   height: 23px;
 }
+.page-header h1 .search {
+  height: 28px;
+}
 
 /* .pagination {
   display: flex;

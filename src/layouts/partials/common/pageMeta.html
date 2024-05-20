@@ -21,8 +21,7 @@
 
 <!-- 作者 -->
 {{ if .Param "showAuthor" }}
-  {{ $metas.Add "meta" (slice (delimit (or .Params.authors .GitInfo.AuthorName site.Params.authors slice | partial "toArray") ",")) }}
+  {{ $metas.Add "meta" (slice (delimit (partial "common/GetAuthors.html" .) ",")) }}
 {{ end }}
-
 <!-- 合并元信息 -->
 {{ delimit ($metas.Get "meta") " · " | safeHTML }}

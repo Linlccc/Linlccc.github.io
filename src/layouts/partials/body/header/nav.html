@@ -34,7 +34,7 @@
       <!-- 语言切换 -->
       <ul class="lang-switch">{{ $languageSwitchDelimiterHtml | safeHTML }}
         {{- range site.Home.Translations }}
-          <li><a href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Lang }}">{{ .Lang | title }}</a></li>
+          <li><a href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Lang }}">{{ cond (and site.Params.displayFullLangName (gt (len .Language.LanguageName) 0)) (.Language.LanguageName | emojify) (.Lang | title) }}</a></li>
         {{ end -}}
       </ul>
   </div>
