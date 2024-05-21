@@ -5,3 +5,7 @@ readTime: "{{ . }} min"
 words: "{{ . }} words"
 
 translations: translations
+
+editPost: Edit
+
+canonicalLinkText: Originally published at

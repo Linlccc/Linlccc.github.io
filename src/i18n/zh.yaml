@@ -5,3 +5,7 @@ readTime: "{{ . }} 分钟"
 words: "{{ . }} 字"
 
 translations: 语言
+
+editPost: 编辑
+
+canonicalLinkText: 转载自
