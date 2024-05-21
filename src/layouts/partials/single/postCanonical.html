@@ -1,0 +1,9 @@
+<!-- 原文章链接
+  . : 文章页面上下文呢
+-->
+{{ $canonicalLink := .Params.canonicalLink }}
+{{ if and $canonicalLink (.Param "showCanonicalLink") }}
+    <!-- 页面时间不为空 || 显示阅读时间 || 显示字数 || (显示作者 && 有作者) || 有翻译页面 || (编辑帖子没有禁用 && 有编辑url) -->
+  {{ if or (not .Date.IsZero) (.Param "ShowReadingTime") (.Param "ShowWordCount") (and (.Param "showAuthor") (partial "common/GetAuthors.html")) .IsTranslated (and (not (.Param "editPost.disabled")) (.Param "editPost.url"))}}&nbsp;|&nbsp;{{ end }}
+  <span>{{ T "canonicalLinkText" | default "Originally published at" }}&nbsp;<a href="{{ $canonicalLink }}" target="_blank" rel="noopener noreferrer">{{ (urls.Parse $canonicalLink).Host }}</a></span>
+{{ end }}
