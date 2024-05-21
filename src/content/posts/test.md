@@ -31,7 +31,7 @@ authors: author1
 hiddenInHomeList: false
 
 ShowCanonicalLink: true
-canonicalURL: http://linlccc.com/posts/test/
+canonicalLink: http://linlccc.com/posts/test/
 
 ShowBreadCrumbs: true
 searchHidden: false
@@ -49,7 +49,7 @@ cover:
   hidden: false
 
 editPost:
-  disabled: true
+  disabled: false
 ---
 
 ## 二级标题
