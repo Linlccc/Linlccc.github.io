@@ -190,11 +190,32 @@ editPost:
 showCanonicalLink: true
 
 # 显示目录
-showtoc: true
+showToc: true
 # 目录打开
-tocopen: true
+tocOpen: true
 # 使用Hugo目录(使用hugo目录就可以使用 tableOfContents 配置)
-UseHugoToc: true
+useHugoToc: true
+
+# 显示帖子导航链接
+showPostNavLinks: true
+
+# 禁用分享功能
+disableShare: false
+# 是否使用自定义分享按钮
+customShare: true
+# 自定义分享按钮
+customShareButtons:
+  - x
+  - linkedin
+  - reddit
+  - facebook
+  - whatsapp
+  - telegram
+  - ycombinator
+
+# giscus 评论信息
+giscusCommentsInfo:
+  enabled: true
 
 ### Hugo 内置模板配置 ###
 # 将网站和你的 Twitter 账户关联起来
@@ -222,9 +243,3 @@ disableSpecial1stPost: true
 # 内容
 # 显示代码复制按钮
 ShowCodeCopyButtons: true
-# 显示帖子导航链接
-ShowPostNavLinks: true
-# 显示分享按钮
-ShowShareButtons: true
-# 评论
-comments: true

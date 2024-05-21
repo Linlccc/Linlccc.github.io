@@ -127,6 +127,18 @@ canonicalLink:
 showToc: true
 # 打开目录
 tocOpen: false
+# 使用Hugo目录(使用hugo目录就可以使用 tableOfContents 配置)
+useHugoToc: true
+
+# 显示文章导航链接(上/下页)
+showPostNavLinks: true
+
+# 禁用分享功能
+disableShare: false
+
+# giscus 评论信息
+giscusCommentsInfo:
+  enabled: true
 #########################################################
 # papermod 主题的文章配置
 # see https://gohugo.io/content-management/front-matter/
@@ -140,11 +152,4 @@ ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 
 
-
-# 显示文章导航链接(上一篇/下一篇)
-ShowPostNavLinks: true
-# 禁用分享功能
-disableShare: false
-# 开启评论功能
-comments: false
 ---
