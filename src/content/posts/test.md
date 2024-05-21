@@ -96,7 +96,7 @@ editPost:
 
 ###### 六级标题题题题题题题题题题
 
-<h1 style="background: red;">h1html</h1>
+<h1 id="h1html" style="background: red;">h1html</h1>
 <script>
     console.log("md输出");
 </script>
