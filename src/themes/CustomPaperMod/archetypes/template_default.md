@@ -5,6 +5,7 @@
 
 ##################
 # hugo 文章默认配置
+TODO:https://gohugo.io/content-management/front-matter/
 ##################
 # 标题，将文件名的 '-' 替换成 ' ',并将每个单词的首字母大写
 title: { { replace .Name "-" " " | title } }
@@ -26,8 +27,6 @@ expiryDate: { { (time .Date).Format "2006-01-02 15:04:05" } }
 # 最后修改日期，enableGitInfo 设置为true后会自动设置成 git 提交日期
 lastmod: { { (time .Date).Format "2006-01-02 15:04:05" } }
 
-# 自定义布局模板，指向 _default 目录下的模板文件
-layout: contact
 # 是否是草稿
 draft: false
 
@@ -109,6 +108,25 @@ cover:
 
 # 显示面包屑导航
 ShowBreadCrumbs: true
+
+# 文章编辑链接信息
+editPost:
+  # 链接
+  url: https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content
+  # 将文件路径附加到编辑链接
+  appendFilePath: true
+  # 禁用编辑
+  disabled: false
+
+# 显示原文章信息，用于显示转载自哪里
+showCanonicalLink: true
+# 原文章链接
+canonicalLink:
+
+# 显示目录
+showToc: true
+# 打开目录
+tocOpen: false
 #########################################################
 # papermod 主题的文章配置
 # see https://gohugo.io/content-management/front-matter/
@@ -121,27 +139,12 @@ ShowRssButtonInSectionTermList: true
 # 使用 Hugo 自动生成的目录
 UseHugoToc: true
 
-# 显示原文章信息，用于显示转载自哪里
-ShowCanonicalLink: true
-# 显示目录
-showToc: true
-# 打开目录
-TocOpen: false
+
+
 # 显示文章导航链接(上一篇/下一篇)
 ShowPostNavLinks: true
 # 禁用分享功能
 disableShare: false
 # 开启评论功能
 comments: false
-
-
-
-# 文章编辑链接字段
-editPost:
-  # 链接地址
-  URL: "https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content/"
-  # 链接文本
-  Text: "编辑"
-  # 将文件路径附加到编辑链接
-  appendFilePath: true
 ---

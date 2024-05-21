@@ -176,6 +176,26 @@ fuseOpts:
     - summary
     - content
 
+### 文章页配置 ###
+# 文章编辑链接信息
+editPost:
+  # 链接
+  url: https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content
+  # 将文件路径附加到编辑链接
+  appendFilePath: true
+  # 禁用编辑
+  disabled: false
+
+# 显示原文章信息，用于显示转载自哪里
+showCanonicalLink: true
+
+# 显示目录
+showtoc: true
+# 目录打开
+tocopen: true
+# 使用Hugo目录(使用hugo目录就可以使用 tableOfContents 配置)
+UseHugoToc: true
+
 ### Hugo 内置模板配置 ###
 # 将网站和你的 Twitter 账户关联起来
 social:
@@ -197,17 +217,8 @@ disableSpecial1stPost: true
 
 # 文章配置
 
-# 原文章来自哪里的提示文章
-CanonicalLinkText: 转载自
-# 显示原文章链接
-ShowCanonicalLink: true
 # 目录
-# 显示目录
-showtoc: true
-# 目录打开
-tocopen: true
-# 使用Hugo目录(使用hugo目录就可以使用 tableOfContents 配置)
-UseHugoToc: true
+
 # 内容
 # 显示代码复制按钮
 ShowCodeCopyButtons: true
@@ -217,16 +228,3 @@ ShowPostNavLinks: true
 ShowShareButtons: true
 # 评论
 comments: true
-
-# 自己的一些配置
-
-# 文章编辑链接信息
-editPost:
-  # 链接
-  URL: https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content
-  # 编辑文本
-  Text: 编辑
-  # 将文件路径附加到编辑链接
-  appendFilePath: true
-  # 禁用编辑
-  disabled: false
