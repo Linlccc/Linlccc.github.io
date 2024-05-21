@@ -86,4 +86,4 @@ tableOfContents:
   # 结束的标题级别
   endLevel: 6
   # 是否使用有序目录
-  ordered: false
+  ordered: true

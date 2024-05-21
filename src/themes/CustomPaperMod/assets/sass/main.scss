@@ -10,3 +10,20 @@
 @import "../css/includes/index";
 // 测试引入文件
 @import "_partial/t";
+
+// 设置有序列表的序号
+.toc #TableOfContents ol {
+  list-style-type: none;
+  counter-reset: item;
+
+  li {
+    list-style: none;
+
+    a:first-of-type::before {
+      counter-increment: item;
+      content: counters(item, ".") ". ";
+      font-weight: 700;
+      margin-right: 5px;
+    }
+  }
+}
