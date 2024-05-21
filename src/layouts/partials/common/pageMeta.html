@@ -24,4 +24,4 @@
   {{ $metas.Add "meta" (slice (delimit (partial "common/GetAuthors.html" .) ",")) }}
 {{ end }}
 <!-- 合并元信息 -->
-{{ delimit ($metas.Get "meta") " · " | safeHTML }}
+{{ delimit ($metas.Get "meta") "&nbsp;·&nbsp;" | safeHTML }}
