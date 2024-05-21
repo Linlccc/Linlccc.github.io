@@ -1,0 +1,53 @@
+<!-- 分享
+  参数：
+  . : 文章页上下文
+-->
+{{ if not (.Param "disableShare") }}
+  {{ $tags := delimit (.Params.tags | partial "toArray") "," }}
+  {{ $cs := site.Params.customShare | default false }}
+  {{ $csb := or site.Params.customShareButtons slice }}
+
+  <div class="share-buttons">
+    {{ if cond $cs (or (in $csb "x") (in $csb "twitter")) true }}
+      <a target="_blank" rel="noopener noreferrer" aria-label="share {{ .Title | plainify }} on x" href="https://x.com/intent/tweet/?text={{ .Title }}&amp;url={{ .Permalink }}&amp;hashtags={{ $tags }}">
+        {{ partial "common/svg.html" "x" }}
+      </a>
+    {{ end }}
+
+    {{ if cond $cs (in $csb "linkedin") true }}
+      <a target="_blank" rel="noopener noreferrer" aria-label="share {{ .Title | plainify }} on linkedin"href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}&amp;title={{ .Title }}&amp;summary={{ .Title }}&amp;source={{ .Permalink }}">
+        {{ partial "common/svg.html" "linkedin" }}
+      </a>
+    {{ end }}
+
+    {{ if cond $cs (in $csb "reddit") true }}
+      <a target="_blank" rel="noopener noreferrer" aria-label="share {{ .Title | plainify }} on reddit" href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
+        {{ partial "common/svg.html" "reddit" }}
+    </a>
+    {{ end }}
+
+    {{ if cond $cs (in $csb "facebook") true }}
+      <a target="_blank" rel="noopener noreferrer" aria-label="share {{ .Title | plainify }} on facebook" href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}">
+        {{ partial "common/svg.html" "facebook" }}
+    </a>
+    {{ end }}
+
+    {{ if cond $cs (in $csb "whatsapp") true }}
+      <a target="_blank" rel="noopener noreferrer" aria-label="share {{ .Title | plainify }} on whatsapp" href="https://api.whatsapp.com/send?text={{ .Title }}%20-%20{{ .Permalink }}">
+        {{ partial "common/svg.html" "whatsapp" }}
+    </a>
+    {{ end }}
+
+    {{ if cond $cs (in $csb "telegram") true }}
+      <a target="_blank" rel="noopener noreferrer" aria-label="share {{ .Title | plainify }} on telegram" href="https://telegram.me/share/url?text={{ .Title }}&amp;url={{ .Permalink }}">
+        {{ partial "common/svg.html" "telegram" }}
+    </a>
+    {{ end }}
+
+    {{ if cond $cs (in $csb "ycombinator") true }}
+      <a target="_blank" rel="noopener noreferrer" aria-label="share {{ .Title | plainify }} on ycombinator" href="https://news.ycombinator.com/submitlink?t={{ .Title }}&u={{ .Permalink }}">
+        {{ partial "common/svg.html" "ycombinator" }}
+    </a>
+    {{ end }}
+  </div>
+{{ end }}

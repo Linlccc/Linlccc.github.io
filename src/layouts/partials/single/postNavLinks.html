@@ -1,0 +1,18 @@
+<!-- 文章上下页
+  . : 文章页上下文
+-->
+{{ $pages := (where site.RegularPages "Type" "in" site.Params.homeShowTypes) | partial "pageSort"  }}
+{{ if .Param "showPostNavLinks" }}
+  <nav class="paginav">
+    {{ with $pages.Next . }}
+      <a class="prev" href="{{ .Permalink }}">
+        <span class="title">« {{ T "prevPage" }}</span><br><span>{{ .Name }}</span>
+      </a>
+    {{ end }}
+    {{ with $pages.Prev . }}
+      <a class="next" href="{{ .Permalink }}">
+        <span class="title">{{ T "nextPage" }} »</span><br><span>{{ .Name }}</span>
+      </a>
+    {{ end }}
+  </nav>
+{{ end }}

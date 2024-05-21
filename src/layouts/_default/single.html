@@ -20,12 +20,9 @@
     </header>
     <!-- 封面 -->
     {{ if not (.Params.cover.hidden | default site.Params.cover.hiddenInSingle) }}{{ partial "common/cover.html" (dict "page" . "inList" false) }}{{ end }}
-
     <!-- 目录 -->
-    {{ if (.Param "ShowToc") }}
-      <!-- 目录(细看) -->
-      {{ partial "toc.html" . }}
-    {{ end }}
+    {{ if .Param "showToc" }}{{ partial "single/toc.html" . }}{{ end }}
+
     <!-- Markdown 内容 -->
     {{ if .Content }}
       <div class="post-content">
@@ -34,19 +31,20 @@
         {{ end }}
       </div>
     {{ end }}
+
     <!-- tags,上/下章链接/分享 -->
     <footer class="post-footer">
-      <!-- tags -->
-      {{ $tags := .Language.Params.Taxonomies.tag | default "tags" }}
-      <ul class="post-tags">
-        {{ range ($.GetTerms $tags) }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}
-      </ul>
-      <!-- 上一页/下一页(细看) -->
-      {{ if .Param "ShowPostNavLinks" }}{{ partial "post_nav_links.html" . }}{{ end }}
-      <!-- 分享(细看) -->
-      {{ if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}{{ partial "share_icons.html" . }}{{ end }}
+      <ul class="post-tags">{{ range .GetTerms "tags" }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+      <!-- 上下页 -->
+      {{ partial "single/postNavLinks.html" . }}
+      <!-- 分享 -->
+      {{ partial "single/shareIcons.html" . }}
     </footer>
+
     <!-- 评论 -->
-    {{ if .Param "comments" }}{{ partial "comments.html" . }}{{ end }}
+    {{ if .Param "giscusCommentsInfo.enabled" }}
+      <div id="giscusComments"></div>
+      {{ partial "single/giscusComments.html" . }}
+    {{ end }}
   </article>
 {{ end }}

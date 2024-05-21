@@ -1,0 +1,34 @@
+<!-- 目录
+  . : 文章页面上下文
+-->
+{{ $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content }}
+{{ if gt (len $headers) 0 }}
+  <div class="toc">
+    <details {{ cond (.Param "tocOpen" | default false) "open" "" }}>
+      <!-- 标题 -->
+      <summary accesskey="c" title="(Alt + C)"><span class="details">{{- T "toc" | default "目录" }}</span></summary>
+      <!-- 内容 -->
+      <div class="inner">
+        <!-- 使用 hugo 目录 -->
+        {{ if .Param "useHugoToc" }}{{ .TableOfContents }}{{ end }}
+        <!-- 下面这个还在测试阶段 -->
+        {{ if false }}
+          <!-- 计算最小 H 等级 -->
+          {{ $minHL := 6 }}
+          {{ range $headers }}
+            {{ $hL := index (findRE "[1-6]" . 1) 0 }}
+            {{ $minHL = cond (lt $hL $minHL) $hL $minHL }}
+          {{ end }}
+          <!-- 第一个标题等级 -->
+          {{ $firstHL := index (findRE "[1-6]" (index $headers 0) 1) 0 }}
+          <ul>
+            {{ range $headers }}
+              {{ $id := replaceRE `.*id="([^"]*)".*` "$1" . }}
+              <li><a href="#{{ $id }}">{{ $id }}</a></li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+    </details>
+  </div>
+{{ end }}
