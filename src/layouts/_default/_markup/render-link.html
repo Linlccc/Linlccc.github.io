@@ -1,0 +1,5 @@
+<!-- markdown 链接渲染模板，see:https://gohugo.io/render-hooks/links/ -->
+{{ .Attributes }}
+<a href="{{ .Destination | safeURL }}" {{ with .Title }}title="{{ . }}"{{ end }} {{ if (urls.Parse .Destination).IsAbs }}rel="external"{{ end }}>
+  {{ with .Text | safeHTML }}{{ . }}{{ end }}
+</a>

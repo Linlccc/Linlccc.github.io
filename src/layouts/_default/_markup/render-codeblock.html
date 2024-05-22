@@ -1,0 +1,12 @@
+<!-- markdown 代码块模板，see:https://gohugo.io/render-hooks/code-blocks/ -->
+
+<!-- 计算属性 -->
+{{ $attr := "" }}
+{{ range $k,$v := .Attributes }}{{ $attr = add $attr (printf " %s=\"%s\"" $k $v) }}{{ end }}
+
+<div class="codeBlock" {{ $attr | safeHTMLAttr }} >
+  <div>
+    {{ .Type }}
+  </div>
+  {{ (transform.HighlightCodeBlock .).Wrapped }}
+</div>
