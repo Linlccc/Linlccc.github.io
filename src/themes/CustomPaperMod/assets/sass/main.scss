@@ -60,19 +60,20 @@
 // 方案二，不用js，直接用css实现
 .codeBlockDetails {
   + .codeBlockDetailsContent {
-    max-height: 0px;
     overflow: hidden;
-    -webkit-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
-    -moz-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
-    -o-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
-    transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+    margin-bottom: 10px;
+    max-height: 0px;
+    -webkit-transition: max-height 0.3s cubic-bezier(0, 1, 0, 1) -0.1s;
+    -moz-transition: max-height 0.3s cubic-bezier(0, 1, 0, 1) -0.1s;
+    -o-transition: max-height 0.3s cubic-bezier(0, 1, 0, 1) -0.1s;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1) -0.1s;
   }
   &[open] + .codeBlockDetailsContent {
     max-height: 12000px;
-    -webkit-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
-    -moz-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
-    -o-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
-    transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+    -webkit-transition: max-height 0.3s cubic-bezier(0.5, 0, 1, 0) 0s;
+    -moz-transition: max-height 0.3s cubic-bezier(0.5, 0, 1, 0) 0s;
+    -o-transition: max-height 0.3s cubic-bezier(0.5, 0, 1, 0) 0s;
+    transition: max-height 0.3s cubic-bezier(0.5, 0, 1, 0) 0s;
   }
   summary {
     cursor: pointer;
