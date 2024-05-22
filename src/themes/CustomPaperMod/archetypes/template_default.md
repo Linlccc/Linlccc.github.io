@@ -127,8 +127,6 @@ canonicalLink:
 showToc: true
 # 打开目录
 tocOpen: false
-# 使用Hugo目录(使用hugo目录就可以使用 tableOfContents 配置)
-useHugoToc: true
 
 # 显示文章导航链接(上/下页)
 showPostNavLinks: true
@@ -148,8 +146,6 @@ giscusCommentsInfo:
 searchHidden: true
 # 在文章分类页面显示 RSS 订阅按钮
 ShowRssButtonInSectionTermList: true
-# 使用 Hugo 自动生成的目录
-UseHugoToc: true
 
 
 ---

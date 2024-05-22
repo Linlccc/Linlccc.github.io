@@ -280,7 +280,8 @@
     z-index: 990;
     top: var(--header-height);
     transform: translateX(calc(var(--main-width) + var(--gap)));
-    width: 240px;
+    width: 20vw;
+    max-width: 460px;
     font-size: 15px;
     overflow: auto;
     max-height: calc(100% - var(--header-height) * 2);
@@ -305,7 +306,7 @@
     width: 3px;
     background: var(--theme);
   }
-  .toc li.active > a:before {
+  .toc li.active > a::after {
     content: "";
     position: absolute;
     left: 8px;
@@ -353,7 +354,8 @@
   padding: 10px 20px;
 }
 
-.toc li ul {
+.toc li ul,
+.toc li ol {
   margin-inline-start: var(--gap);
 }
 

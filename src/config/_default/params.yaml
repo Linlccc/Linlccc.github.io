@@ -193,8 +193,6 @@ showCanonicalLink: true
 showToc: true
 # 目录打开
 tocOpen: true
-# 使用Hugo目录(使用hugo目录就可以使用 tableOfContents 配置)
-useHugoToc: true
 
 # 显示帖子导航链接
 showPostNavLinks: true

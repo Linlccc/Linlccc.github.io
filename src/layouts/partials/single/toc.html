@@ -9,25 +9,7 @@
       <summary accesskey="c" title="(Alt + C)"><span class="details">{{- T "toc" | default "目录" }}</span></summary>
       <!-- 内容 -->
       <div class="inner">
-        <!-- 使用 hugo 目录 -->
-        {{ if .Param "useHugoToc" }}{{ .TableOfContents }}{{ end }}
-        <!-- 下面这个还在测试阶段 -->
-        {{ if false }}
-          <!-- 计算最小 H 等级 -->
-          {{ $minHL := 6 }}
-          {{ range $headers }}
-            {{ $hL := index (findRE "[1-6]" . 1) 0 }}
-            {{ $minHL = cond (lt $hL $minHL) $hL $minHL }}
-          {{ end }}
-          <!-- 第一个标题等级 -->
-          {{ $firstHL := index (findRE "[1-6]" (index $headers 0) 1) 0 }}
-          <ul>
-            {{ range $headers }}
-              {{ $id := replaceRE `.*id="([^"]*)".*` "$1" . }}
-              <li><a href="#{{ $id }}">{{ $id }}</a></li>
-            {{ end }}
-          </ul>
-        {{ end }}
+        {{ .TableOfContents }}
       </div>
     </details>
   </div>
