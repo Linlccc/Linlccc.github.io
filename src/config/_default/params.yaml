@@ -217,6 +217,9 @@ giscusCommentsInfo:
 
 # 禁用锚定标题
 disableAnchoredHeadings: false
+
+# 显示代码复制按钮
+ShowCodeCopyButtons: true
 ### Hugo 内置模板配置 ###
 # 将网站和你的 Twitter 账户关联起来
 social:
@@ -230,7 +233,4 @@ images:
 # 环境变量[development, production]
 # 如果设置成 production， 在开发时会按照生产环境加载内容
 env: production
-
 # 内容
-# 显示代码复制按钮
-ShowCodeCopyButtons: true

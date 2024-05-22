@@ -140,6 +140,10 @@ disableAnchoredHeadings: false
 # giscus 评论信息
 giscusCommentsInfo:
   enabled: true
+
+# 显示代码复制按钮
+ShowCodeCopyButtons: true
+
 #########################################################
 # papermod 主题的文章配置
 # see https://gohugo.io/content-management/front-matter/
