@@ -90,8 +90,8 @@
     })
 </script>
 {{- end }}
-<!-- 是普通页面 && 不是文档页 && 不是搜索页 && 显示代码复制按钮 -->
-{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
+<!-- 是普通页面 && 不是特殊页面 && 显示代码复制按钮 -->
+{{- if (and (eq .Kind "page") (not (in site.Params.specialPages .Layout)) (.Param "ShowCodeCopyButtons")) }}
 <script>
     document.querySelectorAll('pre > code').forEach((codeblock) => {
         const container = codeblock.parentNode.parentNode;
@@ -180,7 +180,7 @@
 
 
 <!-- 如果是文章页面 -->
-{{ if and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") }}
+{{ if and (eq .Kind "page") (not (in site.Params.specialPages .Layout)) }}
 <!-- 激活目录 -->
 <script>
     // 得到目录元素
