@@ -26,8 +26,10 @@
     <!-- Markdown 内容 -->
     {{ if .Content }}
       <div class="post-content">
-        {{ if .Param "disableAnchoredHeadings" }}{{ .Content }}{{ else }}
-          {{ partial "anchored_headings.html" .Content }}
+        {{ if not (.Param "disableAnchoredHeadings") }}
+          {{ partial "single/anchoredHeadings.html" .Content }}
+        {{ else }}
+          {{ .Content }}
         {{ end }}
       </div>
     {{ end }}

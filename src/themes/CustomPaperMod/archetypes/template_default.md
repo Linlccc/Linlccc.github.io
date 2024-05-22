@@ -134,6 +134,9 @@ showPostNavLinks: true
 # 禁用分享功能
 disableShare: false
 
+# 禁用锚定标题
+disableAnchoredHeadings: false
+
 # giscus 评论信息
 giscusCommentsInfo:
   enabled: true
@@ -144,8 +147,4 @@ giscusCommentsInfo:
 
 # 在站内搜索结果中隐藏页面
 searchHidden: true
-# 在文章分类页面显示 RSS 订阅按钮
-ShowRssButtonInSectionTermList: true
-
-
 ---

@@ -215,6 +215,8 @@ customShareButtons:
 giscusCommentsInfo:
   enabled: true
 
+# 禁用锚定标题
+disableAnchoredHeadings: false
 ### Hugo 内置模板配置 ###
 # 将网站和你的 Twitter 账户关联起来
 social:
