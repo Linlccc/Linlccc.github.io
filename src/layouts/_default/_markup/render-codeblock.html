@@ -10,3 +10,11 @@
   </div>
   {{ (transform.HighlightCodeBlock .).Wrapped }}
 </div>
+
+<!-- 方案二，不用js -->
+<details class="codeBlockDetails" open>
+  <summary>{{ .Type }}</summary>
+</details>
+<div class="codeBlockDetailsContent">
+  {{ (transform.HighlightCodeBlock .).Wrapped }}
+</div>

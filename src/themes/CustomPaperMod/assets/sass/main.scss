@@ -29,6 +29,7 @@
 }
 
 // 代码块
+// 方案一
 .codeBlock {
   overflow: hidden;
   max-height: 12000px;
@@ -54,4 +55,30 @@
 
 .post-content .highlight:not(table) {
   margin-top: 0;
+}
+
+// 方案二，不用js，直接用css实现
+.codeBlockDetails {
+  + .codeBlockDetailsContent {
+    max-height: 0px;
+    overflow: hidden;
+    -webkit-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+    -moz-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+    -o-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+    transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+  }
+  &[open] + .codeBlockDetailsContent {
+    max-height: 12000px;
+    -webkit-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+    -moz-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+    -o-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+    transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+  }
+  summary {
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--code-bg);
+    line-height: 30px;
+    padding: 0 10px;
+  }
 }
