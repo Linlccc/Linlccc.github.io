@@ -10,6 +10,8 @@ canonicalURL: "http://linlccc.com/posts/test/"
 ShowCanonicalLink: true
 canonicalLink: http://linlccc.com/posts/test/
 
+# disableAnchoredHeadings: true
+
 ShowBreadCrumbs: true
 searchHidden: false
 draft: true
@@ -58,7 +60,9 @@ cover:
 
 {{< /collapse >}}
 
-## 二级标题
+## 二级标题{.aa yu="asd"}
+
+## 二级标题{.bb yu="sdf"}
 
 ### 三级标题
 
@@ -106,7 +110,7 @@ printf("这是一个代码块");
 | 这是一个单元格 | 这是一个单元格 | 这是一个单元格 |
 | 这是一个单元格 | 这是一个单元格 | 这是一个单元格 |
 
-[内联方式超链接](/posts/test/)
+[内联方式超链接](https://linlccc.com/posts/test/){.aa}
 
 [引用方式超链接][引用式]
 
@@ -197,11 +201,11 @@ TTTTTTT
 
 ### 下面是一张图片
 
-![图片](/images/posts/test/test_post_1.png)
+![图片](/images/posts/test/test_post_1.png "assda")
 
 ### Code 1
 
-```js
+```js{.aa}
 // 语法结构
 while (条件) {
   需要执行的代码;
@@ -291,6 +295,7 @@ static void Web()
 ```CSharp
 static void Web()
 {
+  // aa
     // 加载配置
     string webConfigFile = "WebConfig.json";
     WebConfig webConfig;

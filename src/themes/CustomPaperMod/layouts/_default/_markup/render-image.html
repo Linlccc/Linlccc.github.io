@@ -1,2 +1,9 @@
-<!-- see:https://gohugo.io/templates/render-hooks/ -->
-<img loading="lazy" src="{{ safeURL .Destination }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+<!-- markdown 图片渲染模板，see:https://gohugo.io/render-hooks/images/ -->
+{{ if .IsBlock }}
+  <figure>
+    <img src="{{ .Destination | safeURL }}" {{ with .Text }}alt="{{ . }}"{{ end }}>
+    <figcaption>{{ .Title }}</figcaption>
+  </figure>
+{{ else }}
+  <img src="{{ .Destination | safeURL }}" {{ with .Text }}alt="{{ . }}"{{ end }} {{ with .Title }}title="{{ . }}"{{ end }}>
+{{ end }}

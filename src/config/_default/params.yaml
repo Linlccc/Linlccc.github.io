@@ -231,15 +231,6 @@ images:
 # 如果设置成 production， 在开发时会按照生产环境加载内容
 env: production
 
-# 禁用特殊的第一个帖子(不禁用 && params.homeInfoParams 也没有数据时，会把第一个帖子当做网站介绍)
-disableSpecial1stPost: true
-
-# 文章列表配置
-
-# 文章配置
-
-# 目录
-
 # 内容
 # 显示代码复制按钮
 ShowCodeCopyButtons: true
