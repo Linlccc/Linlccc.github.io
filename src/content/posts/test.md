@@ -323,19 +323,19 @@ static void Web()
 
 ### Code 3
 
-```CSharp
+{{< highlight csharp "linenos=true,hl_lines=8 15-17,linenostart=199" >}}
 static void Web()
 {
-    // 加载配置
-    string webConfigFile = "WebConfig.json";
-    WebConfig webConfig;
-    if (!File.Exists(webConfigFile))
-    {
-        webConfig = new();
-        webConfig.Port = 8082;
-        File.WriteAllText(webConfigFile, JsonConvert.SerializeObject(webConfig, Formatting.Indented));
-    }
-    else webConfig = JsonConvert.DeserializeObject<WebConfig>(File.ReadAllText(webConfigFile))!;
+// 加载配置
+string webConfigFile = "WebConfig.json";
+WebConfig webConfig;
+if (!File.Exists(webConfigFile))
+{
+webConfig = new();
+webConfig.Port = 8082;
+File.WriteAllText(webConfigFile, JsonConvert.SerializeObject(webConfig, Formatting.Indented));
+}
+else webConfig = JsonConvert.DeserializeObject<WebConfig>(File.ReadAllText(webConfigFile))!;
 
     Serve.Run(RunOptions.Default
         .Silence()
@@ -367,5 +367,6 @@ static void Web()
     //{
     //    services.AddJsonOptions(configure => configure.JsonSerializerOptions.Converters.AddDateTimeTypeConverters("yyyy-MM-dd HH:mm:ss.fff"));
     //});
+
 }
-```
+{{< / highlight >}}
