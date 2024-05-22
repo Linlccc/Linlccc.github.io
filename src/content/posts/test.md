@@ -266,7 +266,7 @@ while (arr[i]) {
 
 ### Code 2
 
-```C#
+```C#{.hide}
 static void Web()
 {
     // 加载配置

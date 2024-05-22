@@ -27,3 +27,31 @@
     }
   }
 }
+
+// 代码块
+.codeBlock {
+  overflow: hidden;
+  max-height: 12000px;
+  -webkit-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+  -moz-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+  -o-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+  transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+}
+.codeBlock.hide {
+  max-height: 20px;
+  overflow-y: hidden;
+  -webkit-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+  -moz-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+  -o-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+  transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+}
+
+.codeHeader {
+  line-height: 20px;
+  background-color: gray;
+  color: blue;
+}
+
+.post-content .highlight:not(table) {
+  margin-top: 0;
+}

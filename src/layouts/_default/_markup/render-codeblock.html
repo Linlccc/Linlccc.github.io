@@ -4,8 +4,8 @@
 {{ $attr := "" }}
 {{ range $k,$v := .Attributes }}{{ $attr = add $attr (printf " %s=\"%s\"" $k $v) }}{{ end }}
 
-<div class="codeBlock" {{ $attr | safeHTMLAttr }} >
-  <div>
+<div class="codeBlock" {{ $attr | safeHTMLAttr }}>
+  <div class="codeHeader">
     {{ .Type }}
   </div>
   {{ (transform.HighlightCodeBlock .).Wrapped }}

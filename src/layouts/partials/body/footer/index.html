@@ -215,3 +215,18 @@
         if(typeof activeToc == "function")activeToc();
     });
 </script>
+
+<!-- 文章页 -->
+{{ if and (eq .Kind "page") (not (in site.Params.specialPages .Layout)) }}
+<script>
+  const codeHs = document.getElementsByClassName("codeHeader");
+  for (var i = 0; i < codeHs.length; i++) {
+    const ch = codeHs[i];
+    codeHs[i].addEventListener('click',()=>{
+      const pe = ch.parentElement;
+      if(pe.classList.contains('hide'))pe.classList.remove('hide')
+      else pe.classList.add('hide')
+    })
+  }
+</script>
+{{ end }}
