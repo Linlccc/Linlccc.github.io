@@ -14,7 +14,8 @@
       <div class="entry-content">
         <!-- 移除摘要中的代码行数 -->
         {{ $newSummary := replaceRE "\\d+ " "" .Summary}}
-        {{ if gt (len $newSummary) 100 }}{{ $newSummary = slicestr $newSummary 0 100 }}{{ end }}
+        <!-- 裁剪摘要，有时有异常 -->
+        {{/* if gt (len $newSummary) 100 }}{{ $newSummary = slicestr $newSummary 0 100 }}{{ end */}}
         <p>{{ $newSummary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
       </div>
     {{ end }}
