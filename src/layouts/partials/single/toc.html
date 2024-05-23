@@ -6,7 +6,7 @@
   <div class="toc">
     <details {{ cond (.Param "tocOpen" | default false) "open" "" }}>
       <!-- 标题 -->
-      <summary accesskey="c" title="(Alt + C)"><span class="details">{{- T "toc" | default "目录" }}</span></summary>
+      <summary accesskey="c" title="(Alt + C)"><span class="details">{{- T "toc" | default "Table of Contents" }}</span></summary>
       <!-- 内容 -->
       <div class="inner">
         {{ .TableOfContents }}

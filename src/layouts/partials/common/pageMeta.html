@@ -16,7 +16,7 @@
 
 <!-- 字数 -->
 {{ if .Param "ShowWordCount" }}
-  {{ $metas.Add "meta" (slice ((i18n "words" .WordCount) | default (printf "%d words" .WordCount))) }}
+  {{ $metas.Add "meta" (slice ((T "words" .WordCount) | default (printf "%d words" .WordCount))) }}
 {{ end }}
 
 <!-- 作者 -->
