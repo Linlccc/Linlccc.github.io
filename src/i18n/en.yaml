@@ -4,7 +4,7 @@ readTime: "{{ . }} min"
 
 words: "{{ . }} words"
 
-translations: translations
+translations: Translations
 
 editPost: Edit
 
@@ -15,5 +15,5 @@ toc: Table of Contents
 prevPage: Prev
 nextPage: Next
 
-copy: copy
-copied: copied!
+copy: Copy
+copied: Copied!
