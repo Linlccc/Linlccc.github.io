@@ -46,12 +46,11 @@
 {{ end -}}
 
 <!-- manifest配置(安装到桌面,iphone添加到桌面时独立打开) -->
-<!-- TODO：考虑通过模板生成该文件使用 ExecuteAsTemplate 函数 -->
-<!-- https://gohugo.io/templates/output-formats/#media-types -->
 {{- if site.Params.isEnableManifest -}}
-  {{ $manifestRes := resources.Get "manifest.json" }}
-  {{ $aa := $manifestRes | resources.ExecuteAsTemplate "manifest.json" . }}
-  <link rel="manifest" href="{{ $aa.Permalink }}" />
+  {{ $manifestRes := resources.Get "manifest.json" | resources.ExecuteAsTemplate "manifest.json" . }}
+  {{ with $manifestRes -}}
+    <link rel="manifest" href="{{ .Permalink }}" />
+  {{ end }}
 {{ end }}
 
 <!-- 图标 -->
