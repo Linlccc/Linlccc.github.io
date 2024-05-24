@@ -8,9 +8,6 @@ home:
 page:
   - html
 
-rss:
-  - rss
-
 section:
   - html
   - rss
@@ -21,4 +18,7 @@ taxonomy:
 
 term:
   - html
+  - rss
+
+rss:
   - rss
