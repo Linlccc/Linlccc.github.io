@@ -56,8 +56,9 @@ keywords:
   - Blog
   - PaperMod
 # 站点作者
-authors:
-  - Linlccc
+author:
+  name: Linlccc
+  email: linlccc@163.com
 
 # logo 信息
 logo:

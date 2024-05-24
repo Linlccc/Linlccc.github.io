@@ -2,4 +2,4 @@
   参数：
   . : 当前页面上下文
 -->
-{{ return (or .Params.authors .GitInfo.AuthorName site.Params.authors slice | partial "toArray") }}
+{{ return (or .Params.authors .GitInfo.AuthorName site.Params.author.name slice | partial "toArray") }}
