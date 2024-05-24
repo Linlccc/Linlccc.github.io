@@ -18,6 +18,8 @@ isEnableManifest: true
 displayFullLangName: false
 # 列表页中显示 Rss 按钮
 ShowRssButtonInSectionTermList: true
+# Rss 显示全不内容
+ShowFullTextinRSS: false
 
 # 主题颜色（在手机浏览器上下空白区域颜色）TODO：这里后面看怎么改
 theme_color:

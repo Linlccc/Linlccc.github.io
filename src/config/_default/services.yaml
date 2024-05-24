@@ -11,6 +11,7 @@ instagram:
   accessToken: ""
   disableInlineCSS: false
 
+# rss 数量限制
 rss:
   limit: -1
 
