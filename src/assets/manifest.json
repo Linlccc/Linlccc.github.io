@@ -1,6 +1,6 @@
 {
-  "name": "Linlccc's Blog",
-  "short_name": "Lin's Blog",
+  "name": "{{ site.Title }}",
+  "short_name": "{{ site.Title }}",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
