@@ -1,20 +1,3 @@
 <!-- markdown 代码块模板，see:https://gohugo.io/render-hooks/code-blocks/ -->
 
-<!-- 计算属性 -->
-{{ $attr := "" }}
-{{ range $k,$v := .Attributes }}{{ $attr = add $attr (printf " %s=\"%s\"" $k $v) }}{{ end }}
-
-<div class="codeBlock" {{ $attr | safeHTMLAttr }}>
-  <div class="codeHeader">
-    {{ .Type }}
-  </div>
-  {{ (transform.HighlightCodeBlock .).Wrapped }}
-</div>
-
-<!-- 方案二，不用js -->
-<details class="codeBlockDetails" open>
-  <summary>{{ .Type }}</summary>
-</details>
-<div class="codeBlockDetailsContent">
-  {{ (transform.HighlightCodeBlock .).Wrapped }}
-</div>
+{{ partial "common/codeBlock.html" (dict "isOpen" (not .Attributes.close) "type" .Type "content" (transform.HighlightCodeBlock .).Wrapped ) }}

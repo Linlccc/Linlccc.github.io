@@ -267,7 +267,7 @@ while (arr[i]) {
 
 ### Code 2
 
-```C#{.hide}
+```C# {.hide asdfff=asdfff close=asfasg}
 static void Web()
 {
     // 加载配置
@@ -324,8 +324,8 @@ static void Web()
 
 ### Code 3
 
-{{< highlight csharp "linenos=true,hl_lines=8 15-17,linenostart=199" >}}
-static void Web()
+{{< highlight csharp "linenos=true,hl_lines=8 15-17,linenostart=199" false >}}
+static void Web(1)
 {
 // 加载配置
 string webConfigFile = "WebConfig.json";

@@ -1,0 +1,57 @@
+该文件记录了代码块可折叠的js方案,后期确定没用了可以删除
+
+html
+<!-- 计算属性 -->
+{{ $attr := "" }}
+{{ range $k,$v := .Attributes }}{{ $attr = add $attr (printf " %s=\"%s\"" $k $v) }}{{ end }}
+
+<div class="codeBlock" {{ $attr | safeHTMLAttr }}>
+  <div class="codeHeader">
+    {{ .Type }}
+  </div>
+  {{ (transform.HighlightCodeBlock .).Wrapped }}
+</div>
+
+css
+.codeBlock {
+  overflow: hidden;
+  max-height: 12000px;
+  -webkit-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+  -moz-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+  -o-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+  transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+}
+.codeBlock.hide {
+  max-height: 20px;
+  overflow-y: hidden;
+  -webkit-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+  -moz-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+  -o-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+  transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+}
+
+.codeHeader {
+  line-height: 20px;
+  background-color: gray;
+  color: blue;
+}
+
+.post-content .highlight:not(table) {
+  margin-top: 0;
+}
+
+js
+<!-- 文章页 -->
+{{ if and (eq .Kind "page") (not (in site.Params.specialPages .Layout)) }}
+<script>
+  const codeHs = document.getElementsByClassName("codeHeader");
+  for (var i = 0; i < codeHs.length; i++) {
+    const ch = codeHs[i];
+    codeHs[i].addEventListener('click',()=>{
+      const pe = ch.parentElement;
+      if(pe.classList.contains('hide'))pe.classList.remove('hide')
+      else pe.classList.add('hide')
+    })
+  }
+</script>
+{{ end }}

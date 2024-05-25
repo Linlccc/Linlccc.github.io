@@ -1,0 +1,15 @@
+<!-- 代码块模板
+  参数：
+  isOpen : 是否打开
+  type : 编程语言
+  content : 内容
+ -->
+
+<div class="codeBlock">
+  <details {{ cond .isOpen "open" "" }}>
+    <summary>{{ .type }}</summary>
+  </details>
+  <div class="codeBlockContent">
+    {{ .content }}
+  </div>
+</div>

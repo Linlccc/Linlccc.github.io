@@ -1,13 +1,6 @@
-{{ $.Scratch.Set "md" false }}
-
-{{ if .IsNamedParams }}
-{{ $.Scratch.Set "md" (.Get "md") }}
-{{ else }}
-{{ $.Scratch.Set "md" (.Get 0) }}
-{{ end }}
-
+{{ $isMd := cond .IsNamedParams (.Get "md") (.Get 0) }}
 <div dir="rtl">
-  {{ if eq ($.Scratch.Get "md") false }}
+  {{ if eq $isMd false }}
     {{ .Inner }}
   {{ else }}
     {{ .Inner | markdownify }}

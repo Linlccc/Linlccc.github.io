@@ -1,0 +1,7 @@
+<!-- 没有高亮代码添加块 -->
+
+{{ $pattern := `(<pre>.?<code( class="language-(.+)")?>[\s\S]*?</pre>)` }}
+<!-- 将正则表达式匹配的内容插入到模板中 -->
+{{ $replacement := partial "common/codeBlock.html" (dict "isOpen" true "type" "${3}" "content" "${1}") }}
+<!-- 输出 -->
+{{ replaceRE $pattern $replacement . | safeHTML}}
