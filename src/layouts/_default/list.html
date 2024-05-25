@@ -1,7 +1,7 @@
 {{ define "main" }}
   <header class="page-header">
     <!-- 面包屑(细看) -->
-    {{ if .Param "ShowBreadCrumbs" }}{{ partial "common/breadcrumbs.html" . }}{{ end }}
+    {{ if .Param "showBreadCrumbs" }}{{ partial "common/breadcrumbs.html" . }}{{ end }}
     <h1>
       {{ .Title }}
       {{ if and (or (eq .Kind "term") (eq .Kind "section")) site.Params.ShowRssButtonInSectionTermList }}

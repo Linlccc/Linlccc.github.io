@@ -91,7 +91,7 @@
 </script>
 {{- end }}
 <!-- 是普通页面 && 不是特殊页面 && 显示代码复制按钮 -->
-{{- if (and (eq .Kind "page") (not (in site.Params.specialPages .Layout)) (.Param "ShowCodeCopyButtons")) }}
+{{- if (and (eq .Kind "page") (not (in site.Params.specialPages .Layout)) (.Param "showCodeCopyButtons")) }}
 <script>
     document.querySelectorAll('pre > code').forEach((codeblock) => {
         const container = codeblock.parentNode.parentNode;

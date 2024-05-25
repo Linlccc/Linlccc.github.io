@@ -6,6 +6,6 @@
 {{ if and $editUrl (not (.Param "editPost.disabled")) }}
   {{ $fullEditUrl := cond (.Param "editPost.appendFilePath" | default false) (path.Join $editUrl .File.Path) $editUrl }}
   <!-- 页面时间不为空 || 显示阅读时间 || 显示字数 || (显示作者 && 有作者) || 有翻译页面 -->
-  {{ if or (not .Date.IsZero) (.Param "ShowReadingTime") (.Param "ShowWordCount") (and (.Param "showAuthor") (partial "common/GetAuthors.html")) .IsTranslated }}&nbsp;|&nbsp;{{ end }}
+  {{ if or (not .Date.IsZero) (.Param "showReadingTime") (.Param "showWordCount") (and (.Param "showAuthor") (partial "common/GetAuthors.html")) .IsTranslated }}&nbsp;|&nbsp;{{ end }}
   <a href="{{ $fullEditUrl }}" rel="noopener noreferrer" target="_blank">{{ T "editPost" | default "Edit" }}</a>
 {{ end }}

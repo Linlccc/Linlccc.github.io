@@ -10,12 +10,12 @@
 {{ end }}
 
 <!-- 阅读时间 -->
-{{ if .Param "ShowReadingTime" }}
+{{ if .Param "showReadingTime" }}
   {{ $metas.Add "meta" (slice ((T "readTime" .ReadingTime) | default (printf "%d min" .ReadingTime))) }}
 {{ end }}
 
 <!-- 字数 -->
-{{ if .Param "ShowWordCount" }}
+{{ if .Param "showWordCount" }}
   {{ $metas.Add "meta" (slice ((T "words" .WordCount) | default (printf "%d words" .WordCount))) }}
 {{ end }}
 

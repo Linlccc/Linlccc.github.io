@@ -1,6 +1,4 @@
-#################################
-# 语言配置，这里我不是用来配置语言 #
-#################################
+# 语言配置
 
 zh:
   disabled: false
@@ -15,14 +13,11 @@ en:
   disabled: false
   languageCode: en-US
   languageName: English
-  # 文字呈现方向
   languagedirection: ltr
   title:
   weight: 2
 
   Params:
-    CanonicalLinkText: Originally published at
-
     classicInfo:
       enabled: false
     profileInfo:

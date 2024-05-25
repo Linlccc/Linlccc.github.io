@@ -17,9 +17,9 @@ isEnableManifest: true
 # 多语言切换显示完整语言名称
 displayFullLangName: false
 # 列表页中显示 Rss 按钮
-ShowRssButtonInSectionTermList: true
-# Rss 显示全不内容
-ShowFullTextinRSS: false
+showRssButtonInSectionTermList: true
+# Rss 显示全部内容
+showFullTextinRSS: false
 
 # 主题颜色（在手机浏览器上下空白区域颜色）TODO：这里后面看怎么改
 theme_color:
@@ -85,7 +85,7 @@ specialPages:
   - archives
 
 # 在档案页显示所有页面
-ShowAllPagesInArchive: true
+showAllPagesInArchive: true
 
 ### Home 页配置 ###
 # 经典模式信息
@@ -130,7 +130,7 @@ homeShowTypes:
 
 ### 文章列表配置 ###
 # 文章列表和文章头部显示面包屑
-ShowBreadCrumbs: true
+showBreadCrumbs: true
 # 隐藏摘要
 hideSummary: false
 
@@ -138,11 +138,11 @@ hideSummary: false
 # 隐藏元
 hidemeta: false
 # 日期格式
-DateFormat: 2006-01-02
+dateFormat: 2006-01-02
 # 显示阅读时间
-ShowReadingTime: true
+showReadingTime: true
 # 显示字数
-ShowWordCount: true
+showWordCount: true
 # 显示作者
 showAuthor: true
 
@@ -222,7 +222,7 @@ giscusCommentsInfo:
 disableAnchoredHeadings: false
 
 # 显示代码复制按钮
-ShowCodeCopyButtons: true
+showCodeCopyButtons: true
 ### Hugo 内置模板配置 ###
 # 将网站和你的 Twitter 账户关联起来
 social:
