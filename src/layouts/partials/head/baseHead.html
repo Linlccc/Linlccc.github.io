@@ -52,7 +52,7 @@
 <!-- manifest配置(安装到桌面,iphone添加到桌面时独立打开) -->
 {{- if site.Params.isEnableManifest -}}
   {{ $manifestRes := resources.Get "manifest.json" | resources.ExecuteAsTemplate "manifest.json" . }}
-  {{ with $manifestRes -}}
+  {{- with $manifestRes -}}
     <link rel="manifest" href="{{ .Permalink }}" />
   {{ end }}
 {{ end }}
