@@ -1,7 +1,8 @@
-<!-- 编辑帖子
+<!-- 编辑帖子模板
   参数：
-  . : 页面上下文
+  . : 文章页面上下文
 -->
+
 {{ $editUrl := .Param "editPost.url" }}
 {{ if and $editUrl (not (.Param "editPost.disabled")) }}
   {{ $fullEditUrl := cond (.Param "editPost.appendFilePath" | default false) (path.Join $editUrl .File.Path) $editUrl }}

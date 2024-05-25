@@ -1,3 +1,8 @@
+<!-- 搜索 js 模板
+  参数：
+  . : 页面上下文
+-->
+
 <!-- 搜索,TODO:搜索js后面写js的时候再优化 -->
 {{- if eq .Layout "search" -}}
   {{ $fastsearchJs := resources.Get "js/fastsearch.js" | js.Build (dict "params" (dict "fuseOpts" site.Params.fuseOpts)) }}

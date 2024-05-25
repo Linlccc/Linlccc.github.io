@@ -1,12 +1,12 @@
 <!-- 页面列表
   参数：
-    page : 列表页
-    paginator ： 分页器
+    . : 列表页上下文
  -->
-{{ range .paginator.Pages }}
-  <article class="post-entry {{ cond (eq $.page.Kind "term") "tag-entry" "" }}">
+
+{{ range .Paginator.Pages }}
+  <article class="post-entry {{ cond (eq $.Kind "term") "tag-entry" "" }}">
     <!-- 封面 -->
-    {{ if not site.Params.cover.hiddenInList }}{{ partial "common/cover.html" (dict "page" . "inList" true) }}{{ end }}
+    {{ partial "common/cover.html" (dict "page" . "inList" true) }}
     <!-- 标题 -->
     <header class="entry-header"><h2>{{ .Title }}{{ if .Draft }}<sup><span class="entry-isdraft"> [draft]</span></sup>{{ end }}</h2></header>
     <!-- 摘要 -->
@@ -28,4 +28,4 @@
 {{ end }}
 
 <!-- 分页导航 -->
-{{ partial "common/pagination.html" (dict "page" .page "frontBackRange" 1) }}
+{{ partial "common/pagination.html" (dict "page" . "frontBackRange" 1) }}

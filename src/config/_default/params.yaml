@@ -130,7 +130,7 @@ homeShowTypes:
 
 ### 文章列表配置 ###
 # 文章列表和文章头部显示面包屑
-showBreadCrumbs: true
+listShowBreadCrumbs: true
 # 隐藏摘要
 hideSummary: false
 
@@ -148,10 +148,6 @@ showAuthor: true
 
 # 文章封面
 cover:
-  # 在文章内容页面隐藏封面  优先级 Page.Param.cover.hidden > Site.Param.cover.hiddenInSingle
-  hiddenInSingle: true
-  # 在文章列表中隐藏封面 优先级  Page.Param.cover.hidden > Site.Param.cover.hiddenInList
-  hiddenInList: false
   # 图片生成链接
   linkFullImages: true
   # 响应式图片,TODO:看一下之前的是怎么实现的
@@ -180,6 +176,8 @@ fuseOpts:
     - content
 
 ### 文章页配置 ###
+# 页面显示面包屑导航
+showBreadCrumbs: true
 # 文章编辑链接信息
 editPost:
   # 链接

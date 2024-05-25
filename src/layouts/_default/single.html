@@ -2,7 +2,7 @@
   <article class="post-single">
     <!-- 标题和元信息 -->
     <header class="post-header">
-      {{ if .Param "showBreadCrumbs" }}{{ partial "common/breadcrumbs.html" . }}{{ end }}
+      {{ partial "common/breadcrumbs.html" . }}
       <h1 class="post-title">
         {{ .Title }}
         {{ if .Draft }}<sup><span class="entry-isdraft">&nbsp;[draft]</span></sup>{{ end }}
@@ -19,9 +19,9 @@
       {{ end }}
     </header>
     <!-- 封面 -->
-    {{ if not (.Params.cover.hidden | default site.Params.cover.hiddenInSingle) }}{{ partial "common/cover.html" (dict "page" . "inList" false) }}{{ end }}
+    {{ partial "common/cover.html" (dict "page" . "inList" false) }}
     <!-- 目录 -->
-    {{ if .Param "showToc" }}{{ partial "single/toc.html" . }}{{ end }}
+    {{ partial "single/toc.html" . }}
 
     <!-- Markdown 内容 -->
     {{ if .Content }}
@@ -40,9 +40,6 @@
     </footer>
 
     <!-- 评论 -->
-    {{ if .Param "giscusCommentsInfo.enabled" }}
-      <div id="giscusComments"></div>
-      {{ partial "single/giscusComments.html" . }}
-    {{ end }}
+    {{ partial "single/giscusComments.html" . }}
   </article>
 {{ end }}

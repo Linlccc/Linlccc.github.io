@@ -1,15 +1,15 @@
 <!-- 分页导航
   参数1：
-  . : 有分页的页面
+  . : 分页页面上下文
 
   参数2：
-  page : 有分页的页面
+  page : 分页页面上下文
   frontBackRange ：前后要显示页数的范围
 -->
 
 <!-- 默认值 -->
 {{ $page := . }}
-{{ $frontBackRange := 2 }}
+{{ $frontBackRange := 1 }}
 
 <!-- 如果使用的是参数2格式 -->
 {{ if reflect.IsMap . }}

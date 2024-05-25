@@ -1,22 +1,28 @@
-<!-- 面包屑导航 -->
-<div class="breadcrumbs">
-  <!-- 计算出上级去除语言的url路径 -->
-  {{ $parentUrl := replace .Parent.Permalink (printf "%s" site.BaseURL) "" }}
-  {{ $removeLangUrl := strings.TrimPrefix (printf "%s/" .Lang) $parentUrl }}
-  <!-- 得到所有导航页 -->
-  {{ $pages := slice site.Home }}
-  {{ $scratch := newScratch }}
-  {{ range (split $removeLangUrl "/") }}
-    {{ $scratch.Add "path" (printf "%s/" .)}}
-    {{ $page := site.GetPage ($scratch.Get "path") }}
-    {{ if and (gt (len .) 0) $page }}
-      {{ $pages = $pages | append $page }}
-    {{ end }}
-  {{ end }}
+<!-- 面包屑导航模板
+  参数：
+  . : 页面上下文
+-->
 
-  <!-- 遍历导航页 -->
-  {{ range $index, $page := $pages }}
-    {{ if gt $index 0 }}&nbsp;»&nbsp;{{ end }}
-    <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
-  {{ end }}
-</div>
+{{ if or (and (eq .Kind "page") (.Param "showBreadCrumbs")) (and (eq .Kind "section") site.Params.listShowBreadCrumbs ) }}
+  <div class="breadcrumbs">
+    <!-- 计算出上级去除语言的url路径 -->
+    {{ $parentUrl := replace .Parent.Permalink (printf "%s" site.BaseURL) "" }}
+    {{ $removeLangUrl := strings.TrimPrefix (printf "%s/" .Lang) $parentUrl }}
+    <!-- 得到所有导航页 -->
+    {{ $pages := slice site.Home }}
+    {{ $scratch := newScratch }}
+    {{ range (split $removeLangUrl "/") }}
+      {{ $scratch.Add "path" (printf "%s/" .)}}
+      {{ $page := site.GetPage ($scratch.Get "path") }}
+      {{ if and (gt (len .) 0) $page }}
+        {{ $pages = $pages | append $page }}
+      {{ end }}
+    {{ end }}
+
+    <!-- 遍历导航页 -->
+    {{ range $index, $page := $pages }}
+      {{ if gt $index 0 }}&nbsp;»&nbsp;{{ end }}
+      <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+    {{ end }}
+  </div>
+{{ end }}

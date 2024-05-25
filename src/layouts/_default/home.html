@@ -1,13 +1,13 @@
 {{ define "main" }}
   {{ if site.Params.classicInfo.enabled }}
     <!-- 得到要显示的文章 -->
-    {{ $pages := where .Site.RegularPages "Type" "in" site.Params.homeShowTypes }}
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.homeShowTypes }}
     {{ $pages = (where $pages "Params.hiddenInHomeList" "ne" true) | partial "pageSort"  }}
     <!-- 分页 -->
     {{ $paginator := .Paginate $pages }}
 
-    {{ if eq $paginator.PageNumber 1 }}{{ partial "home/classic.html" . }}{{ end }}
-    {{ partial "common/pageList.html" (dict "page" . "paginator" $paginator) }}
+    {{ partial "home/classic.html" . }}
+    {{ partial "common/pageList.html" . }}
   {{ else }}
     {{ partialCached "home/profile.html" . }}
   {{ end }}

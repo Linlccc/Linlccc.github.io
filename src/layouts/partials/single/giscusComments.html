@@ -1,5 +1,12 @@
-<!-- 订阅评论通知方法 -->
-<script>
+<!-- giscus 评论模板
+  参数：
+  . : 文章页面上下文
+-->
+
+{{ if .Param "giscusCommentsInfo.enabled" }}
+  <div id="giscusComments"></div>
+  <!-- 订阅评论通知方法 -->
+  <script>
   /**
    * giscus 评论系统消息发送封装
    * @param {object} message 消息内容
@@ -43,7 +50,7 @@
   // 如果没有用户自定义主题
   if(!sys_theme){
     // 得到配置中的主题
-    sys_theme = "{{ .Site.Params.defaultTheme }}";
+    sys_theme = "{{ site.Params.defaultTheme }}";
     // 如果是自动,获取系统主题
     if(sys_theme == 'auto') sys_theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
@@ -82,3 +89,4 @@
     giscusSendMessage({theme: theme});
   });
   </script>
+{{ end }}

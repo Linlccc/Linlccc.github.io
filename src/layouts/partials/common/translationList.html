@@ -1,3 +1,8 @@
+<!-- 翻译模板
+  参数：
+  . : 页面上下文
+-->
+
 {{ if .IsTranslated }}
   <!-- kind == page && 不是特殊页 && (页面时间不为空 || 显示阅读时间 || 显示字数 || (显示作者 && 有作者)) -->
   {{ if and (eq .Kind "page") (not (in site.Params.specialPages .Layout)) (or (not .Date.IsZero) (.Param "showReadingTime") (.Param "showWordCount") (and (.Param "showAuthor") (partial "common/GetAuthors.html")))}}&nbsp;|&nbsp;{{ end }}

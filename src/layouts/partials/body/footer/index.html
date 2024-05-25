@@ -1,3 +1,8 @@
+<!-- 页脚模板
+  参数：
+  . : 页面上下文
+-->
+
 <!-- 得到网站运行时间段 -->
 {{ $siteStartYear := cond (eq (printf "%T" site.Params.startYear) "int") site.Params.startYear 9999 }}
 {{ $currentYear := now.Year }}
@@ -22,7 +27,7 @@
 {{ end -}}
 
 <!-- 回到顶部 -->
-{{ if not site.Params.disableGoToTop }}{{ partial "body/footer/goToTop.html" . }}{{ end }}
+{{ partial "body/footer/goToTop.html" (not site.Params.disableGoToTop) }}
 
 <!-- TODO:以下的js都需要统一处理 -->
 

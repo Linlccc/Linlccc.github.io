@@ -1,7 +1,8 @@
-<!-- 分享
+<!-- 文章分享
   参数：
-  . : 文章页上下文
+  . : 文章页面上下文
 -->
+
 {{ if not (.Param "disableShare") }}
   {{ $tags := delimit (.Params.tags | partial "toArray") "," }}
   {{ $cs := site.Params.customShare | default false }}

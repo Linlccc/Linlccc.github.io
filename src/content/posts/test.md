@@ -46,7 +46,8 @@ cover:
   image: "/images/posts/test/test_post_1.png"
   alt: "测试文章封面图片"
   caption: "测试文章封面描述文字"
-  hidden: false
+  hiddenInList: false
+  hiddenInSingle: false
 
 editPost:
   disabled: false

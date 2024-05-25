@@ -1,7 +1,7 @@
 {{ define "main" }}
   <header class="page-header">
     <!-- 面包屑(细看) -->
-    {{ if .Param "showBreadCrumbs" }}{{ partial "common/breadcrumbs.html" . }}{{ end }}
+    {{ partial "common/breadcrumbs.html" . }}
     <h1>
       {{ .Title }}
       {{ if and (or (eq .Kind "term") (eq .Kind "section")) site.Params.ShowRssButtonInSectionTermList }}
@@ -18,5 +18,5 @@
   <!-- 分页 -->
   {{ $paginator := .Paginate $pages }}
 
-  {{ partial "common/pageList.html" (dict "page" . "paginator" $paginator) }}
+  {{ partial "common/pageList.html" . }}
 {{ end }}

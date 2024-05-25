@@ -1,6 +1,7 @@
-<!-- 文章上下页
+<!-- 文章上下页模板
   . : 文章页上下文
 -->
+
 {{ $pages := (where site.RegularPages "Type" "in" site.Params.homeShowTypes) | partial "pageSort"  }}
 {{ if .Param "showPostNavLinks" }}
   <nav class="paginav">

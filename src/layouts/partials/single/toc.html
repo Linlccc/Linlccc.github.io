@@ -1,8 +1,8 @@
 <!-- 目录
   . : 文章页面上下文
 -->
-{{ $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content }}
-{{ if gt (len $headers) 0 }}
+
+{{ if .Param "showToc" }}
   <div class="toc">
     <details {{ cond (.Param "tocOpen" | default false) "open" "" }}>
       <!-- 标题 -->

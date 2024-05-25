@@ -1,6 +1,7 @@
-<!-- 原文章链接
-  . : 文章页面上下文呢
+<!-- 原文章链接模板
+  . : 文章页面上下文
 -->
+
 {{ $canonicalLink := .Params.canonicalLink }}
 {{ if and $canonicalLink (.Param "showCanonicalLink") }}
     <!-- 页面时间不为空 || 显示阅读时间 || 显示字数 || (显示作者 && 有作者) || 有翻译页面 || (编辑帖子没有禁用 && 有编辑url) -->
