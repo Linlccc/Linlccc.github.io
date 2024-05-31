@@ -1,6 +1,14 @@
-// 引入 normalize.css
+// 确保不同浏览器样式一致
 @import "../css/lib/normalize";
+// 更现代化的重设
+@import "../css/lib/reset";
+
+// 公共样式
+@import "./common/reset";
+@import "./common/vers";
+@import "./common/base";
 
 // 引入自定义样式文件
-@import "custom/custom";
-@import "../css/custom/custom";
+// TODO:修改成参数配置
+// @import "custom/custom";
+// @import "../css/custom/custom";
