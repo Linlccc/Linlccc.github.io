@@ -13,7 +13,7 @@
         {{ end }}
       {{ end }}
     </h1>
-    {{ with .Description }}<div class="post-description">{{ . }}</div>{{ end }}
+    {{ with .Description }}<div class="description">{{ . }}</div>{{ end }}
   </header>
 
   <!-- 得到所有要展示的页面 -->
@@ -22,20 +22,20 @@
 
   <!-- 按发布日期展示 -->
   {{ range $pages.GroupByPublishDate "2006" }}
-    <div class="archive-year">
-      <h2 class="archive-year-header">{{ .Key }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h2>
+    <div class="archive year">
+      <h2 class="yearHeader">{{ .Key }}<sup class="count">&nbsp;&nbsp;{{ len .Pages }}</sup></h2>
       {{ range .Pages.GroupByDate "January" }}
-        <div class="archive-month">
-          <h3 class="archive-month-header">{{- .Key }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
-          <div class="archive-posts">
+        <div class="month">
+          <h3 class="monthHeader">{{- .Key }}<sup class="count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
+          <div class="posts">
             {{ range .Pages }}
-              <div class="archive-entry">
-                <h3 class="archive-entry-title">
+              <div class="entry">
+                <h3 class="entryTitle">
                   {{ .Title }}
-                  {{ if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{ end }}
+                  {{ if .Draft }}<sup><span class="entryIsdraft">&nbsp;&nbsp;[draft]</span></sup>{{ end }}
                 </h3>
-                <div class="archive-meta">{{ partial "common/pageMeta.html" . }}</div>
-                <a class="entry-link" aria-label="post link to {{ plainify .Title }}" href="{{ .Permalink }}"></a>
+                <div class="meta">{{ partial "common/pageMeta.html" . }}</div>
+                <a class="entryLink" aria-label="post link to {{ plainify .Title }}" href="{{ .Permalink }}"></a>
               </div>
             {{ end }}
           </div>

@@ -1,0 +1,51 @@
+// 档案样式
+
+.archive {
+  &.year {
+    margin-top: 40px;
+  }
+  &:not(:last-of-type) {
+    border-bottom: 3px solid var(--bg-300);
+  }
+
+  .month {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 20px;
+
+    .monthHeader {
+      margin: 25px 0;
+      width: 180px;
+    }
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid var(--bg-300);
+    }
+
+    .posts {
+      width: 100%;
+    }
+    .entry {
+      position: relative;
+      padding: 5px;
+      margin: 10px 0;
+    }
+    .entryTitle {
+      margin: 5px 0;
+      font-weight: 500;
+    }
+    .entryLink {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  .count,
+  .meta {
+    color: var(--text-200);
+    font-size: 14px;
+  }
+}
