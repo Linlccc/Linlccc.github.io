@@ -21,7 +21,7 @@
 <!-- 语言切换分隔符元素，（有logo || 主题切换）&& 有多语言 -->
 {{- $languageSwitchDelimiterHtml := cond (and (or $logoText (not $disableThemeToggle)) (gt (site.Home.Translations | len) 0)) "<li>|</li>" "" -}}
 
-<nav class="{{ cond $isOccupy "" "Exhibit" }}">
+<nav id="{{ cond $isOccupy "" "Exhibit" }}">
   <div class="logo">
     <!-- logo -->
       {{- with $logoText }}

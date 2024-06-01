@@ -61,7 +61,7 @@
             // 得到元素基于body的位置
             let elY = getOffsetTopByBody(el);
             // 如果向上滚动留出导航位置
-            if(elY < document.documentElement.scrollTop)elY = elY - document.getElementsByClassName("nav")[0].getBoundingClientRect().height;
+            if(elY < document.documentElement.scrollTop)elY = elY - document.getElementsByClassName("header")[0].getBoundingClientRect().height;
             window.scrollTo({top: elY,behavior: behavior});
             // 设置历史记录
             if (id === "top") history.replaceState(null, null, " ");
@@ -149,7 +149,7 @@
 <!-- 显示隐藏导航 -->
 <script>
     // 导航栏
-    let nav = document.getElementsByClassName("Exhibit")[0];
+    let nav = document.getElementById("Exhibit");
     // 记录滚动条最后的位置
     var lastScrollTop = 0;
     // 滚动标准
