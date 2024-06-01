@@ -1,0 +1,38 @@
+// 滚动条样式
+
+// 滚动条整体
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+// 滚动条的滑块
+::-webkit-scrollbar-thumb {
+  background: var(--text-300);
+  border-radius: $radius;
+  border: 2px solid var(--bg-100);
+}
+
+// 当用户悬停在滑块上
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-200);
+}
+
+/* 滚动条的轨道 */
+::-webkit-scrollbar-track {
+  background: 0 0;
+}
+
+// 滚动条的按钮（箭头）
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+// 当同时有垂直滚动条和水平滚动条时交汇的部分,通常在浏览器的右下角
+::-webkit-scrollbar-corner {
+  background: 0 0;
+}
+
+// 调整窗口大小的控件,比如 textarea 元素
+::-webkit-resizer {
+}

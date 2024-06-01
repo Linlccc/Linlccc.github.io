@@ -4,9 +4,7 @@
 @import "../css/lib/reset";
 
 // 公共样式
-@import "./common/reset";
-@import "./common/vers";
-@import "./common/base";
+@import "./common/index";
 
 // 引入自定义样式文件
 // TODO:修改成参数配置
