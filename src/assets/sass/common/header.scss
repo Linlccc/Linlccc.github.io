@@ -7,8 +7,7 @@
     justify-content: space-between;
     line-height: var(--header-height);
     max-width: calc(var(--header-width) + var(--gap) * 2);
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin: auto;
     opacity: 0;
 
     // 用于展示的导航
