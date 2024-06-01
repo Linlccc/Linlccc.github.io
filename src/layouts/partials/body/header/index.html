@@ -20,7 +20,7 @@
 
 <header class="header">
   <!-- 占位导航 -->
-  {{ partialCached "body/header/nav.html" (dict "curremtPage" . "className" "navPlaceholder") }}
+  {{ partialCached "body/header/nav.html" (dict "curremtPage" .) }}
   <!-- 展示导航,这里不能缓存，否者激活属性异常 -->
-  {{ partial "body/header/nav.html" (dict "curremtPage" . "className" "navExhibit") }}
+  {{ partial "body/header/nav.html" (dict "curremtPage" . "isOccupy" false) }}
 </header>

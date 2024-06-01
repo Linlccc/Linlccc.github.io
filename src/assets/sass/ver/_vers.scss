@@ -1,3 +1,22 @@
 // 变量
 
-$radius: 8px;
+:root {
+  // heade 高
+  --header-height: 60px;
+  // heade 宽
+  --header-width: 1024px;
+  // footer 高
+  --footer-height: 60px;
+
+  // 圆角半径
+  --radius: 8px;
+
+  // 间距
+  --gap: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --gap: 14px;
+  }
+}

@@ -2,14 +2,14 @@
 
 // 滚动条整体
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 9px;
 }
 
 // 滚动条的滑块
 ::-webkit-scrollbar-thumb {
   background: var(--text-300);
-  border-radius: $radius;
+  border-radius: var(--radius);
   border: 2px solid var(--bg-100);
 }
 

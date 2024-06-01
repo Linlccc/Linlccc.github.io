@@ -149,7 +149,7 @@
 <!-- 显示隐藏导航 -->
 <script>
     // 导航栏
-    let nav = document.getElementsByClassName("navExhibit")[0];
+    let nav = document.getElementsByClassName("Exhibit")[0];
     // 记录滚动条最后的位置
     var lastScrollTop = 0;
     // 滚动标准
@@ -174,11 +174,9 @@
 
 
         if(isScrollDown){
-            nav.classList.remove('navS');
-            nav.classList.add('navH');
+            nav.classList.add('hide');
         }else{
-            nav.classList.remove('navH');
-            nav.classList.add('navS');
+            nav.classList.remove('hide');
         }
     }
 </script>

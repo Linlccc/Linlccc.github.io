@@ -1,9 +1,108 @@
 // header 样式
 
-header {
+.header {
   nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    line-height: var(--header-height);
+    max-width: calc(var(--header-width) + var(--gap) * 2);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    opacity: 0;
+
+    // 用于展示的导航
+    &.Exhibit {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 1;
+      z-index: 999;
+      background-color: var(--bg-100);
+      transition: transform 0.3s;
+
+      // 不显示时
+      &.hide {
+        transform: translateY(-100%);
+      }
+    }
+
+    // logo 部分
+    .logo {
+      display: flex;
+      margin: auto var(--gap);
+
+      // 标题
+      a {
+        font-size: 24px;
+        font-weight: 700;
+        img {
+          display: inline;
+          vertical-align: middle;
+          transform: translate(0, -10%);
+          border-radius: 6px;
+          margin-inline-end: 8px;
+        }
+      }
+
+      // 主题切换
+      button {
+        font-size: 26px;
+        margin: auto 4px auto 8px;
+
+        svg {
+          height: 18px;
+          width: 24px;
+
+          // 深色下面的月亮不显示
+          body.dark &.moon {
+            display: none;
+          }
+          // 不是深色下面的太阳不显示
+          body:not(.dark) &.sun {
+            display: none;
+          }
+        }
+      }
+
+      // 语言切换
+      .lang-switch {
+        display: flex;
+
+        li {
+          margin: auto 4px;
+
+          a {
+            margin: auto 3px;
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    // 菜单
+    .menu {
+      display: flex;
+      margin: auto var(--gap);
+      overflow-x: auto;
+      white-space: nowrap;
+
+      li + li {
+        margin-inline-start: var(--gap);
+      }
+      a {
+        font-size: 16px;
+
+        .active {
+          font-weight: 500;
+          border-bottom: 2px solid;
+        }
+        svg {
+          height: 12px;
+          width: 12px;
+        }
+      }
+    }
   }
 }
