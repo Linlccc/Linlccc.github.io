@@ -7,7 +7,7 @@
   <!-- kind == page && 不是特殊页 && (页面时间不为空 || 显示阅读时间 || 显示字数 || (显示作者 && 有作者)) -->
   {{ if and (eq .Kind "page") (not (in site.Params.specialPages .Layout)) (or (not .Date.IsZero) (.Param "showReadingTime") (.Param "showWordCount") (and (.Param "showAuthor") (partial "common/GetAuthors.html")))}}&nbsp;|&nbsp;{{ end }}
   {{ T "translations" | default "Translations" }}:
-  <ul class="i18n_list">
+  <ul class="i18nList" role="list">
     {{ range .Translations }}
       <li><a href="{{ .Permalink }}">{{ cond (and site.Params.displayFullLangName (gt (len .Language.LanguageName) 0)) (.Language.LanguageName | emojify) (.Lang | title) }}</a></li>
     {{ end }}

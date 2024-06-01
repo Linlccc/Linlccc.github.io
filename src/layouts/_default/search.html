@@ -4,14 +4,14 @@
 */}}
 
 {{ define "main" }}
-  <header class="page-header">
+  <header>
     <h1>{{ .Title }}{{ partial "common/svg.html" "search" }}</h1>
-    {{ with .Description }}<div class="post-description">{{ . }}</div>{{ end }}
-    {{ if not (.Param "hideMeta") }}<div class="post-meta">{{ partial "common/translationList.html" . }}</div>{{ end }}
+    {{ with .Description }}<div class="description">{{ . }}</div>{{ end }}
+    {{ if not (.Param "hideMeta") }}<div class="meta">{{ partial "common/translationList.html" . }}</div>{{ end }}
   </header>
   <!-- 结果显示列表 -->
   <div id="searchbox">
-    <input id="searchInput" autofocus placeholder="{{ default (printf "%s ↵" .Title) .Params.placeholder }}" aria-label="search" type="search" autocomplete="off" maxlength="64">
-    <ul id="searchResults" aria-label="search results"></ul>
+    <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}" aria-label="search" type="search" autocomplete="off" maxlength="64">
+    <ul id="searchResults" role="list" aria-label="search results"></ul>
   </div>
 {{ end }}

@@ -1,0 +1,47 @@
+// 搜索样式
+
+// 搜索框
+#searchbox {
+  input {
+    padding: 8px 10px;
+    width: 100%;
+    color: var(--text-100);
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid var(--bg-200);
+    border-radius: var(--radius);
+
+    &:focus {
+      border-color: var(--bg-300);
+    }
+  }
+}
+
+// 搜索结果
+#searchResults {
+  margin: 10px 0;
+  width: 100%;
+
+  li {
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--bg-300);
+    border-radius: var(--radius);
+    background: var(--bg-200);
+    transition: transform 0.1s;
+    font-weight: 500;
+
+    &:active,
+    &.focus {
+      transform: scale(0.98);
+    }
+    a {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}

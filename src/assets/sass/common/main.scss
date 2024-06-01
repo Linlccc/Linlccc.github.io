@@ -24,5 +24,16 @@
       color: var(--text-200);
       font-style: italic;
     }
+    .meta {
+      color: var(--text-200);
+      font-size: 14px;
+      display: flex;
+
+      .i18nList li {
+        display: inline-flex;
+        margin: auto 3px;
+        box-shadow: 0 1px 0 var(--text-200);
+      }
+    }
   }
 }
