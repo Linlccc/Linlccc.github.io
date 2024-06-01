@@ -2,31 +2,23 @@
   参数：
   . : home 页上下文
 -->
+{{ with site.Params.profileInfo }}
+  <div class="profile">
+    <img draggable="false" src="{{ .image.url | absURL }}" alt="{{ .image.title }}" title="{{ .image.title }}" height="{{ .image.height | default 150 }}" width="{{ .image.width | default 150 }}" />
+    <h1>{{ .title | default site.Title | markdownify }}</h1>
+    <span>{{ .content | markdownify }}</span>
+    {{ partialCached "home/socialIcons.html" . }}
 
-<div class="profile">
-  <div class="profile_inner">
-    {{ with site.Params.profileInfo }}
-      <h4>{{ resources.Get .image.url }}</h4>
-      <img draggable="false" src="{{ .image.url | absURL }}" alt="{{ .image.title }}" title="{{ .image.title }}" height="{{ .image.height | default 150 }}" width="{{ .image.width | default 150 }}" />
-      <h1>{{ .title | default site.Title | markdownify }}</h1>
-      <span>{{ .content | markdownify }}</span>
-      {{ partialCached "home/socialIcons.html" . }}
-
-      <!-- 按钮 -->
-      {{ with .buttons }}
-        <div class="buttons">
-          {{ range .}}
-            <a class="button" href="{{ .url }}" rel="noopener" title="{{ .name }}">
-              <span class="button-inner">
-                  {{ .name }}
-                  {{- if (findRE "://" .url) }}
-                    {{ partial "common/svg.html" "external_link" }}
-                  {{- end }}
-              </span>
-            </a>
-          {{ end }}
-        </div>
-      {{ end }}
+    <!-- 按钮 -->
+    {{ with .buttons }}
+      <div class="buttons">
+        {{ range .}}
+          {{ $isExternalLink := ne (len (findRE "://" .url)) 0 }}
+          <a class="button" href="{{ .url }}" rel="noopener" title="{{ .name }}" {{ (cond $isExternalLink "target='_blank'" "") | safeHTMLAttr }} >
+            <span>{{ .name }}{{ cond $isExternalLink (partial "common/svg.html" "external_link") "" }}</span>
+          </a>
+        {{ end }}
+      </div>
     {{ end }}
   </div>
-</div>
+{{ end }}

@@ -1,0 +1,13 @@
+// home 页样式
+
+// 社交图标样式
+.social-icons {
+  display: flex;
+  gap: var(--gap);
+
+  a svg {
+    display: block;
+    height: 26px;
+    width: 26px;
+  }
+}
