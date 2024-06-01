@@ -1,0 +1,22 @@
+// 分类样式
+.termsTags {
+  li {
+    display: inline-block;
+    margin: 10px;
+    font-weight: 500;
+  }
+  a {
+    display: block;
+    padding: 6px 10px;
+    background: var(--bg-200);
+    border-radius: 6px;
+    transition: transform 0.1s;
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+  sup {
+    color: var(--text-200);
+  }
+}

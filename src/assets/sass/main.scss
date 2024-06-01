@@ -19,6 +19,12 @@
 @import "./partials/archive.scss";
 // 搜索页
 @import "./partials/search.scss";
+// 分类页
+@import "./partials/terms.scss";
+// 文章页
+@import "./partials/single.scss";
+// 404
+@import "./partials/404.scss";
 
 // 引入自定义样式文件
 // TODO:修改成参数配置
