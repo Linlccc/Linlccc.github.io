@@ -1,7 +1,10 @@
-// 确保不同浏览器样式一致
-@import "../css/lib/normalize";
-// 更现代化的重设
-@import "../css/lib/reset";
+// 导入库引用
+@import "../css/lib/index";
+
+// 导入变量
+@import "./ver/index";
+// 导入基础样式
+@import "./base/index";
 
 // 公共样式
 @import "./common/index";
