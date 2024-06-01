@@ -41,7 +41,7 @@
         <guid>{{ .Permalink }}</guid>
         <description>{{ with .Description | html }}{{ . }}{{ else }}{{ .Summary | html }}{{ end -}}</description>
         {{- if site.Params.ShowFullTextinRSS }}<content:encoded>{{ (printf "<![CDATA[%s]]>" .Content) | safeHTML }}{{ end }}
-      </tiem>
+      </item>
     {{ end -}}
   </channel>
 </rss>
