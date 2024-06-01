@@ -2,7 +2,7 @@
 <html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto"  }}">
   {{- partial "head/index.html" . -}}
 
-  <!-- 不是普通页面 || 是特殊页面，时有 "list" class -->
+  <!-- 不是普通页面 || 是特殊页面，时有 "list" class TODO:移除list class -->
   {{- $bodyClass := cond (or (ne .Kind `page` ) (in site.Params.specialPages .Layout)) "list " "" -}}
   <!-- 默认主题是dark -->
   {{- if eq site.Params.defaultTheme `dark` }}{{ $bodyClass = add $bodyClass "dark " }}{{ end -}}
