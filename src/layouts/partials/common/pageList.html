@@ -4,14 +4,14 @@
  -->
 
 {{ range .Paginator.Pages }}
-  <article class="post-entry {{ cond (eq $.Kind "term") "tag-entry" "" }}">
+  <article class="postEntry {{ cond (eq $.Kind "term") "tagEntry" "" }}">
     <!-- 封面 -->
     {{ partial "common/cover.html" (dict "page" . "inList" true) }}
     <!-- 标题 -->
-    <header class="entry-header"><h2>{{ .Title }}{{ if .Draft }}<sup><span class="entry-isdraft"> [draft]</span></sup>{{ end }}</h2></header>
+    <h2 class="entryTitle">{{ .Title }}{{ if .Draft }}<sup><span class="entryIsdraft"> [draft]</span></sup>{{ end }}</h2>
     <!-- 摘要 -->
     {{ if not (.Param "hideSummary") }}
-      <div class="entry-content">
+      <div class="entryContent">
         <!-- 移除摘要中的代码行数 -->
         {{ $newSummary := replaceRE "\\d+ " "" .Summary}}
         <!-- 裁剪摘要，有时有异常 -->
@@ -21,9 +21,9 @@
     {{ end }}
     <!-- 元信息 -->
     {{ if not (.Param "hideMeta") }}
-      <footer class="entry-footer">{{ partial "common/pageMeta.html" . }}</footer>
+      <div class="entryMeta">{{ partial "common/pageMeta.html" . }}</div>
     {{ end }}
-    <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    <a class="entryLink" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
   </article>
 {{ end }}
 

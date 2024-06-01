@@ -9,7 +9,7 @@
   {{ $showCover := or (and $.inList (not .Params.cover.hiddenInList)) (and (not $.inList) (not .Params.cover.hiddenInSingle)) }}
   <!-- 有图片 and 不隐藏 -->
   {{ if and .Params.cover.image $showCover }}
-    <figure class="entry-cover">
+    <figure class="entryCover">
       <!-- 图片 -->
       {{ if site.Params.cover.linkFullImages }}
         <a href="{{ .Params.cover.image | absURL }}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="{{ .Params.cover.image | absURL }}" alt="{{ .Params.cover.alt }}"></a>

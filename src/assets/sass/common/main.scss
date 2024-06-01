@@ -6,4 +6,23 @@
   max-width: calc(var(--main-width) + var(--gap) * 2);
   margin: auto;
   padding: var(--gap);
+
+  // 主体头部
+  > header {
+    margin: 24px auto var(--gap);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .breadcrumbs {
+      color: var(--text-200);
+    }
+    h1 {
+      font-size: 38px;
+    }
+    .description {
+      color: var(--text-200);
+      font-style: italic;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <header class="page-header">
+  <header>
     <!-- 面包屑(细看) -->
     {{ partial "common/breadcrumbs.html" . }}
     <h1>
@@ -10,7 +10,7 @@
         {{ end }}
       {{ end }}
     </h1>
-    {{ with .Description }}<div class="post-description">{{ markdownify . }}</div>{{ end }}
+    {{ with .Description }}<div class="description">{{ markdownify . }}</div>{{ end }}
   </header>
 
   <!-- 得到所有文章 -->

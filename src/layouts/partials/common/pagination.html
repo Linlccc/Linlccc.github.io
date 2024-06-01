@@ -60,22 +60,22 @@
 {{ $pageList = $pageList | uniq | sort }}
 
 {{ $prevBumber := 0 }}
-<ul class="pagination">
+<ul class="pagination" role="list">
   {{ range $pageList }}
   <!-- 如果跳页，显示省略号 -->
   {{ if ne . (add $prevBumber 1) }}
-    <li class="page-item"><span class="page-link" >...</span></li>
+    <li class="pageItem"><span class="pageLink" >...</span></li>
   {{ end }}
   {{ $prevBumber = . }}
   <!-- 得到当前 Pager -->
   {{ $curPager := index $pr.Pagers (sub . 1) }}
   {{ if eq $curPn . }}
-    <li class="page-item active">
-      <a aria-current="page" aria-label="Page {{ . }}" class="page-link" role="button">{{ . }}</a>
+    <li class="pageItem active">
+      <a aria-current="page" aria-label="Page {{ . }}" class="pageLink" role="button">{{ . }}</a>
     </li>
   {{ else }}
-    <li class="page-item">
-      <a href="{{ $curPager.URL }}" aria-label="Page {{ . }}" class="page-link" role="button">{{ . }}</a>
+    <li class="pageItem">
+      <a href="{{ $curPager.URL }}" aria-label="Page {{ . }}" class="pageLink" role="button">{{ . }}</a>
     </li>
   {{ end }}
 {{ end }}
