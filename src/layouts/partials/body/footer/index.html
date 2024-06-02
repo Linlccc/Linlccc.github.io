@@ -28,10 +28,10 @@
 
 <!-- 回到顶部 -->
 {{ if not site.Params.disableGoToTop }}
-  <a id="top-link" href="#top" aria-label="{{ T "goToTop" | default "Go to Top" }}" title="{{ T "goToTop" | default "Go to Top"  }} (Alt + G)" accesskey="g"> {{ partial "common/svg.html" "upward_triangle" }} </a>
+  <a id="topLink" href="#top" aria-label="{{ T "goToTop" | default "Go to Top" }}" title="{{ T "goToTop" | default "Go to Top"  }} (Alt + G)" accesskey="g"> {{ partial "common/svg.html" "upward_triangle" }} </a>
   <!-- TODO:这里看js每个功能写在指定模板里还是统一写在js里 -->
   <script>
-    const goTopButton = document.getElementById("top-link");
+    const goTopButton = document.getElementById("topLink");
     window.addEventListener("scroll", () => {
       if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
         goTopButton.style.visibility = "visible";
@@ -92,7 +92,7 @@
     // 获取主题颜色的元标签(这个主要控制iphone浏览器的上下空白区域)
     let themeColorMeta = document.querySelector("meta[name=theme-color]");
     // 主题按钮点击
-    document.getElementById("theme-toggle").addEventListener("click", () => {
+    document.getElementById("themeToggle").addEventListener("click", () => {
         let theme = 'dark';
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');

@@ -1,5 +1,5 @@
 <figure {{ if or (.Get "class") (eq (.Get "align") "center") }} class="
-           {{- if eq (.Get "align") "center" }}align-center {{ end }}
+           {{- if eq (.Get "align") "center" }}alignCenter {{ end }}
            {{- with .Get "class" }}{{ . }}{{- end }}"
 {{- end -}}>
     {{- if .Get "link" -}}

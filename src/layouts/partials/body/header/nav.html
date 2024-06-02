@@ -15,7 +15,7 @@
 
 <!-- 主题切换信息 -->
 {{- $disableThemeToggle := or site.Params.disableThemeToggle false -}}
-{{- $themeToggleAttribute := cond $isOccupy "" "id='theme-toggle' accesskey='t' title='(Alt + T)'" -}}
+{{- $themeToggleAttribute := cond $isOccupy "" "id='themeToggle' accesskey='t' title='(Alt + T)'" -}}
 
 <!-- 语言切换信息 -->
 <!-- 语言切换分隔符元素，（有logo || 主题切换）&& 有多语言 -->
@@ -39,7 +39,7 @@
       {{ end -}}
 
       <!-- 语言切换 -->
-      <ul class="lang-switch" role="list">{{ $languageSwitchDelimiterHtml | safeHTML }}
+      <ul class="langSwitch" role="list">{{ $languageSwitchDelimiterHtml | safeHTML }}
         {{- range site.Home.Translations }}
           <li><a href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Lang }}">{{ cond (and site.Params.displayFullLangName (gt (len .Language.LanguageName) 0)) (.Language.LanguageName | emojify) (.Lang | title) }}</a></li>
         {{ end -}}
