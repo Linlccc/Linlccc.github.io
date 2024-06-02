@@ -55,7 +55,7 @@
     list-style-type: none;
     counter-reset: item;
 
-    li::before {
+    a::before {
       counter-increment: item;
       content: counters(item, ".") ". ";
       font-weight: 600;
@@ -210,6 +210,19 @@
 .postContent {
   color: var(--text-200);
 
+  h1:hover .anchor,
+  h2:hover .anchor,
+  h3:hover .anchor,
+  h4:hover .anchor,
+  h5:hover .anchor,
+  h6:hover .anchor {
+    display: inline-flex;
+    color: var(--text-300);
+    margin-inline-start: 8px;
+    font-weight: 500;
+    user-select: none;
+  }
+
   // 代码块生成内容
   .chroma {
     // 生成在表格内时
@@ -287,7 +300,7 @@
             background: var(--bg-200);
 
             &::before {
-              top: -1.5px;
+              top: -1px;
               position: relative;
               content: "-";
             }
@@ -421,5 +434,51 @@
   .paginav a:hover,
   .shareButtons a:hover {
     background: var(--bg-300);
+  }
+}
+
+// 屏幕大于 1280 时
+@media screen and (min-width: 1280px) {
+  .toc {
+    position: fixed;
+    z-index: 990;
+    top: var(--header-height);
+    transform: translateX(calc(var(--main-width) + var(--gap) / 2));
+    width: 20vw;
+    max-width: 460px;
+    font-size: 15px;
+    overflow: auto;
+    max-height: calc(100% - var(--header-height) - var(--footer-height));
+  }
+  /* 文字超出部分不显示 */
+  .toc li a {
+    color: var(--text-200);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* 激活目录样式 */
+  .toc li.active > a {
+    color: var(--text-100);
+  }
+  .toc li.active:before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    height: 24px;
+    width: 3px;
+    background: var(--bg-100);
+  }
+  .toc li.active > a::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    height: 24px;
+    width: calc(100% - 8px);
+    background: var(--bg-300);
+    opacity: 0.7;
+    z-index: -1;
   }
 }

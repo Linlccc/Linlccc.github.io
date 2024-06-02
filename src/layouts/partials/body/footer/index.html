@@ -220,14 +220,14 @@
     function activeToc(){
         // 如果屏幕宽度不足够显示目录直接返回
         if(document.documentElement.clientWidth<1280-19)return;
-        // 得到当前应该激活的锚点索引
+        // 得到当前应该激活的锚点索引,TODO:这里判断是否显示导航，显示的话y-导航高
         let activeAnchor = anchors.findIndex(a=>{
             let y = a.getBoundingClientRect().y;
             return y>0 && y<100;
         });
         if(activeAnchor == -1)return;
         // 确保目录打开
-        tocEl.getElementsByTagName("details")[0].setAttribute("open","")
+        tocEl.setAttribute("open","")
         // 修改激活状态
         for (let i = 0; i < tocLi.length; i++) {
             if(i== activeAnchor)tocLi[i].classList.add("active");
