@@ -72,7 +72,7 @@ highlight:
   # 自定义行号锚点前缀
   lineAnchors:
   # 是否将行号放在表格中
-  lineNumbersInTable: true
+  lineNumbersInTable: false
 
   # 是否猜测代码块语法
   guessSyntax: true

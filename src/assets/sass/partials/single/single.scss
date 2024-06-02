@@ -1,0 +1,425 @@
+@import "./chroma-styles.scss";
+// 文章页面样式
+
+// 封面
+.entryCover {
+  font-size: 14px;
+  color: var(--text-200);
+  margin-bottom: var(--gap);
+  text-align: center;
+  img {
+    border-radius: var(--radius);
+    pointer-events: none;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// 目录,TODO:这个要写屏幕大于1280时
+.toc {
+  margin: 0 2px 40px 2px;
+  padding: 0.4em;
+  background: var(--bg-200);
+  border: 1px solid var(--bg-300);
+  border-radius: var(--radius);
+  user-select: none;
+  font-size: 17px;
+
+  // 打开状态下
+  &[open] {
+    summary {
+      cursor: zoom-out;
+    }
+  }
+
+  summary {
+    cursor: zoom-in;
+    margin-inline-start: 20px;
+  }
+  .inner {
+    margin: 0 20px;
+    padding: 10px 20px;
+  }
+  li {
+    line-height: 1.6;
+    ul,
+    ol {
+      margin-inline-start: var(--gap);
+    }
+  }
+  a:hover {
+    box-shadow: 0 1px 0;
+  }
+  // 有序
+  ol {
+    list-style-type: none;
+    counter-reset: item;
+
+    li::before {
+      counter-increment: item;
+      content: counters(item, ".") ". ";
+      font-weight: 600;
+      margin-right: 5px;
+    }
+  }
+}
+
+// 内容元素重写
+.postContent {
+  h1 {
+    font-size: 2.375em;
+  }
+  h2 {
+    font-size: 1.75em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  h4 {
+    font-size: 1.25em;
+  }
+  h5 {
+    font-size: 1em;
+  }
+  h6 {
+    font-size: 0.875em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.67em 0;
+    margin: 0.67em 0;
+    margin: 0.67em 0;
+    margin: 0.67em 0;
+    margin: 0.67em 0;
+    margin: 0.67em 0;
+  }
+  a {
+    box-shadow: 0 1px 0;
+    code {
+      box-shadow: 0 -1px -0 var(--text-100) inset;
+    }
+  }
+  dl,
+  ol,
+  ul,
+  p,
+  figure {
+    margin-bottom: var(--content-gap);
+  }
+  ol,
+  ul {
+    padding-inline-start: 20px;
+  }
+  li {
+    margin-top: 5px;
+  }
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  dt {
+    width: 25%;
+    font-weight: 700;
+  }
+  dd {
+    width: 75%;
+    margin-inline-start: 0;
+    padding-inline-start: 10px;
+  }
+  dd ~ dd,
+  dt ~ dt {
+    margin-top: 10px;
+  }
+  table {
+    margin-bottom: var(--content-gap);
+  }
+  table th,
+  table:not(.highlight table) td {
+    min-width: 80px;
+    padding: 8px 5px;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--bg-300);
+  }
+  table th {
+    text-align: start;
+  }
+  blockquote {
+    margin: 20px 0;
+    padding: 0 14px;
+    border-inline-start: 3px solid var(--text-100);
+  }
+  hr {
+    margin: 30px 0;
+    height: 2px;
+    background: var(--text-200);
+    border: 0;
+  }
+  iframe {
+    max-width: 100%;
+  }
+  img {
+    border-radius: 4px;
+    margin: 1em 0;
+
+    &[src*="#center"] {
+      margin: 1rem auto;
+    }
+  }
+  figure {
+    &.align-center {
+      text-align: center;
+    }
+    > figcaption {
+      color: var(--text-100);
+      font-size: 16px;
+      font-weight: bold;
+      margin: 8px 0 16px;
+
+      > p {
+        color: var(--text-200);
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+  }
+  pre {
+    margin: 1rem 0 2rem;
+    padding: 10px;
+    background: var(--bg-200);
+    overflow: auto;
+
+    code {
+      padding: 0;
+      background: 0;
+    }
+  }
+  code {
+    display: inline-block;
+    padding: 0.125em 0.25em;
+    background: var(--bg-200);
+    word-break: break-all;
+  }
+}
+
+// 内容样式
+.postContent {
+  color: var(--text-200);
+
+  // 代码块生成内容
+  .chroma {
+    // 生成在表格内时
+    table {
+      // 消除行号和代码中间的间隙和缺口
+      td {
+        padding: 0;
+        &:nth-child(1) {
+          pre {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+        &:nth-child(2) {
+          width: 100%;
+
+          pre {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+      }
+    }
+    // 不生成到表格中
+    > code {
+      .ln {
+        display: inline-flex;
+        margin-right: 30px;
+        max-width: 10px;
+      }
+      .ln,
+      .lnt {
+        user-select: none;
+      }
+    }
+  }
+
+  // 代码块容器
+  .codeBlock {
+    background: var(--bg-300);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin-bottom: var(--content-gap);
+
+    // 头部容器
+    details {
+      summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        user-select: none;
+        cursor: zoom-in;
+        font: revert;
+        font-weight: 700;
+        font-size: 14px;
+        height: 36px;
+
+        &::marker {
+          content: "";
+        }
+        // 操作1
+        .oper1 {
+          line-height: 13px;
+
+          div {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            margin: 0 5px;
+            border-radius: 100px;
+            color: var(--text-100);
+            text-align: center;
+            line-height: 11px;
+            background: var(--bg-200);
+
+            &::before {
+              top: -1.5px;
+              position: relative;
+              content: "-";
+            }
+          }
+        }
+        // 操作2
+        .oper2 {
+          display: flex;
+          align-items: center;
+
+          button {
+            height: 28px;
+            padding: 0 5px;
+            border: 1px solid var(--bg-300);
+            border-radius: 10px;
+            box-sizing: border-box;
+            background: var(--bg-200);
+
+            &:hover {
+              border: 1px solid var(--bg-200);
+              background: var(--bg-300);
+            }
+          }
+        }
+      }
+      // 打开状态样式
+      &[open] {
+        summary {
+          cursor: zoom-out;
+
+          .oper1 {
+            div {
+              background: var(--primary-100);
+
+              &::before {
+                position: static;
+                content: "+";
+              }
+            }
+          }
+        }
+      }
+
+      // 代码内容容器
+      + .codeBlockContent {
+        overflow: hidden;
+        max-height: 0px;
+        transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+
+        table,
+        pre {
+          margin: 0;
+        }
+        pre {
+          border-radius: 0;
+        }
+      }
+      // 打开状态下容器
+      &[open] + .codeBlockContent {
+        max-height: 1200px;
+        transition: max-height 0.3s cubic-bezier(0.5, 0, 1, 0);
+      }
+    }
+  }
+}
+
+// 页脚（tags,上/下章链接/分享）
+.postFooter {
+  margin: 30px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .tags {
+    display: flex;
+    gap: 10px;
+
+    a {
+      padding: 0 14px;
+      font-size: 14px;
+      color: var(--text-200);
+    }
+  }
+  .paginav {
+    a {
+      width: 50%;
+      padding: 0 14px;
+      border-radius: var(--radius);
+
+      &:hover .title {
+        box-shadow: 0 1px 0;
+      }
+    }
+    .next {
+      margin-inline-start: auto;
+      text-align: end;
+    }
+    .pn {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: small;
+      color: var(--text-200);
+    }
+  }
+  .shareButtons {
+    justify-content: center;
+    gap: var(--gap);
+    overflow-x: auto;
+
+    a {
+      padding: 10px;
+      display: inline-flex;
+      border-radius: var(--radius);
+    }
+    svg {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  .tags a,
+  .paginav,
+  .shareButtons {
+    display: flex;
+    background: var(--bg-200);
+    border: 1px solid var(--bg-300);
+    border-radius: var(--radius);
+    line-height: 30px;
+  }
+  .tags a:hover,
+  .paginav a:hover,
+  .shareButtons a:hover {
+    background: var(--bg-300);
+  }
+}

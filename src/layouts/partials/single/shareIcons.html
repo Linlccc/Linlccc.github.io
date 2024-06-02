@@ -8,7 +8,7 @@
   {{ $cs := site.Params.customShare | default false }}
   {{ $csb := or site.Params.customShareButtons slice }}
 
-  <div class="share-buttons">
+  <div class="shareButtons">
     {{ if cond $cs (or (in $csb "x") (in $csb "twitter")) true }}
       <a target="_blank" rel="noopener noreferrer" aria-label="share {{ .Title | plainify }} on x" href="https://x.com/intent/tweet/?text={{ .Title }}&amp;url={{ .Permalink }}&amp;hashtags={{ $tags }}">
         {{ partial "common/svg.html" "x" }}

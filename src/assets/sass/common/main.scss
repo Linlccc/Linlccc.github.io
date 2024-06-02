@@ -18,7 +18,12 @@
       color: var(--text-200);
     }
     h1 {
-      font-size: 38px;
+      font-size: 2.375rem;
+
+      .draft {
+        font-size: 14px;
+        color: var(--text-200);
+      }
     }
     .description {
       color: var(--text-200);
@@ -34,6 +39,10 @@
         margin: auto 3px;
         box-shadow: 0 1px 0 var(--text-200);
       }
+    }
+
+    a {
+      color: var(--text-100);
     }
   }
 }

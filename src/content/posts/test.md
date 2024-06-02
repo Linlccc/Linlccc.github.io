@@ -7,7 +7,7 @@ Summary: "测试文章摘要"
 tags:
   - tag1
   - tag2
-tags: tag1
+# tags: tag1
 
 categories:
   - category1
@@ -99,6 +99,8 @@ editPost:
 
 ###### 六级标题题题题题题题题题题
 
+`asjgfuaksgfuagskfbakjsfbkjasgkdgasukdgukasdukasukdhukahdkahsdhakshdasjgfuaksgfuagskfbakjsfbkjasgkdgasukdgukasdukasukdhukahdkahsdhakshd`
+
 <h1 id="h1html" style="background: red;">h1html</h1>
 <script>
     console.log("md输出");
@@ -120,6 +122,7 @@ _段落斜体_
 2. 有序项 2
 3. 有序项 3
    1. 嵌套项
+   2. asd
    - 嵌套项
 
 > 区块引用
@@ -142,7 +145,7 @@ printf("这是一个代码块");
 | 这是一个单元格 | 这是一个单元格 | 这是一个单元格 |
 | 这是一个单元格 | 这是一个单元格 | 这是一个单元格 |
 
-[内联方式超链接](/posts/test/)
+[内联方式<code>123a</code>超链接](/posts/test/)
 
 [引用方式超链接][引用式]
 

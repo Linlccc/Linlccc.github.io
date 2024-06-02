@@ -13,11 +13,30 @@ body {
   font-size: 16px;
 }
 
+// 消除外边框
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 // 消除外边距
 body,
 figure,
-ul {
+ul,
+ol {
   margin: 0;
+}
+
+// 消除内边框
+ul,
+ol {
+  padding: 0;
 }
 
 // 一系列元素显示方式
@@ -76,19 +95,10 @@ svg {
   width: 24px;
 }
 
-// TODO：以下两个看是否需要，不要可以移除
-ul,
-ol {
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-top: 0;
-  margin-bottom: 0;
+// code 样式
+code,
+pre {
+  border-radius: 0.25rem;
+  font-family: "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;";
+  font-size: 0.833rem;
 }

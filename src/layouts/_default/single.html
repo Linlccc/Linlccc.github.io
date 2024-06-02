@@ -1,45 +1,43 @@
 {{ define "main" }}
-  <article class="post-single">
-    <!-- 标题和元信息 -->
-    <header class="post-header">
-      {{ partial "common/breadcrumbs.html" . }}
-      <h1 class="post-title">
-        {{ .Title }}
-        {{ if .Draft }}<sup><span class="entry-isdraft">&nbsp;[draft]</span></sup>{{ end }}
-      </h1>
-      {{ with .Description }}<div class="post-description">{{ . }}</div>{{ end }}
-      <!-- 元信息 -->
-      {{ if not (.Param "hideMeta") }}
-        <div class="post-meta">
-          {{ partial "common/pageMeta.html" . }}
-          {{ partial "common/translationList.html" . }}
-          {{ partial "single/editPost.html" . }}
-          {{ partial "single/postCanonical.html" . }}
-        </div>
-      {{ end }}
-    </header>
-    <!-- 封面 -->
-    {{ partial "common/cover.html" (dict "page" . "inList" false) }}
-    <!-- 目录 -->
-    {{ partial "single/toc.html" . }}
-
-    <!-- Markdown 内容 -->
-    {{ if .Content }}
-      <div class="post-content">
-        {{ partial "single/notHighlightCodeAddBlock.html" .Content }}
+  <!-- 标题和元信息 -->
+  <header>
+    {{ partial "common/breadcrumbs.html" . }}
+    <h1>
+      {{ .Title }}
+      {{ if .Draft }}<sup><span class="draft">&nbsp;[draft]</span></sup>{{ end }}
+    </h1>
+    {{ with .Description }}<div class="description">{{ . }}</div>{{ end }}
+    <!-- 元信息 -->
+    {{ if not (.Param "hideMeta") }}
+      <div class="meta">
+        {{ partial "common/pageMeta.html" . }}
+        {{ partial "common/translationList.html" . }}
+        {{ partial "single/editPost.html" . }}
+        {{ partial "single/postCanonical.html" . }}
       </div>
     {{ end }}
+  </header>
+  <!-- 封面 -->
+  {{ partial "common/cover.html" (dict "page" . "inList" false) }}
+  <!-- 目录 -->
+  {{ partial "single/toc.html" . }}
 
-    <!-- tags,上/下章链接/分享 -->
-    <footer class="post-footer">
-      <ul class="post-tags">{{ range .GetTerms "tags" }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
-      <!-- 上下页 -->
-      {{ partial "single/postNavLinks.html" . }}
-      <!-- 分享 -->
-      {{ partial "single/shareIcons.html" . }}
-    </footer>
+  <!-- Markdown 内容 -->
+  {{ if .Content }}
+    <div class="postContent">
+      {{ partial "single/notHighlightCodeAddBlock.html" .Content }}
+    </div>
+  {{ end }}
 
-    <!-- 评论 -->
-    {{ partial "single/giscusComments.html" . }}
-  </article>
+  <!-- tags,上/下章链接/分享 -->
+  <footer class="postFooter">
+    <ul class="tags" role="list">{{ range .GetTerms "tags" }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+    <!-- 上下页 -->
+    {{ partial "single/postNavLinks.html" . }}
+    <!-- 分享 -->
+    {{ partial "single/shareIcons.html" . }}
+  </footer>
+
+  <!-- 评论 -->
+  {{ partial "single/giscusComments.html" . }}
 {{ end }}

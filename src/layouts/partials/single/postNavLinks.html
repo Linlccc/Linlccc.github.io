@@ -7,12 +7,12 @@
   <nav class="paginav">
     {{ with $pages.Next . }}
       <a class="prev" href="{{ .Permalink }}">
-        <span class="title">« {{ T "prevPage" | default "Prev" }}</span><br><span>{{ .Name }}</span>
+        <span class="pn">« {{ T "prevPage" | default "Prev" }}</span><br><span class="title">{{ .Name }}</span>
       </a>
     {{ end }}
     {{ with $pages.Prev . }}
       <a class="next" href="{{ .Permalink }}">
-        <span class="title">{{ T "nextPage" | default "Next" }} »</span><br><span>{{ .Name }}</span>
+        <span  class="pn">{{ T "nextPage" | default "Next" }} »</span><br><span class="title">{{ .Name }}</span>
       </a>
     {{ end }}
   </nav>
