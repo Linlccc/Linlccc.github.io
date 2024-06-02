@@ -111,6 +111,15 @@
 </script>
 {{- end }}
 <!-- 是普通页面 && 不是特殊页面 && 显示代码复制按钮 -->
+<!-- 后面修改可以参考以下方案
+  const code = document.getElementsByClassName("codeBlock")[4].getElementsByTagName("code")[0];
+  const range = document.createRange();
+  range.selectNodeContents(code);
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
+  document.execCommand('copy');
+ -->
 {{- if (and (eq .Kind "page") (not (in site.Params.specialPages .Layout)) (.Param "showCodeCopyButtons")) }}
 <script>
     document.querySelectorAll('pre > code').forEach((codeblock) => {
@@ -133,6 +142,8 @@
                 copyingDone();
                 return;
             }
+
+
 
             const range = document.createRange();
             range.selectNodeContents(codeblock);
