@@ -32,6 +32,7 @@
     .entryTitle {
       margin: 5px 0;
       font-weight: 500;
+      color: var(--text-200);
     }
     .entryLink {
       position: absolute;
@@ -44,7 +45,18 @@
 
   .count,
   .meta {
-    color: var(--text-200);
+    color: var(--text-300);
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .archive {
+    &.year {
+      margin-top: 20px;
+    }
+    .month {
+      flex-direction: column;
+    }
   }
 }
