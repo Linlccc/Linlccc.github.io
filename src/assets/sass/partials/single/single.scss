@@ -210,6 +210,10 @@
   }
 }
 
+// 清除主题背景
+.chroma {
+  background: 0;
+}
 // 内容样式
 .postContent {
   color: var(--text-200);
@@ -275,7 +279,7 @@
 
   // 代码块容器
   .codeBlock {
-    background: var(--bg-300);
+    background: var(--bg-200);
     border-radius: 0.25rem;
     overflow: hidden;
     margin-bottom: var(--content-gap);
@@ -292,6 +296,7 @@
         cursor: zoom-in;
         font-weight: 700;
         font-size: 14px;
+        border-bottom: 1px solid;
 
         &::marker {
           content: "";
@@ -350,21 +355,35 @@
 
       // 代码内容容器
       + .codeBlockContent {
-        overflow: hidden;
+        overflow: auto;
         max-height: 0px;
         transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
 
         table,
         pre {
           margin: 0;
+          border-radius: 0;
+        }
+        table {
+          overflow: revert;
         }
         pre {
-          border-radius: 0;
+          background: 0;
+        }
+
+        // 代码块滚动条
+        &::-webkit-scrollbar-thumb {
+          background: var(--text-300);
+          border-radius: var(--radius);
+          border: 2px solid var(--bg-200);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: var(--text-200);
         }
       }
       // 打开状态下容器
       &[open] + .codeBlockContent {
-        max-height: 1200px;
+        max-height: 1000px;
         transition: max-height 0.3s cubic-bezier(0.5, 0, 1, 0);
       }
     }
