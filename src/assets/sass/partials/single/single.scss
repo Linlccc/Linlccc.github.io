@@ -47,8 +47,12 @@
       margin-inline-start: var(--gap);
     }
   }
-  a:hover {
-    box-shadow: 0 1px 0;
+  a {
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom-color: inherit;
+    }
   }
   // 有序
   ol {
@@ -293,15 +297,12 @@
             width: 13px;
             height: 13px;
             margin: 0 5px;
-            border-radius: 100px;
+            border-radius: var(--radius);
             color: var(--text-100);
             text-align: center;
-            line-height: 11px;
             background: var(--bg-200);
 
             &::before {
-              top: -1px;
-              position: relative;
               content: "-";
             }
           }
@@ -336,7 +337,6 @@
               background: var(--primary-100);
 
               &::before {
-                position: static;
                 content: "+";
               }
             }
