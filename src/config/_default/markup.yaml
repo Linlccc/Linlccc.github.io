@@ -77,7 +77,7 @@ highlight:
   # 是否猜测代码块语法
   guessSyntax: true
   # 是否将代码块处理成一行
-  hl_inline: true
+  hl_inline: false
   # 制表符的宽度(没用)
   tabWidth: 4
 

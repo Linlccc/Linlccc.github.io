@@ -249,9 +249,9 @@
           }
         }
         // 代码处理成一行,不显示行号
-        // > span {
-        //   display: none;
-        // }
+        > span {
+          display: none;
+        }
       }
     }
     // 不生成到表格中
@@ -271,9 +271,6 @@
         user-select: none;
       }
     }
-    // code {
-    //   display: block;
-    // }
   }
 
   // 代码块容器
