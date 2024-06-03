@@ -253,12 +253,17 @@
     // 不生成到表格中
     > code {
       .ln {
-        display: inline-flex;
-        margin-right: 30px;
-        max-width: 10px;
+        margin-right: 20px;
+        width: 1.8rem;
+        max-width: 1.8rem;
+      }
+      .lnt {
+        margin: 0;
       }
       .ln,
       .lnt {
+        display: flex;
+        justify-content: flex-end;
         user-select: none;
       }
     }
