@@ -72,12 +72,12 @@ highlight:
   # 自定义行号锚点前缀
   lineAnchors:
   # 是否将行号放在表格中
-  lineNumbersInTable: false
+  lineNumbersInTable: true
 
   # 是否猜测代码块语法
   guessSyntax: true
   # 是否将代码块处理成一行
-  hl_inline: false
+  hl_inline: true
   # 制表符的宽度(没用)
   tabWidth: 4
 
