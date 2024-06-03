@@ -274,45 +274,40 @@
     // 头部容器
     details {
       summary {
+        height: 36px;
+        padding: 3px 8px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 10px;
         user-select: none;
         cursor: zoom-in;
-        font: revert;
         font-weight: 700;
         font-size: 14px;
-        height: 36px;
 
         &::marker {
           content: "";
         }
-        // 操作1
-        .oper1 {
-          line-height: 13px;
+        // 操作
+        .oper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
 
-          div {
-            display: inline-block;
-            width: 13px;
-            height: 13px;
-            margin: 0 5px;
+          .status {
+            height: 16px;
+            width: 16px;
+            background: var(--bg-200);
             border-radius: var(--radius);
             color: var(--text-100);
             text-align: center;
-            background: var(--bg-200);
+            font-size: 10px;
 
             &::before {
               content: "-";
             }
           }
-        }
-        // 操作2
-        .oper2 {
-          display: flex;
-          align-items: center;
-
-          button {
+          .codeCopy {
             height: 28px;
             padding: 0 5px;
             border: 1px solid var(--bg-300);
@@ -332,8 +327,8 @@
         summary {
           cursor: zoom-out;
 
-          .oper1 {
-            div {
+          .oper {
+            .status {
               background: var(--primary-100);
 
               &::before {
