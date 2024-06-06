@@ -1,6 +1,9 @@
 // 变量
 
 :root {
+  // 默认字体大小
+  --default-font-size: 16px;
+
   // heade 高
   --header-height: 60px;
   // heade 宽
@@ -11,7 +14,7 @@
   --main-width: 720px;
 
   // 圆角半径
-  --radius: 8px;
+  --radius: 3px;
 
   // 间距
   --gap: 24px;

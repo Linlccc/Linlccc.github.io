@@ -70,37 +70,6 @@
 
 // 内容元素重写
 .postContent {
-  h1 {
-    font-size: 2.375em;
-  }
-  h2 {
-    font-size: 1.75em;
-  }
-  h3 {
-    font-size: 1.5em;
-  }
-  h4 {
-    font-size: 1.25em;
-  }
-  h5 {
-    font-size: 1em;
-  }
-  h6 {
-    font-size: 0.875em;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0.67em 0;
-    margin: 0.67em 0;
-    margin: 0.67em 0;
-    margin: 0.67em 0;
-    margin: 0.67em 0;
-    margin: 0.67em 0;
-  }
   a {
     box-shadow: 0 1px 0;
     code {
@@ -113,10 +82,6 @@
   p,
   figure {
     margin-bottom: var(--content-gap);
-  }
-  ol,
-  ul {
-    padding-inline-start: 20px;
   }
   li {
     margin-top: 5px;
