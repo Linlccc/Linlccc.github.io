@@ -8,7 +8,6 @@
   margin-bottom: var(--gap);
   text-align: center;
   img {
-    border-radius: var(--radius);
     pointer-events: none;
     width: 100%;
     height: auto;
@@ -104,24 +103,6 @@
   dt ~ dt {
     margin-top: 10px;
   }
-  table {
-    margin-bottom: var(--content-gap);
-  }
-  table th,
-  table:not(.chroma table) td {
-    min-width: 80px;
-    padding: 8px 5px;
-    line-height: 1.5;
-    border-bottom: 1px solid var(--bg-300);
-  }
-  table th {
-    text-align: start;
-  }
-  blockquote {
-    margin: 20px 0;
-    padding: 0 14px;
-    border-inline-start: 3px solid var(--text-100);
-  }
   hr {
     margin: 30px 0;
     height: 2px;
@@ -130,14 +111,6 @@
   }
   iframe {
     max-width: 100%;
-  }
-  img {
-    border-radius: 4px;
-    margin: 1em 0;
-
-    &[src*="#center"] {
-      margin: 1rem auto;
-    }
   }
   figure {
     &.alignCenter {
