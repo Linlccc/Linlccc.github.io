@@ -3,6 +3,35 @@
   . : 页面上下文
 -->
 
-<!-- 样式处理 -->
-{{- $style := resources.Get "sass/main.scss" | toCSS (dict "targetPath" "assets/css/styles.css" "enableSourceMap" true) | minify | fingerprint -}}
-<link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+<!-- 为按需引入创建一个 css 引用空数组 -->
+{{ .Store.Set "css" slice }}
+<!-- 创建 css 引用字典 -->
+<!-- home -->
+{{ $cssDict := dict "classic" "sass/partials/home/classic.scss" }}
+{{ $cssDict = merge $cssDict (dict "profile" "sass/partials/home/profile.scss") }}
+<!-- list -->
+{{ $cssDict = merge $cssDict (dict "list" "sass/partials/list.scss") }}
+<!-- 搜索 -->
+{{ $cssDict = merge $cssDict (dict "search" "sass/partials/search.scss") }}
+<!-- 分类 -->
+{{ $cssDict = merge $cssDict (dict "terms" "sass/partials/terms.scss") }}
+<!-- 档案 -->
+{{ $cssDict = merge $cssDict (dict "archive" "sass/partials/archive.scss") }}
+<!-- 404 -->
+{{ $cssDict = merge $cssDict (dict "404" "sass/partials/404.scss") }}
+<!-- 文章 -->
+{{ $cssDict = merge $cssDict (dict "single" "sass/partials/single/single.scss") }}
+{{ .Store.Set "cssDict" $cssDict }}
+
+<!-- 按需引入 -->
+{{ if site.Params.css.isImportDemand }}
+  {{ $style := resources.Get "sass/main.scss" | toCSS (dict "targetPath" "assets/css/styles.css" "enableSourceMap" true) | minify | fingerprint }}
+  <link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+{{ else }}
+  {{ $style := resources.Get "sass/mainAll.scss" | toCSS (dict "targetPath" "assets/css/stylesAll.css" "enableSourceMap" true) | minify | fingerprint }}
+  <link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+{{ end }}
+
+{{ range (partial "toArray" site.Params.css.custom) }}
+  {{ . }}
+{{ end }}
