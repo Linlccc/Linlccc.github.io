@@ -8,11 +8,11 @@
     color: var(--text-100);
     font-weight: 700;
     font-size: 18px;
-    border: 2px solid var(--bg-200);
+    border: 2px solid var(--background-200);
     border-radius: var(--radius);
 
     &:focus {
-      border-color: var(--bg-300);
+      border-color: var(--border-100);
     }
   }
 }
@@ -26,9 +26,9 @@
     position: relative;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid var(--bg-300);
+    border: 1px solid var(--border-100);
     border-radius: var(--radius);
-    background: var(--bg-200);
+    background: var(--background-200);
     transition: transform 0.1s;
     font-weight: 500;
 
