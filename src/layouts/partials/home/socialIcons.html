@@ -6,6 +6,6 @@
 <!-- 社交图标 -->
 <div class="socialIcons">
   {{ range site.Params.socialIcons }}
-    <a href="{{ trim .url " " | safeURL  }}" target="_blank" rel="noopener noreferrer me" title="{{ title .name }}">{{ partial "common/svg.html" .name }}</a>
+    <a role="text" href="{{ trim .url " " | safeURL  }}" target="_blank" rel="noopener noreferrer me" title="{{ title .name }}">{{ partial "common/svg.html" .name }}</a>
   {{ end }}
 </div>
