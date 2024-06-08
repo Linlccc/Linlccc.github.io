@@ -1,30 +1,19 @@
 // header 样式
-.header {
+#header {
+  position: sticky;
+  transition: transform 0.3s;
+  top: 0;
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+
   nav {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     line-height: var(--header-height);
     max-width: calc(var(--header-width) + var(--gap) * 2);
     margin: auto;
-    opacity: 0;
-
-    // 用于展示的导航
-    &#Exhibit {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      opacity: 1;
-      z-index: 999;
-      background-color: var(--bg-100);
-      transition: transform 0.3s;
-
-      // 不显示时
-      &.hide {
-        transform: translateY(-100%);
-      }
-    }
 
     // logo 部分
     .logo {

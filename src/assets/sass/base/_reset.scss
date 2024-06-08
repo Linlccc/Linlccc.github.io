@@ -63,6 +63,10 @@ ol {
   margin: 0;
   padding-inline-start: 20px;
 }
+ul[role="list"],
+ol[role="list"] {
+  padding: 0;
+}
 
 /* 表格标签 */
 table {
