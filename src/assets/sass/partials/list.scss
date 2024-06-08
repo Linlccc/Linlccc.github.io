@@ -5,36 +5,18 @@
   position: relative;
   margin-bottom: var(--gap);
   padding: var(--gap);
-  background: var(--bg-200);
-  border: 1px solid var(--bg-300);
+  background: var(--background-200);
+  border: 1px solid var(--border-100);
   border-radius: var(--radius);
   transition: transform 0.1s;
-
   &:active {
     transform: scale(0.96);
   }
-
-  .entryCover {
-    margin-bottom: var(--gap);
-
-    img {
-      border-radius: var(--radius);
-      width: 100%;
-      height: auto;
-    }
+  h2 {
+    margin: 0;
   }
 
-  .entryTitle {
-    font-size: 24px;
-    line-height: 1.3;
-
-    .entryIsdraft {
-      font-size: 14px;
-      color: var(--text-200);
-    }
-  }
-
-  .entryContent {
+  .content {
     margin: 8px 0;
     color: var(--text-200);
     font-size: 14px;
@@ -44,12 +26,7 @@
     overflow: hidden;
   }
 
-  .entryMeta {
-    color: var(--text-200);
-    font-size: 13px;
-  }
-
-  .entryLink {
+  .link {
     position: absolute;
     left: 0;
     right: 0;
@@ -60,7 +37,7 @@
 
 // tag 文章入口
 .tagEntry {
-  .entryCover {
+  .cover {
     display: none;
   }
 }
@@ -69,25 +46,24 @@
 .pagination {
   display: flex;
   justify-content: left;
-  font-size: 1rem;
   font-weight: 700;
   overflow-x: auto;
   user-select: none;
 
   .pageItem {
     margin: 0.5rem;
-    border-radius: 6px;
+    border-radius: var(--radius);
+    overflow: hidden;
 
     &.active {
-      background: var(--bg-200);
+      background: var(--interaction);
     }
     &:not(.active) a:hover {
-      color: var(--text-100);
+      color: var(--interaction);
     }
   }
   .pageLink {
     padding: 4px 8px;
-    color: var(--text-200);
     display: grid;
     align-items: center;
     justify-content: center;

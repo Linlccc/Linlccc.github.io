@@ -42,6 +42,9 @@ h6 {
   margin-block-end: 0.38em;
   color: var(--text-100);
 }
+p {
+  margin: 0;
+}
 pre {
   background-color: var(--background-200);
   border-radius: var(--radius);
@@ -140,4 +143,7 @@ main,
 figure,
 figcaption {
   display: block;
+}
+figure {
+  margin: 0;
 }
