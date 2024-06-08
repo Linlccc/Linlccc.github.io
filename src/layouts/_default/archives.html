@@ -32,7 +32,7 @@
               <div class="entry">
                 <h3 class="entryTitle">
                   {{ .Title }}
-                  {{ if .Draft }}<sup><span class="entryIsdraft">&nbsp;&nbsp;[draft]</span></sup>{{ end }}
+                  {{ if .Draft }}<sup><span class="draft">&nbsp;&nbsp;[draft]</span></sup>{{ end }}
                 </h3>
                 <div class="meta">{{ partial "common/pageMeta.html" . }}</div>
                 <a class="entryLink" aria-label="post link to {{ plainify .Title }}" href="{{ .Permalink }}"></a>

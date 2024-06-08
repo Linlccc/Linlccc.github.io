@@ -8,7 +8,7 @@
     <!-- 封面 -->
     {{ partial "common/cover.html" (dict "page" . "inList" true) }}
     <!-- 标题 -->
-    <h2 class="entryTitle">{{ .Title }}{{ if .Draft }}<sup><span class="entryIsdraft"> [draft]</span></sup>{{ end }}</h2>
+    <h2 class="entryTitle">{{ .Title }}{{ if .Draft }}<sup><span class="draft"> [draft]</span></sup>{{ end }}</h2>
     <!-- 摘要 -->
     {{ if not (.Param "hideSummary") }}
       <div class="entryContent">
@@ -21,7 +21,7 @@
     {{ end }}
     <!-- 元信息 -->
     {{ if not (.Param "hideMeta") }}
-      <div class="entryMeta">{{ partial "common/pageMeta.html" . }}</div>
+      <div class="meta">{{ partial "common/pageMeta.html" . }}</div>
     {{ end }}
     <a class="entryLink" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
   </article>

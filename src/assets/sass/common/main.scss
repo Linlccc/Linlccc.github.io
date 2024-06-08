@@ -17,37 +17,30 @@
     .breadcrumbs {
       color: var(--text-200);
     }
-    h1 {
-      font-size: 2.375rem;
-
-      svg {
-        height: 28px;
-        width: 28px;
-      }
-
-      .draft {
-        font-size: 14px;
-        color: var(--text-200);
-      }
+    svg {
+      height: 28px;
+      width: 28px;
     }
     .description {
       color: var(--text-200);
       font-style: italic;
     }
-    .meta {
-      color: var(--text-200);
-      font-size: 14px;
-      display: flex;
+  }
+}
 
-      .i18nList li {
-        display: inline-flex;
-        margin: auto 3px;
-        box-shadow: 0 1px 0 var(--text-200);
-      }
-    }
+// 草稿样式
+.draft {
+  font-size: 14px;
+  color: var(--text-200);
+}
+// 元信息
+.meta {
+  color: var(--text-300);
+  font-size: 14px;
+  display: flex;
 
-    a {
-      color: var(--text-100);
-    }
+  .i18nList li {
+    display: inline-flex;
+    margin: auto 3px;
   }
 }
