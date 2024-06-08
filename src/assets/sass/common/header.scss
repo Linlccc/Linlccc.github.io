@@ -44,12 +44,23 @@
           width: 24px;
 
           // 深色下面的月亮不显示
-          body.dark &.moon {
+          .dark &.moon {
             display: none;
           }
           // 不是深色下面的太阳不显示
-          body:not(.dark) &.sun {
+          .light &.sun {
             display: none;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            .auto &.moon {
+              display: none;
+            }
+          }
+          @media (prefers-color-scheme: light) {
+            .auto &.sun {
+              display: none;
+            }
           }
         }
       }
