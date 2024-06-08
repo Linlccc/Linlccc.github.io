@@ -99,8 +99,16 @@
     // 主题按钮点击
     document.getElementById("themeToggle").addEventListener("click", () => {
       const root = document.documentElement;
-      root.classList.toggle("dark");
-      const theme = root.classList.contains("dark")?"dark":"light";
+      // 计算切换后的主题颜色
+      let theme = 'light';
+      // 如果是自动主题
+      if(root.classList.contains('auto')){
+        theme =window.matchMedia('(prefers-color-scheme: dark)').matches?"light":"dark";
+      }else if(root.classList.contains('light')){
+        theme = 'dark';
+      }
+      // 设置主题
+      root.className = theme;
       // 设置持久化
       localStorage.setItem("pref-theme", theme);
       // 设置 meta 属性

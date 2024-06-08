@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" class="{{ cond (eq site.Params.defaultTheme `dark`) "dark" "" }}">
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" class="{{ site.Params.defaultTheme | default "auto" }}">
   {{- partial "head/index.html" . -}}
 
 <body id="top">

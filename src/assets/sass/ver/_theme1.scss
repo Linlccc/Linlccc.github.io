@@ -1,6 +1,7 @@
 // 主题变量
 
-:root {
+// 浅色主题
+@mixin light {
   // 背景
   --background-100: #fff;
   --background-200: #d9d9d9;
@@ -18,8 +19,8 @@
   // 交互
   --interaction: #0066cc;
 }
-
-.dark {
+// 深色主题
+@mixin dark {
   // 背景
   --background-100: #1b1b1b;
   --background-200: #313131;
@@ -36,4 +37,22 @@
   --link-200: #ffadff;
   // 交互
   --interaction: #0066cc;
+}
+
+.light {
+  @include light;
+}
+@media (prefers-color-scheme: light) {
+  :root:not(.light):not(.dark) {
+    @include light;
+  }
+}
+
+.dark {
+  @include dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) {
+    @include dark;
+  }
 }
