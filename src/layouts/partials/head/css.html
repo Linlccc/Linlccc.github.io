@@ -31,7 +31,3 @@
   {{ $style := resources.Get "sass/mainAll.scss" | toCSS (dict "targetPath" "assets/css/stylesAll.css" "enableSourceMap" true) | minify | fingerprint }}
   <link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
 {{ end }}
-
-{{ range (partial "toArray" site.Params.css.custom) }}
-  {{ . }}
-{{ end }}
