@@ -45,7 +45,8 @@ h6 {
 p {
   margin: 0;
 }
-pre {
+pre,
+code {
   background-color: var(--background-200);
   border-radius: var(--radius);
   font-family: "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;";

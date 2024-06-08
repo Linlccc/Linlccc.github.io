@@ -23,13 +23,13 @@
   }
   .inner {
     padding: 10px 20px;
-  }
-  a {
-    color: currentColor !important;
-    text-decoration: none !important;
-    border-bottom: 1px solid transparent;
-    &:hover {
-      border-bottom-color: inherit;
+    li a {
+      color: currentColor;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        border-bottom-color: inherit;
+      }
     }
   }
   // 无序
@@ -57,18 +57,12 @@
 
 // 内容元素重写
 .postContent {
-  a {
-    box-shadow: 0 1px 0;
-    code {
-      box-shadow: 0 -1px -0 var(--text-200) inset;
-    }
-  }
   dl,
   ol,
   ul,
   p,
   figure {
-    margin-bottom: var(--content-gap);
+    margin-bottom: var(--gap);
   }
   li {
     margin-top: 5px;
@@ -94,7 +88,7 @@
   hr {
     margin: 30px 0;
     height: 2px;
-    background: var(--text-200);
+    background: var(--border-100);
     border: 0;
   }
   iframe {
@@ -109,7 +103,6 @@
       font-size: 16px;
       font-weight: bold;
       margin: 8px 0 16px;
-
       > p {
         color: var(--text-200);
         font-size: 14px;
@@ -120,30 +113,26 @@
   pre {
     margin: 1rem 0 2rem;
     padding: 10px;
-    background: var(--bg-200);
-    overflow: auto;
-
     code {
+      margin: 0;
       padding: 0;
       background: 0;
     }
   }
   code {
-    display: inline-block;
-    padding: 0.125em 0.25em;
-    background: var(--bg-200);
+    padding: 0.125rem 0.25rem;
+    margin: auto 2px;
+    color: currentColor;
     word-break: break-all;
   }
 }
 
-// 清除主题背景
+// 清除代码高亮主题背景
 .chroma {
   background: 0;
 }
 // 内容样式
 .postContent {
-  color: var(--text-200);
-
   h1:hover .anchor,
   h2:hover .anchor,
   h3:hover .anchor,
@@ -205,10 +194,10 @@
 
   // 代码块容器
   .codeBlock {
-    background: var(--bg-200);
+    background: var(--background-200);
     border-radius: 0.25rem;
     overflow: hidden;
-    margin-bottom: var(--content-gap);
+    margin-bottom: var(--gap);
 
     // 头部容器
     details {
@@ -237,7 +226,7 @@
           .status {
             height: 16px;
             width: 16px;
-            background: var(--bg-300);
+            background: var(--background-300);
             border-radius: var(--radius);
             color: var(--text-100);
             text-align: center;
@@ -250,14 +239,14 @@
           .codeCopy {
             height: 28px;
             padding: 0 5px;
-            border: 1px solid var(--bg-300);
+            border: 1px solid transparent;
             border-radius: 10px;
             box-sizing: border-box;
-            background: var(--bg-200);
+            background: var(--background-300);
 
             &:hover {
-              border: 1px solid var(--bg-200);
-              background: var(--bg-300);
+              border: 1px solid var(--border-200);
+              background: var(--interaction);
             }
           }
         }
@@ -269,7 +258,7 @@
 
           .oper {
             .status {
-              background: var(--primary-100);
+              background: var(--interaction);
 
               &::before {
                 content: "+";
@@ -299,12 +288,11 @@
 
         // 代码块滚动条
         &::-webkit-scrollbar-thumb {
-          background: var(--text-300);
-          border-radius: var(--radius);
-          border: 2px solid var(--bg-200);
+          background: var(--background-300);
+          border: 2px solid var(--background-200);
         }
         &::-webkit-scrollbar-thumb:hover {
-          background: var(--text-200);
+          background: var(--interaction);
         }
       }
       // 打开状态下容器
@@ -398,36 +386,37 @@
     font-size: 15px;
     overflow: auto;
     max-height: calc(100% - var(--header-height) - var(--footer-height));
-  }
-  /* 文字超出部分不显示 */
-  .toc li a {
-    color: var(--text-200);
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  /* 激活目录样式 */
-  .toc li.active > a {
-    color: var(--text-100);
-  }
-  .toc li.active:before {
-    content: "";
-    position: absolute;
-    left: 8px;
-    height: 24px;
-    width: 3px;
-    background: var(--background-100);
-  }
-  .toc li.active > a::after {
-    content: "";
-    position: absolute;
-    left: 8px;
-    height: 24px;
-    width: calc(100% - 8px);
-    background: var(--border-100);
-    opacity: 0.7;
-    z-index: -1;
+    li {
+      &.active {
+        &:before {
+          content: "";
+          position: absolute;
+          left: 8px;
+          height: 24px;
+          width: 3px;
+          background: var(--border-100);
+        }
+        > a {
+          color: var(--text-100);
+          &::after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            height: 24px;
+            width: calc(100% - 8px);
+            background: var(--border-200);
+            opacity: 0.7;
+            z-index: -1;
+          }
+        }
+      }
+      a {
+        color: var(--text-200);
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
   }
 }
