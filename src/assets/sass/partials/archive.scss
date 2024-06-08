@@ -4,23 +4,19 @@
     margin-top: 40px;
   }
   &:not(:last-of-type) {
-    border-bottom: 3px solid var(--bg-300);
+    border-bottom: 2px solid var(--border-100);
   }
-
   .month {
     display: flex;
     align-items: flex-start;
     margin: 10px 20px;
-
     .monthHeader {
       margin: 25px 0;
       width: 180px;
     }
-
     &:not(:last-of-type) {
-      border-bottom: 1px solid var(--bg-300);
+      border-bottom: 1px solid var(--border-200);
     }
-
     .posts {
       width: 100%;
     }
@@ -42,9 +38,7 @@
       bottom: 0;
     }
   }
-
-  .count,
-  .meta {
+  .count {
     color: var(--text-300);
     font-size: 14px;
   }
