@@ -11,10 +11,10 @@
   const defaultTheme = "{{ $defaultTheme }}";
   let theme = localStorage.getItem("pref-theme") ?? defaultTheme;
   if(theme == 'auto') theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  if(theme == 'dark') document.body.classList.add('dark');
-  else document.body.classList.remove('dark');
+  if(theme == 'dark') document.documentElement.classList.add('dark');
+  else document.documentElement.classList.remove('dark');
   // 设置系统主题颜色(iphone上下空白处颜色)
-  document.querySelector("meta[name=theme-color]").setAttribute("content", getComputedStyle(document.body).getPropertyValue('--bg-100'));
+  document.querySelector("meta[name=theme-color]").setAttribute("content", getComputedStyle(document.documentElement).getPropertyValue('--background-100'));
   // 冒泡
 </script>
 

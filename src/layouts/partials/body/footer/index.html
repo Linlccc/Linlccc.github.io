@@ -98,20 +98,15 @@
     let themeColorMeta = document.querySelector("meta[name=theme-color]");
     // 主题按钮点击
     document.getElementById("themeToggle").addEventListener("click", () => {
-        let theme = 'dark';
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            themeColorMeta.setAttribute("content", getComputedStyle(document.body).getPropertyValue('--bg-100'));
-            localStorage.setItem("pref-theme", 'light');
-            theme = 'light';
-        } else {
-            document.body.classList.add('dark');
-            themeColorMeta.setAttribute("content", getComputedStyle(document.body).getPropertyValue('--bg-100'));
-            localStorage.setItem("pref-theme", 'dark');
-            theme = 'dark';
-        }
-        // 调用主题切换事件
-        window.GLOBAL_CUSTOM_EVENT.ThemeToggleEvent(theme);
+      const root = document.documentElement;
+      root.classList.toggle("dark");
+      const theme = root.classList.contains("dark")?"dark":"light";
+      // 设置持久化
+      localStorage.setItem("pref-theme", theme);
+      // 设置 meta 属性
+      themeColorMeta.setAttribute("content", getComputedStyle(root).getPropertyValue('--background-100'));
+      // 调用主题切换事件
+      window.GLOBAL_CUSTOM_EVENT.ThemeToggleEvent(theme);
     })
 </script>
 {{- end }}
