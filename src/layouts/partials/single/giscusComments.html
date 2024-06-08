@@ -43,6 +43,14 @@
   }
   </script>
 
+<!-- 主题颜色自动时，评论主题跟随系统 -->
+  <script>
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+      if(!document.documentElement.classList.contains("auto"))return;
+      giscusSendMessage({theme:event.matches ? 'dark' : 'light'});
+    });
+  </script>
+
   <!-- 动态添加评论 -->
   <script>
   // 得到用户自定义主题
