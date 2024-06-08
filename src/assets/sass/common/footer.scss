@@ -20,11 +20,12 @@
 
 // 回到顶部样式
 #topLink {
-  $width_height: 42px;
+  $width_height: 32px;
+  $svgWidth: 16px;
 
   width: $width_height;
   height: $width_height;
-  padding: 12px;
+  padding: calc((#{$width_height} - #{$svgWidth}) / 2);
   position: fixed;
   bottom: 60px;
   right: -$width_height;
@@ -40,7 +41,7 @@
   }
 
   svg {
-    width: 18px;
+    width: $svgWidth;
     height: 9px;
   }
 
