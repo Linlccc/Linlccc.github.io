@@ -10,7 +10,7 @@
     {{ range $key, $value := .Data.Terms.Alphabetical }}
       {{ $count := .Count }}
       {{ with site.GetPage (printf "/%s/%s" $.Type .Name) }}
-        <li><a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a></li>
+        <li><a role="text" href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a></li>
       {{ end }}
     {{ end }}
   </ul>
