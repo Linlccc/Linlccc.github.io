@@ -74,7 +74,7 @@
             // 得到元素基于body的位置
             let elY = getOffsetTopByBody(el);
             // 如果向上滚动留出导航位置
-            if(elY < document.documentElement.scrollTop)elY = elY - document.getElementsByClassName("header")[0].getBoundingClientRect().height;
+            if(elY < document.documentElement.scrollTop)elY = elY - document.getElementById("header").getBoundingClientRect().height;
             window.scrollTo({top: elY,behavior: behavior});
             // 设置历史记录
             if (id === "top") history.replaceState(null, null, " ");
