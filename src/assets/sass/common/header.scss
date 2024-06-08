@@ -1,10 +1,11 @@
 // header 样式
 #header {
-  position: sticky;
-  transition: transform 0.3s;
-  top: 0;
+  line-height: var(--header-height);
   background-color: var(--background-100);
+  position: sticky;
+  top: 0;
   z-index: 999;
+  transition: transform 0.3s;
   &.hide {
     transform: translateY(-100%);
   }
@@ -12,7 +13,6 @@
   nav {
     display: flex;
     justify-content: space-between;
-    line-height: var(--header-height);
     max-width: calc(var(--header-width) + var(--gap) * 2);
     margin: auto;
 
@@ -30,7 +30,7 @@
           vertical-align: middle;
           transform: translate(0, -10%);
           border-radius: 6px;
-          margin-inline-end: 8px;
+          margin: 0 8px 0 0;
         }
       }
 
