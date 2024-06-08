@@ -31,7 +31,7 @@
 
   <!-- tags,上/下章链接/分享 -->
   <footer class="postFooter">
-    <ul class="tags" role="list">{{ range .GetTerms "tags" }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+    <ul class="tags" role="list">{{ range .GetTerms "tags" }}<li><a role="text" href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
     <!-- 上下页 -->
     {{ partial "single/postNavLinks.html" . }}
     <!-- 分享 -->

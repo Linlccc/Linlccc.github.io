@@ -1,25 +1,11 @@
 @import "./chroma-styles.scss";
 // 文章页面样式
 
-// 封面
-.entryCover {
-  font-size: 14px;
-  color: var(--text-200);
-  margin-bottom: var(--gap);
-  text-align: center;
-  img {
-    pointer-events: none;
-    width: 100%;
-    height: auto;
-  }
-}
-
 // 目录
 .toc {
   margin: 0 2px 40px 2px;
   padding: 0.4em;
-  background: var(--bg-200);
-  border: 1px solid var(--bg-300);
+  background: var(--background-200);
   border-radius: var(--radius);
   user-select: none;
   font-size: 17px;
@@ -36,9 +22,17 @@
     margin-inline-start: 20px;
   }
   .inner {
-    margin: 0 20px;
     padding: 10px 20px;
   }
+  a {
+    color: currentColor !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom-color: inherit;
+    }
+  }
+  // 无序
   li {
     line-height: 1.6;
     ul,
@@ -46,17 +40,11 @@
       margin-inline-start: var(--gap);
     }
   }
-  a {
-    border-bottom: 1px solid transparent;
-
-    &:hover {
-      border-bottom-color: inherit;
-    }
-  }
   // 有序
   ol {
     list-style-type: none;
     counter-reset: item;
+    padding-inline-start: 0;
 
     a::before {
       counter-increment: item;
@@ -386,8 +374,8 @@
   .paginav,
   .shareButtons {
     display: flex;
-    background: var(--bg-200);
-    border: 1px solid var(--bg-300);
+    background: var(--background-200);
+    border: 1px solid var(--border-200);
     border-radius: var(--radius);
     line-height: 30px;
   }
@@ -430,7 +418,7 @@
     left: 8px;
     height: 24px;
     width: 3px;
-    background: var(--bg-100);
+    background: var(--background-100);
   }
   .toc li.active > a::after {
     content: "";
@@ -438,7 +426,7 @@
     left: 8px;
     height: 24px;
     width: calc(100% - 8px);
-    background: var(--bg-300);
+    background: var(--border-100);
     opacity: 0.7;
     z-index: -1;
   }

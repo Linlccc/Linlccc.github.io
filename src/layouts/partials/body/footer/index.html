@@ -71,11 +71,13 @@
             // 得到要滚动到的元素
             var id = this.getAttribute("href").substr(1);
             const el = document.querySelector(`[id='${decodeURIComponent(id)}']`);
-            // 得到元素基于body的位置
-            let elY = getOffsetTopByBody(el);
-            // 如果向上滚动留出导航位置
-            if(elY < document.documentElement.scrollTop)elY = elY - document.getElementById("header").getBoundingClientRect().height;
-            window.scrollTo({top: elY,behavior: behavior});
+            // 要移动的距离
+            let moveY = el.getBoundingClientRect().y;
+            // 移动距离小于1，不做处理
+            if(Math.abs(moveY)<1)return;
+            if(moveY<0)moveY-=document.getElementById("header").getBoundingClientRect().height;
+            window.scrollBy({top: moveY,behavior: behavior});
+
             // 设置历史记录
             if (id === "top") history.replaceState(null, null, " ");
             else history.pushState(null, null, `#${id}`);
@@ -223,7 +225,7 @@
         const startY =header.classList.contains("hide")?0:header.getBoundingClientRect().height;
         // 得到当前应该激活的锚点索引,TODO:这里判断是否显示导航，显示的话y-导航高
         let activeAnchor = anchors.findIndex(a=>{
-            let y = a.getBoundingClientRect().y;
+            let y = Math.ceil(a.getBoundingClientRect().y);
             return y >= startY && y < startY + 50;
         });
         if(activeAnchor == -1)return;
