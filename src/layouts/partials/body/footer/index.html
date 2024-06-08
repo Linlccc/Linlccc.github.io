@@ -34,11 +34,9 @@
     const goTopButton = document.getElementById("topLink");
     window.addEventListener("scroll", () => {
       if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-        goTopButton.style.visibility = "visible";
-        goTopButton.style.opacity = "1";
+        goTopButton.classList.add("show");
       } else {
-        goTopButton.style.visibility = "hidden";
-        goTopButton.style.opacity = "0";
+        goTopButton.classList.remove("show");
       }
     });
   </script>

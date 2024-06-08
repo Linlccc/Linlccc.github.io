@@ -29,19 +29,24 @@
 
 // 回到顶部样式
 #topLink {
-  width: 42px;
-  height: 42px;
+  $width_height: 42px;
+
+  width: $width_height;
+  height: $width_height;
   padding: 12px;
   position: fixed;
   bottom: 60px;
-  right: 30px;
-  visibility: hidden;
-  background: var(--bg-300);
-  border-radius: 20px;
+  right: -$width_height;
+  background: var(--background-200);
+  border-radius: var(--radius);
   z-index: 999;
   font-size: 12px;
-  color: var(--text-200);
-  transition: visibility 0.5s, opacity 0.8s linear;
+  color: var(--text-100);
+  transition: right 0.5s;
+
+  &.show {
+    right: var(--gap);
+  }
 
   svg {
     width: 18px;
@@ -49,6 +54,6 @@
   }
 
   &:hover {
-    color: var(--text-100);
+    color: var(--interaction);
   }
 }
