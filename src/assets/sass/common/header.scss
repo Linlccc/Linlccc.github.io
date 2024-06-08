@@ -3,7 +3,8 @@
   position: sticky;
   transition: transform 0.3s;
   top: 0;
-
+  background-color: var(--background-100);
+  z-index: 999;
   &.hide {
     transform: translateY(-100%);
   }
