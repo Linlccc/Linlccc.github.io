@@ -124,6 +124,7 @@
     margin: auto 2px;
     color: currentColor;
     word-break: break-all;
+    color: var(--text-200);
   }
 }
 
@@ -370,7 +371,7 @@
   .tags a:hover,
   .paginav a:hover,
   .shareButtons a:hover {
-    background: var(--bg-300);
+    background: var(--background-300);
   }
 }
 
