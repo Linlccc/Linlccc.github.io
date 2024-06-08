@@ -56,6 +56,16 @@ blockquote {
 a {
   text-decoration: none;
 }
+a:not([role="text"]) {
+  text-decoration: underline;
+  color: var(--link-100);
+  &:hover {
+    text-decoration: none;
+  }
+  &:visited {
+    color: var(--link-200);
+  }
+}
 
 /* 列表标签 */
 ul,

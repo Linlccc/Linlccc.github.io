@@ -16,15 +16,6 @@
       white-space: nowrap;
     }
   }
-
-  a {
-    border-bottom: 1px solid var(--text-200);
-
-    &:hover {
-      color: var(--text-100);
-      border-bottom: 1px solid var(--text-100);
-    }
-  }
 }
 
 // 回到顶部样式

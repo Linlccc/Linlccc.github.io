@@ -15,7 +15,7 @@
   <div class="logo">
     <!-- logo -->
       {{- with $logoText }}
-        <a href="{{ absLangURL "" }}" accesskey="h" title="{{ . }} (Alt + H)">
+        <a role="text" href="{{ absLangURL "" }}" accesskey="h" title="{{ . }} (Alt + H)">
           {{ with $logoImage }}<img src="{{ . }}" aria-label="logo" height="{{ $logoImageHeight }}" />{{ end }}{{- . }}
         </a>
       {{ end -}}
@@ -33,7 +33,7 @@
         <!-- （有logo || 主题切换）&& 有多语言 -->
         {{ if and (or $logoText (not $disableThemeToggle)) (gt (site.Home.Translations | len) 0) }}<li>|</li>{{ end }}
         {{- range site.Home.Translations }}
-          <li><a href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Lang }}">{{ cond (and site.Params.displayFullLangName (gt (len .Language.LanguageName) 0)) (.Language.LanguageName | emojify) (.Lang | title) }}</a></li>
+          <li><a role="text" href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Lang }}">{{ cond (and site.Params.displayFullLangName (gt (len .Language.LanguageName) 0)) (.Language.LanguageName | emojify) (.Lang | title) }}</a></li>
         {{ end -}}
       </ul>
   </div>
@@ -46,7 +46,7 @@
         {{- $attr := printf "title='%s'" (.Title | default .Name) -}}
         {{- if and .Page (eq .Page.Layout `search`) }}{{ $attr = printf "title='%s (Alt + /)' accesskey='/'" .Title | default .Name }}{{ end -}}
         {{- $isActive := $.IsMenuCurrent .Menu . -}}
-        <a href="{{ .URL }}" {{ $attr | safeHTMLAttr }}>
+        <a role="text" href="{{ .URL }}" {{ $attr | safeHTMLAttr }}>
           <span {{ cond $isActive "class='active'" ""| safeHTMLAttr }}>{{ .Pre }}{{ .Name }}{{ .Post }}</span>
           {{- if findRE "://" .URL }}&nbsp;{{ partial "common/svg.html" "external_link" }}{{ end }}
         </a>
