@@ -298,7 +298,7 @@
       }
       // 打开状态下容器
       &[open] + .codeBlockContent {
-        max-height: 1000px;
+        max-height: 1200px;
         transition: max-height 0.3s cubic-bezier(0.5, 0, 1, 0);
       }
     }
