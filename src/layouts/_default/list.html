@@ -19,4 +19,7 @@
   {{ $paginator := .Paginate $pages }}
 
   {{ partial "common/pageList.html" . }}
+
+  <!-- 设置 css 引用 -->
+  {{ .Store.Add "css" (slice "list")}}
 {{ end }}

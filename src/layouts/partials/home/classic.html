@@ -10,3 +10,6 @@
     {{ partialCached "home/socialIcons.html" . }}
   </article>
 {{ end }}
+
+<!-- 设置 css 引用 -->
+{{ .Store.Add "css" (slice "classic" "list")}}

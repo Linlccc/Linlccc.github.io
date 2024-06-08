@@ -14,4 +14,7 @@
     <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}" aria-label="search" type="search" autocomplete="off" maxlength="64">
     <ul id="searchResults" role="list" aria-label="search results"></ul>
   </div>
+
+  <!-- 设置 css 引用 -->
+  {{ .Store.Add "css" (slice "search")}}
 {{ end }}
