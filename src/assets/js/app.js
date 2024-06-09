@@ -169,8 +169,8 @@ new MutationObserver((mutationsList, observer) => {
       const activeAnchorIndex = anchors.findIndex((a, i) => {
         // 有当前索引时，根据滚动方向跳过不必要计算的
         if (currentIndex != -1) {
-          if (isScrollDown && i <= currentIndex) return;
-          else if (!isScrollDown && i >= currentIndex) return;
+          if (isScrollDown && i < currentIndex) return;
+          else if (!isScrollDown && i > currentIndex) return;
         }
         let y = Math.ceil(a.getBoundingClientRect().y);
         return y >= startY && y < startY + 50;
