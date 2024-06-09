@@ -11,11 +11,15 @@
   {{- partial "head/hugoInternalTemplate.html" . -}}
 
 
-  <!-- 加载样式 -->
+  <!-- 引用样式 -->
   {{- partial "head/css.html" . -}}
 
   <!-- 不能执行js时的处理 -->
   {{- partial "head/noscript.html" . -}}
+
+  <!-- 引用 js -->
+  {{ $appJs := resources.Get "js/app.js" | resources.Copy "assets/js/app.js" | minify | fingerprint }}
+  <script defer crossorigin="anonymous" src="{{ $appJs.RelPermalink }}" integrity="{{ $appJs.Data.Integrity }}"></script>
 
   <!-- 加载全局自定义事件 -->
   <!-- TODO:这里看一下可以考虑换成自定义事件https://developer.mozilla.org/zh-CN/docs/Web/Events/Creating_and_triggering_events -->

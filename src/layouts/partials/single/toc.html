@@ -3,7 +3,7 @@
 -->
 
 {{ if .Param "showToc" }}
-  <details class="toc" {{ cond (.Param "tocOpen" | default false) "open" "" }}>
+  <details id="toc" class="toc" {{ cond (.Param "tocOpen" | default false) "open" "" }}>
     <!-- 标题 -->
     <summary accesskey="c" title="(Alt + C)"><span class="details">{{- T "toc" | default "Table of Contents" }}</span></summary>
     <!-- 内容 -->
