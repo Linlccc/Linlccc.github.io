@@ -12,6 +12,7 @@
 
   nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: calc(var(--header-width) + var(--gap) * 2);
     margin: auto;
@@ -20,6 +21,7 @@
     .logo {
       display: flex;
       margin: auto var(--gap);
+      flex-wrap: inherit;
 
       // 标题
       a {
