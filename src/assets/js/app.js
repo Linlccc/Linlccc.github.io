@@ -172,7 +172,6 @@ new MutationObserver((mutationsList, observer) => {
           if (isScrollDown && i <= currentIndex) return;
           else if (!isScrollDown && i >= currentIndex) return;
         }
-        console.log(a, i);
         let y = Math.ceil(a.getBoundingClientRect().y);
         return y >= startY && y < startY + 50;
       });
