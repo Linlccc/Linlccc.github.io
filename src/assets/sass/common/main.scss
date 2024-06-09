@@ -38,6 +38,7 @@
   color: var(--text-300);
   font-size: 14px;
   display: flex;
+  flex-wrap: wrap;
 
   .i18nList li {
     display: inline-flex;
