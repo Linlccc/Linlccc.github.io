@@ -217,12 +217,17 @@
         &::marker {
           content: "";
         }
+        > div {
+          width: 33%;
+        }
+        .title {
+          text-align: center;
+        }
         // 操作
         .oper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 8px;
+          &:last-child {
+            text-align: end;
+          }
 
           .status {
             height: 16px;
