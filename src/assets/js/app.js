@@ -198,6 +198,7 @@ function GetCurrentThemeColor() {
 
 // 复制按钮
 (function () {
+  // TODO:文字从多语言获取
   const beforeCopyText = "复制";
   const afterCopyText = "已复制";
   document.querySelectorAll(".codeBlock .codeCopy").forEach((codeCopyButton) => {
@@ -231,12 +232,13 @@ function GetCurrentThemeColor() {
 })();
 
 // giscus 评论
+// TODO：从 https://giscus.app/ 配置
 (function () {
   // giscus 加载状态 !1 == false
   let giscusiFrameIsLoad = !1;
 
   // 加载 giscus
-  function loadGiscus() {
+  function loadGiscus(giscusComments) {
     const giscusScript = document.createElement("script");
     giscusScript.setAttribute("src", "https://giscus.app/client.js");
     giscusScript.setAttribute("data-repo", "Linlccc/Linlccc.github.io");
@@ -253,7 +255,7 @@ function GetCurrentThemeColor() {
     giscusScript.setAttribute("data-loading", "lazy");
     giscusScript.setAttribute("crossorigin", "anonymous");
     giscusScript.async = true;
-    document.getElementById("giscusComments").appendChild(giscusScript);
+    giscusComments.appendChild(giscusScript);
 
     // 加载完成记录
     giscusScript.addEventListener("load", () => {
@@ -296,8 +298,11 @@ function GetCurrentThemeColor() {
     }
   }
 
-  // 加载giscus
-  loadGiscus();
-  // 监听主题变化
-  window.addEventListener("themeColorChange", () => giscusSendMessage({ theme: GetCurrentThemeColor() }));
+  const giscusComments = document.getElementById("giscusComments");
+  if (giscusComments) {
+    // 加载giscus
+    loadGiscus();
+    // 监听主题变化
+    window.addEventListener("themeColorChange", () => giscusSendMessage({ theme: GetCurrentThemeColor() }));
+  }
 })();
