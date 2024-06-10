@@ -3,19 +3,6 @@
   . : 页面上下文
 -->
 
-<!-- 获取默认主题 -->
-<!-- TODO:看这段主题初始化，是否能hugo处理，不用js执行 -->
-<script>
-  // 得到主题颜色
-  const theme = localStorage.getItem("pref-theme");
-  // 设置主题
-  if(theme)document.documentElement.className=theme;
-
-  // 设置系统主题颜色(iphone上下空白处颜色)
-  document.querySelector("meta[name=theme-color]").setAttribute("content", getComputedStyle(document.documentElement).getPropertyValue('--background-100'));
-  // 冒泡
-</script>
-
 <header id="header">
   {{ partial "body/header/nav.html" . }}
 </header>

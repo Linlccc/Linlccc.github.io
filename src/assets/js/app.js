@@ -7,6 +7,8 @@ const Meta_ThemeColor = document.querySelector("meta[name=theme-color]");
 const El_Root = document.documentElement;
 const El_Header = document.getElementById("header");
 
+// 主题颜色持久化Key
+const ThemeKey = "themeColor";
 // 主题颜色
 const ThemeColor = {
   Auto: "auto",
@@ -14,38 +16,46 @@ const ThemeColor = {
   Dark: "dark",
 };
 
-// 主题颜色更换触发器
-const triggerThemeColorChange = new CustomEvent("themeColorChange", {
-  detail: () => {
-    // 计算当前主题
-    let color = ThemeColor.Light;
-    if (El_Root.classList.contains(ThemeColor.Auto)) color = MediaColor_Light.matches ? ThemeColor.Light : ThemeColor.Dark;
-    else if (El_Root.classList.contains(ThemeColor.Dark)) color = ThemeColor.Dark;
-    return color;
-  },
-});
-
-// 监听系统颜色变化
-MediaColor_Light.addEventListener("change", (e) => {
-  if (!El_Root.classList.contains(ThemeColor.Auto)) return;
-  // 触发主题变化
-  window.dispatchEvent(triggerThemeColorChange);
-});
-// 监听 html 元素的 class 变化
-new MutationObserver((mutationsList, observer) => {
-  // 触发主题变化
-  window.dispatchEvent(triggerThemeColorChange);
-}).observe(El_Root, { attributes: true, attributeFilter: ["class"] });
-
-/* ----------------下面全部都是功能实现---------------- */
-
+/* 主题变化处理 */
+(function () {
+  // 主题颜色更换触发器
+  const triggerThemeColorChange = new CustomEvent("themeColorChange", {
+    detail: () => {
+      // 计算当前主题
+      let color = ThemeColor.Light;
+      if (El_Root.classList.contains(ThemeColor.Auto)) color = MediaColor_Light.matches ? ThemeColor.Light : ThemeColor.Dark;
+      else if (El_Root.classList.contains(ThemeColor.Dark)) color = ThemeColor.Dark;
+      return color;
+    },
+  });
+  // 监听系统颜色变化
+  MediaColor_Light.addEventListener("change", (e) => {
+    if (!El_Root.classList.contains(ThemeColor.Auto)) return;
+    // 触发主题变化
+    window.dispatchEvent(triggerThemeColorChange);
+  });
+  // 监听 html 元素的 class 变化
+  new MutationObserver((mutationsList, observer) => {
+    // 触发主题变化
+    window.dispatchEvent(triggerThemeColorChange);
+  }).observe(El_Root, { attributes: true, attributeFilter: ["class"] });
+})();
 // 监听主题颜色变化
 (function () {
   window.addEventListener("themeColorChange", (e) => {
+    const curThemeColor = e.detail();
+    curThemeColor != ThemeColor.Auto && localStorage.setItem(ThemeKey, curThemeColor);
     // theme-color meta 颜色跟随主题颜色
     Meta_ThemeColor.setAttribute("content", getComputedStyle(El_Root).getPropertyValue("--background-100"));
   });
 })();
+// 读取持久化主题颜色
+(function () {
+  const themeColor = localStorage.getItem(ThemeKey);
+  themeColor && (document.documentElement.className = themeColor);
+})();
+
+/* ----------------下面全部都是功能实现---------------- */
 
 // header 显示/隐藏
 (function () {
@@ -87,7 +97,7 @@ new MutationObserver((mutationsList, observer) => {
   }
 })();
 
-// 主题切换（该功能由配置控制）
+// 主题切换
 (function () {
   const themeToggle = document.getElementById("themeToggle");
   if (themeToggle) {
@@ -98,8 +108,6 @@ new MutationObserver((mutationsList, observer) => {
       else if (El_Root.classList.contains(ThemeColor.Light)) themeColor = ThemeColor.Dark;
       // 设置主题颜色
       El_Root.className = themeColor;
-      // 持久化
-      localStorage.setItem("themeColor", themeColor);
     });
   }
 })();
