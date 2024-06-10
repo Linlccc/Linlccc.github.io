@@ -188,3 +188,37 @@ new MutationObserver((mutationsList, observer) => {
     });
   }
 })();
+
+// 复制按钮
+(function () {
+  const beforeCopyText = "复制";
+  const afterCopyText = "已复制";
+  document.querySelectorAll(".codeBlock .codeCopy").forEach((codeCopyButton) => {
+    // 获取code元素
+    const codes = codeCopyButton.closest(".codeBlock").getElementsByTagName("code");
+    const code = codes[codes.length - 1];
+    if (!code) return;
+    codeCopyButton.addEventListener("click", () => {
+      // clipboard 只有在 window.isSecureContext(https) 时才能使用
+      const clipboard = navigator.clipboard;
+      if (clipboard) clipboard.writeText(codeblock.textContent);
+      else {
+        // 清除当前选中
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        // 选择元素
+        const range = document.createRange();
+        range.selectNodeContents(code);
+        selection.addRange(range);
+        // 复制内容
+        try {
+          document.execCommand("copy");
+        } catch (e) {}
+        selection.removeAllRanges();
+      }
+      // 复制后
+      codeCopyButton.innerHTML = afterCopyText;
+      setTimeout(() => (codeCopyButton.innerHTML = beforeCopyText), 2000);
+    });
+  });
+})();
