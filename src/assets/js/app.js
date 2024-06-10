@@ -15,19 +15,18 @@ const ThemeColor = {
   Light: "light",
   Dark: "dark",
 };
+// 获取当前主题
+function GetCurrentThemeColor() {
+  let color = ThemeColor.Light;
+  if (El_Root.classList.contains(ThemeColor.Auto)) color = MediaColor_Light.matches ? ThemeColor.Light : ThemeColor.Dark;
+  else if (El_Root.classList.contains(ThemeColor.Dark)) color = ThemeColor.Dark;
+  return color;
+}
 
 /* 主题变化处理 */
 (function () {
   // 主题颜色更换触发器
-  const triggerThemeColorChange = new CustomEvent("themeColorChange", {
-    detail: () => {
-      // 计算当前主题
-      let color = ThemeColor.Light;
-      if (El_Root.classList.contains(ThemeColor.Auto)) color = MediaColor_Light.matches ? ThemeColor.Light : ThemeColor.Dark;
-      else if (El_Root.classList.contains(ThemeColor.Dark)) color = ThemeColor.Dark;
-      return color;
-    },
-  });
+  const triggerThemeColorChange = new CustomEvent("themeColorChange", {});
   // 监听系统颜色变化
   MediaColor_Light.addEventListener("change", (e) => {
     if (!El_Root.classList.contains(ThemeColor.Auto)) return;
@@ -42,8 +41,8 @@ const ThemeColor = {
 })();
 // 监听主题颜色变化
 (function () {
-  window.addEventListener("themeColorChange", (e) => {
-    const curThemeColor = e.detail();
+  window.addEventListener("themeColorChange", () => {
+    const curThemeColor = GetCurrentThemeColor();
     curThemeColor != ThemeColor.Auto && localStorage.setItem(ThemeKey, curThemeColor);
     // theme-color meta 颜色跟随主题颜色
     Meta_ThemeColor.setAttribute("content", getComputedStyle(El_Root).getPropertyValue("--background-100"));
@@ -61,8 +60,8 @@ const ThemeColor = {
 (function () {
   // 滚动标准
   const scrollStandard = 20;
-  // 是否首次加载 !!1 == true
-  let isFirstLoad = !!1;
+  // 是否首次加载 !0 == true
+  let isFirstLoad = !0;
   // 最后一次位置
   let lastScrollTop = 0;
   window.addEventListener("scroll", () => {
@@ -229,4 +228,76 @@ const ThemeColor = {
       setTimeout(() => (codeCopyButton.innerHTML = beforeCopyText), 2000);
     });
   });
+})();
+
+// giscus 评论
+(function () {
+  // giscus 加载状态 !1 == false
+  let giscusiFrameIsLoad = !1;
+
+  // 加载 giscus
+  function loadGiscus() {
+    const giscusScript = document.createElement("script");
+    giscusScript.setAttribute("src", "https://giscus.app/client.js");
+    giscusScript.setAttribute("data-repo", "Linlccc/Linlccc.github.io");
+    giscusScript.setAttribute("data-repo-id", "R_kgDOI9kokw");
+    giscusScript.setAttribute("data-category", "Announcements");
+    giscusScript.setAttribute("data-category-id", "DIC_kwDOI9kok84CUU3Q");
+    giscusScript.setAttribute("data-mapping", "pathname");
+    giscusScript.setAttribute("data-strict", "1");
+    giscusScript.setAttribute("data-reactions-enabled", "1");
+    giscusScript.setAttribute("data-emit-metadata", "0");
+    giscusScript.setAttribute("data-input-position", "bottom");
+    giscusScript.setAttribute("data-theme", GetCurrentThemeColor());
+    giscusScript.setAttribute("data-lang", "zh-CN");
+    giscusScript.setAttribute("data-loading", "lazy");
+    giscusScript.setAttribute("crossorigin", "anonymous");
+    giscusScript.async = true;
+    document.getElementById("giscusComments").appendChild(giscusScript);
+
+    // 加载完成记录
+    giscusScript.addEventListener("load", () => {
+      document.querySelector("iframe.giscus-frame").addEventListener("load", () => (giscusiFrameIsLoad = true));
+    });
+  }
+
+  /**
+   * giscus 评论系统消息发送封装
+   * @param {object} message 消息内容
+   * message{
+   *      theme?: Theme;
+   *      repo?: string;
+   *      repoId?: string;
+   *      category?: string;
+   *      categoryId?: string;
+   *      term?: string;
+   *      description?: string;
+   *      backLink?: string;
+   *      number?: number;
+   *      strict?: boolean;
+   *      reactionsEnabled?: boolean;
+   *      emitMetadata?: boolean;
+   *      inputPosition?: InputPosition;
+   *      lang?: AvailableLanguage;
+   *  }
+   */
+  function giscusSendMessage(message) {
+    const giscusIframe = document.querySelector("iframe.giscus-frame");
+    if (!giscusIframe) return;
+    // 已加载，发送消息
+    if (giscusiFrameIsLoad) {
+      giscusIframe.contentWindow.postMessage({ giscus: { setConfig: message } }, "https://giscus.app");
+    } else {
+      // 未加载时直接替换 giscusIframe 的链接
+      // 在safari中不能使用向前断言`(?<=...)`正则表达式会出错
+      // giscusIframe.src = giscusIframe.src.replace(/(?<=[?|&]theme=)\w+/, message.theme);
+      // 所以使用下面的方法替换
+      giscusIframe.src = giscusIframe.src.replace(/([?|&]theme=)(\w+)/, `$1${message.theme}`);
+    }
+  }
+
+  // 加载giscus
+  loadGiscus();
+  // 监听主题变化
+  window.addEventListener("themeColorChange", () => giscusSendMessage({ theme: GetCurrentThemeColor() }));
 })();

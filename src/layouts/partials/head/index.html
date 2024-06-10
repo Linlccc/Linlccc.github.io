@@ -21,9 +21,6 @@
   {{ $appJs := resources.Get "js/app.js" | resources.Copy "assets/js/app.js" | minify | fingerprint }}
   <script defer crossorigin="anonymous" src="{{ $appJs.RelPermalink }}" integrity="{{ $appJs.Data.Integrity }}"></script>
 
-  <!-- 加载全局自定义事件 -->
-  <!-- TODO:这里看一下可以考虑换成自定义事件https://developer.mozilla.org/zh-CN/docs/Web/Events/Creating_and_triggering_events -->
-  {{- partial "GLOBAL_CUSTOM_EVENT.html" . -}}
   <!-- 加载搜索js -->
   {{- partialCached "head/search.html" . .Layout -}}
 </head>
