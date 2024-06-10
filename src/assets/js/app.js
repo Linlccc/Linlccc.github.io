@@ -201,7 +201,7 @@ new MutationObserver((mutationsList, observer) => {
     codeCopyButton.addEventListener("click", () => {
       // clipboard 只有在 window.isSecureContext(https) 时才能使用
       const clipboard = navigator.clipboard;
-      if (clipboard) clipboard.writeText(codeblock.textContent);
+      if (clipboard) clipboard.writeText(code.textContent);
       else {
         // 清除当前选中
         const selection = window.getSelection();
