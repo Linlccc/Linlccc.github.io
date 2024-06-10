@@ -10,3 +10,10 @@
   {{ $searchJs := slice $fuseJs $fastsearchJs | resources.Concat "assets/js/search.js" | minify | fingerprint }}
   <script defer crossorigin="anonymous" src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}"></script>
 {{- end -}}
+
+{{- if eq .Layout "search" -}}
+  {{ $fastsearchJs := resources.Get "js/search/search.js" | js.Build (dict "params" (dict "fuseOptions" site.Params.fuseOptions)) }}
+  {{ $fuseJs := resources.Get "js/search/fuse.min.js" }}
+  {{ $searchJs := slice $fuseJs $fastsearchJs | resources.Concat "assets/js/search1.js" | minify | fingerprint }}
+  <script defer crossorigin="anonymous" src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}"></script>
+{{- end -}}
