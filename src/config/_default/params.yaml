@@ -159,7 +159,7 @@ cover:
 
 ### 搜索页面配置 ###
 # 搜索配置 see:https://fusejs.io/api/options.html
-fuseOpts:
+fuseOptions:
   # 区分大小写
   isCaseSensitive: false
   # 排序
