@@ -301,7 +301,7 @@ function GetCurrentThemeColor() {
   const giscusComments = document.getElementById("giscusComments");
   if (giscusComments) {
     // 加载giscus
-    loadGiscus();
+    loadGiscus(giscusComments);
     // 监听主题变化
     window.addEventListener("themeColorChange", () => giscusSendMessage({ theme: GetCurrentThemeColor() }));
   }
