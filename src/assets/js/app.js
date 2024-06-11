@@ -24,7 +24,7 @@ function GetCurrentThemeColor() {
 }
 
 /* 主题变化处理 */
-(function () {
+(() => {
   // 主题颜色更换触发器
   const triggerThemeColorChange = new CustomEvent("themeColorChange", {});
   // 监听系统颜色变化
@@ -40,7 +40,7 @@ function GetCurrentThemeColor() {
   }).observe(El_Root, { attributes: true, attributeFilter: ["class"] });
 })();
 // 监听主题颜色变化
-(function () {
+(() => {
   window.addEventListener("themeColorChange", () => {
     const curThemeColor = GetCurrentThemeColor();
     curThemeColor != ThemeColor.Auto && localStorage.setItem(ThemeKey, curThemeColor);
@@ -49,7 +49,7 @@ function GetCurrentThemeColor() {
   });
 })();
 // 读取持久化主题颜色
-(function () {
+(() => {
   const themeColor = localStorage.getItem(ThemeKey);
   themeColor && (document.documentElement.className = themeColor);
 })();
@@ -57,7 +57,7 @@ function GetCurrentThemeColor() {
 /* ----------------下面全部都是功能实现---------------- */
 
 // header 显示/隐藏
-(function () {
+(() => {
   // 滚动标准
   const scrollStandard = 20;
   // 是否首次加载 !0 == true
@@ -88,7 +88,7 @@ function GetCurrentThemeColor() {
 })();
 
 // 记录/加载菜单滚动位置(考虑直接写到html中，避免屏闪)
-(function () {
+(() => {
   const menu = document.getElementById("menu");
   if (menu) {
     menu.scrollLeft = localStorage.getItem("menuScrollPosition");
@@ -97,7 +97,7 @@ function GetCurrentThemeColor() {
 })();
 
 // 主题切换
-(function () {
+(() => {
   const themeToggle = document.getElementById("themeToggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
@@ -112,7 +112,7 @@ function GetCurrentThemeColor() {
 })();
 
 // 锚点点击
-(function () {
+(() => {
   // 计算滚动是否需要动画
   const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth";
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -141,7 +141,7 @@ function GetCurrentThemeColor() {
 })();
 
 // 回到顶部功能
-(function () {
+(() => {
   const goToTop = document.getElementById("topLink");
   if (goToTop) {
     window.addEventListener("scroll", () => {
@@ -152,7 +152,7 @@ function GetCurrentThemeColor() {
 })();
 
 // 目录激活
-(function () {
+(() => {
   const toc = document.getElementById("toc");
   if (toc) {
     // 目录内容
@@ -197,7 +197,7 @@ function GetCurrentThemeColor() {
 })();
 
 // 复制按钮
-(function () {
+(() => {
   // TODO:文字从多语言获取
   const beforeCopyText = "复制";
   const afterCopyText = "已复制";
@@ -233,7 +233,7 @@ function GetCurrentThemeColor() {
 
 // giscus 评论
 // TODO：从 https://giscus.app/ 配置
-(function () {
+(() => {
   // giscus 加载状态 !1 == false
   let giscusiFrameIsLoad = !1;
 
