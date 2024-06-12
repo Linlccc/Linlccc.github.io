@@ -69,7 +69,6 @@ function debounce(fn, delay) {
 El_Input.addEventListener(
   "input",
   debounce(() => {
-    console.log(1);
     if (!fuse) return;
     const result = fuse.search(El_Input.value.trim());
     if (result.length == 0) {

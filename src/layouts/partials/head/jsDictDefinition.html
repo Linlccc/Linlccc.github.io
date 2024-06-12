@@ -19,4 +19,7 @@
 {{ $jsDict = merge $jsDict (dict "single" (dict "path" "js/function/single.js" "import" true)) }}
 <!-- giscus 评论 -->
 {{ $jsDict = merge $jsDict (dict "giscus" (dict "path" "js/function/giscus.js" "import" true "params" (dict "conf" site.Params.giscusComments.conf))) }}
+<!-- 搜索 -->
+{{ $jsDict = merge $jsDict (dict "fuse" (dict "path" "js/search/fuse.min.js" "import" true)) }}
+{{ $jsDict = merge $jsDict (dict "search" (dict "path" "js/search/search.js" "import" true "params" (dict "fuseOptions" site.Params.fuseOptions))) }}
 {{ .Store.Set "jsDict" $jsDict }}
