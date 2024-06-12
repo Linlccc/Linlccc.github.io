@@ -2,28 +2,17 @@
 <html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" class="{{ site.Params.defaultTheme | default "auto" }}">
   {{- partial "head/index.html" . -}}
 
+
 <body id="top">
   {{ partial "body/header/index.html" . }}
 
   <main class="main">{{ block "main" . }}{{ end }}</main>
 
   {{ partialCached "body/footer/index.html" . .Kind .Layout }}
-</body>
 
-<!-- 遍历引用 css -->
-{{ if site.Params.css.isImportDemand }}
-  {{ $cssDict := .Store.Get "cssDict" }}
-  {{ $cssDict }}
-  {{ range .Store.Get "css" }}
-    {{ $file := index $cssDict . }}
-    {{ if $file }}
-      {{ $outfile := printf "assets/css/%s.css" . }}
-      {{ $style := resources.Get $file | toCSS (dict "targetPath" $outfile "enableSourceMap" true) | minify | fingerprint }}
-      <link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
-    {{ end }}
-  {{ end }}
-{{ end }}
-<!-- 引入自定义样式 -->
-{{ $style := resources.Get "sass/customImport.scss" | toCSS (dict "targetPath" "assets/css/custom.css" "enableSourceMap" true) | minify | fingerprint }}
-<link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+  <!-- css 引用 -->
+  {{ partial "body/cssImport.html" . }}
+  <!-- js 引用 -->
+  {{ partial "body/jsImport.html" . }}
+</body>
 </html>

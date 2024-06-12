@@ -10,17 +10,16 @@
   <!-- 加载 hugo 内置模板 -->
   {{- partial "head/hugoInternalTemplate.html" . -}}
 
-
-  <!-- 引用样式 -->
-  {{- partial "head/css.html" . -}}
-
   <!-- 不能执行js时的处理 -->
   {{- partial "head/noscript.html" . -}}
 
-  <!-- 引用 js -->
-  {{ $appJs := resources.Get "js/app.js" | resources.Copy "assets/js/app.js" | minify | fingerprint }}
-  <script defer crossorigin="anonymous" src="{{ $appJs.RelPermalink }}" integrity="{{ $appJs.Data.Integrity }}"></script>
+  <!-- css引入字典定义 -->
+  {{- partial "head/cssDictDefinition.html" . -}}
+  <!-- js引入字典定义 -->
+  {{- partial "head/jsDictDefinition.html" . -}}
 
-  <!-- 加载搜索js -->
+
+
+  <!-- 加载搜索js,TODO:一会移除 -->
   {{- partialCached "head/search.html" . .Layout -}}
 </head>

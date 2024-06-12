@@ -5,4 +5,7 @@
 
 {{ if .Param "giscusComments.enabled" }}
   <div id="giscusComments"></div>
+
+<!-- 设置 js 引用 -->
+{{ .Store.Add "js" (slice "giscus")}}
 {{ end }}

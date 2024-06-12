@@ -30,3 +30,6 @@
 {{ if not site.Params.disableGoToTop }}
   <a id="topLink" href="#top" aria-label="{{ T "goToTop" | default "Go to Top" }}" title="{{ T "goToTop" | default "Go to Top"  }} (Alt + G)" accesskey="g"> {{ partial "common/svg.html" "upward_triangle" }} </a>
 {{ end }}
+
+<!-- 设置 js 引用 -->
+{{ .Store.Add "js" (slice "footer")}}
