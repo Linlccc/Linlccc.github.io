@@ -1,4 +1,5 @@
 /** 单页面 js */
+import { conf } from "@params";
 
 // 目录激活
 (() => {
@@ -47,9 +48,8 @@
 
 // 复制按钮
 (() => {
-  // TODO:文字从多语言获取
-  const beforeCopyText = "复制";
-  const afterCopyText = "已复制";
+  const beforeCopyText = conf.copy;
+  const afterCopyText = conf.copied;
   document.querySelectorAll(".codeBlock .codeCopy").forEach((codeCopyButton) => {
     // 获取code元素
     const codes = codeCopyButton.closest(".codeBlock").getElementsByTagName("code");
