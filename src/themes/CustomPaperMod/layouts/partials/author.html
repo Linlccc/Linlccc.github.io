@@ -1,4 +1,0 @@
-<!-- 获取作者 -->
-{{- $authors := .Params.authors | default .GitInfo.AuthorName | default site.Params.authors | default slice -}}
-{{- $authors = delimit ($authors | partial "toArray") "," -}}
-{{- return $authors -}}
