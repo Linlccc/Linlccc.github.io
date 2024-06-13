@@ -27,8 +27,8 @@
 {{- $keywords = delimit ($keywords | partial "toArray") "," -}}
 <meta name="keywords" content="{{ $keywords }}" />
 
-<!-- iphone 手机浏览器上下空白区域颜色 TODO：这个看怎么处理，不让自己设置，自动适配主题 -->
-<meta name="theme-color" content="{{ site.Params.theme_color | default "#000" }}">
+<!-- iphone 手机浏览器上下空白区域颜色(该属性保持为空，自动适配主题) -->
+<meta name="theme-color" content="">
 
 <!-- 自定义 meta -->
 {{- range site.Params.customMetas -}}

@@ -25,8 +25,6 @@ css:
   # 是否按需引入 css
   isImportDemand: false
 
-# 主题颜色（在手机浏览器上下空白区域颜色）TODO：这里后面看怎么改
-theme_color:
 # 网站图标
 favicon:
   dark:

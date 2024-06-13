@@ -10,7 +10,7 @@ const El_Root = document.documentElement;
 const El_Header = document.getElementById("header");
 
 // 主题颜色持久化Key
-const ThemeKey = "themeColor";
+const ThemeColorKey = "themeColor";
 // 主题颜色
 const ThemeColor = {
   Auto: "auto",

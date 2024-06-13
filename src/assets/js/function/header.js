@@ -51,6 +51,8 @@
       else if (El_Root.classList.contains(ThemeColor.Light)) themeColor = ThemeColor.Dark;
       // 设置主题颜色
       El_Root.className = themeColor;
+      // 持久化
+      localStorage.setItem(ThemeColorKey, themeColor);
     });
   }
 })();

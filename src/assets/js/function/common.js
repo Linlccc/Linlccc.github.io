@@ -19,14 +19,14 @@
 // 监听主题颜色变化
 (() => {
   window.addEventListener("themeColorChange", () => {
-    const curThemeColor = GetCurrentThemeColor();
-    curThemeColor != ThemeColor.Auto && localStorage.setItem(ThemeKey, curThemeColor);
     // theme-color meta 颜色跟随主题颜色
     Meta_ThemeColor.setAttribute("content", getComputedStyle(El_Root).getPropertyValue("--background-100"));
   });
 })();
 // 读取持久化主题颜色
 (() => {
-  const themeColor = localStorage.getItem(ThemeKey);
+  const themeColor = localStorage.getItem(ThemeColorKey);
   themeColor && (document.documentElement.className = themeColor);
+  // 手动一次加载移动 theme_color 的属性
+  Meta_ThemeColor.setAttribute("content", getComputedStyle(El_Root).getPropertyValue("--background-100"));
 })();
