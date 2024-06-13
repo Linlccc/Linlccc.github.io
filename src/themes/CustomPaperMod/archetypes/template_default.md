@@ -5,7 +5,7 @@
 
 ##################
 # hugo 文章默认配置
-TODO:https://gohugo.io/content-management/front-matter/
+see:https://gohugo.io/content-management/front-matter/
 ##################
 # 标题，将文件名的 '-' 替换成 ' ',并将每个单词的首字母大写
 title: { { replace .Name "-" " " | title } }
@@ -75,6 +75,9 @@ authors:
   - author1
   - author2
 
+# 在站内搜索结果中隐藏页面
+searchHidden: true
+
 # 原文章链接
 canonicalURL: ""
 
@@ -142,15 +145,4 @@ disableAnchoredHeadings: false
 # giscus 评论信息
 giscusCommentsInfo:
   enabled: true
-
-# 显示代码复制按钮
-ShowCodeCopyButtons: true
-
-#########################################################
-# papermod 主题的文章配置
-# see https://gohugo.io/content-management/front-matter/
-#########################################################
-
-# 在站内搜索结果中隐藏页面
-searchHidden: true
 ---
