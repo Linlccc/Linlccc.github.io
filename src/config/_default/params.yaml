@@ -152,8 +152,6 @@ showAuthor: true
 cover:
   # 图片生成链接
   linkFullImages: true
-  # 响应式图片,TODO:看一下之前的是怎么实现的
-  responsiveImages: true
 
 ### 搜索页面配置 ###
 # fuse搜索配置 see:https://fusejs.io/api/options.html
