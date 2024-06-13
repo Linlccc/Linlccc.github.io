@@ -96,7 +96,7 @@ window.addEventListener("keydown", (e) => {
     case "ArrowDown":
       e.preventDefault();
       if (ae == El_Input || !ae.classList.contains("fuseResult")) focusEl = El_Result.firstChild.lastChild;
-      else focusEl = ae.parentElement.nextSibling.lastChild;
+      else if (ae.parentElement != El_Result.lastChild) focusEl = ae.parentElement.nextSibling.lastChild;
       break;
     // 向上
     case "ArrowUp":
