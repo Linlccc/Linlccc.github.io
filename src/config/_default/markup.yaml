@@ -5,6 +5,8 @@ defaultMarkdownHandler: goldmark
 
 # goldmark 扩展配置，markdown扩展基础配置： https://markdown.com.cn/extended-syntax/
 goldmark:
+  # 页面的资源生成到相应的目录
+  duplicateResourceFiles: true
   extensions:
     # 定义列表
     definitionList: true

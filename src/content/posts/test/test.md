@@ -43,15 +43,18 @@ expiryDate: 2024-10-01 12:00:00
 publishDate: 2025-02-21 10:21:18
 
 cover:
-  image: "/images/posts/test/test_post_1.png"
+  image: test_post_1.png
   alt: "测试文章封面图片"
   caption: "测试文章封面描述文字"
+  relative: true
   hiddenInList: false
   hiddenInSingle: false
 
 editPost:
   disabled: false
 ---
+
+![alt text](i1.png)
 
 ## 二级标题
 
