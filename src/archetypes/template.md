@@ -15,6 +15,8 @@ linkTitle: 链接标题
 description: 描述
 # 摘要,如果为空自动截取文章内容
 Summary:
+# 隐藏摘要
+hideSummary: false
 # 权重
 weight: 1000
 
@@ -75,18 +77,8 @@ authors:
   - author1
   - author2
 
-# 在站内搜索结果中隐藏页面
-searchHidden: true
-
-# 原文章链接
-canonicalURL: ""
-
-# 从 home 页中隐藏，值只能是true/false
-hiddenInHomeList: false
-
-# 隐藏摘要
-hideSummary: false
-
+# 显示面包屑导航
+ShowBreadCrumbs: true
 # 隐藏元数据（比如作者、发布日期等）
 hidemeta: false
 # 显示文章阅读时间
@@ -95,6 +87,30 @@ ShowReadingTime: true
 ShowWordCount: true
 # 显示作者
 showAuthor: true
+# 显示目录
+showToc: true
+# 打开目录
+tocOpen: false
+# 显示文章导航链接(上/下页)
+showPostNavLinks: true
+
+# 禁用分享功能
+disableShare: false
+# 禁用锚定标题
+disableAnchoredHeadings: false
+# giscus 评论信息
+giscusCommentsInfo:
+  enabled: true
+
+# 在站内搜索结果中隐藏页面
+searchHidden: true
+# 从 home 页中隐藏，值只能是true/false
+hiddenInHomeList: false
+
+# 显示原文章信息，用于显示转载自哪里
+showCanonicalLink: true
+# 原文章链接
+canonicalLink:
 
 # 文章封面
 cover:
@@ -111,9 +127,6 @@ cover:
   # 在文章页面中隐藏封面
   hiddenInSingle: false
 
-# 显示面包屑导航
-ShowBreadCrumbs: true
-
 # 文章编辑链接信息
 editPost:
   # 链接
@@ -122,27 +135,4 @@ editPost:
   appendFilePath: true
   # 禁用编辑
   disabled: false
-
-# 显示原文章信息，用于显示转载自哪里
-showCanonicalLink: true
-# 原文章链接
-canonicalLink:
-
-# 显示目录
-showToc: true
-# 打开目录
-tocOpen: false
-
-# 显示文章导航链接(上/下页)
-showPostNavLinks: true
-
-# 禁用分享功能
-disableShare: false
-
-# 禁用锚定标题
-disableAnchoredHeadings: false
-
-# giscus 评论信息
-giscusCommentsInfo:
-  enabled: true
 ---
