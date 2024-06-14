@@ -3,6 +3,11 @@ title: "这是一篇测试文章"
 linkTitle: "测试文章"
 Description: "测试文章描述"
 Summary: "测试文章摘要"
+weight: 1
+
+date: 2023-02-21 10:21:18
+# expiryDate: 2024-10-01 12:00:00
+publishDate: 2025-02-21 10:21:18
 
 tags:
   - tag1
@@ -36,11 +41,9 @@ canonicalLink: http://linlccc.com/posts/test/
 ShowBreadCrumbs: true
 searchHidden: false
 draft: true
-weight: 1
 
-date: 2023-02-21 10:21:18
-expiryDate: 2024-10-01 12:00:00
-publishDate: 2025-02-21 10:21:18
+
+
 
 cover:
   image: test_post_1.png

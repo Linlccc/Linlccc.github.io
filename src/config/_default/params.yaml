@@ -239,3 +239,6 @@ social:
 # 站点图像
 images:
   - /favicon/dark/favicon-192x192.png
+
+# 文章时间显示最后修改时间
+showLastmod: false
