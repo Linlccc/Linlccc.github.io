@@ -21,13 +21,14 @@ hideSummary: false
 weight: 1000
 
 # 日期
-date: { { (time .Date).Format "2006-01-02 15:04:05" } }
+date: {{ (time .Date).Format "2006-01-02 15:04:05" }}
 # 发布日期
-publishDate: { { (time .Date).Format "2006-01-02 15:04:05" } }
+publishDate: {{ (time .Date).Format "2006-01-02 15:04:05" }}
 # 过期日期
-expiryDate: { { (time .Date).Format "2006-01-02 15:04:05" } }
+expiryDate: {{ (time .Date).Format "2006-01-02 15:04:05" }}
 # 最后修改日期，enableGitInfo 设置为true后会自动设置成 git 提交日期
-lastmod: { { (time .Date).Format "2006-01-02 15:04:05" } }
+lastmod: {{ (time .Date).Format "2006-01-02 15:04:05" }}
+
 
 # 是否是草稿
 draft: false
@@ -87,6 +88,10 @@ ShowReadingTime: true
 ShowWordCount: true
 # 显示作者
 showAuthor: true
+# 显示原文章信息，用于显示转载自哪里
+showCanonicalLink: true
+# 原文章链接
+canonicalLink:
 # 显示目录
 showToc: true
 # 打开目录
@@ -106,11 +111,6 @@ giscusCommentsInfo:
 searchHidden: true
 # 从 home 页中隐藏，值只能是true/false
 hiddenInHomeList: false
-
-# 显示原文章信息，用于显示转载自哪里
-showCanonicalLink: true
-# 原文章链接
-canonicalLink:
 
 # 文章封面
 cover:

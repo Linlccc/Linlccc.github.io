@@ -9,6 +9,7 @@ weight: 1
 date: 2023-02-21 10:21:18
 expiryDate: 2024-10-01 12:00:00
 publishDate: 2025-02-21 10:21:18
+lastmod: 2025-02-21 10:21:18
 
 draft: true
 
@@ -30,18 +31,24 @@ authors:
   - author1
   - author2
 
+ShowBreadCrumbs: true
 hidemeta: false
 ShowReadingTime: true
 ShowWordCount: true
 showAuthor: true
+ShowCanonicalLink: true
+canonicalLink: http://linlccc.com/posts/test/
+showToc: true
+tocOpen: true
+showPostNavLinks: true
+
+disableShare: false
+disableAnchoredHeadings: false
+giscusComments:
+  enabled: true
 
 searchHidden: false
 hiddenInHomeList: false
-
-ShowCanonicalLink: true
-canonicalLink: http://linlccc.com/posts/test/
-
-ShowBreadCrumbs: true
 
 cover:
   image: test_post_1.png
@@ -52,6 +59,8 @@ cover:
   hiddenInSingle: false
 
 editPost:
+  url: https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content
+  appendFilePath: true
   disabled: false
 ---
 

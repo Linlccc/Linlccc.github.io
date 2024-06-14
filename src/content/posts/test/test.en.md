@@ -1,29 +1,67 @@
 ---
 title: "这是一篇测试文章(英文)"
+linkTitle: "测试文章"
 Description: "测试文章描述"
 Summary: "测试文章摘要"
-tags: ["测试", "文章"]
-categories: ["tt", "aa"]
-
-canonicalLink: "http://linlccc.com/posts/test/"
-
-ShowCanonicalLink: true
-canonicalLink: http://linlccc.com/posts/test/
-
-# disableAnchoredHeadings: true
-
-ShowBreadCrumbs: true
-searchHidden: false
-draft: true
+hideSummary: true
 weight: 1
 
 date: 2023-02-21 10:21:18
+expiryDate: 2024-10-01 12:00:00
+publishDate: 2025-02-21 10:21:18
+lastmod: 2025-02-21 10:21:18
+
+draft: true
+
+aliases:
+  - /posts/test1/
+  - /posts/test2/
+
+keywords:
+  - keyword1
+  - keyword2
+tags:
+  - tag1
+  - tag2
+categories:
+  - category1
+  - category2
+
+authors:
+  - author1
+  - author2
+
+ShowBreadCrumbs: false
+hidemeta: true
+ShowReadingTime: false
+ShowWordCount: false
+showAuthor: false
+ShowCanonicalLink: true
+canonicalLink: http://linlccc.com/posts/test/
+showToc: false
+tocOpen: false
+showPostNavLinks: false
+
+disableShare: true
+disableAnchoredHeadings: true
+giscusComments:
+  enabled: false
+
+searchHidden: false
+hiddenInHomeList: false
 
 cover:
-  image: "/images/posts/test/test_post_1.png"
+  image: images/posts/test/test_post_1.png
   alt: "测试文章封面图片"
   caption: "测试文章封面描述文字"
-  hidden: false
+  relative: false
+  hiddenInList: true
+  hiddenInSingle: true
+
+editPost:
+  url: https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content
+  appendFilePath: false
+  disabled: true
 ---
 
 <!-- 使用 collapse 简码 -->
