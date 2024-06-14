@@ -19,6 +19,8 @@ Summary:
 hideSummary: false
 # 权重
 weight: 1000
+# 是否是草稿
+draft: false
 
 # 日期
 date: {{ (time .Date).Format "2006-01-02 15:04:05" }}
@@ -28,10 +30,6 @@ publishDate: {{ (time .Date).Format "2006-01-02 15:04:05" }}
 expiryDate: {{ (time .Date).Format "2006-01-02 15:04:05" }}
 # 最后修改日期，enableGitInfo 设置为true后会自动设置成 git 提交日期
 lastmod: {{ (time .Date).Format "2006-01-02 15:04:05" }}
-
-
-# 是否是草稿
-draft: false
 
 # 别名，用于重定向  (比如: /post/[aliases]/ 会重定向到当前页面)
 aliases:

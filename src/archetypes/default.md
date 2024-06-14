@@ -3,8 +3,6 @@
 title: "{{ replace .Name "-" " " | title }}"
 # 描述
 description: ""
-# 摘要
-Summary: ""
 # 标签
 tags: []
 # 显示权重（越小显示越靠前）

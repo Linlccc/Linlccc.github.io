@@ -5,13 +5,12 @@ Description: "测试文章描述"
 Summary: "测试文章摘要"
 hideSummary: true
 weight: 1
+draft: true
 
 date: 2023-02-21 10:21:18
 expiryDate: 2024-10-01 12:00:00
 publishDate: 2025-02-21 10:21:18
 lastmod: 2025-02-21 10:21:18
-
-draft: true
 
 aliases:
   - /posts/test1/
