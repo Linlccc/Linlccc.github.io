@@ -36,8 +36,8 @@
 {{ end }}
 
 <!-- 原链接 -->
-{{- $canonicalURL := .Params.canonicalURL | default .Permalink -}}
-<link rel="canonical" href="{{ $canonicalURL }}" />
+{{- $canonicalLink := .Params.canonicalLink | default .Permalink -}}
+<link rel="canonical" href="{{ $canonicalLink }}" />
 
 <!-- SSR -->
 {{- range .AlternativeOutputFormats -}}

@@ -13,7 +13,7 @@ categories: []
 # 是否显示转载链接
 ShowCanonicalLink: false
 # 转载链接
-canonicalURL: ""
+canonicalLink: ""
 
 # 是否从搜索中隐藏
 searchHidden: false
@@ -27,50 +27,50 @@ date: "2024-04-22 20:06:55"
 
 # 封面
 cover:
-    # 封面图片
-    image: ""
-    # 图片异常时显示的文字
-    alt: ""
-    # 封面描述文字（只在内容页显示）
-    caption: ""
-    # 是否隐藏封面（只控制内容页）
-    hidden: true
+  # 封面图片
+  image: ""
+  # 图片异常时显示的文字
+  alt: ""
+  # 封面描述文字（只在内容页显示）
+  caption: ""
+  # 是否隐藏封面（只控制内容页）
+  hidden: true
 ---
 
 ## 生成新的 SSH 密钥
 
 - 在终端中输入以下指令以提供的电子邮件为标签创建`SSH`密钥
 
-~~~ Bash
+```Bash
 ssh-keygen -t rsa -b 4096 -C "[email@example.com]"
-~~~
+```
 
 - 根据提示输入密钥保存文件，可空保存到默认文件`C:\Users\[User]\.ssh\id_rsa`
-- 根据提示输入两次密码（建议不设置密码，否者每次push都需要输入密码）
+- 根据提示输入两次密码（建议不设置密码，否者每次 push 都需要输入密码）
 
 ## 将 SSH 密钥添加到 ssh-agent
 
 - 以管理员权限打开 `PowerShell` 启动 `ssh agent`:
 
-~~~ Bash
+```Bash
 Get-Service -Name ssh-agent | Set-Service -StartupType Manual
 Start-Service ssh-agent
-~~~
+```
 
 - 将 SSH 私钥添加到 ssh-agent (无需管理员权限)
 
-~~~ Bash
+```Bash
 ssh-add C:\Users\[User]\.ssh\id_rsa
-~~~
+```
 
 ## 移除 SSH 密钥
 
 - 删除`C:\Users\[User]\.ssh\`文件夹中的两个密钥文件
 - 从`ssh agent`中移除`ssh`密钥
 
-~~~ Bash
+```Bash
 # 查看已加载的密钥列表
 ssh-add -l
 # 移除密钥
 ssh-add -d C:\Users\[User]\.ssh\id_rsa
-~~~
+```

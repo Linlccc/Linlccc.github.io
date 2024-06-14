@@ -3,47 +3,45 @@ title: "这是一篇测试文章"
 linkTitle: "测试文章"
 Description: "测试文章描述"
 Summary: "测试文章摘要"
+hideSummary: false
 weight: 1
 
 date: 2023-02-21 10:21:18
-# expiryDate: 2024-10-01 12:00:00
+expiryDate: 2024-10-01 12:00:00
 publishDate: 2025-02-21 10:21:18
 
-tags:
-  - tag1
-  - tag2
-# tags: tag1
-
-categories:
-  - category1
-  - category2
-categories: categories1
-
-keywords:
-  - keyword1
-  - keyword2
-keywords: keyword1
+draft: true
 
 aliases:
   - /posts/test1/
   - /posts/test2/
 
+keywords:
+  - keyword1
+  - keyword2
+tags:
+  - tag1
+  - tag2
+categories:
+  - category1
+  - category2
+
 authors:
   - author1
   - author2
-authors: author1
 
+hidemeta: false
+ShowReadingTime: true
+ShowWordCount: true
+showAuthor: true
+
+searchHidden: false
 hiddenInHomeList: false
 
 ShowCanonicalLink: true
 canonicalLink: http://linlccc.com/posts/test/
 
 ShowBreadCrumbs: true
-searchHidden: false
-draft: true
-
-
-
 
 cover:
   image: test_post_1.png
