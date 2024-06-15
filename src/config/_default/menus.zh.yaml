@@ -28,22 +28,22 @@ main:
     pageRef: /tags/
     weight: 30
 
-  - identifier: categories
-    name: 分类
-    pageRef: /categories/
-    weight: 40
+  # - identifier: categories
+  #   name: 分类
+  #   pageRef: /categories/
+  #   weight: 40
 
-  - identifier: keywords
-    name: 关键字
-    pageRef: /keywords/
-    weight: 50
+  # - identifier: keywords
+  #   name: 关键字
+  #   pageRef: /keywords/
+  #   weight: 50
 
   - identifier: archives
     name: 档案
     pageRef: /archives/
     weight: 60
 
-  - identifier: linlccc
-    name: Linlccc
-    url: https://linlccc.github.io/
-    weight: 100
+  # - identifier: linlccc
+  #   name: Linlccc
+  #   url: https://linlccc.github.io/
+  #   weight: 100

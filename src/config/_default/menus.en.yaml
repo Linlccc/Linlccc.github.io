@@ -16,10 +16,10 @@ main:
     pageRef: /tags/
     weight: 30
 
-  - identifier: categories
-    name: categories
-    pageRef: /categories/
-    weight: 40
+  # - identifier: categories
+  #   name: categories
+  #   pageRef: /categories/
+  #   weight: 40
 
   - identifier: archives
     name: archives
