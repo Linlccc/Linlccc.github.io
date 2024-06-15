@@ -1,0 +1,3 @@
+[submodule "src/themes/Hahah"]
+	path = src/themes/Hahah
+	url = git@github.com:Linlccc/hugo-Hahah.git
