@@ -14,7 +14,7 @@
     {{ if not $css}}{{ errorf (printf "'%s'key没有找到,或者没有找到'%s'文件" . $cssInfo.path) }}{{ end }}
     <!-- 引用样式 -->
     {{ $outfile := printf "assets/css/%s.css" . }}
-    {{ with ($css = $css | toCSS (dict "targetPath" $outfile "enableSourceMap" true) | minify | fingerprint) }}
+    {{ if ($css = $css | toCSS (dict "targetPath" $outfile "enableSourceMap" true) | minify | fingerprint) }}
       <!-- 是否引入 -->
       {{ if $cssInfo.import }}
         <link crossorigin="anonymous" rel="preload stylesheet" as="style" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" />
