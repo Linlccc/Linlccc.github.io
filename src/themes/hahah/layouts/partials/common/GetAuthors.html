@@ -1,6 +1,0 @@
-<!-- 获取作者列表
-  参数：
-  . : 当前页面上下文
--->
-
-{{ return (or .Params.authors .GitInfo.AuthorName site.Params.author.name slice | partial "toArray") }}

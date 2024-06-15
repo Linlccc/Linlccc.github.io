@@ -1,3 +1,0 @@
-<!-- markdown 代码块模板，see:https://gohugo.io/render-hooks/code-blocks/ -->
-
-{{ partial "common/codeBlock.html" (dict "isOpen" (not .Attributes.close) "type" .Type "content" (transform.HighlightCodeBlock .).Wrapped ) }}

@@ -1,6 +1,0 @@
-/* 导入库 */
-
-/* 确保不同浏览器样式一致 */
-@import "../css/lib/normalize";
-/* 更现代化的重设 */
-@import "../css/lib/reset";

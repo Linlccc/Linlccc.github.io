@@ -1,8 +1,0 @@
-{{ $isMd := cond .IsNamedParams (.Get "md") (.Get 0) }}
-<div dir="rtl">
-  {{ if eq $isMd false }}
-    {{ .Inner }}
-  {{ else }}
-    {{ .Inner | markdownify }}
-  {{ end }}
-</div>
