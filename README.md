@@ -9,6 +9,7 @@
 ```git
 git clone git@github.com:Linlccc/Linlccc.github.io.git
 cd Linlccc.github.io
+git submodule update --init --recursive
 ```
 
 ## 自动部署
