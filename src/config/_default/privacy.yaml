@@ -1,4 +1,5 @@
 # hugo 内置模板和简码的隐私配置
+#see:https://gohugo.io/about/privacy/
 
 # 评论系统
 disqus:

@@ -1,9 +1,10 @@
-# Markdown 处理配置 https://gohugo.io/getting-started/configuration-markup/
+# Markdown 处理配置
+# see:https://gohugo.io/getting-started/configuration-markup/
 
 # 默认 Markdown 处理程序
 defaultMarkdownHandler: goldmark
 
-# goldmark 扩展配置，markdown扩展基础配置： https://markdown.com.cn/extended-syntax/
+# goldmark 扩展配置，markdown扩展基础配置
 goldmark:
   # 页面的资源生成到相应的目录
   duplicateResourceFiles: true

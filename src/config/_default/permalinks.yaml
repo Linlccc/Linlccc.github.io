@@ -1,3 +1,4 @@
-# 页面访问链接配置 https://gohugo.io/content-management/urls/#permalink-configuration-values
+# 页面访问链接配置
+# see:https://gohugo.io/content-management/urls/#permalink-configuration-values
 
 posts: /:sections/:slugorfilename/

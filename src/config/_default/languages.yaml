@@ -1,4 +1,5 @@
 # 语言配置
+# see:https://gohugo.io/content-management/multilingual/#configure-languages
 
 zh:
   disabled: false

@@ -1,4 +1,5 @@
 # hugo 内置模板和简码的服务配置
+# see:https://gohugo.io/methods/site/config/#services
 
 disqus:
   shortname:
