@@ -13,8 +13,17 @@
     <language>zh-CN</language>
     <managingEditor>linlccc@163.com (Linlccc)</managingEditor>
     <webMaster>linlccc@163.com (Linlccc)</webMaster>
-    <lastBuildDate>Sun, 16 Jun 2024 21:15:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2024 21:38:04 +0800</lastBuildDate>
     <atom:link href="https://linlccc.com/index.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>hexoTest</title>
+        <link>https://linlccc.com/hexotest/</link>
+        <pubDate>Sun, 16 Jun 2024 21:33:55 +0800</pubDate>
+        <author>[Lin]</author>
+        <guid>https://linlccc.com/hexotest/</guid>
+        <description>测试hexo添加页面</description>
+      </item>
     
       <item>
         <title>常用软件</title>

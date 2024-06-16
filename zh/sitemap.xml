@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://linlccc.com/hexotest/</loc>
+    <lastmod>2024-06-16T21:38:04+08:00</lastmod>
+  </url><url>
     <loc>https://linlccc.com/posts/mostusedsoftwares/</loc>
     <lastmod>2024-06-16T21:15:16+08:00</lastmod>
   </url><url>
@@ -54,11 +57,8 @@
     <loc>https://linlccc.com/games/g1/</loc>
     <lastmod>2024-06-16T21:15:16+08:00</lastmod>
   </url><url>
-    <loc>https://linlccc.com/hahah-sample/</loc>
-    <lastmod>2024-06-15T22:47:30+08:00</lastmod>
-  </url><url>
     <loc>https://linlccc.com/</loc>
-    <lastmod>2024-06-16T21:21:47+08:00</lastmod>
+    <lastmod>2024-06-16T21:38:04+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -69,6 +69,12 @@
                 hreflang="zh-CN"
                 href="https://linlccc.com/"
                 />
+  </url><url>
+    <loc>https://linlccc.com/tags/test/</loc>
+    <lastmod>2024-06-16T21:38:04+08:00</lastmod>
+  </url><url>
+    <loc>https://linlccc.com/hahah-sample/</loc>
+    <lastmod>2024-06-15T22:47:30+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/tags/software/</loc>
     <lastmod>2024-06-16T21:15:16+08:00</lastmod>
