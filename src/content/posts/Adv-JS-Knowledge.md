@@ -5,9 +5,10 @@ description: ''
 langs:
 - javascript
 lastmod: '2024-06-16T22:28:46.291+08:00'
-tags: '["javascript"]'
+tags:
+- javascript
 title: 手写js高级知识点
-weight: '1000'
+weight: 100
 ---
 ## 实现原生的 AJAX 请求
 
@@ -1517,4 +1518,3 @@ Promise.prototype.finally = function (callback) {
   );
 };
 ```
-
