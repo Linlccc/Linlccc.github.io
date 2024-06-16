@@ -27,6 +27,11 @@ main:
     name: 标签
     pageRef: /tags/
     weight: 30
+    
+  - identifier: langs
+    name: 语言
+    pageRef: /langs/
+    weight: 40
 
   # - identifier: categories
   #   name: 分类
