@@ -177,7 +177,8 @@ showCanonicalLink: true
 # 文章编辑链接信息
 editPost:
   # 链接
-  url: https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content
+  # url: https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content
+  url: https://hexo.dotnetrun.com/edit_page.html?file=content
   # 将文件路径附加到编辑链接
   appendFilePath: true
   # 禁用编辑
