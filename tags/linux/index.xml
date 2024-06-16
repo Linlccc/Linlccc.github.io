@@ -13,14 +13,14 @@
     <language>zh-CN</language>
     <managingEditor>linlccc@163.com (Linlccc)</managingEditor>
     <webMaster>linlccc@163.com (Linlccc)</webMaster>
-    <lastBuildDate>Sun, 05 May 2024 03:28:13 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2024 21:15:16 +0800</lastBuildDate>
     <atom:link href="https://linlccc.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Linux 命令大全</title>
         <link>https://linlccc.com/posts/linuxcommandlist/</link>
         <pubDate>Sun, 05 May 2024 01:46:07 +0800</pubDate>
-        <author>[Lin]</author>
+        <author>[Linlccc]</author>
         <guid>https://linlccc.com/posts/linuxcommandlist/</guid>
         <description>系统指令 # Bash 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 # 显示系统信息：内核版本、机器类型等 uname # 显示正在运行的Linux内核的发行版</description>
       </item>

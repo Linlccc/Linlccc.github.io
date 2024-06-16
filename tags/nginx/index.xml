@@ -13,16 +13,16 @@
     <language>zh-CN</language>
     <managingEditor>linlccc@163.com (Linlccc)</managingEditor>
     <webMaster>linlccc@163.com (Linlccc)</webMaster>
-    <lastBuildDate>Sun, 05 May 2024 20:36:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2024 21:15:16 +0800</lastBuildDate>
     <atom:link href="https://linlccc.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Nginx基础配置</title>
         <link>https://linlccc.com/posts/nginxconfig/</link>
         <pubDate>Sun, 05 May 2024 19:57:58 +0800</pubDate>
-        <author>[Lin]</author>
+        <author>[Linlccc]</author>
         <guid>https://linlccc.com/posts/nginxconfig/</guid>
-        <description>具体配置可见 # NGINX 配置 NGINX 入门学习笔记 NGINX 备忘清单 Web服务器 # nginx 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 # http server { listen 80; server_name _; location / { root /data; index index.html index.htm; }</description>
+        <description>具体配置可见 # NGINX 配置 NGINX 入门学习笔记 NGINX 备忘清单 Web 服务器 # nginx 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 # http server { listen 80; server_name _; location / { root /data; index index.html index.htm; } } #</description>
       </item>
     </channel>
 </rss>
