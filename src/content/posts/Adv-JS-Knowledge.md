@@ -4,12 +4,12 @@ date: 2024-05-07 17:05:29
 description: ''
 langs:
 - javascript
-lastmod: '2024-06-16T22:25:50.000+08:00'
+lastmod: '2024-06-16T22:28:46.291+08:00'
 tags: '["javascript"]'
 title: 手写js高级知识点
 weight: '1000'
 ---
-## 1、实现原生的 AJAX 请求
+## 实现原生的 AJAX 请求
 
 ```js
 const ajax = {
@@ -37,7 +37,7 @@ const ajax = {
 };
 ```
 
-## 2、手写 new 的过程
+## 手写 new 的过程
 
 ```js
 function myNew(fn, ...args) {
@@ -51,7 +51,7 @@ function myNew(fn, ...args) {
 }
 ```
 
-## 3、instanceof 关键字
+## instanceof 关键字
 
 ```js
 function instanceOf(father, child) {
@@ -69,7 +69,7 @@ function instanceOf(father, child) {
 }
 ```
 
-## 4、实现防抖函数
+## 实现防抖函数
 
 ```js
 function debounce(fn, delay = 500) {
@@ -86,7 +86,7 @@ function debounce(fn, delay = 500) {
 }
 ```
 
-## 5、实现节流函数
+## 实现节流函数
 
 ```js
 function throttle(fn, delay = 200) {
@@ -103,7 +103,7 @@ function throttle(fn, delay = 200) {
 }
 ```
 
-## 6、实现数组去重
+## 实现数组去重
 
 ```js
 // 第一种：Map记录
@@ -125,7 +125,7 @@ function quchong2(arr) {
 }
 ```
 
-## 7、用 setTimeout 实现 setInterval
+## 用 setTimeout 实现 setInterval
 
 ```js
 function mySetTimout(fn, delay) {
@@ -149,7 +149,7 @@ setTimeout(() => {
 }, 4000);
 ```
 
-## 8、用 setInterval 实现 setTimeout
+## 用 setInterval 实现 setTimeout
 
 ```js
 function mySetInterval(fn, delay) {
@@ -163,7 +163,7 @@ function mySetInterval(fn, delay) {
 mySetInterval(() => console.log(888), 1000);
 ```
 
-## 9、实现一个 compose 函数
+## 实现一个 compose 函数
 
 ```js
 function fn1(x) {
@@ -194,7 +194,7 @@ function compose(...fn) {
 }
 ```
 
-## 10、实现一个科里化函数
+## 实现一个科里化函数
 
 ```js
 const add = (a, b, c) => a + b + c;
@@ -225,7 +225,7 @@ const a = currying(add, 1);
 console.log(a(2, 3));
 ```
 
-## 11、实现一个 LRU 缓存函数
+## 实现一个 LRU 缓存函数
 
 ```js
 // 实现如下：
@@ -260,7 +260,7 @@ class LRUCache {
 }
 ```
 
-## 12、简单实现 发布订阅模式
+## 简单实现 发布订阅模式
 
 ```js
 class EventEmitter {
@@ -307,7 +307,7 @@ class EventEmitter {
 }
 ```
 
-## 13、实现 JSON.parse
+## 实现 JSON.parse
 
 ```js
 function parse(json) {
@@ -315,7 +315,7 @@ function parse(json) {
 }
 ```
 
-## 14、将 DOM 转化成树结构对象
+## 将 DOM 转化成树结构对象
 
 ```html
 <div>
@@ -352,10 +352,9 @@ function dom2tree(dom) {
     dom.childNodes.forEach(child => obj.children.push(dom2tree(child)))
     return obj
 }
-
 ```
 
-## 15、将树结构转换为 DOM
+## 将树结构转换为 DOM
 
 ```js
 // 树结构
@@ -409,7 +408,7 @@ function _render(vnode) {
 </div>
 ```
 
-## 16、判断一个对象有环引用
+## 判断一个对象有环引用
 
 ```js
 var obj = {
@@ -448,7 +447,7 @@ function cycleDetector(obj) {
 }
 ```
 
-## 17、计算一个对象的层数
+## 计算一个对象的层数
 
 ```js
 const obj = {
@@ -482,7 +481,7 @@ function loopGetLevel(obj) {
 }
 ```
 
-## 18、对象的扁平化
+## 对象的扁平化
 
 ```js
 const obj = {
@@ -536,7 +535,7 @@ function flatten(obj) {
 console.log(flatten(obj));
 ```
 
-## 19、实现(a == 1 && a == 2 && a == 3)为 true
+## 实现(a == 1 && a == 2 && a == 3)为 true
 
 ```js
 // 第一种方法
@@ -563,7 +562,7 @@ Object.defineProperty(window, "a", {
 console.log(a == 1 && a == 2 && a == 3); // true
 ```
 
-## 20、实现限制并发的 Promise 调度器
+## 实现限制并发的 Promise 调度器
 
 ```js
 addTask(1000, "1");
@@ -630,7 +629,7 @@ addTask(400, "4");
 scheduler.taskStart();
 ```
 
-## 21、实现 lazyMan 函数
+## 实现 lazyMan 函数
 
 ```js
 // 实现一个LazyMan，可以按照以下方式调用:
@@ -719,10 +718,9 @@ lazyMan('Hank').sleep(1).eat('dinner')
 lazyMan('Hank').eat('dinner').eat('supper')
 
 lazyMan('Hank').eat('supper').sleepFirst(5)
-
 ```
 
-## 22、实现 add 函数
+## 实现 add 函数
 
 ```js
 add(1)(2)(3)()=6
@@ -750,19 +748,19 @@ console.log(add(1)(2)(3)())
 console.log(add(1, 2)(3)())
 ```
 
-## 23、实现一个合格的深拷贝
+## 实现一个合格的深拷贝
 
 <a href="https://juejin.cn/post/7017991655009566728" target="_blank">深拷贝有这 5 个段位？</a>
 
-## 24、实现 Promise
+## 实现 Promise
 
 <a href="https://juejin.cn/post/6994594642280857630" target="_blank">手写 Promise</a>
 
-## 25、实现 async/await
+## 实现 async/await
 
 <a href="https://juejin.cn/post/7007031572238958629" target="_blank">7 张图，20 分钟就能搞定的 async/await 原理</a>
 
-## 26、forEach
+## forEach
 
 ```js
 参数代表含义
@@ -786,7 +784,7 @@ players.sx_forEach((item, index, arr) => {
 // { name: '杜兰特', num: 35 } 4
 ```
 
-## 27、map
+## map
 
 ```js
 /**参数代表含义
@@ -807,7 +805,7 @@ console.log(players.sx_map((item, index) => `${item.name}--${item.num}--${index}
 // [ '科比--24--0', '詹姆斯--23--1', '保罗--3--2', '威少--0--3', '杜兰特--35--4' ]
 ```
 
-## 28、filter
+## filter
 
 ```js
 Array.prototype.sx_filter = function (callback) {
@@ -826,7 +824,7 @@ console.log(players.sx_filter((item) => item.num >= 23));
 // ]
 ```
 
-## 29、every
+## every
 
 ```js
 Array.prototype.sx_every = function (callback) {
@@ -843,7 +841,7 @@ console.log(players.sx_every((item) => item.num >= 23)); // false
 console.log(players.sx_every((item) => item.num >= 0)); // true
 ```
 
-## 30、some
+## some
 
 ```js
 Array.prototype.sx_some = function (callback) {
@@ -860,7 +858,7 @@ console.log(players.sx_some((item) => item.num >= 23)); // true
 console.log(players.sx_some((item) => item.num >= 50)); // false
 ```
 
-## 31、reduce
+## reduce
 
 ```js
 /**参数代表含义
@@ -893,7 +891,7 @@ const sum = players.sx_reduce((pre, next) => {
 console.log(sum); // 85
 ```
 
-## 32、findIndex
+## findIndex
 
 ```js
 Array.prototype.sx_findIndex = function (callback) {
@@ -909,7 +907,7 @@ console.log(players.sx_findIndex((item) => item.name === "科比")); // 0
 console.log(players.sx_findIndex((item) => item.name === "安东尼")); // -1
 ```
 
-## 33、find
+## find
 
 ```js
 Array.prototype.sx_find = function (callback) {
@@ -925,7 +923,7 @@ console.log(players.sx_find((item) => item.name === "科比")); // { name: '科�
 console.log(players.sx_find((item) => item.name === "安东尼")); // undefined
 ```
 
-## 34、fill
+## fill
 
 ```js
 /**参数代表含义
@@ -955,7 +953,7 @@ console.log(players.sx_fill("林三心", 1, 3));
 // ]
 ```
 
-## 35、includes
+## includes
 
 ```js
 // 用处：查找元素，查到返回true，反之返回false，可查找NaN
@@ -976,7 +974,7 @@ console.log([1, 2, 3, NaN].sx_includes(NaN)) // true
 console.log([1, 2, 3].sx_includes(1, 1)) // false
 ```
 
-## 36、join
+## join
 
 ```js
 // 用处：将数组用分隔符拼成字符串，分隔符默认为,
@@ -993,7 +991,7 @@ console.log([1, 2, 3].sx_join()); // 1,2,3
 console.log([1, 2, 3].sx_join("*")); // 1*2*3
 ```
 
-## 37、flat
+## flat
 
 ```js
 Array.prototype.sx_flat = function (num = Infinity) {
@@ -1013,7 +1011,7 @@ console.log(testArr.sx_flat(1));
 // [1, 2, 3, 4, 5, 8, 9]
 ```
 
-## 38、splice
+## splice
 
 ```js
 Array.prototype.sx_splice = function (start, length, ...values) {
@@ -1046,7 +1044,7 @@ Array.prototype.sx_splice = function (start, length, ...values) {
 };
 ```
 
-## 39、entries
+## entries
 
 ```js
 用处：将对象转成键值对数组
@@ -1063,7 +1061,7 @@ console.log(Object.sx_entries(obj))
 // [ [ 'name', '林三心' ], [ 'age', 22 ], [ 'gender', '男' ] ]
 ```
 
-## 40、fromEntries
+## fromEntries
 
 ```js
 // 用处：跟entries相反，将键值对数组转成对象
@@ -1087,7 +1085,7 @@ console.log(
 // { name: '林三心', age: 22, gender: '男' }
 ```
 
-## 41、keys
+## keys
 
 ```js
 // 用处：将对象的key转成一个数组合集
@@ -1104,7 +1102,7 @@ console.log(Object.keys(obj));
 // [ 'name', 'age', 'gender' ]
 ```
 
-## 42、values
+## values
 
 ```js
 // 用处：将对象的所有值转成数组合集
@@ -1121,7 +1119,7 @@ console.log(Object.sx_values(obj));
 // [ '林三心', 22, '男' ]
 ```
 
-## 43、instanceOf
+## instanceOf
 
 ```js
 // 用处：A instanceOf B，判断A是否经过B的原型链
@@ -1149,7 +1147,7 @@ console.log(instanceOf(Person, sx)); // true
 console.log(instanceOf(Person, sx2)); // false
 ```
 
-## 44、is
+## is
 
 ```js
 // 用处：Object.is(a, b)，判断a是否等于b
@@ -1172,7 +1170,7 @@ console.log(Object.sx_is(a, b)); // true
 console.log(Object.sx_is(a, c)); // false
 ```
 
-## 45、Object.assign
+## Object.assign
 
 ```js
 /**难点
@@ -1207,7 +1205,7 @@ console.log(testa === testd); // true
 
 Function 篇
 
-## 46、call
+## call
 
 ```js
 Function.prototype.sx_call = function (obj, ...args) {
@@ -1234,7 +1232,7 @@ const testobj2 = {
 testobj.testFn.sx_call(testobj2, 22); // sunshine_lin22岁了
 ```
 
-## 47、apply
+## apply
 
 ```js
 Function.prototype.sx_apply = function (obj, args) {
@@ -1261,7 +1259,7 @@ const testobj2 = {
 testobj.testFn.sx_apply(testobj2, [22]); // sunshine_lin22岁了
 ```
 
-## 48、Function.prototype.bind
+## Function.prototype.bind
 
 ```js
 /**难点：
@@ -1295,7 +1293,7 @@ Function.prototype.sx_bind = function (obj, ...args) {
 
 String 篇
 
-## 49、slice
+## slice
 
 ```js
 /**参数代表含义
@@ -1324,7 +1322,7 @@ console.log(str.sx_slice(-9, 10)); // shine_l
 console.log(str.sx_slice(5, 1)); // ''
 ```
 
-## 50、substr
+## substr
 
 ```js
 /**参数代表含义
@@ -1353,7 +1351,7 @@ console.log(str.sx_substr(3, 3)); // shi
 console.log(str.sx_substr(5, 300)); // ine_lin
 ```
 
-## 51、substring
+## substring
 
 ```js
 // 功能与slice大致相同
@@ -1380,7 +1378,7 @@ console.log(str.sx_sunstring(5, 1)); // unsh
 
 Promise 篇
 
-## 52、all
+## all
 
 ```js
 // 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
@@ -1411,7 +1409,7 @@ function all(promises) {
 }
 ```
 
-## 53、race
+## race
 
 ```js
 // 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
@@ -1436,7 +1434,7 @@ function race(promises) {
 }
 ```
 
-## 54、allSettled
+## allSettled
 
 ```js
 // 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
@@ -1473,7 +1471,7 @@ function allSettled(promises) {
 }
 ```
 
-## 55、any
+## any
 
 ```js
 // any与all相反
@@ -1501,7 +1499,7 @@ function any(promises) {
 }
 ```
 
-## 56、finally
+## finally
 
 ```js
 // 接收一个回调函数，但无参数接收
@@ -1519,3 +1517,4 @@ Promise.prototype.finally = function (callback) {
   );
 };
 ```
+
