@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://linlccc.com/posts/commonlyusedjs/</loc>
-    <lastmod>2024-06-16T23:29:41+08:00</lastmod>
+    <lastmod>2024-06-16T23:32:08+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/posts/adv-js-knowledge/</loc>
     <lastmod>2024-06-16T22:33:04+08:00</lastmod>
@@ -55,7 +55,20 @@
     <lastmod>2024-06-16T21:15:16+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/tags/javascript/</loc>
-    <lastmod>2024-06-16T22:33:04+08:00</lastmod>
+    <lastmod>2024-06-16T23:32:08+08:00</lastmod>
+  </url><url>
+    <loc>https://linlccc.com/</loc>
+    <lastmod>2024-06-16T23:32:08+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://linlccc.com/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://linlccc.com/"
+                />
   </url><url>
     <loc>https://linlccc.com/langs/javascript/</loc>
     <lastmod>2024-06-16T22:33:04+08:00</lastmod>
@@ -71,19 +84,6 @@
                 rel="alternate"
                 hreflang="zh-CN"
                 href="https://linlccc.com/langs/"
-                />
-  </url><url>
-    <loc>https://linlccc.com/</loc>
-    <lastmod>2024-06-16T23:29:41+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://linlccc.com/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://linlccc.com/"
                 />
   </url><url>
     <loc>https://linlccc.com/hahah-sample/</loc>
@@ -102,7 +102,7 @@
     <lastmod>2024-06-16T21:15:16+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/tags/javascript/</loc>
-    <lastmod>2024-06-16T23:29:41+08:00</lastmod>
+    <lastmod>2024-06-16T21:15:16+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/tags/nginx/</loc>
     <lastmod>2024-06-16T21:15:16+08:00</lastmod>
