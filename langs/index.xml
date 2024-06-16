@@ -13,6 +13,16 @@
     <language>zh-CN</language>
     <managingEditor>linlccc@163.com (Linlccc)</managingEditor>
     <webMaster>linlccc@163.com (Linlccc)</webMaster>
+    <lastBuildDate>Sun, 16 Jun 2024 22:26:10 +0800</lastBuildDate>
     <atom:link href="https://linlccc.com/langs/index.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Javascript</title>
+        <link>https://linlccc.com/langs/javascript/</link>
+        <pubDate>Sun, 16 Jun 2024 22:25:50 +0800</pubDate>
+        <author>[Linlccc]</author>
+        <guid>https://linlccc.com/langs/javascript/</guid>
+        <description></description>
+      </item>
     </channel>
 </rss>
