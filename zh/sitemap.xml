@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://linlccc.com/_drafts/commonlyusedjs/</loc>
+    <lastmod>2024-06-16T23:27:53+08:00</lastmod>
+  </url><url>
     <loc>https://linlccc.com/posts/adv-js-knowledge/</loc>
     <lastmod>2024-06-16T22:33:04+08:00</lastmod>
   </url><url>
@@ -74,7 +77,7 @@
                 />
   </url><url>
     <loc>https://linlccc.com/</loc>
-    <lastmod>2024-06-16T22:33:04+08:00</lastmod>
+    <lastmod>2024-06-16T23:27:53+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -102,7 +105,10 @@
     <lastmod>2024-06-16T21:15:16+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/tags/javascript/</loc>
-    <lastmod>2024-06-16T21:15:16+08:00</lastmod>
+    <lastmod>2024-06-16T23:27:53+08:00</lastmod>
+  </url><url>
+    <loc>https://linlccc.com/_drafts/</loc>
+    <lastmod>2024-06-16T23:27:53+08:00</lastmod>
   </url><url>
     <loc>https://linlccc.com/tags/nginx/</loc>
     <lastmod>2024-06-16T21:15:16+08:00</lastmod>
