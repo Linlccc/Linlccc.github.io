@@ -95,6 +95,18 @@
                 href="https://linlccc.com/en/archives/"
                 />
   </url><url>
+    <loc>https://linlccc.com/en/langs/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://linlccc.com/langs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://linlccc.com/en/langs/"
+                />
+  </url><url>
     <loc>https://linlccc.com/en/search/</loc>
     <xhtml:link
                 rel="alternate"
