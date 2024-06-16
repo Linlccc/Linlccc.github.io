@@ -1,20 +1,14 @@
 ---
-# 标题
-title: "手写js高级知识点"
-# 描述
-description: ""
-# 标签
-tags: ["javascript"]
-# 显示权重（越小显示越靠前）
-weight: 1000
-
-# 撰写日期
-date: "2024-05-07 17:05:29"
-
-# 原文章链接
-canonicalLink: "https://juejin.cn/post/7023906112843808804"
+canonicalLink: https://juejin.cn/post/7023906112843808804
+date: 2024-05-07 17:05:29
+description: ''
+langs:
+- javascript
+lastmod: '2024-06-16T22:25:50.000+08:00'
+tags: '["javascript"]'
+title: 手写js高级知识点
+weight: '1000'
 ---
-
 ## 1、实现原生的 AJAX 请求
 
 ```js
