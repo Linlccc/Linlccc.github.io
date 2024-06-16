@@ -9,3 +9,9 @@ buildDrafts: true
 buildExpired: true
 # 构建未来
 buildFuture: true
+
+# Home 页显示的文章类型(内容文章目录名或文章的 type 配置)
+Params:
+  homeShowTypes:
+    - posts
+    - hahah-sample

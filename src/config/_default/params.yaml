@@ -134,7 +134,7 @@ profileInfo:
   content: 😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾
   # 图片
   image:
-    url: /images/site/icon192.png
+    url: /images/home/avatar.png
     title: LIN
     width: 120
     height: 120
@@ -146,7 +146,6 @@ profileInfo:
 # Home 页显示的文章类型(内容文章目录名或文章的 type 配置)
 homeShowTypes:
   - posts
-  - games
 
 # 社交图标
 socialIcons:
