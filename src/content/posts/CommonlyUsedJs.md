@@ -1,17 +1,14 @@
 ---
-# 标题
-title: "常用js"
-# 描述
-description: ""
-# 标签
-tags: ["javascript"]
-# 显示权重（越小显示越靠前）
-weight: 1000
-
-# 撰写日期
-date: "2024-05-07 03:52:05"
+abbrlink: ''
+categories: []
+date: '2024-05-07 03:52:05'
+description: ''
+tags:
+- javascript
+title: 常用js
+updated: '2024-06-16T23:27:35.322+08:00'
+weight: 1
 ---
-
 ## 防抖
 
 ```js
