@@ -13,8 +13,17 @@
     <language>zh-CN</language>
     <managingEditor>linlccc@163.com (Linlccc)</managingEditor>
     <webMaster>linlccc@163.com (Linlccc)</webMaster>
-    <lastBuildDate>Sun, 16 Jun 2024 23:36:52 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2024 23:38:12 +0800</lastBuildDate>
     <atom:link href="https://linlccc.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>常用js</title>
+        <link>https://linlccc.com/_drafts/commonlyusedjs/</link>
+        <pubDate>Sun, 16 Jun 2024 23:33:27 +0800</pubDate>
+        <author>[Lin]</author>
+        <guid>https://linlccc.com/_drafts/commonlyusedjs/</guid>
+        <description>防抖 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function debounce(fn, delay) { let timer; return function (...args) { timer &amp;amp;&amp;amp; clearTimeout(timer); timer = setTimeout(() =&amp;gt; fn.apply(this, args), delay); }; } // 测试 function task(arg) { console.log(&amp;#34;run task&amp;#34; + arg); } const debounceTask = debounce(task, 1000); window.addEventListener(&amp;#34;scroll&amp;#34;, () =&amp;gt; debounceTask(11)); 节流 # js 复制 1 2</description>
+      </item>
     
       <item>
         <title>常用js</title>
