@@ -1,6 +1,6 @@
 {
   "name": "Linlccc's Blog",
-  "short_name": "Lin's Blog",
+  "short_name": "Linlccc's Blog",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
@@ -9,25 +9,25 @@
   "splash_pages":null,
   "icons": [
     {
-      "src": "/images/site/icon192.png",
+      "src": "/favicon/dark/favicon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/images/site/icon512.png",
+      "src": "/favicon/dark/favicon-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "screenshots": [
     {
-      "src": "/images/site/screenshot540_720.png",
+      "src": "/images/site/screenshot540x720.png",
       "type": "image/png",
       "sizes": "540x720",
       "form_factor": "narrow"
     },
     {
-      "src": "/images/site/screenshot720_540.png",
+      "src": "/images/site/screenshot720x540.png",
       "type": "image/png",
       "sizes": "720x540",
       "form_factor": "wide"

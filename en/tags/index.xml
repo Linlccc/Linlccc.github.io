@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on linlccc&#39;s blog</title>
+    <title>Tags on Linlccc&#39;s Blog</title>
     <link>https://linlccc.com/en/tags/</link>
-    <description>Recent content in Tags on linlccc&#39;s blog</description>
-    <image>
-      <title>linlccc&#39;s blog</title>
-      <url>https://linlccc.com/images/site/icon192.png</url>
-      <link>https://linlccc.com/images/site/icon192.png</link>
-    </image>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 24 Feb 2023 15:21:11 +0800</lastBuildDate><atom:link href="https://linlccc.com/en/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Regular Expression</title>
-      <link>https://linlccc.com/en/tags/regular-expression/</link>
-      <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
-      
-      <guid>https://linlccc.com/en/tags/regular-expression/</guid>
-      <description></description>
-    </item>
+    <description>Recent content in Tags on Linlccc&#39;s Blog</description>
+      <image>
+        <title>Linlccc&#39;s Blog</title>
+        <url>https://linlccc.com/favicon/dark/favicon-192x192.png</url>
+        <link>https://linlccc.com/favicon/dark/favicon-192x192.png</link>
+      </image>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <managingEditor>linlccc@163.com (Linlccc)</managingEditor>
+    <webMaster>linlccc@163.com (Linlccc)</webMaster>
+    <lastBuildDate>Fri, 14 Jun 2024 21:53:01 +0800</lastBuildDate>
+    <atom:link href="https://linlccc.com/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>Safari</title>
-      <link>https://linlccc.com/en/tags/safari/</link>
-      <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
-      
-      <guid>https://linlccc.com/en/tags/safari/</guid>
-      <description></description>
-    </item>
+      <item>
+        <title>Regular Expression</title>
+        <link>https://linlccc.com/en/tags/regular-expression/</link>
+        <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
+        <author>[Linlccc]</author>
+        <guid>https://linlccc.com/en/tags/regular-expression/</guid>
+        <description></description>
+      </item>
     
-  </channel>
+      <item>
+        <title>Safari</title>
+        <link>https://linlccc.com/en/tags/safari/</link>
+        <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
+        <author>[Linlccc]</author>
+        <guid>https://linlccc.com/en/tags/safari/</guid>
+        <description></description>
+      </item>
+    </channel>
 </rss>

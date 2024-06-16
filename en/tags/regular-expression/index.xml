@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Regular Expression on linlccc&#39;s blog</title>
+    <title>Regular Expression on Linlccc&#39;s Blog</title>
     <link>https://linlccc.com/en/tags/regular-expression/</link>
-    <description>Recent content in Regular Expression on linlccc&#39;s blog</description>
-    <image>
-      <title>linlccc&#39;s blog</title>
-      <url>https://linlccc.com/images/site/icon192.png</url>
-      <link>https://linlccc.com/images/site/icon192.png</link>
-    </image>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 24 Feb 2023 15:21:11 +0800</lastBuildDate><atom:link href="https://linlccc.com/en/tags/regular-expression/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Watch out for pitfalls - Safari and positive lookbehind assertions</title>
-      <link>https://linlccc.com/en/posts/saferisteppingonthepit/</link>
-      <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
-      
-      <guid>https://linlccc.com/en/posts/saferisteppingonthepit/</guid>
-      <description>regular expression 1. Safari handles positive lookbehind assertions in regular expressions, denoted by (?&amp;lt;=&amp;hellip;), abnormally 1 2 3 4 5 6 // The following code works fine in Chrome but throws an error in Safari. &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;#34;dark&amp;#34;); // The solution is to use capturing groups and string replacement. &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/([?|&amp;amp;]theme=)\w+/, &amp;#34;$1dark&amp;#34;); // Both of the execution results above are &amp;#34;https://linlccc.com?theme=dark&amp;#34; </description>
-    </item>
+    <description>Recent content in Regular Expression on Linlccc&#39;s Blog</description>
+      <image>
+        <title>Linlccc&#39;s Blog</title>
+        <url>https://linlccc.com/favicon/dark/favicon-192x192.png</url>
+        <link>https://linlccc.com/favicon/dark/favicon-192x192.png</link>
+      </image>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <managingEditor>linlccc@163.com (Linlccc)</managingEditor>
+    <webMaster>linlccc@163.com (Linlccc)</webMaster>
+    <lastBuildDate>Fri, 14 Jun 2024 21:53:01 +0800</lastBuildDate>
+    <atom:link href="https://linlccc.com/en/tags/regular-expression/index.xml" rel="self" type="application/rss+xml" />
     
-  </channel>
+      <item>
+        <title>Watch out for pitfalls - Safari and positive lookbehind assertions</title>
+        <link>https://linlccc.com/en/posts/saferisteppingonthepit/</link>
+        <pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate>
+        <author>[Linlccc]</author>
+        <guid>https://linlccc.com/en/posts/saferisteppingonthepit/</guid>
+        <description> regular expression # 1. Safari handles positive lookbehind assertions in regular expressions, denoted by (?&amp;lt;=&amp;hellip;), abnormally # js Copy 1 2 3 4 5 6 // The following code works fine in Chrome but throws an error in Safari. &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/, &amp;#34;dark&amp;#34;); // The solution is to use capturing groups and string replacement. &amp;#34;https://linlccc.com?theme=light&amp;#34;.replace(/([?|&amp;amp;]theme=)\w+/, &amp;#34;$1dark&amp;#34;); // Both of the execution results above are &amp;#34;https://linlccc.com?theme=dark&amp;#34; </description>
+      </item>
+    </channel>
 </rss>
