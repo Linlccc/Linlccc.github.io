@@ -241,7 +241,7 @@ fuseOptions:
   # 距离
   distance: 1000
   # 阈值,匹配算法在什么时候放弃匹配,0-1之间,越小越严格
-  threshold: 0.4
+  threshold: 0.2
   # 最小匹配字符长度
   minMatchCharLength: 0
   # 匹配键
