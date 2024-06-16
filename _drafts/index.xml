@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Javascript on Linlccc&#39;s Blog</title>
-    <link>https://linlccc.com/langs/javascript/</link>
-    <description>Recent content in Javascript on Linlccc&#39;s Blog</description>
+    <title>_Drafts on Linlccc&#39;s Blog</title>
+    <link>https://linlccc.com/_drafts/</link>
+    <description>Recent content in _Drafts on Linlccc&#39;s Blog</description>
       <image>
         <title>Linlccc&#39;s Blog</title>
         <url>https://linlccc.com/favicon/dark/favicon-192x192.png</url>
@@ -14,7 +14,7 @@
     <managingEditor>linlccc@163.com (Linlccc)</managingEditor>
     <webMaster>linlccc@163.com (Linlccc)</webMaster>
     <lastBuildDate>Sun, 16 Jun 2024 23:48:23 +0800</lastBuildDate>
-    <atom:link href="https://linlccc.com/langs/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://linlccc.com/_drafts/index.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>手写js高级知识点</title>
@@ -22,15 +22,6 @@
         <pubDate>Sun, 16 Jun 2024 22:28:46 +0800</pubDate>
         <author>[Lin]</author>
         <guid>https://linlccc.com/_drafts/adv-js-knowledge/</guid>
-        <description>实现原生的 AJAX 请求 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 const ajax = { get(url, fn) { const xhr = new XMLHttpRequest(); xhr.open(&amp;#34;GET&amp;#34;, url, true); // 第三个参数异步与否 xhr.onreadystatechange = function () { if (xhr.readyState === 4) {</description>
-      </item>
-    
-      <item>
-        <title>手写js高级知识点</title>
-        <link>https://linlccc.com/posts/adv-js-knowledge/</link>
-        <pubDate>Sun, 16 Jun 2024 22:28:46 +0800</pubDate>
-        <author>[Lin]</author>
-        <guid>https://linlccc.com/posts/adv-js-knowledge/</guid>
         <description>实现原生的 AJAX 请求 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 const ajax = { get(url, fn) { const xhr = new XMLHttpRequest(); xhr.open(&amp;#34;GET&amp;#34;, url, true); // 第三个参数异步与否 xhr.onreadystatechange = function () { if (xhr.readyState === 4) {</description>
       </item>
     </channel>
