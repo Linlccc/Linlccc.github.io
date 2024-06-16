@@ -3,8 +3,6 @@
 title: "ES6 常用代码块"
 # 描述
 description: ""
-# 摘要
-Summary: ""
 # 标签
 tags: ["javascript"]
 # 显示权重（越小显示越靠前）

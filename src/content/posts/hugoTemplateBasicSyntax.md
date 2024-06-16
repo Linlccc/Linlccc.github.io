@@ -1,10 +1,7 @@
 ---
 title: "hugo 模板基本语法"
 description: ""
-Summary: ""
-tags: ['golang']
-categories: []
-
+tags: ["golang"]
 weight: 1000
 
 date: "2023-02-22 17:57:49"
@@ -19,14 +16,14 @@ Page 信息参考：[Page 信息参考](https://gohugo.io/variables/page/)
 
 ### 访问变量
 
-``` go
+```go
 {{ .Titel }}            // 访问已存在的变量
 {{ $address }}          // 访问自定义变量
 ```
 
 ### 声明变量与赋值
 
-``` go
+```go
 {{ $address := "http://www.baidu.com" }}    // 声明自定义变量并赋值
 {{ $msg := `Line one.
 Line two.` }}                               // 支持多行字符串
@@ -36,7 +33,7 @@ Line two.` }}                               // 支持多行字符串
 ### 条件语句
 
 条件语句 `if`/`with` 都以 `{{ end }}` 结束\
-在hugo模板中，条件语句的条件可以是任何表达式，而不仅仅是布尔类型的表达式，以下情况会被认为是false：
+在 hugo 模板中，条件语句的条件可以是任何表达式，而不仅仅是布尔类型的表达式，以下情况会被认为是 false：
 
 - 空字符串 ""
 - 空数组 []
@@ -49,7 +46,7 @@ Line two.` }}                               // 支持多行字符串
 
 很多情况下建议使用 with 语句，而不是 if 语句，因为 with 语句可以重新绑定上下文，而 if 语句不能
 
-``` go
+```go
 {{ if .IsHome }} {{ end }}                           // 判断 IsHome 的值
 {{ if eq .Title "Home" }} {{ end }}                  // 判断变量是否相等
 {{ if ne .Title "Home"  }} {{ end }}                 // 判断变量是否不相等
@@ -87,9 +84,9 @@ Line two.` }}                               // 支持多行字符串
 
 #### with
 
-with在其范围内重新绑定上下文`.`
+with 在其范围内重新绑定上下文`.`
 
-``` go
+```go
 // 如果 .Params.title 为空，将跳过该块
 {{ with .Params.title }}
     <h4>{{ . }}</h4>
@@ -105,10 +102,10 @@ with在其范围内重新绑定上下文`.`
 
 ### 函数调用
 
-在hugo模板中，调用函数格式大致如下：{{ funcName arg1 arg2 ... }}\
+在 hugo 模板中，调用函数格式大致如下：{{ funcName arg1 arg2 ... }}\
 模板中函数信息参考：[模板中函数信息](https://gohugo.io/functions/)
 
-``` go
+```go
 {{ add 1 2 }}                   // 调用 add 函数，计算 1+2，结果为3
 {{ lt 1 2 }}                    // 调用 lt 函数，计算1<2，结果为true
 ```
@@ -119,7 +116,7 @@ with在其范围内重新绑定上下文`.`
 使用 `range` 来迭代 `map`/`array`/`slice` 类型变量\
 以下是 `range` 使用的几个示例
 
-``` go
+```go
 // 这里的上下文 . 是 $array 中的一个元素，要访问全局上下文，需要使用 $.
 {{ range $array }}
     {{ . }}
@@ -150,7 +147,7 @@ with在其范围内重新绑定上下文`.`
 
 #### 遍历其他示例
 
-``` go
+```go
 {{ range .Data.Pages }}                             // 遍历 Data.Pages
 {{ range where .Data.Pages "Section" "posts" }}     // 遍历 Data.Pages，过滤 Section 为 posts 的数据
 {{ range first 10 .Data.Pages }}                    // 遍历 Data.Pages，取前10条数据
@@ -166,7 +163,7 @@ with在其范围内重新绑定上下文`.`
 
 ## 模板
 
-模板位置始终从hugo目录中的layouts目录开始查找，如果没有找到，就会从主题目录中查找\
+模板位置始终从 hugo 目录中的 layouts 目录开始查找，如果没有找到，就会从主题目录中查找\
 如果在主题目录中也没有找到，就会使用默认的模板
 
 ### 部分模板
@@ -174,7 +171,7 @@ with在其范围内重新绑定上下文`.`
 使用 `partial` 函数引用部分模板，部分模板的位置为 `layouts/partials`。
 语法如下：`{{ partial "<PATH>/<PARTIAL>.<EXTENSION>" . }}`
 
-``` go
+```go
 {{ partial "header.html" . }}           引用部分模板 layouts/partials/header.html
 {{ partialCached "header.html" . }}     缓存引用部分模板 layouts/partials/header.html
 
@@ -183,7 +180,7 @@ with在其范围内重新绑定上下文`.`
 
 #### 多变量部分模板示例
 
-``` go
+```go
 // 传入多个变量
 {{ partial "header.html" (dict "curremtPage" . "param1" "1" "param2" "2" ) }}
 
@@ -200,7 +197,7 @@ with在其范围内重新绑定上下文`.`
 查看可用的内部模板：[可用的内部模板](https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates)\
 语法如下：`{{ template "_internal/<TEMPLATE>.<EXTENSION>" . }}`
 
-``` go
+```go
 {{ template "_internal/opengraph.html" . }}         引用内部模板 opengraph.html
 {{ template "_internal/_default/rss.xml" . }}       引用内部模板 _default/rss.xml
 ```
@@ -214,7 +211,7 @@ with在其范围内重新绑定上下文`.`
 - 回车
 - 新行
 
-``` go
+```go
 <div>
   {{ .Title }}
 </div>
@@ -232,7 +229,7 @@ with在其范围内重新绑定上下文`.`
 
 ## 杂项
 
-``` go
+```go
 // 使用名为"main"的块，如果没有定义该块，就会使用默认的块
 {{ block "main" . }}{{ end }}
 

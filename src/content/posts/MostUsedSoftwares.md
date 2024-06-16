@@ -3,8 +3,6 @@
 title: "常用软件"
 # 描述
 description: ""
-# 摘要
-Summary: ""
 # 标签
 tags: ["software"]
 # 显示权重（越小显示越靠前）

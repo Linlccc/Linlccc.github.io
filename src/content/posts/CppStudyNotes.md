@@ -1,24 +1,10 @@
 ---
 title: "C++ 学习笔记"
 description: ""
-Summary: ""
 tags: ["C++"]
-categories: []
-
-ShowCanonicalLink: true
-canonicalLink: ""
-
-searchHidden: false
-draft: false
 weight: 1000
 
 date: "2023-02-28 23:20:19"
-
-cover:
-  image: ""
-  alt: ""
-  caption: ""
-  hidden: true
 ---
 
 ## 基础

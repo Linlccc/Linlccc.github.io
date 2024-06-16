@@ -3,10 +3,8 @@
 title: "在 Vue 中使用 Axios"
 # 描述
 description: ""
-# 摘要
-Summary: ""
 # 标签
-tags: []
+tags: ["Vue"]
 # 显示权重（越小显示越靠前）
 weight: 1000
 
@@ -16,8 +14,8 @@ date: "2024-05-07 18:20:22"
 
 ## axios.ts
 
-~~~ ts
-import axios from 'axios'
+```ts
+import axios from "axios";
 
 // 文档：https://github.com/axios/axios#request-config
 
@@ -31,78 +29,77 @@ const config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || 'https://api.apiopen.top/'
   // timeout: 60 * 1000, // 超时
   // withCredentials: true, // 检查跨域访问控制
-}
+};
 
-axios.create(config)
+axios.create(config);
 
 // 添加请求拦截器
 axios.interceptors.request.use(
-  config => {
-    console.log('请求全局拦截')
+  (config) => {
+    console.log("请求全局拦截");
     // 请求之前处理
-    return config
+    return config;
   },
-  error => {
+  (error) => {
     // 处理请求错误
-    return Promise.reject(error)
-  }
-)
+    return Promise.reject(error);
+  },
+);
 
 // 添加响应拦截器
 axios.interceptors.response.use(
-  response => {
+  (response) => {
     // 处理响应数据
-    return response
+    return response;
   },
-  error => {
+  (error) => {
     // 处理响应错误
-    return Promise.reject(error)
-  }
-)
+    return Promise.reject(error);
+  },
+);
 
-export { axios }
+export { axios };
 
 export default (app: any) => {
-  app.config.globalProperties.$axios = axios
-}
-
-~~~
+  app.config.globalProperties.$axios = axios;
+};
+```
 
 ## main.ts
 
-~~~ ts
+```ts
 // 导入封装的axios
-import installAxios from './axios'
+import installAxios from "./axios";
 
-const app = createApp(App)
-installAxios(app)// 使用axios
-~~~
+const app = createApp(App);
+installAxios(app); // 使用axios
+```
 
 ## api.ts
 
 - 使用 axios 制定接口函数
 
-~~~ ts
+```ts
 // 导入封装的axios
-import { axios } from './axios'
+import { axios } from "./axios";
 
 // 调用接口1
 export const api1 = async (params: any) => {
-  return axios.get('/api/api1', { params: params })
-}
+  return axios.get("/api/api1", { params: params });
+};
 
 export const api2 = async (params: any) => {
-  return axios.post('/api/api2', { params: params })
-}
-~~~
+  return axios.post("/api/api2", { params: params });
+};
+```
 
 ## test.vue
 
 - 调用接口
 
-~~~ ts
+```ts
 // 导入api
-import { api1 } from './api'
+import { api1 } from "./api";
 
-api1(params).then(res=>console.log(res));
-~~~
+api1(params).then((res) => console.log(res));
+```

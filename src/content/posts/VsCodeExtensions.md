@@ -3,8 +3,6 @@
 title: "VsCode 常用扩展推荐"
 # 描述
 description: ""
-# 摘要
-Summary: ""
 # 标签
 tags: ["VsCode", "Extensions"]
 # 显示权重（越小显示越靠前）

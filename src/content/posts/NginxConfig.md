@@ -3,8 +3,6 @@
 title: "Nginx基础配置"
 # 描述
 description: ""
-# 摘要
-Summary: ""
 # 标签
 tags: ["nginx"]
 # 显示权重（越小显示越靠前）
@@ -22,9 +20,9 @@ date: "2024-05-05 19:57:58"
 
 <a href="https://wangchujiang.com/reference/docs/nginx.html" target="_blank">NGINX 备忘清单</a>
 
-## Web服务器
+## Web 服务器
 
-~~~ nginx
+```nginx
 # http
 server {
   listen 80;
@@ -46,11 +44,11 @@ server {
     index index.html index.htm;
   }
 }
-~~~
+```
 
 ## 反向代理
 
-~~~ nginx
+```nginx
 server {
   listen 80;
   server_name _;
@@ -60,11 +58,11 @@ server {
     proxy_set_header X-Real-IP $remote_addr;
   }
 }
-~~~
+```
 
 ## 负载均衡
 
-~~~ nginx
+```nginx
 upstream web {
   ip_hash
   #会话保持
@@ -80,11 +78,11 @@ server {
     proxy_set_header X-Real-IP $remote_addr;
   }
 }
-~~~
+```
 
 ## 重定向
 
-~~~ nginx
+```nginx
 # 老域名跳转新域名
 server {
   listen 80;
@@ -102,11 +100,11 @@ server {
     rewrite ^/old.cxk.cn/(.*)$ /new-path/$1;
   }
 }
-~~~
+```
 
 ## 防盗链
 
-~~~ nginx
+```nginx
 server {
   listen 80;
   server_name _;
@@ -117,11 +115,11 @@ server {
     }
   }
 }
-~~~
+```
 
-## 手机端重定向PC
+## 手机端重定向 PC
 
-~~~ nginx
+```nginx
 server {
   listen 80;
   server_name _;
@@ -131,11 +129,11 @@ server {
     }
   }
 }
-~~~
+```
 
 ## 基于请求路径转发不同服务
 
-~~~ nginx
+```nginx
 server {
   listen 80;
   server_name _;
@@ -155,4 +153,4 @@ server {
     proxy_set_header X-Real_IP $remote_addr;
   }
 }
-~~~
+```

@@ -3,15 +3,8 @@
 title: "Linux 命令大全"
 # 描述
 description: ""
-# 摘要
-Summary: ""
 # 标签
 tags: ["linux"]
-# 类别
-categories: []
-
-# 是否是草稿
-draft: false
 # 显示权重（越小显示越靠前）
 weight: 1000
 
@@ -20,13 +13,13 @@ date: "2024-05-05 01:46:07"
 
 # 封面
 cover:
-    # 封面图片
-    image: "/images/posts/LinuxCommandList/linuxCommandList.png"
+  # 封面图片
+  image: "/images/posts/LinuxCommandList/linuxCommandList.png"
 ---
 
 ## 系统指令
 
-~~~ Bash
+```Bash
 # 显示系统信息：内核版本、机器类型等
 uname
 # 显示正在运行的Linux内核的发行版本
@@ -51,11 +44,11 @@ w
 whoami
 # 显示名为"username"的用户的信息
 finger username
-~~~
+```
 
 ## 文件命令
 
-~~~ Bash
+```Bash
 # 以长格式列出所有文件的详细信息
 ls -al
 # 显示当前工作目录的路径
@@ -96,11 +89,11 @@ gpg file2.gpg
 wc
 # 使用管道或文件提供的参数执行命令
 xargs
-~~~
+```
 
 ## 用户管理
 
-~~~ Bash
+```Bash
 # 显示用户的UID、GID、组
 id
 # 显示最后登录用户的列表
@@ -115,11 +108,11 @@ adduser Sam
 userdel Sam
 # 修改现有用户的属性
 usermod
-~~~
+```
 
 ## 硬件
 
-~~~ Bash
+```Bash
 # 内核会将开机过程信息存储在环形缓冲区中
 dmesg
 # 显示 CPU 的详细信息
@@ -142,11 +135,11 @@ dmidecode
 hdparm -i /dev/sda
 # 用于检查设备 /dev/sda 是否存在坏块,并显示检测进度
 badblocks -s /dev/sda
-~~~
+```
 
 ## 登录
 
-~~~ Bash
+```Bash
 # 向指定主机名发起 SSH 连接
 ssh user@hostname
 # 使用特定端口发起 SSH 连接
@@ -155,11 +148,11 @@ ssh -p portNumber user@hostname
 Connect to the host via telnet default port 23
 # 通过l elnet 默认端口23连接到主机
 telnet host
-~~~
+```
 
 ## 安装包
 
-~~~ Bash
+```Bash
 # 使用 RPM 包管理器安装 pkgName.rpm 包
 rpm -i pkgName.rpm
 # 卸载指定的 RPM 包
@@ -168,33 +161,33 @@ rpm -e pkgName
 dnf install pkgName
 # 使用 Pacman 安装指定的包
 pacman -S
-~~~
+```
 
 ## 安装源（编译）
 
-~~~ Bash
+```Bash
 # 检查系统兼容性并生成用于软件安装的 makefile
 ./configure
 # 按照 makefoile 中的指令编译代码
 make
 # 将编译后的代码安装到指定的系统位置
 make install
-~~~
+```
 
 ## 目录遍历
 
-~~~ Bash
+```Bash
 # 切换到父目录
 cd ..
 # 将当前目录更改为用户的主目录
 cd
 # 将当前目录更改为"/mnt"
 cd /mnt
-~~~
+```
 
 ## 流程相关
 
-~~~ Bash
+```Bash
 # 显示当前进程的快照
 ps
 # 显示运行中的 tolnet 进程的详细信息
@@ -223,11 +216,11 @@ renice 19 PID
 pgrep firefox
 # 显示运行中的进程树
 pstree
-~~~
+```
 
 ## 网络
 
-~~~ Bash
+```Bash
 # 显示所有网络接口及其信息
 ip addr show
 # 将 IP 地址 192.168.0.1 分配给eth0接口
@@ -248,11 +241,11 @@ host gexample.com
 wget flePath
 # 显示各种与网络相关的信息和统计数据
 netstat
-~~~
+```
 
 ## 磁盘使用情况
 
-~~~ Bash
+```Bash
 # 显示所有已挂载文件系统可读的磁盘空问使用情况
 df -h
 # 显示所有已挂载文件系统的 inode 使用情况
@@ -265,11 +258,11 @@ du -sh/dir1
 findmnt
 # 将设备挂载到指定的文件系统挂载点上
 mount devicePath mountPoint
-~~~
+```
 
 ## 压缩/存档
 
-~~~ Bash
+```Bash
 # 创建一个名为 backup.tar 的 tar 归档文件,其中包含 /home/ubuntu 目录的内容
 tar -cf backup.tar/home/ubuntu
 # 从 backup.tar 归档文件中提取文件
@@ -278,22 +271,22 @@ tar -xf backup.tar
 tar -zcvf backup.tar.gz/home/ubuntu
 # 将文件 file1 压缩为 file1.gz,并删除原始文件
 gzip file1
-~~~
+```
 
 ## 日志文件传输
 
-~~~ Bash
+```Bash
 # 将们 file.txt 复制到远程主机的指定目录
 scp file.txt remoteuser@remoteHost:/remote/diroctory
 # 将源目录的内容同步到目标目录,保留属性
 rsync -a /home/ubuntu/backup/
 # 同步本地目录到远程,保留属性
 rsync -a /var/www/web/user@remoteHost:/backup/webBackup/
-~~~
+```
 
 ## 搜索
 
-~~~ Bash
+```Bash
 # 在文件中搜索给定的模式
 grep pattern file
 # 在 dir1 目录及其子目录中递归搜索指定的 pattern
@@ -304,11 +297,11 @@ locate file
 find /homeName index
 # 在 /home 目录中查找大小超过 10000k 的文件
 find /homeSize +10000k
-~~~
+```
 
 ## 文件权限
 
-~~~ Bash
+```Bash
 # 设置文件/data的权限为所有者读/写,组和其他人只读
 chmod 644 /data/
 # 将目录 /dir1 的权限设置为对所有者可读可写/可执行,对组和其他用户可读/可执行
@@ -317,4 +310,4 @@ chmod 755 /dir1
 chown bob:devops filename
 # 更改目录的所有者和所属组
 chown ownername
-~~~
+```

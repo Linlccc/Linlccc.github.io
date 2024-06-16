@@ -1,24 +1,10 @@
 ---
 title: "Watch out for pitfalls - Safari and positive lookbehind assertions"
 description: ""
-Summary: ""
 tags: ["safari", "regular expression"]
-categories: []
-
-ShowCanonicalLink: true
-canonicalLink: ""
-
-searchHidden: false
-draft: false
 weight: 1000
 
 date: "2023-02-24 15:21:11"
-
-cover:
-  image: ""
-  alt: ""
-  caption: ""
-  hidden: true
 ---
 
 ## regular expression
