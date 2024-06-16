@@ -1,0 +1,49 @@
+# 中文菜单配置
+
+main:
+  # 标识符
+  - identifier: search
+    # 名称
+    name: 搜索
+    # 内部链接
+    pageRef: /search/
+    # 外部链接时使用
+    url: /search/
+    # 权重
+    weight: 10
+    # 在name前添加内容（允许html）
+    pre:
+    # 在name后添加内容（允许html）
+    post:
+    # 鼠标悬停显示文本
+    title: 搜索
+
+  - identifier: posts
+    name: 文章
+    pageRef: /posts/
+    weight: 20
+
+  - identifier: tags
+    name: 标签
+    pageRef: /tags/
+    weight: 30
+
+  # - identifier: categories
+  #   name: 分类
+  #   pageRef: /categories/
+  #   weight: 40
+
+  # - identifier: keywords
+  #   name: 关键字
+  #   pageRef: /keywords/
+  #   weight: 50
+
+  - identifier: archives
+    name: 档案
+    pageRef: /archives/
+    weight: 60
+
+  # - identifier: linlccc
+  #   name: Linlccc
+  #   url: https://linlccc.github.io/
+  #   weight: 100

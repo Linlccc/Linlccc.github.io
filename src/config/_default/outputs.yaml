@@ -1,0 +1,25 @@
+# 页面输出格式，根据页面的 Kind 属性设置
+# see:https://gohugo.io/templates/output-formats/
+
+home:
+  - html
+  - rss
+  - json
+
+page:
+  - html
+
+section:
+  - html
+  - rss
+
+taxonomy:
+  - html
+  - rss
+
+term:
+  - html
+  - rss
+
+rss:
+  - rss

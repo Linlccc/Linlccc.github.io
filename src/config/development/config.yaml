@@ -1,0 +1,17 @@
+# 开发时配置
+# 调试时要在其他设备上访问运行 hugo server --baseURL=http://[ip]:1313/ --bind=0.0.0.0 --port=1313
+
+title: dev
+
+# 构建草稿
+buildDrafts: true
+# 构建过期
+buildExpired: true
+# 构建未来
+buildFuture: true
+
+# Home 页显示的文章类型(内容文章目录名或文章的 type 配置)
+Params:
+  homeShowTypes:
+    - posts
+    - hahah-sample

@@ -1,0 +1,29 @@
+# hugo 内置模板和简码的隐私配置
+#see:https://gohugo.io/about/privacy/
+
+# 评论系统
+disqus:
+  disable: false
+
+# Google 分析
+googleAnalytics:
+  disable: false
+  respectDoNotTrack: false
+
+instagram:
+  disable: false
+  simple: false
+
+twitter:
+  disable: false
+  enableDNT: false
+  simple: false
+
+vimeo:
+  disable: false
+  enableDNT: false
+  simple: false
+
+youTube:
+  disable: false
+  privacyEnhanced: false

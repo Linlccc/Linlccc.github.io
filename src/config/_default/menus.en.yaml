@@ -1,0 +1,27 @@
+# 英文菜单配置
+
+main:
+  - identifier: search
+    name: search
+    pageRef: /search/
+    weight: 10
+
+  - identifier: posts
+    name: posts
+    pageRef: /posts/
+    weight: 20
+
+  - identifier: tags
+    name: tags
+    pageRef: /tags/
+    weight: 30
+
+  # - identifier: categories
+  #   name: categories
+  #   pageRef: /categories/
+  #   weight: 40
+
+  - identifier: archives
+    name: archives
+    pageRef: /archives/
+    weight: 50

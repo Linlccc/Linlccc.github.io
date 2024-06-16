@@ -1,5 +1,0 @@
-{{- $authorInfo := .Params.author | default site.Params.author }}
-{{- $author := $authorInfo }}
-{{- $authorType := printf "%T" $authorInfo }}
-{{- if or (eq $authorType "[]string") (eq $authorType "[]interface {}")}}{{ $author = delimit $authorInfo ", " }}{{ end }}
-{{- $author -}}

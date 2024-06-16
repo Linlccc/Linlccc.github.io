@@ -1,0 +1,263 @@
+# 参数配置
+
+####################
+# 面向整个网站的配置 #
+####################
+# 描述
+description: 不如摸鱼！！！
+# 默认主题  [auto, dark, light]
+defaultTheme: auto
+# 禁用主题切换
+disableThemeToggle: false
+# 禁用滚动到顶部
+disableGoToTop: false
+# 是否启用 manifest (安装到桌面)
+isEnableManifest: true
+# 多语言切换显示完整语言名称
+displayFullLangName: false
+# 列表页中显示 Rss 按钮
+showRssButtonInSectionTermList: true
+# Rss 显示全部内容
+showFullTextinRSS: false
+
+# 站点作者
+author:
+  name: Linlccc
+  email: linlccc@163.com
+
+# logo 信息
+logo:
+  text: linlccc's blog
+  image: /favicon/dark/favicon-192x192.png
+  imageHeight: 30
+
+# 隐藏页脚
+hideFooter: false
+# 网站开始使用年份
+startYear: 2023
+# 提供商信息
+powereds:
+  - name: Hugo
+    url: https://gohugo.io/
+  - name: PaperMod
+    url: https://github.com/adityatelange/hugo-PaperMod/
+
+# 网站图标
+favicon:
+  dark:
+    favicon: /favicon/dark/favicon.ico
+    icon: /favicon/dark/favicon.svg
+    favicon_16: /favicon/dark/favicon-16x16.png
+    favicon_32: /favicon/dark/favicon-32x32.png
+    favicon_180: /favicon/dark/favicon-180x180.png
+    favicon_192: /favicon/dark/favicon-192x192.png
+    favicon_512: /favicon/dark/favicon-512x512.png
+  light:
+    favicon: /favicon/light/favicon.ico
+    icon: /favicon/light/favicon.svg
+    favicon_16: /favicon/light/favicon-16x16.png
+    favicon_32: /favicon/light/favicon-32x32.png
+    favicon_180: /favicon/light/favicon-180x180.png
+    favicon_192: /favicon/light/favicon-192x192.png
+    favicon_512: /favicon/light/favicon-512x512.png
+
+# 自定义 meta 标签
+customMetas:
+  # Google 站点验证
+  - name: google-site-verification
+    content: ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY
+  # 百度 站点验证
+  - name: baidu-site-verification
+    content: codeva-3S13SuprEU
+  # bing 站点验证
+  - name: msvalidate.01
+    content: D46176825688FA3D0C855598CDAB325F
+
+# 关键词
+keywords:
+  - Linlccc
+  - Blog
+
+# css 配置
+css:
+  # 是否按需引入 css
+  isImportDemand: false
+
+# 站点的特殊 page 页，(Kind == "page" && 不是文章页)
+specialPages:
+  - search
+  - archives
+
+# 在档案页显示所有页面
+showAllPagesInArchive: true
+
+###########
+# 公共配置 #
+###########
+
+# 隐藏元信息
+hidemeta: false
+# 文章时间显示最后修改时间
+showLastmod: false
+# 日期格式
+dateFormat: 2006-01-02
+# 显示阅读时间
+showReadingTime: true
+# 显示字数
+showWordCount: true
+# 显示作者
+showAuthor: true
+
+# 文章封面
+cover:
+  # 图片生成链接
+  linkFullImages: true
+
+###############
+# Home 页配置 #
+###############
+
+# 经典模式信息
+classicInfo:
+  # 启用
+  enabled: true
+  # 标题
+  title: 不如摸鱼！！
+  # 内容
+  content: 😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾
+
+# 简介模式信息
+profileInfo:
+  # 标题
+  title: 00000000!!!
+  # 内容
+  content: 😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾
+  # 图片
+  image:
+    url: /images/home/avatar.png
+    title: LIN
+    width: 120
+    height: 120
+  # 按钮
+  buttons:
+    - name: Posts
+      url: posts
+
+# Home 页显示的文章类型(内容文章目录名或文章的 type 配置)
+homeShowTypes:
+  - posts
+
+# 社交图标
+socialIcons:
+  - name: github
+    url: https://github.com/Linlccc
+  - name: email
+    url: mailto:linlcccc@gmail.com
+  - name: rss
+    url: index.xml
+
+#############
+# 列表页配置 #
+#############
+
+# 列表页头部显示面包屑
+listShowBreadCrumbs: false
+# 隐藏摘要
+hideSummary: false
+
+#############
+# 文章页配置 #
+#############
+
+# 页面显示面包屑导航
+showBreadCrumbs: true
+# 显示原文章信息，用于显示转载自哪里
+showCanonicalLink: true
+
+# 文章编辑链接信息
+editPost:
+  # 链接
+  url: https://github.com/Linlccc/Linlccc.github.io/edit/master/src/content
+  # 将文件路径附加到编辑链接
+  appendFilePath: true
+  # 禁用编辑
+  disabled: false
+
+# 显示目录
+showToc: true
+# 目录打开
+tocOpen: true
+
+# 禁用锚点标题
+disableAnchoredHeadings: false
+
+# 显示帖子导航链接
+showPostNavLinks: true
+
+# 禁用分享功能
+disableShare: false
+# 是否使用自定义分享按钮
+customShare: true
+# 自定义分享按钮
+customShareButtons:
+  - x
+  - linkedin
+  - reddit
+  - facebook
+  - whatsapp
+  - telegram
+  - ycombinator
+
+# giscus 评论信息, 配置 see:https://giscus.app/
+giscusComments:
+  enabled: true
+  conf:
+    data-repo: Linlccc/Linlccc.github.io
+    data-repo-id: R_kgDOI9kokw
+    data-category: Announcements
+    data-category-id: DIC_kwDOI9kok84CUU3Q
+    data-mapping: pathname
+    data-strict: 1
+    data-reactions-enabled: 1
+    data-emit-metadata: 0
+    data-input-position: bottom
+    data-lang: zh-CN
+    data-loading: lazy
+    crossorigin: anonymous
+
+#############
+# 搜索页配置 #
+#############
+
+# fuse搜索配置 see:https://fusejs.io/api/options.html
+fuseOptions:
+  # 区分大小写
+  isCaseSensitive: false
+  # 排序
+  shouldSort: true
+  # 位置
+  location: 0
+  # 距离
+  distance: 1000
+  # 阈值,匹配算法在什么时候放弃匹配,0-1之间,越小越严格
+  threshold: 0.4
+  # 最小匹配字符长度
+  minMatchCharLength: 0
+  # 匹配键
+  keys:
+    - title
+    - permalink
+    - summary
+    - content
+
+####################
+# Hugo 内置模板配置 #
+####################
+
+# 将网站和你的 Twitter 账户关联起来
+social:
+  twitter: Linlcccc
+
+# 站点图像
+images:
+  - /favicon/dark/favicon-192x192.png

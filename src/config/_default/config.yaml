@@ -1,0 +1,36 @@
+# 基本配置
+# see:https://gohugo.io/getting-started/configuration/
+
+# 主题
+theme: Hahah
+# 标题
+title: Linlccc's Blog
+# 发布站点的绝对 URL（协议、主机、路径和尾部斜杠）
+baseURL: https://linlccc.com/
+# 网站版权
+copyright:
+
+# 每页文章数量
+paginate: 10
+# 文章摘要长度
+summaryLength: 70
+
+# 默认语言
+defaultContentLanguage: zh
+# 默认语言是否在子目录中
+defaultContentLanguageInSubdir: false
+# 设置时区 亚洲/重庆 see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Chongqing
+
+# 是否检测内容中的 中/日/韩 文，使 .Summary .WordCount 正确运行
+hasCJKLanguage: true
+# 启动Emoji表情支持
+enableEmoji: true
+# 禁用 Hugo 注入生成器元标记
+disableHugoGeneratorInject: false
+# 启用 robots.txt （标准网络协议，用于告知网络爬虫哪些页面可以被爬取，哪些页面不能被爬取）
+enableRobotsTXT: true
+# 如果站点由 git 管理，将页面的 Lastmod 参数设置为最后 git 提交日期
+enableGitInfo: true
+# 没有文章支持的页面 Title 首字符大写
+capitalizeListTitles: true

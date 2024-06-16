@@ -1,0 +1,35 @@
+# 语言配置
+# see:https://gohugo.io/content-management/multilingual/#configure-languages
+
+zh:
+  disabled: false
+  languageCode: zh-CN
+  languageName: 中文
+  # 文字呈现方向
+  languagedirection: ltr
+  title:
+  weight: 1
+
+en:
+  disabled: false
+  languageCode: en-US
+  languageName: English
+  languagedirection: ltr
+  title:
+  weight: 2
+
+  Params:
+    classicInfo:
+      enabled: false
+    profileInfo:
+      buttons:
+        - name: Search
+          url: search
+        - name: Posts
+          url: posts
+        - name: Tags
+          url: tags
+        - name: Archives
+          url: archives
+        - name: Lin
+          url: https://linlccc.com

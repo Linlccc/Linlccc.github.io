@@ -1,0 +1,5 @@
+# 压缩配置
+# see:https://gohugo.io/getting-started/configuration/#configure-minify
+
+# 生成文件压缩
+minifyOutput: false
