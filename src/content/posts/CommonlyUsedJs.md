@@ -1,13 +1,12 @@
 ---
-abbrlink: ''
-categories: []
 date: 2024-05-07 03:52:05
 description: ''
 lastmod: '2024-06-16T23:33:27.623+08:00'
-tags: '["javascript"]'
+tags:
+- javascript
 title: 常用js
 updated: '2024-06-16T23:27:35.322+08:00'
-weight: '1'
+weight: 1
 ---
 ## 防抖
 
