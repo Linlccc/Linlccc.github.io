@@ -67,40 +67,6 @@ editPost:
 
 ## 二级标题
 
-<!-- 使用 collapse 简码 -->
-
-{{< collapse summary="使用折叠简码" openByDefault=true >}}
-
-123
-
-<!-- 使用 figure 简码 -->
-
-{{< figure align="center" src="/images/posts/test/test_post_1.png" title="csss" caption="cccs" >}}
-
-<!-- 使用 inTextImg 简码 -->
-
-{{< inTextImg url="/images/posts/test/test_post_1.png" alt="csss" height=100 >}}
-
-<!-- 使用 ltr 简码 -->
-
-{{< ltr >}}
-123456789
-{{< /ltr >}}
-
-<!-- 使用 rtl 简码 -->
-
-{{< rtl >}}
-123456789
-{{< /rtl >}}
-
-<!-- 使用 rawhtml 简码 -->
-
-{{< rawhtml >}}
-123456789
-{{< /rawhtml >}}
-
-{{< /collapse >}}
-
 ### 三级标题
 
 ### 三级标题
@@ -339,7 +305,7 @@ static void Web()
 
 ### Code 3
 
-{{< highlight csharp "linenos=true,hl_lines=8 15-17,linenostart=199" false >}}
+{{< highlight lang="csharp" opt="linenos=true,hl_lines=8 15-17,linenostart=199" isOpen=false >}}
 static void Web(1)
 {
 // 加载配置

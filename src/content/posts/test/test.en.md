@@ -63,43 +63,11 @@ editPost:
   disabled: true
 ---
 
-<!-- 使用 collapse 简码 -->
+![alt text](i1.png)
 
-{{< collapse summary="使用折叠简码" openByDefault=true >}}
+## 二级标题
 
-123
-
-<!-- 使用 figure 简码 -->
-
-{{< figure align="center" src="/images/posts/test/test_post_1.png" title="csss" caption="cccs" >}}
-
-<!-- 使用 inTextImg 简码 -->
-
-{{< inTextImg url="/images/posts/test/test_post_1.png" alt="csss" height=100 >}}
-
-<!-- 使用 ltr 简码 -->
-
-{{< ltr >}}
-123456789
-{{< /ltr >}}
-
-<!-- 使用 rtl 简码 -->
-
-{{< rtl >}}
-123456789
-{{< /rtl >}}
-
-<!-- 使用 rawhtml 简码 -->
-
-{{< rawhtml >}}
-123456789
-{{< /rawhtml >}}
-
-{{< /collapse >}}
-
-## 二级标题{.aa yu="asd"}
-
-## 二级标题{.bb yu="sdf"}
+### 三级标题
 
 ### 三级标题
 
@@ -107,7 +75,14 @@ editPost:
 
 ##### 五级标题
 
-###### 六级标题
+###### 六级标题题题题题题题题题题
+
+`asjgfuaksgfuagskfbakjsfbkjasgkdgasukdgukasdukasukdhukahdkahsdhakshdasjgfuaksgfuagskfbakjsfbkjasgkdgasukdgukasdukasukdhukahdkahsdhakshd`
+
+<h1 id="h1html" style="background: red;">h1html</h1>
+<script>
+    console.log("md输出");
+</script>
 
 段落正常字体
 _段落斜体_
@@ -125,6 +100,7 @@ _段落斜体_
 2. 有序项 2
 3. 有序项 3
    1. 嵌套项
+   2. asd
    - 嵌套项
 
 > 区块引用
@@ -147,7 +123,7 @@ printf("这是一个代码块");
 | 这是一个单元格 | 这是一个单元格 | 这是一个单元格 |
 | 这是一个单元格 | 这是一个单元格 | 这是一个单元格 |
 
-[内联方式超链接](https://linlccc.com/posts/test/){.aa}
+[内联方式<code>123a</code>超链接](/posts/test/)
 
 [引用方式超链接][引用式]
 
@@ -238,11 +214,11 @@ TTTTTTT
 
 ### 下面是一张图片
 
-![图片](/images/posts/test/test_post_1.png "assda")
+![图片](/images/posts/test/test_post_1.png)
 
 ### Code 1
 
-```js{.aa}
+```js
 // 语法结构
 while (条件) {
   需要执行的代码;
@@ -272,7 +248,7 @@ while (arr[i]) {
 
 ### Code 2
 
-```C#
+```C# {.hide asdfff=asdfff close=asfasg}
 static void Web()
 {
     // 加载配置
@@ -329,20 +305,19 @@ static void Web()
 
 ### Code 3
 
-```CSharp
-static void Web()
+{{< highlight lang="csharp" opt="linenos=true,hl_lines=8 15-17,linenostart=199" isOpen=false >}}
+static void Web(1)
 {
-  // aa
-    // 加载配置
-    string webConfigFile = "WebConfig.json";
-    WebConfig webConfig;
-    if (!File.Exists(webConfigFile))
-    {
-        webConfig = new();
-        webConfig.Port = 8082;
-        File.WriteAllText(webConfigFile, JsonConvert.SerializeObject(webConfig, Formatting.Indented));
-    }
-    else webConfig = JsonConvert.DeserializeObject<WebConfig>(File.ReadAllText(webConfigFile))!;
+// 加载配置
+string webConfigFile = "WebConfig.json";
+WebConfig webConfig;
+if (!File.Exists(webConfigFile))
+{
+webConfig = new();
+webConfig.Port = 8082;
+File.WriteAllText(webConfigFile, JsonConvert.SerializeObject(webConfig, Formatting.Indented));
+}
+else webConfig = JsonConvert.DeserializeObject<WebConfig>(File.ReadAllText(webConfigFile))!;
 
     Serve.Run(RunOptions.Default
         .Silence()
@@ -374,5 +349,6 @@ static void Web()
     //{
     //    services.AddJsonOptions(configure => configure.JsonSerializerOptions.Converters.AddDateTimeTypeConverters("yyyy-MM-dd HH:mm:ss.fff"));
     //});
+
 }
-```
+{{< / highlight >}}
