@@ -13,7 +13,7 @@
     <language>zh-CN</language>
     <managingEditor>linlccc@163.com (Linlccc)</managingEditor>
     <webMaster>linlccc@163.com (Linlccc)</webMaster>
-    <lastBuildDate>Mon, 17 Jun 2024 21:29:21 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2024 22:02:20 +0800</lastBuildDate>
     <atom:link href="https://linlccc.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
       <item>
@@ -23,6 +23,15 @@
         <author>[Linlccc]</author>
         <guid>https://linlccc.com/posts/hugo-hahahthemearticleconfiguration/</guid>
         <description>文章基础配置 # yaml 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 # 标题 title: # 链</description>
+      </item>
+    
+      <item>
+        <title>hugo 模板基本语法</title>
+        <link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link>
+        <pubDate>Wed, 22 Feb 2023 17:57:49 +0800</pubDate>
+        <author>[Linlccc]</author>
+        <guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid>
+        <description>概念 # 每一个模板都有一个名为 Page 数据对象 Page 信息参考： Page 信息参考 基础语法 # 访问变量 # go 复制 1 2 {{ .Titel }} // 访问已存在的变量 {{ $address }} // 访问自定义变量 声明</description>
       </item>
     </channel>
 </rss>

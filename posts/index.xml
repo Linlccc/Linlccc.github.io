@@ -25,15 +25,6 @@
       </item>
     
       <item>
-        <title>手写js高级知识点</title>
-        <link>https://linlccc.com/posts/adv-js-knowledge/</link>
-        <pubDate>Sun, 16 Jun 2024 22:28:46 +0800</pubDate>
-        <author>[Lin]</author>
-        <guid>https://linlccc.com/posts/adv-js-knowledge/</guid>
-        <description>实现原生的 AJAX 请求 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 const ajax = { get(url, fn) { const xhr = new XMLHttpRequest(); xhr.open(&amp;#34;GET&amp;#34;, url, true); // 第三个参数异步与否 xhr.onreadystatechange = function () { if (xhr.readyState === 4) {</description>
-      </item>
-    
-      <item>
         <title>常用js</title>
         <link>https://linlccc.com/posts/commonlyusedjs/</link>
         <pubDate>Sun, 16 Jun 2024 23:33:27 +0800</pubDate>
@@ -52,15 +43,6 @@
       </item>
     
       <item>
-        <title>VsCode 常用扩展推荐</title>
-        <link>https://linlccc.com/posts/vscodeextensions/</link>
-        <pubDate>Wed, 08 May 2024 09:05:43 +0800</pubDate>
-        <author>[Linlccc]</author>
-        <guid>https://linlccc.com/posts/vscodeextensions/</guid>
-        <description>基础扩展 # Chinese (Simplified) # 插件 txt 复制 1 VS Code 的中文（简体）语言包 vscode-icons # 插件 txt 复制 1 图标 XML，Json，TOML 扩展 # JSON Crack # 插件 txt 复制 1 Json 数据可视化 Even Better TOML</description>
-      </item>
-    
-      <item>
         <title>在 Vue 中使用 Axios</title>
         <link>https://linlccc.com/posts/axiosinvue/</link>
         <pubDate>Tue, 07 May 2024 18:20:22 +0800</pubDate>
@@ -70,39 +52,12 @@
       </item>
     
       <item>
-        <title>ES6 常用代码块</title>
-        <link>https://linlccc.com/posts/commonlyusedes6/</link>
-        <pubDate>Tue, 07 May 2024 16:28:47 +0800</pubDate>
-        <author>[Linlccc]</author>
-        <guid>https://linlccc.com/posts/commonlyusedes6/</guid>
-        <description>ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = [&amp;#34;😄&amp;#34;, 67, true, false, &amp;#34;55&amp;#34;]; arr = arr.sort(() =&amp;gt; 0.5 - Math.random()); console.log(arr); // [ &amp;#39;😄&amp;#39;, &amp;#39;55&amp;#39;, 67, false,</description>
-      </item>
-    
-      <item>
-        <title>Nginx基础配置</title>
-        <link>https://linlccc.com/posts/nginxconfig/</link>
-        <pubDate>Sun, 05 May 2024 19:57:58 +0800</pubDate>
-        <author>[Linlccc]</author>
-        <guid>https://linlccc.com/posts/nginxconfig/</guid>
-        <description>具体配置可见 # NGINX 配置 NGINX 入门学习笔记 NGINX 备忘清单 Web 服务器 # nginx 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 # http server { listen 80; server_name _; location / { root /data; index index.html index.htm; } } #</description>
-      </item>
-    
-      <item>
         <title>常用SQL</title>
         <link>https://linlccc.com/posts/commonsql/</link>
         <pubDate>Sun, 05 May 2024 07:05:18 +0800</pubDate>
         <author>[Linlccc]</author>
         <guid>https://linlccc.com/posts/commonsql/</guid>
         <description>DCL(Data Control Language)数据控制语言 # DCL 在 mysql 中可以正常使用其他数据库没测试 用户管理 # sql 复制 1 2 3 4 5 6 -- 查询用户 select host,user from mysql.user; -- 添加用户 create user &amp;#39</description>
-      </item>
-    
-      <item>
-        <title>Linux 命令大全</title>
-        <link>https://linlccc.com/posts/linuxcommandlist/</link>
-        <pubDate>Sun, 05 May 2024 01:46:07 +0800</pubDate>
-        <author>[Linlccc]</author>
-        <guid>https://linlccc.com/posts/linuxcommandlist/</guid>
-        <description>系统指令 # Bash 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 # 显示系统信息：内核版本、机器类型等 uname # 显示正在运行的Linux内核的发行版</description>
       </item>
     
       <item>
