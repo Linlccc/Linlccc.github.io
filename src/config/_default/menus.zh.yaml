@@ -23,11 +23,16 @@ main:
     pageRef: /posts/
     weight: 20
 
+  - identifier: pending
+    name: 待处理
+    pageRef: /pending/
+    weight: 21
+
   - identifier: tags
     name: 标签
     pageRef: /tags/
     weight: 30
-    
+
   - identifier: langs
     name: 语言
     pageRef: /langs/
