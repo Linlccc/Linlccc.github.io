@@ -1,1712 +1,335 @@
-<!DOCTYPE html>
-<html lang="zh" dir="ltr" class="auto">
-
-<head>
-  
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<meta name="application-name" content="Linlccc&#39;s Blog">
-
-<title>ES6 常用代码块 | Linlccc&#39;s Blog</title>
-
-<meta name="description" content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = [&#34;😄&#34;, 67, true, false, &#34;55&#34;]; arr = arr.sort(() =&gt; 0.5 - Math.random()); console.log(arr); // [ &#39;😄&#39;, &#39;55&#39;, 67, false," />
-
-<meta name="author" content="Linlccc" />
-
-<meta name="keywords" content="javascript" />
-
-
-<meta name="theme-color" content="">
-
-<meta name="google-site-verification" content="ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY" />
-<meta name="baidu-site-verification" content="codeva-3S13SuprEU" />
-<meta name="msvalidate.01" content="D46176825688FA3D0C855598CDAB325F" />
-
-
-<link rel="canonical" href="https://github.com/xieyezi/website-2022/blob/master/docs/front-end/ES6-20%E4%B8%AA%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8A%80%E5%B7%A7.md" />
-
-
-
-<link rel="alternate" hreflang="zh" href="https://linlccc.com/pending/commonlyusedes6/">
-<link rel="manifest" href="https://linlccc.com/manifest.json" />
-  
-
-
-
-
-
-<link rel="icon" type="image/x-icon" media="(prefers-color-scheme: dark)" href="/favicon/dark/favicon.ico" />
-<link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="/favicon/dark/favicon.svg" />
-<link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: dark)" href="/favicon/dark/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" href="/favicon/dark/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="192x192" media="(prefers-color-scheme: dark)" href="/favicon/dark/favicon-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" media="(prefers-color-scheme: dark)" href="/favicon/dark/favicon-512x512.png" />
-<link rel="apple-touch-icon" sizes="180x180" media="(prefers-color-scheme: dark)" href="/favicon/dark/favicon-180x180.png" />
-
-<link rel="icon" type="image/x-icon" media="(prefers-color-scheme: light)" href="/favicon/light/favicon.ico" />
-<link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: light)" href="/favicon/light/favicon.svg" />
-<link rel="icon" type="image/png" sizes="16x16" media="(prefers-color-scheme: light)" href="/favicon/light/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)" href="/favicon/light/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="192x192" media="(prefers-color-scheme: light)" href="/favicon/light/favicon-192x192.png" />
-<link rel="icon" type="image/png" sizes="512x512" media="(prefers-color-scheme: light)" href="/favicon/light/favicon-512x512.png" />
-<link rel="apple-touch-icon" sizes="180x180" media="(prefers-color-scheme: light)" href="/favicon/light/favicon-180x180.png" />
-<meta property="og:url" content="https://linlccc.com/pending/commonlyusedes6/">
-  <meta property="og:site_name" content="Linlccc&#39;s Blog">
-  <meta property="og:title" content="ES6 常用代码块">
-  <meta property="og:description" content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = [&#34;😄&#34;, 67, true, false, &#34;55&#34;]; arr = arr.sort(() =&gt; 0.5 - Math.random()); console.log(arr); // [ &#39;😄&#39;, &#39;55&#39;, 67, false,">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="pending">
-    <meta property="article:published_time" content="2024-05-07T16:28:47+08:00">
-    <meta property="article:modified_time" content="2024-06-17T22:02:20+08:00">
-    <meta property="article:tag" content="Javascript">
-    <meta property="og:image" content="https://linlccc.com/favicon/dark/favicon-192x192.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://linlccc.com/favicon/dark/favicon-192x192.png">
-  <meta name="twitter:title" content="ES6 常用代码块">
-  <meta name="twitter:description" content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = [&#34;😄&#34;, 67, true, false, &#34;55&#34;]; arr = arr.sort(() =&gt; 0.5 - Math.random()); console.log(arr); // [ &#39;😄&#39;, &#39;55&#39;, 67, false,">
-      <meta name="twitter:site" content="@Linlcccc">
-
-  <meta itemprop="name" content="ES6 常用代码块">
-  <meta itemprop="description" content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = [&#34;😄&#34;, 67, true, false, &#34;55&#34;]; arr = arr.sort(() =&gt; 0.5 - Math.random()); console.log(arr); // [ &#39;😄&#39;, &#39;55&#39;, 67, false,">
-  <meta itemprop="datePublished" content="2024-05-07T16:28:47+08:00">
-  <meta itemprop="dateModified" content="2024-06-17T22:02:20+08:00">
-  <meta itemprop="wordCount" content="1099">
-  <meta itemprop="image" content="https://linlccc.com/favicon/dark/favicon-192x192.png">
-  <meta itemprop="keywords" content="Javascript">
-  
-    
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-TQ3ZXPKKNM"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-TQ3ZXPKKNM');
-        }
-      </script>
-    
-  
-
-
-
-<noscript>
-  <style>
-    #themeToggle{
-        display: none;
-    }
-  </style>
-</noscript>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link crossorigin="anonymous" rel="preload stylesheet" as="style" href="/assets/css/stylesAll.min.0c7dd80c89e44162059a1c117cf80dea97acff4fc190881e155f36df1374385f.css" integrity="sha256-DH3YDInkQWIFmhwRfPgN6pes/0/BkIgeFV823xN0OF8=" />
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</head>
-<body id="top">
-  
-
-<header id="header">
-  
-
-<nav>
-  <div class="logo">
-    
-        <a role="text" href="https://linlccc.com/" accesskey="h" title="linlccc&#39;s blog (Alt + H)">
-          linlccc&#39;s blog
-        </a>
-      
-        <button id='themeToggle' accesskey='t' title='(Alt + T)'>
-          
-
-<svg xmlns="http://www.w3.org/2000/svg" class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="12" cy="12" r="5"></circle>
-  <line x1="12" y1="1" x2="12" y2="3"></line>
-  <line x1="12" y1="21" x2="12" y2="23"></line>
-  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-  <line x1="1" y1="12" x2="3" y2="12"></line>
-  <line x1="21" y1="12" x2="23" y2="12"></line>
-  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-</svg>
-
-          
-
-<svg xmlns="http://www.w3.org/2000/svg" class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-</svg>
-        </button>
-      
-      <ul class="langSwitch" role="list">
-        
-        <li>|</li>
-          <li><a role="text" href="https://linlccc.com/en/" hreflang="en" title="en">En</a></li>
-        </ul>
-  </div>
-
-  
-  <ul id="menu" class="menu" role="list">
-      <li>
-        <a role="text" href="/search/" title='搜索 (Alt + /)' accesskey='/'>
-          <span >搜索</span>
-        </a>
-      </li>
-    
-      <li>
-        <a role="text" href="/posts/" title='文章'>
-          <span >文章</span>
-        </a>
-      </li>
-    
-      <li>
-        <a role="text" href="/pending/" title='待处理'>
-          <span >待处理</span>
-        </a>
-      </li>
-    
-      <li>
-        <a role="text" href="/tags/" title='标签'>
-          <span >标签</span>
-        </a>
-      </li>
-    
-      <li>
-        <a role="text" href="/langs/" title='语言'>
-          <span >语言</span>
-        </a>
-      </li>
-    
-      <li>
-        <a role="text" href="/archives/" title='档案'>
-          <span >档案</span>
-        </a>
-      </li>
-    </ul>
-</nav>
-
-
-  
-  
-</header>
-
-
-  <main class="main">
-  
-  <header>
-    
-
-
-  <div class="breadcrumbs">
-    
-    
-    
-    
-    
-    
-    
-      
-      
-      
-        
-      
-    
-      
-      
-      
-    
-
-    
-    
-      
-      <a href="https://linlccc.com/">Linlccc&#39;s Blog</a>
-    
-      &nbsp;»&nbsp;
-      <a href="https://linlccc.com/pending/">Pendings</a>
-    
-  </div>
-
-
-    <h1>
-      ES6 常用代码块
-      
-    </h1>
-    
-    
-    
-      <div class="meta">
-        
-
-
-
-
-
-  
-
-
-
-
-  
-
-
-
-
-  
-
-
-
-
-  
-
-
-
-<span title='2024-05-07 16:28:47 +0800 CST'>2024-05-07</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;1099 字&nbsp;·&nbsp;Linlccc
-
-        
-
-
-
-        
-
-
-
-  
-  
-  &nbsp;|&nbsp;
-  <a href="https://hexo.dotnetrun.com/edit_page.html?file=content/pending/CommonlyUsedES6.md" rel="noopener noreferrer" target="_blank">编辑</a>
-
-
-        
-
-
-
-    
-  &nbsp;|&nbsp;
-  <span>转载自&nbsp;<a href="https://github.com/xieyezi/website-2022/blob/master/docs/front-end/ES6-20%E4%B8%AA%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8A%80%E5%B7%A7.md" target="_blank" rel="noopener noreferrer">github.com</a></span>
-
-
-      </div>
-    
-  </header>
-  
-  
-
-
-  
-  
-  
-  
-
-
-  
-  
-
-
-  <details id="toc" class="toc" open>
-    
-    <summary accesskey="c" title="(Alt + C)"><span class="details">目录</span></summary>
-    
-    <div class="inner">
-      <nav id="TableOfContents">
-  <ol>
-    <li><a href="#es6-20-个经常使用的技巧">ES6 20 个经常使用的技巧</a>
-      <ol>
-        <li><a href="#打乱数组顺序">打乱数组顺序</a></li>
-        <li><a href="#删除数字之外的所有字符">删除数字之外的所有字符</a></li>
-        <li><a href="#反转字符串或者单词">反转字符串或者单词</a></li>
-        <li><a href="#将十进制转换为二进制文件或十六进制数">将十进制转换为二进制文件或十六进制数</a></li>
-        <li><a href="#合并多个对象">合并多个对象</a></li>
-        <li><a href="#-和--的区别"><code>===</code> 和 <code>==</code> 的区别</a></li>
-        <li><a href="#解构赋值">解构赋值</a></li>
-        <li><a href="#交换变量的值">交换变量的值</a></li>
-        <li><a href="#判断回文字符串">判断回文字符串</a></li>
-        <li><a href="#判断两个字符串是否为互相排列">判断两个字符串是否为互相排列</a></li>
-        <li><a href="#可选链操作符">可选链操作符</a></li>
-        <li><a href="#三目运算符">三目运算符</a></li>
-        <li><a href="#从数组中随机选择一个值">从数组中随机选择一个值</a></li>
-        <li><a href="#冻结对象">冻结对象</a></li>
-        <li><a href="#删除数组重复的元素">删除数组重复的元素</a></li>
-        <li><a href="#保留指定位小数">保留指定位小数</a></li>
-        <li><a href="#清空数组">清空数组</a></li>
-        <li><a href="#从-rgb-转换为-hex">从 <code>RGB</code> 转换为 <code>HEX</code></a></li>
-        <li><a href="#从数组中获取最大值和最小值">从数组中获取最大值和最小值</a></li>
-        <li><a href="#空值合并运算符">空值合并运算符</a></li>
-        <li><a href="#过滤数组中值为-false-的值">过滤数组中值为 <code>false</code> 的值</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-    </div>
-  </details>
-
-
-
-  
-  
-    <div class="postContent">
-      
-
-
-
-
-
-
-
-
-
-
-
-<h2  id="es6-20-个经常使用的技巧" >ES6 20 个经常使用的技巧
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#es6-20-%e4%b8%aa%e7%bb%8f%e5%b8%b8%e4%bd%bf%e7%94%a8%e7%9a%84%e6%8a%80%e5%b7%a7">#</a>
-  
-</h2>
-
-
-
-
-
-
-<h3  id="打乱数组顺序" >打乱数组顺序
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e6%89%93%e4%b9%b1%e6%95%b0%e7%bb%84%e9%a1%ba%e5%ba%8f">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
-</span><span class="lnt" id="hl-0-2"><a class="lnlinks" href="#hl-0-2">2</a>
-</span><span class="lnt" id="hl-0-3"><a class="lnlinks" href="#hl-0-3">3</a>
-</span><span class="lnt" id="hl-0-4"><a class="lnlinks" href="#hl-0-4">4</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;😄&#34;</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">&#34;55&#34;</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="nx">arr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">sort</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// [ &#39;😄&#39;, &#39;55&#39;, 67, false, true ]
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="删除数字之外的所有字符" >删除数字之外的所有字符
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e5%88%a0%e9%99%a4%e6%95%b0%e5%ad%97%e4%b9%8b%e5%a4%96%e7%9a%84%e6%89%80%e6%9c%89%e5%ad%97%e7%ac%a6">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1">1</a>
-</span><span class="lnt" id="hl-1-2"><a class="lnlinks" href="#hl-1-2">2</a>
-</span><span class="lnt" id="hl-1-3"><a class="lnlinks" href="#hl-1-3">3</a>
-</span><span class="lnt" id="hl-1-4"><a class="lnlinks" href="#hl-1-4">4</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&#34;xieyezi 23213 is 95994 so hansome 223333&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 2321395994223333
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="反转字符串或者单词" >反转字符串或者单词
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%88%96%e8%80%85%e5%8d%95%e8%af%8d">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a class="lnlinks" href="#hl-2-1"> 1</a>
-</span><span class="lnt" id="hl-2-2"><a class="lnlinks" href="#hl-2-2"> 2</a>
-</span><span class="lnt" id="hl-2-3"><a class="lnlinks" href="#hl-2-3"> 3</a>
-</span><span class="lnt" id="hl-2-4"><a class="lnlinks" href="#hl-2-4"> 4</a>
-</span><span class="lnt" id="hl-2-5"><a class="lnlinks" href="#hl-2-5"> 5</a>
-</span><span class="lnt" id="hl-2-6"><a class="lnlinks" href="#hl-2-6"> 6</a>
-</span><span class="lnt" id="hl-2-7"><a class="lnlinks" href="#hl-2-7"> 7</a>
-</span><span class="lnt" id="hl-2-8"><a class="lnlinks" href="#hl-2-8"> 8</a>
-</span><span class="lnt" id="hl-2-9"><a class="lnlinks" href="#hl-2-9"> 9</a>
-</span><span class="lnt" id="hl-2-10"><a class="lnlinks" href="#hl-2-10">10</a>
-</span><span class="lnt" id="hl-2-11"><a class="lnlinks" href="#hl-2-11">11</a>
-</span><span class="lnt" id="hl-2-12"><a class="lnlinks" href="#hl-2-12">12</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s2">&#34;xieyezi js so handsome, lol.&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">reverseSentence</span> <span class="o">=</span> <span class="nx">reverseBySeparator</span><span class="p">(</span><span class="nx">sentence</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reverseSentence</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// .lol ,emosdnah os sj izeyeix
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">reverseEachWord</span> <span class="o">=</span> <span class="nx">reverseBySeparator</span><span class="p">(</span><span class="nx">reverseSentence</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">reverseEachWord</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// izeyeix sj os ,emosdnah .lol
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">reverseBySeparator</span><span class="p">(</span><span class="nx">string</span><span class="p">,</span> <span class="nx">separator</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">string</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">separator</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="nx">separator</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="将十进制转换为二进制文件或十六进制数" >将十进制转换为二进制文件或十六进制数
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e5%b0%86%e5%8d%81%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e4%b8%ba%e4%ba%8c%e8%bf%9b%e5%88%b6%e6%96%87%e4%bb%b6%e6%88%96%e5%8d%81%e5%85%ad%e8%bf%9b%e5%88%b6%e6%95%b0">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-3-1"><a class="lnlinks" href="#hl-3-1">1</a>
-</span><span class="lnt" id="hl-3-2"><a class="lnlinks" href="#hl-3-2">2</a>
-</span><span class="lnt" id="hl-3-3"><a class="lnlinks" href="#hl-3-3">3</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">45</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">num</span><span class="p">.</span><span class="nx">tostring</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="合并多个对象" >合并多个对象
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e5%90%88%e5%b9%b6%e5%a4%9a%e4%b8%aa%e5%af%b9%e8%b1%a1">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-4-1"><a class="lnlinks" href="#hl-4-1"> 1</a>
-</span><span class="lnt" id="hl-4-2"><a class="lnlinks" href="#hl-4-2"> 2</a>
-</span><span class="lnt" id="hl-4-3"><a class="lnlinks" href="#hl-4-3"> 3</a>
-</span><span class="lnt" id="hl-4-4"><a class="lnlinks" href="#hl-4-4"> 4</a>
-</span><span class="lnt" id="hl-4-5"><a class="lnlinks" href="#hl-4-5"> 5</a>
-</span><span class="lnt" id="hl-4-6"><a class="lnlinks" href="#hl-4-6"> 6</a>
-</span><span class="lnt" id="hl-4-7"><a class="lnlinks" href="#hl-4-7"> 7</a>
-</span><span class="lnt" id="hl-4-8"><a class="lnlinks" href="#hl-4-8"> 8</a>
-</span><span class="lnt" id="hl-4-9"><a class="lnlinks" href="#hl-4-9"> 9</a>
-</span><span class="lnt" id="hl-4-10"><a class="lnlinks" href="#hl-4-10">10</a>
-</span><span class="lnt" id="hl-4-11"><a class="lnlinks" href="#hl-4-11">11</a>
-</span><span class="lnt" id="hl-4-12"><a class="lnlinks" href="#hl-4-12">12</a>
-</span><span class="lnt" id="hl-4-13"><a class="lnlinks" href="#hl-4-13">13</a>
-</span><span class="lnt" id="hl-4-14"><a class="lnlinks" href="#hl-4-14">14</a>
-</span><span class="lnt" id="hl-4-15"><a class="lnlinks" href="#hl-4-15">15</a>
-</span><span class="lnt" id="hl-4-16"><a class="lnlinks" href="#hl-4-16">16</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">city</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Chongqing&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">population</span><span class="o">:</span> <span class="s2">&#34;1,234,567,890&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">location</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">longitude</span><span class="o">:</span> <span class="s2">&#34;116.4&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">latitude</span><span class="o">:</span> <span class="s2">&#34;39.9&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fullCity</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">city</span><span class="p">,</span> <span class="p">...</span><span class="nx">location</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fullCity</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//   name: &#39;Chongqing&#39;,
-</span></span></span><span class="line"><span class="cl"><span class="c1">//   population: &#39;1,234,567,890&#39;,
-</span></span></span><span class="line"><span class="cl"><span class="c1">//   longitude: &#39;116.4&#39;,
-</span></span></span><span class="line"><span class="cl"><span class="c1">//   latitude: &#39;39.9&#39;
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="-和--的区别" ><code>===</code> 和 <code>==</code> 的区别
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#-%e5%92%8c--%e7%9a%84%e5%8c%ba%e5%88%ab">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-5-1"><a class="lnlinks" href="#hl-5-1">1</a>
-</span><span class="lnt" id="hl-5-2"><a class="lnlinks" href="#hl-5-2">2</a>
-</span><span class="lnt" id="hl-5-3"><a class="lnlinks" href="#hl-5-3">3</a>
-</span><span class="lnt" id="hl-5-4"><a class="lnlinks" href="#hl-5-4">4</a>
-</span><span class="lnt" id="hl-5-5"><a class="lnlinks" href="#hl-5-5">5</a>
-</span><span class="lnt" id="hl-5-6"><a class="lnlinks" href="#hl-5-6">6</a>
-</span><span class="lnt" id="hl-5-7"><a class="lnlinks" href="#hl-5-7">7</a>
-</span><span class="lnt" id="hl-5-8"><a class="lnlinks" href="#hl-5-8">8</a>
-</span><span class="lnt" id="hl-5-9"><a class="lnlinks" href="#hl-5-9">9</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// ==   -&gt;  类型转换 (浅比较)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// ===  -&gt;  无类型转换 (严格比较)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="mi">0</span> <span class="o">==</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// true
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">0</span> <span class="o">===</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// false
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">1</span> <span class="o">==</span> <span class="s2">&#34;1&#34;</span><span class="p">;</span> <span class="c1">// true
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">1</span> <span class="o">===</span> <span class="s2">&#34;1&#34;</span><span class="p">;</span> <span class="c1">// false
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">;</span> <span class="c1">// true
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kc">null</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">;</span> <span class="c1">// false
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="解构赋值" >解构赋值
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e8%a7%a3%e6%9e%84%e8%b5%8b%e5%80%bc">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-6-1"><a class="lnlinks" href="#hl-6-1"> 1</a>
-</span><span class="lnt" id="hl-6-2"><a class="lnlinks" href="#hl-6-2"> 2</a>
-</span><span class="lnt" id="hl-6-3"><a class="lnlinks" href="#hl-6-3"> 3</a>
-</span><span class="lnt" id="hl-6-4"><a class="lnlinks" href="#hl-6-4"> 4</a>
-</span><span class="lnt" id="hl-6-5"><a class="lnlinks" href="#hl-6-5"> 5</a>
-</span><span class="lnt" id="hl-6-6"><a class="lnlinks" href="#hl-6-6"> 6</a>
-</span><span class="lnt" id="hl-6-7"><a class="lnlinks" href="#hl-6-7"> 7</a>
-</span><span class="lnt" id="hl-6-8"><a class="lnlinks" href="#hl-6-8"> 8</a>
-</span><span class="lnt" id="hl-6-9"><a class="lnlinks" href="#hl-6-9"> 9</a>
-</span><span class="lnt" id="hl-6-10"><a class="lnlinks" href="#hl-6-10">10</a>
-</span><span class="lnt" id="hl-6-11"><a class="lnlinks" href="#hl-6-11">11</a>
-</span><span class="lnt" id="hl-6-12"><a class="lnlinks" href="#hl-6-12">12</a>
-</span><span class="lnt" id="hl-6-13"><a class="lnlinks" href="#hl-6-13">13</a>
-</span><span class="lnt" id="hl-6-14"><a class="lnlinks" href="#hl-6-14">14</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">forest</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">location</span><span class="o">:</span> <span class="s2">&#34;Sweden&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">animals</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">animalsTypes</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;Lions&#34;</span><span class="p">,</span> <span class="s2">&#34;Tigers&#34;</span><span class="p">,</span> <span class="s2">&#34;Bears&#34;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">location</span><span class="p">,</span> <span class="nx">animals</span><span class="p">,</span> <span class="nx">animalsTypes</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">forest</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">lions</span><span class="p">,</span> <span class="nx">tigers</span><span class="p">,</span> <span class="nx">bears</span><span class="p">]</span> <span class="o">=</span> <span class="nx">animalsTypes</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">location</span><span class="p">);</span> <span class="c1">// Sweden
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">animals</span><span class="p">);</span> <span class="c1">// 3
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lions</span><span class="p">);</span> <span class="c1">// Lions
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tigers</span><span class="p">);</span> <span class="c1">// Tigers
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bears</span><span class="p">);</span> <span class="c1">// Bears
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="交换变量的值" >交换变量的值
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e4%ba%a4%e6%8d%a2%e5%8f%98%e9%87%8f%e7%9a%84%e5%80%bc">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-7-1"><a class="lnlinks" href="#hl-7-1">1</a>
-</span><span class="lnt" id="hl-7-2"><a class="lnlinks" href="#hl-7-2">2</a>
-</span><span class="lnt" id="hl-7-3"><a class="lnlinks" href="#hl-7-3">3</a>
-</span><span class="lnt" id="hl-7-4"><a class="lnlinks" href="#hl-7-4">4</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">bears</span> <span class="o">=</span> <span class="s2">&#34;bears&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">tigers</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;tigers&#34;</span><span class="p">[(</span><span class="nx">bears</span><span class="p">,</span> <span class="nx">tigers</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">tigers</span><span class="p">,</span> <span class="nx">bears</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bears</span><span class="p">);</span> <span class="c1">// tigers
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tribes</span><span class="p">);</span> <span class="c1">// bears
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="判断回文字符串" >判断回文字符串
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e5%88%a4%e6%96%ad%e5%9b%9e%e6%96%87%e5%ad%97%e7%ac%a6%e4%b8%b2">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-8-1"><a class="lnlinks" href="#hl-8-1">1</a>
-</span><span class="lnt" id="hl-8-2"><a class="lnlinks" href="#hl-8-2">2</a>
-</span><span class="lnt" id="hl-8-3"><a class="lnlinks" href="#hl-8-3">3</a>
-</span><span class="lnt" id="hl-8-4"><a class="lnlinks" href="#hl-8-4">4</a>
-</span><span class="lnt" id="hl-8-5"><a class="lnlinks" href="#hl-8-5">5</a>
-</span><span class="lnt" id="hl-8-6"><a class="lnlinks" href="#hl-8-6">6</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">isRevervse</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str1</span><span class="p">,</span> <span class="nx">str2</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">normalize</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">normalize</span><span class="p">(</span><span class="s2">&#34;NFD&#34;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">normalize</span><span class="p">(</span><span class="nx">str1</span><span class="p">)</span> <span class="o">===</span> <span class="nx">str2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isRevervse</span><span class="p">(</span><span class="s2">&#34;anagram&#34;</span><span class="p">,</span> <span class="s2">&#34;margana&#34;</span><span class="p">));</span> <span class="c1">// true
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isRevervse</span><span class="p">(</span><span class="s2">&#34;rac&#34;</span><span class="p">,</span> <span class="s2">&#34;car&#34;</span><span class="p">));</span> <span class="c1">// true
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-<blockquote>
-<p>回文字符串: 正着写和反着写都一样的字符串 (特别感谢
-
-<a href="https://juejin.cn/user/3998255455678968"  rel="external">
-  @浮生阁阁主
-</a>
-勘误)</p>
-</blockquote>
-
-
-
-
-
-
-<h3  id="判断两个字符串是否为互相排列" >判断两个字符串是否为互相排列
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e5%88%a4%e6%96%ad%e4%b8%a4%e4%b8%aa%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%98%af%e5%90%a6%e4%b8%ba%e4%ba%92%e7%9b%b8%e6%8e%92%e5%88%97">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-9-1"><a class="lnlinks" href="#hl-9-1">1</a>
-</span><span class="lnt" id="hl-9-2"><a class="lnlinks" href="#hl-9-2">2</a>
-</span><span class="lnt" id="hl-9-3"><a class="lnlinks" href="#hl-9-3">3</a>
-</span><span class="lnt" id="hl-9-4"><a class="lnlinks" href="#hl-9-4">4</a>
-</span><span class="lnt" id="hl-9-5"><a class="lnlinks" href="#hl-9-5">5</a>
-</span><span class="lnt" id="hl-9-6"><a class="lnlinks" href="#hl-9-6">6</a>
-</span><span class="lnt" id="hl-9-7"><a class="lnlinks" href="#hl-9-7">7</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">isAnagram</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str1</span><span class="p">,</span> <span class="nx">str2</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">normalize</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">normalize</span><span class="p">(</span><span class="s2">&#34;NFD&#34;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">).</span><span class="nx">sort</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">normalize</span><span class="p">(</span><span class="nx">str1</span><span class="p">)</span> <span class="o">===</span> <span class="nx">normalize</span><span class="p">(</span><span class="nx">str2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isAnagram</span><span class="p">(</span><span class="s2">&#34;anagram&#34;</span><span class="p">,</span> <span class="s2">&#34;nagaram&#34;</span><span class="p">));</span> <span class="c1">// true
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isAnagram</span><span class="p">(</span><span class="s2">&#34;rat&#34;</span><span class="p">,</span> <span class="s2">&#34;car&#34;</span><span class="p">));</span> <span class="c1">// false
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isAnagram</span><span class="p">(</span><span class="s2">&#34;heArT&#34;</span><span class="p">,</span> <span class="s2">&#34;traEH&#34;</span><span class="p">));</span> <span class="c1">// true
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-<blockquote>
-<p>判断两个字符串是否为互相排列: 给定两个字符串,一个是否是另一个的排列</p>
-</blockquote>
-
-
-
-
-
-
-<h3  id="可选链操作符" >可选链操作符
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e5%8f%af%e9%80%89%e9%93%be%e6%93%8d%e4%bd%9c%e7%ac%a6">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-10-1"><a class="lnlinks" href="#hl-10-1"> 1</a>
-</span><span class="lnt" id="hl-10-2"><a class="lnlinks" href="#hl-10-2"> 2</a>
-</span><span class="lnt" id="hl-10-3"><a class="lnlinks" href="#hl-10-3"> 3</a>
-</span><span class="lnt" id="hl-10-4"><a class="lnlinks" href="#hl-10-4"> 4</a>
-</span><span class="lnt" id="hl-10-5"><a class="lnlinks" href="#hl-10-5"> 5</a>
-</span><span class="lnt" id="hl-10-6"><a class="lnlinks" href="#hl-10-6"> 6</a>
-</span><span class="lnt" id="hl-10-7"><a class="lnlinks" href="#hl-10-7"> 7</a>
-</span><span class="lnt" id="hl-10-8"><a class="lnlinks" href="#hl-10-8"> 8</a>
-</span><span class="lnt" id="hl-10-9"><a class="lnlinks" href="#hl-10-9"> 9</a>
-</span><span class="lnt" id="hl-10-10"><a class="lnlinks" href="#hl-10-10">10</a>
-</span><span class="lnt" id="hl-10-11"><a class="lnlinks" href="#hl-10-11">11</a>
-</span><span class="lnt" id="hl-10-12"><a class="lnlinks" href="#hl-10-12">12</a>
-</span><span class="lnt" id="hl-10-13"><a class="lnlinks" href="#hl-10-13">13</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">player</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;xieyezi&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">rating</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">click</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;click&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">pass</span><span class="o">:</span> <span class="p">(</span><span class="nx">teammate</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sb">`Pass to </span><span class="si">${</span><span class="nx">teammate</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="o">?</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// xieyezi
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="o">?</span><span class="p">.</span><span class="nx">click</span><span class="o">?</span><span class="p">.());</span> <span class="c1">// click
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="o">?</span><span class="p">.</span><span class="nx">teammate</span><span class="o">?</span><span class="p">.());</span> <span class="c1">// undefined
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="三目运算符" >三目运算符
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e4%b8%89%e7%9b%ae%e8%bf%90%e7%ae%97%e7%ac%a6">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-11-1"><a class="lnlinks" href="#hl-11-1">1</a>
-</span><span class="lnt" id="hl-11-2"><a class="lnlinks" href="#hl-11-2">2</a>
-</span><span class="lnt" id="hl-11-3"><a class="lnlinks" href="#hl-11-3">3</a>
-</span><span class="lnt" id="hl-11-4"><a class="lnlinks" href="#hl-11-4">4</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// condition ? expression if true : expression if false
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">oxygen</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">diver</span> <span class="o">=</span> <span class="nx">oxygen</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">?</span> <span class="s2">&#34;Low oxygen&#34;</span> <span class="o">:</span> <span class="s2">&#34;High oxygen&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">diver</span><span class="p">);</span> <span class="c1">// High oxygen
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="从数组中随机选择一个值" >从数组中随机选择一个值
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e4%bb%8e%e6%95%b0%e7%bb%84%e4%b8%ad%e9%9a%8f%e6%9c%ba%e9%80%89%e6%8b%a9%e4%b8%80%e4%b8%aa%e5%80%bc">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-12-1"><a class="lnlinks" href="#hl-12-1">1</a>
-</span><span class="lnt" id="hl-12-2"><a class="lnlinks" href="#hl-12-2">2</a>
-</span><span class="lnt" id="hl-12-3"><a class="lnlinks" href="#hl-12-3">3</a>
-</span><span class="lnt" id="hl-12-4"><a class="lnlinks" href="#hl-12-4">4</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="s2">&#34;You&#34;</span><span class="p">,</span> <span class="mi">777</span><span class="p">,</span> <span class="s2">&#34;breaking&#34;</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="s2">&#34;full&#34;</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">random</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">)];</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">randomElement</span> <span class="o">=</span> <span class="nx">random</span><span class="p">(</span><span class="nx">elements</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">randomElement</span><span class="p">);</span> <span class="c1">// 777
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="冻结对象" >冻结对象
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e5%86%bb%e7%bb%93%e5%af%b9%e8%b1%a1">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-13-1"><a class="lnlinks" href="#hl-13-1">1</a>
-</span><span class="lnt" id="hl-13-2"><a class="lnlinks" href="#hl-13-2">2</a>
-</span><span class="lnt" id="hl-13-3"><a class="lnlinks" href="#hl-13-3">3</a>
-</span><span class="lnt" id="hl-13-4"><a class="lnlinks" href="#hl-13-4">4</a>
-</span><span class="lnt" id="hl-13-5"><a class="lnlinks" href="#hl-13-5">5</a>
-</span><span class="lnt" id="hl-13-6"><a class="lnlinks" href="#hl-13-6">6</a>
-</span><span class="lnt" id="hl-13-7"><a class="lnlinks" href="#hl-13-7">7</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">octopus</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">tentacles</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">color</span><span class="o">:</span> <span class="s2">&#34;blue&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="nx">octopus</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">octopus</span><span class="p">.</span><span class="nx">tentacles</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// Error, 不会改变
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">octopus</span><span class="p">);</span> <span class="c1">// { tentacles: 8, color: &#39;blue&#39;}
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="删除数组重复的元素" >删除数组重复的元素
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e5%88%a0%e9%99%a4%e6%95%b0%e7%bb%84%e9%87%8d%e5%a4%8d%e7%9a%84%e5%85%83%e7%b4%a0">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-14-1"><a class="lnlinks" href="#hl-14-1">1</a>
-</span><span class="lnt" id="hl-14-2"><a class="lnlinks" href="#hl-14-2">2</a>
-</span><span class="lnt" id="hl-14-3"><a class="lnlinks" href="#hl-14-3">3</a>
-</span><span class="lnt" id="hl-14-4"><a class="lnlinks" href="#hl-14-4">4</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;bears&#34;</span><span class="p">,</span> <span class="s2">&#34;lions&#34;</span><span class="p">,</span> <span class="s2">&#34;tigers&#34;</span><span class="p">,</span> <span class="s2">&#34;bears&#34;</span><span class="p">,</span> <span class="s2">&#34;lions&#34;</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">unique</span> <span class="o">=</span> <span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">[...</span><span class="k">new</span> <span class="nx">Set</span><span class="p">(</span><span class="nx">arr</span><span class="p">)];</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">unique</span><span class="p">(</span><span class="nx">animals</span><span class="p">));</span> <span class="c1">// [ &#39;bears&#39;, &#39;lions&#39;, &#39;tigers&#39; ]
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="保留指定位小数" >保留指定位小数
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e4%bf%9d%e7%95%99%e6%8c%87%e5%ae%9a%e4%bd%8d%e5%b0%8f%e6%95%b0">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-15-1"><a class="lnlinks" href="#hl-15-1">1</a>
-</span><span class="lnt" id="hl-15-2"><a class="lnlinks" href="#hl-15-2">2</a>
-</span><span class="lnt" id="hl-15-3"><a class="lnlinks" href="#hl-15-3">3</a>
-</span><span class="lnt" id="hl-15-4"><a class="lnlinks" href="#hl-15-4">4</a>
-</span><span class="lnt" id="hl-15-5"><a class="lnlinks" href="#hl-15-5">5</a>
-</span><span class="lnt" id="hl-15-6"><a class="lnlinks" href="#hl-15-6">6</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="mf">0.123456789</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fixed2</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fixed3</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fixed2</span><span class="p">);</span> <span class="c1">// 0.12
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fixed3</span><span class="p">);</span> <span class="c1">// 0.123
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="清空数组" >清空数组
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e6%b8%85%e7%a9%ba%e6%95%b0%e7%bb%84">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-16-1"><a class="lnlinks" href="#hl-16-1">1</a>
-</span><span class="lnt" id="hl-16-2"><a class="lnlinks" href="#hl-16-2">2</a>
-</span><span class="lnt" id="hl-16-3"><a class="lnlinks" href="#hl-16-3">3</a>
-</span><span class="lnt" id="hl-16-4"><a class="lnlinks" href="#hl-16-4">4</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span> <span class="c1">// []
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="从-rgb-转换为-hex" >从 <code>RGB</code> 转换为 <code>HEX</code>
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e4%bb%8e-rgb-%e8%bd%ac%e6%8d%a2%e4%b8%ba-hex">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-17-1"><a class="lnlinks" href="#hl-17-1">1</a>
-</span><span class="lnt" id="hl-17-2"><a class="lnlinks" href="#hl-17-2">2</a>
-</span><span class="lnt" id="hl-17-3"><a class="lnlinks" href="#hl-17-3">3</a>
-</span><span class="lnt" id="hl-17-4"><a class="lnlinks" href="#hl-17-4">4</a>
-</span><span class="lnt" id="hl-17-5"><a class="lnlinks" href="#hl-17-5">5</a>
-</span><span class="lnt" id="hl-17-6"><a class="lnlinks" href="#hl-17-6">6</a>
-</span><span class="lnt" id="hl-17-7"><a class="lnlinks" href="#hl-17-7">7</a>
-</span><span class="lnt" id="hl-17-8"><a class="lnlinks" href="#hl-17-8">8</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">rgbToHex</span> <span class="o">=</span> <span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">toHex</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">hex</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">hex</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">?</span> <span class="sb">`0</span><span class="si">${</span><span class="nx">hex</span><span class="si">}</span><span class="sb">`</span> <span class="o">:</span> <span class="nx">hex</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">};</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="sb">`#</span><span class="si">${</span><span class="nx">toHex</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span><span class="si">}${</span><span class="nx">toHex</span><span class="p">(</span><span class="nx">g</span><span class="p">)</span><span class="si">}${</span><span class="nx">toHex</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rgbToHex</span><span class="p">(</span><span class="mi">46</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">67</span><span class="p">));</span> <span class="c1">// #2e2043
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="从数组中获取最大值和最小值" >从数组中获取最大值和最小值
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e4%bb%8e%e6%95%b0%e7%bb%84%e4%b8%ad%e8%8e%b7%e5%8f%96%e6%9c%80%e5%a4%a7%e5%80%bc%e5%92%8c%e6%9c%80%e5%b0%8f%e5%80%bc">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-18-1"><a class="lnlinks" href="#hl-18-1">1</a>
-</span><span class="lnt" id="hl-18-2"><a class="lnlinks" href="#hl-18-2">2</a>
-</span><span class="lnt" id="hl-18-3"><a class="lnlinks" href="#hl-18-3">3</a>
-</span><span class="lnt" id="hl-18-4"><a class="lnlinks" href="#hl-18-4">4</a>
-</span><span class="lnt" id="hl-18-5"><a class="lnlinks" href="#hl-18-5">5</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">nums</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">min</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(...</span><span class="nx">nums</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">max</span><span class="p">);</span> <span class="c1">// 99
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">min</span><span class="p">);</span> <span class="c1">// -45
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="空值合并运算符" >空值合并运算符
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e7%a9%ba%e5%80%bc%e5%90%88%e5%b9%b6%e8%bf%90%e7%ae%97%e7%ac%a6">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-19-1"><a class="lnlinks" href="#hl-19-1"> 1</a>
-</span><span class="lnt" id="hl-19-2"><a class="lnlinks" href="#hl-19-2"> 2</a>
-</span><span class="lnt" id="hl-19-3"><a class="lnlinks" href="#hl-19-3"> 3</a>
-</span><span class="lnt" id="hl-19-4"><a class="lnlinks" href="#hl-19-4"> 4</a>
-</span><span class="lnt" id="hl-19-5"><a class="lnlinks" href="#hl-19-5"> 5</a>
-</span><span class="lnt" id="hl-19-6"><a class="lnlinks" href="#hl-19-6"> 6</a>
-</span><span class="lnt" id="hl-19-7"><a class="lnlinks" href="#hl-19-7"> 7</a>
-</span><span class="lnt" id="hl-19-8"><a class="lnlinks" href="#hl-19-8"> 8</a>
-</span><span class="lnt" id="hl-19-9"><a class="lnlinks" href="#hl-19-9"> 9</a>
-</span><span class="lnt" id="hl-19-10"><a class="lnlinks" href="#hl-19-10">10</a>
-</span><span class="lnt" id="hl-19-11"><a class="lnlinks" href="#hl-19-11">11</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">nullval</span> <span class="o">=</span> <span class="kc">null</span>
-</span></span><span class="line"><span class="cl"><span class="nx">cost</span> <span class="nx">emptyString</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">someNum</span> <span class="o">=</span> <span class="mi">13</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">nullval</span> <span class="o">??</span> <span class="s1">&#39;A default&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">emptyString</span> <span class="o">??</span> <span class="s1">&#39;B default&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">SomeNum</span> <span class="o">??</span> <span class="s1">&#39;C default&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="c1">// A default
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="c1">// &#39;&#39; // empty string != undefined or null
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="c1">// 13
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<h3  id="过滤数组中值为-false-的值" >过滤数组中值为 <code>false</code> 的值
-  
-  
-    <a hidden class="anchor" aria-hidden="true" href="#%e8%bf%87%e6%bb%a4%e6%95%b0%e7%bb%84%e4%b8%ad%e5%80%bc%e4%b8%ba-false-%e7%9a%84%e5%80%bc">#</a>
-  
-</h3>
-
-
-
-
-<div class="codeBlock">
-  <details open>
-    <summary>
-      <div class="oper"><div class="status"></div></div>
-      <div class="title">js</div>
-      <div class="oper"><button class="codeCopy">复制</button></div>
-    </summary>
-  </details>
-  <div class="codeBlockContent">
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-20-1"><a class="lnlinks" href="#hl-20-1">1</a>
-</span><span class="lnt" id="hl-20-2"><a class="lnlinks" href="#hl-20-2">2</a>
-</span><span class="lnt" id="hl-20-3"><a class="lnlinks" href="#hl-20-3">3</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">false</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">truthyNums</span> <span class="o">=</span> <span class="nx">nums</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">truthyNums</span><span class="p">);</span> <span class="c1">// [1]
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
-  </div>
-</div>
-
-
-
-    </div>
-  
-
-  
-  <footer class="postFooter">
-    <ul class="tags" role="list"><li><a role="text" href="https://linlccc.com/tags/javascript/">Javascript</a></li></ul>
-    
-    
-
-
-
-  <nav class="paginav">
-    
-    
-  </nav>
-
-
-    
-    
-
-
-  
-  
-  
-
-  <div class="shareButtons">
-    
-      <a target="_blank" rel="noopener noreferrer" aria-label="share ES6 常用代码块 on x" href="https://x.com/intent/tweet/?text=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&amp;url=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f&amp;hashtags=javascript">
-        
-
-<svg xmlns="http://www.w3.org/2000/svg" class="x" viewBox="0 0 512 512" version="1.1" xml:space="preserve" fill="currentColor">
-  <path d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
-</svg>
-      </a>
-    
-
-    
-      <a target="_blank" rel="noopener noreferrer" aria-label="share ES6 常用代码块 on linkedin"href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f&amp;title=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&amp;summary=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&amp;source=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f">
-        
-
-<svg xmlns="http://www.w3.org/2000/svg" class="linkedin" viewBox="0 0 512 512" version="1.1" xml:space="preserve" fill="currentColor">
-  <path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
-</svg>
-      </a>
-    
-
-    
-      <a target="_blank" rel="noopener noreferrer" aria-label="share ES6 常用代码块 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f&title=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97">
-        
-
-<svg xmlns="http://www.w3.org/2000/svg" class="reddit" viewBox="0 0 512 512" version="1.1" xml:space="preserve" fill="currentColor">
-  <path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
-</svg>
-    </a>
-    
-
-    
-      <a target="_blank" rel="noopener noreferrer" aria-label="share ES6 常用代码块 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f">
-        
-
-<svg xmlns="http://www.w3.org/2000/svg" class="facebook" viewBox="0 0 512 512" version="1.1" xml:space="preserve" fill="currentColor">
-  <path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
-</svg>
-    </a>
-    
-
-    
-      <a target="_blank" rel="noopener noreferrer" aria-label="share ES6 常用代码块 on whatsapp" href="https://api.whatsapp.com/send?text=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97%20-%20https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f">
-        
-
-<svg xmlns="http://www.w3.org/2000/svg" class="whatsapp" viewBox="0 0 512 512" version="1.1" xml:space="preserve" fill="currentColor">
-  <path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
-</svg>
-    </a>
-    
-
-    
-      <a target="_blank" rel="noopener noreferrer" aria-label="share ES6 常用代码块 on telegram" href="https://telegram.me/share/url?text=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&amp;url=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f">
-        
-
-<svg xmlns="http://www.w3.org/2000/svg" class="telegram" version="1.1"  viewBox="2 2 28 28" xml:space="preserve" fill="currentColor">
-  <path d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
-</svg>
-    </a>
-    
-
-    
-      <a target="_blank" rel="noopener noreferrer" aria-label="share ES6 常用代码块 on ycombinator" href="https://news.ycombinator.com/submitlink?t=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&u=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f">
-        
-
-<svg xmlns="http://www.w3.org/2000/svg" class="ycombinator" viewBox="0 0 512 512" version="1.1" fill="currentColor" xml:space="preserve" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
-  <path d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
-</svg>
-    </a>
-    
-  </div>
-
-
-  </footer>
-
-  
-  
-
-
-  <div id="giscusComments"></div>
-
-
-
-
-
-
-  
-  
-  
-  
-</main>
-
-  
-
-
-
-
-
-
-
-  <footer class="footer">
-    <span>© 2023 - 2024 <a href="https://linlccc.com/">Linlccc&#39;s Blog</a> All Rights Reserved</span>
-      <span>| Powered by
-        <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a> & <a href="https://github.com/Linlccc/hugo-Hahah" rel="noopener" target="_blank">Hahah</a>
-      </span>
-    </footer>
-
-
-  <a id="topLink" href="#top" aria-label="回到顶部" title="回到顶部 (Alt + G)" accesskey="g"> 
-
-<svg xmlns="http://www.w3.org/2000/svg" class="upward_triangle" viewBox="0 0 12 6" fill="currentColor">
-  <path d="M12 6H0l6-6z" />
-</svg> </a>
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-<link crossorigin="anonymous" rel="preload stylesheet" as="style" href="/assets/css/custom.min.eeda6f6208cf7226321ea4ff61ec9b93fde032d5dd25cff49a4941fbca6b2816.css" integrity="sha256-7tpvYgjPciYyHqT/Yeybk/3gMtXdJc/0mklB&#43;8prKBY=" />
-
-  
-  
-
-
-
-  
-  
-  
-   
-  
-  
-  
-  
-  
-    
-    
-      <script>const MediaColor_Light=window.matchMedia("(prefers-color-scheme: light)"),Meta_ThemeColor=document.querySelector("meta[name=theme-color]"),El_Root=document.documentElement,El_Header=document.getElementById("header"),ThemeColorKey="themeColor",ThemeColor={Auto:"auto",Light:"light",Dark:"dark"};function GetCurrentThemeColor(){let e=ThemeColor.Light;return El_Root.classList.contains(ThemeColor.Auto)?e=MediaColor_Light.matches?ThemeColor.Light:ThemeColor.Dark:El_Root.classList.contains(ThemeColor.Dark)&&(e=ThemeColor.Dark),e}</script>
-    
-  
-
-  
-  
-  
-   
-  
-  
-  
-  
-  
-    
-    
-      <script>(()=>{const e=new CustomEvent("themeColorChange",{});MediaColor_Light.addEventListener("change",t=>{if(!El_Root.classList.contains(ThemeColor.Auto))return;window.dispatchEvent(e)}),new MutationObserver(()=>{window.dispatchEvent(e)}).observe(El_Root,{attributes:!0,attributeFilter:["class"]})})(),(()=>{window.addEventListener("themeColorChange",()=>{Meta_ThemeColor.setAttribute("content",getComputedStyle(El_Root).getPropertyValue("--background-100"))})})(),(()=>{const e=localStorage.getItem(ThemeColorKey);e&&(document.documentElement.className=e),Meta_ThemeColor.setAttribute("content",getComputedStyle(El_Root).getPropertyValue("--background-100"))})()</script>
-    
-  
-
-  
-  
-  
-   
-  
-  
-  
-  
-  
-    
-    
-      <script>(()=>{const n=20;let t=!0,e=0;window.addEventListener("scroll",()=>{if(t){t=!1;return}const s=document.documentElement.scrollTop;if(Math.abs(s-e)<n)return;const o=s>e;o?El_Header.classList.add("hide"):El_Header.classList.remove("hide"),e=s<=0?0:s})})(),(()=>{const e=document.getElementById("menu");e&&(e.scrollLeft=localStorage.getItem("menuScrollPosition"),e.addEventListener("scroll",()=>localStorage.setItem("menuScrollPosition",e.scrollLeft)))})(),(()=>{const e=document.getElementById("themeToggle");let s,n=!1;function o(){s=setTimeout(()=>{n=!0,El_Root.className=ThemeColor.Auto,localStorage.removeItem(ThemeColorKey)},1e3)}function t(){clearTimeout(s)}e&&(e.addEventListener("click",e=>{if(n){n=!1,e.stopPropagation();return}let t=ThemeColor.Light;El_Root.classList.contains(ThemeColor.Auto)?t=MediaColor_Light.matches?ThemeColor.Dark:ThemeColor.Light:El_Root.classList.contains(ThemeColor.Light)&&(t=ThemeColor.Dark),El_Root.className=t,localStorage.setItem(ThemeColorKey,t)}),e.addEventListener("mousedown",o),e.addEventListener("touchstart",o),e.addEventListener("mouseup",t),e.addEventListener("mouseleave",t),e.addEventListener("touchend",t),e.addEventListener("touchcancel",t))})()</script>
-    
-  
-
-  
-  
-  
-   
-  
-  
-  
-  
-  
-    
-    
-      <script defer crossorigin="anonymous" src="/assets/js/giscus.min.a594f007635210c4ae5b06d2ee6a6b6f913a989103366440134ed45e6e952588.js" integrity="sha256-pZTwB2NSEMSuWwbS7mprb5E6mJEDNmRAE07UXm6VJYg="></script>
-    
-  
-
-  
-  
-  
-   
-  
-  
-  
-  
-  
-    
-    
-      <script defer crossorigin="anonymous" src="/assets/js/single.min.e65e7577ef8f51ada3e40af228c9ebd632a2a997c403d90ef420d462a6af94a6.js" integrity="sha256-5l51d&#43;&#43;PUa2j5AryKMnr1jKiqZfEA9kO9CDUYqavlKY="></script>
-    
-  
-
-  
-  
-  
-   
-  
-  
-  
-  
-  
-    
-    
-      <script defer crossorigin="anonymous" src="/assets/js/footer.min.0e816a255b509c02b87a91d62c3fc22fd0e2086b210fad988984929ab239fbaf.css" integrity="sha256-DoFqJVtQnAK4epHWLD/CL9DiCGshD62YiYSSmrI5&#43;68="></script>
-    
-  
-
-
-</body>
-</html>
+<!doctype html><html lang=zh dir=ltr class=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><meta name=application-name content="Linlccc's Blog"><title>ES6 常用代码块 | Linlccc's Blog</title>
+<meta name=description content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = [&#34;😄&#34;, 67, true, false, &#34;55&#34;]; arr = arr.sort(() => 0.5 - Math.random()); console.log(arr); // [ '😄', '55', 67, false,"><meta name=author content="Linlccc"><meta name=keywords content="javascript"><meta name=theme-color content><meta name=google-site-verification content="ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY"><meta name=baidu-site-verification content="codeva-3S13SuprEU"><meta name=msvalidate.01 content="D46176825688FA3D0C855598CDAB325F"><link rel=canonical href=https://github.com/xieyezi/website-2022/blob/master/docs/front-end/ES6-20%E4%B8%AA%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8A%80%E5%B7%A7.md><link rel=alternate hreflang=zh href=https://linlccc.com/pending/commonlyusedes6/><link rel=manifest href=https://linlccc.com/manifest.json><link rel=icon type=image/x-icon media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-180x180.png><link rel=icon type=image/x-icon media="(prefers-color-scheme: light)" href=/favicon/light/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: light)" href=/favicon/light/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-180x180.png><meta property="og:url" content="https://linlccc.com/pending/commonlyusedes6/"><meta property="og:site_name" content="Linlccc's Blog"><meta property="og:title" content="ES6 常用代码块"><meta property="og:description" content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = [&#34;😄&#34;, 67, true, false, &#34;55&#34;]; arr = arr.sort(() => 0.5 - Math.random()); console.log(arr); // [ '😄', '55', 67, false,"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="pending"><meta property="article:published_time" content="2024-05-07T16:28:47+08:00"><meta property="article:modified_time" content="2024-06-17T22:02:20+08:00"><meta property="article:tag" content="Javascript"><meta property="og:image" content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:title content="ES6 常用代码块"><meta name=twitter:description content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = [&#34;😄&#34;, 67, true, false, &#34;55&#34;]; arr = arr.sort(() => 0.5 - Math.random()); console.log(arr); // [ '😄', '55', 67, false,"><meta name=twitter:site content="@Linlcccc"><meta itemprop=name content="ES6 常用代码块"><meta itemprop=description content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = [&#34;😄&#34;, 67, true, false, &#34;55&#34;]; arr = arr.sort(() => 0.5 - Math.random()); console.log(arr); // [ '😄', '55', 67, false,"><meta itemprop=datePublished content="2024-05-07T16:28:47+08:00"><meta itemprop=dateModified content="2024-06-17T22:02:20+08:00"><meta itemprop=wordCount content="1099"><meta itemprop=image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta itemprop=keywords content="Javascript"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TQ3ZXPKKNM"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TQ3ZXPKKNM")}</script><noscript><style>#themeToggle{display:none}</style></noscript><link crossorigin=anonymous rel="preload stylesheet" as=style href=/assets/css/stylesAll.min.0c7dd80c89e44162059a1c117cf80dea97acff4fc190881e155f36df1374385f.css integrity="sha256-DH3YDInkQWIFmhwRfPgN6pes/0/BkIgeFV823xN0OF8="></head><body id=top><header id=header><nav><div class=logo><a role=text href=https://linlccc.com/ accesskey=h title="linlccc's blog (Alt + H)">linlccc's blog
+</a><button id=themeToggle accesskey=t title='(Alt + T)'><svg xmlns="http://www.w3.org/2000/svg" class="sun" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="moon" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button><ul class=langSwitch role=list><li>|</li><li><a role=text href=https://linlccc.com/en/ hreflang=en title=en>En</a></li></ul></div><ul id=menu class=menu role=list><li><a role=text href=/search/ title='搜索 (Alt + /)' accesskey=/><span>搜索</span></a></li><li><a role=text href=/posts/ title=文章><span>文章</span></a></li><li><a role=text href=/pending/ title=待处理><span>待处理</span></a></li><li><a role=text href=/tags/ title=标签><span>标签</span></a></li><li><a role=text href=/langs/ title=语言><span>语言</span></a></li><li><a role=text href=/archives/ title=档案><span>档案</span></a></li></ul></nav></header><main class=main><header><div class=breadcrumbs><a href=https://linlccc.com/>Linlccc's Blog</a>
+&nbsp;»&nbsp;
+<a href=https://linlccc.com/pending/>Pendings</a></div><h1>ES6 常用代码块</h1><div class=meta><span title='2024-05-07 16:28:47 +0800 CST'>2024-05-07</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;1099 字&nbsp;·&nbsp;Linlccc
+&nbsp;|&nbsp;
+<a href="https://hexo.dotnetrun.com/edit_page.html?file=content/pending/CommonlyUsedES6.md" rel="noopener noreferrer" target=_blank>编辑</a>
+&nbsp;|&nbsp;
+<span>转载自&nbsp;<a href=https://github.com/xieyezi/website-2022/blob/master/docs/front-end/ES6-20%E4%B8%AA%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8A%80%E5%B7%A7.md target=_blank rel="noopener noreferrer">github.com</a></span></div></header><details id=toc class=toc open><summary accesskey=c title="(Alt + C)"><span class=details>目录</span></summary><div class=inner><nav id=TableOfContents><ol><li><a href=#es6-20-个经常使用的技巧>ES6 20 个经常使用的技巧</a><ol><li><a href=#打乱数组顺序>打乱数组顺序</a></li><li><a href=#删除数字之外的所有字符>删除数字之外的所有字符</a></li><li><a href=#反转字符串或者单词>反转字符串或者单词</a></li><li><a href=#将十进制转换为二进制文件或十六进制数>将十进制转换为二进制文件或十六进制数</a></li><li><a href=#合并多个对象>合并多个对象</a></li><li><a href=#-和--的区别><code>===</code> 和 <code>==</code> 的区别</a></li><li><a href=#解构赋值>解构赋值</a></li><li><a href=#交换变量的值>交换变量的值</a></li><li><a href=#判断回文字符串>判断回文字符串</a></li><li><a href=#判断两个字符串是否为互相排列>判断两个字符串是否为互相排列</a></li><li><a href=#可选链操作符>可选链操作符</a></li><li><a href=#三目运算符>三目运算符</a></li><li><a href=#从数组中随机选择一个值>从数组中随机选择一个值</a></li><li><a href=#冻结对象>冻结对象</a></li><li><a href=#删除数组重复的元素>删除数组重复的元素</a></li><li><a href=#保留指定位小数>保留指定位小数</a></li><li><a href=#清空数组>清空数组</a></li><li><a href=#从-rgb-转换为-hex>从 <code>RGB</code> 转换为 <code>HEX</code></a></li><li><a href=#从数组中获取最大值和最小值>从数组中获取最大值和最小值</a></li><li><a href=#空值合并运算符>空值合并运算符</a></li><li><a href=#过滤数组中值为-false-的值>过滤数组中值为 <code>false</code> 的值</a></li></ol></li></ol></nav></div></details><div class=postContent><h2 id=es6-20-个经常使用的技巧>ES6 20 个经常使用的技巧
+<a hidden class=anchor aria-hidden=true href=#es6-20-%e4%b8%aa%e7%bb%8f%e5%b8%b8%e4%bd%bf%e7%94%a8%e7%9a%84%e6%8a%80%e5%b7%a7>#</a></h2><h3 id=打乱数组顺序>打乱数组顺序
+<a hidden class=anchor aria-hidden=true href=#%e6%89%93%e4%b9%b1%e6%95%b0%e7%bb%84%e9%a1%ba%e5%ba%8f>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2>2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3>3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;😄&#34;</span><span class=p>,</span> <span class=mi>67</span><span class=p>,</span> <span class=kc>true</span><span class=p>,</span> <span class=kc>false</span><span class=p>,</span> <span class=s2>&#34;55&#34;</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nx>arr</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>.</span><span class=nx>sort</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=mf>0.5</span> <span class=o>-</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>random</span><span class=p>());</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// [ &#39;😄&#39;, &#39;55&#39;, 67, false, true ]
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=删除数字之外的所有字符>删除数字之外的所有字符
+<a hidden class=anchor aria-hidden=true href=#%e5%88%a0%e9%99%a4%e6%95%b0%e5%ad%97%e4%b9%8b%e5%a4%96%e7%9a%84%e6%89%80%e6%9c%89%e5%ad%97%e7%ac%a6>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-1-1><a class=lnlinks href=#hl-1-1>1</a>
+</span><span class=lnt id=hl-1-2><a class=lnlinks href=#hl-1-2>2</a>
+</span><span class=lnt id=hl-1-3><a class=lnlinks href=#hl-1-3>3</a>
+</span><span class=lnt id=hl-1-4><a class=lnlinks href=#hl-1-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>str</span> <span class=o>=</span> <span class=s2>&#34;xieyezi 23213 is 95994 so hansome 223333&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>numbers</span> <span class=o>=</span> <span class=nx>str</span><span class=p>.</span><span class=nx>replace</span><span class=p>(</span><span class=sr>/\D/g</span><span class=p>,</span> <span class=s2>&#34;&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>numbers</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// 2321395994223333
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=反转字符串或者单词>反转字符串或者单词
+<a hidden class=anchor aria-hidden=true href=#%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%88%96%e8%80%85%e5%8d%95%e8%af%8d>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1> 1</a>
+</span><span class=lnt id=hl-2-2><a class=lnlinks href=#hl-2-2> 2</a>
+</span><span class=lnt id=hl-2-3><a class=lnlinks href=#hl-2-3> 3</a>
+</span><span class=lnt id=hl-2-4><a class=lnlinks href=#hl-2-4> 4</a>
+</span><span class=lnt id=hl-2-5><a class=lnlinks href=#hl-2-5> 5</a>
+</span><span class=lnt id=hl-2-6><a class=lnlinks href=#hl-2-6> 6</a>
+</span><span class=lnt id=hl-2-7><a class=lnlinks href=#hl-2-7> 7</a>
+</span><span class=lnt id=hl-2-8><a class=lnlinks href=#hl-2-8> 8</a>
+</span><span class=lnt id=hl-2-9><a class=lnlinks href=#hl-2-9> 9</a>
+</span><span class=lnt id=hl-2-10><a class=lnlinks href=#hl-2-10>10</a>
+</span><span class=lnt id=hl-2-11><a class=lnlinks href=#hl-2-11>11</a>
+</span><span class=lnt id=hl-2-12><a class=lnlinks href=#hl-2-12>12</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>sentence</span> <span class=o>=</span> <span class=s2>&#34;xieyezi js so handsome, lol.&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>reverseSentence</span> <span class=o>=</span> <span class=nx>reverseBySeparator</span><span class=p>(</span><span class=nx>sentence</span><span class=p>,</span> <span class=s2>&#34;&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>reverseSentence</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// .lol ,emosdnah os sj izeyeix
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>reverseEachWord</span> <span class=o>=</span> <span class=nx>reverseBySeparator</span><span class=p>(</span><span class=nx>reverseSentence</span><span class=p>,</span> <span class=s2>&#34; &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>reverseEachWord</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// izeyeix sj os ,emosdnah .lol
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>reverseBySeparator</span><span class=p>(</span><span class=nx>string</span><span class=p>,</span> <span class=nx>separator</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=nx>string</span><span class=p>.</span><span class=nx>split</span><span class=p>(</span><span class=nx>separator</span><span class=p>).</span><span class=nx>reverse</span><span class=p>().</span><span class=nx>join</span><span class=p>(</span><span class=nx>separator</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=将十进制转换为二进制文件或十六进制数>将十进制转换为二进制文件或十六进制数
+<a hidden class=anchor aria-hidden=true href=#%e5%b0%86%e5%8d%81%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e4%b8%ba%e4%ba%8c%e8%bf%9b%e5%88%b6%e6%96%87%e4%bb%b6%e6%88%96%e5%8d%81%e5%85%ad%e8%bf%9b%e5%88%b6%e6%95%b0>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>1</a>
+</span><span class=lnt id=hl-3-2><a class=lnlinks href=#hl-3-2>2</a>
+</span><span class=lnt id=hl-3-3><a class=lnlinks href=#hl-3-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>num</span> <span class=o>=</span> <span class=mi>45</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nx>num</span><span class=p>.</span><span class=nx>toString</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>num</span><span class=p>.</span><span class=nx>tostring</span><span class=p>(</span><span class=mi>16</span><span class=p>);</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=合并多个对象>合并多个对象
+<a hidden class=anchor aria-hidden=true href=#%e5%90%88%e5%b9%b6%e5%a4%9a%e4%b8%aa%e5%af%b9%e8%b1%a1>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1> 1</a>
+</span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2> 2</a>
+</span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3> 3</a>
+</span><span class=lnt id=hl-4-4><a class=lnlinks href=#hl-4-4> 4</a>
+</span><span class=lnt id=hl-4-5><a class=lnlinks href=#hl-4-5> 5</a>
+</span><span class=lnt id=hl-4-6><a class=lnlinks href=#hl-4-6> 6</a>
+</span><span class=lnt id=hl-4-7><a class=lnlinks href=#hl-4-7> 7</a>
+</span><span class=lnt id=hl-4-8><a class=lnlinks href=#hl-4-8> 8</a>
+</span><span class=lnt id=hl-4-9><a class=lnlinks href=#hl-4-9> 9</a>
+</span><span class=lnt id=hl-4-10><a class=lnlinks href=#hl-4-10>10</a>
+</span><span class=lnt id=hl-4-11><a class=lnlinks href=#hl-4-11>11</a>
+</span><span class=lnt id=hl-4-12><a class=lnlinks href=#hl-4-12>12</a>
+</span><span class=lnt id=hl-4-13><a class=lnlinks href=#hl-4-13>13</a>
+</span><span class=lnt id=hl-4-14><a class=lnlinks href=#hl-4-14>14</a>
+</span><span class=lnt id=hl-4-15><a class=lnlinks href=#hl-4-15>15</a>
+</span><span class=lnt id=hl-4-16><a class=lnlinks href=#hl-4-16>16</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>city</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;Chongqing&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>population</span><span class=o>:</span> <span class=s2>&#34;1,234,567,890&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>location</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>longitude</span><span class=o>:</span> <span class=s2>&#34;116.4&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>latitude</span><span class=o>:</span> <span class=s2>&#34;39.9&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>fullCity</span> <span class=o>=</span> <span class=p>{</span> <span class=p>...</span><span class=nx>city</span><span class=p>,</span> <span class=p>...</span><span class=nx>location</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>fullCity</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// {
+</span></span></span><span class=line><span class=cl><span class=c1>//   name: &#39;Chongqing&#39;,
+</span></span></span><span class=line><span class=cl><span class=c1>//   population: &#39;1,234,567,890&#39;,
+</span></span></span><span class=line><span class=cl><span class=c1>//   longitude: &#39;116.4&#39;,
+</span></span></span><span class=line><span class=cl><span class=c1>//   latitude: &#39;39.9&#39;
+</span></span></span><span class=line><span class=cl><span class=c1>// }
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=-和--的区别><code>===</code> 和 <code>==</code> 的区别
+<a hidden class=anchor aria-hidden=true href=#-%e5%92%8c--%e7%9a%84%e5%8c%ba%e5%88%ab>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span><span class=lnt id=hl-5-2><a class=lnlinks href=#hl-5-2>2</a>
+</span><span class=lnt id=hl-5-3><a class=lnlinks href=#hl-5-3>3</a>
+</span><span class=lnt id=hl-5-4><a class=lnlinks href=#hl-5-4>4</a>
+</span><span class=lnt id=hl-5-5><a class=lnlinks href=#hl-5-5>5</a>
+</span><span class=lnt id=hl-5-6><a class=lnlinks href=#hl-5-6>6</a>
+</span><span class=lnt id=hl-5-7><a class=lnlinks href=#hl-5-7>7</a>
+</span><span class=lnt id=hl-5-8><a class=lnlinks href=#hl-5-8>8</a>
+</span><span class=lnt id=hl-5-9><a class=lnlinks href=#hl-5-9>9</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// ==   -&gt;  类型转换 (浅比较)
+</span></span></span><span class=line><span class=cl><span class=c1>// ===  -&gt;  无类型转换 (严格比较)
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=mi>0</span> <span class=o>==</span> <span class=kc>false</span><span class=p>;</span> <span class=c1>// true
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=mi>0</span> <span class=o>===</span> <span class=kc>false</span><span class=p>;</span> <span class=c1>// false
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=mi>1</span> <span class=o>==</span> <span class=s2>&#34;1&#34;</span><span class=p>;</span> <span class=c1>// true
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=mi>1</span> <span class=o>===</span> <span class=s2>&#34;1&#34;</span><span class=p>;</span> <span class=c1>// false
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kc>null</span> <span class=o>==</span> <span class=kc>undefined</span><span class=p>;</span> <span class=c1>// true
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kc>null</span> <span class=o>===</span> <span class=kc>undefined</span><span class=p>;</span> <span class=c1>// false
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=解构赋值>解构赋值
+<a hidden class=anchor aria-hidden=true href=#%e8%a7%a3%e6%9e%84%e8%b5%8b%e5%80%bc>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1> 1</a>
+</span><span class=lnt id=hl-6-2><a class=lnlinks href=#hl-6-2> 2</a>
+</span><span class=lnt id=hl-6-3><a class=lnlinks href=#hl-6-3> 3</a>
+</span><span class=lnt id=hl-6-4><a class=lnlinks href=#hl-6-4> 4</a>
+</span><span class=lnt id=hl-6-5><a class=lnlinks href=#hl-6-5> 5</a>
+</span><span class=lnt id=hl-6-6><a class=lnlinks href=#hl-6-6> 6</a>
+</span><span class=lnt id=hl-6-7><a class=lnlinks href=#hl-6-7> 7</a>
+</span><span class=lnt id=hl-6-8><a class=lnlinks href=#hl-6-8> 8</a>
+</span><span class=lnt id=hl-6-9><a class=lnlinks href=#hl-6-9> 9</a>
+</span><span class=lnt id=hl-6-10><a class=lnlinks href=#hl-6-10>10</a>
+</span><span class=lnt id=hl-6-11><a class=lnlinks href=#hl-6-11>11</a>
+</span><span class=lnt id=hl-6-12><a class=lnlinks href=#hl-6-12>12</a>
+</span><span class=lnt id=hl-6-13><a class=lnlinks href=#hl-6-13>13</a>
+</span><span class=lnt id=hl-6-14><a class=lnlinks href=#hl-6-14>14</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>forest</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>location</span><span class=o>:</span> <span class=s2>&#34;Sweden&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>animals</span><span class=o>:</span> <span class=mi>3</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>animalsTypes</span><span class=o>:</span> <span class=p>[</span><span class=s2>&#34;Lions&#34;</span><span class=p>,</span> <span class=s2>&#34;Tigers&#34;</span><span class=p>,</span> <span class=s2>&#34;Bears&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=p>{</span> <span class=nx>location</span><span class=p>,</span> <span class=nx>animals</span><span class=p>,</span> <span class=nx>animalsTypes</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>forest</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=p>[</span><span class=nx>lions</span><span class=p>,</span> <span class=nx>tigers</span><span class=p>,</span> <span class=nx>bears</span><span class=p>]</span> <span class=o>=</span> <span class=nx>animalsTypes</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>location</span><span class=p>);</span> <span class=c1>// Sweden
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>animals</span><span class=p>);</span> <span class=c1>// 3
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>lions</span><span class=p>);</span> <span class=c1>// Lions
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>tigers</span><span class=p>);</span> <span class=c1>// Tigers
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>bears</span><span class=p>);</span> <span class=c1>// Bears
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=交换变量的值>交换变量的值
+<a hidden class=anchor aria-hidden=true href=#%e4%ba%a4%e6%8d%a2%e5%8f%98%e9%87%8f%e7%9a%84%e5%80%bc>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-7-1><a class=lnlinks href=#hl-7-1>1</a>
+</span><span class=lnt id=hl-7-2><a class=lnlinks href=#hl-7-2>2</a>
+</span><span class=lnt id=hl-7-3><a class=lnlinks href=#hl-7-3>3</a>
+</span><span class=lnt id=hl-7-4><a class=lnlinks href=#hl-7-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>bears</span> <span class=o>=</span> <span class=s2>&#34;bears&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>tigers</span> <span class=o>=</span> <span class=p>(</span><span class=s2>&#34;tigers&#34;</span><span class=p>[(</span><span class=nx>bears</span><span class=p>,</span> <span class=nx>tigers</span><span class=p>)]</span> <span class=o>=</span> <span class=p>[</span><span class=nx>tigers</span><span class=p>,</span> <span class=nx>bears</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>bears</span><span class=p>);</span> <span class=c1>// tigers
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>tribes</span><span class=p>);</span> <span class=c1>// bears
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=判断回文字符串>判断回文字符串
+<a hidden class=anchor aria-hidden=true href=#%e5%88%a4%e6%96%ad%e5%9b%9e%e6%96%87%e5%ad%97%e7%ac%a6%e4%b8%b2>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-8-1><a class=lnlinks href=#hl-8-1>1</a>
+</span><span class=lnt id=hl-8-2><a class=lnlinks href=#hl-8-2>2</a>
+</span><span class=lnt id=hl-8-3><a class=lnlinks href=#hl-8-3>3</a>
+</span><span class=lnt id=hl-8-4><a class=lnlinks href=#hl-8-4>4</a>
+</span><span class=lnt id=hl-8-5><a class=lnlinks href=#hl-8-5>5</a>
+</span><span class=lnt id=hl-8-6><a class=lnlinks href=#hl-8-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>isRevervse</span> <span class=o>=</span> <span class=p>(</span><span class=nx>str1</span><span class=p>,</span> <span class=nx>str2</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>normalize</span> <span class=o>=</span> <span class=p>(</span><span class=nx>str</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>str</span><span class=p>.</span><span class=nx>toLowerCase</span><span class=p>().</span><span class=nx>normalize</span><span class=p>(</span><span class=s2>&#34;NFD&#34;</span><span class=p>).</span><span class=nx>split</span><span class=p>(</span><span class=s2>&#34;&#34;</span><span class=p>).</span><span class=nx>reverse</span><span class=p>().</span><span class=nx>join</span><span class=p>(</span><span class=s2>&#34;&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=nx>normalize</span><span class=p>(</span><span class=nx>str1</span><span class=p>)</span> <span class=o>===</span> <span class=nx>str2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>isRevervse</span><span class=p>(</span><span class=s2>&#34;anagram&#34;</span><span class=p>,</span> <span class=s2>&#34;margana&#34;</span><span class=p>));</span> <span class=c1>// true
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>isRevervse</span><span class=p>(</span><span class=s2>&#34;rac&#34;</span><span class=p>,</span> <span class=s2>&#34;car&#34;</span><span class=p>));</span> <span class=c1>// true
+</span></span></span></code></pre></td></tr></table></div></div></div></div><blockquote><p>回文字符串: 正着写和反着写都一样的字符串 (特别感谢
+<a href=https://juejin.cn/user/3998255455678968 rel=external>@浮生阁阁主
+</a>勘误)</p></blockquote><h3 id=判断两个字符串是否为互相排列>判断两个字符串是否为互相排列
+<a hidden class=anchor aria-hidden=true href=#%e5%88%a4%e6%96%ad%e4%b8%a4%e4%b8%aa%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%98%af%e5%90%a6%e4%b8%ba%e4%ba%92%e7%9b%b8%e6%8e%92%e5%88%97>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-9-1><a class=lnlinks href=#hl-9-1>1</a>
+</span><span class=lnt id=hl-9-2><a class=lnlinks href=#hl-9-2>2</a>
+</span><span class=lnt id=hl-9-3><a class=lnlinks href=#hl-9-3>3</a>
+</span><span class=lnt id=hl-9-4><a class=lnlinks href=#hl-9-4>4</a>
+</span><span class=lnt id=hl-9-5><a class=lnlinks href=#hl-9-5>5</a>
+</span><span class=lnt id=hl-9-6><a class=lnlinks href=#hl-9-6>6</a>
+</span><span class=lnt id=hl-9-7><a class=lnlinks href=#hl-9-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>isAnagram</span> <span class=o>=</span> <span class=p>(</span><span class=nx>str1</span><span class=p>,</span> <span class=nx>str2</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>normalize</span> <span class=o>=</span> <span class=p>(</span><span class=nx>str</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>str</span><span class=p>.</span><span class=nx>toLowerCase</span><span class=p>().</span><span class=nx>normalize</span><span class=p>(</span><span class=s2>&#34;NFD&#34;</span><span class=p>).</span><span class=nx>split</span><span class=p>(</span><span class=s2>&#34;&#34;</span><span class=p>).</span><span class=nx>sort</span><span class=p>().</span><span class=nx>join</span><span class=p>(</span><span class=s2>&#34;&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=nx>normalize</span><span class=p>(</span><span class=nx>str1</span><span class=p>)</span> <span class=o>===</span> <span class=nx>normalize</span><span class=p>(</span><span class=nx>str2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>isAnagram</span><span class=p>(</span><span class=s2>&#34;anagram&#34;</span><span class=p>,</span> <span class=s2>&#34;nagaram&#34;</span><span class=p>));</span> <span class=c1>// true
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>isAnagram</span><span class=p>(</span><span class=s2>&#34;rat&#34;</span><span class=p>,</span> <span class=s2>&#34;car&#34;</span><span class=p>));</span> <span class=c1>// false
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>isAnagram</span><span class=p>(</span><span class=s2>&#34;heArT&#34;</span><span class=p>,</span> <span class=s2>&#34;traEH&#34;</span><span class=p>));</span> <span class=c1>// true
+</span></span></span></code></pre></td></tr></table></div></div></div></div><blockquote><p>判断两个字符串是否为互相排列: 给定两个字符串,一个是否是另一个的排列</p></blockquote><h3 id=可选链操作符>可选链操作符
+<a hidden class=anchor aria-hidden=true href=#%e5%8f%af%e9%80%89%e9%93%be%e6%93%8d%e4%bd%9c%e7%ac%a6>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-10-1><a class=lnlinks href=#hl-10-1> 1</a>
+</span><span class=lnt id=hl-10-2><a class=lnlinks href=#hl-10-2> 2</a>
+</span><span class=lnt id=hl-10-3><a class=lnlinks href=#hl-10-3> 3</a>
+</span><span class=lnt id=hl-10-4><a class=lnlinks href=#hl-10-4> 4</a>
+</span><span class=lnt id=hl-10-5><a class=lnlinks href=#hl-10-5> 5</a>
+</span><span class=lnt id=hl-10-6><a class=lnlinks href=#hl-10-6> 6</a>
+</span><span class=lnt id=hl-10-7><a class=lnlinks href=#hl-10-7> 7</a>
+</span><span class=lnt id=hl-10-8><a class=lnlinks href=#hl-10-8> 8</a>
+</span><span class=lnt id=hl-10-9><a class=lnlinks href=#hl-10-9> 9</a>
+</span><span class=lnt id=hl-10-10><a class=lnlinks href=#hl-10-10>10</a>
+</span><span class=lnt id=hl-10-11><a class=lnlinks href=#hl-10-11>11</a>
+</span><span class=lnt id=hl-10-12><a class=lnlinks href=#hl-10-12>12</a>
+</span><span class=lnt id=hl-10-13><a class=lnlinks href=#hl-10-13>13</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>player</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;xieyezi&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>rating</span><span class=o>:</span> <span class=mi>1000</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>click</span><span class=o>:</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=s2>&#34;click&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nx>pass</span><span class=o>:</span> <span class=p>(</span><span class=nx>teammate</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=sb>`Pass to </span><span class=si>${</span><span class=nx>teammate</span><span class=si>}</span><span class=sb>`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>player</span><span class=o>?</span><span class=p>.</span><span class=nx>name</span><span class=p>);</span> <span class=c1>// xieyezi
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>player</span><span class=o>?</span><span class=p>.</span><span class=nx>click</span><span class=o>?</span><span class=p>.());</span> <span class=c1>// click
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>player</span><span class=o>?</span><span class=p>.</span><span class=nx>teammate</span><span class=o>?</span><span class=p>.());</span> <span class=c1>// undefined
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=三目运算符>三目运算符
+<a hidden class=anchor aria-hidden=true href=#%e4%b8%89%e7%9b%ae%e8%bf%90%e7%ae%97%e7%ac%a6>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-11-1><a class=lnlinks href=#hl-11-1>1</a>
+</span><span class=lnt id=hl-11-2><a class=lnlinks href=#hl-11-2>2</a>
+</span><span class=lnt id=hl-11-3><a class=lnlinks href=#hl-11-3>3</a>
+</span><span class=lnt id=hl-11-4><a class=lnlinks href=#hl-11-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// condition ? expression if true : expression if false
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=nx>oxygen</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>diver</span> <span class=o>=</span> <span class=nx>oxygen</span> <span class=o>&lt;</span> <span class=mi>10</span> <span class=o>?</span> <span class=s2>&#34;Low oxygen&#34;</span> <span class=o>:</span> <span class=s2>&#34;High oxygen&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>diver</span><span class=p>);</span> <span class=c1>// High oxygen
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=从数组中随机选择一个值>从数组中随机选择一个值
+<a hidden class=anchor aria-hidden=true href=#%e4%bb%8e%e6%95%b0%e7%bb%84%e4%b8%ad%e9%9a%8f%e6%9c%ba%e9%80%89%e6%8b%a9%e4%b8%80%e4%b8%aa%e5%80%bc>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-12-1><a class=lnlinks href=#hl-12-1>1</a>
+</span><span class=lnt id=hl-12-2><a class=lnlinks href=#hl-12-2>2</a>
+</span><span class=lnt id=hl-12-3><a class=lnlinks href=#hl-12-3>3</a>
+</span><span class=lnt id=hl-12-4><a class=lnlinks href=#hl-12-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>elements</span> <span class=o>=</span> <span class=p>[</span><span class=mi>24</span><span class=p>,</span> <span class=s2>&#34;You&#34;</span><span class=p>,</span> <span class=mi>777</span><span class=p>,</span> <span class=s2>&#34;breaking&#34;</span><span class=p>,</span> <span class=mi>99</span><span class=p>,</span> <span class=s2>&#34;full&#34;</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>random</span> <span class=o>=</span> <span class=p>(</span><span class=nx>arr</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>arr</span><span class=p>[</span><span class=nb>Math</span><span class=p>.</span><span class=nx>floor</span><span class=p>(</span><span class=nb>Math</span><span class=p>.</span><span class=nx>random</span><span class=p>()</span> <span class=o>*</span> <span class=nx>arr</span><span class=p>.</span><span class=nx>length</span><span class=p>)];</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>randomElement</span> <span class=o>=</span> <span class=nx>random</span><span class=p>(</span><span class=nx>elements</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>randomElement</span><span class=p>);</span> <span class=c1>// 777
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=冻结对象>冻结对象
+<a hidden class=anchor aria-hidden=true href=#%e5%86%bb%e7%bb%93%e5%af%b9%e8%b1%a1>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-13-1><a class=lnlinks href=#hl-13-1>1</a>
+</span><span class=lnt id=hl-13-2><a class=lnlinks href=#hl-13-2>2</a>
+</span><span class=lnt id=hl-13-3><a class=lnlinks href=#hl-13-3>3</a>
+</span><span class=lnt id=hl-13-4><a class=lnlinks href=#hl-13-4>4</a>
+</span><span class=lnt id=hl-13-5><a class=lnlinks href=#hl-13-5>5</a>
+</span><span class=lnt id=hl-13-6><a class=lnlinks href=#hl-13-6>6</a>
+</span><span class=lnt id=hl-13-7><a class=lnlinks href=#hl-13-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>octopus</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>tentacles</span><span class=o>:</span> <span class=mi>8</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>color</span><span class=o>:</span> <span class=s2>&#34;blue&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=nb>Object</span><span class=p>.</span><span class=nx>freeze</span><span class=p>(</span><span class=nx>octopus</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>octopus</span><span class=p>.</span><span class=nx>tentacles</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span> <span class=c1>// Error, 不会改变
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>octopus</span><span class=p>);</span> <span class=c1>// { tentacles: 8, color: &#39;blue&#39;}
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=删除数组重复的元素>删除数组重复的元素
+<a hidden class=anchor aria-hidden=true href=#%e5%88%a0%e9%99%a4%e6%95%b0%e7%bb%84%e9%87%8d%e5%a4%8d%e7%9a%84%e5%85%83%e7%b4%a0>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-14-1><a class=lnlinks href=#hl-14-1>1</a>
+</span><span class=lnt id=hl-14-2><a class=lnlinks href=#hl-14-2>2</a>
+</span><span class=lnt id=hl-14-3><a class=lnlinks href=#hl-14-3>3</a>
+</span><span class=lnt id=hl-14-4><a class=lnlinks href=#hl-14-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>animals</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;bears&#34;</span><span class=p>,</span> <span class=s2>&#34;lions&#34;</span><span class=p>,</span> <span class=s2>&#34;tigers&#34;</span><span class=p>,</span> <span class=s2>&#34;bears&#34;</span><span class=p>,</span> <span class=s2>&#34;lions&#34;</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>unique</span> <span class=o>=</span> <span class=p>(</span><span class=nx>arr</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>[...</span><span class=k>new</span> <span class=nx>Set</span><span class=p>(</span><span class=nx>arr</span><span class=p>)];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>unique</span><span class=p>(</span><span class=nx>animals</span><span class=p>));</span> <span class=c1>// [ &#39;bears&#39;, &#39;lions&#39;, &#39;tigers&#39; ]
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=保留指定位小数>保留指定位小数
+<a hidden class=anchor aria-hidden=true href=#%e4%bf%9d%e7%95%99%e6%8c%87%e5%ae%9a%e4%bd%8d%e5%b0%8f%e6%95%b0>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-15-1><a class=lnlinks href=#hl-15-1>1</a>
+</span><span class=lnt id=hl-15-2><a class=lnlinks href=#hl-15-2>2</a>
+</span><span class=lnt id=hl-15-3><a class=lnlinks href=#hl-15-3>3</a>
+</span><span class=lnt id=hl-15-4><a class=lnlinks href=#hl-15-4>4</a>
+</span><span class=lnt id=hl-15-5><a class=lnlinks href=#hl-15-5>5</a>
+</span><span class=lnt id=hl-15-6><a class=lnlinks href=#hl-15-6>6</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>num</span> <span class=o>=</span> <span class=mf>0.123456789</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>fixed2</span> <span class=o>=</span> <span class=nx>num</span><span class=p>.</span><span class=nx>toFixed</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>fixed3</span> <span class=o>=</span> <span class=nx>num</span><span class=p>.</span><span class=nx>toFixed</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>fixed2</span><span class=p>);</span> <span class=c1>// 0.12
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>fixed3</span><span class=p>);</span> <span class=c1>// 0.123
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=清空数组>清空数组
+<a hidden class=anchor aria-hidden=true href=#%e6%b8%85%e7%a9%ba%e6%95%b0%e7%bb%84>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-16-1><a class=lnlinks href=#hl-16-1>1</a>
+</span><span class=lnt id=hl-16-2><a class=lnlinks href=#hl-16-2>2</a>
+</span><span class=lnt id=hl-16-3><a class=lnlinks href=#hl-16-3>3</a>
+</span><span class=lnt id=hl-16-4><a class=lnlinks href=#hl-16-4>4</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>numbers</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nx>numbers</span><span class=p>.</span><span class=nx>length</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>numbers</span><span class=p>);</span> <span class=c1>// []
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=从-rgb-转换为-hex>从 <code>RGB</code> 转换为 <code>HEX</code>
+<a hidden class=anchor aria-hidden=true href=#%e4%bb%8e-rgb-%e8%bd%ac%e6%8d%a2%e4%b8%ba-hex>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-17-1><a class=lnlinks href=#hl-17-1>1</a>
+</span><span class=lnt id=hl-17-2><a class=lnlinks href=#hl-17-2>2</a>
+</span><span class=lnt id=hl-17-3><a class=lnlinks href=#hl-17-3>3</a>
+</span><span class=lnt id=hl-17-4><a class=lnlinks href=#hl-17-4>4</a>
+</span><span class=lnt id=hl-17-5><a class=lnlinks href=#hl-17-5>5</a>
+</span><span class=lnt id=hl-17-6><a class=lnlinks href=#hl-17-6>6</a>
+</span><span class=lnt id=hl-17-7><a class=lnlinks href=#hl-17-7>7</a>
+</span><span class=lnt id=hl-17-8><a class=lnlinks href=#hl-17-8>8</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>rgbToHex</span> <span class=o>=</span> <span class=p>(</span><span class=nx>r</span><span class=p>,</span> <span class=nx>g</span><span class=p>,</span> <span class=nx>b</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>toHex</span> <span class=o>=</span> <span class=p>(</span><span class=nx>num</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>hex</span> <span class=o>=</span> <span class=nx>num</span><span class=p>.</span><span class=nx>toString</span><span class=p>(</span><span class=mi>16</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>hex</span><span class=p>.</span><span class=nx>length</span> <span class=o>===</span> <span class=mi>1</span> <span class=o>?</span> <span class=sb>`0</span><span class=si>${</span><span class=nx>hex</span><span class=si>}</span><span class=sb>`</span> <span class=o>:</span> <span class=nx>hex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>};</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=sb>`#</span><span class=si>${</span><span class=nx>toHex</span><span class=p>(</span><span class=nx>r</span><span class=p>)</span><span class=si>}${</span><span class=nx>toHex</span><span class=p>(</span><span class=nx>g</span><span class=p>)</span><span class=si>}${</span><span class=nx>toHex</span><span class=p>(</span><span class=nx>b</span><span class=p>)</span><span class=si>}</span><span class=sb>`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>rgbToHex</span><span class=p>(</span><span class=mi>46</span><span class=p>,</span> <span class=mi>32</span><span class=p>,</span> <span class=mi>67</span><span class=p>));</span> <span class=c1>// #2e2043
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=从数组中获取最大值和最小值>从数组中获取最大值和最小值
+<a hidden class=anchor aria-hidden=true href=#%e4%bb%8e%e6%95%b0%e7%bb%84%e4%b8%ad%e8%8e%b7%e5%8f%96%e6%9c%80%e5%a4%a7%e5%80%bc%e5%92%8c%e6%9c%80%e5%b0%8f%e5%80%bc>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-18-1><a class=lnlinks href=#hl-18-1>1</a>
+</span><span class=lnt id=hl-18-2><a class=lnlinks href=#hl-18-2>2</a>
+</span><span class=lnt id=hl-18-3><a class=lnlinks href=#hl-18-3>3</a>
+</span><span class=lnt id=hl-18-4><a class=lnlinks href=#hl-18-4>4</a>
+</span><span class=lnt id=hl-18-5><a class=lnlinks href=#hl-18-5>5</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>nums</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=o>-</span><span class=mi>3</span><span class=p>,</span> <span class=mi>99</span><span class=p>,</span> <span class=o>-</span><span class=mi>45</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>max</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>max</span><span class=p>(...</span><span class=nx>nums</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>min</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>min</span><span class=p>(...</span><span class=nx>nums</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>max</span><span class=p>);</span> <span class=c1>// 99
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>min</span><span class=p>);</span> <span class=c1>// -45
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=空值合并运算符>空值合并运算符
+<a hidden class=anchor aria-hidden=true href=#%e7%a9%ba%e5%80%bc%e5%90%88%e5%b9%b6%e8%bf%90%e7%ae%97%e7%ac%a6>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-19-1><a class=lnlinks href=#hl-19-1> 1</a>
+</span><span class=lnt id=hl-19-2><a class=lnlinks href=#hl-19-2> 2</a>
+</span><span class=lnt id=hl-19-3><a class=lnlinks href=#hl-19-3> 3</a>
+</span><span class=lnt id=hl-19-4><a class=lnlinks href=#hl-19-4> 4</a>
+</span><span class=lnt id=hl-19-5><a class=lnlinks href=#hl-19-5> 5</a>
+</span><span class=lnt id=hl-19-6><a class=lnlinks href=#hl-19-6> 6</a>
+</span><span class=lnt id=hl-19-7><a class=lnlinks href=#hl-19-7> 7</a>
+</span><span class=lnt id=hl-19-8><a class=lnlinks href=#hl-19-8> 8</a>
+</span><span class=lnt id=hl-19-9><a class=lnlinks href=#hl-19-9> 9</a>
+</span><span class=lnt id=hl-19-10><a class=lnlinks href=#hl-19-10>10</a>
+</span><span class=lnt id=hl-19-11><a class=lnlinks href=#hl-19-11>11</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>nullval</span> <span class=o>=</span> <span class=kc>null</span>
+</span></span><span class=line><span class=cl><span class=nx>cost</span> <span class=nx>emptyString</span> <span class=o>=</span> <span class=s1>&#39;&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>someNum</span> <span class=o>=</span> <span class=mi>13</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>a</span> <span class=o>=</span> <span class=nx>nullval</span> <span class=o>??</span> <span class=s1>&#39;A default&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>b</span> <span class=o>=</span> <span class=nx>emptyString</span> <span class=o>??</span> <span class=s1>&#39;B default&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>c</span> <span class=o>=</span> <span class=nx>SomeNum</span> <span class=o>??</span> <span class=s1>&#39;C default&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>a</span><span class=p>)</span> <span class=c1>// A default
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>b</span><span class=p>)</span> <span class=c1>// &#39;&#39; // empty string != undefined or null
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>c</span><span class=p>)</span> <span class=c1>// 13
+</span></span></span></code></pre></td></tr></table></div></div></div></div><h3 id=过滤数组中值为-false-的值>过滤数组中值为 <code>false</code> 的值
+<a hidden class=anchor aria-hidden=true href=#%e8%bf%87%e6%bb%a4%e6%95%b0%e7%bb%84%e4%b8%ad%e5%80%bc%e4%b8%ba-false-%e7%9a%84%e5%80%bc>#</a></h3><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>js</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-20-1><a class=lnlinks href=#hl-20-1>1</a>
+</span><span class=lnt id=hl-20-2><a class=lnlinks href=#hl-20-2>2</a>
+</span><span class=lnt id=hl-20-3><a class=lnlinks href=#hl-20-3>3</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>nums</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=kc>undefined</span><span class=p>,</span> <span class=kc>null</span><span class=p>,</span> <span class=kc>false</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>truthyNums</span> <span class=o>=</span> <span class=nx>nums</span><span class=p>.</span><span class=nx>filter</span><span class=p>(</span><span class=nb>Boolean</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>truthyNums</span><span class=p>);</span> <span class=c1>// [1]
+</span></span></span></code></pre></td></tr></table></div></div></div></div></div><footer class=postFooter><ul class=tags role=list><li><a role=text href=https://linlccc.com/tags/javascript/>Javascript</a></li></ul><nav class=paginav></nav><div class=shareButtons><a target=_blank rel="noopener noreferrer" aria-label="share ES6 常用代码块 on x" href="https://x.com/intent/tweet/?text=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&amp;url=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f&amp;hashtags=javascript"><svg xmlns="http://www.w3.org/2000/svg" class="x" viewBox="0 0 512 512" fill="currentcolor"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"/></svg>
+</a><a target=_blank rel="noopener noreferrer" aria-label="share ES6 常用代码块 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f&amp;title=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&amp;summary=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&amp;source=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f"><svg xmlns="http://www.w3.org/2000/svg" class="linkedin" viewBox="0 0 512 512" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
+</a><a target=_blank rel="noopener noreferrer" aria-label="share ES6 常用代码块 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f&title=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97"><svg xmlns="http://www.w3.org/2000/svg" class="reddit" viewBox="0 0 512 512" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg>
+</a><a target=_blank rel="noopener noreferrer" aria-label="share ES6 常用代码块 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f"><svg xmlns="http://www.w3.org/2000/svg" class="facebook" viewBox="0 0 512 512" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+</a><a target=_blank rel="noopener noreferrer" aria-label="share ES6 常用代码块 on whatsapp" href="https://api.whatsapp.com/send?text=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97%20-%20https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f"><svg xmlns="http://www.w3.org/2000/svg" class="whatsapp" viewBox="0 0 512 512" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg>
+</a><a target=_blank rel="noopener noreferrer" aria-label="share ES6 常用代码块 on telegram" href="https://telegram.me/share/url?text=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&amp;url=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f"><svg xmlns="http://www.w3.org/2000/svg" class="telegram" viewBox="2 2 28 28" fill="currentcolor"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg>
+</a><a target=_blank rel="noopener noreferrer" aria-label="share ES6 常用代码块 on ycombinator" href="https://news.ycombinator.com/submitlink?t=ES6%20%e5%b8%b8%e7%94%a8%e4%bb%a3%e7%a0%81%e5%9d%97&u=https%3a%2f%2flinlccc.com%2fpending%2fcommonlyusedes6%2f"><svg xmlns="http://www.w3.org/2000/svg" class="ycombinator" viewBox="0 0 512 512" fill="currentcolor" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"><path d="M449.446.0C483.971.0 512 28.03 512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446zM183.8767 87.9921h-62.034L230.6673 292.4508V424.0079h50.6655V292.4508L390.1575 87.9921H328.1233L256 238.2489z"/></svg></a></div></footer><div id=giscusComments></div></main><footer class=footer><span>© 2023 - 2024 <a href=https://linlccc.com/>Linlccc's Blog</a> All Rights Reserved</span>
+<span>| Powered by
+<a href=https://gohugo.io/ rel=noopener target=_blank>Hugo</a> & <a href=https://github.com/Linlccc/hugo-Hahah rel=noopener target=_blank>Hahah</a></span></footer><a id=topLink href=#top aria-label=回到顶部 title="回到顶部 (Alt + G)" accesskey=g><svg xmlns="http://www.w3.org/2000/svg" class="upward_triangle" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg> </a><link crossorigin=anonymous rel="preload stylesheet" as=style href=/assets/css/custom.min.eeda6f6208cf7226321ea4ff61ec9b93fde032d5dd25cff49a4941fbca6b2816.css integrity="sha256-7tpvYgjPciYyHqT/Yeybk/3gMtXdJc/0mklB+8prKBY="><script>const MediaColor_Light=window.matchMedia("(prefers-color-scheme: light)"),Meta_ThemeColor=document.querySelector("meta[name=theme-color]"),El_Root=document.documentElement,El_Header=document.getElementById("header"),ThemeColorKey="themeColor",ThemeColor={Auto:"auto",Light:"light",Dark:"dark"};function GetCurrentThemeColor(){let e=ThemeColor.Light;return El_Root.classList.contains(ThemeColor.Auto)?e=MediaColor_Light.matches?ThemeColor.Light:ThemeColor.Dark:El_Root.classList.contains(ThemeColor.Dark)&&(e=ThemeColor.Dark),e}</script><script>(()=>{const e=new CustomEvent("themeColorChange",{});MediaColor_Light.addEventListener("change",t=>{if(!El_Root.classList.contains(ThemeColor.Auto))return;window.dispatchEvent(e)}),new MutationObserver(()=>{window.dispatchEvent(e)}).observe(El_Root,{attributes:!0,attributeFilter:["class"]})})(),(()=>{window.addEventListener("themeColorChange",()=>{Meta_ThemeColor.setAttribute("content",getComputedStyle(El_Root).getPropertyValue("--background-100"))})})(),(()=>{const e=localStorage.getItem(ThemeColorKey);e&&(document.documentElement.className=e),Meta_ThemeColor.setAttribute("content",getComputedStyle(El_Root).getPropertyValue("--background-100"))})()</script><script>(()=>{const n=20;let t=!0,e=0;window.addEventListener("scroll",()=>{if(t){t=!1;return}const s=document.documentElement.scrollTop;if(Math.abs(s-e)<n)return;const o=s>e;o?El_Header.classList.add("hide"):El_Header.classList.remove("hide"),e=s<=0?0:s})})(),(()=>{const e=document.getElementById("menu");e&&(e.scrollLeft=localStorage.getItem("menuScrollPosition"),e.addEventListener("scroll",()=>localStorage.setItem("menuScrollPosition",e.scrollLeft)))})(),(()=>{const e=document.getElementById("themeToggle");let s,n=!1;function o(){s=setTimeout(()=>{n=!0,El_Root.className=ThemeColor.Auto,localStorage.removeItem(ThemeColorKey)},1e3)}function t(){clearTimeout(s)}e&&(e.addEventListener("click",e=>{if(n){n=!1,e.stopPropagation();return}let t=ThemeColor.Light;El_Root.classList.contains(ThemeColor.Auto)?t=MediaColor_Light.matches?ThemeColor.Dark:ThemeColor.Light:El_Root.classList.contains(ThemeColor.Light)&&(t=ThemeColor.Dark),El_Root.className=t,localStorage.setItem(ThemeColorKey,t)}),e.addEventListener("mousedown",o),e.addEventListener("touchstart",o),e.addEventListener("mouseup",t),e.addEventListener("mouseleave",t),e.addEventListener("touchend",t),e.addEventListener("touchcancel",t))})()</script><script defer crossorigin=anonymous src=/assets/js/giscus.min.a594f007635210c4ae5b06d2ee6a6b6f913a989103366440134ed45e6e952588.js integrity="sha256-pZTwB2NSEMSuWwbS7mprb5E6mJEDNmRAE07UXm6VJYg="></script><script defer crossorigin=anonymous src=/assets/js/single.min.e65e7577ef8f51ada3e40af228c9ebd632a2a997c403d90ef420d462a6af94a6.js integrity="sha256-5l51d++PUa2j5AryKMnr1jKiqZfEA9kO9CDUYqavlKY="></script><script defer crossorigin=anonymous src=/assets/js/footer.min.0e816a255b509c02b87a91d62c3fc22fd0e2086b210fad988984929ab239fbaf.css integrity="sha256-DoFqJVtQnAK4epHWLD/CL9DiCGshD62YiYSSmrI5+68="></script></body></html>
