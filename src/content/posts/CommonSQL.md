@@ -4,7 +4,8 @@ title: "常用SQL"
 # 描述
 description: ""
 # 标签
-tags: ["sql"]
+tags:
+  - Sql
 # 显示权重（越小显示越靠前）
 weight: 1000
 

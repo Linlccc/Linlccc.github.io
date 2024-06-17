@@ -4,7 +4,9 @@ title: "VsCode 常用扩展推荐"
 # 描述
 description: ""
 # 标签
-tags: ["VsCode", "Extensions"]
+tags:
+  - VsCode
+  - Extensions
 # 显示权重（越小显示越靠前）
 weight: 1000
 

@@ -4,7 +4,8 @@ title: "Linux 命令大全"
 # 描述
 description: ""
 # 标签
-tags: ["linux"]
+tags:
+  - linux
 # 显示权重（越小显示越靠前）
 weight: 1000
 

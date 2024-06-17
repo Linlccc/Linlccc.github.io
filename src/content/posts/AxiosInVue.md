@@ -4,7 +4,10 @@ title: "在 Vue 中使用 Axios"
 # 描述
 description: ""
 # 标签
-tags: ["Vue"]
+tags:
+  - Vue
+langs:
+  - Javascript
 # 显示权重（越小显示越靠前）
 weight: 1000
 

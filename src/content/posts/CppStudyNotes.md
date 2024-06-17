@@ -1,7 +1,10 @@
 ---
 title: "C++ 学习笔记"
 description: ""
-tags: ["C++"]
+tags:
+  - C++
+langs:
+  - C++
 weight: 1000
 
 date: "2023-02-28 23:20:19"

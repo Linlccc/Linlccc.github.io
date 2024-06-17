@@ -4,7 +4,8 @@ title: "管理 SSH"
 # 描述
 description: ""
 # 标签
-tags: [ssh]
+tags:
+  - ssh
 # 显示权重（越小显示越靠前）
 weight: 1000
 

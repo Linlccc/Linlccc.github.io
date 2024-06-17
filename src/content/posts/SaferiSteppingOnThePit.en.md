@@ -1,7 +1,9 @@
 ---
 title: "Watch out for pitfalls - Safari and positive lookbehind assertions"
 description: ""
-tags: ["safari", "regular expression"]
+tags:
+  - safari
+  - regular expression
 weight: 1000
 
 date: "2023-02-24 15:21:11"

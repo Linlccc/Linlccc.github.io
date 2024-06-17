@@ -1,7 +1,11 @@
 ---
 title: "hugo 模板基本语法"
 description: ""
-tags: ["golang"]
+tags:
+  - golang
+  - hugo
+langs:
+  - golang
 weight: 1000
 
 date: "2023-02-22 17:57:49"
