@@ -28,7 +28,7 @@ author:
 # logo 信息
 logo:
   text: linlccc's blog
-  image: /favicon/dark/favicon-192x192.png
+#   image: /favicon/dark/favicon-192x192.png
   imageHeight: 30
 
 # 隐藏页脚
