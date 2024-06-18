@@ -318,18 +318,17 @@ webConfig.Port = 8082;
 File.WriteAllText(webConfigFile, JsonConvert.SerializeObject(webConfig, Formatting.Indented));
 }
 else webConfig = JsonConvert.DeserializeObject<WebConfig>(File.ReadAllText(webConfigFile))!;
-
-    Serve.Run(RunOptions.Default
-        .Silence()
-        .AddComponent<ServeServiceComponent>().UseComponent<ServeApplicationComponent>()
-        .ConfigureServices(services =>
-        {
-            services.AddJwt();
-            services.AddJsonOptions(configure => configure.JsonSerializerOptions.Converters.AddDateTimeTypeConverters("yyyy-MM-dd HH:mm:ss.fff"));
-        })
-        .ConfigureBuilder(builder =>
-        {
-            builder.WebHost.UseUrls($"http://*:{webConfig.Port}");
+Serve.Run(RunOptions.Default
+.Silence()
+.AddComponent<ServeServiceComponent>().UseComponent<ServeApplicationComponent>()
+.ConfigureServices(services =>
+{
+services.AddJwt();
+services.AddJsonOptions(configure => configure.JsonSerializerOptions.Converters.AddDateTimeTypeConverters("yyyy-MM-dd HH:mm:ss.fff"));
+})
+.ConfigureBuilder(builder =>
+{
+builder.WebHost.UseUrls($"http://*:{webConfig.Port}");
         })
         .Configure(app =>
         {
@@ -340,15 +339,12 @@ else webConfig = JsonConvert.DeserializeObject<WebConfig>(File.ReadAllText(webCo
                     ui.RoutePrefix = "swagger";
                 });
             });
-
             app.UseAuthentication();
             app.UseAuthorization();
         }));
-
-    //Serve.Run($"http://*:{webConfig.Port}", silence: true, additional: services =>
-    //{
-    //    services.AddJsonOptions(configure => configure.JsonSerializerOptions.Converters.AddDateTimeTypeConverters("yyyy-MM-dd HH:mm:ss.fff"));
-    //});
-
+    //Serve.Run($"http://\*:{webConfig.Port}", silence: true, additional: services =>
+//{
+// services.AddJsonOptions(configure => configure.JsonSerializerOptions.Converters.AddDateTimeTypeConverters("yyyy-MM-dd HH:mm:ss.fff"));
+//});
 }
 {{< / highlight >}}
