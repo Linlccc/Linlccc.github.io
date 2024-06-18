@@ -28,6 +28,11 @@ main:
     pageRef: /pending/
     weight: 21
 
+  - identifier: series
+    name: 系列
+    pageRef: /series/
+    weight: 22
+
   - identifier: tags
     name: 标签
     pageRef: /tags/
