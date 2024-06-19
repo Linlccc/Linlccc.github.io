@@ -161,7 +161,7 @@ socialIcons:
 #############
 
 # 列表页头部显示面包屑
-listShowBreadCrumbs: false
+listShowBreadCrumbs: true
 # 隐藏摘要
 hideSummary: false
 
@@ -170,7 +170,7 @@ hideSummary: false
 #############
 
 # 页面显示面包屑导航
-showBreadCrumbs: false
+showBreadCrumbs: true
 # 显示原文章信息，用于显示转载自哪里
 showCanonicalLink: true
 
