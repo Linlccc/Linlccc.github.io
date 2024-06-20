@@ -1,19 +1,12 @@
 ---
-# 标题
-title: "Hugo-Hahah 主题文章配置"
-# 描述
-description: ""
-# 标签
+date: '2024-06-17 21:19:58'
+description: ''
 tags:
-  - Hahah
-  - Hugo
-# 显示权重（越小显示越靠前）
+- Hahah
+- Hugo
+title: Hugo-Hahah 主题文章配置
 weight: 100
-
-# 撰写日期
-date: "2024-06-17 21:19:58"
 ---
-
 ## 文章基础配置
 
 ```yaml
@@ -44,6 +37,8 @@ lastmod: 2000-10-01 12:00:00
 # 别名，用于重定向  (比如: /post/[aliases]/ 会重定向到当前页面)
 aliases:
   - aaa
+# 页面链接
+url: /aaa
 
 # 标签
 tags:
