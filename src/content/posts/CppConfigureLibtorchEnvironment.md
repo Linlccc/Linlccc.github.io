@@ -83,3 +83,18 @@ cmake ..
 cmake --build .
 
 ```
+
+## 构建是异常笔记
+
+### 找不到 mkl_avx2.1.dll / mkl_def.1.dll
+
+> Intel MKL FATAL ERROR: Cannot load mkl_avx2.1.dll or mkl_def.1.dll
+
+原因是找不到 mkl 2021.4 版的动态依赖库，就算在 [oneApi](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html) 下载安装了也不行，因为他只提供最新版本 [see](https://github.com/pytorch/pytorch/issues/124009#issuecomment-2156183422) ,可以使用以下方式解决
+
+1. 下载 2021.4 版本的动态mkl动态链接库，打开命令行工具输入以下命令：
+
+   ```bash
+   pip install mkl==2021.4
+   ```
+2. 在 python 的库中将需要的依赖拷贝到项目中，`C:\Users\[User]\AppData\Local\Programs\Python\Python312\Library\bin` 是 python 安装在默认路径时的库的位置
