@@ -1,12 +1,14 @@
 ---
-date: '2024-06-20 10:20:00'
+date: 2024-06-20 10:20:00
 description: ''
 tags:
 - C++
 - LibTorch
-title: C++ 配置 libtorch 环境
+title: C++ 配置 libtorch 环境
 ---
 ## 下载 LibTorch
+
+> 这里下载的LibTorch版本需要与你的 [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) 版本一致
 
 - 从 [LibTorch](https://pytorch.org/) 下载对应系统的 C++ 版本
 - 下载完成后解压文件，如解压到`C:\libtorch`（以下都将以此为libtorch目录）
