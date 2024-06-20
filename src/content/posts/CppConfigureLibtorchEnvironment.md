@@ -33,7 +33,7 @@ title: C++ 配置 libtorch 环境
 2. **C/C++**
    * **常规** > **附加包含目录**：添加`C:\libtorch\include`和`C:\libtorch\include\torch\csrc\api\include`
 3. **链接器**
-   * **常规** >**附加库目录**：添加`C:\libtorch\lib`
+   * **常规** > **附加库目录**：添加`C:\libtorch\lib`
    * **输入** > **附加依赖项**：添加以下库
 
      ```plaintext
