@@ -1,5 +1,9 @@
 ---
+date: '2024-6-20 10:20:00'
 description: ''
+tags:
+- C++
+- LibTorch
 title: C++ 配置 libtorch 环境
 ---
 ## 下载 LibTorch
