@@ -1,10 +1,10 @@
 ---
-date: '2024-06-17 21:19:58'
+date: 2024-06-17 21:19:58
 description: ''
 tags:
 - Hahah
 - Hugo
-title: Hugo-Hahah 主题文章配置
+title: Hugo-Hahah 主题文章配置
 weight: 100
 ---
 ## 文章基础配置
@@ -142,4 +142,6 @@ editPost:
   appendFilePath: true
   # 禁用编辑
   disabled: false
+  # 在新页面打开
+  openInNewPage: false
 ```
