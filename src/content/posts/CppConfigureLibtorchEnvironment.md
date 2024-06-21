@@ -1,12 +1,11 @@
 ---
 date: 2024-06-20 10:20:00
-description: ""
+description: ''
 tags:
-  - C++
-  - LibTorch
+- C++
+- LibTorch
 title: C++ 配置 libtorch 环境
 ---
-
 ## 前置条件
 
 1. 显卡驱动
@@ -34,8 +33,8 @@ title: C++ 配置 libtorch 环境
     |    0   N/A  N/A      6928    C+G   ...nt.CBS_cw5n1h2txyewy\SearchHost.exe      N/A      |
     +-----------------------------------------------------------------------------------------+
    ```
-
 2. CUDA Toolkit
+
    1. [前往下载 CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive)
    2. CUDA 的版本需要小于等于驱动中的 `CUDA Version`
    3. **重点！！这里的 CUDA 版本需要和 LibTorch 使用的 CUDA 版本一致**，建议先确定好 LibTorch 要使用的 CUDA 版本
@@ -45,6 +44,7 @@ title: C++ 配置 libtorch 环境
       2. 在命令行运行 **[安装目录]\extras\demo_suite** 目录下的 `bandwidthTest.exe`、`deviceQuery.exe`，确保在最后都有输出 `Result = PASS`
 3. cuDNN
    cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度神经网络（Deep Neural Networks）中的基础操作而设计基于 GPU 的加速库
+
    1. [前往下载 cuDNN](https://developer.nvidia.com/cudnn-downloads)
    2. 下载完成解压后，将目录中的 bin、include、lib 文件夹拷贝到 CUDA Toolkit 的安装目录
 
@@ -66,8 +66,10 @@ title: C++ 配置 libtorch 环境
 
 1. 项目右键 > 属性
 2. **常规**
+
    - **C++语言标准**：将“语言标准”设置为`ISO C++ 17 标准 (/std:c++17)`或更高版本
 3. **C/C++**
+
    - **常规** > **附加包含目录**：添加以下目录
      - `S:\libtorch\include`
      - `S:\libtorch\include\torch\csrc\api\include`
@@ -75,8 +77,9 @@ title: C++ 配置 libtorch 环境
 4. **链接器**
 
    - **常规** > **附加库目录**：添加以下目录
+
      - `S:\libtorch\lib`
-     - `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib`
+     - `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64`
    - **输入** > **附加依赖项**：添加以下库
 
      ```plaintext
@@ -86,7 +89,6 @@ title: C++ 配置 libtorch 环境
      torch_cpu.lib
      torch_cuda.lib
      ```
-
    - **命令行** > **其他选项**：输入以下内容(如果不添加的话不能使用 CUDA)
 
      ```plaintext
@@ -148,5 +150,4 @@ cmake --build .
    ```bash
    pip install mkl==2021.4
    ```
-
 2. 在 python 的库中将需要的依赖拷贝到项目中，`C:\Users\[User]\AppData\Local\Programs\Python\Python312\Library\bin` 是 python 安装在默认路径时的库的位置
