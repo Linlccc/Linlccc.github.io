@@ -12,7 +12,7 @@ title: C++ 配置 libtorch 环境
 >
 >> 你的 CUDA Toolkit 版本需要小于等于显卡驱动支持的 CUDA Version
 >>
->> 输入`nvidia-smi`查看驱动支持
+>> `nvcc --version`查看CUDA 编译器版本,`nvidia-smi`查看驱动支持
 >>
 >> 可以在[这里](https://www.nvidia.cn/Download/index.aspx)根据你的显卡下载最新驱动
 >>
