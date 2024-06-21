@@ -80,11 +80,20 @@ title: C++ 配置 libtorch 环境
    - **输入** > **附加依赖项**：添加以下库
 
      ```plaintext
-      c10.lib
-      c10_cuda.lib
-      torch.lib
-      torch_cpu.lib
-      torch_cuda.lib
+     c10.lib
+     c10_cuda.lib
+     torch.lib
+     torch_cpu.lib
+     torch_cuda.lib
+     ```
+
+   - **命令行** > **其他选项**：输入以下内容(如果不添加的话不能使用 CUDA)
+
+     ```plaintext
+     /INCLUDE:?warp_size@cuda@at@@YAHXZ
+     /INCLUDE:?_torch_cuda_cu_linker_symbol_op_cuda@native@at@@YA?AVTensor@2@AEBV32@@Z
+
+     # 如果异常的话就只要第一行，我测试的时候有第二行会报错（这段网上找的，不太清除具体原因😅）
      ```
 
 ## 测试代码
