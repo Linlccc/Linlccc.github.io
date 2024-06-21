@@ -8,7 +8,14 @@ title: C++ 配置 libtorch 环境
 ---
 ## 下载 LibTorch
 
-> 这里下载的LibTorch版本需要与你的 [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) 版本一致
+> 这里下载的LibTorch版本需要与你的 [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) 版本一致
+>
+>> 你的 CUDA Toolkit 版本需要小于等于显卡驱动支持的 CUDA Version
+>>
+>> 输入`nvidia-smi`查看驱动支持
+>>
+>> 可以在[这里](https://www.nvidia.cn/Download/index.aspx)根据你的显卡下载最新驱动
+>>
 
 - 从 [LibTorch](https://pytorch.org/) 下载对应系统的 C++ 版本
 - 下载完成后解压文件，如解压到`C:\libtorch`（以下都将以此为libtorch目录）
