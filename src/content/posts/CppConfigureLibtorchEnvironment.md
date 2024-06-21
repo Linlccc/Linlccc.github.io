@@ -36,7 +36,7 @@ title: C++ 配置 libtorch 环境
 ### 配置项目属性
 
 1. **常规**
-   * **C++语言标准**：将“语言标准”设置为`ISO C++ 14 标准 (/std:c++14)`或更高版本
+   * **C++语言标准**：将“语言标准”设置为`ISO C++ 17 标准 (/std:c++17)`或更高版本
 2. **C/C++**
    * **常规** > **附加包含目录**：添加`C:\libtorch\include`和`C:\libtorch\include\torch\csrc\api\include`
 3. **链接器**
@@ -44,10 +44,10 @@ title: C++ 配置 libtorch 环境
    * **输入** > **附加依赖项**：添加以下库
 
      ```plaintext
-     C:\libtorch\lib\c10.lib
-     C:\libtorch\lib\torch.lib
-     C:\libtorch\lib\torch_cpu.lib
-     C:\libtorch\lib\torch_cuda.lib (如果使用CUDA)
+     c10.lib
+     torch.lib
+     torch_cpu.lib
+     torch_cuda.lib (如果使用CUDA)
      ```
 
 ## 测试代码
