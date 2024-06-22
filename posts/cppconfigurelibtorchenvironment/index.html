@@ -1,13 +1,14 @@
 <!doctype html><html lang=zh dir=ltr class=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><meta name=application-name content="Linlccc's Blog"><title>C++ 配置 libtorch 环境 | Linlccc's Blog</title>
-<meta name=description content="前置条件 # 显卡驱动 在命令行输入nvidia-smi查看驱动信息，如果信息异常或 CUDA 支持版本较低的话 前往下载驱动 plaintext 复制 1 2 3 4 5 6 7 8 9 10 11 12 13"><meta name=author content="Lin"><meta name=keywords content="C++,LibTorch"><meta name=theme-color content><meta name=google-site-verification content="ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY"><meta name=baidu-site-verification content="codeva-3S13SuprEU"><meta name=msvalidate.01 content="D46176825688FA3D0C855598CDAB325F"><link rel=canonical href=https://linlccc.com/posts/cppconfigurelibtorchenvironment/><link rel=alternate hreflang=zh href=https://linlccc.com/posts/cppconfigurelibtorchenvironment/><link rel=manifest href=https://linlccc.com/manifest.json><link rel=icon type=image/x-icon media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-180x180.png><link rel=icon type=image/x-icon media="(prefers-color-scheme: light)" href=/favicon/light/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: light)" href=/favicon/light/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-180x180.png><meta property="og:url" content="https://linlccc.com/posts/cppconfigurelibtorchenvironment/"><meta property="og:site_name" content="Linlccc's Blog"><meta property="og:title" content="C++ 配置 libtorch 环境"><meta property="og:description" content="前置条件 # 显卡驱动 在命令行输入nvidia-smi查看驱动信息，如果信息异常或 CUDA 支持版本较低的话 前往下载驱动 plaintext 复制 1 2 3 4 5 6 7 8 9 10 11 12 13"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:modified_time" content="2024-06-21T23:44:54+08:00"><meta property="article:tag" content="C++"><meta property="article:tag" content="LibTorch"><meta property="og:image" content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:title content="C++ 配置 libtorch 环境"><meta name=twitter:description content="前置条件 # 显卡驱动 在命令行输入nvidia-smi查看驱动信息，如果信息异常或 CUDA 支持版本较低的话 前往下载驱动 plaintext 复制 1 2 3 4 5 6 7 8 9 10 11 12 13"><meta name=twitter:site content="@Linlcccc"><meta itemprop=name content="C++ 配置 libtorch 环境"><meta itemprop=description content="前置条件 # 显卡驱动 在命令行输入nvidia-smi查看驱动信息，如果信息异常或 CUDA 支持版本较低的话 前往下载驱动 plaintext 复制 1 2 3 4 5 6 7 8 9 10 11 12 13"><meta itemprop=dateModified content="2024-06-21T23:44:54+08:00"><meta itemprop=wordCount content="1311"><meta itemprop=image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta itemprop=keywords content="C++,LibTorch"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TQ3ZXPKKNM"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TQ3ZXPKKNM")}</script><noscript><style>#themeToggle{display:none}</style></noscript><link crossorigin=anonymous rel="preload stylesheet" as=style href=/assets/css/stylesAll.min.8100a0bf91471441bbcb07f67a21dce8a2f8f1eeb7d644d0b82c674803d7b664.css integrity="sha256-gQCgv5FHFEG7ywf2eiHc6KL48e631kTQuCxnSAPXtmQ="></head><body id=top><header id=header><nav><div class=logo><a role=text href=https://linlccc.com/ accesskey=h title="linlccc's blog (Alt + H)">linlccc's blog
+<meta name=description content="前置条件 # 显卡驱动 # 在命令行输入nvidia-smi查看驱动信息，如果信息异常或 CUDA 支持版本较低的话 前往下载驱动 plaintext 复制 1 2 3 4 5 6 7 8 9 10 11 12"><meta name=author content="Linlccc"><meta name=keywords content="C++,LibTorch"><meta name=theme-color content><meta name=google-site-verification content="ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY"><meta name=baidu-site-verification content="codeva-3S13SuprEU"><meta name=msvalidate.01 content="D46176825688FA3D0C855598CDAB325F"><link rel=canonical href=https://linlccc.com/posts/cppconfigurelibtorchenvironment/><link rel=alternate hreflang=zh href=https://linlccc.com/posts/cppconfigurelibtorchenvironment/><link rel=manifest href=https://linlccc.com/manifest.json><link rel=icon type=image/x-icon media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-180x180.png><link rel=icon type=image/x-icon media="(prefers-color-scheme: light)" href=/favicon/light/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: light)" href=/favicon/light/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-180x180.png><meta property="og:url" content="https://linlccc.com/posts/cppconfigurelibtorchenvironment/"><meta property="og:site_name" content="Linlccc's Blog"><meta property="og:title" content="C++ 配置 libtorch 环境"><meta property="og:description" content="前置条件 # 显卡驱动 # 在命令行输入nvidia-smi查看驱动信息，如果信息异常或 CUDA 支持版本较低的话 前往下载驱动 plaintext 复制 1 2 3 4 5 6 7 8 9 10 11 12"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:modified_time" content="2024-06-22T18:33:51+08:00"><meta property="article:tag" content="C++"><meta property="article:tag" content="LibTorch"><meta property="og:image" content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:title content="C++ 配置 libtorch 环境"><meta name=twitter:description content="前置条件 # 显卡驱动 # 在命令行输入nvidia-smi查看驱动信息，如果信息异常或 CUDA 支持版本较低的话 前往下载驱动 plaintext 复制 1 2 3 4 5 6 7 8 9 10 11 12"><meta name=twitter:site content="@Linlcccc"><meta itemprop=name content="C++ 配置 libtorch 环境"><meta itemprop=description content="前置条件 # 显卡驱动 # 在命令行输入nvidia-smi查看驱动信息，如果信息异常或 CUDA 支持版本较低的话 前往下载驱动 plaintext 复制 1 2 3 4 5 6 7 8 9 10 11 12"><meta itemprop=dateModified content="2024-06-22T18:33:51+08:00"><meta itemprop=wordCount content="2463"><meta itemprop=image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta itemprop=keywords content="C++,LibTorch"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TQ3ZXPKKNM"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TQ3ZXPKKNM")}</script><noscript><style>#themeToggle{display:none}</style></noscript><link crossorigin=anonymous rel="preload stylesheet" as=style href=/assets/css/stylesAll.min.d34adb945ed0cac850763ad1018ca1463ab86df5a9a798c2a380036f2801332e.css integrity="sha256-00rblF7QyshQdjrRAYyhRjq4bfWpp5jCo4ADbygBMy4="></head><body id=top><header id=header><nav><div class=logo><a role=text href=https://linlccc.com/ accesskey=h title="linlccc's blog (Alt + H)">linlccc's blog
 </a><button id=themeToggle accesskey=t title='(Alt + T)'><svg xmlns="http://www.w3.org/2000/svg" class="sun" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="moon" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button><ul class=langSwitch role=list><li>|</li><li><a role=text href=https://linlccc.com/en/ hreflang=en title=en>En</a></li></ul></div><ul id=menu class=menu role=list><li><a role=text href=/search/ title='搜索 (Alt + /)' accesskey=/><span>搜索</span></a></li><li><a role=text href=/posts/ title=文章><span>文章</span></a></li><li><a role=text href=/pending/ title=待处理><span>待处理</span></a></li><li><a role=text href=/series/ title=系列><span>系列</span></a></li><li><a role=text href=/tags/ title=标签><span>标签</span></a></li><li><a role=text href=/langs/ title=语言><span>语言</span></a></li><li><a role=text href=/archives/ title=档案><span>档案</span></a></li></ul></nav></header><main class=main><header><div class=breadcrumbs><a href=https://linlccc.com/>Linlccc's Blog</a>
 &nbsp;»&nbsp;
 <a href=https://linlccc.com/posts/>文章</a>
 &nbsp;»&nbsp;
-<span>C++ 配置 libtorch 环境</span></div><h1>C++ 配置 libtorch 环境</h1><div class=meta>3 分钟&nbsp;·&nbsp;1311 字&nbsp;·&nbsp;Lin
+<span>C++ 配置 libtorch 环境</span></div><h1>C++ 配置 libtorch 环境</h1><div class=meta>5 分钟&nbsp;·&nbsp;2463 字&nbsp;·&nbsp;Linlccc
 &nbsp;|&nbsp;
-<a href="https://hexo.dotnetrun.com/edit_page.html?file=content/posts/CppConfigureLibtorchEnvironment.md" rel="noopener noreferrer" target=_self>编辑</a></div></header><details id=toc class=toc open><summary accesskey=c title="(Alt + C)"><span class=details>目录</span></summary><div class=inner><nav id=TableOfContents><ol><li><a href=#前置条件>前置条件</a></li><li><a href=#下载-libtorch>下载 LibTorch</a></li><li><a href=#vs2022-中的配置>vs2022 中的配置</a><ol><li><a href=#配置项目属性>配置项目属性</a></li></ol></li><li><a href=#测试代码>测试代码</a></li><li><a href=#设置-cmake可选>设置 CMake（可选）</a></li><li><a href=#异常笔记>异常笔记</a><ol><li><a href=#找不到-mkl_avx21dll--mkl_def1dll>找不到 mkl_avx2.1.dll / mkl_def.1.dll</a></li></ol></li></ol></nav></div></details><div class=postContent><h2 id=前置条件>前置条件
-<a hidden class=anchor aria-hidden=true href=#%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6>#</a></h2><ol><li><p>显卡驱动<br>在命令行输入<code>nvidia-smi</code>查看驱动信息，如果信息异常或 CUDA 支持版本较低的话
+<a href="https://hexo.dotnetrun.com/edit_page.html?file=content/posts/CppConfigureLibtorchEnvironment.md" rel="noopener noreferrer" target=_self>编辑</a></div></header><details id=toc class=toc open><summary accesskey=c title="(Alt + C)"><span class=details>目录</span></summary><div class=inner><nav id=TableOfContents><ol><li><a href=#前置条件>前置条件</a><ol><li><a href=#显卡驱动>显卡驱动</a></li><li><a href=#cuda-toolkit>CUDA Toolkit</a></li><li><a href=#cudnn>cuDNN</a></li></ol></li><li><a href=#下载-libtorch>下载 LibTorch</a></li><li><a href=#vs2022-中的配置>vs2022 中的配置</a><ol><li><a href=#配置项目属性>配置项目属性</a></li></ol></li><li><a href=#测试>测试</a></li><li><a href=#异常笔记>异常笔记</a><ol><li><a href=#找不到-mkl_avx21dll--mkl_def1dll>找不到 mkl_avx2.1.dll / mkl_def.1.dll</a></li><li><a href=#找不到-nvtoolsext>找不到 nvToolsExt</a></li></ol></li></ol></nav></div></details><div class=postContent><h2 id=前置条件>前置条件
+<a hidden class=anchor aria-hidden=true href=#%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6>#</a></h2><h3 id=显卡驱动>显卡驱动
+<a hidden class=anchor aria-hidden=true href=#%e6%98%be%e5%8d%a1%e9%a9%b1%e5%8a%a8>#</a></h3><p>在命令行输入<code>nvidia-smi</code>查看驱动信息，如果信息异常或 CUDA 支持版本较低的话
 <a href=https://www.nvidia.cn/Download/index.aspx rel=external>前往下载驱动</a></p><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>plaintext</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
 </span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
 </span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
@@ -47,7 +48,9 @@
 </span></span><span class=line><span class=cl> |=========================================================================================|
 </span></span><span class=line><span class=cl> |    0   N/A  N/A      1848    C+G   ...2\Enterprise\Common7\IDE\devenv.exe      N/A      |
 </span></span><span class=line><span class=cl> |    0   N/A  N/A      6928    C+G   ...nt.CBS_cw5n1h2txyewy\SearchHost.exe      N/A      |
-</span></span><span class=line><span class=cl> +-----------------------------------------------------------------------------------------+</span></span></code></pre></td></tr></table></div></div></div></div></li><li><p>CUDA Toolkit</p><ol><li><a href=https://developer.nvidia.com/cuda-toolkit-archive rel=external>前往下载 CUDA Toolkit</a></li><li>CUDA 的版本需要小于等于驱动中的 <code>CUDA Version</code></li><li><strong>重点！！这里的 CUDA 版本需要和 LibTorch 使用的 CUDA 版本一致</strong>，建议先确定好 LibTorch 要使用的 CUDA 版本</li><li>下载完成后无脑下一步即可,默认安装目录<code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\[version]</code></li><li>验证安装<ol><li>在命令行输入<code>nvcc --version</code>查看 CUDA 版本信息</li><li>在命令行运行 <strong>[安装目录]\extras\demo_suite</strong> 目录下的 <code>bandwidthTest.exe</code>、<code>deviceQuery.exe</code>，确保在最后都有输出 <code>Result = PASS</code></li></ol></li></ol></li><li><p>cuDNN<br>cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度神经网络（Deep Neural Networks）中的基础操作而设计基于 GPU 的加速库</p><ol><li><a href=https://developer.nvidia.com/cudnn-downloads rel=external>前往下载 cuDNN</a></li><li>下载完成解压后，将目录中的 bin、include、lib 文件夹拷贝到 CUDA Toolkit 的安装目录</li></ol></li></ol><h2 id=下载-libtorch>下载 LibTorch
+</span></span><span class=line><span class=cl> +-----------------------------------------------------------------------------------------+</span></span></code></pre></td></tr></table></div></div></div></div><h3 id=cuda-toolkit>CUDA Toolkit
+<a hidden class=anchor aria-hidden=true href=#cuda-toolkit>#</a></h3><ol><li><a href=https://developer.nvidia.com/cuda-toolkit-archive rel=external>前往下载 CUDA Toolkit</a></li><li>CUDA 的版本需要小于等于驱动中的 <code>CUDA Version</code></li><li><strong>重点！！这里的 CUDA 版本需要和 LibTorch 使用的 CUDA 版本一致</strong>，建议先确定好 LibTorch 要使用的 CUDA 版本</li><li>下载完成后无脑下一步即可,默认安装目录<code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\[version]</code></li><li>验证安装<ol><li>在命令行输入<code>nvcc --version</code>查看 CUDA 版本信息</li><li>在命令行运行 <strong>[安装目录]\extras\demo_suite</strong> 目录下的 <code>bandwidthTest.exe</code>、<code>deviceQuery.exe</code>，确保在最后都有输出 <code>Result = PASS</code></li></ol></li></ol><h3 id=cudnn>cuDNN
+<a hidden class=anchor aria-hidden=true href=#cudnn>#</a></h3><p>cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度神经网络（Deep Neural Networks）中的基础操作而设计基于 GPU 的加速库</p><ol><li><a href=https://developer.nvidia.com/cudnn-downloads rel=external>前往下载 cuDNN</a></li><li>下载完成解压后，将目录中的 bin、include、lib 文件夹拷贝到 CUDA Toolkit 的安装目录</li></ol><h2 id=下载-libtorch>下载 LibTorch
 <a hidden class=anchor aria-hidden=true href=#%e4%b8%8b%e8%bd%bd-libtorch>#</a></h2><ol><li><a href=https://pytorch.org/ rel=external>前往下载 LibTorch
 </a><strong>！！这里下载的 LibTorch 使用的 CUDA 版本需要与你的 CUDA 版本一致</strong></li><li>下载完成后将文件解压到你想存放的目录，如解压到<code>S:\libtorch</code></li><li>按下 win 键 > 输入"编辑系统环境变量" > &ldquo;环境变量&rdquo; > 在系统变量中的"Path"添加<code>S:\libtorch\lib</code></li></ol><h2 id=vs2022-中的配置>vs2022 中的配置
 <a hidden class=anchor aria-hidden=true href=#vs2022-%e4%b8%ad%e7%9a%84%e9%85%8d%e7%bd%ae>#</a></h2><blockquote><p>CUDA toolkit 目录：<code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1</code><br>LibTorch 目录：<code>S:\libtorch\lib</code><br>以下配置都将在以上安装目录的基础上进行</p></blockquote><p>创建一个 C++ 控制台项目</p><h3 id=配置项目属性>配置项目属性
@@ -56,35 +59,276 @@
 </span><span class=lnt id=hl-1-3><a class=lnlinks href=#hl-1-3>3</a>
 </span><span class=lnt id=hl-1-4><a class=lnlinks href=#hl-1-4>4</a>
 </span><span class=lnt id=hl-1-5><a class=lnlinks href=#hl-1-5>5</a>
+</span><span class=lnt id=hl-1-6><a class=lnlinks href=#hl-1-6>6</a>
+</span><span class=lnt id=hl-1-7><a class=lnlinks href=#hl-1-7>7</a>
+</span><span class=lnt id=hl-1-8><a class=lnlinks href=#hl-1-8>8</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-plaintext data-lang=plaintext><span class=line><span class=cl>c10.lib
 </span></span><span class=line><span class=cl>c10_cuda.lib
 </span></span><span class=line><span class=cl>torch.lib
 </span></span><span class=line><span class=cl>torch_cpu.lib
-</span></span><span class=line><span class=cl>torch_cuda.lib</span></span></code></pre></td></tr></table></div></div></div></div></li><li><p><strong>命令行</strong> > <strong>其他选项</strong>：输入以下内容(如果不添加的话不能使用 CUDA)</p><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>plaintext</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1>1</a>
+</span></span><span class=line><span class=cl>torch_cuda.lib
+</span></span><span class=line><span class=cl>cudart.lib
+</span></span><span class=line><span class=cl>cublas.lib
+</span></span><span class=line><span class=cl>curand.lib</span></span></code></pre></td></tr></table></div></div></div></div></li></ul></li></ol><ul><li><p><strong>命令行</strong> > <strong>其他选项</strong>：输入以下内容(如果不添加的话不能使用 CUDA)</p><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>plaintext</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-2-1><a class=lnlinks href=#hl-2-1>1</a>
 </span><span class=lnt id=hl-2-2><a class=lnlinks href=#hl-2-2>2</a>
 </span><span class=lnt id=hl-2-3><a class=lnlinks href=#hl-2-3>3</a>
 </span><span class=lnt id=hl-2-4><a class=lnlinks href=#hl-2-4>4</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-plaintext data-lang=plaintext><span class=line><span class=cl>/INCLUDE:?warp_size@cuda@at@@YAHXZ
 </span></span><span class=line><span class=cl>/INCLUDE:?_torch_cuda_cu_linker_symbol_op_cuda@native@at@@YA?AVTensor@2@AEBV32@@Z
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># 如果异常的话就只要第一行，我测试的时候有第二行会报错（这段网上找的，不太清除具体原因😅）</span></span></code></pre></td></tr></table></div></div></div></div></li></ul></li></ol><h2 id=测试代码>测试代码
-<a hidden class=anchor aria-hidden=true href=#%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81>#</a></h2><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>cpp</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>1</a>
-</span><span class=lnt id=hl-3-2><a class=lnlinks href=#hl-3-2>2</a>
-</span><span class=lnt id=hl-3-3><a class=lnlinks href=#hl-3-3>3</a>
-</span><span class=lnt id=hl-3-4><a class=lnlinks href=#hl-3-4>4</a>
-</span><span class=lnt id=hl-3-5><a class=lnlinks href=#hl-3-5>5</a>
-</span><span class=lnt id=hl-3-6><a class=lnlinks href=#hl-3-6>6</a>
-</span><span class=lnt id=hl-3-7><a class=lnlinks href=#hl-3-7>7</a>
-</span><span class=lnt id=hl-3-8><a class=lnlinks href=#hl-3-8>8</a>
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;torch/torch.h&gt;</span><span class=cp>
+</span></span><span class=line><span class=cl># 如果异常的话就只要第一行，我测试的时候有第二行会报错（这段网上找的，不太清除具体原因😅）</span></span></code></pre></td></tr></table></div></div></div></div></li></ul><h2 id=测试>测试
+<a hidden class=anchor aria-hidden=true href=#%e6%b5%8b%e8%af%95>#</a></h2><ol><li><p><a href=./LibtorchSample.7z>下载样品</a></p><ol><li>需要将里面的<strong>附加包含目录</strong>、<strong>附加库目录</strong>替换成你的目录</li></ol></li><li><p>测试代码</p><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>cpp</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-3-1><a class=lnlinks href=#hl-3-1>  1</a>
+</span><span class=lnt id=hl-3-2><a class=lnlinks href=#hl-3-2>  2</a>
+</span><span class=lnt id=hl-3-3><a class=lnlinks href=#hl-3-3>  3</a>
+</span><span class=lnt id=hl-3-4><a class=lnlinks href=#hl-3-4>  4</a>
+</span><span class=lnt id=hl-3-5><a class=lnlinks href=#hl-3-5>  5</a>
+</span><span class=lnt id=hl-3-6><a class=lnlinks href=#hl-3-6>  6</a>
+</span><span class=lnt id=hl-3-7><a class=lnlinks href=#hl-3-7>  7</a>
+</span><span class=lnt id=hl-3-8><a class=lnlinks href=#hl-3-8>  8</a>
+</span><span class=lnt id=hl-3-9><a class=lnlinks href=#hl-3-9>  9</a>
+</span><span class=lnt id=hl-3-10><a class=lnlinks href=#hl-3-10> 10</a>
+</span><span class=lnt id=hl-3-11><a class=lnlinks href=#hl-3-11> 11</a>
+</span><span class=lnt id=hl-3-12><a class=lnlinks href=#hl-3-12> 12</a>
+</span><span class=lnt id=hl-3-13><a class=lnlinks href=#hl-3-13> 13</a>
+</span><span class=lnt id=hl-3-14><a class=lnlinks href=#hl-3-14> 14</a>
+</span><span class=lnt id=hl-3-15><a class=lnlinks href=#hl-3-15> 15</a>
+</span><span class=lnt id=hl-3-16><a class=lnlinks href=#hl-3-16> 16</a>
+</span><span class=lnt id=hl-3-17><a class=lnlinks href=#hl-3-17> 17</a>
+</span><span class=lnt id=hl-3-18><a class=lnlinks href=#hl-3-18> 18</a>
+</span><span class=lnt id=hl-3-19><a class=lnlinks href=#hl-3-19> 19</a>
+</span><span class=lnt id=hl-3-20><a class=lnlinks href=#hl-3-20> 20</a>
+</span><span class=lnt id=hl-3-21><a class=lnlinks href=#hl-3-21> 21</a>
+</span><span class=lnt id=hl-3-22><a class=lnlinks href=#hl-3-22> 22</a>
+</span><span class=lnt id=hl-3-23><a class=lnlinks href=#hl-3-23> 23</a>
+</span><span class=lnt id=hl-3-24><a class=lnlinks href=#hl-3-24> 24</a>
+</span><span class=lnt id=hl-3-25><a class=lnlinks href=#hl-3-25> 25</a>
+</span><span class=lnt id=hl-3-26><a class=lnlinks href=#hl-3-26> 26</a>
+</span><span class=lnt id=hl-3-27><a class=lnlinks href=#hl-3-27> 27</a>
+</span><span class=lnt id=hl-3-28><a class=lnlinks href=#hl-3-28> 28</a>
+</span><span class=lnt id=hl-3-29><a class=lnlinks href=#hl-3-29> 29</a>
+</span><span class=lnt id=hl-3-30><a class=lnlinks href=#hl-3-30> 30</a>
+</span><span class=lnt id=hl-3-31><a class=lnlinks href=#hl-3-31> 31</a>
+</span><span class=lnt id=hl-3-32><a class=lnlinks href=#hl-3-32> 32</a>
+</span><span class=lnt id=hl-3-33><a class=lnlinks href=#hl-3-33> 33</a>
+</span><span class=lnt id=hl-3-34><a class=lnlinks href=#hl-3-34> 34</a>
+</span><span class=lnt id=hl-3-35><a class=lnlinks href=#hl-3-35> 35</a>
+</span><span class=lnt id=hl-3-36><a class=lnlinks href=#hl-3-36> 36</a>
+</span><span class=lnt id=hl-3-37><a class=lnlinks href=#hl-3-37> 37</a>
+</span><span class=lnt id=hl-3-38><a class=lnlinks href=#hl-3-38> 38</a>
+</span><span class=lnt id=hl-3-39><a class=lnlinks href=#hl-3-39> 39</a>
+</span><span class=lnt id=hl-3-40><a class=lnlinks href=#hl-3-40> 40</a>
+</span><span class=lnt id=hl-3-41><a class=lnlinks href=#hl-3-41> 41</a>
+</span><span class=lnt id=hl-3-42><a class=lnlinks href=#hl-3-42> 42</a>
+</span><span class=lnt id=hl-3-43><a class=lnlinks href=#hl-3-43> 43</a>
+</span><span class=lnt id=hl-3-44><a class=lnlinks href=#hl-3-44> 44</a>
+</span><span class=lnt id=hl-3-45><a class=lnlinks href=#hl-3-45> 45</a>
+</span><span class=lnt id=hl-3-46><a class=lnlinks href=#hl-3-46> 46</a>
+</span><span class=lnt id=hl-3-47><a class=lnlinks href=#hl-3-47> 47</a>
+</span><span class=lnt id=hl-3-48><a class=lnlinks href=#hl-3-48> 48</a>
+</span><span class=lnt id=hl-3-49><a class=lnlinks href=#hl-3-49> 49</a>
+</span><span class=lnt id=hl-3-50><a class=lnlinks href=#hl-3-50> 50</a>
+</span><span class=lnt id=hl-3-51><a class=lnlinks href=#hl-3-51> 51</a>
+</span><span class=lnt id=hl-3-52><a class=lnlinks href=#hl-3-52> 52</a>
+</span><span class=lnt id=hl-3-53><a class=lnlinks href=#hl-3-53> 53</a>
+</span><span class=lnt id=hl-3-54><a class=lnlinks href=#hl-3-54> 54</a>
+</span><span class=lnt id=hl-3-55><a class=lnlinks href=#hl-3-55> 55</a>
+</span><span class=lnt id=hl-3-56><a class=lnlinks href=#hl-3-56> 56</a>
+</span><span class=lnt id=hl-3-57><a class=lnlinks href=#hl-3-57> 57</a>
+</span><span class=lnt id=hl-3-58><a class=lnlinks href=#hl-3-58> 58</a>
+</span><span class=lnt id=hl-3-59><a class=lnlinks href=#hl-3-59> 59</a>
+</span><span class=lnt id=hl-3-60><a class=lnlinks href=#hl-3-60> 60</a>
+</span><span class=lnt id=hl-3-61><a class=lnlinks href=#hl-3-61> 61</a>
+</span><span class=lnt id=hl-3-62><a class=lnlinks href=#hl-3-62> 62</a>
+</span><span class=lnt id=hl-3-63><a class=lnlinks href=#hl-3-63> 63</a>
+</span><span class=lnt id=hl-3-64><a class=lnlinks href=#hl-3-64> 64</a>
+</span><span class=lnt id=hl-3-65><a class=lnlinks href=#hl-3-65> 65</a>
+</span><span class=lnt id=hl-3-66><a class=lnlinks href=#hl-3-66> 66</a>
+</span><span class=lnt id=hl-3-67><a class=lnlinks href=#hl-3-67> 67</a>
+</span><span class=lnt id=hl-3-68><a class=lnlinks href=#hl-3-68> 68</a>
+</span><span class=lnt id=hl-3-69><a class=lnlinks href=#hl-3-69> 69</a>
+</span><span class=lnt id=hl-3-70><a class=lnlinks href=#hl-3-70> 70</a>
+</span><span class=lnt id=hl-3-71><a class=lnlinks href=#hl-3-71> 71</a>
+</span><span class=lnt id=hl-3-72><a class=lnlinks href=#hl-3-72> 72</a>
+</span><span class=lnt id=hl-3-73><a class=lnlinks href=#hl-3-73> 73</a>
+</span><span class=lnt id=hl-3-74><a class=lnlinks href=#hl-3-74> 74</a>
+</span><span class=lnt id=hl-3-75><a class=lnlinks href=#hl-3-75> 75</a>
+</span><span class=lnt id=hl-3-76><a class=lnlinks href=#hl-3-76> 76</a>
+</span><span class=lnt id=hl-3-77><a class=lnlinks href=#hl-3-77> 77</a>
+</span><span class=lnt id=hl-3-78><a class=lnlinks href=#hl-3-78> 78</a>
+</span><span class=lnt id=hl-3-79><a class=lnlinks href=#hl-3-79> 79</a>
+</span><span class=lnt id=hl-3-80><a class=lnlinks href=#hl-3-80> 80</a>
+</span><span class=lnt id=hl-3-81><a class=lnlinks href=#hl-3-81> 81</a>
+</span><span class=lnt id=hl-3-82><a class=lnlinks href=#hl-3-82> 82</a>
+</span><span class=lnt id=hl-3-83><a class=lnlinks href=#hl-3-83> 83</a>
+</span><span class=lnt id=hl-3-84><a class=lnlinks href=#hl-3-84> 84</a>
+</span><span class=lnt id=hl-3-85><a class=lnlinks href=#hl-3-85> 85</a>
+</span><span class=lnt id=hl-3-86><a class=lnlinks href=#hl-3-86> 86</a>
+</span><span class=lnt id=hl-3-87><a class=lnlinks href=#hl-3-87> 87</a>
+</span><span class=lnt id=hl-3-88><a class=lnlinks href=#hl-3-88> 88</a>
+</span><span class=lnt id=hl-3-89><a class=lnlinks href=#hl-3-89> 89</a>
+</span><span class=lnt id=hl-3-90><a class=lnlinks href=#hl-3-90> 90</a>
+</span><span class=lnt id=hl-3-91><a class=lnlinks href=#hl-3-91> 91</a>
+</span><span class=lnt id=hl-3-92><a class=lnlinks href=#hl-3-92> 92</a>
+</span><span class=lnt id=hl-3-93><a class=lnlinks href=#hl-3-93> 93</a>
+</span><span class=lnt id=hl-3-94><a class=lnlinks href=#hl-3-94> 94</a>
+</span><span class=lnt id=hl-3-95><a class=lnlinks href=#hl-3-95> 95</a>
+</span><span class=lnt id=hl-3-96><a class=lnlinks href=#hl-3-96> 96</a>
+</span><span class=lnt id=hl-3-97><a class=lnlinks href=#hl-3-97> 97</a>
+</span><span class=lnt id=hl-3-98><a class=lnlinks href=#hl-3-98> 98</a>
+</span><span class=lnt id=hl-3-99><a class=lnlinks href=#hl-3-99> 99</a>
+</span><span class=lnt id=hl-3-100><a class=lnlinks href=#hl-3-100>100</a>
+</span><span class=lnt id=hl-3-101><a class=lnlinks href=#hl-3-101>101</a>
+</span><span class=lnt id=hl-3-102><a class=lnlinks href=#hl-3-102>102</a>
+</span><span class=lnt id=hl-3-103><a class=lnlinks href=#hl-3-103>103</a>
+</span><span class=lnt id=hl-3-104><a class=lnlinks href=#hl-3-104>104</a>
+</span><span class=lnt id=hl-3-105><a class=lnlinks href=#hl-3-105>105</a>
+</span><span class=lnt id=hl-3-106><a class=lnlinks href=#hl-3-106>106</a>
+</span><span class=lnt id=hl-3-107><a class=lnlinks href=#hl-3-107>107</a>
+</span><span class=lnt id=hl-3-108><a class=lnlinks href=#hl-3-108>108</a>
+</span><span class=lnt id=hl-3-109><a class=lnlinks href=#hl-3-109>109</a>
+</span><span class=lnt id=hl-3-110><a class=lnlinks href=#hl-3-110>110</a>
+</span><span class=lnt id=hl-3-111><a class=lnlinks href=#hl-3-111>111</a>
+</span><span class=lnt id=hl-3-112><a class=lnlinks href=#hl-3-112>112</a>
+</span><span class=lnt id=hl-3-113><a class=lnlinks href=#hl-3-113>113</a>
+</span><span class=lnt id=hl-3-114><a class=lnlinks href=#hl-3-114>114</a>
+</span><span class=lnt id=hl-3-115><a class=lnlinks href=#hl-3-115>115</a>
+</span><span class=lnt id=hl-3-116><a class=lnlinks href=#hl-3-116>116</a>
+</span><span class=lnt id=hl-3-117><a class=lnlinks href=#hl-3-117>117</a>
+</span><span class=lnt id=hl-3-118><a class=lnlinks href=#hl-3-118>118</a>
+</span><span class=lnt id=hl-3-119><a class=lnlinks href=#hl-3-119>119</a>
+</span><span class=lnt id=hl-3-120><a class=lnlinks href=#hl-3-120>120</a>
+</span><span class=lnt id=hl-3-121><a class=lnlinks href=#hl-3-121>121</a>
+</span><span class=lnt id=hl-3-122><a class=lnlinks href=#hl-3-122>122</a>
+</span><span class=lnt id=hl-3-123><a class=lnlinks href=#hl-3-123>123</a>
+</span><span class=lnt id=hl-3-124><a class=lnlinks href=#hl-3-124>124</a>
+</span><span class=lnt id=hl-3-125><a class=lnlinks href=#hl-3-125>125</a>
+</span><span class=lnt id=hl-3-126><a class=lnlinks href=#hl-3-126>126</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cpp data-lang=cpp><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;cuda_runtime.h&gt;</span><span class=cp>
 </span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;iostream&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;torch/torch.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;torch/version.h&gt;</span><span class=cp>
 </span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=c1>// 将 SM 版本转换为核心数的辅助函数
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=nf>_ConvertSMVer2Cores</span><span class=p>(</span><span class=kt>int</span> <span class=n>major</span><span class=p>,</span> <span class=kt>int</span> <span class=n>minor</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>tensor</span> <span class=o>=</span> <span class=n>torch</span><span class=o>::</span><span class=n>rand</span><span class=p>({</span><span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>});</span>
-</span></span><span class=line><span class=cl>    <span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>tensor</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
-</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div></div></div><h2 id=设置-cmake可选>设置 CMake（可选）
-<a hidden class=anchor aria-hidden=true href=#%e8%ae%be%e7%bd%ae-cmake%e5%8f%af%e9%80%89>#</a></h2><p>如果你希望使用 CMake 进行构建，可以在项目根目录创建一个<code>CMakeLists.txt</code>文件，内容如下：</p><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>cmake</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1> 1</a>
+</span></span><span class=line><span class=cl><span class=c1>// 版本信息
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;LibTorch 版本：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>TORCH_VERSION</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 检查是否支持CUDA
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>if</span> <span class=p>(</span><span class=n>torch</span><span class=o>::</span><span class=n>cuda</span><span class=o>::</span><span class=n>is_available</span><span class=p>())</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;CUDA 可用！使用 GPU&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>device_count</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>cudaGetDeviceCount</span><span class=p>(</span><span class=o>&amp;</span><span class=n>device_count</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;CUDA 设备数量：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>device_count</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>device_count</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=n>cudaDeviceProp</span> <span class=n>prop</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>cudaGetDeviceProperties</span><span class=p>(</span><span class=o>&amp;</span><span class=n>prop</span><span class=p>,</span> <span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;设备 &#34;</span> <span class=o>&lt;&lt;</span> <span class=n>i</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;: &#34;</span> <span class=o>&lt;&lt;</span> <span class=n>prop</span><span class=p>.</span><span class=n>name</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;  总内存：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>prop</span><span class=p>.</span><span class=n>totalGlobalMem</span> <span class=o>/</span> <span class=p>(</span><span class=mi>1024</span> <span class=o>*</span> <span class=mi>1024</span><span class=p>)</span> <span class=o>&lt;&lt;</span> <span class=s>&#34; MB&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;  多处理器：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>prop</span><span class=p>.</span><span class=n>multiProcessorCount</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;  CUDA 核心：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>prop</span><span class=p>.</span><span class=n>multiProcessorCount</span> <span class=o>*</span> <span class=n>_ConvertSMVer2Cores</span><span class=p>(</span><span class=n>prop</span><span class=p>.</span><span class=n>major</span><span class=p>,</span> <span class=n>prop</span><span class=p>.</span><span class=n>minor</span><span class=p>)</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;  CUDA 功能：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>prop</span><span class=p>.</span><span class=n>major</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;.&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>prop</span><span class=p>.</span><span class=n>minor</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;CUDA 不可用。正在使用 CPU。&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 创建张量
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>tensor</span> <span class=o>=</span> <span class=n>torch</span><span class=o>::</span><span class=n>rand</span><span class=p>({</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span> <span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;随机张量：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>tensor</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 基本运算
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>tensor_a</span> <span class=o>=</span> <span class=n>torch</span><span class=o>::</span><span class=n>tensor</span><span class=p>({</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span> <span class=p>},</span> <span class=n>torch</span><span class=o>::</span><span class=n>kFloat32</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>tensor_b</span> <span class=o>=</span> <span class=n>torch</span><span class=o>::</span><span class=n>tensor</span><span class=p>({</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=mi>6</span> <span class=p>},</span> <span class=n>torch</span><span class=o>::</span><span class=n>kFloat32</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>result</span> <span class=o>=</span> <span class=n>tensor_a</span> <span class=o>+</span> <span class=n>tensor_b</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;张量添加：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>result</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 自动求导
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>x</span> <span class=o>=</span> <span class=n>torch</span><span class=o>::</span><span class=n>tensor</span><span class=p>({</span> <span class=mf>1.0</span><span class=p>,</span> <span class=mf>2.0</span><span class=p>,</span> <span class=mf>3.0</span> <span class=p>},</span> <span class=n>torch</span><span class=o>::</span><span class=n>requires_grad</span><span class=p>());</span>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>y</span> <span class=o>=</span> <span class=n>x</span> <span class=o>*</span> <span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>y</span><span class=p>.</span><span class=n>backward</span><span class=p>(</span><span class=n>torch</span><span class=o>::</span><span class=n>ones_like</span><span class=p>(</span><span class=n>y</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;坡度：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>x</span><span class=p>.</span><span class=n>grad</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 简单的线性回归模型
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>struct</span> <span class=nc>Model</span> <span class=o>:</span> <span class=n>torch</span><span class=o>::</span><span class=n>nn</span><span class=o>::</span><span class=n>Module</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=n>Model</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=n>fc</span> <span class=o>=</span> <span class=n>register_module</span><span class=p>(</span><span class=s>&#34;fc&#34;</span><span class=p>,</span> <span class=n>torch</span><span class=o>::</span><span class=n>nn</span><span class=o>::</span><span class=n>Linear</span><span class=p>(</span><span class=mi>3</span><span class=p>,</span> <span class=mi>1</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>forward</span><span class=p>(</span><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>x</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=n>fc</span><span class=o>-&gt;</span><span class=n>forward</span><span class=p>(</span><span class=n>x</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>nn</span><span class=o>::</span><span class=n>Linear</span> <span class=n>fc</span><span class=p>{</span> <span class=k>nullptr</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>auto</span> <span class=n>model</span> <span class=o>=</span> <span class=n>std</span><span class=o>::</span><span class=n>make_shared</span><span class=o>&lt;</span><span class=n>Model</span><span class=o>&gt;</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>optim</span><span class=o>::</span><span class=n>SGD</span> <span class=n>optimizer</span><span class=p>(</span><span class=n>model</span><span class=o>-&gt;</span><span class=n>parameters</span><span class=p>(),</span> <span class=n>torch</span><span class=o>::</span><span class=n>optim</span><span class=o>::</span><span class=n>SGDOptions</span><span class=p>(</span><span class=mf>0.01</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 模拟一些数据
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>inputs</span> <span class=o>=</span> <span class=n>torch</span><span class=o>::</span><span class=n>rand</span><span class=p>({</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>3</span> <span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>targets</span> <span class=o>=</span> <span class=n>torch</span><span class=o>::</span><span class=n>rand</span><span class=p>({</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>1</span> <span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 训练模型
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>for</span> <span class=p>(</span><span class=n>size_t</span> <span class=n>epoch</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=n>epoch</span> <span class=o>&lt;=</span> <span class=mi>100</span><span class=p>;</span> <span class=o>++</span><span class=n>epoch</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=n>optimizer</span><span class=p>.</span><span class=n>zero_grad</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>outputs</span> <span class=o>=</span> <span class=n>model</span><span class=o>-&gt;</span><span class=n>forward</span><span class=p>(</span><span class=n>inputs</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>loss</span> <span class=o>=</span> <span class=n>torch</span><span class=o>::</span><span class=n>mse_loss</span><span class=p>(</span><span class=n>outputs</span><span class=p>,</span> <span class=n>targets</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>loss</span><span class=p>.</span><span class=n>backward</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=n>optimizer</span><span class=p>.</span><span class=n>step</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>epoch</span> <span class=o>%</span> <span class=mi>10</span> <span class=o>==</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;Epoch [&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>epoch</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;/100], Loss: &#34;</span> <span class=o>&lt;&lt;</span> <span class=n>loss</span><span class=p>.</span><span class=n>item</span><span class=o>&lt;</span><span class=kt>float</span><span class=o>&gt;</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// CUDA 测试
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>if</span> <span class=p>(</span><span class=n>torch</span><span class=o>::</span><span class=n>cuda</span><span class=o>::</span><span class=n>is_available</span><span class=p>())</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>tensor_cuda</span> <span class=o>=</span> <span class=n>torch</span><span class=o>::</span><span class=n>rand</span><span class=p>({</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span> <span class=p>},</span> <span class=n>torch</span><span class=o>::</span><span class=n>device</span><span class=p>(</span><span class=n>torch</span><span class=o>::</span><span class=n>kCUDA</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;CUDA 上的随机张量：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>tensor_cuda</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>torch</span><span class=o>::</span><span class=n>Tensor</span> <span class=n>result_cuda</span> <span class=o>=</span> <span class=n>tensor_cuda</span> <span class=o>*</span> <span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;CUDA 上的张量乘法：&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>result_cuda</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>_ConvertSMVer2Cores</span><span class=p>(</span><span class=kt>int</span> <span class=n>major</span><span class=p>,</span> <span class=kt>int</span> <span class=n>minor</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=k>typedef</span> <span class=k>struct</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>SM</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>Cores</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> <span class=n>sSMtoCores</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>sSMtoCores</span> <span class=n>nGpuArchCoresPerSM</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=p>{</span><span class=mh>0x30</span><span class=p>,</span> <span class=mi>192</span><span class=p>},</span> <span class=c1>// Kepler
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x32</span><span class=p>,</span> <span class=mi>192</span><span class=p>},</span> <span class=c1>// Kepler
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x35</span><span class=p>,</span> <span class=mi>192</span><span class=p>},</span> <span class=c1>// Kepler
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x37</span><span class=p>,</span> <span class=mi>192</span><span class=p>},</span> <span class=c1>// Kepler
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x50</span><span class=p>,</span> <span class=mi>128</span><span class=p>},</span> <span class=c1>// Maxwell
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x52</span><span class=p>,</span> <span class=mi>128</span><span class=p>},</span> <span class=c1>// Maxwell
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x53</span><span class=p>,</span> <span class=mi>128</span><span class=p>},</span> <span class=c1>// Maxwell
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x60</span><span class=p>,</span> <span class=mi>64</span><span class=p>},</span>  <span class=c1>// Pascal
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x61</span><span class=p>,</span> <span class=mi>128</span><span class=p>},</span> <span class=c1>// Pascal
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x62</span><span class=p>,</span> <span class=mi>128</span><span class=p>},</span> <span class=c1>// Pascal
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x70</span><span class=p>,</span> <span class=mi>64</span><span class=p>},</span>  <span class=c1>// Volta
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x72</span><span class=p>,</span> <span class=mi>64</span><span class=p>},</span>  <span class=c1>// Volta
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=mh>0x75</span><span class=p>,</span> <span class=mi>64</span><span class=p>},</span>  <span class=c1>// Turing
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>{</span><span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>}</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>index</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>while</span> <span class=p>(</span><span class=n>nGpuArchCoresPerSM</span><span class=p>[</span><span class=n>index</span><span class=p>].</span><span class=n>SM</span> <span class=o>!=</span> <span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>nGpuArchCoresPerSM</span><span class=p>[</span><span class=n>index</span><span class=p>].</span><span class=n>SM</span> <span class=o>==</span> <span class=p>((</span><span class=n>major</span> <span class=o>&lt;&lt;</span> <span class=mi>4</span><span class=p>)</span> <span class=o>+</span> <span class=n>minor</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=n>nGpuArchCoresPerSM</span><span class=p>[</span><span class=n>index</span><span class=p>].</span><span class=n>Cores</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=n>index</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=c1>// 如果未找到 SM，则默认返回值
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>return</span> <span class=o>-</span><span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></td></tr></table></div></div></div></div></li><li><p>输出</p><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>plaintext</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-4-1><a class=lnlinks href=#hl-4-1> 1</a>
 </span><span class=lnt id=hl-4-2><a class=lnlinks href=#hl-4-2> 2</a>
 </span><span class=lnt id=hl-4-3><a class=lnlinks href=#hl-4-3> 3</a>
 </span><span class=lnt id=hl-4-4><a class=lnlinks href=#hl-4-4> 4</a>
@@ -94,30 +338,90 @@
 </span><span class=lnt id=hl-4-8><a class=lnlinks href=#hl-4-8> 8</a>
 </span><span class=lnt id=hl-4-9><a class=lnlinks href=#hl-4-9> 9</a>
 </span><span class=lnt id=hl-4-10><a class=lnlinks href=#hl-4-10>10</a>
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-cmake data-lang=cmake><span class=line><span class=cl><span class=nb>cmake_minimum_required</span><span class=p>(</span><span class=s>VERSION</span> <span class=s>3.0</span> <span class=s>FATAL_ERROR</span><span class=p>)</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=nb>project</span><span class=p>(</span><span class=s>your_project</span><span class=p>)</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=nb>set</span><span class=p>(</span><span class=s>CMAKE_PREFIX_PATH</span> <span class=s2>&#34;S:/libtorch&#34;</span><span class=p>)</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=nb>find_package</span><span class=p>(</span><span class=s>Torch</span> <span class=s>REQUIRED</span><span class=p>)</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=nb>add_executable</span><span class=p>(</span><span class=s>your_project</span> <span class=s>main.cpp</span><span class=p>)</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=nb>target_link_libraries</span><span class=p>(</span><span class=s>your_project</span> <span class=s2>&#34;${TORCH_LIBRARIES}&#34;</span><span class=p>)</span><span class=err>
-</span></span></span><span class=line><span class=cl><span class=err></span><span class=nb>set_property</span><span class=p>(</span><span class=s>TARGET</span> <span class=s>your_project</span> <span class=s>PROPERTY</span> <span class=s>CXX_STANDARD</span> <span class=s>20</span><span class=p>)</span></span></span></code></pre></td></tr></table></div></div></div></div><p>然后在命令行中运行以下命令生成可执行文件：</p><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>bash</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
+</span><span class=lnt id=hl-4-11><a class=lnlinks href=#hl-4-11>11</a>
+</span><span class=lnt id=hl-4-12><a class=lnlinks href=#hl-4-12>12</a>
+</span><span class=lnt id=hl-4-13><a class=lnlinks href=#hl-4-13>13</a>
+</span><span class=lnt id=hl-4-14><a class=lnlinks href=#hl-4-14>14</a>
+</span><span class=lnt id=hl-4-15><a class=lnlinks href=#hl-4-15>15</a>
+</span><span class=lnt id=hl-4-16><a class=lnlinks href=#hl-4-16>16</a>
+</span><span class=lnt id=hl-4-17><a class=lnlinks href=#hl-4-17>17</a>
+</span><span class=lnt id=hl-4-18><a class=lnlinks href=#hl-4-18>18</a>
+</span><span class=lnt id=hl-4-19><a class=lnlinks href=#hl-4-19>19</a>
+</span><span class=lnt id=hl-4-20><a class=lnlinks href=#hl-4-20>20</a>
+</span><span class=lnt id=hl-4-21><a class=lnlinks href=#hl-4-21>21</a>
+</span><span class=lnt id=hl-4-22><a class=lnlinks href=#hl-4-22>22</a>
+</span><span class=lnt id=hl-4-23><a class=lnlinks href=#hl-4-23>23</a>
+</span><span class=lnt id=hl-4-24><a class=lnlinks href=#hl-4-24>24</a>
+</span><span class=lnt id=hl-4-25><a class=lnlinks href=#hl-4-25>25</a>
+</span><span class=lnt id=hl-4-26><a class=lnlinks href=#hl-4-26>26</a>
+</span><span class=lnt id=hl-4-27><a class=lnlinks href=#hl-4-27>27</a>
+</span><span class=lnt id=hl-4-28><a class=lnlinks href=#hl-4-28>28</a>
+</span><span class=lnt id=hl-4-29><a class=lnlinks href=#hl-4-29>29</a>
+</span><span class=lnt id=hl-4-30><a class=lnlinks href=#hl-4-30>30</a>
+</span><span class=lnt id=hl-4-31><a class=lnlinks href=#hl-4-31>31</a>
+</span><span class=lnt id=hl-4-32><a class=lnlinks href=#hl-4-32>32</a>
+</span><span class=lnt id=hl-4-33><a class=lnlinks href=#hl-4-33>33</a>
+</span><span class=lnt id=hl-4-34><a class=lnlinks href=#hl-4-34>34</a>
+</span><span class=lnt id=hl-4-35><a class=lnlinks href=#hl-4-35>35</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-plaintext data-lang=plaintext><span class=line><span class=cl>LibTorch 版本：2.3.1
+</span></span><span class=line><span class=cl>CUDA 可用！使用 GPU
+</span></span><span class=line><span class=cl>CUDA 设备数量：1
+</span></span><span class=line><span class=cl>设备 0: NVIDIA GeForce GTX 1660 Ti
+</span></span><span class=line><span class=cl>总内存：6143 MB
+</span></span><span class=line><span class=cl>多处理器：24
+</span></span><span class=line><span class=cl>CUDA 核心：1536
+</span></span><span class=line><span class=cl>CUDA 功能：7.5
+</span></span><span class=line><span class=cl>随机张量： 0.2155  0.1309  0.6969
+</span></span><span class=line><span class=cl>0.1763  0.3493  0.3799
+</span></span><span class=line><span class=cl>[ CPUFloatType{2,3} ]
+</span></span><span class=line><span class=cl>张量添加： 5
+</span></span><span class=line><span class=cl>7
+</span></span><span class=line><span class=cl>9
+</span></span><span class=line><span class=cl>[ CPUFloatType{3} ]
+</span></span><span class=line><span class=cl>坡度： 2
+</span></span><span class=line><span class=cl>2
+</span></span><span class=line><span class=cl>2
+</span></span><span class=line><span class=cl>[ CPUFloatType{3} ]
+</span></span><span class=line><span class=cl>Epoch [10/100], Loss: 0.137609
+</span></span><span class=line><span class=cl>Epoch [20/100], Loss: 0.107415
+</span></span><span class=line><span class=cl>Epoch [30/100], Loss: 0.0934079
+</span></span><span class=line><span class=cl>Epoch [40/100], Loss: 0.0868109
+</span></span><span class=line><span class=cl>Epoch [50/100], Loss: 0.0836093
+</span></span><span class=line><span class=cl>Epoch [60/100], Loss: 0.0819671
+</span></span><span class=line><span class=cl>Epoch [70/100], Loss: 0.0810442
+</span></span><span class=line><span class=cl>Epoch [80/100], Loss: 0.0804563
+</span></span><span class=line><span class=cl>Epoch [90/100], Loss: 0.0800275
+</span></span><span class=line><span class=cl>Epoch [100/100], Loss: 0.0796769
+</span></span><span class=line><span class=cl>CUDA 上的随机张量： 0.7906  0.9510  0.5951
+</span></span><span class=line><span class=cl>0.6755  0.9932  0.4448
+</span></span><span class=line><span class=cl>[ CUDAFloatType{2,3} ]
+</span></span><span class=line><span class=cl>CUDA 上的张量乘法： 1.5813  1.9021  1.1902
+</span></span><span class=line><span class=cl>1.3511  1.9864  0.8897
+</span></span><span class=line><span class=cl>[ CUDAFloatType{2,3} ]</span></span></code></pre></td></tr></table></div></div></div></div></li></ol><h2 id=异常笔记>异常笔记
+<a hidden class=anchor aria-hidden=true href=#%e5%bc%82%e5%b8%b8%e7%ac%94%e8%ae%b0>#</a></h2><h3 id=找不到-mkl_avx21dll--mkl_def1dll>找不到 mkl_avx2.1.dll / mkl_def.1.dll
+<a hidden class=anchor aria-hidden=true href=#%e6%89%be%e4%b8%8d%e5%88%b0-mkl_avx21dll--mkl_def1dll>#</a></h3><blockquote><p>Intel MKL FATAL ERROR: Cannot load mkl_avx2.1.dll or mkl_def.1.dll</p></blockquote><p>即使下载了最新版本的
+<a href=https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html rel=external>intel oneApi
+</a>也不行，是因为他依赖与 2021.4 的版本。参考
+<a href=https://github.com/pytorch/pytorch/issues/124009#issuecomment-2156183422 rel=external>issue
+</a>，解决方法如下</p><ol><li><p>在解决方案目录创建一个空文件夹<code>lib</code></p></li><li><p>在命令行输入<code>pip install mkl==2021.4</code> 安装 mkl 2021.4 版本</p><ol><li>如果需要下载最新版本前往
+<a href=https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html rel=external>intel oneApi
+</a>，注意最新版中不包含 mkl_avx2.1.dll、mkl_def.1.dll</li></ol></li><li><p>从 python 库安装目录中将依赖拷贝到<strong>步骤 1</strong>的文件夹中</p><ol><li>python 库默认安装目录<code>C:\Users\[User]\AppData\Local\Programs\Python\Python312\Library\bin</code></li><li>这里只需要拷贝 mkl_avx2.1.dll、mkl_def.1.dll 即可</li></ol></li><li><p>打开 Vs > 项目右键 > <strong>属性</strong> > <strong>生成事件</strong> > <strong>生成后事件</strong> > <strong>命令行</strong>中输入以下内容</p><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>plaintext</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-5-1><a class=lnlinks href=#hl-5-1>1</a>
 </span><span class=lnt id=hl-5-2><a class=lnlinks href=#hl-5-2>2</a>
 </span><span class=lnt id=hl-5-3><a class=lnlinks href=#hl-5-3>3</a>
 </span><span class=lnt id=hl-5-4><a class=lnlinks href=#hl-5-4>4</a>
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir build
-</span></span><span class=line><span class=cl><span class=nb>cd</span> build
-</span></span><span class=line><span class=cl>cmake ..
-</span></span><span class=line><span class=cl>cmake --build .</span></span></code></pre></td></tr></table></div></div></div></div><h2 id=异常笔记>异常笔记
-<a hidden class=anchor aria-hidden=true href=#%e5%bc%82%e5%b8%b8%e7%ac%94%e8%ae%b0>#</a></h2><h3 id=找不到-mkl_avx21dll--mkl_def1dll>找不到 mkl_avx2.1.dll / mkl_def.1.dll
-<a hidden class=anchor aria-hidden=true href=#%e6%89%be%e4%b8%8d%e5%88%b0-mkl_avx21dll--mkl_def1dll>#</a></h3><blockquote><p>Intel MKL FATAL ERROR: Cannot load mkl_avx2.1.dll or mkl_def.1.dll</p></blockquote><p>原因是找不到 mkl 2021.4 版的动态依赖库，然而在
-<a href=https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html rel=external>oneApi
-</a>下载安装了也不行，因为他只提供最新版本
-<a href=https://github.com/pytorch/pytorch/issues/124009#issuecomment-2156183422 rel=external>see
-</a>,可以使用以下方式解决</p><ol><li><p>下载 2021.4 版本的动态 mkl 动态链接库，打开命令行工具输入以下命令：</p><div class=codeBlock><details open><summary><div class=oper><div class=status></div></div><div class=title>bash</div><div class=oper><button class=codeCopy>复制</button></div></summary></details><div class=codeBlockContent><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-6-1><a class=lnlinks href=#hl-6-1>1</a>
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pip install <span class=nv>mkl</span><span class=o>==</span>2021.4</span></span></code></pre></td></tr></table></div></div></div></div></li><li><p>在 python 的库中将需要的依赖拷贝到项目中，<code>C:\Users\[User]\AppData\Local\Programs\Python\Python312\Library\bin</code> 是 python 安装在默认路径时的库的位置</p></li></ol></div><footer class=postFooter><ul class=tags role=list><li><a role=text href=https://linlccc.com/tags/c++/>C++</a></li><li><a role=text href=https://linlccc.com/tags/libtorch/>LibTorch</a></li></ul><nav class=paginav><a class=next href=https://linlccc.com/posts/hugo-hahahthemearticleconfiguration/><span class=pn>下一页 »</span><br><span class=title>Hugo-Hahah 主题文章配置</span></a></nav><div class=shareButtons><a target=_blank rel="noopener noreferrer" aria-label="share C++ 配置 libtorch 环境 on x" href="https://x.com/intent/tweet/?text=C%2b%2b%c2%a0%e9%85%8d%e7%bd%ae%c2%a0libtorch%c2%a0%e7%8e%af%e5%a2%83&amp;url=https%3a%2f%2flinlccc.com%2fposts%2fcppconfigurelibtorchenvironment%2f&amp;hashtags=C%2b%2b%2cLibTorch"><svg xmlns="http://www.w3.org/2000/svg" class="x" viewBox="0 0 512 512" fill="currentcolor"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"/></svg>
+</span><span class=lnt id=hl-5-5><a class=lnlinks href=#hl-5-5>5</a>
+</span><span class=lnt id=hl-5-6><a class=lnlinks href=#hl-5-6>6</a>
+</span><span class=lnt id=hl-5-7><a class=lnlinks href=#hl-5-7>7</a>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-plaintext data-lang=plaintext><span class=line><span class=cl>set customLibDir=../lib
+</span></span><span class=line><span class=cl>:: 拷贝自定义库中的的dll，如果不存在
+</span></span><span class=line><span class=cl>for %%f in (%customLibDir%\*.dll) do (
+</span></span><span class=line><span class=cl>    if not exist $(OutDir)\%%~nxf (
+</span></span><span class=line><span class=cl>        xcopy /Y /I &#34;%%f&#34; &#34;$(OutDir)&#34;
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>)</span></span></code></pre></td></tr></table></div></div></div></div></li></ol><h3 id=找不到-nvtoolsext>找不到 nvToolsExt
+<a hidden class=anchor aria-hidden=true href=#%e6%89%be%e4%b8%8d%e5%88%b0-nvtoolsext>#</a></h3><blockquote><p>Failed to find nvToolsExt</p></blockquote><p>出现这个情况大概率是使用的 12.x 版本的 CUDA Toolkit，Nvidia 在 12.x 版本中移除了 nvToolsExt，解决方法如下</p><ol><li>前往
+<a href=https://developer.nvidia.com/cuda-toolkit-archive rel=external>CUDA Toolkit Archive
+</a>下载 11.8.0 版本的 CUDA Toolkit，<strong>推荐下载网络安装包</strong></li><li>下载完成后打开安装包，选择自定义安装，只选择 <strong>Nsight NVTX</strong> 即可,如下<br><img src=./NVIDIA_CUDA11.8_Install.png alt=NVIDIA_CUDA11.8_Install></li></ol></div><footer class=postFooter><ul class=tags role=list><li><a role=text href=https://linlccc.com/tags/c++/>C++</a></li><li><a role=text href=https://linlccc.com/tags/libtorch/>LibTorch</a></li></ul><nav class=paginav><a class=next href=https://linlccc.com/posts/hugo-hahahthemearticleconfiguration/><span class=pn>下一页 »</span><br><span class=title>Hugo-Hahah 主题文章配置</span></a></nav><div class=shareButtons><a target=_blank rel="noopener noreferrer" aria-label="share C++ 配置 libtorch 环境 on x" href="https://x.com/intent/tweet/?text=C%2b%2b%c2%a0%e9%85%8d%e7%bd%ae%c2%a0libtorch%c2%a0%e7%8e%af%e5%a2%83&amp;url=https%3a%2f%2flinlccc.com%2fposts%2fcppconfigurelibtorchenvironment%2f&amp;hashtags=C%2b%2b%2cLibTorch"><svg xmlns="http://www.w3.org/2000/svg" class="x" viewBox="0 0 512 512" fill="currentcolor"><path d="M512 62.554V449.446C512 483.97 483.97 512 449.446 512H62.554C28.03 512 0 483.97.0 449.446V62.554C0 28.03 28.029.0 62.554.0H449.446C483.971.0 512 28.03 512 62.554zM269.951 190.75 182.567 75.216H56L207.216 272.95 63.9 436.783h61.366L235.9 310.383l96.667 126.4H456L298.367 228.367l134-153.151H371.033zM127.633 110h36.468l219.38 290.065H349.5z"/></svg>
 </a><a target=_blank rel="noopener noreferrer" aria-label="share C++ 配置 libtorch 环境 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flinlccc.com%2fposts%2fcppconfigurelibtorchenvironment%2f&amp;title=C%2b%2b%c2%a0%e9%85%8d%e7%bd%ae%c2%a0libtorch%c2%a0%e7%8e%af%e5%a2%83&amp;summary=C%2b%2b%c2%a0%e9%85%8d%e7%bd%ae%c2%a0libtorch%c2%a0%e7%8e%af%e5%a2%83&amp;source=https%3a%2f%2flinlccc.com%2fposts%2fcppconfigurelibtorchenvironment%2f"><svg xmlns="http://www.w3.org/2000/svg" class="linkedin" viewBox="0 0 512 512" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
 </a><a target=_blank rel="noopener noreferrer" aria-label="share C++ 配置 libtorch 环境 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2flinlccc.com%2fposts%2fcppconfigurelibtorchenvironment%2f&title=C%2b%2b%c2%a0%e9%85%8d%e7%bd%ae%c2%a0libtorch%c2%a0%e7%8e%af%e5%a2%83"><svg xmlns="http://www.w3.org/2000/svg" class="reddit" viewBox="0 0 512 512" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg>
 </a><a target=_blank rel="noopener noreferrer" aria-label="share C++ 配置 libtorch 环境 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2flinlccc.com%2fposts%2fcppconfigurelibtorchenvironment%2f"><svg xmlns="http://www.w3.org/2000/svg" class="facebook" viewBox="0 0 512 512" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
