@@ -1,12 +1,13 @@
 ---
 date: 2024-06-17 21:19:58
-description: ''
+description: ""
 tags:
-- Hahah
-- Hugo
+  - Hahah
+  - Hugo
 title: Hugo-Hahah 主题文章配置
 weight: 100
 ---
+
 ## 文章基础配置
 
 ```yaml
@@ -44,28 +45,6 @@ url: /aaa
 tags:
   - tag1
   - tag2
-# 语言
-langs:
-  - C++
-# 关键字
-keywords:
-  - key1
-  - key2
-# 分类
-categories:
-  - category1
-  - category2
-
-# hugo 内置模板 Open Graph 的配置(一般用不到)
-# 声音文件
-audio:
-  - "default.mp3"
-# 图像文件
-images:
-  - post-cover.png
-# 视频文件
-videos:
-  - video.mp4
 ```
 
 ## 模板查找配置
@@ -80,6 +59,25 @@ type: test
 ## 自定义配置
 
 ```yaml
+# 语言
+langs:
+  - C++
+# 关键字
+keywords:
+  - key1
+  - key2
+# 分类
+categories:
+  - category1
+  - category2
+
+# 系列信息
+seriesInfo:
+  # 系列id
+  id:
+  # 序号
+  order: 0
+
 # 作者
 authors:
   - author1
@@ -144,4 +142,18 @@ editPost:
   disabled: false
   # 在新页面打开
   openInNewPage: false
+```
+
+## hugo 内置模板 Open Graph 的配置(一般用不到)
+
+```yaml
+# 声音文件
+audio:
+  - "default.mp3"
+# 图像文件
+images:
+  - post-cover.png
+# 视频文件
+videos:
+  - video.mp4
 ```

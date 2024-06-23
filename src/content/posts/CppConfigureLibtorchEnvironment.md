@@ -4,6 +4,8 @@ description: ""
 tags:
   - C++
   - LibTorch
+langs:
+  - C++
 title: C++ 配置 libtorch 环境
 ---
 

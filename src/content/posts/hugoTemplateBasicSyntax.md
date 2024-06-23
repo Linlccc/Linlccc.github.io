@@ -2,10 +2,10 @@
 title: "hugo 模板基本语法"
 description: ""
 tags:
-  - golang
+  - Golang
   - hugo
 langs:
-  - golang
+  - Golang
 weight: 1000
 
 date: "2023-02-22 17:57:49"
@@ -36,7 +36,7 @@ Line two.` }}                               // 支持多行字符串
 
 ### 条件语句
 
-条件语句 `if`/`with` 都以 `{{ end }}` 结束\
+条件语句 `if`/`with` 都以 `{{ end }}` 结束
 在 hugo 模板中，条件语句的条件可以是任何表达式，而不仅仅是布尔类型的表达式，以下情况会被认为是 false：
 
 - 空字符串 ""
