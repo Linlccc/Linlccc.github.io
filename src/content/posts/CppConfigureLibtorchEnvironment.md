@@ -56,7 +56,9 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
 
 ## 下载 LibTorch
 
-1. [前往下载 LibTorch](https://pytorch.org/)**！！这里下载的 LibTorch 使用的 CUDA 版本需要与你的 CUDA 版本一致**
+**注意**：**！！这里下载的 LibTorch 使用的 CUDA 版本需要与你的 CUDA 版本一致**
+
+1. [前往下载 LibTorch](https://pytorch.org/)
 2. 下载完成后将文件解压到你想存放的目录，如解压到`S:\libtorch`
 3. 按下 win 键 > 输入"编辑系统环境变量" > "环境变量" > 在系统变量中的"Path"添加`S:\libtorch\lib`
 
@@ -72,24 +74,24 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
 
 1. 项目右键 > 属性
 2. **常规**
-
+   
    - **C++语言标准**：将“语言标准”设置为`ISO C++ 17 标准 (/std:c++17)`或更高版本
 3. **C/C++**
-
+   
    - **常规** > **附加包含目录**：添加以下目录
      - `S:\libtorch\include`
      - `S:\libtorch\include\torch\csrc\api\include`
      - `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include`
 4. **链接器**
-
+   
    - **常规** > **附加库目录**：添加以下目录
-
+     
      - `S:\libtorch\lib`
      - `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64`
    - **输入** > **附加依赖项**：添加以下库（二选一即可）
-
+     
      按需引入
-
+     
      ```plaintext
      c10.lib
      c10_cuda.lib
@@ -100,17 +102,17 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
      cublas.lib
      curand.lib
      ```
-
+     
      全部引入
-
+     
      ```plaintext
      S:\libtorch\lib\*.lib
      C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\*.lib
      ```
    - **命令行** > **其他选项**：输入以下内容(如果不添加的话不能使用 CUDA)
-
+     
      12.x 的版本只需要第一句即可
-
+     
      ```plaintext
      /INCLUDE:?warp_size@cuda@at@@YAHXZ
      /INCLUDE:?_torch_cuda_cu_linker_symbol_op_cuda@native@at@@YA?AVTensor@2@AEBV32@@Z
@@ -119,32 +121,32 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
 ## 测试
 
 1. [下载样品](./LibtorchSample.7z)
-
+   
    1. 需要将里面的**附加包含目录**、**附加库目录**替换成你的目录
 2. 测试代码
-
+   
    ```cpp
    #include <cuda_runtime.h>
    #include <iostream>
    #include <torch/torch.h>
    #include <torch/version.h>
-
+   
    // 将 SM 版本转换为核心数的辅助函数
    int _ConvertSMVer2Cores(int major, int minor);
-
+   
    int main() {
    // 版本信息
    std::cout << "LibTorch 版本：" << TORCH_VERSION << std::endl;
-
+   
    // 检查是否支持CUDA
    if (torch::cuda::is_available()) {
    std::cout << "CUDA 可用！使用 GPU" << std::endl;
    std::cout << "cuDNN 可用状态：" << (torch::cuda::cudnn_is_available() ? "true" : "false") << std::endl;
-
+   
    int device_count = torch::cuda::device_count();
    //cudaGetDeviceCount(&device_count);
    std::cout << "CUDA 设备数量：" << device_count << std::endl;
-
+   
    for (int i = 0; i < device_count; ++i) {
    cudaDeviceProp prop;
    cudaGetDeviceProperties(&prop, i);
@@ -157,43 +159,43 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
    } else {
    std::cout << "CUDA 不可用。正在使用 CPU。" << std::endl;
    }
-
+   
    // 创建张量
    torch::Tensor tensor = torch::rand({ 2, 3 });
    std::cout << "随机张量：" << tensor << std::endl;
-
+   
    // 基本运算
    torch::Tensor tensor_a = torch::tensor({ 1, 2, 3 }, torch::kFloat32);
    torch::Tensor tensor_b = torch::tensor({ 4, 5, 6 }, torch::kFloat32);
    torch::Tensor result = tensor_a + tensor_b;
    std::cout << "张量添加：" << result << std::endl;
-
+   
    // 自动求导
    torch::Tensor x = torch::tensor({ 1.0, 2.0, 3.0 }, torch::requires_grad());
    torch::Tensor y = x * 2;
    y.backward(torch::ones_like(y));
    std::cout << "坡度：" << x.grad() << std::endl;
-
+   
    // 简单的线性回归模型
    struct Model : torch::nn::Module {
    Model() {
    fc = register_module("fc", torch::nn::Linear(3, 1));
    }
-
+   
    torch::Tensor forward(torch::Tensor x) {
    return fc->forward(x);
    }
-
+   
    torch::nn::Linear fc{ nullptr };
    };
-
+   
    auto model = std::make_shared<Model>();
    torch::optim::SGD optimizer(model->parameters(), torch::optim::SGDOptions(0.01));
-
+   
    // 模拟一些数据
    torch::Tensor inputs = torch::rand({ 10, 3 });
    torch::Tensor targets = torch::rand({ 10, 1 });
-
+   
    // 训练模型
    for (size_t epoch = 1; epoch <= 100; ++epoch) {
    optimizer.zero_grad();
@@ -201,30 +203,30 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
    torch::Tensor loss = torch::mse_loss(outputs, targets);
    loss.backward();
    optimizer.step();
-
+   
    if (epoch % 10 == 0) {
    std::cout << "Epoch [" << epoch << "/100], Loss: " << loss.item<float>() << std::endl;
    }
    }
-
+   
    // CUDA 测试
    if (torch::cuda::is_available()) {
    torch::Tensor tensor_cuda = torch::rand({ 2, 3 }, torch::device(torch::kCUDA));
    std::cout << "CUDA 上的随机张量：" << tensor_cuda << std::endl;
-
+   
    torch::Tensor result_cuda = tensor_cuda * 2;
    std::cout << "CUDA 上的张量乘法：" << result_cuda << std::endl;
    }
-
+   
    return 0;
    }
-
+   
    int _ConvertSMVer2Cores(int major, int minor) {
    typedef struct {
    int SM;
    int Cores;
    } sSMtoCores;
-
+   
    sSMtoCores nGpuArchCoresPerSM[] = {
    {0x30, 192}, // Kepler
    {0x32, 192}, // Kepler
@@ -240,7 +242,7 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
    {0x72, 64},  // Volta
    {0x75, 64},  // Turing
    {-1, -1} };
-
+   
    int index = 0;
    while (nGpuArchCoresPerSM[index].SM != -1) {
    if (nGpuArchCoresPerSM[index].SM == ((major << 4) + minor)) {
@@ -253,7 +255,7 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
    }
    ```
 3. 输出
-
+   
    ```plaintext
    算力LibTorch 版本：2.3.1
    CUDA 可用！使用 GPU
@@ -302,14 +304,14 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
 
 1. 在解决方案目录创建一个空文件夹`lib`
 2. 在命令行输入`pip install mkl==2021.4` 安装 mkl 2021.4 版本
-
+   
    1. 如果需要下载最新版本前往[intel oneApi](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html)，注意最新版中不包含 mkl_avx2.1.dll、mkl_def.1.dll
 3. 从 python 库安装目录中将依赖拷贝到**步骤 1**的文件夹中
-
+   
    1. python 库默认安装目录`C:\Users\[User]\AppData\Local\Programs\Python\Python312\Library\bin`
    2. 这里只需要拷贝 mkl_avx2.1.dll、mkl_def.1.dll 即可
 4. 打开 Vs > 项目右键 > **属性** > **生成事件** > **生成后事件** > **命令行**中输入以下内容
-
+   
    ```plaintext
    set customLibDir=../lib
    :: 拷贝自定义库中的的dll，如果不存在
@@ -329,3 +331,4 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
 1. 前往[CUDA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive)下载 11.8.0 版本的 CUDA Toolkit，**推荐下载网络安装包**
 2. 下载完成后打开安装包，选择自定义安装，只选择 **Nsight NVTX** 即可,如下
    ![NVIDIA_CUDA11.8_Install](./NVIDIA_CUDA11.8_Install.png)
+
