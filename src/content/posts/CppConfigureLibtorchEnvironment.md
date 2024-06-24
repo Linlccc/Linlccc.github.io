@@ -152,7 +152,7 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
    std::cout << "  总内存：" << prop.totalGlobalMem / (1024 * 1024) << " MB" << std::endl;
    std::cout << "  多处理器：" << prop.multiProcessorCount << std::endl;
    std::cout << "  CUDA 核心：" << prop.multiProcessorCount * _ConvertSMVer2Cores(prop.major, prop.minor) << std::endl;
-   std::cout << "  CUDA 功能：" << prop.major << "." << prop.minor << std::endl;
+   std::cout << "  CUDA 算力：" << prop.major << "." << prop.minor << std::endl;
    }
    } else {
    std::cout << "CUDA 不可用。正在使用 CPU。" << std::endl;
@@ -255,14 +255,14 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
 3. 输出
 
    ```plaintext
-   LibTorch 版本：2.3.1
+   算力LibTorch 版本：2.3.1
    CUDA 可用！使用 GPU
    CUDA 设备数量：1
    设备 0: NVIDIA GeForce GTX 1660 Ti
    总内存：6143 MB
    多处理器：24
    CUDA 核心：1536
-   CUDA 功能：7.5
+   CUDA 算力：7.5
    随机张量： 0.2155  0.1309  0.6969
    0.1763  0.3493  0.3799
    [ CPUFloatType{2,3} ]
