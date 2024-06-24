@@ -109,11 +109,11 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
      ```
    - **命令行** > **其他选项**：输入以下内容(如果不添加的话不能使用 CUDA)
      
+     12.x 的版本只需要第一句即可
+     
      ```plaintext
      /INCLUDE:?warp_size@cuda@at@@YAHXZ
      /INCLUDE:?_torch_cuda_cu_linker_symbol_op_cuda@native@at@@YA?AVTensor@2@AEBV32@@Z
-     
-     # 如果异常的话就只要第一行，我测试的时候有第二行会报错（这段网上找的，不太清除具体原因😅）
      ```
 
 ## 测试
