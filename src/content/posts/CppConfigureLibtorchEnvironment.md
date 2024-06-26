@@ -59,6 +59,7 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
 > **注意：**
 >
 > * **！！这里下载的 LibTorch 使用的 CUDA 版本需要与你的 CUDA 版本一致**
+> * 在 Windows 下 Debug 和 Release 是不兼容
 > * 在一些特殊的情况下，你还需要考虑下载的 Libtorch 是否支持你的 GPU 算力，[前往查看GPU算力](https://developer.nvidia.com/cuda-gpus)，[前往查看Torch支持算力](https://github.com/pytorch/pytorch/releases)(这里需要自己在里面查找信息)
 
 1. [前往下载 LibTorch](https://pytorch.org/)
