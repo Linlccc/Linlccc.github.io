@@ -317,12 +317,18 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
 
 1. 在解决方案目录创建一个空文件夹`lib`
 2. 在命令行输入`pip install mkl==2021.4` 安装 mkl 2021.4 版本
-
-   1. 如果需要下载最新版本前往[intel oneApi](https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html)，注意最新版中不包含 mkl_avx2.1.dll、mkl_def.1.dll
 3. 从 python 库安装目录中将依赖拷贝到**步骤 1**的文件夹中
 
-   1. python 库默认安装目录`C:\Users\[User]\AppData\Local\Programs\Python\Python312\Library\bin`
-   2. 这里只需要拷贝 mkl_avx2.1.dll、mkl_def.1.dll 即可
+   python 库默认安装目录`C:\Users\[User]\AppData\Local\Programs\Python\Python312\Library\bin`
+
+   这里只需要拷贝以下几个文件即可
+
+   ```plaintext
+   mkl_vml_avx2.1.dll
+   mkl_vml_def.1.dll
+   mkl_def.1.dll
+   mkl_avx2.1.dll
+   ```
 4. 打开 Vs > 项目右键 > **属性** > **生成事件** > **生成后事件** > **命令行**中输入以下内容
 
    ```plaintext
