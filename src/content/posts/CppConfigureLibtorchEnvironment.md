@@ -324,10 +324,10 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
    2. 这里只需要拷贝以下几个文件即可
 
       ```plaintext
+      mkl_avx2.1.dll
+      mkl_def.1.dll
       mkl_vml_avx2.1.dll
       mkl_vml_def.1.dll
-      mkl_def.1.dll
-      mkl_avx2.1.dll
       ```
 4. 打开 Vs > 项目右键 > **属性** > **生成事件** > **生成后事件** > **命令行**中输入以下内容
 
