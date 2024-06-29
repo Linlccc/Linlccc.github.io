@@ -320,7 +320,7 @@ cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度�
 2. 在命令行输入`pip install mkl==2021.4` 安装 mkl 2021.4 版本
 3. 从 python 库安装目录中将依赖拷贝到**步骤 1**的文件夹中
 
-   1. python 库默认安装目录`C:\Users\[User]\AppData\Local\Programs\Python\Python312\Library\bin`
+   1. python 下载的 dll 一般存放在`[Python]\Library\bin`下目录
    2. 这里只需要拷贝以下几个文件即可
 
       ```plaintext
