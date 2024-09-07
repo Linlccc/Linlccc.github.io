@@ -1,19 +1,13 @@
 ---
-# 标题
-title: "VsCode 常用扩展推荐"
-# 描述
-description: ""
-# 标签
+date: 2024-05-08 09:05:43
+description: ''
 tags:
-  - VsCode
-  - Extensions
-# 显示权重（越小显示越靠前）
+- VsCode
+- Extensions
+title: VsCode 常用扩展推荐
+updated: '2024-09-08T01:31:13.910+08:00'
 weight: 1000
-
-# 撰写日期
-date: "2024-05-08 09:05:43"
 ---
-
 ## 基础扩展
 
 ### `Chinese (Simplified)`
@@ -293,3 +287,5 @@ Hugo 代码片段
 鼠标悬停在 partial 或 partialCached 引用上时，显示引用的部分文件的完整路径
 按 F12 跳转到引用的部分文件
 ```
+
+测试使用qexo
