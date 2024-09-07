@@ -5,7 +5,7 @@ tags:
 - VsCode
 - Extensions
 title: VsCode 常用扩展推荐
-updated: '2024-09-08T01:31:13.910+08:00'
+updated: '2024-09-08T01:58:58.112+08:00'
 weight: 1000
 ---
 ## 基础扩展
@@ -287,5 +287,3 @@ Hugo 代码片段
 鼠标悬停在 partial 或 partialCached 引用上时，显示引用的部分文件的完整路径
 按 F12 跳转到引用的部分文件
 ```
-
-测试使用qexo
