@@ -1,11 +1,10 @@
 ---
-abbrlink: ''
-categories: []
 date: '2024-09-11T13:39:28.321+08:00'
 tags:
 - Windows
-title: Windows 之奇技淫巧
-updated: '2024-09-11T13:49:37.966+08:00'
+title: Windows 之奇技淫巧
+updated: '2024-09-11T14:15:55.711+08:00'
+weight: 1000
 ---
 ## 启动开机自动解锁
 
