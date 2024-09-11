@@ -1,5 +1,5 @@
 <!doctype html><html lang=zh dir=ltr class=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><meta name=application-name content="Linlccc's Blog"><title>ES6 常用代码块 | Linlccc's Blog</title>
-<meta name=description content="ES6 20 个经常使用的技巧
+<meta name=description content='ES6 20 个经常使用的技巧
   
   
     #
@@ -36,7 +36,439 @@
 2
 3
 4
-"><meta name=author content="Linlccc"><meta name=keywords content="javascript"><meta name=theme-color content><meta name=google-site-verification content="ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY"><meta name=baidu-site-verification content="codeva-3S13SuprEU"><meta name=msvalidate.01 content="D46176825688FA3D0C855598CDAB325F"><link rel=canonical href=https://github.com/xieyezi/website-2022/blob/master/docs/front-end/ES6-20%E4%B8%AA%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8A%80%E5%B7%A7.md><link rel=alternate hreflang=zh href=https://linlccc.com/pending/commonlyusedes6/><link rel=manifest href=https://linlccc.com/manifest.json><link rel=icon type=image/x-icon media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-180x180.png><link rel=icon type=image/x-icon media="(prefers-color-scheme: light)" href=/favicon/light/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: light)" href=/favicon/light/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-180x180.png><meta property="og:url" content="https://linlccc.com/pending/commonlyusedes6/"><meta property="og:site_name" content="Linlccc's Blog"><meta property="og:title" content="ES6 常用代码块"><meta property="og:description" content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 "><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="pending"><meta property="article:published_time" content="2024-05-07T16:28:47+08:00"><meta property="article:modified_time" content="2024-06-17T22:02:20+08:00"><meta property="article:tag" content="Javascript"><meta property="og:image" content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:title content="ES6 常用代码块"><meta name=twitter:description content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 "><meta name=twitter:site content="@Linlcccc"><meta itemprop=name content="ES6 常用代码块"><meta itemprop=description content="ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 "><meta itemprop=datePublished content="2024-05-07T16:28:47+08:00"><meta itemprop=dateModified content="2024-06-17T22:02:20+08:00"><meta itemprop=wordCount content="1099"><meta itemprop=image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta itemprop=keywords content="Javascript"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TQ3ZXPKKNM"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TQ3ZXPKKNM")}</script><noscript><style>#themeToggle{display:none}</style></noscript><link crossorigin=anonymous rel="preload stylesheet" as=style href=/assets/css/stylesAll.min.6dba5d9e72250f6177aee6ef1a533dd0151d06154dc550619a6ce720b0e1d4a5.css integrity="sha256-bbpdnnIlD2F3rubvGlM90BUdBhVNxVBhmmznILDh1KU="></head><body id=top><header id=header><nav><div class=logo><a role=text href=https://linlccc.com/ accesskey=h title="linlccc's blog (Alt + H)">linlccc's blog
+
+
+let arr = ["😄", 67, true, false, "55"];
+arr = arr.sort(() => 0.5 - Math.random());
+console.log(arr);
+// [ &#39;😄&#39;, &#39;55&#39;, 67, false, true ]
+
+
+
+  
+
+
+
+
+
+
+
+
+删除数字之外的所有字符
+  
+  
+    #
+  
+
+
+
+
+
+
+  
+    
+      
+      js
+      复制
+    
+  
+  
+    
+
+1
+2
+3
+4
+
+
+const str = "xieyezi 23213 is 95994 so hansome 223333";
+const numbers = str.replace(/\D/g, "");
+console.log(numbers);
+// 2321395994223333
+
+
+
+  
+
+
+
+
+
+
+
+
+反转字符串或者单词
+  
+  
+    #
+  
+
+
+
+
+
+
+  
+    
+      
+      js
+      复制
+    
+  
+  
+    
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+
+
+const sentence = "xieyezi js so handsome, lol.";
+const reverseSentence = reverseBySeparator(sentence, "");
+console.log(reverseSentence);
+// .lol ,emosdnah os sj izeyeix
+
+const reverseEachWord = reverseBySeparator(reverseSentence, " ");
+console.log(reverseEachWord);
+// izeyeix sj os ,emosdnah .lol
+
+function reverseBySeparator(string, separator) {
+  return string.split(separator).reverse().join(separator);
+}
+
+
+  
+
+
+
+
+
+
+
+
+将十进制转换为二进制文件或十六进制数
+  
+  
+    #
+  
+
+
+
+
+
+
+  
+    
+      
+      js
+      复制
+    
+  
+  
+    
+
+1
+2
+3
+
+
+const num = 45;
+num.toString(2);
+num.tostring(16);
+
+
+  
+
+
+
+
+
+
+
+
+合并多个对象
+  
+  
+    #
+  
+
+
+
+
+
+
+  
+    
+      
+      js
+      复制
+    
+  
+  
+    
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+
+
+const city = {
+  name: "Chongqing",
+  population: "1,234,567,890",
+};
+const location = {
+  longitude: "116.4",
+  latitude: "39.9",
+};
+const fullCity = { ...city, ...location };
+console.log(fullCity);
+// {
+//   name: &#39;Chongqing&#39;,
+//   population: &#39;1,234,567,890&#39;,
+//   longitude: &#39;116.4&#39;,
+//   latitude: &#39;39.9&#39;
+// }
+
+
+
+  
+
+
+
+
+
+
+
+
+=== 和 == 的区别
+  
+  
+    #
+  
+
+
+
+
+
+
+  
+    
+      
+      js
+      复制
+    
+  
+  
+    
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+// ==   ->  类型转换 (浅比较)
+// ===  ->  无类型转换 (严格比较)
+
+0 == false; // true
+0 === false; // false
+1 == "1"; // true
+1 === "1"; // false
+null == undefined; // true
+null === undefined; // false
+
+
+
+  
+
+
+
+
+
+
+
+
+解构赋值
+  
+  
+    #
+  
+
+
+
+
+
+
+  
+    
+      
+      js
+      复制
+    
+  
+  
+    
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+
+
+const forest = {
+  location: "Sweden",
+  animals: 3,
+  animalsTypes: ["Lions", "Tigers", "Bears"],
+};
+
+const { location, animals, animalsTypes } = forest;
+const [lions, tigers, bears] = animalsTypes;
+
+console.log(location); // Sweden
+console.log(animals); // 3
+console.log(lions); // Lions
+console.log(tigers); // Tigers
+console.log(bears); // Bears
+
+
+
+  
+
+
+
+
+
+
+
+
+交换变量的值
+  
+  
+    #
+  
+
+
+
+
+
+
+  
+    
+      
+      js
+      复制
+    
+  
+  
+    
+
+1
+2
+3
+4
+
+
+let bears = "bears";
+let tigers = ("tigers"[(bears, tigers)] = [tigers, bears]);
+console.log(bears); // tigers
+console.log(tribes); // bears
+
+
+
+  
+
+
+
+
+
+
+
+
+判断回文字符串
+  
+  
+    #
+  
+
+
+
+
+
+
+  
+    
+      
+      js
+      复制
+    
+  
+  
+    
+
+1
+2
+3
+4
+5
+6
+
+
+const isRevervse = (str1, str2) => {
+  const normalize = (str) => str.toLowerCase().normalize("NFD").split("").reverse().join("");
+  return normalize(str1) === str2;
+};
+console.log(isRevervse("anagram", "margana")); // true
+console.log(isRevervse("rac", "car")); // true
+
+
+
+  
+
+
+
+回文字符串: 正着写和反着写都一样的字符串 (特别感谢
+
+
+  @浮生阁阁主
+
+勘误)'><meta name=author content="Linlccc"><meta name=keywords content="javascript"><meta name=theme-color content><meta name=google-site-verification content="ZGzu_KLisGQkG8Fmz8fyZ8VvdtFQZyg7WqAYshcHlJY"><meta name=baidu-site-verification content="codeva-3S13SuprEU"><meta name=msvalidate.01 content="D46176825688FA3D0C855598CDAB325F"><link rel=canonical href=https://github.com/xieyezi/website-2022/blob/master/docs/front-end/ES6-20%E4%B8%AA%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8A%80%E5%B7%A7.md><link rel=alternate hreflang=zh href=https://linlccc.com/pending/commonlyusedes6/><link rel=manifest href=https://linlccc.com/manifest.json><link rel=icon type=image/x-icon media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: dark)" href=/favicon/dark/favicon-180x180.png><link rel=icon type=image/x-icon media="(prefers-color-scheme: light)" href=/favicon/light/favicon.ico><link rel=icon type=image/svg+xml media="(prefers-color-scheme: light)" href=/favicon/light/favicon.svg><link rel=icon type=image/png sizes=16x16 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-32x32.png><link rel=icon type=image/png sizes=192x192 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-192x192.png><link rel=icon type=image/png sizes=512x512 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-512x512.png><link rel=apple-touch-icon sizes=180x180 media="(prefers-color-scheme: light)" href=/favicon/light/favicon-180x180.png><meta property="og:url" content="https://linlccc.com/pending/commonlyusedes6/"><meta property="og:site_name" content="Linlccc's Blog"><meta property="og:title" content="ES6 常用代码块"><meta property="og:description" content='ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = ["😄", 67, true, false, "55"]; arr = arr.sort(() => 0.5 - Math.random()); console.log(arr); // [ &#39;😄&#39;, &#39;55&#39;, 67, false, true ] 删除数字之外的所有字符 # js 复制 1 2 3 4 const str = "xieyezi 23213 is 95994 so hansome 223333"; const numbers = str.replace(/\D/g, ""); console.log(numbers); // 2321395994223333 反转字符串或者单词 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 const sentence = "xieyezi js so handsome, lol."; const reverseSentence = reverseBySeparator(sentence, ""); console.log(reverseSentence); // .lol ,emosdnah os sj izeyeix const reverseEachWord = reverseBySeparator(reverseSentence, " "); console.log(reverseEachWord); // izeyeix sj os ,emosdnah .lol function reverseBySeparator(string, separator) { return string.split(separator).reverse().join(separator); } 将十进制转换为二进制文件或十六进制数 # js 复制 1 2 3 const num = 45; num.toString(2); num.tostring(16); 合并多个对象 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 const city = { name: "Chongqing", population: "1,234,567,890", }; const location = { longitude: "116.4", latitude: "39.9", }; const fullCity = { ...city, ...location }; console.log(fullCity); // { // name: &#39;Chongqing&#39;, // population: &#39;1,234,567,890&#39;, // longitude: &#39;116.4&#39;, // latitude: &#39;39.9&#39; // } === 和 == 的区别 # js 复制 1 2 3 4 5 6 7 8 9 // == -> 类型转换 (浅比较) // === -> 无类型转换 (严格比较) 0 == false; // true 0 === false; // false 1 == "1"; // true 1 === "1"; // false null == undefined; // true null === undefined; // false 解构赋值 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 const forest = { location: "Sweden", animals: 3, animalsTypes: ["Lions", "Tigers", "Bears"], }; const { location, animals, animalsTypes } = forest; const [lions, tigers, bears] = animalsTypes; console.log(location); // Sweden console.log(animals); // 3 console.log(lions); // Lions console.log(tigers); // Tigers console.log(bears); // Bears 交换变量的值 # js 复制 1 2 3 4 let bears = "bears"; let tigers = ("tigers"[(bears, tigers)] = [tigers, bears]); console.log(bears); // tigers console.log(tribes); // bears 判断回文字符串 # js 复制 1 2 3 4 5 6 const isRevervse = (str1, str2) => { const normalize = (str) => str.toLowerCase().normalize("NFD").split("").reverse().join(""); return normalize(str1) === str2; }; console.log(isRevervse("anagram", "margana")); // true console.log(isRevervse("rac", "car")); // true 回文字符串: 正着写和反着写都一样的字符串 (特别感谢 @浮生阁阁主 勘误)'><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="pending"><meta property="article:published_time" content="2024-05-07T16:28:47+08:00"><meta property="article:modified_time" content="2024-06-17T22:02:20+08:00"><meta property="article:tag" content="Javascript"><meta property="og:image" content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta name=twitter:title content="ES6 常用代码块"><meta name=twitter:description content='ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = ["😄", 67, true, false, "55"]; arr = arr.sort(() => 0.5 - Math.random()); console.log(arr); // [ &#39;😄&#39;, &#39;55&#39;, 67, false, true ] 删除数字之外的所有字符 # js 复制 1 2 3 4 const str = "xieyezi 23213 is 95994 so hansome 223333"; const numbers = str.replace(/\D/g, ""); console.log(numbers); // 2321395994223333 反转字符串或者单词 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 const sentence = "xieyezi js so handsome, lol."; const reverseSentence = reverseBySeparator(sentence, ""); console.log(reverseSentence); // .lol ,emosdnah os sj izeyeix const reverseEachWord = reverseBySeparator(reverseSentence, " "); console.log(reverseEachWord); // izeyeix sj os ,emosdnah .lol function reverseBySeparator(string, separator) { return string.split(separator).reverse().join(separator); } 将十进制转换为二进制文件或十六进制数 # js 复制 1 2 3 const num = 45; num.toString(2); num.tostring(16); 合并多个对象 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 const city = { name: "Chongqing", population: "1,234,567,890", }; const location = { longitude: "116.4", latitude: "39.9", }; const fullCity = { ...city, ...location }; console.log(fullCity); // { // name: &#39;Chongqing&#39;, // population: &#39;1,234,567,890&#39;, // longitude: &#39;116.4&#39;, // latitude: &#39;39.9&#39; // } === 和 == 的区别 # js 复制 1 2 3 4 5 6 7 8 9 // == -> 类型转换 (浅比较) // === -> 无类型转换 (严格比较) 0 == false; // true 0 === false; // false 1 == "1"; // true 1 === "1"; // false null == undefined; // true null === undefined; // false 解构赋值 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 const forest = { location: "Sweden", animals: 3, animalsTypes: ["Lions", "Tigers", "Bears"], }; const { location, animals, animalsTypes } = forest; const [lions, tigers, bears] = animalsTypes; console.log(location); // Sweden console.log(animals); // 3 console.log(lions); // Lions console.log(tigers); // Tigers console.log(bears); // Bears 交换变量的值 # js 复制 1 2 3 4 let bears = "bears"; let tigers = ("tigers"[(bears, tigers)] = [tigers, bears]); console.log(bears); // tigers console.log(tribes); // bears 判断回文字符串 # js 复制 1 2 3 4 5 6 const isRevervse = (str1, str2) => { const normalize = (str) => str.toLowerCase().normalize("NFD").split("").reverse().join(""); return normalize(str1) === str2; }; console.log(isRevervse("anagram", "margana")); // true console.log(isRevervse("rac", "car")); // true 回文字符串: 正着写和反着写都一样的字符串 (特别感谢 @浮生阁阁主 勘误)'><meta name=twitter:site content="@Linlcccc"><meta itemprop=name content="ES6 常用代码块"><meta itemprop=description content='ES6 20 个经常使用的技巧 # 打乱数组顺序 # js 复制 1 2 3 4 let arr = ["😄", 67, true, false, "55"]; arr = arr.sort(() => 0.5 - Math.random()); console.log(arr); // [ &#39;😄&#39;, &#39;55&#39;, 67, false, true ] 删除数字之外的所有字符 # js 复制 1 2 3 4 const str = "xieyezi 23213 is 95994 so hansome 223333"; const numbers = str.replace(/\D/g, ""); console.log(numbers); // 2321395994223333 反转字符串或者单词 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 const sentence = "xieyezi js so handsome, lol."; const reverseSentence = reverseBySeparator(sentence, ""); console.log(reverseSentence); // .lol ,emosdnah os sj izeyeix const reverseEachWord = reverseBySeparator(reverseSentence, " "); console.log(reverseEachWord); // izeyeix sj os ,emosdnah .lol function reverseBySeparator(string, separator) { return string.split(separator).reverse().join(separator); } 将十进制转换为二进制文件或十六进制数 # js 复制 1 2 3 const num = 45; num.toString(2); num.tostring(16); 合并多个对象 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 const city = { name: "Chongqing", population: "1,234,567,890", }; const location = { longitude: "116.4", latitude: "39.9", }; const fullCity = { ...city, ...location }; console.log(fullCity); // { // name: &#39;Chongqing&#39;, // population: &#39;1,234,567,890&#39;, // longitude: &#39;116.4&#39;, // latitude: &#39;39.9&#39; // } === 和 == 的区别 # js 复制 1 2 3 4 5 6 7 8 9 // == -> 类型转换 (浅比较) // === -> 无类型转换 (严格比较) 0 == false; // true 0 === false; // false 1 == "1"; // true 1 === "1"; // false null == undefined; // true null === undefined; // false 解构赋值 # js 复制 1 2 3 4 5 6 7 8 9 10 11 12 13 14 const forest = { location: "Sweden", animals: 3, animalsTypes: ["Lions", "Tigers", "Bears"], }; const { location, animals, animalsTypes } = forest; const [lions, tigers, bears] = animalsTypes; console.log(location); // Sweden console.log(animals); // 3 console.log(lions); // Lions console.log(tigers); // Tigers console.log(bears); // Bears 交换变量的值 # js 复制 1 2 3 4 let bears = "bears"; let tigers = ("tigers"[(bears, tigers)] = [tigers, bears]); console.log(bears); // tigers console.log(tribes); // bears 判断回文字符串 # js 复制 1 2 3 4 5 6 const isRevervse = (str1, str2) => { const normalize = (str) => str.toLowerCase().normalize("NFD").split("").reverse().join(""); return normalize(str1) === str2; }; console.log(isRevervse("anagram", "margana")); // true console.log(isRevervse("rac", "car")); // true 回文字符串: 正着写和反着写都一样的字符串 (特别感谢 @浮生阁阁主 勘误)'><meta itemprop=datePublished content="2024-05-07T16:28:47+08:00"><meta itemprop=dateModified content="2024-06-17T22:02:20+08:00"><meta itemprop=wordCount content="1099"><meta itemprop=image content="https://linlccc.com/favicon/dark/favicon-192x192.png"><meta itemprop=keywords content="Javascript"><script async src="https://www.googletagmanager.com/gtag/js?id=G-TQ3ZXPKKNM"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-TQ3ZXPKKNM")}</script><noscript><style>#themeToggle{display:none}</style></noscript><link crossorigin=anonymous rel="preload stylesheet" as=style href=/assets/css/stylesAll.min.6dba5d9e72250f6177aee6ef1a533dd0151d06154dc550619a6ce720b0e1d4a5.css integrity="sha256-bbpdnnIlD2F3rubvGlM90BUdBhVNxVBhmmznILDh1KU="></head><body id=top><header id=header><nav><div class=logo><a role=text href=https://linlccc.com/ accesskey=h title="linlccc's blog (Alt + H)">linlccc's blog
 </a><button id=themeToggle accesskey=t title='(Alt + T)'><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button><ul class=langSwitch role=list><li>|</li><li><a role=text href=https://linlccc.com/en/ hreflang=en title=en>En</a></li></ul></div><ul id=menu class=menu role=list><li><a role=text href=/search/ title=搜索><span>搜索</span></a></li><li><a role=text href=/posts/ title=文章><span>文章</span></a></li><li><a role=text href=/pending/ title=待处理><span>待处理</span></a></li><li><a role=text href=/series/ title=系列><span>系列</span></a></li><li><a role=text href=/tags/ title=标签><span>标签</span></a></li><li><a role=text href=/langs/ title=语言><span>语言</span></a></li><li><a role=text href title=档案><span>档案</span></a></li></ul></nav></header><main class=main><header><div class=breadcrumbs><a href=https://linlccc.com/>Linlccc's Blog</a>
 &nbsp;»&nbsp;
 <a href=https://linlccc.com/pending/>Pendings</a>

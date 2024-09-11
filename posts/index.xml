@@ -46,7 +46,298 @@
 &lt;/span>&lt;span class="lnt" id="hl-0-32">&lt;a class="lnlinks" href="#hl-0-32">32&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-33">&lt;a class="lnlinks" href="#hl-0-33">33&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-34">&lt;a class="lnlinks" href="#hl-0-34">34&lt;/a>
-&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>常用js</title><link>https://linlccc.com/posts/commonlyusedjs/</link><pubDate>Sun, 16 Jun 2024 23:33:27 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/commonlyusedjs/</guid><description>&lt;h2 id="防抖" >防抖
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 标题&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 链接标题，在标题很长时用到&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">linkTitle&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 描述&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 摘要,如果为空自动截取文章内容&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">Summary&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 隐藏摘要&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">hideSummary&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 权重&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">weight&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">1000&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 是否是草稿&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">draft&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 日期&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">date&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="ld">2000-10-01 12:00:00&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 发布日期&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">publishDate&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="ld">2000-10-01 12:00:00&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 过期日期&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">expiryDate&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="ld">2000-10-01 12:00:00&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 最后修改日期，enableGitInfo 设置为true后会自动设置成 git 提交日期&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">lastmod&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="ld">2000-10-01 12:00:00&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 别名，用于重定向 (比如: /post/[aliases]/ 会重定向到当前页面)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">aliases&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">aaa&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 页面链接&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">url&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">/aaa&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 标签&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">tags&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">tag1&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">tag2&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="模板查找配置" >模板查找配置
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%a8%a1%e6%9d%bf%e6%9f%a5%e6%89%be%e9%85%8d%e7%bd%ae">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">yaml&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-2">&lt;a class="lnlinks" href="#hl-1-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-3">&lt;a class="lnlinks" href="#hl-1-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-4">&lt;a class="lnlinks" href="#hl-1-4">4&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 布局，该设置会优先去找 test.html 模板&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">layout&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 类型，该设置会优先在 test 目录下去找模板&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">type&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">test&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="自定义配置" >自定义配置
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e9%85%8d%e7%bd%ae">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">yaml&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-2-1">&lt;a class="lnlinks" href="#hl-2-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-2">&lt;a class="lnlinks" href="#hl-2-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-3">&lt;a class="lnlinks" href="#hl-2-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-4">&lt;a class="lnlinks" href="#hl-2-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-5">&lt;a class="lnlinks" href="#hl-2-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-6">&lt;a class="lnlinks" href="#hl-2-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-7">&lt;a class="lnlinks" href="#hl-2-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-8">&lt;a class="lnlinks" href="#hl-2-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-9">&lt;a class="lnlinks" href="#hl-2-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-10">&lt;a class="lnlinks" href="#hl-2-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-11">&lt;a class="lnlinks" href="#hl-2-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-12">&lt;a class="lnlinks" href="#hl-2-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-13">&lt;a class="lnlinks" href="#hl-2-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-14">&lt;a class="lnlinks" href="#hl-2-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-15">&lt;a class="lnlinks" href="#hl-2-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-16">&lt;a class="lnlinks" href="#hl-2-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-17">&lt;a class="lnlinks" href="#hl-2-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-18">&lt;a class="lnlinks" href="#hl-2-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-19">&lt;a class="lnlinks" href="#hl-2-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-20">&lt;a class="lnlinks" href="#hl-2-20">20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-21">&lt;a class="lnlinks" href="#hl-2-21">21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-22">&lt;a class="lnlinks" href="#hl-2-22">22&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-23">&lt;a class="lnlinks" href="#hl-2-23">23&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-24">&lt;a class="lnlinks" href="#hl-2-24">24&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-25">&lt;a class="lnlinks" href="#hl-2-25">25&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-26">&lt;a class="lnlinks" href="#hl-2-26">26&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-27">&lt;a class="lnlinks" href="#hl-2-27">27&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-28">&lt;a class="lnlinks" href="#hl-2-28">28&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-29">&lt;a class="lnlinks" href="#hl-2-29">29&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-30">&lt;a class="lnlinks" href="#hl-2-30">30&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-31">&lt;a class="lnlinks" href="#hl-2-31">31&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-32">&lt;a class="lnlinks" href="#hl-2-32">32&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-33">&lt;a class="lnlinks" href="#hl-2-33">33&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-34">&lt;a class="lnlinks" href="#hl-2-34">34&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-35">&lt;a class="lnlinks" href="#hl-2-35">35&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-36">&lt;a class="lnlinks" href="#hl-2-36">36&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-37">&lt;a class="lnlinks" href="#hl-2-37">37&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-38">&lt;a class="lnlinks" href="#hl-2-38">38&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-39">&lt;a class="lnlinks" href="#hl-2-39">39&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-40">&lt;a class="lnlinks" href="#hl-2-40">40&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-41">&lt;a class="lnlinks" href="#hl-2-41">41&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-42">&lt;a class="lnlinks" href="#hl-2-42">42&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-43">&lt;a class="lnlinks" href="#hl-2-43">43&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-44">&lt;a class="lnlinks" href="#hl-2-44">44&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-45">&lt;a class="lnlinks" href="#hl-2-45">45&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-46">&lt;a class="lnlinks" href="#hl-2-46">46&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-47">&lt;a class="lnlinks" href="#hl-2-47">47&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-48">&lt;a class="lnlinks" href="#hl-2-48">48&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-49">&lt;a class="lnlinks" href="#hl-2-49">49&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-50">&lt;a class="lnlinks" href="#hl-2-50">50&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-51">&lt;a class="lnlinks" href="#hl-2-51">51&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-52">&lt;a class="lnlinks" href="#hl-2-52">52&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-53">&lt;a class="lnlinks" href="#hl-2-53">53&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-54">&lt;a class="lnlinks" href="#hl-2-54">54&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-55">&lt;a class="lnlinks" href="#hl-2-55">55&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-56">&lt;a class="lnlinks" href="#hl-2-56">56&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-57">&lt;a class="lnlinks" href="#hl-2-57">57&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-58">&lt;a class="lnlinks" href="#hl-2-58">58&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-59">&lt;a class="lnlinks" href="#hl-2-59">59&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-60">&lt;a class="lnlinks" href="#hl-2-60">60&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-61">&lt;a class="lnlinks" href="#hl-2-61">61&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-62">&lt;a class="lnlinks" href="#hl-2-62">62&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-63">&lt;a class="lnlinks" href="#hl-2-63">63&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-64">&lt;a class="lnlinks" href="#hl-2-64">64&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-65">&lt;a class="lnlinks" href="#hl-2-65">65&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-66">&lt;a class="lnlinks" href="#hl-2-66">66&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-67">&lt;a class="lnlinks" href="#hl-2-67">67&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-68">&lt;a class="lnlinks" href="#hl-2-68">68&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-69">&lt;a class="lnlinks" href="#hl-2-69">69&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-70">&lt;a class="lnlinks" href="#hl-2-70">70&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-71">&lt;a class="lnlinks" href="#hl-2-71">71&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-72">&lt;a class="lnlinks" href="#hl-2-72">72&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-73">&lt;a class="lnlinks" href="#hl-2-73">73&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-74">&lt;a class="lnlinks" href="#hl-2-74">74&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-75">&lt;a class="lnlinks" href="#hl-2-75">75&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-76">&lt;a class="lnlinks" href="#hl-2-76">76&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-77">&lt;a class="lnlinks" href="#hl-2-77">77&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-78">&lt;a class="lnlinks" href="#hl-2-78">78&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-79">&lt;a class="lnlinks" href="#hl-2-79">79&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-80">&lt;a class="lnlinks" href="#hl-2-80">80&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-81">&lt;a class="lnlinks" href="#hl-2-81">81&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-82">&lt;a class="lnlinks" href="#hl-2-82">82&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-83">&lt;a class="lnlinks" href="#hl-2-83">83&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 语言&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">langs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">C++&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 关键字&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">keywords&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">key1&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">key2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 分类&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">categories&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">category1&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">category2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 系列信息&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">seriesInfo&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 系列id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">id&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 序号&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">order&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 作者&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">authors&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">author1&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">author2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 显示面包屑导航&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">ShowBreadCrumbs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 隐藏元数据（比如作者、发布日期等）&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">hidemeta&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 显示文章阅读时间&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">ShowReadingTime&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 显示文章字数统计&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">ShowWordCount&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 显示作者&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">showAuthor&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 显示原文章信息，用于显示转载自哪里&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">showCanonicalLink&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 原文章链接&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">canonicalLink&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 显示目录&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">showToc&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 打开目录&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">tocOpen&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 显示文章导航链接(上/下页)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">showPostNavLinks&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 禁用分享功能&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">disableShare&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 禁用锚定标题&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">disableAnchoredHeadings&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># giscus 评论信息&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">giscusCommentsInfo&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">enabled&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 在站内搜索结果中隐藏页面&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">searchHidden&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 从 home 页中隐藏，值只能是true/false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">hiddenInHomeList&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 文章封面&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">cover&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 封面图片&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 图片的替代文本&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">alt&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 封面标题，描述&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">caption&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 指示图片路径是否相对于当前文件&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">relative&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 在列表中隐藏封面&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">hiddenInList&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 在文章页面中隐藏封面&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">hiddenInSingle&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 文章编辑链接信息&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">editPost&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 链接(示例链接指向githu的修改)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">url&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com/[YourName]/[Repo]/edit/master/src/content&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 将文件路径附加到编辑链接&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">appendFilePath&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 禁用编辑&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">disabled&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 在新页面打开&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">openInNewPage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">false&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="hugo-内置模板-open-graph-的配置一般用不到" >hugo 内置模板 Open Graph 的配置(一般用不到)
+&lt;a hidden class="anchor" aria-hidden="true" href="#hugo-%e5%86%85%e7%bd%ae%e6%a8%a1%e6%9d%bf-open-graph-%e7%9a%84%e9%85%8d%e7%bd%ae%e4%b8%80%e8%88%ac%e7%94%a8%e4%b8%8d%e5%88%b0">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">yaml&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-3-1">&lt;a class="lnlinks" href="#hl-3-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-2">&lt;a class="lnlinks" href="#hl-3-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-3">&lt;a class="lnlinks" href="#hl-3-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-4">&lt;a class="lnlinks" href="#hl-3-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-5">&lt;a class="lnlinks" href="#hl-3-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-6">&lt;a class="lnlinks" href="#hl-3-6">6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-7">&lt;a class="lnlinks" href="#hl-3-7">7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-8">&lt;a class="lnlinks" href="#hl-3-8">8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-9">&lt;a class="lnlinks" href="#hl-3-9">9&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 声音文件&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">audio&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="s2">&amp;#34;default.mp3&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 图像文件&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">images&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">post-cover.png&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c"># 视频文件&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">videos&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">video.mp4&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>常用js</title><link>https://linlccc.com/posts/commonlyusedjs/</link><pubDate>Sun, 16 Jun 2024 23:33:27 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/commonlyusedjs/</guid><description>&lt;h2 id="防抖" >防抖
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e9%98%b2%e6%8a%96">#&lt;/a>
 &lt;/h2>
 &lt;div class="codeBlock">
@@ -74,13 +365,98 @@
 &lt;/span>&lt;span class="lnt" id="hl-0-12">&lt;a class="lnlinks" href="#hl-0-12">12&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-13">&lt;a class="lnlinks" href="#hl-0-13">13&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-14">&lt;a class="lnlinks" href="#hl-0-14">14&lt;/a>
-&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>常用软件</title><link>https://linlccc.com/posts/mostusedsoftwares/</link><pubDate>Fri, 10 May 2024 13:59:55 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/mostusedsoftwares/</guid><description>&lt;h2 id="基础工具" >基础工具
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">function&lt;/span> &lt;span class="nx">debounce&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">fn&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">delay&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">timer&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">(...&lt;/span>&lt;span class="nx">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">timer&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">clearTimeout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">timer&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">timer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">setTimeout&lt;/span>&lt;span class="p">(()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">fn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">apply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">args&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nx">delay&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 测试
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">task&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">arg&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;run task&amp;#34;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">arg&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">debounceTask&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">debounce&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">task&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1000&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">addEventListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;scroll&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="nx">debounceTask&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">11&lt;/span>&lt;span class="p">));&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="节流" >节流
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e8%8a%82%e6%b5%81">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">js&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-2">&lt;a class="lnlinks" href="#hl-1-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-3">&lt;a class="lnlinks" href="#hl-1-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-4">&lt;a class="lnlinks" href="#hl-1-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-5">&lt;a class="lnlinks" href="#hl-1-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-6">&lt;a class="lnlinks" href="#hl-1-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-7">&lt;a class="lnlinks" href="#hl-1-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-8">&lt;a class="lnlinks" href="#hl-1-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-9">&lt;a class="lnlinks" href="#hl-1-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-10">&lt;a class="lnlinks" href="#hl-1-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-11">&lt;a class="lnlinks" href="#hl-1-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-12">&lt;a class="lnlinks" href="#hl-1-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-13">&lt;a class="lnlinks" href="#hl-1-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-14">&lt;a class="lnlinks" href="#hl-1-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-15">&lt;a class="lnlinks" href="#hl-1-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-16">&lt;a class="lnlinks" href="#hl-1-16">16&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">function&lt;/span> &lt;span class="nx">throttle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">fn&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">delay&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">last&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">(...&lt;/span>&lt;span class="nx">args&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">now&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Date&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">now&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">now&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">last&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="nx">delay&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">return&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">last&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">now&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fn&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">apply&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">args&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 测试
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">function&lt;/span> &lt;span class="nx">task&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;run task&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">throttleTask&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">throttle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">task&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1000&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">addEventListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;scroll&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">throttleTask&lt;/span>&lt;span class="p">);&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>常用软件</title><link>https://linlccc.com/posts/mostusedsoftwares/</link><pubDate>Fri, 10 May 2024 13:59:55 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/mostusedsoftwares/</guid><description>&lt;h2 id="基础工具" >基础工具
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e5%9f%ba%e7%a1%80%e5%b7%a5%e5%85%b7">#&lt;/a>
 &lt;/h2>
 &lt;p>&lt;a href="https://www.7-zip.org/" target="_blank">7z &lt;/a> 压缩&lt;/p>
 &lt;p>&lt;a href="https://github.com/zhongyang219/TrafficMonitor" target="_blank">TrafficMonitor&lt;/a> 任务栏数据显示&lt;/p>
 &lt;p>&lt;a href="https://github.com/microsoft/PowerToys" target="_blank">PowerToys&lt;/a> Windows 增强工具&lt;/p>
-&lt;p>&lt;a href="https://www.listarypro.com/" target="_blank">ListArr&lt;/a> 文件搜索&lt;/p></description></item><item><title>在 Vue 中使用 Axios</title><link>https://linlccc.com/posts/axiosinvue/</link><pubDate>Tue, 07 May 2024 18:20:22 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/axiosinvue/</guid><description>&lt;h2 id="axiosts" >axios.ts
+&lt;p>&lt;a href="https://www.listarypro.com/" target="_blank">ListArr&lt;/a> 文件搜索&lt;/p>
+&lt;p>&lt;a href="https://www.foxmail.com/" target="_blank">Foxmail&lt;/a> 邮件管理&lt;/p>
+&lt;p>&lt;a href="https://www.neatdownloadmanager.com/" target="_blank">NeatDownloadManager&lt;/a> 下载管理&lt;/p>
+&lt;p>&lt;a href="https://ditto-cp.sourceforge.io/" target="_blank">Ditto&lt;/a> 粘贴板&lt;/p>
+&lt;p>&lt;a href="http://qttabbar.wikidot.com/" target="_blank">Qttabbar&lt;/a> Windows10 文件管理器多标签&lt;/p>
+&lt;h2 id="浏览器" >浏览器
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%b5%8f%e8%a7%88%e5%99%a8">#&lt;/a>
+&lt;/h2>
+&lt;p>&lt;a href="https://www.google.cn/chrome/" target="_blank">Google Chrome&lt;/a>&lt;/p>
+&lt;h2 id="编辑器" >编辑器
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e7%bc%96%e8%be%91%e5%99%a8">#&lt;/a>
+&lt;/h2>
+&lt;p>&lt;a href="https://visualstudio.microsoft.com/zh-hans/vs/" target="_blank">Visual Studio&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://code.visualstudio.com/" target="_blank">VS Code&lt;/a>&lt;/p>
+&lt;p>&lt;a href="http://notepad-plus-plus.org/" target="_blank">Notepad++&lt;/a>&lt;/p></description></item><item><title>在 Vue 中使用 Axios</title><link>https://linlccc.com/posts/axiosinvue/</link><pubDate>Tue, 07 May 2024 18:20:22 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/axiosinvue/</guid><description>&lt;h2 id="axiosts" >axios.ts
 &lt;a hidden class="anchor" aria-hidden="true" href="#axiosts">#&lt;/a>
 &lt;/h2>
 &lt;div class="codeBlock">
@@ -142,7 +518,167 @@
 &lt;/span>&lt;span class="lnt" id="hl-0-46">&lt;a class="lnlinks" href="#hl-0-46">46&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-47">&lt;a class="lnlinks" href="#hl-0-47">47&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-48">&lt;a class="lnlinks" href="#hl-0-48">48&lt;/a>
-&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>常用SQL</title><link>https://linlccc.com/posts/commonsql/</link><pubDate>Sun, 05 May 2024 07:05:18 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/commonsql/</guid><description>&lt;h2 id="dcldata-control-language数据控制语言" >DCL(Data Control Language)数据控制语言
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-ts" data-lang="ts">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">import&lt;/span> &lt;span class="nx">axios&lt;/span> &lt;span class="kr">from&lt;/span> &lt;span class="s2">&amp;#34;axios&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 文档：https://github.com/axios/axios#request-config
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// axios 全局默认配置
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || &amp;#39;https://api.apiopen.top/&amp;#39;;//设置默认请求路径
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// axios.defaults.headers.common[&amp;#39;Authorization&amp;#39;] = AUTH_TOKEN;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// axios.defaults.headers.post[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/x-www-form-urlencoded&amp;#39;;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 自定义实例配置
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">config&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// baseURL: process.env.baseURL || process.env.apiUrl || &amp;#39;https://api.apiopen.top/&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="c1">// timeout: 60 * 1000, // 超时
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="c1">// withCredentials: true, // 检查跨域访问控制
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">axios&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">create&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">config&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 添加请求拦截器
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">axios&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">interceptors&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">request&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">use&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">(&lt;/span>&lt;span class="nx">config&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;请求全局拦截&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 请求之前处理
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">config&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">(&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 处理请求错误
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">Promise&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">reject&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 添加响应拦截器
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">axios&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">interceptors&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">response&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">use&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">(&lt;/span>&lt;span class="nx">response&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 处理响应数据
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">response&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">(&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 处理响应错误
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">Promise&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">reject&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">error&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">axios&lt;/span> &lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="k">default&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">app&lt;/span>: &lt;span class="kt">any&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">app&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">config&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">globalProperties&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">$axios&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">axios&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="maints" >main.ts
+&lt;a hidden class="anchor" aria-hidden="true" href="#maints">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">ts&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-2">&lt;a class="lnlinks" href="#hl-1-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-3">&lt;a class="lnlinks" href="#hl-1-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-4">&lt;a class="lnlinks" href="#hl-1-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-5">&lt;a class="lnlinks" href="#hl-1-5">5&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-ts" data-lang="ts">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 导入封装的axios
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">import&lt;/span> &lt;span class="nx">installAxios&lt;/span> &lt;span class="kr">from&lt;/span> &lt;span class="s2">&amp;#34;./axios&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">app&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createApp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">App&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">installAxios&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">app&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// 使用axios
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="apits" >api.ts
+&lt;a hidden class="anchor" aria-hidden="true" href="#apits">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>使用 axios 制定接口函数&lt;/li>
+&lt;/ul>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">ts&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-2-1">&lt;a class="lnlinks" href="#hl-2-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-2">&lt;a class="lnlinks" href="#hl-2-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-3">&lt;a class="lnlinks" href="#hl-2-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-4">&lt;a class="lnlinks" href="#hl-2-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-5">&lt;a class="lnlinks" href="#hl-2-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-6">&lt;a class="lnlinks" href="#hl-2-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-7">&lt;a class="lnlinks" href="#hl-2-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-8">&lt;a class="lnlinks" href="#hl-2-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-9">&lt;a class="lnlinks" href="#hl-2-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-10">&lt;a class="lnlinks" href="#hl-2-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-11">&lt;a class="lnlinks" href="#hl-2-11">11&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-ts" data-lang="ts">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 导入封装的axios
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">import&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">axios&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="kr">from&lt;/span> &lt;span class="s2">&amp;#34;./axios&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 调用接口1
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">export&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">api1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">params&lt;/span>: &lt;span class="kt">any&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">axios&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="kr">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/api/api1&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">params&lt;/span>: &lt;span class="kt">params&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">export&lt;/span> &lt;span class="kr">const&lt;/span> &lt;span class="nx">api2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">params&lt;/span>: &lt;span class="kt">any&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">axios&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/api/api2&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">params&lt;/span>: &lt;span class="kt">params&lt;/span> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="testvue" >test.vue
+&lt;a hidden class="anchor" aria-hidden="true" href="#testvue">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>调用接口&lt;/li>
+&lt;/ul>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">ts&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-3-1">&lt;a class="lnlinks" href="#hl-3-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-2">&lt;a class="lnlinks" href="#hl-3-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-3">&lt;a class="lnlinks" href="#hl-3-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-4">&lt;a class="lnlinks" href="#hl-3-4">4&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-ts" data-lang="ts">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 导入api
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">import&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">api1&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="kr">from&lt;/span> &lt;span class="s2">&amp;#34;./api&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">api1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">params&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="nx">res&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">res&lt;/span>&lt;span class="p">));&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>常用SQL</title><link>https://linlccc.com/posts/commonsql/</link><pubDate>Sun, 05 May 2024 07:05:18 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/commonsql/</guid><description>&lt;h2 id="dcldata-control-language数据控制语言" >DCL(Data Control Language)数据控制语言
 &lt;a hidden class="anchor" aria-hidden="true" href="#dcldata-control-language%e6%95%b0%e6%8d%ae%e6%8e%a7%e5%88%b6%e8%af%ad%e8%a8%80">#&lt;/a>
 &lt;/h2>
 &lt;ul>
@@ -168,7 +704,686 @@
 &lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5">5&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6">6&lt;/a>
-&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>管理 SSH</title><link>https://linlccc.com/posts/managessh/</link><pubDate>Mon, 22 Apr 2024 20:06:55 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/managessh/</guid><description>&lt;h2 id="生成新的-ssh-密钥" >生成新的 SSH 密钥
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 查询用户
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">host&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="k">user&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">mysql&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="k">user&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 添加用户
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">user&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;用户名&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;主机名&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">identified&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">by&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;密码&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 删除用户
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">drop&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">user&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;用户名&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;主机名&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="权限管理" >权限管理
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%9d%83%e9%99%90%e7%ae%a1%e7%90%86">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-2">&lt;a class="lnlinks" href="#hl-1-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-3">&lt;a class="lnlinks" href="#hl-1-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-4">&lt;a class="lnlinks" href="#hl-1-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-5">&lt;a class="lnlinks" href="#hl-1-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-6">&lt;a class="lnlinks" href="#hl-1-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-7">&lt;a class="lnlinks" href="#hl-1-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-8">&lt;a class="lnlinks" href="#hl-1-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-9">&lt;a class="lnlinks" href="#hl-1-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-10">&lt;a class="lnlinks" href="#hl-1-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-11">&lt;a class="lnlinks" href="#hl-1-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-12">&lt;a class="lnlinks" href="#hl-1-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-13">&lt;a class="lnlinks" href="#hl-1-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-14">&lt;a class="lnlinks" href="#hl-1-14">14&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 查询权限
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">show&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">grants&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">for&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;用户名&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;主机名&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查询 root 用户权限
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">show&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">grants&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">for&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;root&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;%&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 给予权限
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">grant&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">权限列表&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">库名&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">to&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;用户名&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;主机名&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 给 user1 授予所有权限
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">grant&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">all&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">to&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;user1&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;localhost&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 撤销权限
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">revoke&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">权限列表&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">库名&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;用户名&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;主机名&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 撤销 user1 的所有权限
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">revoke&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">all&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;user1&amp;#39;&lt;/span>&lt;span class="o">@&lt;/span>&lt;span class="s1">&amp;#39;localhost&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="ddldata-definition-language数据定义语言" >DDL(Data Definition Language)数据定义语言
+&lt;a hidden class="anchor" aria-hidden="true" href="#ddldata-definition-language%e6%95%b0%e6%8d%ae%e5%ae%9a%e4%b9%89%e8%af%ad%e8%a8%80">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="操作库" >操作库
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%93%8d%e4%bd%9c%e5%ba%93">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-2-1">&lt;a class="lnlinks" href="#hl-2-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-2">&lt;a class="lnlinks" href="#hl-2-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-3">&lt;a class="lnlinks" href="#hl-2-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-4">&lt;a class="lnlinks" href="#hl-2-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-5">&lt;a class="lnlinks" href="#hl-2-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-6">&lt;a class="lnlinks" href="#hl-2-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-7">&lt;a class="lnlinks" href="#hl-2-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-8">&lt;a class="lnlinks" href="#hl-2-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-9">&lt;a class="lnlinks" href="#hl-2-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-10">&lt;a class="lnlinks" href="#hl-2-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-11">&lt;a class="lnlinks" href="#hl-2-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-12">&lt;a class="lnlinks" href="#hl-2-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-13">&lt;a class="lnlinks" href="#hl-2-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-14">&lt;a class="lnlinks" href="#hl-2-14">14&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 查看所有数据库
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">show&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">databases&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查看数据库的定义信息
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">show&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">database&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">库名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 创建库
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">database&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">库名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 检查库是否存在，不存在则创建
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">database&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">not&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">exists&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">库名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 修改数据库字符信息
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">alter&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">database&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">库名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">character&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">set&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">utf8&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 删除数据库
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">drop&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">database&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">库名&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="操作表" >操作表
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%93%8d%e4%bd%9c%e8%a1%a8">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-3-1">&lt;a class="lnlinks" href="#hl-3-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-2">&lt;a class="lnlinks" href="#hl-3-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-3">&lt;a class="lnlinks" href="#hl-3-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-4">&lt;a class="lnlinks" href="#hl-3-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-5">&lt;a class="lnlinks" href="#hl-3-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-6">&lt;a class="lnlinks" href="#hl-3-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-7">&lt;a class="lnlinks" href="#hl-3-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-8">&lt;a class="lnlinks" href="#hl-3-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-9">&lt;a class="lnlinks" href="#hl-3-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-10">&lt;a class="lnlinks" href="#hl-3-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-11">&lt;a class="lnlinks" href="#hl-3-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-12">&lt;a class="lnlinks" href="#hl-3-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-13">&lt;a class="lnlinks" href="#hl-3-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-14">&lt;a class="lnlinks" href="#hl-3-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-15">&lt;a class="lnlinks" href="#hl-3-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-16">&lt;a class="lnlinks" href="#hl-3-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-17">&lt;a class="lnlinks" href="#hl-3-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-18">&lt;a class="lnlinks" href="#hl-3-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-19">&lt;a class="lnlinks" href="#hl-3-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-20">&lt;a class="lnlinks" href="#hl-3-20">20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-21">&lt;a class="lnlinks" href="#hl-3-21">21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-22">&lt;a class="lnlinks" href="#hl-3-22">22&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-23">&lt;a class="lnlinks" href="#hl-3-23">23&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-24">&lt;a class="lnlinks" href="#hl-3-24">24&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-25">&lt;a class="lnlinks" href="#hl-3-25">25&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-26">&lt;a class="lnlinks" href="#hl-3-26">26&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 查看表结构
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">desc&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查看创建表的SQL语句
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">show&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">table&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 创建表
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">table&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">varchar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">32&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">score&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">double&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">birthday&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">date&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">insert_time&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">timestamp&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 修改表名
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">alter&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">table&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">旧表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">rename&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">to&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">新表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 删除表
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">drop&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">table&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 检查表是否存在，存在则删除
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">drop&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">table&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">exists&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 添加一列
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">alter&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">table&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">add&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">列名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">数据类型&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 删除列
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">alter&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">table&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">drop&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">列名&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="dmldata-manipulation-language数据操作语言" >DML(Data Manipulation Language)数据操作语言
+&lt;a hidden class="anchor" aria-hidden="true" href="#dmldata-manipulation-language%e6%95%b0%e6%8d%ae%e6%93%8d%e4%bd%9c%e8%af%ad%e8%a8%80">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="插入-insert-into" >插入 insert into
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%8f%92%e5%85%a5-insert-into">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-4-1">&lt;a class="lnlinks" href="#hl-4-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-2">&lt;a class="lnlinks" href="#hl-4-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-3">&lt;a class="lnlinks" href="#hl-4-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-4">&lt;a class="lnlinks" href="#hl-4-4">4&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 写列名
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">insert&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">into&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="err">列名&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="err">列名&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,...&lt;/span>&lt;span class="err">列名&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">values&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,...&lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 不写列名
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">insert&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">into&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">values&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,...&lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">);&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="删除-delete" >删除 delete
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%88%a0%e9%99%a4-delete">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-5-1">&lt;a class="lnlinks" href="#hl-5-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-2">&lt;a class="lnlinks" href="#hl-5-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-3">&lt;a class="lnlinks" href="#hl-5-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-4">&lt;a class="lnlinks" href="#hl-5-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-5">&lt;a class="lnlinks" href="#hl-5-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-6">&lt;a class="lnlinks" href="#hl-5-6">6&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 删除表中数据
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">delete&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">列名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 删除表中所有数据
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">delete&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 删除表中所有数据（直接删除表，再创建一张一样的表）
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">truncate&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">table&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="修改-update" >修改 update
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e4%bf%ae%e6%94%b9-update">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-6-1">&lt;a class="lnlinks" href="#hl-6-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-6-2">&lt;a class="lnlinks" href="#hl-6-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-6-3">&lt;a class="lnlinks" href="#hl-6-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-6-4">&lt;a class="lnlinks" href="#hl-6-4">4&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 不带条件的修改(修改所有行)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">update&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">set&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">列名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 带条件的修改
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">update&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">set&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">列名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">列名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">值&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="dqldata-query-language数据查询语言" >DQL(Data Query Language)数据查询语言
+&lt;a hidden class="anchor" aria-hidden="true" href="#dqldata-query-language%e6%95%b0%e6%8d%ae%e6%9f%a5%e8%af%a2%e8%af%ad%e8%a8%80">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="基础关键字" >基础关键字
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%9f%ba%e7%a1%80%e5%85%b3%e9%94%ae%e5%ad%97">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-7-1">&lt;a class="lnlinks" href="#hl-7-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-2">&lt;a class="lnlinks" href="#hl-7-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-3">&lt;a class="lnlinks" href="#hl-7-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-4">&lt;a class="lnlinks" href="#hl-7-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-5">&lt;a class="lnlinks" href="#hl-7-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-6">&lt;a class="lnlinks" href="#hl-7-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-7">&lt;a class="lnlinks" href="#hl-7-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-8">&lt;a class="lnlinks" href="#hl-7-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-9">&lt;a class="lnlinks" href="#hl-7-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-10">&lt;a class="lnlinks" href="#hl-7-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-11">&lt;a class="lnlinks" href="#hl-7-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-12">&lt;a class="lnlinks" href="#hl-7-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-13">&lt;a class="lnlinks" href="#hl-7-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-14">&lt;a class="lnlinks" href="#hl-7-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-15">&lt;a class="lnlinks" href="#hl-7-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-16">&lt;a class="lnlinks" href="#hl-7-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-17">&lt;a class="lnlinks" href="#hl-7-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-18">&lt;a class="lnlinks" href="#hl-7-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-19">&lt;a class="lnlinks" href="#hl-7-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-20">&lt;a class="lnlinks" href="#hl-7-20">20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-21">&lt;a class="lnlinks" href="#hl-7-21">21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-22">&lt;a class="lnlinks" href="#hl-7-22">22&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-23">&lt;a class="lnlinks" href="#hl-7-23">23&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-24">&lt;a class="lnlinks" href="#hl-7-24">24&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-25">&lt;a class="lnlinks" href="#hl-7-25">25&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-26">&lt;a class="lnlinks" href="#hl-7-26">26&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-27">&lt;a class="lnlinks" href="#hl-7-27">27&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-28">&lt;a class="lnlinks" href="#hl-7-28">28&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-29">&lt;a class="lnlinks" href="#hl-7-29">29&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-30">&lt;a class="lnlinks" href="#hl-7-30">30&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-31">&lt;a class="lnlinks" href="#hl-7-31">31&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-32">&lt;a class="lnlinks" href="#hl-7-32">32&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 查询年龄大于等于20 小于等于30
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- &amp;amp;&amp;amp;(并且)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;gt;=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">20&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;amp;&amp;amp;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;lt;=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">30&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- and(并且)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;gt;=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">20&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">and&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;lt;=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">30&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- between..and(之间)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">between&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">20&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">and&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">30&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查询年龄22岁，18岁，25岁的信息
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- or(或者)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">22&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">or&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">18&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">or&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">25&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- in(集合)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">in&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">22&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">18&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">25&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查询英语成绩不为null
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- in not null(不为空)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">english&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">is&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">not&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">null&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="cm">/** like(模糊查询)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">_(单个字符)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">%(多个字符)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查询性王的人
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">like&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;王%&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查询第二个字是麻的人
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">like&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;_麻%&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查询名字是三个字的人
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">like&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;___&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- distinct(重复的值都只显示一个)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 查询年龄集合，重复的只显示一个
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">distinct&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="排序查询" >排序查询
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%8e%92%e5%ba%8f%e6%9f%a5%e8%af%a2">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-8-1">&lt;a class="lnlinks" href="#hl-8-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-2">&lt;a class="lnlinks" href="#hl-8-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-3">&lt;a class="lnlinks" href="#hl-8-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-4">&lt;a class="lnlinks" href="#hl-8-4">4&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 根据年龄升序(默认)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">order&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">by&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 根据年龄降序
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">order&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">by&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">desc&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="聚合函数" >聚合函数
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e8%81%9a%e5%90%88%e5%87%bd%e6%95%b0">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-9-1">&lt;a class="lnlinks" href="#hl-9-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-2">&lt;a class="lnlinks" href="#hl-9-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-3">&lt;a class="lnlinks" href="#hl-9-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-4">&lt;a class="lnlinks" href="#hl-9-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-5">&lt;a class="lnlinks" href="#hl-9-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-6">&lt;a class="lnlinks" href="#hl-9-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-7">&lt;a class="lnlinks" href="#hl-9-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-8">&lt;a class="lnlinks" href="#hl-9-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-9">&lt;a class="lnlinks" href="#hl-9-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-10">&lt;a class="lnlinks" href="#hl-9-10">10&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 计算数据行数
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 计算年龄最大是多少
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 计算年龄最小是多少
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">min&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 计算年龄总和是多少
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 计算年龄平均数是多少
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">avg&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="分组查询-group-by" >分组查询 group by
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%88%86%e7%bb%84%e6%9f%a5%e8%af%a2-group-by">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-10-1">&lt;a class="lnlinks" href="#hl-10-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-2">&lt;a class="lnlinks" href="#hl-10-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-3">&lt;a class="lnlinks" href="#hl-10-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-4">&lt;a class="lnlinks" href="#hl-10-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-5">&lt;a class="lnlinks" href="#hl-10-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-6">&lt;a class="lnlinks" href="#hl-10-6">6&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 按照性别分组,分别查询男、女的平均分、人数
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sex&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="k">avg&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">math&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="k">count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">group&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">by&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sex&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 将分数高于60的人按照性别分组,分别查询男、女的平均分、人数
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sex&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="k">avg&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">math&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="k">count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">math&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">60&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">group&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">by&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sex&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 按照性别分组,分别查询男、女的平均分、人数。要求：分数大于60，分组后人数大于2
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sex&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="k">avg&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">math&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="k">count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">math&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">60&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">group&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">by&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sex&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">having&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="分页查询" >分页查询
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%88%86%e9%a1%b5%e6%9f%a5%e8%af%a2">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-11-1">&lt;a class="lnlinks" href="#hl-11-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-2">&lt;a class="lnlinks" href="#hl-11-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-3">&lt;a class="lnlinks" href="#hl-11-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-4">&lt;a class="lnlinks" href="#hl-11-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-5">&lt;a class="lnlinks" href="#hl-11-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-6">&lt;a class="lnlinks" href="#hl-11-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-7">&lt;a class="lnlinks" href="#hl-11-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-8">&lt;a class="lnlinks" href="#hl-11-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-9">&lt;a class="lnlinks" href="#hl-11-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-10">&lt;a class="lnlinks" href="#hl-11-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-11">&lt;a class="lnlinks" href="#hl-11-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-12">&lt;a class="lnlinks" href="#hl-11-12">12&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="cm">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">该分页只支持mysql
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">limit 开始索引,查询条数
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">开始索引计算公式：(页数 - 1) * 每页条数
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 每页显示10条
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 第一页
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">limit&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 第二页
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">limit&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 第三页
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">limit&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="内连接查询" >内连接查询
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%86%85%e8%bf%9e%e6%8e%a5%e6%9f%a5%e8%af%a2">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-12-1">&lt;a class="lnlinks" href="#hl-12-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-2">&lt;a class="lnlinks" href="#hl-12-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-3">&lt;a class="lnlinks" href="#hl-12-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-4">&lt;a class="lnlinks" href="#hl-12-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-5">&lt;a class="lnlinks" href="#hl-12-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-6">&lt;a class="lnlinks" href="#hl-12-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-7">&lt;a class="lnlinks" href="#hl-12-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-8">&lt;a class="lnlinks" href="#hl-12-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-9">&lt;a class="lnlinks" href="#hl-12-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-10">&lt;a class="lnlinks" href="#hl-12-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-11">&lt;a class="lnlinks" href="#hl-12-11">11&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 隐式内连接
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 语法
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">字段列表&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="err">表&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">...&lt;/span>&lt;span class="err">表&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">条件&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 例子
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">c1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">c2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">c1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">t2Id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 显式内连接
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 语法
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">字段列表&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">join&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">条件&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 例子
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">join&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">t2Id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="外连接查询" >外连接查询
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%a4%96%e8%bf%9e%e6%8e%a5%e6%9f%a5%e8%af%a2">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-13-1">&lt;a class="lnlinks" href="#hl-13-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-2">&lt;a class="lnlinks" href="#hl-13-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-3">&lt;a class="lnlinks" href="#hl-13-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-4">&lt;a class="lnlinks" href="#hl-13-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-5">&lt;a class="lnlinks" href="#hl-13-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-6">&lt;a class="lnlinks" href="#hl-13-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-7">&lt;a class="lnlinks" href="#hl-13-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-8">&lt;a class="lnlinks" href="#hl-13-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-9">&lt;a class="lnlinks" href="#hl-13-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-10">&lt;a class="lnlinks" href="#hl-13-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-11">&lt;a class="lnlinks" href="#hl-13-11">11&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 左外连接
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 语法
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">字段列表&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">left&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">join&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">条件&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 例子
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">c1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">left&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">join&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">ON&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">t2Id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 右外连接
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 语法
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">字段列表&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">right&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">join&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">on&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">条件&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 例子
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">c1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">right&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">join&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">ON&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">t2Id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="子查询" >子查询
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%ad%90%e6%9f%a5%e8%af%a2">#&lt;/a>
+&lt;/h3>
+&lt;h4 id="子查询结果是单行单列" >子查询结果是单行单列
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%ad%90%e6%9f%a5%e8%af%a2%e7%bb%93%e6%9e%9c%e6%98%af%e5%8d%95%e8%a1%8c%e5%8d%95%e5%88%97">#&lt;/a>
+&lt;/h4>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-14-1">&lt;a class="lnlinks" href="#hl-14-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-2">&lt;a class="lnlinks" href="#hl-14-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-3">&lt;a class="lnlinks" href="#hl-14-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-4">&lt;a class="lnlinks" href="#hl-14-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-5">&lt;a class="lnlinks" href="#hl-14-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-6">&lt;a class="lnlinks" href="#hl-14-6">6&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 查询最高的成绩（这里假设最高为98）
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">math&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查询成绩最高的人的信息
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">math&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">98&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 使用子查询
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">math&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">max&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">math&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">);&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h4 id="子查询结果是多行单列" >子查询结果是多行单列
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%ad%90%e6%9f%a5%e8%af%a2%e7%bb%93%e6%9e%9c%e6%98%af%e5%a4%9a%e8%a1%8c%e5%8d%95%e5%88%97">#&lt;/a>
+&lt;/h4>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-15-1">&lt;a class="lnlinks" href="#hl-15-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-15-2">&lt;a class="lnlinks" href="#hl-15-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-15-3">&lt;a class="lnlinks" href="#hl-15-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-15-4">&lt;a class="lnlinks" href="#hl-15-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-15-5">&lt;a class="lnlinks" href="#hl-15-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-15-6">&lt;a class="lnlinks" href="#hl-15-6">6&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 查询名称为n1或者n2的id（这里假设id为1，2）
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;n1&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">or&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;n2&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 查询成绩最高的人的信息
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">or&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="c1">-- 使用子查询
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">in&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;n1&amp;#39;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">or&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;n2&amp;#39;&lt;/span>&lt;span class="p">);&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h4 id="子查询结果是多行多列" >子查询结果是多行多列
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%ad%90%e6%9f%a5%e8%af%a2%e7%bb%93%e6%9e%9c%e6%98%af%e5%a4%9a%e8%a1%8c%e5%a4%9a%e5%88%97">#&lt;/a>
+&lt;/h4>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">sql&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-16-1">&lt;a class="lnlinks" href="#hl-16-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-16-2">&lt;a class="lnlinks" href="#hl-16-2">2&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sql" data-lang="sql">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">-- 这里t1和t2是同一张表，查询结果每列有两个相同的数据
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">,(&lt;/span>&lt;span class="k">select&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="err">表名&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">where&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">t2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">id&lt;/span>&lt;span class="p">;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>管理 SSH</title><link>https://linlccc.com/posts/managessh/</link><pubDate>Mon, 22 Apr 2024 20:06:55 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/managessh/</guid><description>&lt;h2 id="生成新的-ssh-密钥" >生成新的 SSH 密钥
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e7%94%9f%e6%88%90%e6%96%b0%e7%9a%84-ssh-%e5%af%86%e9%92%a5">#&lt;/a>
 &lt;/h2>
 &lt;ul>
@@ -186,14 +1401,199 @@
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>C++ 学习笔记</title><link>https://linlccc.com/posts/cppstudynotes/</link><pubDate>Tue, 28 Feb 2023 23:20:19 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/cppstudynotes/</guid><description>&lt;h2 id="基础" >基础
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">ssh-keygen -t rsa -b &lt;span class="m">4096&lt;/span> -C &lt;span class="s2">&amp;#34;[email@example.com]&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>根据提示输入密钥保存文件，可空保存到默认文件&lt;code>C:\Users\[User]\.ssh\id_rsa&lt;/code>&lt;/li>
+&lt;li>根据提示输入两次密码（建议不设置密码，否者每次 push 都需要输入密码）&lt;/li>
+&lt;/ul>
+&lt;h2 id="将-ssh-密钥添加到-ssh-agent" >将 SSH 密钥添加到 ssh-agent
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%b0%86-ssh-%e5%af%86%e9%92%a5%e6%b7%bb%e5%8a%a0%e5%88%b0-ssh-agent">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>以管理员权限打开 &lt;code>PowerShell&lt;/code> 启动 &lt;code>ssh agent&lt;/code>:&lt;/li>
+&lt;/ul>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-2">&lt;a class="lnlinks" href="#hl-1-2">2&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">Get-Service -Name ssh-agent &lt;span class="p">|&lt;/span> Set-Service -StartupType Manual
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Start-Service ssh-agent&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>将 SSH 私钥添加到 ssh-agent (无需管理员权限)&lt;/li>
+&lt;/ul>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-2-1">&lt;a class="lnlinks" href="#hl-2-1">1&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">ssh-add C:&lt;span class="se">\U&lt;/span>sers&lt;span class="se">\[&lt;/span>User&lt;span class="o">]&lt;/span>&lt;span class="se">\.&lt;/span>ssh&lt;span class="se">\i&lt;/span>d_rsa&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="移除-ssh-密钥" >移除 SSH 密钥
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e7%a7%bb%e9%99%a4-ssh-%e5%af%86%e9%92%a5">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>删除&lt;code>C:\Users\[User]\.ssh\&lt;/code>文件夹中的两个密钥文件&lt;/li>
+&lt;li>从&lt;code>ssh agent&lt;/code>中移除&lt;code>ssh&lt;/code>密钥&lt;/li>
+&lt;/ul>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-3-1">&lt;a class="lnlinks" href="#hl-3-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-2">&lt;a class="lnlinks" href="#hl-3-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-3">&lt;a class="lnlinks" href="#hl-3-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-4">&lt;a class="lnlinks" href="#hl-3-4">4&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看已加载的密钥列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-add -l
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 移除密钥&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-add -d C:&lt;span class="se">\U&lt;/span>sers&lt;span class="se">\[&lt;/span>User&lt;span class="o">]&lt;/span>&lt;span class="se">\.&lt;/span>ssh&lt;span class="se">\i&lt;/span>d_rsa&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>C++ 学习笔记</title><link>https://linlccc.com/posts/cppstudynotes/</link><pubDate>Tue, 28 Feb 2023 23:20:19 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/cppstudynotes/</guid><description>&lt;h2 id="基础" >基础
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e5%9f%ba%e7%a1%80">#&lt;/a>
 &lt;/h2>
 &lt;h3 id="整数类型" >整数类型
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e6%95%b4%e6%95%b0%e7%b1%bb%e5%9e%8b">#&lt;/a>
 &lt;/h3>
 &lt;p>这些类型里面除了只有 &lt;code>signed&lt;/code> 和 &lt;code>int&lt;/code> 的都可以省略 &lt;code>signed&lt;/code> / &lt;code>int&lt;/code>&lt;br>
-例如 &lt;code>short&lt;/code>, &lt;code>short int&lt;/code>, &lt;code>signed short&lt;/code>, &lt;code>signed short int&lt;/code> 表示一个类型&lt;/p></description></item><item><title>踩坑记--Safari之正向后行断言</title><link>https://linlccc.com/posts/saferisteppingonthepit/</link><pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/saferisteppingonthepit/</guid><description>&lt;h2 id="正则表达式" >正则表达式
+例如 &lt;code>short&lt;/code>, &lt;code>short int&lt;/code>, &lt;code>signed short&lt;/code>, &lt;code>signed short int&lt;/code> 表示一个类型&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">类型&lt;/th>
+&lt;th style="text-align: left">占用字节数&lt;/th>
+&lt;th style="text-align: left">取值范围&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>signed char&lt;/code>&lt;/td>
+&lt;td style="text-align: left">1&lt;/td>
+&lt;td style="text-align: left">-128 到 127&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned char&lt;/code>&lt;/td>
+&lt;td style="text-align: left">1&lt;/td>
+&lt;td style="text-align: left">0 到 255&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>short&lt;/code>, &lt;code>short int&lt;/code>, &lt;code>signed short&lt;/code>, &lt;code>signed short int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">2&lt;/td>
+&lt;td style="text-align: left">-32768 到 32767&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned short&lt;/code>, &lt;code>unsigned short int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">2&lt;/td>
+&lt;td style="text-align: left">0 到 65535&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>int&lt;/code>, &lt;code>signed&lt;/code>, &lt;code>signed int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">-2147483648 到 2147483647&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned&lt;/code>, &lt;code>unsigned int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">0 到 4294967295&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>long&lt;/code>, &lt;code>long int&lt;/code>, &lt;code>signed long&lt;/code>, &lt;code>signed long int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">与 &lt;code>int&lt;/code> 或 &lt;code>long long&lt;/code> 相同&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned long&lt;/code>, &lt;code>unsigned long int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">与 &lt;code>unsigned&lt;/code> 或 &lt;code>unsigned long long&lt;/code> 相同&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>long long&lt;/code>, &lt;code>long long int&lt;/code>, &lt;code>signed long long&lt;/code>, &lt;code>signed long long int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">-9223372036854775808 到 9223372036854775807&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned long long&lt;/code>, &lt;code>unsigned long long int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">0 到 18446744073709551615&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="浮点类型" >浮点类型
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%b5%ae%e7%82%b9%e7%b1%bb%e5%9e%8b">#&lt;/a>
+&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">类型&lt;/th>
+&lt;th style="text-align: left">占用字节数&lt;/th>
+&lt;th style="text-align: left">取值范围&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>float&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">1.175494351e-38 到 3.402823466e+38&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>double&lt;/code>&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">2.2250738585072014e-308 到 1.7976931348623157e+308&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>long double&lt;/code>&lt;/td>
+&lt;td style="text-align: left">12&lt;/td>
+&lt;td style="text-align: left">3.36210314311209350626267781732175260e-4932 到 1.18973149535723176508575932662800702e+4932&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="无效浮点数信息" >无效浮点数信息
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%97%a0%e6%95%88%e6%b5%ae%e7%82%b9%e6%95%b0%e4%bf%a1%e6%81%af">#&lt;/a>
+&lt;/h3>
+&lt;p>在 C++中，浮点数类型的值可以是无效的，具体取决于浮点数类型的规范。以下是一些常见的无效浮点数值：&lt;/p></description></item><item><title>踩坑记--Safari之正向后行断言</title><link>https://linlccc.com/posts/saferisteppingonthepit/</link><pubDate>Fri, 24 Feb 2023 15:21:11 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/saferisteppingonthepit/</guid><description>&lt;h2 id="正则表达式" >正则表达式
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f">#&lt;/a>
 &lt;/h2>
 &lt;h3 id="1-safari-处理正则表达式中的正向后行断言时异常" >1. Safari 处理正则表达式中的正向后行断言时(?&amp;lt;=&amp;hellip;)，异常
@@ -216,7 +1616,19 @@
 &lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5">5&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6">6&lt;/a>
-&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>hugo 模板基本语法</title><link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link><pubDate>Wed, 22 Feb 2023 17:57:49 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid><description>&lt;h2 id="概念" >概念
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 以下代码在 Chrome 中正常，但在 Safari 中会报错
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="s2">&amp;#34;https://linlccc.com?theme=light&amp;#34;&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sr">/(?&amp;lt;=[?|&amp;amp;]theme=)\w+/&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;dark&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 解决方案，使用捕捉组+替换字符串的方式
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="s2">&amp;#34;https://linlccc.com?theme=light&amp;#34;&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">replace&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sr">/([?|&amp;amp;]theme=)\w+/&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;$1dark&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 以上两个执行结果都是 &amp;#34;https://linlccc.com?theme=dark&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>hugo 模板基本语法</title><link>https://linlccc.com/posts/hugotemplatebasicsyntax/</link><pubDate>Wed, 22 Feb 2023 17:57:49 +0800</pubDate><author>[Linlccc]</author><guid>https://linlccc.com/posts/hugotemplatebasicsyntax/</guid><description>&lt;h2 id="概念" >概念
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e6%a6%82%e5%bf%b5">#&lt;/a>
 &lt;/h2>
 &lt;p>每一个模板都有一个名为 Page 数据对象&lt;br>
@@ -224,7 +1636,69 @@ Page 信息参考：
 &lt;a href="https://gohugo.io/variables/page/" rel="external">
 Page 信息参考
 &lt;/a>
-&lt;/p></description></item><item><title>C++ 配置 libtorch 环境</title><link>https://linlccc.com/posts/cppconfigurelibtorchenvironment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>[Lin]</author><guid>https://linlccc.com/posts/cppconfigurelibtorchenvironment/</guid><description>&lt;h2 id="前置条件" >前置条件
+&lt;/p>
+&lt;h2 id="基础语法" >基础语法
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="访问变量" >访问变量
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e8%ae%bf%e9%97%ae%e5%8f%98%e9%87%8f">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">go&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{{&lt;/span> &lt;span class="p">.&lt;/span>&lt;span class="nx">Titel&lt;/span> &lt;span class="p">}}&lt;/span> &lt;span class="c1">// 访问已存在的变量
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">{{&lt;/span> &lt;span class="err">$&lt;/span>&lt;span class="nx">address&lt;/span> &lt;span class="p">}}&lt;/span> &lt;span class="c1">// 访问自定义变量
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="声明变量与赋值" >声明变量与赋值
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%a3%b0%e6%98%8e%e5%8f%98%e9%87%8f%e4%b8%8e%e8%b5%8b%e5%80%bc">#&lt;/a>
+&lt;/h3>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">go&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-2">&lt;a class="lnlinks" href="#hl-1-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-3">&lt;a class="lnlinks" href="#hl-1-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-4">&lt;a class="lnlinks" href="#hl-1-4">4&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="p">{{&lt;/span> &lt;span class="err">$&lt;/span>&lt;span class="nx">address&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">&amp;#34;http://www.baidu.com&amp;#34;&lt;/span> &lt;span class="p">}}&lt;/span> &lt;span class="c1">// 声明自定义变量并赋值
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">{{&lt;/span> &lt;span class="err">$&lt;/span>&lt;span class="nx">msg&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">`Line one.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">Line two.`&lt;/span> &lt;span class="p">}}&lt;/span> &lt;span class="c1">// 支持多行字符串
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">{{&lt;/span> &lt;span class="err">$&lt;/span>&lt;span class="nx">msg&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">&amp;#34;&amp;#34;&lt;/span> &lt;span class="p">}}&lt;/span> &lt;span class="c1">// 将msg的值修改为空字符串
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="条件语句" >条件语句
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%9d%a1%e4%bb%b6%e8%af%ad%e5%8f%a5">#&lt;/a>
+&lt;/h3>
+&lt;p>条件语句 &lt;code>if&lt;/code>/&lt;code>with&lt;/code> 都以 &lt;code>{{ end }}&lt;/code> 结束&lt;br>
+在 hugo 模板中，条件语句的条件可以是任何表达式，而不仅仅是布尔类型的表达式，以下情况会被认为是 false：&lt;/p></description></item><item><title>C++ 配置 libtorch 环境</title><link>https://linlccc.com/posts/cppconfigurelibtorchenvironment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>[Lin]</author><guid>https://linlccc.com/posts/cppconfigurelibtorchenvironment/</guid><description>&lt;h2 id="前置条件" >前置条件
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6">#&lt;/a>
 &lt;/h2>
 &lt;h3 id="显卡驱动" >显卡驱动
@@ -234,4 +1708,84 @@ Page 信息参考
 &lt;a href="https://www.nvidia.cn/Download/index.aspx" rel="external">
 前往下载驱动
 &lt;/a>
-&lt;/p></description></item></channel></rss>
+&lt;/p>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">plaintext&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-7">&lt;a class="lnlinks" href="#hl-0-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-8">&lt;a class="lnlinks" href="#hl-0-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-9">&lt;a class="lnlinks" href="#hl-0-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-10">&lt;a class="lnlinks" href="#hl-0-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-11">&lt;a class="lnlinks" href="#hl-0-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-12">&lt;a class="lnlinks" href="#hl-0-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-13">&lt;a class="lnlinks" href="#hl-0-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-14">&lt;a class="lnlinks" href="#hl-0-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-15">&lt;a class="lnlinks" href="#hl-0-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-16">&lt;a class="lnlinks" href="#hl-0-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-17">&lt;a class="lnlinks" href="#hl-0-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-18">&lt;a class="lnlinks" href="#hl-0-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-19">&lt;a class="lnlinks" href="#hl-0-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-20">&lt;a class="lnlinks" href="#hl-0-20">20&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">+-----------------------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | NVIDIA-SMI 555.99 Driver Version: 555.99 CUDA Version: 12.5 |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |-----------------------------------------+------------------------+----------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | GPU Name Driver-Model | Bus-Id Disp.A | Volatile Uncorr. ECC |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Fan Temp Perf Pwr:Usage/Cap | Memory-Usage | GPU-Util Compute M. |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | | | MIG M. |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |=========================================+========================+======================|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | 0 NVIDIA GeForce RTX 1660 Ti WDDM | 00000000:01:00.0 On | N/A |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | N/A 63C P0 23W / 80W | 1117MiB / 6144MiB | 2% Default |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | | | N/A |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-----------------------------------------+------------------------+----------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-----------------------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Processes: |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | GPU GI CI PID Type Process name GPU Memory |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | ID ID Usage |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |=========================================================================================|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | 0 N/A N/A 1848 C+G ...2\Enterprise\Common7\IDE\devenv.exe N/A |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | 0 N/A N/A 6928 C+G ...nt.CBS_cw5n1h2txyewy\SearchHost.exe N/A |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-----------------------------------------------------------------------------------------+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="cuda-toolkit" >CUDA Toolkit
+&lt;a hidden class="anchor" aria-hidden="true" href="#cuda-toolkit">#&lt;/a>
+&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;a href="https://developer.nvidia.com/cuda-toolkit-archive" rel="external">
+前往下载 CUDA Toolkit
+&lt;/a>
+&lt;/li>
+&lt;li>CUDA 的版本需要小于等于驱动中的 &lt;code>CUDA Version&lt;/code>&lt;/li>
+&lt;li>&lt;strong>重点！！这里的 CUDA 版本需要和 LibTorch 使用的 CUDA 版本一致&lt;/strong>，建议先确定好 LibTorch 要使用的 CUDA 版本&lt;/li>
+&lt;li>下载完成后无脑下一步即可,默认安装目录&lt;code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\[version]&lt;/code>&lt;/li>
+&lt;li>验证安装
+&lt;ol>
+&lt;li>在命令行输入&lt;code>nvcc --version&lt;/code>查看 CUDA 版本信息&lt;/li>
+&lt;li>在命令行运行 &lt;strong>[安装目录]\extras\demo_suite&lt;/strong> 目录下的 &lt;code>bandwidthTest.exe&lt;/code>、&lt;code>deviceQuery.exe&lt;/code>，确保在最后都有输出 &lt;code>Result = PASS&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="cudnn" >cuDNN
+&lt;a hidden class="anchor" aria-hidden="true" href="#cudnn">#&lt;/a>
+&lt;/h3>
+&lt;p>cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度神经网络（Deep Neural Networks）中的基础操作而设计基于 GPU 的加速库&lt;/p></description></item></channel></rss>

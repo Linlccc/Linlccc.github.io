@@ -36,4 +36,705 @@
 &lt;/span>&lt;span class="lnt" id="hl-0-22">&lt;a class="lnlinks" href="#hl-0-22">22&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-23">&lt;a class="lnlinks" href="#hl-0-23">23&lt;/a>
 &lt;/span>&lt;span class="lnt" id="hl-0-24">&lt;a class="lnlinks" href="#hl-0-24">24&lt;/a>
-&lt;/span>&lt;/code>&lt;/pr</description></item></channel></rss>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示系统信息：内核版本、机器类型等&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">uname
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示正在运行的Linux内核的发行版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">uname -r
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示当前时间、系统运行时间、用户和负载平均值&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">uptime
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示系统主机名&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hostname
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示当前主机的ip地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hostname -i
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看系统最近一次的重启时间以及重启之前的系统登录信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">last reboot
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示当前日期和时间&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 设置系统时间与日期&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">timedatectl
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 快速查看当前/指定年份日历&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cal
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示目前登入系统的用户信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">w
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示当前用户的用户名&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">whoami
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示名为&amp;#34;username&amp;#34;的用户的信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">finger username&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="文件命令" >文件命令
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%96%87%e4%bb%b6%e5%91%bd%e4%bb%a4">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-2">&lt;a class="lnlinks" href="#hl-1-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-3">&lt;a class="lnlinks" href="#hl-1-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-4">&lt;a class="lnlinks" href="#hl-1-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-5">&lt;a class="lnlinks" href="#hl-1-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-6">&lt;a class="lnlinks" href="#hl-1-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-7">&lt;a class="lnlinks" href="#hl-1-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-8">&lt;a class="lnlinks" href="#hl-1-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-9">&lt;a class="lnlinks" href="#hl-1-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-10">&lt;a class="lnlinks" href="#hl-1-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-11">&lt;a class="lnlinks" href="#hl-1-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-12">&lt;a class="lnlinks" href="#hl-1-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-13">&lt;a class="lnlinks" href="#hl-1-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-14">&lt;a class="lnlinks" href="#hl-1-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-15">&lt;a class="lnlinks" href="#hl-1-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-16">&lt;a class="lnlinks" href="#hl-1-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-17">&lt;a class="lnlinks" href="#hl-1-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-18">&lt;a class="lnlinks" href="#hl-1-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-19">&lt;a class="lnlinks" href="#hl-1-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-20">&lt;a class="lnlinks" href="#hl-1-20">20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-21">&lt;a class="lnlinks" href="#hl-1-21">21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-22">&lt;a class="lnlinks" href="#hl-1-22">22&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-23">&lt;a class="lnlinks" href="#hl-1-23">23&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-24">&lt;a class="lnlinks" href="#hl-1-24">24&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-25">&lt;a class="lnlinks" href="#hl-1-25">25&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-26">&lt;a class="lnlinks" href="#hl-1-26">26&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-27">&lt;a class="lnlinks" href="#hl-1-27">27&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-28">&lt;a class="lnlinks" href="#hl-1-28">28&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-29">&lt;a class="lnlinks" href="#hl-1-29">29&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-30">&lt;a class="lnlinks" href="#hl-1-30">30&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-31">&lt;a class="lnlinks" href="#hl-1-31">31&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-32">&lt;a class="lnlinks" href="#hl-1-32">32&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-33">&lt;a class="lnlinks" href="#hl-1-33">33&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-34">&lt;a class="lnlinks" href="#hl-1-34">34&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-35">&lt;a class="lnlinks" href="#hl-1-35">35&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-36">&lt;a class="lnlinks" href="#hl-1-36">36&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-37">&lt;a class="lnlinks" href="#hl-1-37">37&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-38">&lt;a class="lnlinks" href="#hl-1-38">38&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-39">&lt;a class="lnlinks" href="#hl-1-39">39&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-40">&lt;a class="lnlinks" href="#hl-1-40">40&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 以长格式列出所有文件的详细信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ls -al
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示当前工作目录的路径&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">pwd&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建一个名为 dir1 的新目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mkdir dir1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除名为 file1 的文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rm file1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 强制删除名为 file2 的文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rm -f file2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 递归删除目录 dir1 及其内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rm -r dir1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 强制删除目录 dir1 及其内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rm -rf dir1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 复制 file1,创建或覆盖 file2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp file1 file2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将 dir1 复制到 dir2,包括子目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp -r dir1 dir2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将 file1 重命名或移动到 file2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mv file1 file2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建名为 linkName 到 fileName 的符号链接&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ln -s /oath/to/fileName linkName
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建一个名为 file1 的空文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">touch file1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建/覆盖 file1,等得标准输入&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat &amp;gt; file1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 逐页显示们 file1 的内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">more file1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示 file1 的前十行&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">head file1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示 file1 的最后十行&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tail file1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 使用对称密码对 file1 进行加密,需要提供密码短语&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gpg -c file1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 解密 file2.gpg,提示输入密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gpg file2.gpg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 统计文件中的字数、行数和字符数&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 使用管道或文件提供的参数执行命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">xargs&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="用户管理" >用户管理
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e7%94%a8%e6%88%b7%e7%ae%a1%e7%90%86">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-2-1">&lt;a class="lnlinks" href="#hl-2-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-2">&lt;a class="lnlinks" href="#hl-2-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-3">&lt;a class="lnlinks" href="#hl-2-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-4">&lt;a class="lnlinks" href="#hl-2-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-5">&lt;a class="lnlinks" href="#hl-2-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-6">&lt;a class="lnlinks" href="#hl-2-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-7">&lt;a class="lnlinks" href="#hl-2-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-8">&lt;a class="lnlinks" href="#hl-2-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-9">&lt;a class="lnlinks" href="#hl-2-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-10">&lt;a class="lnlinks" href="#hl-2-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-11">&lt;a class="lnlinks" href="#hl-2-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-12">&lt;a class="lnlinks" href="#hl-2-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-13">&lt;a class="lnlinks" href="#hl-2-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-2-14">&lt;a class="lnlinks" href="#hl-2-14">14&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示用户的UID、GID、组&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">id
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示最后登录用户的列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">last
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示当前登录的用户&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">who
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建一个名为 Admin 的新用户组&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">groupadd admin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建一个名为 Sam 的新用户组&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">adduser Sam
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 删除名为 Sam 的用户&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">userdel Sam
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 修改现有用户的属性&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">usermod&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="硬件" >硬件
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e7%a1%ac%e4%bb%b6">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-3-1">&lt;a class="lnlinks" href="#hl-3-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-2">&lt;a class="lnlinks" href="#hl-3-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-3">&lt;a class="lnlinks" href="#hl-3-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-4">&lt;a class="lnlinks" href="#hl-3-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-5">&lt;a class="lnlinks" href="#hl-3-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-6">&lt;a class="lnlinks" href="#hl-3-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-7">&lt;a class="lnlinks" href="#hl-3-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-8">&lt;a class="lnlinks" href="#hl-3-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-9">&lt;a class="lnlinks" href="#hl-3-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-10">&lt;a class="lnlinks" href="#hl-3-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-11">&lt;a class="lnlinks" href="#hl-3-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-12">&lt;a class="lnlinks" href="#hl-3-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-13">&lt;a class="lnlinks" href="#hl-3-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-14">&lt;a class="lnlinks" href="#hl-3-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-15">&lt;a class="lnlinks" href="#hl-3-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-16">&lt;a class="lnlinks" href="#hl-3-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-17">&lt;a class="lnlinks" href="#hl-3-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-18">&lt;a class="lnlinks" href="#hl-3-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-19">&lt;a class="lnlinks" href="#hl-3-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-20">&lt;a class="lnlinks" href="#hl-3-20">20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-21">&lt;a class="lnlinks" href="#hl-3-21">21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-22">&lt;a class="lnlinks" href="#hl-3-22">22&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 内核会将开机过程信息存储在环形缓冲区中&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dmesg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示 CPU 的详细信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat/proc/cpuinfo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示详细的系统内存使用信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat/proc/meminfo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 列出系统的详细硬件配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">lshw
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 列出所有可用的块设备的信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">lsblk
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示系统内存使用情况&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">free -m
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 以树状格式详细显示 PCI 设备信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">lspci -tv
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 以树状格式详细显示 USB 设备信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">lsusb -tv
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示系统 BIOS 中的硬件信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dmidecode
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示磁盘 /dev/sda 的信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hdparm -i /dev/sda
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 用于检查设备 /dev/sda 是否存在坏块,并显示检测进度&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">badblocks -s /dev/sda&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="登录" >登录
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e7%99%bb%e5%bd%95">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-4-1">&lt;a class="lnlinks" href="#hl-4-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-2">&lt;a class="lnlinks" href="#hl-4-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-3">&lt;a class="lnlinks" href="#hl-4-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-4">&lt;a class="lnlinks" href="#hl-4-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-5">&lt;a class="lnlinks" href="#hl-4-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-6">&lt;a class="lnlinks" href="#hl-4-6">6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-7">&lt;a class="lnlinks" href="#hl-4-7">7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-4-8">&lt;a class="lnlinks" href="#hl-4-8">8&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 向指定主机名发起 SSH 连接&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh user@hostname
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 使用特定端口发起 SSH 连接&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh -p portNumber user@hostname
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 通过 telnet 连接到主机的默认端口 23&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Connect to the host via telnet default port &lt;span class="m">23&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 通过l elnet 默认端口23连接到主机&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">telnet host&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="安装包" >安装包
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%ae%89%e8%a3%85%e5%8c%85">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-5-1">&lt;a class="lnlinks" href="#hl-5-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-2">&lt;a class="lnlinks" href="#hl-5-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-3">&lt;a class="lnlinks" href="#hl-5-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-4">&lt;a class="lnlinks" href="#hl-5-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-5">&lt;a class="lnlinks" href="#hl-5-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-6">&lt;a class="lnlinks" href="#hl-5-6">6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-7">&lt;a class="lnlinks" href="#hl-5-7">7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-5-8">&lt;a class="lnlinks" href="#hl-5-8">8&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 使用 RPM 包管理器安装 pkgName.rpm 包&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rpm -i pkgName.rpm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 卸载指定的 RPM 包&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rpm -e pkgName
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 使用 DNF 安装指定的包，&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dnf install pkgName
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 使用 Pacman 安装指定的包&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pacman -S&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="安装源编译" >安装源（编译）
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%ae%89%e8%a3%85%e6%ba%90%e7%bc%96%e8%af%91">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-6-1">&lt;a class="lnlinks" href="#hl-6-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-6-2">&lt;a class="lnlinks" href="#hl-6-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-6-3">&lt;a class="lnlinks" href="#hl-6-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-6-4">&lt;a class="lnlinks" href="#hl-6-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-6-5">&lt;a class="lnlinks" href="#hl-6-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-6-6">&lt;a class="lnlinks" href="#hl-6-6">6&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 检查系统兼容性并生成用于软件安装的 makefile&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./configure
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 按照 makefoile 中的指令编译代码&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">make
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将编译后的代码安装到指定的系统位置&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">make install&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="目录遍历" >目录遍历
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e7%9b%ae%e5%bd%95%e9%81%8d%e5%8e%86">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-7-1">&lt;a class="lnlinks" href="#hl-7-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-2">&lt;a class="lnlinks" href="#hl-7-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-3">&lt;a class="lnlinks" href="#hl-7-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-4">&lt;a class="lnlinks" href="#hl-7-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-5">&lt;a class="lnlinks" href="#hl-7-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-7-6">&lt;a class="lnlinks" href="#hl-7-6">6&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 切换到父目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将当前目录更改为用户的主目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将当前目录更改为&amp;#34;/mnt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /mnt&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="流程相关" >流程相关
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%b5%81%e7%a8%8b%e7%9b%b8%e5%85%b3">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-8-1">&lt;a class="lnlinks" href="#hl-8-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-2">&lt;a class="lnlinks" href="#hl-8-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-3">&lt;a class="lnlinks" href="#hl-8-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-4">&lt;a class="lnlinks" href="#hl-8-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-5">&lt;a class="lnlinks" href="#hl-8-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-6">&lt;a class="lnlinks" href="#hl-8-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-7">&lt;a class="lnlinks" href="#hl-8-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-8">&lt;a class="lnlinks" href="#hl-8-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-9">&lt;a class="lnlinks" href="#hl-8-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-10">&lt;a class="lnlinks" href="#hl-8-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-11">&lt;a class="lnlinks" href="#hl-8-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-12">&lt;a class="lnlinks" href="#hl-8-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-13">&lt;a class="lnlinks" href="#hl-8-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-14">&lt;a class="lnlinks" href="#hl-8-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-15">&lt;a class="lnlinks" href="#hl-8-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-16">&lt;a class="lnlinks" href="#hl-8-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-17">&lt;a class="lnlinks" href="#hl-8-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-18">&lt;a class="lnlinks" href="#hl-8-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-19">&lt;a class="lnlinks" href="#hl-8-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-20">&lt;a class="lnlinks" href="#hl-8-20">20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-21">&lt;a class="lnlinks" href="#hl-8-21">21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-22">&lt;a class="lnlinks" href="#hl-8-22">22&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-23">&lt;a class="lnlinks" href="#hl-8-23">23&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-24">&lt;a class="lnlinks" href="#hl-8-24">24&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-25">&lt;a class="lnlinks" href="#hl-8-25">25&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-26">&lt;a class="lnlinks" href="#hl-8-26">26&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-27">&lt;a class="lnlinks" href="#hl-8-27">27&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-8-28">&lt;a class="lnlinks" href="#hl-8-28">28&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示当前进程的快照&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ps
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示运行中的 tolnet 进程的详细信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ps aux &lt;span class="p">|&lt;/span> grep telnet
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示进程的内存映射&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pmap
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示运行任务的动态实时视图&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">top
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 终止具有 PID 1234 的进程&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">kill&lt;/span> &lt;span class="m">1234&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 终止所有名为&amp;#39;proc&amp;#39; 的进程&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">killall proc
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 终止具有指定名称的进程&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pkill processName
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 在后台恢复暂停的作业&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">bg&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将暂停的作业带到前台&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">fg&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将作业编号为&amp;#39;n&amp;#39; 的作业移到前台运行&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">fg&lt;/span> n
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 列出所有打开的文件和进程&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">lsof
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 更改具有给定 PID 的进程的优先级&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">renice &lt;span class="m">19&lt;/span> PID
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示firefox 进程的进程ID&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pgrep firefox
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示运行中的进程树&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pstree&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="网络" >网络
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e7%bd%91%e7%bb%9c">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-9-1">&lt;a class="lnlinks" href="#hl-9-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-2">&lt;a class="lnlinks" href="#hl-9-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-3">&lt;a class="lnlinks" href="#hl-9-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-4">&lt;a class="lnlinks" href="#hl-9-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-5">&lt;a class="lnlinks" href="#hl-9-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-6">&lt;a class="lnlinks" href="#hl-9-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-7">&lt;a class="lnlinks" href="#hl-9-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-8">&lt;a class="lnlinks" href="#hl-9-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-9">&lt;a class="lnlinks" href="#hl-9-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-10">&lt;a class="lnlinks" href="#hl-9-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-11">&lt;a class="lnlinks" href="#hl-9-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-12">&lt;a class="lnlinks" href="#hl-9-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-13">&lt;a class="lnlinks" href="#hl-9-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-14">&lt;a class="lnlinks" href="#hl-9-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-15">&lt;a class="lnlinks" href="#hl-9-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-16">&lt;a class="lnlinks" href="#hl-9-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-17">&lt;a class="lnlinks" href="#hl-9-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-18">&lt;a class="lnlinks" href="#hl-9-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-19">&lt;a class="lnlinks" href="#hl-9-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-9-20">&lt;a class="lnlinks" href="#hl-9-20">20&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示所有网络接口及其信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ip addr show
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将 IP 地址 192.168.0.1 分配给eth0接口&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ip address add 192.168.0.1/24 dev eth0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示网络接口及其配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ifconfig
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 发送 ICMP 数据包,测量与 host 之问的往返时间&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ping host
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 检索并显示域名的注册信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">whois domain
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查询 DNS,提供域名的 DNS 信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dig domain
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将 IP 地址解析为主机名,显示 DNS 信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dig -x host
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 对域名进行 IP 查找&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">host gexample.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 从指定路径下载文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wget flePath
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示各种与网络相关的信息和统计数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">netstat&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="磁盘使用情况" >磁盘使用情况
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e7%a3%81%e7%9b%98%e4%bd%bf%e7%94%a8%e6%83%85%e5%86%b5">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-10-1">&lt;a class="lnlinks" href="#hl-10-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-2">&lt;a class="lnlinks" href="#hl-10-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-3">&lt;a class="lnlinks" href="#hl-10-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-4">&lt;a class="lnlinks" href="#hl-10-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-5">&lt;a class="lnlinks" href="#hl-10-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-6">&lt;a class="lnlinks" href="#hl-10-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-7">&lt;a class="lnlinks" href="#hl-10-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-8">&lt;a class="lnlinks" href="#hl-10-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-9">&lt;a class="lnlinks" href="#hl-10-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-10">&lt;a class="lnlinks" href="#hl-10-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-11">&lt;a class="lnlinks" href="#hl-10-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-10-12">&lt;a class="lnlinks" href="#hl-10-12">12&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示所有已挂载文件系统可读的磁盘空问使用情况&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">df -h
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示所有已挂载文件系统的 inode 使用情况&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">df -i
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 列出所有驱动器上的分区及其信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">fdisk -l
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示 /dir1 目录的总磁盘使用大小的摘要,以可读方式呈现&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">du -sh/dir1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 显示所有已挂载文件系统及其属性的列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">findmnt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将设备挂载到指定的文件系统挂载点上&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mount devicePath mountPoint&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="压缩存档" >压缩/存档
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%8e%8b%e7%bc%a9%e5%ad%98%e6%a1%a3">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-11-1">&lt;a class="lnlinks" href="#hl-11-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-2">&lt;a class="lnlinks" href="#hl-11-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-3">&lt;a class="lnlinks" href="#hl-11-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-4">&lt;a class="lnlinks" href="#hl-11-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-5">&lt;a class="lnlinks" href="#hl-11-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-6">&lt;a class="lnlinks" href="#hl-11-6">6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-7">&lt;a class="lnlinks" href="#hl-11-7">7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-11-8">&lt;a class="lnlinks" href="#hl-11-8">8&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建一个名为 backup.tar 的 tar 归档文件,其中包含 /home/ubuntu 目录的内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tar -cf backup.tar/home/ubuntu
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 从 backup.tar 归档文件中提取文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tar -xf backup.tar
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建一个名为 backup.tar.gz 的压缩 tar 归档文件,其中包含 /home/ubuntu 目录的内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tar -zcvf backup.tar.gz/home/ubuntu
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将文件 file1 压缩为 file1.gz,并删除原始文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gzip file1&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="日志文件传输" >日志文件传输
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%97%a5%e5%bf%97%e6%96%87%e4%bb%b6%e4%bc%a0%e8%be%93">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-12-1">&lt;a class="lnlinks" href="#hl-12-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-2">&lt;a class="lnlinks" href="#hl-12-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-3">&lt;a class="lnlinks" href="#hl-12-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-4">&lt;a class="lnlinks" href="#hl-12-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-5">&lt;a class="lnlinks" href="#hl-12-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-12-6">&lt;a class="lnlinks" href="#hl-12-6">6&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将们 file.txt 复制到远程主机的指定目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">scp file.txt remoteuser@remoteHost:/remote/diroctory
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将源目录的内容同步到目标目录,保留属性&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rsync -a /home/ubuntu/backup/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 同步本地目录到远程,保留属性&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rsync -a /var/www/web/user@remoteHost:/backup/webBackup/&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="搜索" >搜索
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%90%9c%e7%b4%a2">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-13-1">&lt;a class="lnlinks" href="#hl-13-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-2">&lt;a class="lnlinks" href="#hl-13-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-3">&lt;a class="lnlinks" href="#hl-13-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-4">&lt;a class="lnlinks" href="#hl-13-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-5">&lt;a class="lnlinks" href="#hl-13-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-6">&lt;a class="lnlinks" href="#hl-13-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-7">&lt;a class="lnlinks" href="#hl-13-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-8">&lt;a class="lnlinks" href="#hl-13-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-9">&lt;a class="lnlinks" href="#hl-13-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-13-10">&lt;a class="lnlinks" href="#hl-13-10">10&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 在文件中搜索给定的模式&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">grep pattern file
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 在 dir1 目录及其子目录中递归搜索指定的 pattern&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">grep -r pattern dir1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 使用预建的数据库查找名为 file 的文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">locate file
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 递归搜索 /home 目录中名为 index 的文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">find /homeName index
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 在 /home 目录中查找大小超过 10000k 的文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">find /homeSize +10000k&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="文件权限" >文件权限
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%96%87%e4%bb%b6%e6%9d%83%e9%99%90">#&lt;/a>
+&lt;/h2>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-14-1">&lt;a class="lnlinks" href="#hl-14-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-2">&lt;a class="lnlinks" href="#hl-14-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-3">&lt;a class="lnlinks" href="#hl-14-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-4">&lt;a class="lnlinks" href="#hl-14-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-5">&lt;a class="lnlinks" href="#hl-14-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-6">&lt;a class="lnlinks" href="#hl-14-6">6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-7">&lt;a class="lnlinks" href="#hl-14-7">7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-14-8">&lt;a class="lnlinks" href="#hl-14-8">8&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 设置文件/data的权限为所有者读/写,组和其他人只读&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chmod &lt;span class="m">644&lt;/span> /data/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将目录 /dir1 的权限设置为对所有者可读可写/可执行,对组和其他用户可读/可执行&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chmod &lt;span class="m">755&lt;/span> /dir1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 将文件 filename 的所有者更改为 bob 并将所属组更改为 devops&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chown bob:devops filename
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 更改目录的所有者和所属组&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chown ownername&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

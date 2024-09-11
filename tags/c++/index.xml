@@ -5,7 +5,101 @@
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e6%95%b4%e6%95%b0%e7%b1%bb%e5%9e%8b">#&lt;/a>
 &lt;/h3>
 &lt;p>这些类型里面除了只有 &lt;code>signed&lt;/code> 和 &lt;code>int&lt;/code> 的都可以省略 &lt;code>signed&lt;/code> / &lt;code>int&lt;/code>&lt;br>
-例如 &lt;code>short&lt;/code>, &lt;code>short int&lt;/code>, &lt;code>signed short&lt;/code>, &lt;code>signed short int&lt;/code> 表示一个类型&lt;/p></description></item><item><title>C++ 配置 libtorch 环境</title><link>https://linlccc.com/posts/cppconfigurelibtorchenvironment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>[Lin]</author><guid>https://linlccc.com/posts/cppconfigurelibtorchenvironment/</guid><description>&lt;h2 id="前置条件" >前置条件
+例如 &lt;code>short&lt;/code>, &lt;code>short int&lt;/code>, &lt;code>signed short&lt;/code>, &lt;code>signed short int&lt;/code> 表示一个类型&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">类型&lt;/th>
+&lt;th style="text-align: left">占用字节数&lt;/th>
+&lt;th style="text-align: left">取值范围&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>signed char&lt;/code>&lt;/td>
+&lt;td style="text-align: left">1&lt;/td>
+&lt;td style="text-align: left">-128 到 127&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned char&lt;/code>&lt;/td>
+&lt;td style="text-align: left">1&lt;/td>
+&lt;td style="text-align: left">0 到 255&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>short&lt;/code>, &lt;code>short int&lt;/code>, &lt;code>signed short&lt;/code>, &lt;code>signed short int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">2&lt;/td>
+&lt;td style="text-align: left">-32768 到 32767&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned short&lt;/code>, &lt;code>unsigned short int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">2&lt;/td>
+&lt;td style="text-align: left">0 到 65535&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>int&lt;/code>, &lt;code>signed&lt;/code>, &lt;code>signed int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">-2147483648 到 2147483647&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned&lt;/code>, &lt;code>unsigned int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">0 到 4294967295&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>long&lt;/code>, &lt;code>long int&lt;/code>, &lt;code>signed long&lt;/code>, &lt;code>signed long int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">与 &lt;code>int&lt;/code> 或 &lt;code>long long&lt;/code> 相同&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned long&lt;/code>, &lt;code>unsigned long int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">与 &lt;code>unsigned&lt;/code> 或 &lt;code>unsigned long long&lt;/code> 相同&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>long long&lt;/code>, &lt;code>long long int&lt;/code>, &lt;code>signed long long&lt;/code>, &lt;code>signed long long int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">-9223372036854775808 到 9223372036854775807&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>unsigned long long&lt;/code>, &lt;code>unsigned long long int&lt;/code>&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">0 到 18446744073709551615&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="浮点类型" >浮点类型
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%b5%ae%e7%82%b9%e7%b1%bb%e5%9e%8b">#&lt;/a>
+&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">类型&lt;/th>
+&lt;th style="text-align: left">占用字节数&lt;/th>
+&lt;th style="text-align: left">取值范围&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>float&lt;/code>&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">1.175494351e-38 到 3.402823466e+38&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>double&lt;/code>&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">2.2250738585072014e-308 到 1.7976931348623157e+308&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">&lt;code>long double&lt;/code>&lt;/td>
+&lt;td style="text-align: left">12&lt;/td>
+&lt;td style="text-align: left">3.36210314311209350626267781732175260e-4932 到 1.18973149535723176508575932662800702e+4932&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="无效浮点数信息" >无效浮点数信息
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e6%97%a0%e6%95%88%e6%b5%ae%e7%82%b9%e6%95%b0%e4%bf%a1%e6%81%af">#&lt;/a>
+&lt;/h3>
+&lt;p>在 C++中，浮点数类型的值可以是无效的，具体取决于浮点数类型的规范。以下是一些常见的无效浮点数值：&lt;/p></description></item><item><title>C++ 配置 libtorch 环境</title><link>https://linlccc.com/posts/cppconfigurelibtorchenvironment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>[Lin]</author><guid>https://linlccc.com/posts/cppconfigurelibtorchenvironment/</guid><description>&lt;h2 id="前置条件" >前置条件
 &lt;a hidden class="anchor" aria-hidden="true" href="#%e5%89%8d%e7%bd%ae%e6%9d%a1%e4%bb%b6">#&lt;/a>
 &lt;/h2>
 &lt;h3 id="显卡驱动" >显卡驱动
@@ -15,4 +109,84 @@
 &lt;a href="https://www.nvidia.cn/Download/index.aspx" rel="external">
 前往下载驱动
 &lt;/a>
-&lt;/p></description></item></channel></rss>
+&lt;/p>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">plaintext&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-7">&lt;a class="lnlinks" href="#hl-0-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-8">&lt;a class="lnlinks" href="#hl-0-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-9">&lt;a class="lnlinks" href="#hl-0-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-10">&lt;a class="lnlinks" href="#hl-0-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-11">&lt;a class="lnlinks" href="#hl-0-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-12">&lt;a class="lnlinks" href="#hl-0-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-13">&lt;a class="lnlinks" href="#hl-0-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-14">&lt;a class="lnlinks" href="#hl-0-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-15">&lt;a class="lnlinks" href="#hl-0-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-16">&lt;a class="lnlinks" href="#hl-0-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-17">&lt;a class="lnlinks" href="#hl-0-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-18">&lt;a class="lnlinks" href="#hl-0-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-19">&lt;a class="lnlinks" href="#hl-0-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-20">&lt;a class="lnlinks" href="#hl-0-20">20&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">+-----------------------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | NVIDIA-SMI 555.99 Driver Version: 555.99 CUDA Version: 12.5 |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |-----------------------------------------+------------------------+----------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | GPU Name Driver-Model | Bus-Id Disp.A | Volatile Uncorr. ECC |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Fan Temp Perf Pwr:Usage/Cap | Memory-Usage | GPU-Util Compute M. |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | | | MIG M. |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |=========================================+========================+======================|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | 0 NVIDIA GeForce RTX 1660 Ti WDDM | 00000000:01:00.0 On | N/A |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | N/A 63C P0 23W / 80W | 1117MiB / 6144MiB | 2% Default |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | | | N/A |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-----------------------------------------+------------------------+----------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-----------------------------------------------------------------------------------------+
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | Processes: |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | GPU GI CI PID Type Process name GPU Memory |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | ID ID Usage |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> |=========================================================================================|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | 0 N/A N/A 1848 C+G ...2\Enterprise\Common7\IDE\devenv.exe N/A |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> | 0 N/A N/A 6928 C+G ...nt.CBS_cw5n1h2txyewy\SearchHost.exe N/A |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> +-----------------------------------------------------------------------------------------+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="cuda-toolkit" >CUDA Toolkit
+&lt;a hidden class="anchor" aria-hidden="true" href="#cuda-toolkit">#&lt;/a>
+&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;a href="https://developer.nvidia.com/cuda-toolkit-archive" rel="external">
+前往下载 CUDA Toolkit
+&lt;/a>
+&lt;/li>
+&lt;li>CUDA 的版本需要小于等于驱动中的 &lt;code>CUDA Version&lt;/code>&lt;/li>
+&lt;li>&lt;strong>重点！！这里的 CUDA 版本需要和 LibTorch 使用的 CUDA 版本一致&lt;/strong>，建议先确定好 LibTorch 要使用的 CUDA 版本&lt;/li>
+&lt;li>下载完成后无脑下一步即可,默认安装目录&lt;code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\[version]&lt;/code>&lt;/li>
+&lt;li>验证安装
+&lt;ol>
+&lt;li>在命令行输入&lt;code>nvcc --version&lt;/code>查看 CUDA 版本信息&lt;/li>
+&lt;li>在命令行运行 &lt;strong>[安装目录]\extras\demo_suite&lt;/strong> 目录下的 &lt;code>bandwidthTest.exe&lt;/code>、&lt;code>deviceQuery.exe&lt;/code>，确保在最后都有输出 &lt;code>Result = PASS&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="cudnn" >cuDNN
+&lt;a hidden class="anchor" aria-hidden="true" href="#cudnn">#&lt;/a>
+&lt;/h3>
+&lt;p>cuDNN(NVIDIA CUDA® Deep Neural Network library) 是 NVIDIA 专门针对深度神经网络（Deep Neural Networks）中的基础操作而设计基于 GPU 的加速库&lt;/p></description></item></channel></rss>

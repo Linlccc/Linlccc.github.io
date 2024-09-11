@@ -16,4 +16,95 @@
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;/code>&lt;/pr</description></item></channel></rss>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">ssh-keygen -t rsa -b &lt;span class="m">4096&lt;/span> -C &lt;span class="s2">&amp;#34;[email@example.com]&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>根据提示输入密钥保存文件，可空保存到默认文件&lt;code>C:\Users\[User]\.ssh\id_rsa&lt;/code>&lt;/li>
+&lt;li>根据提示输入两次密码（建议不设置密码，否者每次 push 都需要输入密码）&lt;/li>
+&lt;/ul>
+&lt;h2 id="将-ssh-密钥添加到-ssh-agent" >将 SSH 密钥添加到 ssh-agent
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e5%b0%86-ssh-%e5%af%86%e9%92%a5%e6%b7%bb%e5%8a%a0%e5%88%b0-ssh-agent">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>以管理员权限打开 &lt;code>PowerShell&lt;/code> 启动 &lt;code>ssh agent&lt;/code>:&lt;/li>
+&lt;/ul>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-1-2">&lt;a class="lnlinks" href="#hl-1-2">2&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">Get-Service -Name ssh-agent &lt;span class="p">|&lt;/span> Set-Service -StartupType Manual
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Start-Service ssh-agent&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>将 SSH 私钥添加到 ssh-agent (无需管理员权限)&lt;/li>
+&lt;/ul>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-2-1">&lt;a class="lnlinks" href="#hl-2-1">1&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">ssh-add C:&lt;span class="se">\U&lt;/span>sers&lt;span class="se">\[&lt;/span>User&lt;span class="o">]&lt;/span>&lt;span class="se">\.&lt;/span>ssh&lt;span class="se">\i&lt;/span>d_rsa&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="移除-ssh-密钥" >移除 SSH 密钥
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e7%a7%bb%e9%99%a4-ssh-%e5%af%86%e9%92%a5">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>删除&lt;code>C:\Users\[User]\.ssh\&lt;/code>文件夹中的两个密钥文件&lt;/li>
+&lt;li>从&lt;code>ssh agent&lt;/code>中移除&lt;code>ssh&lt;/code>密钥&lt;/li>
+&lt;/ul>
+&lt;div class="codeBlock">
+&lt;details open>
+&lt;summary>
+&lt;div class="oper">&lt;div class="status">&lt;/div>&lt;/div>
+&lt;div class="title">Bash&lt;/div>
+&lt;div class="oper">&lt;button class="codeCopy">复制&lt;/button>&lt;/div>
+&lt;/summary>
+&lt;/details>
+&lt;div class="codeBlockContent">
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-3-1">&lt;a class="lnlinks" href="#hl-3-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-2">&lt;a class="lnlinks" href="#hl-3-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-3">&lt;a class="lnlinks" href="#hl-3-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-3-4">&lt;a class="lnlinks" href="#hl-3-4">4&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 查看已加载的密钥列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-add -l
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 移除密钥&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssh-add -d C:&lt;span class="se">\U&lt;/span>sers&lt;span class="se">\[&lt;/span>User&lt;span class="o">]&lt;/span>&lt;span class="se">\.&lt;/span>ssh&lt;span class="se">\i&lt;/span>d_rsa&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
