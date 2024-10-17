@@ -2,10 +2,10 @@
 abbrlink: ''
 categories: []
 date: '2024-10-17T14:32:29.637+08:00'
-lang: CSharp
-tags: []
-title: C# 基础概念
-updated: '2024-10-17T14:32:29.637+08:00'
+langs: CSharp
+tags: '[C#]'
+title: C# 基础概念
+updated: '2024-10-17T14:53:23.178+08:00'
 ---
 ## 1. Roslyn 编译器
 
