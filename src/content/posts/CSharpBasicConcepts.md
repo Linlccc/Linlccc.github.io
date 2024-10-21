@@ -6,7 +6,7 @@ langs: CSharp
 tags:
 - C#
 title: C# 基础概念
-updated: '2024-10-17T14:55:59.948+08:00'
+updated: '2024-10-21T16:22:55.449+08:00'
 ---
 ## Roslyn 编译器
 
@@ -27,6 +27,15 @@ IL（或称 CIL，公共中间语言）是 C# 代码编译后生成的一种中�
 ## CLR（.NET 运行时）
 
 CLR 是 .NET 的运行时环境，负责执行 .NET 应用程序。它包含了 JIT 编译器、基础类库、内存管理和垃圾回收等功能，确保程序的高效运行。
+
+## CoreRT 
+
+RT 和 CLR 基本一致，[RT 具体信息](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)
+
+和 CLR 的不同之处
+
+- RT 不是虚拟机
+- RT 没有 JIT
 
 ## CLI（命令行接口工具）
 
