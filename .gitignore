@@ -1,3 +1,6 @@
 # 忽略构建目录
 /src/public
 /src/resources
+
+# 忽略 Mac OS 特有的文件
+.Ds_Store
