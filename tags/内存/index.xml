@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>内存 on Linlccc's Blog</title><link>https://linlccc.com/tags/%E5%86%85%E5%AD%98/</link><description>Recent content in 内存 on Linlccc's Blog</description><image><title>Linlccc's Blog</title><url>https://linlccc.com/favicon/dark/favicon-192x192.png</url><link>https://linlccc.com/favicon/dark/favicon-192x192.png</link></image><generator>Hugo</generator><language>zh-CN</language><managingEditor>linlccc@163.com (Linlccc)</managingEditor><webMaster>linlccc@163.com (Linlccc)</webMaster><lastBuildDate>Thu, 31 Jul 2025 11:03:48 +0800</lastBuildDate><atom:link href="https://linlccc.com/tags/%E5%86%85%E5%AD%98/index.xml" rel="self" type="application/rss+xml"/><item><title>计算机与编程语言杂项问答整理</title><link>https://linlccc.com/posts/miscellaneousqa/</link><pubDate>Thu, 31 Jul 2025 10:44:30 +0800</pubDate><author>[Lin]</author><guid>https://linlccc.com/posts/miscellaneousqa/</guid><description>&lt;h1 id="计算机与编程语言杂项问答整理" >计算机与编程语言杂项问答整理
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e4%b8%8e%e7%bc%96%e7%a8%8b%e8%af%ad%e8%a8%80%e6%9d%82%e9%a1%b9%e9%97%ae%e7%ad%94%e6%95%b4%e7%90%86">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="一cpu与寄存器" >一、CPU与寄存器
+&lt;a hidden class="anchor" aria-hidden="true" href="#%e4%b8%80cpu%e4%b8%8e%e5%af%84%e5%ad%98%e5%99%a8">#&lt;/a>
+&lt;/h2>
+&lt;p>&lt;strong>Q1：寄存器是什么？在哪里？&lt;/strong>&lt;br>
+A：寄存器是CPU内部用于暂存数据的超高速存储单元，存储临时变量、指令计数器等，速度极快。只存在于CPU内部，数量有限。&lt;/p></description></item></channel></rss>
