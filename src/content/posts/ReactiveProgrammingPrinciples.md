@@ -6,11 +6,9 @@ tags:
 - C#
 - Reactive
 title: Reactive 响应式编程原理（Rx.NET）
-updated: '2025-08-08T14:57:40.226+08:00'
+updated: '2025-08-08T15:10:36.918+08:00'
 ---
-# Reactive 响应式编程原理（Rx.NET）
-
-> 本文系统梳理 .NET Reactive Extensions（Rx.NET）的核心机制，助你彻底理解 Observable、Observer、操作符、Sink 及数据流的创建与执行全过程。
+本文系统梳理 .NET Reactive Extensions（Rx.NET）的核心机制，助你彻底理解 Observable、Observer、操作符、Sink 及数据流的创建与执行全过程。
 
 ---
 
