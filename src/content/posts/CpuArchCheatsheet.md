@@ -5,8 +5,8 @@ date: '2025-08-13T15:57:46.233+08:00'
 tags:
 - cpu
 - arch
-title: 面向开发者的 CPU 架构速查
-updated: '2025-08-13T15:57:46.233+08:00'
+title: 面向开发者的 CPU 架构速查
+updated: '2025-08-13T16:26:19.700+08:00'
 ---
 # x86、x86_64/x64/amd64、arm、arm64 架构速查
 
@@ -35,7 +35,7 @@ updated: '2025-08-13T15:57:46.233+08:00'
   - Windows：x86、x64、arm64
   - macOS：x86_64、arm64；universal2（x86_64+arm64）
   - Debian/Ubuntu：i386、amd64、armhf、arm64
-  - RHEL/Fedora/openSUSE：x86_64、aarch64、i686（少见）
+  - RHEL/CentOS/Fedora/openSUSE：i686（少见）、x86_64、aarch64
   - Alpine：x86、x86_64、armhf、aarch64
 - 容器平台字符串
   - linux/386、linux/amd64
@@ -45,9 +45,19 @@ updated: '2025-08-13T15:57:46.233+08:00'
   - Node 预编译：win-x64、win-arm64、linux-x64、linux-arm、linux-arm64、darwin-x64、darwin-arm64
   - Python wheels：win_amd64、win_arm64、manylinux_x86_64、manylinux_aarch64、macosx_arm64、macosx_universal2
   - .NET [RID](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog#windows-rids)：win-x64/x86/arm64、linux-x64/arm/arm64、linux-musl-x64/arm64、osx-x64/arm64
-- 包管理字段
-  - Debian/Ubuntu：i386、amd64、armhf、arm64
-  - RPM：i686、x86_64、aarch64
+- 包
+  - APT（Advanced Package Tool） .deb：
+    - 适用发行版：Debian、Ubuntu 及衍生（Linux Mint、Pop!_OS、elementaryOS 等）
+    - 架构命名：i386、amd64、armhf、arm64
+  - RPM（The Redhat Package Manager）.rpm：
+    - 适用发行版：RHEL、CentOS、Fedora、openSUSE
+    - 架构命名：i686、x86_64、aarch64
+  - APK（Alpine Package Keeper） .apk：
+    - 适用发行版：Alpine Linux
+    - 架构命名：x86、x86_64、armhf、armv7、aarch64
+  - AppImage
+    - 跨发行版的通用包格式
+    - 架构标记：x86-64、armhf、aarch64
 
 ## 3. 差异简述
 
@@ -104,7 +114,7 @@ updated: '2025-08-13T15:57:46.233+08:00'
 - windows
   - x64
   - arm64
-- linux
+- linux（不同发行版可能需要不同的架构命名）
   - amd64
   - arm64
 - macos
