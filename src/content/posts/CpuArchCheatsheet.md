@@ -4,7 +4,7 @@ categories: []
 date: ''
 tags: []
 title: 面向开发者的 CPU 架构速查
-updated: '2025-08-13T15:50:54.488+08:00'
+updated: '2025-08-13T15:57:46.233+08:00'
 ---
 # x86、x86_64/x64/amd64、arm、arm64 架构速查
 
