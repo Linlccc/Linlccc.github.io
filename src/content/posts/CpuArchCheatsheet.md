@@ -1,8 +1,10 @@
 ---
 abbrlink: ''
 categories: []
-date: ''
-tags: []
+date: '2025-08-13T15:57:46.233+08:00'
+tags:
+- cpu
+- arch
 title: 面向开发者的 CPU 架构速查
 updated: '2025-08-13T15:57:46.233+08:00'
 ---
