@@ -6,7 +6,7 @@ date: '2025-12-09T11:17:18.579+08:00'
 tags:
 - git
 title: 创建 git 本地仓库
-updated: '2025-12-09T11:17:18.579+08:00'
+updated: '2025-12-09T15:11:45.231+08:00'
 ---
 # 本地创建 Git 匿名读写仓库（基于 `git-daemon`）
 
@@ -80,23 +80,7 @@ type nul > .\git-daemon-export-ok
 在命令行中执行（建议使用 PowerShell 或 `cmd`）：
 
 ```bash
-git daemon ^
-  --base-path=f:/gitreps ^
-  --export-all ^
-  --enable=receive-pack ^
-  --reuseaddr ^
-  --verbose
-```
-
-> 如果使用 `bash`（Git Bash），换行用 `\`：
-
-```bash
-git daemon \
-  --base-path=f:/gitreps \
-  --export-all \
-  --enable=receive-pack \
-  --reuseaddr \
-  --verbose
+git daemon --base-path=f:/gitreps --export-all --enable=receive-pack --reuseaddr --verbose
 ```
 
 ### 4.1 参数说明
@@ -249,12 +233,7 @@ git config --global sendpack.sideband false
 4. 启动服务
    
    ```bash
-   git daemon ^
-     --base-path=f:/gitreps ^
-     --export-all ^
-     --enable=receive-pack ^
-     --reuseaddr ^
-     --verbose
+   git daemon --base-path=f:/gitreps --export-all --enable=receive-pack --reuseaddr --verbose
    ```
 5. 客户端克隆 / 推送
    
