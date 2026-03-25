@@ -6,7 +6,7 @@ tags:
 - C#
 - aot
 title: .NET AOT 体积优化指南
-updated: '2026-03-25T14:11:00.992+08:00'
+updated: '2026-03-25T16:41:57.983+08:00'
 ---
 # .NET Native AOT 配置与极端体积优化指南
 
@@ -46,10 +46,11 @@ updated: '2026-03-25T14:11:00.992+08:00'
 
 ### `OptimizationPreference` （.NET 8+）
 
-- **作用**：指示编译器的全局优化倾向。
+- **作用**：指示编译器的全局优化倾向，以替代默认的混合优化策略。
 - **适用值**：
-  - `Speed`（默认）：追求极致执行速度（激进内联、循环展开），体积较大。
-  - `Size`：追求最小二进制体积（泛型共享、减少内联），可能牺牲极少量 CPU 性能。
+  - 留空（默认）：采用混合方法，在生成快速代码和控制应用程序大小之间取得平衡。
+  - `Speed`：追求理论上的最快执行速度（如激进内联、循环展开），可执行文件体积较大。
+  - `Size`：追求最小二进制体积（如泛型共享、减少内联），可能牺牲少许运行速度。
 
 ---
 
@@ -354,3 +355,4 @@ updated: '2026-03-25T14:11:00.992+08:00'
 - [使用 Native AOT 生成本机库 (C-ABI 导出)](https://learn.microsoft.com/zh-cn/dotnet/core/deploying/native-aot/libraries)
 - [本机代码与本机 AOT 的互操作](https://learn.microsoft.com/zh-cn/dotnet/core/deploying/native-aot/interop)
 - [适用于 .NET SDK 项目的 MSBuild 引用](https://learn.microsoft.com/zh-cn/dotnet/core/project-sdk/msbuild-props)
+- [针对原生 AOT 的优化程序](https://github.com/dotnet/runtime/blob/5caa14bd341f2639b586fca29874c6f92d9711cc/src/coreclr/nativeaot/docs/optimizing.md)
